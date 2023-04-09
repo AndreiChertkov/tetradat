@@ -26,8 +26,8 @@ class Manager(ManagerBase):
         self.log.res(tpc()-tm)
         self.log('')
 
-    def task_attack_attr(self, d=100, n=3, m=1.E+4, k=10, k_top=1, sc=10, attr_steps=3, attr_iters=10, imgs=[8, 10, 13, 20, 35, 507, 563, 600,
-    669, 680, 689, 694]):
+    def task_attack_attr(self, d=250, n=3, m=1.E+5, k=50, k_top=5, sc=5, attr_steps=3, attr_iters=10, imgs=np.arange(100, 200)):
+        # imgs=[10, 13, 20, 35, 507, 563, 600, 669, 680, 689, 694]
         self.d_pix = d
         self.n = n
         self.m = int(m)

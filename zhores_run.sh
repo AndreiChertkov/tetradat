@@ -7,7 +7,7 @@
 #SBATCH --job-name=a.chertkov_tetradat
 #SBATCH --nodes=1
 #SBATCH --gpus=1
-#SBATCH --time=0-10:00:00
+#SBATCH --time=0-30:00:00
 #SBATCH --partition gpu
 ##SBATCH --mem-per-cpu=1500MB
 ##SBATCH --mem=5GB
