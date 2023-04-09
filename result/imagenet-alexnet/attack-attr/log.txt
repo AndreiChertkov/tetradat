@@ -1,4 +1,4 @@
-[2023-04-10 00-57-06] Computations (cuda)
+[2023-04-10 01-21-57] Computations (cuda)
 ===================== -------------------
 Data                : "imagenet"
 Model               : "alexnet"
@@ -11,26 +11,32 @@ Kind of task        : "attr"
 
 
 .... Loading "alexnet" model
-DONE (    40.86 sec.) 
+DONE (    20.83 sec.) 
 
 
 .... Loading "vgg19" model
-DONE (    11.08 sec.) 
+DONE (     3.17 sec.) 
 
 
 .... Optimization with PROTES method:
-DONE (   156.69 sec.) 
+DONE (   551.40 sec.) 
 
 .... Optimization with PROTES method:
-DONE (   149.16 sec.) 
+DONE (   546.10 sec.) 
 
 .... Optimization with PROTES method:
-DONE (   149.34 sec.) 
+DONE (   546.38 sec.) 
 
 .... Optimization with PROTES method:
-DONE (   149.74 sec.) 
+DONE (   546.58 sec.) 
 
 .... Optimization with PROTES method:
-DONE (   149.30 sec.) 
+DONE (   546.66 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   545.32 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   545.22 sec.) 
 
 .... Optimization with PROTES method:
