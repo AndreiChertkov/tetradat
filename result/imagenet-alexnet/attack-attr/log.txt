@@ -1,0 +1,36 @@
+[2023-04-10 00-57-06] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Task                : "attack"
+Kind of task        : "attr"
+=========================================
+
+
+.... Loading "imagenet" dataset
+
+
+.... Loading "alexnet" model
+DONE (    40.86 sec.) 
+
+
+.... Loading "vgg19" model
+DONE (    11.08 sec.) 
+
+
+.... Optimization with PROTES method:
+DONE (   156.69 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   149.16 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   149.34 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   149.74 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   149.30 sec.) 
+
+.... Optimization with PROTES method:
