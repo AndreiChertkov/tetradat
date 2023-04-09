@@ -22,7 +22,7 @@
 # conda activate && conda remove --name tetradat --all -y
 # conda create --name tetradat python=3.8 -y
 # conda activate tetradat
-# pip install jupyterlab "jax[cpu]==0.4.3" optax teneva==0.13.2 ttopt==0.5.0 protes==0.2.3 torch torchvision snntorch scikit-image matplotlib PyYAML nevergrad requests urllib3
+# pip install "jax[cpu]==0.4.3" optax teneva==0.13.2 ttopt==0.5.0 protes==0.2.3 torch torchvision snntorch scikit-image matplotlib PyYAML nevergrad requests urllib3
 
 
 # ----------------
