@@ -185,5 +185,5 @@ class Manager(ManagerBase):
 
 
 if __name__ == '__main__':
-    Manager(model='alexnet', model_attr='vgg19').run()
+    #Manager(model='alexnet', model_attr='vgg19').run()
     Manager(model='vgg19', model_attr='alexnet').run()
