@@ -145,3 +145,181 @@ DONE (   698.25 sec.)
 DONE (   699.53 sec.) 
 
 .... Optimization with PROTES method:
+DONE (   697.11 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.67 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.23 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   697.92 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.05 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   701.62 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.94 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   702.75 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   704.60 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   697.43 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   700.28 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.70 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.78 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.75 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.79 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   698.69 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   700.21 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.76 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   699.01 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   700.59 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   700.46 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   698.06 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   697.76 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   697.50 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.44 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.50 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.11 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.75 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.58 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.51 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   694.54 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   694.40 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.02 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.23 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.19 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   694.76 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.77 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.24 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.76 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.63 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.18 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.11 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.98 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.32 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   694.67 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   693.71 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   694.45 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.24 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.73 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.56 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.58 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   695.93 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.73 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.18 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   696.89 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   731.22 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   746.65 sec.) 
+
+.... Optimization with PROTES method:
+DONE (   723.96 sec.) 
+
+
+===================== --------------------------------------
+[2023-04-10 22-39-53] Work is finished (70639.30 sec. total)
+
+
