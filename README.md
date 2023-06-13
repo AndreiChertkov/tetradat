@@ -3,7 +3,7 @@
 
 ## Description
 
-Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for generation of adversarial examples for artificial neural networks (ANNs) using tensor train (TT) decomposition and optimizers based on it, i.e., [TTOpt](https://github.com/AndreiChertkov/ttopt) and [PROTES](https://github.com/anabatsh/PROTES) optimizers.
+Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for generation of adversarial examples for artificial neural networks (ANNs) using tensor train (TT) decomposition and optimizer based on it, i.e., [PROTES](https://github.com/anabatsh/PROTES) optimizer.
 
 
 ## Installation
@@ -22,8 +22,9 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
 
 4. Install dependencies:
     ```bash
-    pip install jupyterlab "jax[cpu]==0.4.3" optax teneva==0.13.2 ttopt==0.5.0 protes==0.2.3 torch torchvision snntorch scikit-image matplotlib PyYAML nevergrad requests urllib3
+    pip install jupyterlab "jax[cpu]==0.4.6" optax teneva==0.14.1 ttopt==0.5.0 protes==0.3.1 torch torchvision snntorch scikit-image matplotlib nevergrad requests urllib3
     ```
+    > Run also `pip install git+https://github.com/jeromerony/adversarial-library`
 
 5. Delete virtual environment at the end of the work (optional):
     ```bash
@@ -37,11 +38,8 @@ Run `python manager.py ARGS`, then see the outputs in the terminal and results i
 
 > To run the code on the cluster, we used the `zhores_run.sh` bash script (in this case, the console output will be saved in a file `zhores_out.txt`).
 
-Supported combinations of the `manager.py` script arguments:
-
-- `python manager.py --data cifar10 --task check --kind data` TODO
-
 
 ## Authors
 
 - [Andrei Chertkov](https://github.com/AndreiChertkov)
+- [Ivan Oseledets](https://github.com/oseledets)
