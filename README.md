@@ -22,9 +22,8 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
 
 4. Install dependencies:
     ```bash
-    pip install jupyterlab "jax[cpu]==0.4.6" optax teneva==0.14.1 ttopt==0.5.0 protes==0.3.1 torch torchvision snntorch scikit-image matplotlib nevergrad requests urllib3
+    pip install jupyterlab "jax[cpu]==0.4.6" optax teneva==0.14.1 protes==0.3.1 torch torchvision matplotlib requests urllib3 foolbox==3.3.3
     ```
-    > Run also `pip install git+https://github.com/jeromerony/adversarial-library`
 
 5. Delete virtual environment at the end of the work (optional):
     ```bash
@@ -34,7 +33,13 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
 
 ## Usage
 
-Run `python manager.py ARGS`, then see the outputs in the terminal and results in the `result` folder. Before starting the new calculation, you can completely delete or rename the `result` folder. A new `result` folder will be created automatically in this case.
+Run `python manager.py ARGS`, then see the outputs in the terminal and results in the `result` folder. Before starting the new calculation, you can completely delete or rename the `result` folder. A new `result` folder will be created automatically in this case. The calls with the following `ARGS` may be performed:
+
+- `python manager.py --task check --kind data --data imagenet`
+
+- `python manager.py --task check --kind model --data imagenet --model alexnet`
+
+- `python manager.py --task check --kind model --data imagenet --model vgg19`
 
 > To run the code on the cluster, we used the `zhores_run.sh` bash script (in this case, the console output will be saved in a file `zhores_out.txt`).
 
