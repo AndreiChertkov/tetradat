@@ -10,12 +10,12 @@ import warnings
 warnings.filterwarnings('ignore', category=UserWarning)
 
 
-NAMES = ['alexnet', 'vgg16', 'vgg19']
+MODEL_NAMES = ['alexnet', 'vgg16', 'vgg19']
 
 
 class Model:
     def __init__(self, name, data, device='cpu'):
-        if not name in NAMES:
+        if not name in MODEL_NAMES:
             raise ValueError(f'Model name "{name}" is not supported')
         self.name = name
 

@@ -13,10 +13,13 @@ from data_opts import DATA_OPTS
 from utils import load_repo
 
 
+DATA_NAMES = list(DATA_OPTS.keys())
+
+
 class Data:
     def __init__(self, name, batch_trn=256, batch_tst=32,
                  norm_m=None, norm_v=None, root='result'):
-        if not name in DATA_OPTS.keys():
+        if not name in DATA_NAMES:
             raise ValueError(f'Dataset name "{name}" is not supported')
         self.name = name
         self.opts = DATA_OPTS[self.name]
