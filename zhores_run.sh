@@ -8,7 +8,7 @@
 # conda activate && conda remove --name tetradat --all -y
 # conda create --name tetradat python=3.8 -y
 # conda activate tetradat
-# pip install jupyterlab "jax[cpu]==0.4.6" optax teneva==0.14.1 ttopt==0.5.0 protes==0.3.1 torch torchvision snntorch scikit-image matplotlib nevergrad requests urllib3
+# pip install "jax[cpu]==0.4.6" optax teneva==0.14.1 protes==0.3.1 torch torchvision matplotlib requests urllib3 torchattacks==3.4.0
 
 
 # ---------------------------------
@@ -40,6 +40,9 @@ module load python/anaconda3
 module load gpu/cuda-12.0
 conda activate tetradat
 
-srun python3 manager.py
+srun python3 manager.py --task check --kind data --data imagenet
+srun python3 manager.py --task check --kind model --data imagenet --model alexnet
+srun python3 manager.py --task check --kind model --data imagenet --model vgg16
+srun python3 manager.py --task check --kind model --data imagenet --model vgg19
 
 exit 0

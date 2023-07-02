@@ -70,6 +70,7 @@ class Data:
 
         if fpath:
             anim.save(fpath, writer='pillow', fps=fps)
+
         plt.close(fig)
 
     def get(self, i=None, tst=False):
@@ -111,9 +112,11 @@ class Data:
 
         return text
 
-    def plot(self, x, title='', fpath=None, is_new=True):
-        return self.plot_base(self.tr_norm_inv(x), title,
-            self.opts['plot_size'], self.opts['plot_cmap'], fpath, is_new)
+    def plot(self, x, title='', fpath=None, is_new=True, do_tr=True):
+        x = self.tr_norm_inv(x) if do_tr else x
+        size = self.opts['plot_size']
+        cmap = self.opts['plot_cmap']
+        return self.plot_base(x, title, size, cmap, fpath, is_new)
 
     def plot_base(self, x, title, size=3, cmap='hot', fpath=None, is_new=True):
         if torch.is_tensor(x):
@@ -133,6 +136,8 @@ class Data:
             plt.savefig(fpath, bbox_inches='tight')
         elif is_new:
             plt.show()
+
+        if is_new:
             plt.close(fig)
 
     def plot_many(self, X=None, titles=None, cols=5, rows=5, size=3,
@@ -186,6 +191,9 @@ class Data:
             fpath = os.path.join(fpath, repo)
 
             class Dataset(torch.utils.data.Dataset):
+                # Special dataset class for the images from
+                # https://github.com/EliSchwartz/imagenet-sample-images.git
+                # repository.
                 def __init__(self, labels, transform):
                     self.transform = transform
                     self.files = []
@@ -238,6 +246,8 @@ class Data:
             torchvision.transforms.CenterCrop(self.sz),
         ])
 
+        self.tr_norm = lambda x: x
+        self.tr_norm_inv = lambda x: x
         if self.norm_m is not None and self.norm_v is not None:
             self.tr_norm = torchvision.transforms.Normalize(
                 self.norm_m, self.norm_v)
@@ -247,8 +257,5 @@ class Data:
                 torchvision.transforms.Normalize(
                     -np.array(self.norm_m), [1., 1., 1.]),
             ])
-        else:
-            self.tr_norm = lambda x: x
-            self.tr_norm_inv = lambda x: x
 
         self.tr = torchvision.transforms.Compose([self.tr_tens, self.tr_norm])

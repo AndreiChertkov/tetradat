@@ -22,10 +22,15 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
 
 4. Install dependencies:
     ```bash
-    pip install jupyterlab "jax[cpu]==0.4.6" optax teneva==0.14.1 protes==0.3.1 torch torchvision matplotlib requests urllib3 foolbox==3.3.3
+    pip install jupyterlab "jax[cpu]==0.4.6" optax teneva==0.14.1 protes==0.3.1 torch torchvision matplotlib requests urllib3
     ```
 
-5. Delete virtual environment at the end of the work (optional):
+5. Install dependencies for baselines:
+    ```bash
+    pip install torchattacks==3.4.0
+    ```
+
+6. Delete virtual environment at the end of the work (optional):
     ```bash
     conda activate && conda remove --name tetradat --all -y
     ```
@@ -33,13 +38,21 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
 
 ## Usage
 
-Run `python manager.py ARGS`, then see the outputs in the terminal and results in the `result` folder. Before starting the new calculation, you can completely delete or rename the `result` folder. A new `result` folder will be created automatically in this case. The calls with the following `ARGS` may be performed:
+Run `python manager.py ARGS`, then see the outputs in the terminal and results in the `result` folder. Before starting the new calculation, you can completely delete or rename the `result` folder; a new `result` folder will be created automatically in this case.
+
+The calls with the following `ARGS` may be performed:
 
 - `python manager.py --task check --kind data --data imagenet`
 
 - `python manager.py --task check --kind model --data imagenet --model alexnet`
 
+- `python manager.py --task check --kind model --data imagenet --model vgg16`
+
 - `python manager.py --task check --kind model --data imagenet --model vgg19`
+
+- `python manager.py --task attack --kind attr --data imagenet --model vgg19 --model_attr vgg16`
+
+- `python manager.py --task attack --kind bs1 --data imagenet --model vgg19`
 
 > To run the code on the cluster, we used the `zhores_run.sh` bash script (in this case, the console output will be saved in a file `zhores_out.txt`).
 

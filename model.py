@@ -10,7 +10,8 @@ import warnings
 warnings.filterwarnings('ignore', category=UserWarning)
 
 
-MODEL_NAMES = ['alexnet', 'vgg16', 'vgg19']
+MODEL_NAMES_IMAGENET = ['alexnet', 'vgg16', 'vgg19']
+MODEL_NAMES = MODEL_NAMES_IMAGENET
 
 
 class Model:
@@ -108,7 +109,7 @@ class Model:
     def load(self):
         self.net = None
 
-        if self.name in ['alexnet', 'vgg16', 'vgg19']:
+        if self.name in MODEL_NAMES_IMAGENET:
             if self.data.name != 'imagenet':
                 msg = f'Model "{self.name}" is ready only for "imagenet"'
                 raise NotImplementedError(msg)
@@ -117,6 +118,9 @@ class Model:
 
             self.net = torch.hub.load('pytorch/vision:v0.10.0', self.name,
                 weights=True)
+
+        else:
+            raise NotImplementedError('We work only with IMAGENET here')
 
         if self.net is not None:
             self.net.to(self.device)
