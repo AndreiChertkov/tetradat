@@ -140,9 +140,10 @@ class Data:
         if is_new:
             plt.close(fig)
 
-    def plot_many(self, X=None, titles=None, cols=5, rows=5, size=3,
-                  fpath=None):
+    def plot_many(self, X=None, titles=None, cols=4, rows=4, size=3,
+                  fpath=None, wspace=0.3, hspace=0.3):
         fig = plt.figure(figsize=(size*cols, size*rows))
+        plt.subplots_adjust(wspace=wspace, hspace=hspace)
 
         for j in range(1, cols * rows + 1):
             if X is None:
@@ -243,8 +244,7 @@ class Data:
 
         self.tr_size = torchvision.transforms.Compose([
             torchvision.transforms.Resize(self.sz),
-            torchvision.transforms.CenterCrop(self.sz),
-        ])
+            torchvision.transforms.CenterCrop(self.sz)])
 
         self.tr_norm = lambda x: x
         self.tr_norm_inv = lambda x: x

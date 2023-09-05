@@ -1,9 +1,7 @@
-from jax.config import config
-config.update('jax_enable_x64', True)
-
-
-import os
-os.environ['JAX_PLATFORM_NAME'] = 'cpu'
+import jax
+# jax.config.update('jax_enable_x64', True)
+jax.config.update('jax_platform_name', 'cpu')
+jax.default_device(jax.devices('cpu')[0])
 
 
 import numpy as np
