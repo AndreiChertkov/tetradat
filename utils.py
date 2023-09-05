@@ -50,11 +50,11 @@ def load_repo(url, fpath):
     print(prc)
 
 
-def sort_matrix(A, asc=True):
+def sort_matrix(A, rev=True):
     I = np.unravel_index(np.argsort(A, axis=None), A.shape)
     I = [(I[0][k], I[1][k]) for k in range(A.size)]
-    return I[::-1] if asc else I
+    return I[::-1] if rev else I
 
 
-def sort_vector(a, asc=True):
-    return sorted(zip(range(len(a)), a), key=lambda item: item[1], reverse=asc)
+def sort_vector(a, rev=True):
+    return sorted(zip(range(len(a)), a), key=lambda item: item[1], reverse=rev)
