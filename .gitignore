@@ -8,4 +8,4 @@
 .thumbs.db
 __pycache__/
 _tmp/
-result/_data
+result/
