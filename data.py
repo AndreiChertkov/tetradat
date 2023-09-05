@@ -129,7 +129,8 @@ class Data:
             fig = plt.figure(figsize=(size, size))
 
         plt.imshow(x, cmap=cmap)
-        plt.title(title, fontsize=9)
+        if title:
+            plt.title(title, fontsize=9)
         plt.axis('off')
 
         if fpath:
