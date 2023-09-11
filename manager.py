@@ -486,7 +486,7 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=10000,
+        default=100000,
     )
     parser.add_argument('--opt_k',
         type=int,
@@ -501,12 +501,12 @@ def args_build():
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=1,
+        default=100,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-2,
+        default=5.E-3,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -516,7 +516,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=5,
+        default=7,
     )
     parser.add_argument('--attr_steps',
         type=int,
