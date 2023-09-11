@@ -22,7 +22,7 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
 
 4. Install dependencies:
     ```bash
-    pip install jupyterlab teneva_opti==0.4.2 torch torchvision matplotlib requests urllib3
+    pip install teneva_opti==0.4.3 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3
     ```
     > In the case of problems with `scikit-learn`, uninstall it as `pip uninstall scikit-learn -y` and then install it from the anaconda: `conda install -c anaconda scikit-learn`.
 
