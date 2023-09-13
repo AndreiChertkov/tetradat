@@ -476,7 +476,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default=250,
+        default=500,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -491,12 +491,12 @@ def args_build():
     parser.add_argument('--opt_k',
         type=int,
         help='Batch size for optimization',
-        default=100,
+        default=50,
     )
     parser.add_argument('--opt_k_top',
         type=int,
         help='Number of selected candidates in the batch',
-        default=10,
+        default=5,
     )
     parser.add_argument('--opt_k_gd',
         type=int,
@@ -506,7 +506,7 @@ def args_build():
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-3,
+        default=1.E-3,
     )
     parser.add_argument('--opt_r',
         type=int,
