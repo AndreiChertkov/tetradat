@@ -3,7 +3,7 @@
 
 #SBATCH --job-name=tetradat
 #SBATCH --output=zhores_out.txt
-#SBATCH --time=4-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH --partition gpu
 #SBATCH --nodes=1
 #SBATCH --gpus=1
@@ -21,6 +21,8 @@
 # source activate tetradat
 # conda list
 # pip install teneva_opti==0.4.3 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113
+# pip install triton
+# conda list
 
 
 # ---------------------------------
@@ -33,12 +35,15 @@
 
 # ----------------
 # --- Main script:
-module purge
+module rm *
 module load python/anaconda3
 module load gpu/cuda-11.3
-conda activate tetradat
+# source activate tetradat
 
-srun conda list
+conda create --name tetradat python=3.8 -y
+source activate tetradat
+pip install teneva_opti==0.4.3 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install triton
 
 srun python3 manager.py --task check --kind data --data imagenet
 
