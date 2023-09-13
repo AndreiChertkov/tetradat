@@ -33,7 +33,7 @@
 
 # ----------------
 # --- Main script:
-module rm *
+module purge
 module load python/anaconda3
 module load gpu/cuda-11.3
 conda activate tetradat
