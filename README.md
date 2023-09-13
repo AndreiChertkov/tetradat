@@ -20,7 +20,7 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
     conda activate tetradat
     ```
 
-4. Install dependencies:
+4. Install dependencies (for cpu-run):
     ```bash
     pip install teneva_opti==0.4.3 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3
     ```
@@ -36,6 +36,8 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
     conda activate && conda remove --name tetradat --all -y
     ```
 
+
+conda remove --name /home/a.chertkov/.conda/tetradat --all -y
 
 ## Usage
 

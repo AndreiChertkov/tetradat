@@ -1,14 +1,26 @@
-#!/bin/bash -l
+#!/bin/bash
 
 
-# ------------------------------------
-# --- Install manually before the run:
+#SBATCH --job-name=tetradat
+#SBATCH --output=zhores_out.txt
+#SBATCH --time=4-00:00:00
+#SBATCH --partition gpu
+#SBATCH --nodes=1
+#SBATCH --gpus=1
+#SBATCH --mem=7000
 
+
+# -------------------------------
+# --- Do manually before the run:
+
+# module avail
 # module load python/anaconda3
+# conda info --envs
 # conda activate && conda remove --name tetradat --all -y
 # conda create --name tetradat python=3.8 -y
-# conda activate tetradat
-# pip install teneva_opti==0.4.3 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3 torchattacks==3.4.0
+# source activate tetradat
+# conda list
+# pip install teneva_opti==0.4.3 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113
 
 
 # ---------------------------------
@@ -19,26 +31,14 @@
 # Delete the task as "scancel NUMBER"
 
 
-# ------------
-# --- Options:
-
-#SBATCH --job-name=tetradat
-#SBATCH --nodes=1
-#SBATCH --gpus=1
-#SBATCH --time=3-00:00:00
-#SBATCH --partition gpu
-##SBATCH --mem-per-cpu=5000MB
-#SBATCH --mem=5GB
-#SBATCH --mail-type=ALL
-#SBATCH --output=zhores_out.txt
-
-
 # ----------------
 # --- Main script:
 module rm *
 module load python/anaconda3
 module load gpu/cuda-11.3
 conda activate tetradat
+
+srun conda list
 
 srun python3 manager.py --task check --kind data --data imagenet
 
