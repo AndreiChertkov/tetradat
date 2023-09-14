@@ -38,12 +38,7 @@
 module rm *
 module load python/anaconda3
 module load gpu/cuda-11.3
-# source activate tetradat
-
-conda create --name tetradat python=3.8 -y
-source activate tetradat
-pip install teneva_opti==0.4.3 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113
-pip install triton
+conda activate tetradat
 
 srun python3 manager.py --task check --kind data --data imagenet
 
