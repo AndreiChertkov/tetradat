@@ -486,7 +486,7 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=100000,
+        default=10000,
     )
     parser.add_argument('--opt_k',
         type=int,
@@ -501,12 +501,12 @@ def args_build():
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=100,
+        default=10,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=1.E-3,
+        default=1.E-2,
     )
     parser.add_argument('--opt_r',
         type=int,
