@@ -3,12 +3,12 @@
 
 ## Description
 
-Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for generation of adversarial examples for artificial neural networks (ANNs) using tensor train (TT) decomposition and optimizer based on it, i.e., [PROTES](https://github.com/anabatsh/PROTES) optimizer.
+Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for generation of adversarial examples for artificial neural networks (ANNs) from computer vision domain using tensor train (TT) decomposition and optimizer based on it, i.e., [PROTES](https://github.com/anabatsh/PROTES) optimizer.
 
 
 ## Installation
 
-1. Install [python](https://www.python.org) (version 3.8; you may use [anaconda](https://www.anaconda.com) package manager);
+1. Install [anaconda](https://www.anaconda.com) package manager with [python](https://www.python.org) (version 3.8);
 
 2. Create a virtual environment:
     ```bash
@@ -20,24 +20,22 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
     conda activate tetradat
     ```
 
-4. Install dependencies (for cpu-run):
-    ```bash
-    pip install teneva_opti==0.4.3 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3
-    ```
+4. Install dependencies:
+    - To run the code on CPU device:
+        ```bash
+        pip install teneva_opti==0.5.0 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3 torchattacks==3.4.0
+        ```
+    - To run the code on GPU device (we used zhores cluster, see `zhores_run.sh` script):
+        ```bash
+        pip install teneva_opti==0.5.0 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 && pip install triton
+        ```
     > In the case of problems with `scikit-learn`, uninstall it as `pip uninstall scikit-learn -y` and then install it from the anaconda: `conda install -c anaconda scikit-learn`.
 
-5. Install dependencies for baselines:
-    ```bash
-    pip install torchattacks==3.4.0
-    ```
-
-6. Delete virtual environment at the end of the work (optional):
+5. Delete virtual environment at the end of the work (optional):
     ```bash
     conda activate && conda remove --name tetradat --all -y
     ```
 
-
-conda remove --name /home/a.chertkov/.conda/tetradat --all -y
 
 ## Usage
 
@@ -67,7 +65,7 @@ The calls with the following `ARGS` may be performed:
 
 - `python manager.py --task attack --kind bs1 --data imagenet --model alexnet`
 
-> To run the code on the cluster, we used the `zhores_run.sh` bash script (in this case, the console output will be saved in a file `zhores_out.txt`).
+> To run the code on the GPU-cluster, we used the `zhores_run.sh` bash script (in this case, the console output will be saved in a file `zhores_out.txt`).
 
 
 ## Authors
