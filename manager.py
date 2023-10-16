@@ -211,9 +211,6 @@ class Manager:
                 self.opt_lr, self.opt_r, log=True)
             result[c] = att.result()
 
-            if i > 4:
-                break
-
             fpath = self.get_path('result.npz')
             np.savez_compressed(self.get_path('result.npz'), result=result)
 
