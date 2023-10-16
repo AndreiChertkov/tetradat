@@ -23,7 +23,7 @@ Software product `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) f
 4. Install dependencies:
     - To run the code on CPU device:
         ```bash
-        pip install teneva_opti==0.5.0 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3 torchattacks==3.4.0
+        pip install teneva_opti==0.5.1 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3 torchattacks==3.4.0
         ```
     - To run the code on GPU device (we used zhores cluster, see `zhores_run.sh` script):
         ```bash

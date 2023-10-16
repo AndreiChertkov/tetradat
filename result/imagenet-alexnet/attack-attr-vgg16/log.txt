@@ -1,0 +1,21 @@
+[2023-10-16 23-36-47] Computations (cpu)
+===================== ------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Model attr.         : "vgg16"
+Task                : "result"
+Kind of task        : "attr"
+========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (     0.50 sec.) 
+
+
+.... Loading "vgg16" model
+DONE (     1.08 sec.) 
+

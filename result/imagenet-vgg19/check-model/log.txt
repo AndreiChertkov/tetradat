@@ -1,0 +1,30 @@
+[2023-10-16 19-08-24] Computations (cpu)
+===================== ------------------
+Data                : "imagenet"
+Model               : "vgg19"
+Task                : "check"
+Kind of task        : "model"
+========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg19" model
+DONE (     1.16 sec.) 
+
+
+.... Check model accuracy
+Accuracy   tst : 81.25% (       26 /        32) | time =       4.16 sec
+
+DONE (     4.17 sec.) 
+
+.... Plot several model predictions
+DONE (     4.02 sec.) 
+
+
+===================== ----------------------------------
+[2023-10-16 19-08-33] Work is finished (9.34 sec. total)
+
+

@@ -3,7 +3,7 @@
 
 #SBATCH --job-name=tetradat
 #SBATCH --output=zhores_out.txt
-#SBATCH --time=4-00:00:00
+#SBATCH --time=3-00:00:00
 #SBATCH --partition gpu
 #SBATCH --nodes=1
 #SBATCH --gpus=1
@@ -20,8 +20,7 @@
 # conda create --name tetradat python=3.8 -y
 # conda activate tetradat
 # conda list
-# pip install teneva_opti==0.4.3 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113
-# pip install triton
+# pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 && pip install triton
 # conda list
 
 
@@ -40,11 +39,11 @@ module load python/anaconda3
 module load gpu/cuda-11.3
 source activate tetradat
 
-# srun python3 manager.py --task check --kind data --data imagenet
+srun python3 manager.py --task check --kind data --data imagenet
 
-# srun python3 manager.py --task check --kind model --data imagenet --model alexnet
-# srun python3 manager.py --task check --kind model --data imagenet --model vgg16
-# srun python3 manager.py --task check --kind model --data imagenet --model vgg19
+srun python3 manager.py --task check --kind model --data imagenet --model alexnet
+srun python3 manager.py --task check --kind model --data imagenet --model vgg16
+srun python3 manager.py --task check --kind model --data imagenet --model vgg19
 
 srun python3 manager.py --task attack --kind attr --data imagenet --model alexnet --model_attr vgg16
 srun python3 manager.py --task attack --kind attr --data imagenet --model alexnet --model_attr vgg19
