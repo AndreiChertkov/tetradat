@@ -192,50 +192,56 @@ class Data:
             repo = self.opts['repo'].split('.git')[0].split('/')[-1]
             fpath = os.path.join(fpath, repo)
 
+            # Below is the code to parse IMAGENET images from the repo:
+            # https://github.com/EliSchwartz/imagenet-sample-images.git
+
+            l_rep = {}
+
+            for f in os.listdir(fpath):
+                if not f.endswith('JPEG'):
+                    continue
+                l = ' '.join(f.split('.JPEG')[0].split('_')[1:])
+                l = l.lower().replace("'", '`')
+                c = None
+                is_found = False
+                for c_real, l_real in self.labels.items():
+                    if l == l_real.split(',')[0]:
+                        if is_found:
+                            l_rep[l] = 0
+                        else:
+                            if not l in l_rep or l_rep[l] == 1:
+                                c = c_real
+                                is_found = True
+                            else:
+                                l_rep[l] = 1
+                if c is None:
+                    raise ValueError
+
+                path_old = os.path.join(fpath, f)
+                path_new = os.path.join(fpath, f'{c}.jpg')
+                os.rename(path_old, path_new)
+
             class Dataset(torch.utils.data.Dataset):
-                # Special dataset class for the images from
-                # https://github.com/EliSchwartz/imagenet-sample-images.git
-                # repository.
-                def __init__(self, labels, transform):
+                def __init__(self, fpath, labels, transform):
+                    self.fpath = fpath
+                    self.labels = labels
                     self.transform = transform
-                    self.files = []
-                    self.classes = []
-                    l_rep = {}
-
-                    for f in os.listdir(fpath):
-                        if f.endswith('JPEG'):
-                            l = ' '.join(f.split('.JPEG')[0].split('_')[1:])
-                            l = l.lower().replace("'", '`')
-                            c = None
-                            is_found = False
-                            for c_real, l_real in labels.items():
-                                if l == l_real.split(',')[0]:
-                                    if is_found:
-                                        l_rep[l] = 0
-                                    else:
-                                        if not l in l_rep or l_rep[l] == 1:
-                                            c = c_real
-                                            is_found = True
-                                        else:
-                                            l_rep[l] = 1
-
-                            self.files.append(os.path.join(fpath, f))
-                            self.classes.append(c)
 
                 def __len__(self):
-                    return len(self.classes)
+                    return len(self.labels)
 
                 def __getitem__(self, i):
-                    x = torchvision.io.read_image(self.files[i])
+                    img_path = os.path.join(fpath, f'{i}.jpg')
+                    x = torchvision.io.read_image(img_path)
                     x = torchvision.transforms.ConvertImageDtype(
                         torch.float32)(x)
                     if x.shape[0] == 1:
                         x = x.expand(3, *x.shape[1:])
                     x = self.transform(x)
-                    return x, self.classes[i]
+                    return x, i
 
             tr = torchvision.transforms.Compose([self.tr_size, self.tr_norm])
-            self.data_tst = Dataset(self.labels, transform=tr)
+            self.data_tst = Dataset(fpath, self.labels, transform=tr)
 
             self.dataloader_tst = DataLoader(self.data_tst,
                 batch_size=self.batch_tst, shuffle=True)
