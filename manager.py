@@ -1,13 +1,9 @@
 import argparse
-import matplotlib.colors as mcolors
-import matplotlib.pyplot as plt
 import numpy as np
 import os
 import random
-import sys
 from time import perf_counter as tpc
 import torch
-import torchattacks
 
 
 from attack import AttackAttr
@@ -16,7 +12,6 @@ from data import Data
 from model import MODEL_NAMES
 from model import Model
 from utils import Log
-from utils import sort_vector
 
 
 class Manager:
@@ -63,6 +58,7 @@ class Manager:
         return fpath
 
     def load_data(self, log=True):
+        self.data = None
         name = self.data_name
 
         if name is None:
@@ -80,6 +76,7 @@ class Manager:
             self.log('')
 
     def load_model(self, log=True):
+        self.model = None
         name = self.model_name
 
         if name is None:
@@ -101,6 +98,7 @@ class Manager:
             self.log('')
 
     def load_model_attr(self, log=True):
+        self.model_attr = None
         name = self.model_attr_name
 
         if name is None:
@@ -147,7 +145,7 @@ class Manager:
         if self.kind:
             info += f'Kind of task        : "{self.kind}"\n'
 
-        if self.task == 'attack' and self.kind == 'attr':
+        if self.task in ['attack', 'result'] and self.kind == 'attr':
             if self.opt_sc:
                 info += f'Opt. scale          : {self.opt_sc}\n'
             if self.opt_d:
@@ -167,7 +165,8 @@ class Manager:
             if self.opt_r:
                 info += f'Opt. TT-rank        : {self.opt_r}\n'
 
-        self.log = Log(self.get_path(f'log.txt'))
+        fname = 'log_result.txt' if self.task == 'result' else 'log.txt'
+        self.log = Log(self.get_path(fname))
         self.log.title(f'Computations ({self.device})', info)
 
     def set_path(self, root='result'):
@@ -230,7 +229,39 @@ class Manager:
         for i in range(len(self.data.data_tst)):
             if not i in result:
                 continue
-            print(i, result[i])
+
+            x, c_real, l_real = self.data.get(i, tst=True)
+            y, c, l = self.model.run_pred(x)
+
+            x_new = x.detach().to('cpu').numpy().copy()
+            for p1, p2, dx in result[i]['changes']:
+                for ch in range(3):
+                    x_new[ch, p1, p2] += dx
+            x_new = torch.tensor(x_new, dtype=torch.float32)
+            y_new, c_new, l_new = self.model.run_pred(x_new)
+
+            dx = np.linalg.norm(np.array(x_new) - np.array(x))
+
+            if c != c_real:
+                raise ValueError('Invalid result')
+            if c_new != result[i]['c_new']:
+                raise ValueError('Invalid result')
+
+            text = f'Image  | c: {c:-4d} > {c_new:-4d} | '
+            text += f'y: {result[i]["y"]:-9.3e} > {result[i]["y_old"]:-9.3e} | '
+            text += f'y_new: {result[i]["y_new"]:-9.3e} | '
+            text += f'dx: {dx:-8.2e}'
+            text += f'\n        Class ini: {l[:40]}'
+            text += f'\n        Class new: {l_new[:40]}'
+            self.log(text)
+
+            x = self.data.tr_norm_inv(x)
+            fpath = f'image_ini/attack_c-{c}.png'
+            self.data.plot_base(x, '', size=6, fpath=self.get_path(fpath))
+
+            x_new = self.data.tr_norm_inv(x_new)
+            fpath = f'image_new/attack_c-{c}.png'
+            self.data.plot_base(x_new, '', size=6, fpath=self.get_path(fpath))
 
         succ = np.sum([r['success'] for r in result.values()])
         full = len(result.keys())
@@ -370,7 +401,7 @@ def args_build():
         default=5,
     )
     parser.add_argument('--opt_sc',
-        type=float,
+        type=int,
         help='Scale for the noize image',
         default=10,
     )

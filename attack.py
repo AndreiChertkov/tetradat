@@ -75,12 +75,14 @@ class Attack:
         self.y_new = None
         self.changes = []
         self.success = False
+        self.err = None
 
 class AttackAttr(Attack):
-    def __init__(self, model, x, c, l, sc=10, d=1000, n=3):
+    def __init__(self, model, x, c, l, sc=10, d=1000, n=3, eps_success=1.E-2):
         super().__init__(model, x, c, l, sc)
         self.d = d
         self.n = n
+        self.eps_success = eps_success
 
     def changes_build(self, i):
         i = np.array(i)
@@ -98,6 +100,8 @@ class AttackAttr(Attack):
 
     def result(self):
         return {
+            'm': self.m,
+            't': self.t,
             'c': self.c,
             'l': self.l,
             'y': self.y,
@@ -105,33 +109,30 @@ class AttackAttr(Attack):
             'c_new': self.c_new,
             'l_new': self.l_new,
             'y_new': self.y_new,
-            'm': self.m,
-            't': self.t,
             'changes': self.changes,
             'success': self.success}
 
     def run(self, m=1.E+4, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, log=True):
         _t = tpc()
-
         try:
             i, y = protes(self.target, self.d, self.n, m, k, k_top, k_gd, lr, r,
                 is_max=False, log=log)
         except Exception as e:
             pass
-
-        if not self.success:
-            self.changes = self.changes_build(i)
-
-        success = self.check_new()
-        if self.success != success:
-            raise ValueError('Strange error.')
-
         self.t += tpc() - _t
+
+        if self.success:
+            success = self.check_new()
+            if not success:
+                self.err = 'Success result check is failed'
+                self.success = False
+        else:
+            self.changes = self.changes_build(i)
 
     def target(self, I):
         changes_all = [self.changes_build(i) for i in I]
 
-        X_all = torch.tensor([self.change(changes) for changes in changes_all])
+        X_all = [self.change(changes) for changes in changes_all]
         X_all = torch.tensor(X_all, dtype=torch.float32)
 
         y_all = self.model.run(X_all).detach().to('cpu').numpy()
@@ -139,7 +140,7 @@ class AttackAttr(Attack):
 
         c_all = np.argmax(y_all, axis=1)
         for k, c in enumerate(c_all):
-            if c != self.c:
+            if c != self.c and y_all[k,c] - y_all[k,self.c] > self.eps_success:
                 self.changes = changes_all[k]
                 self.success = True
                 return
