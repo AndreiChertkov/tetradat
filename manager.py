@@ -206,6 +206,7 @@ class Manager:
                 continue
 
             att.prep(self.model_attr, self.attr_steps, self.attr_iters)
+            print(f'\n   ---> Attack # {i:-4d}')
             att.run(self.opt_m, self.opt_k, self.opt_k_top, self.opt_k_gd,
                 self.opt_lr, self.opt_r, log=True)
             result[c] = att.result()

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-#SBATCH --job-name=tet
-#SBATCH --output=zhores_out.txt
+#SBATCH --job-name=tet-6
+#SBATCH --output=zhores_out-6.txt
 #SBATCH --time=3-00:00:00
 #SBATCH --partition gpu
 #SBATCH --nodes=1
@@ -48,13 +48,13 @@ pip install triton
 #srun python3 manager.py --task check --kind model --data imagenet --model vgg16
 #srun python3 manager.py --task check --kind model --data imagenet --model vgg19
 
-srun python3 manager.py --task attack --kind attr --data imagenet --model alexnet --model_attr vgg16
-srun python3 manager.py --task attack --kind attr --data imagenet --model alexnet --model_attr vgg19
+#srun python3 manager.py --task attack --kind attr --data imagenet --model alexnet --model_attr vgg16
+#srun python3 manager.py --task attack --kind attr --data imagenet --model alexnet --model_attr vgg19
 
-srun python3 manager.py --task attack --kind attr --data imagenet --model vgg16 --model_attr alexnet
-srun python3 manager.py --task attack --kind attr --data imagenet --model vgg16 --model_attr vgg19
+#srun python3 manager.py --task attack --kind attr --data imagenet --model vgg16 --model_attr alexnet
+#srun python3 manager.py --task attack --kind attr --data imagenet --model vgg16 --model_attr vgg19
 
-srun python3 manager.py --task attack --kind attr --data imagenet --model vgg19 --model_attr alexnet
+#srun python3 manager.py --task attack --kind attr --data imagenet --model vgg19 --model_attr alexnet
 srun python3 manager.py --task attack --kind attr --data imagenet --model vgg19 --model_attr vgg16
 
 exit 0
