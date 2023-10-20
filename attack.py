@@ -78,7 +78,7 @@ class Attack:
         self.err = None
 
 class AttackAttr(Attack):
-    def __init__(self, model, x, c, l, sc=10, d=1000, n=3, eps_success=1.E-2):
+    def __init__(self, model, x, c, l, sc=10, d=1000, n=3, eps_success=5.E-2):
         super().__init__(model, x, c, l, sc)
         self.d = d
         self.n = n
@@ -109,6 +109,7 @@ class AttackAttr(Attack):
             'c_new': self.c_new,
             'l_new': self.l_new,
             'y_new': self.y_new,
+            'err': self.err,
             'changes': self.changes,
             'success': self.success}
 

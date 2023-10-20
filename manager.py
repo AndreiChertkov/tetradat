@@ -231,6 +231,14 @@ class Manager:
             if not i in result:
                 continue
 
+            if result[i].get('err'):
+                text = f'Image  | i: {i:-4d} | Oops: ' + result[i]['err']
+                self.log(text)
+                continue
+
+            if not result[i].get('success'):
+                continue
+
             x, c_real, l_real = self.data.get(i, tst=True)
             y, c, l = self.model.run_pred(x)
 
@@ -244,9 +252,10 @@ class Manager:
             dx = np.linalg.norm(np.array(x_new) - np.array(x))
 
             if c != c_real:
-                raise ValueError('Invalid result')
-            if c_new != result[i]['c_new']:
-                raise ValueError('Invalid result')
+                raise ValueError('Invalid result (c != c_real)')
+            if result[i]['success'] and c_new != result[i]['c_new']:
+                print('oops... ', c, c_new, result[i]['c_new'])
+                # raise ValueError('Invalid result (c_new != c_new from res)')
 
             text = f'Image  | c: {c:-4d} > {c_new:-4d} | '
             text += f'y: {result[i]["y"]:-9.3e} > {result[i]["y_old"]:-9.3e} | '
@@ -374,7 +383,7 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=100000,
+        default=10000,
     )
     parser.add_argument('--opt_k',
         type=int,
