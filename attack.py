@@ -77,8 +77,24 @@ class Attack:
         self.success = False
         self.err = None
 
+    def result(self):
+        return {
+            'm': self.m,
+            't': self.t,
+            'c': self.c,
+            'l': self.l,
+            'y': self.y,
+            'y_old': self.y_old,
+            'c_new': self.c_new,
+            'l_new': self.l_new,
+            'y_new': self.y_new,
+            'changes': self.changes,
+            'success': self.success,
+            'err': self.err}
+
+
 class AttackAttr(Attack):
-    def __init__(self, model, x, c, l, sc=10, d=1000, n=3, eps_success=5.E-2):
+    def __init__(self, model, x, c, l, sc=10, d=1000, n=3, eps_success=1.E-3):
         super().__init__(model, x, c, l, sc)
         self.d = d
         self.n = n
@@ -98,21 +114,6 @@ class AttackAttr(Attack):
         self.pixels = sort_matrix(self.x_attr)[:self.d]
         self.t += tpc() - _t
 
-    def result(self):
-        return {
-            'm': self.m,
-            't': self.t,
-            'c': self.c,
-            'l': self.l,
-            'y': self.y,
-            'y_old': self.y_old,
-            'c_new': self.c_new,
-            'l_new': self.l_new,
-            'y_new': self.y_new,
-            'err': self.err,
-            'changes': self.changes,
-            'success': self.success}
-
     def run(self, m=1.E+4, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, log=True):
         _t = tpc()
         try:
@@ -127,8 +128,6 @@ class AttackAttr(Attack):
             if not success:
                 self.err = 'Success result check is failed'
                 self.success = False
-        else:
-            self.changes = self.changes_build(i)
 
     def target(self, I):
         changes_all = [self.changes_build(i) for i in I]

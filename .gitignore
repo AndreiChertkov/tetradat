@@ -11,4 +11,5 @@ _tmp/
 result/_data
 old.py
 _.md
-result_tmp
+result_tmp*
+result_new*
