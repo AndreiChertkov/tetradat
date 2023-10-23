@@ -9,6 +9,7 @@ import torch
 
 
 from attack import AttackAttr
+from attack import AttackBs
 from data import DATA_NAMES
 from data import Data
 from model import MODEL_NAMES
@@ -202,107 +203,51 @@ class Manager:
     def task_attack_attr(self):
         tm = self.log.prc(f'Start attack on images')
         result = {}
-
         for i in range(len(self.data.data_tst)):
-            x, c, l = self.data.get(i, tst=True)
-
-            att = AttackAttr(self.model, x, c, l,
-                self.opt_sc, self.opt_d, self.opt_n)
-            if not att.check():
-                continue
-
-            att.prep(self.model_attr, self.attr_steps, self.attr_iters)
-
-            print(f'\n   ---> Attack # {i:-5d}')
-            att.run(self.opt_m, self.opt_k, self.opt_k_top, self.opt_k_gd,
-                self.opt_lr, self.opt_r, log=True)
-            result[i] = att.result()
-
-            fpath = self.get_path('result.npz')
-            np.savez_compressed(self.get_path('result.npz'), result=result)
-
-        succ = np.sum([r['success'] for r in result.values()])
-        full = len(result.keys())
-        text = 'Completed. '
-        text += f'Successful: {succ/full*100:-5.2f}% '
-        text += f'(total images {full})'
-        self.log('\n' + text)
-
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+            result[i] = self._attack_attr(i)
+        self._attack_end(result)
         self.log.res(tpc()-tm)
 
-    def task_result_attr(self):
-        fpath = self.get_path('result.npz')
-        result = np.load(fpath, allow_pickle=True).get('result').item()
+    def task_attack_bs_onepixel(self):
+        tm = self.log.prc(f'Start attack on images with baseline "onepixel"')
+        result = {}
+        for i in range(len(self.data.data_tst)):
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+            result[i] = self._attack_bs(i, 'onepixel')
+            if i in RESULT_SHOW:
+                self._attack_show(result[i])
 
-        for i in RESULT_SHOW:
-            r = result.get(i)
-            if r is None or r.get('err') or not r.get('success'):
-                continue
+        self._attack_end(result)
+        self.log.res(tpc()-tm)
 
-            x, c_real, l_real = self.data.get(i, tst=True)
-            y, c, l = self.model.run_pred(x)
+    def task_attack_bs_pixle(self):
+        tm = self.log.prc(f'Start attack on images with baseline "pixle"')
+        result = {}
+        for i in range(len(self.data.data_tst)):
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+            result[i] = self._attack_bs(i, 'pixle')
+            if i in RESULT_SHOW:
+                self._attack_show(result[i])
 
-            x_new = x.detach().to('cpu').numpy().copy()
-            for p1, p2, dx in result[i]['changes']:
-                for ch in range(3):
-                    x_new[ch, p1, p2] += dx
-            x_new = torch.tensor(x_new, dtype=torch.float32)
-            delta = np.linalg.norm(np.array(x_new) - np.array(x))
-            y_new, c_new, l_new = self.model.run_pred(x_new)
+        self._attack_end(result)
+        self.log.res(tpc()-tm)
 
-            text = f'----> c: {c:-4d} > {c_new:-4d} | '
-            text += f'y: {r["y"]:-9.3e} > {r["y_old"]:-9.3e} | '
-            text += f'y_new: {r["y_new"]:-9.3e} | '
-            text += f'\n        dx: {delta:-8.2e} | num: {len(r["changes"])}'
-            text += f'\n        Class ini: {l[:40]}'
-            text += f'\n        Class new: {l_new[:40]}'
-            self.log(text)
+    def task_attack_bs_square(self):
+        tm = self.log.prc(f'Start attack on images with baseline "square"')
+        result = {}
+        for i in range(len(self.data.data_tst)):
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+            result[i] = self._attack_bs(i, 'square')
+            if i in RESULT_SHOW:
+                self._attack_show(result[i])
 
-            x = self.data.tr_norm_inv(x)
-            fpath = f'img/{c}/base.png'
-            self.data.plot_base(x, '', size=6, fpath=self.get_path(fpath))
-
-            x_new = self.data.tr_norm_inv(x_new)
-            fpath = f'img/{c}/changed.png'
-            self.data.plot_base(x_new, '', size=6, fpath=self.get_path(fpath))
-
-            def draw_attr(x, fpath):
-                x = torch.tensor(x) if not torch.is_tensor(x) else x
-                x = x.detach().to('cpu').squeeze().numpy()
-                x = np.clip(x, 0, 1) if np.mean(x) < 2 else np.clip(x, 0, 255)
-
-                fig = plt.figure(figsize=(12, 12))
-                plt.imshow(x)
-                plt.axis('off')
-                plt.savefig(self.get_path(fpath), bbox_inches='tight')
-                plt.close(fig)
-
-            def draw_changes(z, fpath):
-                cmap = mcolors.ListedColormap(['white', 'black', 'red'])
-                fig = plt.figure(figsize=(12, 12))
-                plt.imshow(z, cmap=cmap)
-                plt.axis('off')
-                plt.gca().set_facecolor('black')
-                plt.savefig(self.get_path(fpath), bbox_inches='tight')
-                plt.close(fig)
-
-            x_attr = self.model_attr.attrib(x, c,
-                self.attr_steps, self.attr_iters)
-            draw_attr(x_attr, f'img/{c}/attr.png')
-
-            x_attr_old = self.model_attr.attrib(x_new, c,
-                self.attr_steps, self.attr_iters)
-            draw_attr(x_attr_old, f'img/{c}/attr_old.png')
-
-            x_attr_new = self.model_attr.attrib(x_new, c_new,
-                self.attr_steps, self.attr_iters)
-            draw_attr(x_attr_new, f'img/{c}/attr_new.png')
-
-            x_changes = (x_new - x)[0]
-            draw_changes(x_changes, f'img/{c}/changes.png')
-
-    def task_attack_bs1(self):
-        raise NotImplementedError
+        self._attack_end(result)
+        self.log.res(tpc()-tm)
 
     def task_check_data(self):
         name = self.data.name
@@ -355,6 +300,127 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
+    def task_result_attr(self):
+        fpath = self.get_path('result.npz')
+        result = np.load(fpath, allow_pickle=True).get('result').item()
+
+        for i in RESULT_SHOW:
+            r = result.get(i)
+
+            x, x_new, c, c_new = self._attack_show(r)
+            if x is None:
+                continue
+
+            def draw_attr(x, fpath):
+                x = torch.tensor(x) if not torch.is_tensor(x) else x
+                x = x.detach().to('cpu').squeeze().numpy()
+                x = np.clip(x, 0, 1) if np.mean(x) < 2 else np.clip(x, 0, 255)
+
+                fig = plt.figure(figsize=(12, 12))
+                plt.imshow(x)
+                plt.axis('off')
+                plt.savefig(self.get_path(fpath), bbox_inches='tight')
+                plt.close(fig)
+
+            def draw_changes(z, fpath):
+                cmap = mcolors.ListedColormap(['white', 'black', 'red'])
+                fig = plt.figure(figsize=(12, 12))
+                plt.imshow(z, cmap=cmap)
+                plt.axis('off')
+                plt.gca().set_facecolor('black')
+                plt.savefig(self.get_path(fpath), bbox_inches='tight')
+                plt.close(fig)
+
+            x_attr = self.model_attr.attrib(x, c,
+                self.attr_steps, self.attr_iters)
+            draw_attr(x_attr, f'img/{c}/attr.png')
+
+            x_attr_old = self.model_attr.attrib(x_new, c,
+                self.attr_steps, self.attr_iters)
+            draw_attr(x_attr_old, f'img/{c}/attr_old.png')
+
+            x_attr_new = self.model_attr.attrib(x_new, c_new,
+                self.attr_steps, self.attr_iters)
+            draw_attr(x_attr_new, f'img/{c}/attr_new.png')
+
+            x_changes = (x_new - x)[0]
+            draw_changes(x_changes, f'img/{c}/changes.png')
+
+    def _attack_attr(self, i):
+        x, c, l = self.data.get(i, tst=True)
+
+        att = AttackAttr(self.model, x, c, l,
+            self.opt_sc, self.opt_d, self.opt_n)
+        if not att.check():
+            return
+
+        att.prep(self.model_attr, self.attr_steps, self.attr_iters)
+
+        print(f'\n   ---> Attack # {i:-5d}')
+        att.run(self.opt_m, self.opt_k, self.opt_k_top, self.opt_k_gd,
+            self.opt_lr, self.opt_r, log=True)
+
+        return att.result()
+
+    def _attack_bs(self, i, name):
+        x, c, l = self.data.get(i, tst=True)
+
+        att = AttackBs(self.model, x, c, l, self.opt_sc)
+        if not att.check():
+            return
+
+        att.prep(name)
+
+        print(f'\n   ---> Attack # {i:-5d}')
+        att.run()
+
+        return att.result()
+
+    def _attack_end(self, result):
+        fpath = self.get_path('result.npz')
+        np.savez_compressed(self.get_path('result.npz'), result=result)
+
+        succ = np.sum([r['success'] for r in result.values()])
+        full = len(result.keys())
+        text = 'Completed. '
+        text += f'Successful: {succ/full*100:-5.2f}% '
+        text += f'(total images {full})'
+        self.log('\n' + text)
+
+    def _attack_show(self, r):
+        if r is None or r.get('err') or not r.get('success'):
+            return None, None, None, None
+
+        x, c_real, l_real = self.data.get(r['c'], tst=True) # TODO: check
+        y, c, l = self.model.run_pred(x)
+
+        x_new = x.detach().to('cpu').numpy().copy()
+        for p1, p2, dx in r['changes']:
+            for ch in range(3):
+                _dx = dx if isinstance(dx, (int, float)) else dx[ch]
+                x_new[ch, p1, p2] += _dx
+        x_new = torch.tensor(x_new, dtype=torch.float32)
+        delta = np.linalg.norm(np.array(x_new) - np.array(x))
+        y_new, c_new, l_new = self.model.run_pred(x_new)
+
+        text = f'----> c: {c:-4d} > {c_new:-4d} | '
+        text += f'y: {r["y"]:-9.3e} > {r["y_old"]:-9.3e} | '
+        text += f'y_new: {r["y_new"]:-9.3e} | '
+        text += f'\n        dx: {delta:-8.2e} | num: {len(r["changes"])}'
+        text += f'\n        Class ini: {l[:40]}'
+        text += f'\n        Class new: {l_new[:40]}'
+        self.log(text)
+
+        x = self.data.tr_norm_inv(x)
+        fpath = f'img/{c}/base.png'
+        self.data.plot_base(x, '', size=6, fpath=self.get_path(fpath))
+
+        x_new = self.data.tr_norm_inv(x_new)
+        fpath = f'img/{c}/changed.png'
+        self.data.plot_base(x_new, '', size=6, fpath=self.get_path(fpath))
+
+        return x, x_new, c, c_new
+
 
 def args_build():
     parser = argparse.ArgumentParser(
@@ -390,7 +456,8 @@ def args_build():
         type=str,
         help='Kind of the task',
         default='attr',
-        choices=['data', 'model', 'attr', 'bs1']
+        choices=['data', 'model', 'attr',
+            'bs_square', 'bs_onepixel', 'bs_pixle']
     )
     parser.add_argument('--opt_d',
         type=int,

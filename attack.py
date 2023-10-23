@@ -55,8 +55,11 @@ class Attack:
         self.y, c, l = self.model.run_pred(self.x)
         return c == self.c
 
-    def check_new(self):
-        self.x_new = self.change(self.changes)
+    def check_new(self, x_new=None):
+        if x_new is None:
+            self.x_new = self.change(self.changes)
+        else:
+            self.x_new = x_new
         self.x_new = torch.tensor(self.x_new, dtype=torch.float32)
 
         self.y_old = float(self.model.run(self.x_new)[self.c])
@@ -146,3 +149,42 @@ class AttackAttr(Attack):
                 return
 
         return y_all[:, self.c]
+
+
+class AttackBs(Attack):
+    def __init__(self, model, x, c, l, sc=10):
+        super().__init__(model, x, c, l, sc)
+
+    def prep(self, name, seed=42):
+        if name == 'square':
+            self.atk = torchattacks.Square(self.model.net, seed=seed, eps=2/255)
+        elif name == 'onepixel':
+            self.atk = torchattacks.OnePixel(self.model.net, pixels=100)
+        elif name == 'pixle':
+            self.atk = torchattacks.Pixle(self.model.net)
+        else:
+            raise NotImplementedError(f'Baseline "{name}" is not supported')
+
+        self.name = name
+        self.atk.set_normalization_used(
+            mean=self.model.data.norm_m, std=self.model.data.norm_v)
+
+    def run(self, log=True):
+        x_ = torch.unsqueeze(self.x, dim=0)
+        c_ = torch.tensor([self.c])
+        x_new = self.atk(x_, c_)[0]
+
+        self.changes = []
+        for i in range(self.x.shape[1]):
+            for j in range(self.x.shape[2]):
+                change = np.zeros(self.x.shape[0])
+                for ch in range(self.x.shape[0]):
+                    change[ch] = x_new[ch, i, j] - self.x[ch, i, j]
+                if np.max(np.abs(change)) > 1.E-16:
+                    self.changes.append([i, j, change])
+
+        self.success = self.check_new(x_new)
+
+        if log:
+            text = f'Img {self.c:-5d} | ' + ('OK' if self.success else 'fail')
+            print(text)
