@@ -177,7 +177,7 @@ class AttackBs(Attack):
                 for ch in range(self.x.shape[0]):
                     change[ch] = x_new[ch, p1, p2] - self.x[ch, p1, p2]
                 if np.max(np.abs(change)) > 1.E-16:
-                    self.changes.append([i, j, change])
+                    self.changes.append([p1, p2, change])
 
         self.success = self.check_new(x_new)
 

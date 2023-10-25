@@ -456,12 +456,12 @@ def args_build():
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=2, # 10
+        default=15,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=2, # 10
+        default=15,
     )
     parser.add_argument('--attack_num_max',
         type=int,
