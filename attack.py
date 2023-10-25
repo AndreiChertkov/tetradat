@@ -1,5 +1,5 @@
 import jax
-# jax.config.update('jax_enable_x64', True)
+jax.config.update('jax_enable_x64', True)
 jax.config.update('jax_platform_name', 'cpu')
 jax.default_device(jax.devices('cpu')[0])
 
@@ -45,11 +45,7 @@ class Attack:
         return self.x.detach().to('cpu').numpy()
 
     def change(self, changes):
-        x = self.x_np.copy()
-        for p1, p2, dx in changes:
-            for ch in range(3):
-                x[ch, p1, p2] += dx if isinstance(dx, (int, float)) else dx[ch]
-        return x
+        return change(self.x_np, changes)
 
     def check(self):
         self.y, c, l = self.model.run_pred(self.x)
@@ -68,15 +64,15 @@ class Attack:
         return self.c_new != self.c
 
     def init(self):
-        self.m = 0
-        self.t = 0.
-        self.y = None
-        self.y_old = None
-        self.x_new = None
-        self.c_new = None
-        self.l_new = None
-        self.y_new = None
-        self.changes = []
+        self.m = 0         # Number of model calls
+        self.t = 0.        # Computation time
+        self.y = None      # Prob of correct class on original image
+        self.y_old = None  # Prob of correct class on updated image
+        self.x_new = None  # Updated image (after attack)
+        self.c_new = None  # New class
+        self.l_new = None  # New label related to the new class
+        self.y_new = None  # Prob (maximum) on updated image
+        self.changes = []  # List of changed pixels
         self.success = False
         self.err = None
 
@@ -97,7 +93,7 @@ class Attack:
 
 
 class AttackAttr(Attack):
-    def __init__(self, model, x, c, l, sc=10, d=1000, n=3, eps_success=1.E-3):
+    def __init__(self, model, x, c, l, sc=10, d=500, n=3, eps_success=1.E-4):
         super().__init__(model, x, c, l, sc)
         self.d = d
         self.n = n
@@ -111,7 +107,7 @@ class AttackAttr(Attack):
             changes.append([self.pixels[k][0], self.pixels[k][1], x[k]])
         return changes
 
-    def prep(self, model_attr, attr_steps=10, attr_iters=10):
+    def prep(self, model_attr, attr_steps=15, attr_iters=15):
         _t = tpc()
         self.x_attr = model_attr.attrib(self.x, self.c, attr_steps, attr_iters)
         self.pixels = sort_matrix(self.x_attr)[:self.d]
@@ -156,12 +152,12 @@ class AttackBs(Attack):
         super().__init__(model, x, c, l, sc)
 
     def prep(self, name, seed=42):
-        if name == 'square':
-            self.atk = torchattacks.Square(self.model.net, seed=seed, eps=2/255)
-        elif name == 'onepixel':
+        if name == 'onepixel':
             self.atk = torchattacks.OnePixel(self.model.net, pixels=100)
         elif name == 'pixle':
             self.atk = torchattacks.Pixle(self.model.net)
+        if name == 'square':
+            self.atk = torchattacks.Square(self.model.net, seed=seed)
         else:
             raise NotImplementedError(f'Baseline "{name}" is not supported')
 
@@ -175,11 +171,11 @@ class AttackBs(Attack):
         x_new = self.atk(x_, c_)[0]
 
         self.changes = []
-        for i in range(self.x.shape[1]):
-            for j in range(self.x.shape[2]):
+        for p1 in range(self.x.shape[1]):
+            for p2 in range(self.x.shape[2]):
                 change = np.zeros(self.x.shape[0])
                 for ch in range(self.x.shape[0]):
-                    change[ch] = x_new[ch, i, j] - self.x[ch, i, j]
+                    change[ch] = x_new[ch, p1, p2] - self.x[ch, p1, p2]
                 if np.max(np.abs(change)) > 1.E-16:
                     self.changes.append([i, j, change])
 
@@ -188,3 +184,13 @@ class AttackBs(Attack):
         if log:
             text = f'Img {self.c:-5d} | ' + ('OK' if self.success else 'fail')
             print(text)
+
+
+def change(x, changes, to_torch=False):
+    x = x.copy()
+    for p1, p2, dx in changes:
+        for ch in range(3):
+            x[ch, p1, p2] += dx if isinstance(dx, (int, float)) else dx[ch]
+    if to_torch:
+        x = torch.tensor(x, dtype=torch.float32)
+    return x

@@ -1,5 +1,6 @@
 from PIL import Image
 from matplotlib.animation import FuncAnimation
+import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -118,6 +119,21 @@ class Data:
         cmap = self.opts['plot_cmap']
         return self.plot_base(x, title, size, cmap, fpath, is_new)
 
+    def plot_attr(self, x, fpath=None):
+        x = torch.tensor(x) if not torch.is_tensor(x) else x
+        x = x.detach().to('cpu').squeeze().numpy()
+        x = np.clip(x, 0, 1) if np.mean(x) < 2 else np.clip(x, 0, 255)
+
+        fig = plt.figure(figsize=(12, 12))
+        plt.imshow(x)
+        plt.axis('off')
+
+        if fpath:
+            plt.savefig(fpath, bbox_inches='tight')
+            plt.close(fig)
+        else:
+            plt.show()
+
     def plot_base(self, x, title, size=3, cmap='hot', fpath=None, is_new=True):
         if torch.is_tensor(x):
             x = x.detach().to('cpu').squeeze().numpy()
@@ -140,6 +156,18 @@ class Data:
 
         if is_new:
             plt.close(fig)
+
+    def plot_changes(self, x, fpath=None):
+        fig = plt.figure(figsize=(12, 12))
+        plt.imshow(x, cmap=mcolors.ListedColormap(['white', 'black', 'red']))
+        plt.axis('off')
+        plt.gca().set_facecolor('black')
+
+        if fpath:
+            plt.savefig(fpath, bbox_inches='tight')
+            plt.close(fig)
+        else:
+            plt.show()
 
     def plot_many(self, X=None, titles=None, cols=4, rows=4, size=3,
                   fpath=None, wspace=0.3, hspace=0.3):

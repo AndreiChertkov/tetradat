@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def show(model, model_attr=None, sc=None, bs=None):
     fpath = f'result/imagenet-{model}/attack-'
     if bs is None:
@@ -8,6 +9,10 @@ def show(model, model_attr=None, sc=None, bs=None):
         fpath += f'bs_{bs}'
     fpath += f'/result.npz'
     result = np.load(fpath, allow_pickle=True).get('result').item()
+
+    for r in result.values():
+        if r['err']:
+            print(f'!!! Error for {r["c"]} :', r['err'])
 
     succ = np.sum([r['success'] for r in result.values() if r])
     full = len(result.keys())
@@ -23,12 +28,17 @@ def show(model, model_attr=None, sc=None, bs=None):
     print(text)
 
 
-for model in ['alexnet', 'vgg16', 'vgg19']:
-    print()
-    for bs in ['onepixel', 'pixle']: #, 'square']:
-        show(model, bs=bs)
-    for model_attr in ['alexnet', 'vgg16', 'vgg19']:
-        if model == model_attr:
-            continue
-        for sc in [6, 8, 10]:
-            show(model, model_attr, sc)
+def run():
+    for model in ['alexnet', 'vgg16', 'vgg19']:
+        print()
+        for bs in ['onepixel', 'pixle', 'square']:
+            show(model, bs=bs)
+        for model_attr in ['alexnet', 'vgg16', 'vgg19']:
+            if model == model_attr:
+                continue
+            for sc in [6, 8, 10]:
+                show(model, model_attr, sc)
+
+
+if __name__ == '__main__':
+    run()

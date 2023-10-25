@@ -11,6 +11,7 @@ _tmp/
 result/_data
 old.py
 _.md
+result_base
 result_tmp*
 result_new*
 result

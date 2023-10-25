@@ -1,6 +1,4 @@
 import argparse
-import matplotlib.colors as mcolors
-import matplotlib.pyplot as plt
 import numpy as np
 import os
 import random
@@ -10,6 +8,7 @@ import torch
 
 from attack import AttackAttr
 from attack import AttackBs
+from attack import change
 from data import DATA_NAMES
 from data import Data
 from model import MODEL_NAMES
@@ -17,8 +16,8 @@ from model import Model
 from utils import Log
 
 
-RESULT_SHOW = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-    42, 99, 142, 200, 254, 300, 350, 432, 500, 583, 639, 831, 894, 922, 999]
+RESULT_SHOW = [0, 1, 2, 5, 8, 12, 13, 15, 42, 99, 142, 200, 254, 300, 350,
+    432, 500, 583, 639, 894, 922, 999]
 
 
 class Manager:
@@ -152,7 +151,7 @@ class Manager:
         if self.kind:
             info += f'Kind of task        : "{self.kind}"\n'
 
-        if self.task in ['attack', 'result'] and self.kind == 'attr':
+        if self.task == 'attack' and self.kind == 'attr':
             if self.opt_sc:
                 info += f'Opt. scale          : {self.opt_sc}\n'
             if self.opt_d:
@@ -172,8 +171,7 @@ class Manager:
             if self.opt_r:
                 info += f'Opt. TT-rank        : {self.opt_r}\n'
 
-        fname = 'log_result.txt' if self.task == 'result' else 'log.txt'
-        self.log = Log(self.get_path(fname))
+        self.log = Log(self.get_path('log.txt'))
         self.log.title(f'Computations ({self.device})', info)
 
     def set_path(self, root='result'):
@@ -181,13 +179,12 @@ class Manager:
         if self.model_name:
             fbase += f'-{self.model_name}'
 
-        task = 'attack' if self.task == 'result' else self.task
-        ftask = f'{task}-{self.kind}'
+        ftask = f'{self.task}-{self.kind}'
 
         if self.model_attr_name:
             ftask += f'-{self.model_attr_name}'
 
-        if self.task in ['attack', 'result'] and self.kind == 'attr':
+        if self.task == 'attack' and self.kind == 'attr':
             ftask += f'-sc{self.opt_sc}'
 
         self.path = os.path.join(root, fbase, ftask)
@@ -201,53 +198,16 @@ class Manager:
         torch.manual_seed(seed)
 
     def task_attack_attr(self):
-        tm = self.log.prc(f'Start attack on images')
-        result = {}
-        for i in range(len(self.data.data_tst)):
-            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
-                break
-            result[i] = self._attack_attr(i)
-        self._attack_end(result)
-        self.log.res(tpc()-tm)
+        self._task_attack()
 
     def task_attack_bs_onepixel(self):
-        tm = self.log.prc(f'Start attack on images with baseline "onepixel"')
-        result = {}
-        for i in range(len(self.data.data_tst)):
-            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
-                break
-            result[i] = self._attack_bs(i, 'onepixel')
-            if i in RESULT_SHOW:
-                self._attack_show(result[i])
-
-        self._attack_end(result)
-        self.log.res(tpc()-tm)
+        self._task_attack('onepixel')
 
     def task_attack_bs_pixle(self):
-        tm = self.log.prc(f'Start attack on images with baseline "pixle"')
-        result = {}
-        for i in range(len(self.data.data_tst)):
-            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
-                break
-            result[i] = self._attack_bs(i, 'pixle')
-            if i in RESULT_SHOW:
-                self._attack_show(result[i])
-
-        self._attack_end(result)
-        self.log.res(tpc()-tm)
+        self._task_attack('pixle')
 
     def task_attack_bs_square(self):
-        tm = self.log.prc(f'Start attack on images with baseline "square"')
-        result = {}
-        for i in range(len(self.data.data_tst)):
-            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
-                break
-            result[i] = self._attack_bs(i, 'square')
-            if i in RESULT_SHOW:
-                self._attack_show(result[i])
-
-        self._attack_end(result)
-        self.log.res(tpc()-tm)
+        self._task_attack('square')
 
     def task_check_data(self):
         name = self.data.name
@@ -300,58 +260,12 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
-    def task_result_attr(self):
-        fpath = self.get_path('result.npz')
-        result = np.load(fpath, allow_pickle=True).get('result').item()
-
-        for i in RESULT_SHOW:
-            r = result.get(i)
-
-            x, x_new, c, c_new = self._attack_show(r)
-            if x is None:
-                continue
-
-            def draw_attr(x, fpath):
-                x = torch.tensor(x) if not torch.is_tensor(x) else x
-                x = x.detach().to('cpu').squeeze().numpy()
-                x = np.clip(x, 0, 1) if np.mean(x) < 2 else np.clip(x, 0, 255)
-
-                fig = plt.figure(figsize=(12, 12))
-                plt.imshow(x)
-                plt.axis('off')
-                plt.savefig(self.get_path(fpath), bbox_inches='tight')
-                plt.close(fig)
-
-            def draw_changes(z, fpath):
-                cmap = mcolors.ListedColormap(['white', 'black', 'red'])
-                fig = plt.figure(figsize=(12, 12))
-                plt.imshow(z, cmap=cmap)
-                plt.axis('off')
-                plt.gca().set_facecolor('black')
-                plt.savefig(self.get_path(fpath), bbox_inches='tight')
-                plt.close(fig)
-
-            x_attr = self.model_attr.attrib(x, c,
-                self.attr_steps, self.attr_iters)
-            draw_attr(x_attr, f'img/{c}/attr.png')
-
-            x_attr_old = self.model_attr.attrib(x_new, c,
-                self.attr_steps, self.attr_iters)
-            draw_attr(x_attr_old, f'img/{c}/attr_old.png')
-
-            x_attr_new = self.model_attr.attrib(x_new, c_new,
-                self.attr_steps, self.attr_iters)
-            draw_attr(x_attr_new, f'img/{c}/attr_new.png')
-
-            x_changes = (x_new - x)[0]
-            draw_changes(x_changes, f'img/{c}/changes.png')
-
     def _attack_attr(self, i):
         x, c, l = self.data.get(i, tst=True)
 
         att = AttackAttr(self.model, x, c, l,
             self.opt_sc, self.opt_d, self.opt_n)
-        if not att.check():
+        if not att.check(): # Invalid prediction for target image; skip
             return
 
         att.prep(self.model_attr, self.attr_steps, self.attr_iters)
@@ -366,7 +280,7 @@ class Manager:
         x, c, l = self.data.get(i, tst=True)
 
         att = AttackBs(self.model, x, c, l, self.opt_sc)
-        if not att.check():
+        if not att.check(): # Invalid prediction for target image; skip
             return
 
         att.prep(name)
@@ -380,26 +294,19 @@ class Manager:
         fpath = self.get_path('result.npz')
         np.savez_compressed(self.get_path('result.npz'), result=result)
 
-        succ = np.sum([r['success'] for r in result.values()])
-        full = len(result.keys())
+        succ = np.sum([r.get('success', False) for r in result.values() if r])
+        full = len([True for r in result.values() if r])
+
         text = 'Completed. '
         text += f'Successful: {succ/full*100:-5.2f}% '
         text += f'(total images {full})'
         self.log('\n' + text)
 
-    def _attack_show(self, r):
-        if r is None or r.get('err') or not r.get('success'):
-            return None, None, None, None
-
-        x, c_real, l_real = self.data.get(r['c'], tst=True) # TODO: check
+    def _attack_show(self, r, name=None):
+        x, c_real, l_real = self.data.get(r['c'], tst=True)
         y, c, l = self.model.run_pred(x)
 
-        x_new = x.detach().to('cpu').numpy().copy()
-        for p1, p2, dx in r['changes']:
-            for ch in range(3):
-                _dx = dx if isinstance(dx, (int, float)) else dx[ch]
-                x_new[ch, p1, p2] += _dx
-        x_new = torch.tensor(x_new, dtype=torch.float32)
+        x_new = change(x.detach().to('cpu').numpy(), r['changes'], True)
         delta = np.linalg.norm(np.array(x_new) - np.array(x))
         y_new, c_new, l_new = self.model.run_pred(x_new)
 
@@ -411,15 +318,57 @@ class Manager:
         text += f'\n        Class new: {l_new[:40]}'
         self.log(text)
 
-        x = self.data.tr_norm_inv(x)
-        fpath = f'img/{c}/base.png'
-        self.data.plot_base(x, '', size=6, fpath=self.get_path(fpath))
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=self.get_path(f'img/{c}/base.png'))
+        self.data.plot_base(self.data.tr_norm_inv(x_new), '', size=6,
+            fpath=self.get_path(f'img/{c}/changed.png'))
 
-        x_new = self.data.tr_norm_inv(x_new)
-        fpath = f'img/{c}/changed.png'
-        self.data.plot_base(x_new, '', size=6, fpath=self.get_path(fpath))
+        if name is not None:
+            return
 
-        return x, x_new, c, c_new
+        x_attr = self.model_attr.attrib(x, c,
+            self.attr_steps, self.attr_iters)
+        self.data.plot_attr(x_attr,
+            fpath=self.get_path(f'img/{c}/attr.png'))
+
+        x_attr_old = self.model_attr.attrib(x_new, c,
+            self.attr_steps, self.attr_iters)
+        self.data.plot_attr(x_attr_old,
+            fpath=self.get_path( f'img/{c}/attr_old.png'))
+
+        x_attr_new = self.model_attr.attrib(x_new, c_new,
+            self.attr_steps, self.attr_iters)
+        self.data.plot_attr(x_attr_new,
+            fpath=self.get_path( f'img/{c}/attr_new.png'))
+
+        x_changes = (x_new - x)[0]
+        self.data.plot_changes(x_changes,
+            fpath=self.get_path(f'img/{c}/changes.png'))
+
+    def _task_attack(self, name=None):
+        title = 'Start attack on images'
+        if name:
+            title += f' with baseline "{name}"'
+        tm = self.log.prc(title)
+
+        result = {}
+
+        for i in range(len(self.data.data_tst)):
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+
+            if name:
+                result_current = self._attack_bs(i, name)
+            else:
+                result_current = self._attack_attr(i)
+
+            if result_current is not None:
+                result[i] = result_current
+                if i in RESULT_SHOW and result_current['success']:
+                    self._attack_show(result_current, name)
+
+        self._attack_end(result)
+        self.log.res(tpc()-tm)
 
 
 def args_build():
@@ -450,19 +399,19 @@ def args_build():
         type=str,
         help='Name of the task',
         default='attack',
-        choices=['check', 'attack', 'result']
+        choices=['check', 'attack']
     )
     parser.add_argument('-k', '--kind',
         type=str,
         help='Kind of the task',
         default='attr',
         choices=['data', 'model', 'attr',
-            'bs_square', 'bs_onepixel', 'bs_pixle']
+            'bs_onepixel', 'bs_pixle', 'bs_square']
     )
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default=1000,
+        default=500, # 1000
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -492,7 +441,7 @@ def args_build():
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=1.E-3,
+        default=5.E-2,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -507,17 +456,17 @@ def args_build():
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=10,
+        default=2, # 10
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=10,
+        default=2, # 10
     )
     parser.add_argument('--attack_num_max',
         type=int,
         help='Maximum number of attacks (if 0, then use full dataset)',
-        default=0,
+        default=2,
     )
     parser.add_argument('--root',
         type=str,
