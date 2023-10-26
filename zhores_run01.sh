@@ -2,7 +2,7 @@
 
 #SBATCH --job-name=tet-01
 #SBATCH --output=zhores_out-01.txt
-#SBATCH --time=3-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH --partition gpu
 #SBATCH --nodes=1
 #SBATCH --gpus=1

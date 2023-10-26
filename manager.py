@@ -290,9 +290,10 @@ class Manager:
 
         return att.result()
 
-    def _attack_end(self, result):
-        fpath = self.get_path('result.npz')
-        np.savez_compressed(self.get_path('result.npz'), result=result)
+    def _attack_end(self, result, save=True):
+        if save:
+            fpath = self.get_path('result.npz')
+            np.savez_compressed(self.get_path('result.npz'), result=result)
 
         succ = np.sum([r.get('success', False) for r in result.values() if r])
         full = len([True for r in result.values() if r])
@@ -367,7 +368,7 @@ class Manager:
                 if i in RESULT_SHOW and result_current['success']:
                     self._attack_show(result_current, name)
 
-        self._attack_end(result)
+        self._attack_end(result, save=(name is None))
         self.log.res(tpc()-tm)
 
 

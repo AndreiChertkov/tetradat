@@ -156,7 +156,7 @@ class AttackBs(Attack):
             self.atk = torchattacks.OnePixel(self.model.net, pixels=100)
         elif name == 'pixle':
             self.atk = torchattacks.Pixle(self.model.net)
-        if name == 'square':
+        elif name == 'square':
             self.atk = torchattacks.Square(self.model.net, seed=seed)
         else:
             raise NotImplementedError(f'Baseline "{name}" is not supported')

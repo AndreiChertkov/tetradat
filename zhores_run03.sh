@@ -2,11 +2,11 @@
 
 #SBATCH --job-name=tet-03
 #SBATCH --output=zhores_out-03.txt
-#SBATCH --time=3-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH --partition gpu
 #SBATCH --nodes=1
 #SBATCH --gpus=1
-#SBATCH --mem=12000
+#SBATCH --mem=15000
 
 module rm *
 module load python/anaconda3
