@@ -368,7 +368,7 @@ class Manager:
                 if i in RESULT_SHOW and result_current['success']:
                     self._attack_show(result_current, name)
 
-        self._attack_end(result, save=(name is None))
+        self._attack_end(result)
         self.log.res(tpc()-tm)
 
 
@@ -412,7 +412,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default=500, # 1000
+        default= 1000,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -442,7 +442,7 @@ def args_build():
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-2,
+        default=1.E-3,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -457,12 +457,12 @@ def args_build():
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=15,
+        default=10,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=15,
+        default=10,
     )
     parser.add_argument('--attack_num_max',
         type=int,
