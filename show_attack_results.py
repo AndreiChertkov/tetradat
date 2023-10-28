@@ -31,8 +31,8 @@ def show(model, model_attr=None, sc=None, bs=None):
 def run():
     for model in ['alexnet', 'vgg16', 'vgg19']:
         print()
-        #for bs in ['onepixel', 'pixle', 'square']:
-        #    show(model, bs=bs)
+        for bs in ['onepixel', 'pixle']:#, 'square']:
+            show(model, bs=bs)
         for model_attr in ['alexnet', 'vgg16', 'vgg19']:
             if model == model_attr:
                 continue

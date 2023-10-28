@@ -6,7 +6,7 @@
 #SBATCH --partition gpu
 #SBATCH --nodes=1
 #SBATCH --gpus=1
-#SBATCH --mem=15000
+#SBATCH --mem=25000
 
 module rm *
 module load python/anaconda3
