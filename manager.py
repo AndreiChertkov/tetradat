@@ -209,6 +209,18 @@ class Manager:
     def task_attack_bs_square(self):
         self._task_attack('square')
 
+    def task_attack_target_attr(self):
+        self._task_attack(target=True)
+
+    def task_attack_target_bs_onepixel(self):
+        self._task_attack('onepixel', target=True)
+
+    def task_attack_target_bs_pixle(self):
+        self._task_attack('pixle', target=True)
+
+    def task_attack_target_bs_square(self):
+        self._task_attack('square', target=True)
+
     def task_check_data(self):
         name = self.data.name
         tm = self.log.prc(f'Check data for "{name}" dataset')
@@ -260,11 +272,11 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
-    def _attack_attr(self, i):
+    def _attack_attr(self, i, target=False):
         x, c, l = self.data.get(i, tst=True)
 
         att = AttackAttr(self.model, x, c, l,
-            self.opt_sc, self.opt_d, self.opt_n)
+            self.opt_sc, self.opt_d, self.opt_n, target=target)
         if not att.check(): # Invalid prediction for target image; skip
             return
 
@@ -276,10 +288,10 @@ class Manager:
 
         return att.result()
 
-    def _attack_bs(self, i, name):
+    def _attack_bs(self, i, name, target=False):
         x, c, l = self.data.get(i, tst=True)
 
-        att = AttackBs(self.model, x, c, l, self.opt_sc)
+        att = AttackBs(self.model, x, c, l, self.opt_sc, target=target)
         if not att.check(): # Invalid prediction for target image; skip
             return
 
@@ -317,6 +329,9 @@ class Manager:
         text += f'\n        dx: {delta:-8.2e} | num: {len(r["changes"])}'
         text += f'\n        Class ini: {l[:40]}'
         text += f'\n        Class new: {l_new[:40]}'
+        if r['c_target'] is not None:
+            text += f'\n        c_target : {r["c_target"]:-4d}'
+            text += f'\n        y_target : {r["y_target"]:-9.3e}'
         self.log(text)
 
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
@@ -332,6 +347,12 @@ class Manager:
         self.data.plot_attr(x_attr,
             fpath=self.get_path(f'img/{c}/attr.png'))
 
+        if r['c_target'] is not None:
+            x_attr_target = self.model_attr.attrib(x, r['c_target'],
+                self.attr_steps, self.attr_iters)
+            self.data.plot_attr(x_attr_target,
+                fpath=self.get_path(f'img/{c}/attr_target.png'))
+
         x_attr_old = self.model_attr.attrib(x_new, c,
             self.attr_steps, self.attr_iters)
         self.data.plot_attr(x_attr_old,
@@ -346,8 +367,11 @@ class Manager:
         self.data.plot_changes(x_changes,
             fpath=self.get_path(f'img/{c}/changes.png'))
 
-    def _task_attack(self, name=None):
-        title = 'Start attack on images'
+    def _task_attack(self, name=None, target=False):
+        if target:
+            title = 'Start targeted attack on images'
+        else:
+            title = 'Start attack on images'
         if name:
             title += f' with baseline "{name}"'
         tm = self.log.prc(title)
@@ -359,9 +383,9 @@ class Manager:
                 break
 
             if name:
-                result_current = self._attack_bs(i, name)
+                result_current = self._attack_bs(i, name, target=target)
             else:
-                result_current = self._attack_attr(i)
+                result_current = self._attack_attr(i, target=target)
 
             if result_current is not None:
                 result[i] = result_current
@@ -400,7 +424,7 @@ def args_build():
         type=str,
         help='Name of the task',
         default='attack',
-        choices=['check', 'attack']
+        choices=['check', 'attack', 'attack_target']
     )
     parser.add_argument('-k', '--kind',
         type=str,
