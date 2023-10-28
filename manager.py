@@ -389,7 +389,10 @@ class Manager:
 
             if result_current is not None:
                 result[i] = result_current
-                if i in RESULT_SHOW and result_current['success']:
+                if target and result_current['success']:
+                    # We show all successfull targeted attacks!
+                    self._attack_show(result_current, name)
+                elif i in RESULT_SHOW and result_current['success']:
                     self._attack_show(result_current, name)
 
         self._attack_end(result)
