@@ -22,6 +22,7 @@ class Attack:
         self.l = l
         self.sc = sc
         self.is_target = target
+        self.name = ''
 
         self.init()
 
@@ -199,7 +200,7 @@ class AttackBs(Attack):
         elif name == 'pixle':
             self.atk = torchattacks.Pixle(self.model.net)
         elif name == 'square':
-            self.atk = torchattacks.Square(self.model.net, eps=4/255, seed=seed)
+            self.atk = torchattacks.Square(self.model.net, eps=5/255, seed=seed)
         else:
             raise NotImplementedError(f'Baseline "{name}" is not supported')
 
