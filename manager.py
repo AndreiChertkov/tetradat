@@ -439,7 +439,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 1000,
+        default= 5000,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -449,7 +449,7 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=10000,
+        default=100000,
     )
     parser.add_argument('--opt_k',
         type=int,
@@ -484,12 +484,12 @@ def args_build():
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=10,
+        default=20,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=10,
+        default=20,
     )
     parser.add_argument('--attack_num_max',
         type=int,
