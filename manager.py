@@ -23,7 +23,8 @@ RESULT_SHOW = [0, 1, 2, 5, 8, 12, 13, 15, 42, 99, 142, 200, 254, 300, 350,
 class Manager:
     def __init__(self, data, model, model_attr, task, kind, opt_d, opt_n, opt_m,
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
-                 attr_iters, attack_num_max, root='result', device=None):
+                 attr_iters, attack_num_target, attack_num_max, root='result',
+                 device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -43,6 +44,7 @@ class Manager:
         self.attr_steps = attr_steps
         self.attr_iters = attr_iters
 
+        self.attack_num_target = attack_num_target
         self.attack_num_max = attack_num_max
 
         self.set_rand()
@@ -276,7 +278,8 @@ class Manager:
         x, c, l = self.data.get(i, tst=True)
 
         att = AttackAttr(self.model, x, c, l,
-            self.opt_sc, self.opt_d, self.opt_n, target=target)
+            self.opt_sc, self.opt_d, self.opt_n,
+            num_target=self.attack_num_target if target else None)
         if not att.check(): # Invalid prediction for target image; skip
             return
 
@@ -291,7 +294,8 @@ class Manager:
     def _attack_bs(self, i, name, target=False):
         x, c, l = self.data.get(i, tst=True)
 
-        att = AttackBs(self.model, x, c, l, self.opt_sc, target=target)
+        att = AttackBs(self.model, x, c, l, self.opt_sc,
+            num_target=self.attack_num_target if target else None)
         if not att.check(): # Invalid prediction for target image; skip
             return
 
@@ -390,7 +394,7 @@ class Manager:
             if result_current is not None:
                 result[i] = result_current
                 if target and result_current['success']:
-                    # We show all successfull targeted attacks!
+                    # We show all successfull targeted attacks! (TODO: check)
                     self._attack_show(result_current, name)
                 elif i in RESULT_SHOW and result_current['success']:
                     self._attack_show(result_current, name)
@@ -491,6 +495,11 @@ def args_build():
         help='Number of attribution iterations',
         default=20,
     )
+    parser.add_argument('--attack_num_target',
+        type=int,
+        help='Target top class number for targeted attack (>= 1)',
+        default=10,
+    )
     parser.add_argument('--attack_num_max',
         type=int,
         help='Maximum number of attacks (if 0, then use full dataset)',
@@ -506,7 +515,7 @@ def args_build():
     return (args.data, args.model, args.model_attr, args.task, args.kind,
         args.opt_d, args.opt_n, args.opt_m, args.opt_k, args.opt_k_top,
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
-        args.attr_iters, args.attack_num_max, args.root)
+        args.attr_iters, args.attack_num_target, args.attack_num_max, args.root)
 
 
 if __name__ == '__main__':

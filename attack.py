@@ -15,13 +15,14 @@ from utils import sort_matrix
 
 
 class Attack:
-    def __init__(self, model, x, c, l, sc=10, target=False):
+    def __init__(self, model, x, c, l, sc=10, num_target=None):
         self.model = model
         self.x = x
         self.c = c
         self.l = l
         self.sc = sc
-        self.is_target = target
+        self.num_target = num_target
+        self.is_target = num_target is not None
         self.name = ''
 
         self.init()
@@ -56,7 +57,7 @@ class Attack:
         self.y = y_all[c]
 
         if self.is_target:
-            self.c_target = np.argmin(y_all)
+            self.c_target = np.argsort(y_all)[::-1][self.num_target]
             self.y_target = y_all[self.c_target]
 
         return c == self.c
@@ -114,8 +115,8 @@ class Attack:
 
 class AttackAttr(Attack):
     def __init__(self, model, x, c, l, sc=10, d=500, n=3, eps_success=1.E-4,
-                 target=False):
-        super().__init__(model, x, c, l, sc, target)
+                 num_target=None):
+        super().__init__(model, x, c, l, sc, num_target)
         self.d = d
         self.n = n
         self.eps_success = eps_success
@@ -191,8 +192,8 @@ class AttackAttr(Attack):
 
 
 class AttackBs(Attack):
-    def __init__(self, model, x, c, l, sc=10, target=False):
-        super().__init__(model, x, c, l, sc, target)
+    def __init__(self, model, x, c, l, sc=10, num_target=None):
+        super().__init__(model, x, c, l, sc, num_target)
 
     def prep(self, name, seed=42):
         if name == 'onepixel':
