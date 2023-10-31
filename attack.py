@@ -210,12 +210,14 @@ class AttackBs(Attack):
             mean=self.model.data.norm_m, std=self.model.data.norm_v)
 
         if self.is_target:
-            self.atk.set_mode_targeted_least_likely(1)
+            self.atk.set_mode_targeted_by_label(quiet=True)
 
     def run(self, log=True):
-        x_ = torch.unsqueeze(self.x, dim=0)
-        c_ = torch.tensor([self.c_target if self.is_target else self.c])
+        x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
+        c_ = torch.tensor(
+            [self.c_target if self.is_target else self.c]).to('cpu')
         x_new = self.atk(x_, c_)[0]
+        x_new = x_new.detach().to('cpu').numpy()
 
         self.changes = []
         for p1 in range(self.x.shape[1]):

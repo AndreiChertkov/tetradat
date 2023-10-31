@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=tet-61
+#SBATCH --job-name=Tet-61
 #SBATCH --output=zhores_out-61.txt
 #SBATCH --time=3-00:00:00
 #SBATCH --partition gpu
@@ -14,6 +14,6 @@ module load gpu/cuda-11.3
 source activate tetradat
 conda activate tetradat
 
-srun python3 manager.py --task attack --kind attr --data imagenet --model vgg19 --model_attr vgg16
+srun python3 manager.py --task attack_target --kind attr --data imagenet --model vgg19 --model_attr vgg16 --attack_num_max 100
 
 exit 0
