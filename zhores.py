@@ -239,6 +239,7 @@ def zhores(kind='main'):
         fold = opts['out']
         file = f'zhores_out_{name}.txt'
         text += f'\n#SBATCH --output={fold}/{file}'
+        os.makedirs(fold, exist_ok=True)
 
         d = str(opts['days'])
         h = str(opts['hours'])
