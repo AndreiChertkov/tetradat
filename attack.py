@@ -114,7 +114,7 @@ class Attack:
 
 
 class AttackAttr(Attack):
-    def __init__(self, model, x, c, l, sc=10, d=500, n=3, eps_success=1.E-4,
+    def __init__(self, model, x, c, l, sc=10, d=500, n=3, eps_success=1.E-6,
                  num_target=None):
         super().__init__(model, x, c, l, sc, num_target)
         self.d = d
@@ -129,7 +129,14 @@ class AttackAttr(Attack):
             changes.append([self.pixels[k][0], self.pixels[k][1], x[k]])
         return changes
 
-    def prep(self, model_attr, attr_steps=15, attr_iters=15):
+    def prep(self, model_attr, attr_steps=20, attr_iters=20):
+        _t = tpc()
+        c = self.c_target if self.is_target else self.c
+        self.x_attr = model_attr.attrib(self.x, c, attr_steps, attr_iters)
+        self.pixels = sort_matrix(self.x_attr)[:self.d]
+        self.t += tpc() - _t
+
+    def prep_old(self, model_attr, attr_steps=15, attr_iters=15):
         _t = tpc()
 
         self.x_attr = model_attr.attrib(self.x, self.c,
@@ -143,9 +150,16 @@ class AttackAttr(Attack):
         self.x_attr_target = model_attr.attrib(self.x, self.c_target,
             attr_steps, attr_iters)
 
-        pixels1 = sort_matrix(self.x_attr)[:int(self.d/2)]
-        pixels2 = sort_matrix(self.x_attr_target)[:int(self.d/2)]
-        self.pixels = pixels1 + pixels2
+        self.pixels = sort_matrix(self.x_attr)[:int(self.d/2)]
+        for (i1, i2) in sort_matrix(self.x_attr_target):
+            if (i1, i2) in self.pixels:
+                continue
+            self.pixels.append((i1, i2))
+            if len(self.pixels) >= self.d:
+                break
+
+        if len(self.pixels) != self.d:
+            raise ValueError('Invalid number of pixels for optimization')
 
         self.t += tpc() - _t
 
@@ -195,13 +209,18 @@ class AttackBs(Attack):
     def __init__(self, model, x, c, l, sc=10, num_target=None):
         super().__init__(model, x, c, l, sc, num_target)
 
-    def prep(self, name, seed=42):
+    def prep(self, name, m=1.E+4, seed=42):
         if name == 'onepixel':
-            self.atk = torchattacks.OnePixel(self.model.net, pixels=100)
+            self.atk = _OnePixel(self.model.net, pixels=100,
+                steps=19) # TODO: check (now it for 1E+4 evals)
         elif name == 'pixle':
-            self.atk = torchattacks.Pixle(self.model.net)
+            restarts = 100
+            max_iterations = int(m / 2 / restarts)
+            self.atk = _Pixle(self.model.net,
+                restarts=restarts, max_iterations=max_iterations)
         elif name == 'square':
-            self.atk = torchattacks.Square(self.model.net, eps=2/255, seed=seed)
+            self.atk = _Square(self.model.net, eps=4/255,
+                n_queries=int(m), seed=seed)
         else:
             raise NotImplementedError(f'Baseline "{name}" is not supported')
 
@@ -218,6 +237,7 @@ class AttackBs(Attack):
             [self.c_target if self.is_target else self.c]).to('cpu')
         x_new = self.atk(x_, c_)[0]
         x_new = x_new.detach().to('cpu').numpy()
+        self.m = self.atk.model_evals
 
         self.changes = []
         for p1 in range(self.x.shape[1]):
@@ -231,8 +251,34 @@ class AttackBs(Attack):
         self.success = self.check_new(x_new)
 
         if log:
-            text = f'Img {self.c:-5d} | ' + ('OK' if self.success else 'fail')
+            text = f'Img {self.c:-5d} | '
+            text += f'Runs: {self.m:-6d} | '
+            text += 'OK' if self.success else 'fail'
             print(text)
+
+
+class _OnePixel(torchattacks.OnePixel):
+    def get_logits(self, inputs, labels=None, *args, **kwargs):
+        if not hasattr(self, 'model_evals'):
+            self.model_evals = 0
+        self.model_evals += inputs.shape[0]
+        return super().get_logits(inputs, labels, *args, **kwargs)
+
+
+class _Pixle(torchattacks.Pixle):
+    def get_logits(self, inputs, labels=None, *args, **kwargs):
+        if not hasattr(self, 'model_evals'):
+            self.model_evals = 0
+        self.model_evals += inputs.shape[0]
+        return super().get_logits(inputs, labels, *args, **kwargs)
+
+
+class _Square(torchattacks.Square):
+    def get_logits(self, inputs, labels=None, *args, **kwargs):
+        if not hasattr(self, 'model_evals'):
+            self.model_evals = 0
+        self.model_evals += inputs.shape[0]
+        return super().get_logits(inputs, labels, *args, **kwargs)
 
 
 def change(x, changes, to_torch=False):

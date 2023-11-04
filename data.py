@@ -293,4 +293,6 @@ class Data:
                     -np.array(self.norm_m), [1., 1., 1.]),
             ])
 
+        # TODO: see https://github.com/pytorch/vision/blob/f69eee6108cd047ac8b62a2992244e9ab3c105e1/torchvision/transforms/_presets.py#L38
+
         self.tr = torchvision.transforms.Compose([self.tr_tens, self.tr_norm])

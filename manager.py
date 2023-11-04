@@ -16,15 +16,15 @@ from model import Model
 from utils import Log
 
 
-RESULT_SHOW = [0, 1, 2, 5, 8, 12, 13, 15, 42, 99, 142, 200, 254, 300, 350,
-    432, 500, 583, 639, 894, 922, 999]
+RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 35, 44,
+    59, 99, 142, 200, 254, 300, 350, 432, 500, 583, 639, 894, 922, 999]
 
 
 class Manager:
     def __init__(self, data, model, model_attr, task, kind, opt_d, opt_n, opt_m,
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
                  attr_iters, attack_num_target, attack_num_max, root='result',
-                 device=None):
+                 postfix='', device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -49,7 +49,7 @@ class Manager:
 
         self.set_rand()
         self.set_device(device)
-        self.set_path(root)
+        self.set_path(root, postfix)
         self.set_log()
 
         self.load_data()
@@ -153,7 +153,7 @@ class Manager:
         if self.kind:
             info += f'Kind of task        : "{self.kind}"\n'
 
-        if self.task == 'attack' and self.kind == 'attr':
+        if self.task in ['attack', 'attack_target'] and self.kind == 'attr':
             if self.opt_sc:
                 info += f'Opt. scale          : {self.opt_sc}\n'
             if self.opt_d:
@@ -172,11 +172,14 @@ class Manager:
                 info += f'Opt. learn. rate    : {self.opt_lr}\n'
             if self.opt_r:
                 info += f'Opt. TT-rank        : {self.opt_r}\n'
+        if self.task == 'attack_target' and self.kind == 'attr':
+            if self.attack_num_target is not None:
+                info += f'Target class (delt) : {self.attack_num_target}\n'
 
         self.log = Log(self.get_path('log.txt'))
         self.log.title(f'Computations ({self.device})', info)
 
-    def set_path(self, root='result'):
+    def set_path(self, root='result', postfix=''):
         fbase = f'{self.data_name}'
         if self.model_name:
             fbase += f'-{self.model_name}'
@@ -186,8 +189,8 @@ class Manager:
         if self.model_attr_name:
             ftask += f'-{self.model_attr_name}'
 
-        if self.task == 'attack' and self.kind == 'attr':
-            ftask += f'-sc{self.opt_sc}'
+        if postfix:
+            ftask += f'-{postfix}'
 
         self.path = os.path.join(root, fbase, ftask)
 
@@ -294,12 +297,13 @@ class Manager:
     def _attack_bs(self, i, name, target=False):
         x, c, l = self.data.get(i, tst=True)
 
-        att = AttackBs(self.model, x, c, l, self.opt_sc,
+        att = AttackBs(self.model, x, c, l,
+            self.opt_sc,
             num_target=self.attack_num_target if target else None)
         if not att.check(): # Invalid prediction for target image; skip
             return
 
-        att.prep(name)
+        att.prep(name, self.opt_m)
 
         print(f'\n   ---> Attack # {i:-5d}')
         att.run()
@@ -393,10 +397,7 @@ class Manager:
 
             if result_current is not None:
                 result[i] = result_current
-                if target and result_current['success']:
-                    # We show all successfull targeted attacks! (TODO: check)
-                    self._attack_show(result_current, name)
-                elif i in RESULT_SHOW and result_current['success']:
+                if i in RESULT_SHOW and result_current['success']:
                     self._attack_show(result_current, name)
 
         self._attack_end(result)
@@ -406,7 +407,7 @@ class Manager:
 def args_build():
     parser = argparse.ArgumentParser(
         prog='tetradat',
-        description='Software product for generation of adversarial examples for artificial neural networks using tensor train (TT) decomposition and optimizer based on it, i.e., PROTES optimizer.',
+        description='Library for generation of adversarial examples for artificial neural networks using tensor train (TT) decomposition and optimizer based on it, i.e., PROTES optimizer.',
         epilog = '© Andrei Chertkov'
     )
     parser.add_argument('-d', '--data',
@@ -430,7 +431,7 @@ def args_build():
     parser.add_argument('-t', '--task',
         type=str,
         help='Name of the task',
-        default='attack',
+        default='attack_target',
         choices=['check', 'attack', 'attack_target']
     )
     parser.add_argument('-k', '--kind',
@@ -453,7 +454,7 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=100000,
+        default=10000,
     )
     parser.add_argument('--opt_k',
         type=int,
@@ -483,7 +484,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=int,
         help='Scale for the noize image',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attr_steps',
         type=int,
@@ -510,12 +511,18 @@ def args_build():
         help='Path to the folder with results',
         default='result'
     )
+    parser.add_argument('--postfix',
+        type=str,
+        help='Postfix for the folder with results',
+        default=''
+    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
         args.opt_d, args.opt_n, args.opt_m, args.opt_k, args.opt_k_top,
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
-        args.attr_iters, args.attack_num_target, args.attack_num_max, args.root)
+        args.attr_iters, args.attack_num_target, args.attack_num_max, args.root,
+        args.postfix)
 
 
 if __name__ == '__main__':

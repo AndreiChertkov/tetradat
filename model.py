@@ -3,6 +3,7 @@ import numpy as np
 import os
 import sys
 import torch
+from torchvision import models
 import warnings
 
 
@@ -10,8 +11,10 @@ import warnings
 warnings.filterwarnings('ignore', category=UserWarning)
 
 
-MODEL_NAMES_IMAGENET = ['alexnet', 'vgg16', 'vgg19']
+MODEL_NAMES_IMAGENET = ['alexnet', 'googlenet', 'inception', 'mobilenet',
+    'resnet', 'vgg', 'vit']
 MODEL_NAMES = MODEL_NAMES_IMAGENET
+
 
 
 class Model:
@@ -107,24 +110,36 @@ class Model:
         return n, m
 
     def load(self):
-        self.net = None
+        if self.data.name != 'imagenet': # TODO - remove
+            msg = f'Model "{self.name}" is ready only for "imagenet"'
+            raise NotImplementedError(msg)
 
-        if self.name in MODEL_NAMES_IMAGENET:
-            if self.data.name != 'imagenet':
-                msg = f'Model "{self.name}" is ready only for "imagenet"'
-                raise NotImplementedError(msg)
-
-            # TODO: set path to data
-
-            self.net = torch.hub.load('pytorch/vision:v0.10.0', self.name,
-                weights=True)
-
+        if self.name == 'alexnet':
+            # See https://pytorch.org/vision/stable/models/generated/torchvision.models.alexnet.html#torchvision.models.alexnet
+            self.net = models.alexnet(weights='IMAGENET1K_V1')
+        elif self.name == 'googlenet':
+            # See https://pytorch.org/vision/stable/models/generated/torchvision.models.googlenet.html#torchvision.models.googlenet
+            self.net = models.googlenet(weights='IMAGENET1K_V1')
+        elif self.name == 'inception':
+            # See https://pytorch.org/vision/stable/models/generated/torchvision.models.inception_v3.html#torchvision.models.inception_v3
+            self.net = models.inception_v3(weights='IMAGENET1K_V1')
+        elif self.name == 'mobilenet':
+            # See https://pytorch.org/vision/stable/models/generated/torchvision.models.mobilenet_v3_large.html#torchvision.models.mobilenet_v3_large
+            self.net = models.mobilenet_v3_large(weights='IMAGENET1K_V2')
+        elif self.name == 'resnet':
+            # See https://pytorch.org/vision/stable/models/generated/torchvision.models.resnet152.html#torchvision.models.resnet152
+            self.net = models.resnet152(weights='IMAGENET1K_V2')
+        elif self.name == 'vgg':
+            # See https://pytorch.org/vision/stable/models/generated/torchvision.models.vgg19.html#torchvision.models.vgg19
+            self.net = models.vgg19(weights='IMAGENET1K_V1')
+        elif self.name == 'vit':
+            # See https://pytorch.org/vision/stable/models/generated/torchvision.models.vit_b_16.html#torchvision.models.vit_b_16
+            self.net = models.vit_b_16(weights='IMAGENET1K_V1')
         else:
-            raise NotImplementedError('We work only with IMAGENET here')
+            raise NotImplementedError(f'Unknown model {self.name}')
 
-        if self.net is not None:
-            self.net.to(self.device)
-            self.net.eval()
+        self.net.to(self.device)
+        self.net.eval()
 
     def run(self, x, with_grad=False):
         is_batch = len(x.shape) == 4
