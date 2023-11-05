@@ -111,7 +111,7 @@ class AttackAttr(Attack):
                 -np.array(self.norm_m), [1., 1., 1.])])
 
         self.x = self.x.to(self.device)
-        x_attr = x_attr.to(self.device)
+        x_attr = torch.tensor(x_attr).to(self.device)
         self.pixels = sort_matrix(x_attr)[:self.d]
         self.x_base = self.trans_base(self.x)
         self.x_base_hsv = color_rgb_to_hsv(self.x_base)
