@@ -496,7 +496,7 @@ def args_build():
     parser.add_argument('--attack_num_max',
         type=int,
         help='Maximum number of attacks (if 0, then use full dataset)',
-        default=50,
+        default=0,
     )
     parser.add_argument('--root',
         type=str,
