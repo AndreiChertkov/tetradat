@@ -3,6 +3,7 @@ import numpy as np
 import requests
 import subprocess
 from time import perf_counter as tpc
+import torch
 from urllib.parse import urlencode
 
 
@@ -48,12 +49,6 @@ class Log:
 def load_repo(url, fpath):
     prc = subprocess.getoutput(f'cd {fpath} && git clone {url}')
     print(prc)
-
-
-def sort_matrix(A, rev=True):
-    I = np.unravel_index(np.argsort(A, axis=None), A.shape)
-    I = [(I[0][k], I[1][k]) for k in range(A.size)]
-    return I[::-1] if rev else I
 
 
 def sort_vector(a, rev=True):

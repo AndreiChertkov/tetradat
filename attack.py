@@ -1,5 +1,5 @@
 import jax
-jax.config.update('jax_enable_x64', True)
+# jax.config.update('jax_enable_x64', True)
 jax.config.update('jax_platform_name', 'cpu')
 jax.default_device(jax.devices('cpu')[0])
 
@@ -9,252 +9,172 @@ from protes import protes
 from time import perf_counter as tpc
 import torch
 import torchattacks
-
-
-from utils import sort_matrix
+import torchvision
 
 
 class Attack:
-    def __init__(self, model, x, c, l, sc=10, num_target=None):
-        self.model = model
+    def __init__(self, net, x, c, m_max, name, norm_m, norm_v, target=False):
+        self.net = net
         self.x = x
         self.c = c
-        self.l = l
-        self.sc = sc
-        self.num_target = num_target
-        self.is_target = num_target is not None
-        self.name = ''
+        self.m_max = int(m_max)
+        self.name = name
+        self.norm_m = norm_m
+        self.norm_v = norm_v
+        self.target = target
 
-        self.init()
+        self.m = 0               # Number of model calls
+        self.t = 0.              # Computation time
 
-    @property
-    def h(self):
-        return float((self.x_max - self.x_min) / self.sc)
+        self.x_new = None        # Updated image (after attack)
+        self.c_new = None        # New class for updated image
+        self.y_new = None        # Prob (maximum) on updated image
+        self.y = None            # Prob for attacked class on updated image
 
-    @property
-    def x_avg(self):
-        return np.mean(self.x_np)
+        self.success = False     # Result of the attack
+        self.changes = 0         # Number of changed pixels
+        self.dx1 = None          # L1 norm for changes
+        self.dx2 = None          # L2 norm for changes
 
-    @property
-    def x_max(self):
-        return np.max(self.x_np)
+        self.device = next(self.net.parameters()).device
+        self.probs = torch.nn.Softmax(dim=1)
 
-    @property
-    def x_min(self):
-        return np.min(self.x_np)
-
-    @property
-    def x_np(self):
-        return self.x.detach().to('cpu').numpy()
-
-    def change(self, changes):
-        return change(self.x_np, changes)
-
-    def check(self):
-        y_all = self.model.run(self.x).detach().to('cpu').numpy()
-
-        c = np.argmax(y_all)
-        self.y = y_all[c]
-
-        if self.is_target:
-            self.c_target = np.argsort(y_all)[::-1][self.num_target]
-            self.y_target = y_all[self.c_target]
-
-        return c == self.c
-
-    def check_new(self, x_new=None):
-        if x_new is None:
-            self.x_new = self.change(self.changes)
-        else:
-            self.x_new = x_new
-        self.x_new = torch.tensor(self.x_new, dtype=torch.float32)
-
-        self.y_old = float(self.model.run(self.x_new)[self.c])
-        self.y_new, self.c_new, self.l_new = self.model.run_pred(self.x_new)
-
-        if self.c_new == self.c:
-            return False
-
-        if self.is_target and self.c_new != self.c_target:
-            return False
-
-        return True
-
-    def init(self):
-        self.m = 0            # Number of model calls
-        self.t = 0.           # Computation time
-        self.y = None         # Prob of correct class on original image
-        self.y_old = None     # Prob of correct class on updated image
-        self.x_new = None     # Updated image (after attack)
-        self.c_new = None     # New class
-        self.l_new = None     # New label related to the new class
-        self.y_new = None     # Prob (maximum) on updated image
-        self.c_target = None  # Target class for attack (optional)
-        self.y_target = None  # Prob on target class (if used)
-        self.changes = []     # List of changed pixels
-        self.success = False
         self.err = None
+
+    def check(self, x_new):
+        x = x_new[None].to(self.device)
+        with torch.no_grad():
+            y_all = self.net(x)
+            y_all = self.probs(y_all)
+        y_all = y_all[0].detach().to('cpu').numpy()
+
+        self.x_new = x_new
+        self.c_new = np.argmax(y_all)
+        self.y_new = y_all[self.c_new]
+        self.y = y_all[self.c]
+
+        if self.target:
+            self.success = self.c_new == self.c
+        else:
+            self.success = self.c_new != self.c
+
+        self.changes = torch.sum(torch.abs(self.x_new - self.x) > 1.E-14).item()
+        self.dx1 = torch.norm(self.x_new - self.x, p=1)
+        self.dx2 = torch.norm(self.x_new - self.x, p=2)
 
     def result(self):
         return {
             'm': self.m,
             't': self.t,
             'c': self.c,
-            'l': self.l,
-            'y': self.y,
-            'y_old': self.y_old,
             'c_new': self.c_new,
-            'l_new': self.l_new,
             'y_new': self.y_new,
-            'c_target': self.c_target,
-            'y_target': self.y_target,
-            'changes': self.changes,
+            'y': self.y,
             'success': self.success,
+            'changes': self.changes,
+            'dx1': self.dx1,
+            'dx2': self.dx2,
             'err': self.err}
 
 
 class AttackAttr(Attack):
-    def __init__(self, model, x, c, l, sc=10, d=500, n=3, eps_success=1.E-6,
-                 num_target=None):
-        super().__init__(model, x, c, l, sc, num_target)
+    def change(self, i):
+        dh = (np.array(i) - (self.n-1)/2) / self.sc
+        dh = torch.tensor(dh).to(self.device)
+
+        h, s, v = torch.clone(self.x_base_hsv)
+
+        h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
+        dh[h_target + dh > 1.] = dh[h_target + dh > 1.] - 1.
+        dh[h_target + dh < 0.] = 1. - dh[h_target + dh < 0.]
+
+        h[self.pixels[:, 0], self.pixels[:, 1]] += dh
+
+        x = color_hsv_to_rgb(torch.stack((h, s, v)))
+        x = self.trans(x)
+
+        return x
+
+    def run(self, x_attr, d, n, sc, k, k_top, k_gd, lr, r):
+        t = tpc()
+
         self.d = d
         self.n = n
-        self.eps_success = eps_success
+        self.sc = sc
 
-    def changes_build(self, i):
-        i = np.array(i)
-        x = (i - (self.n-1)/2) * self.h
-        changes = []
-        for k in np.where(np.abs(x) > 1.E-16)[0]:
-            changes.append([self.pixels[k][0], self.pixels[k][1], x[k]])
-        return changes
+        self.trans = torchvision.transforms.Normalize(
+            self.norm_m, self.norm_v)
+        self.trans_base = torchvision.transforms.Compose([
+            torchvision.transforms.Normalize(
+                [0., 0., 0.], 1./np.array(self.norm_v)),
+            torchvision.transforms.Normalize(
+                -np.array(self.norm_m), [1., 1., 1.])])
 
-    def prep(self, model_attr, attr_steps=20, attr_iters=20):
-        _t = tpc()
-        c = self.c_target if self.is_target else self.c
-        self.x_attr = model_attr.attrib(self.x, c, attr_steps, attr_iters)
-        self.pixels = sort_matrix(self.x_attr)[:self.d]
-        self.t += tpc() - _t
+        self.pixels = sort_matrix(x_attr)[:self.d].to(self.device)
+        self.x_base = self.trans_base(self.x).to(self.device)
+        self.x_base_hsv = color_rgb_to_hsv(self.x_base).to(self.device)
 
-    def prep_old(self, model_attr, attr_steps=15, attr_iters=15):
-        _t = tpc()
+        #try:
+        if True:
+            i, y = protes(self.loss, d, n, self.m_max, k, k_top, k_gd, lr, r,
+                is_max=(True if self.target else False), log=True)
+        #except Exception as e:
+        #    pass
 
-        self.x_attr = model_attr.attrib(self.x, self.c,
-            attr_steps, attr_iters)
-
-        if not self.is_target:
-            self.pixels = sort_matrix(self.x_attr)[:self.d]
-            self.t += tpc() - _t
-            return
-
-        self.x_attr_target = model_attr.attrib(self.x, self.c_target,
-            attr_steps, attr_iters)
-
-        self.pixels = sort_matrix(self.x_attr)[:int(self.d/2)]
-        for (i1, i2) in sort_matrix(self.x_attr_target):
-            if (i1, i2) in self.pixels:
-                continue
-            self.pixels.append((i1, i2))
-            if len(self.pixels) >= self.d:
-                break
-
-        if len(self.pixels) != self.d:
-            raise ValueError('Invalid number of pixels for optimization')
-
-        self.t += tpc() - _t
-
-    def run(self, m=1.E+4, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, log=True):
-        _t = tpc()
-        try:
-            i, y = protes(self.loss, self.d, self.n, m, k, k_top, k_gd, lr, r,
-                is_max=(True if self.is_target else False), log=log)
-        except Exception as e:
-            pass
-        self.t += tpc() - _t
-
-        if self.success:
-            success = self.check_new()
-            if not success:
-                self.err = 'Success result check is failed'
-                self.success = False
+        self.t += tpc() - t
+        return self.result()
 
     def loss(self, I):
-        changes_all = [self.changes_build(i) for i in I]
-
-        X_all = [self.change(changes) for changes in changes_all]
-        X_all = torch.tensor(X_all, dtype=torch.float32)
-
-        y_all = self.model.run(X_all).detach().to('cpu').numpy()
-        self.m += len(I)
-
-        c_all = np.argmax(y_all, axis=1)
-        for k, c in enumerate(c_all):
-            if self.is_target:
-                if c == self.c_target:
-                    if y_all[k, c] - y_all[k, self.c] > self.eps_success:
-                        self.changes = changes_all[k]
-                        self.success = True
-                        return
-            else:
-                if c != self.c:
-                    if y_all[k, c] - y_all[k, self.c] > self.eps_success:
-                        self.changes = changes_all[k]
-                        self.success = True
-                        return
-
-        return y_all[:, self.c_target if self.is_target else self.c]
+        result = []
+        for i in I:
+            self.m += 1
+            self.check(self.change(i))
+            if self.success:
+                return
+            result.append(self.y)
+        return np.array(result)
 
 
 class AttackBs(Attack):
-    def __init__(self, model, x, c, l, sc=10, num_target=None):
-        super().__init__(model, x, c, l, sc, num_target)
+    def run(self, onepixel=100, pixle=100, square=4/255, seed=42):
+        t = tpc()
 
-    def prep(self, name, m=1.E+4, seed=42):
-        if name == 'onepixel':
-            self.atk = _OnePixel(self.model.net, pixels=100,
+        if self.name == 'onepixel':
+            self.atk = _OnePixel(self.net,
+                pixels=onepixel,
                 steps=19) # TODO: check (now it for 1E+4 evals)
-        elif name == 'pixle':
-            restarts = 100
-            max_iterations = int(m / 2 / restarts)
-            self.atk = _Pixle(self.model.net,
-                restarts=restarts, max_iterations=max_iterations)
-        elif name == 'square':
-            self.atk = _Square(self.model.net, eps=4/255,
-                n_queries=int(m), seed=seed)
+
+        elif self.name == 'pixle':
+            restarts = pixle
+            max_iterations = int(self.m_max / 2 / restarts)
+            self.atk = _Pixle(self.net,
+                restarts=restarts,
+                max_iterations=max_iterations)
+
+        elif self.name == 'square':
+            self.atk = _Square(self.net,
+                eps=square,
+                n_queries=self.m_max,
+                seed=seed)
+
         else:
-            raise NotImplementedError(f'Baseline "{name}" is not supported')
+            raise NotImplementedError(f'Baseline "{self.name}" not supported')
 
-        self.name = name
-        self.atk.set_normalization_used(
-            mean=self.model.data.norm_m, std=self.model.data.norm_v)
+        self.atk.set_normalization_used(mean=self.norm_m, std=self.norm_v)
 
-        if self.is_target:
+        if self.target:
             self.atk.set_mode_targeted_by_label(quiet=True)
 
-    def run(self, log=True):
         x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
-        c_ = torch.tensor(
-            [self.c_target if self.is_target else self.c]).to('cpu')
-        x_new = self.atk(x_, c_)[0]
-        x_new = x_new.detach().to('cpu').numpy()
+        c_ = torch.tensor([self.c]).to('cpu')
+
+        x_new = self.atk(x_, c_)[0].detach().to('cpu')
+
+        self.check(x_new)
         self.m = self.atk.model_evals
 
-        self.changes = []
-        for p1 in range(self.x.shape[1]):
-            for p2 in range(self.x.shape[2]):
-                change = np.zeros(self.x.shape[0])
-                for ch in range(self.x.shape[0]):
-                    change[ch] = x_new[ch, p1, p2] - self.x[ch, p1, p2]
-                if np.max(np.abs(change)) > 1.E-16:
-                    self.changes.append([p1, p2, change])
-
-        self.success = self.check_new(x_new)
-
-        if log:
-            text = f'Img {self.c:-5d} | '
-            text += f'Runs: {self.m:-6d} | '
-            text += 'OK' if self.success else 'fail'
-            print(text)
+        self.t += tpc() - t
+        return self.result()
 
 
 class _OnePixel(torchattacks.OnePixel):
@@ -289,3 +209,55 @@ def change(x, changes, to_torch=False):
     if to_torch:
         x = torch.tensor(x, dtype=torch.float32)
     return x
+
+
+def color_hsv_to_rgb(hsv):
+    is_batch = len(hsv.shape) == 4
+    if not is_batch:
+        hsv = hsv[None]
+
+    hsv_h, hsv_s, hsv_l = hsv[:, 0:1], hsv[:, 1:2], hsv[:, 2:3]
+    _c = hsv_l * hsv_s
+    _x = _c * (- torch.abs(hsv_h * 6. % 2. - 1) + 1.)
+    _m = hsv_l - _c
+    _o = torch.zeros_like(_c)
+    idx = (hsv_h * 6.).type(torch.uint8)
+    idx = (idx % 6).expand(-1, 3, -1, -1)
+    rgb = torch.empty_like(hsv)
+    rgb[idx == 0] = torch.cat([_c, _x, _o], dim=1)[idx == 0]
+    rgb[idx == 1] = torch.cat([_x, _c, _o], dim=1)[idx == 1]
+    rgb[idx == 2] = torch.cat([_o, _c, _x], dim=1)[idx == 2]
+    rgb[idx == 3] = torch.cat([_o, _x, _c], dim=1)[idx == 3]
+    rgb[idx == 4] = torch.cat([_x, _o, _c], dim=1)[idx == 4]
+    rgb[idx == 5] = torch.cat([_c, _o, _x], dim=1)[idx == 5]
+    rgb += _m
+
+    return rgb if is_batch else rgb[0]
+
+
+def color_rgb_to_hsv(rgb):
+    is_batch = len(rgb.shape) == 4
+    if not is_batch:
+        rgb = rgb[None]
+
+    cmax, cmax_idx = torch.max(rgb, dim=1, keepdim=True)
+    cmin = torch.min(rgb, dim=1, keepdim=True)[0]
+    delta = cmax - cmin
+    hsv_h = torch.empty_like(rgb[:, 0:1, :, :])
+    cmax_idx[delta == 0] = 3
+    hsv_h[cmax_idx == 0] = (((rgb[:, 1:2] - rgb[:, 2:3]) / delta) % 6)[cmax_idx == 0]
+    hsv_h[cmax_idx == 1] = (((rgb[:, 2:3] - rgb[:, 0:1]) / delta) + 2)[cmax_idx == 1]
+    hsv_h[cmax_idx == 2] = (((rgb[:, 0:1] - rgb[:, 1:2]) / delta) + 4)[cmax_idx == 2]
+    hsv_h[cmax_idx == 3] = 0.
+    hsv_h /= 6.
+    hsv_s = torch.where(cmax == 0, torch.tensor(0.).type_as(rgb), delta / cmax)
+    hsv_v = cmax
+    hsv = torch.cat([hsv_h, hsv_s, hsv_v], dim=1)
+
+    return hsv if is_batch else hsv[0]
+
+
+def sort_matrix(A, rev=True):
+    I = np.unravel_index(np.argsort(A, axis=None), A.shape)
+    I = [(I[0][k], I[1][k]) for k in range(A.size)]
+    return torch.tensor(I[::-1] if rev else I)

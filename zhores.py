@@ -36,7 +36,7 @@ OPTIONS = {
         'file': 'manager',
         'days': 2,
         'hours': 0,
-        'memory': 15,
+        'memory': 30,
         'out': 'zhores_out',
         'gpu': True,
     }
@@ -88,6 +88,7 @@ TASKS = {
         'args': {
             'model': 'googlenet',
             'kind': 'bs_onepixel',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-googlenet/attack_target-bs_onepixel'
@@ -97,6 +98,7 @@ TASKS = {
         'args': {
             'model': 'inception',
             'kind': 'bs_onepixel',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-inception/attack_target-bs_onepixel'
@@ -106,6 +108,7 @@ TASKS = {
         'args': {
             'model': 'mobilenet',
             'kind': 'bs_onepixel',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-mobilenet/attack_target-bs_onepixel'
@@ -115,6 +118,7 @@ TASKS = {
         'args': {
             'model': 'resnet',
             'kind': 'bs_onepixel',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-resnet/attack_target-bs_onepixel'
@@ -124,6 +128,7 @@ TASKS = {
         'args': {
             'model': 'vgg',
             'kind': 'bs_onepixel',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-vgg/attack_target-bs_onepixel'
@@ -133,6 +138,7 @@ TASKS = {
         'args': {
             'model': 'googlenet',
             'kind': 'bs_pixle',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-googlenet/attack_target-bs_pixle'
@@ -142,6 +148,7 @@ TASKS = {
         'args': {
             'model': 'inception',
             'kind': 'bs_pixle',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-inception/attack_target-bs_pixle'
@@ -151,6 +158,7 @@ TASKS = {
         'args': {
             'model': 'mobilenet',
             'kind': 'bs_pixle',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-mobilenet/attack_target-bs_pixle'
@@ -160,6 +168,7 @@ TASKS = {
         'args': {
             'model': 'resnet',
             'kind': 'bs_pixle',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-resnet/attack_target-bs_pixle'
@@ -169,6 +178,7 @@ TASKS = {
         'args': {
             'model': 'vgg',
             'kind': 'bs_pixle',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-vgg/attack_target-bs_pixle'
@@ -178,6 +188,7 @@ TASKS = {
         'args': {
             'model': 'googlenet',
             'kind': 'bs_square',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-googlenet/attack_target-bs_square'
@@ -187,6 +198,7 @@ TASKS = {
         'args': {
             'model': 'inception',
             'kind': 'bs_square',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-inception/attack_target-bs_square'
@@ -196,6 +208,7 @@ TASKS = {
         'args': {
             'model': 'mobilenet',
             'kind': 'bs_square',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-mobilenet/attack_target-bs_square'
@@ -205,6 +218,7 @@ TASKS = {
         'args': {
             'model': 'resnet',
             'kind': 'bs_square',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-resnet/attack_target-bs_square'
@@ -214,6 +228,7 @@ TASKS = {
         'args': {
             'model': 'vgg',
             'kind': 'bs_square',
+            'model_attr': None
         },
         'opts': {
             'out': 'result/imagenet-vgg/attack_target-bs_square'
@@ -273,7 +288,8 @@ def zhores(kind='main'):
 
         text += '\n\n' + f'srun python3 {opts["file"]}.py'
         for name, value in args.items():
-            text += f' --{name} {value}'
+            if value is not None:
+                text += f' --{name} {value}'
 
         text += '\n\n' + 'exit 0'
 

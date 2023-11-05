@@ -16,8 +16,7 @@ from model import Model
 from utils import Log
 
 
-RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 35, 44,
-    59, 99, 142, 200, 254, 300, 350, 432, 500, 583, 639, 894, 922, 999]
+RESULT_SHOW = [0, 1, 2, 3, 4, 10, 15, 44, 56, 74, 88, 254, 300, 500, 583, 999]
 
 
 class Manager:
@@ -203,28 +202,28 @@ class Manager:
         torch.manual_seed(seed)
 
     def task_attack_attr(self):
-        self._task_attack()
+        self._attacks()
 
     def task_attack_bs_onepixel(self):
-        self._task_attack('onepixel')
+        self._attacks('onepixel')
 
     def task_attack_bs_pixle(self):
-        self._task_attack('pixle')
+        self._attacks('pixle')
 
     def task_attack_bs_square(self):
-        self._task_attack('square')
+        self._attacks('square')
 
     def task_attack_target_attr(self):
-        self._task_attack(target=True)
+        self._attacks(target=True)
 
     def task_attack_target_bs_onepixel(self):
-        self._task_attack('onepixel', target=True)
+        self._attacks('onepixel', target=True)
 
     def task_attack_target_bs_pixle(self):
-        self._task_attack('pixle', target=True)
+        self._attacks('pixle', target=True)
 
     def task_attack_target_bs_square(self):
-        self._task_attack('square', target=True)
+        self._attacks('square', target=True)
 
     def task_check_data(self):
         name = self.data.name
@@ -277,105 +276,96 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
-    def _attack_attr(self, i, target=False):
+    def _attack(self, i, name=None, target=False, show=False):
         x, c, l = self.data.get(i, tst=True)
 
-        att = AttackAttr(self.model, x, c, l,
-            self.opt_sc, self.opt_d, self.opt_n,
-            num_target=self.attack_num_target if target else None)
-        if not att.check(): # Invalid prediction for target image; skip
+        y_all = self.model.run(x).detach().to('cpu').numpy()
+        y = y_all[c]
+
+        if np.argmax(y_all) != c and not target:
+            # Invalid prediction for target image; skip
             return
 
-        att.prep(self.model_attr, self.attr_steps, self.attr_iters)
+        if target:
+            c_attack = np.argsort(y_all)[::-1][self.attack_num_target]
+            l_attack = self.data.labels[c_attack]
+            y_attack = y_all[c_attack]
+        else:
+            c_attack = c
+            l_attack = None
+            y_attack = y_all[np.argsort(y_all)[::-1][1]]
 
-        print(f'\n   ---> Attack # {i:-5d}')
-        att.run(self.opt_m, self.opt_k, self.opt_k_top, self.opt_k_gd,
-            self.opt_lr, self.opt_r, log=True)
-
-        return att.result()
-
-    def _attack_bs(self, i, name, target=False):
-        x, c, l = self.data.get(i, tst=True)
-
-        att = AttackBs(self.model, x, c, l,
-            self.opt_sc,
-            num_target=self.attack_num_target if target else None)
-        if not att.check(): # Invalid prediction for target image; skip
-            return
-
-        att.prep(name, self.opt_m)
-
-        print(f'\n   ---> Attack # {i:-5d}')
-        att.run()
-
-        return att.result()
-
-    def _attack_end(self, result, save=True):
-        if save:
-            fpath = self.get_path('result.npz')
-            np.savez_compressed(self.get_path('result.npz'), result=result)
-
-        succ = np.sum([r.get('success', False) for r in result.values() if r])
-        full = len([True for r in result.values() if r])
-
-        text = 'Completed. '
-        text += f'Successful: {succ/full*100:-5.2f}% '
-        text += f'(total images {full})'
-        self.log('\n' + text)
-
-    def _attack_show(self, r, name=None):
-        x, c_real, l_real = self.data.get(r['c'], tst=True)
-        y, c, l = self.model.run_pred(x)
-
-        x_new = change(x.detach().to('cpu').numpy(), r['changes'], True)
-        delta = np.linalg.norm(np.array(x_new) - np.array(x))
-        y_new, c_new, l_new = self.model.run_pred(x_new)
-
-        text = f'----> c: {c:-4d} > {c_new:-4d} | '
-        text += f'y: {r["y"]:-9.3e} > {r["y_old"]:-9.3e} | '
-        text += f'y_new: {r["y_new"]:-9.3e} | '
-        text += f'\n        dx: {delta:-8.2e} | num: {len(r["changes"])}'
-        text += f'\n        Class ini: {l[:40]}'
-        text += f'\n        Class new: {l_new[:40]}'
-        if r['c_target'] is not None:
-            text += f'\n        c_target : {r["c_target"]:-4d}'
-            text += f'\n        y_target : {r["y_target"]:-9.3e}'
+        text = f'\n--> # {i:-4d} | '
+        text += f'c     {c:-4d} | '
+        if target:
+            text += f'c_att    {c_attack:-4d} | '
+        text += f'y     {y:-7.1e} | '
+        text += f'y_{"att" if target else "next"} {y_attack:-7.1e}'
         self.log(text)
+
+        Att = AttackBs if name else AttackAttr
+        att = Att(self.model.net, x, c_attack, self.opt_m, name or 'tetradat',
+            self.data.norm_m, self.data.norm_v, target)
+
+        if name:
+            result = att.run()
+        else:
+            self.log('')
+            x_attr = self.model_attr.attrib(x, c_attack,
+                self.attr_steps, self.attr_iters)
+            result = att.run(x_attr, self.opt_d, self.opt_n, self.opt_sc,
+                self.opt_k, self.opt_k_top, self.opt_k_gd, self.opt_lr,
+                self.opt_r)
+            self.log('')
+
+        result['l'] = l
+        result['l_new'] = self.data.labels[result['c_new']]
+
+        if att.success:
+            y_all_new = self.model.run(att.x_new).detach().to('cpu').numpy()
+            y_old = y_all_new[c]
+            text = f'+++ >        c_new {result["c_new"]:-4d} | '
+            text += f'y_new {result["y_new"]:-7.1e} | '
+            text += f'y_old {y_old:-7.1e} | '
+            text += f'evals {result["m"]:-5d}\n'
+            text += f'    : changes {result["changes"]:-5d} | '
+            text += f'dx1 {result["dx1"]:-7.1e} | '
+            text += f'dx2 {result["dx2"]:-7.1e}\n'
+            text += f'    : l_old : {result["l"][:50]}\n'
+            text += f'    : l_new : {result["l_new"][:50]}\n'
+        else:
+            text = f'    > fail | '
+            text += f'evals {result["m"]:-5d}'
+        self.log(text)
+
+        if not att.success or not show:
+            return result
 
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base.png'))
-        self.data.plot_base(self.data.tr_norm_inv(x_new), '', size=6,
+        self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
             fpath=self.get_path(f'img/{c}/changed.png'))
 
         if name is not None:
-            return
+            return result
 
-        x_attr = self.model_attr.attrib(x, c,
-            self.attr_steps, self.attr_iters)
         self.data.plot_attr(x_attr,
             fpath=self.get_path(f'img/{c}/attr.png'))
 
-        if r['c_target'] is not None:
-            x_attr_target = self.model_attr.attrib(x, r['c_target'],
+        if target:
+            x_attr_target = self.model_attr.attrib(x, c_attack,
                 self.attr_steps, self.attr_iters)
             self.data.plot_attr(x_attr_target,
                 fpath=self.get_path(f'img/{c}/attr_target.png'))
 
-        x_attr_old = self.model_attr.attrib(x_new, c,
-            self.attr_steps, self.attr_iters)
-        self.data.plot_attr(x_attr_old,
-            fpath=self.get_path( f'img/{c}/attr_old.png'))
-
-        x_attr_new = self.model_attr.attrib(x_new, c_new,
+        x_attr_new = self.model_attr.attrib(att.x_new, c,
             self.attr_steps, self.attr_iters)
         self.data.plot_attr(x_attr_new,
             fpath=self.get_path( f'img/{c}/attr_new.png'))
 
-        x_changes = (x_new - x)[0]
-        self.data.plot_changes(x_changes,
-            fpath=self.get_path(f'img/{c}/changes.png'))
+        return result
 
-    def _task_attack(self, name=None, target=False):
+    def _attacks(self, name=None, target=False):
         if target:
             title = 'Start targeted attack on images'
         else:
@@ -385,22 +375,24 @@ class Manager:
         tm = self.log.prc(title)
 
         result = {}
-
         for i in range(len(self.data.data_tst)):
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
+            res = self._attack(i, name, target, show=(i in RESULT_SHOW))
+            if res is not None:
+                result[i] = res
 
-            if name:
-                result_current = self._attack_bs(i, name, target=target)
-            else:
-                result_current = self._attack_attr(i, target=target)
+        fpath = self.get_path('result.npz')
+        np.savez_compressed(self.get_path('result.npz'), result=result)
 
-            if result_current is not None:
-                result[i] = result_current
-                if i in RESULT_SHOW and result_current['success']:
-                    self._attack_show(result_current, name)
+        succ = np.sum([r.get('success', False) for r in result.values()])
+        full = np.sum([True for r in result.values()])
 
-        self._attack_end(result)
+        text = 'Completed. '
+        text += f'Successful: {succ/full*100:-5.2f}% '
+        text += f'(total images {full})'
+        self.log('\n' + text)
+
         self.log.res(tpc()-tm)
 
 
@@ -444,7 +436,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 5000,
+        default= 1000,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -489,12 +481,12 @@ def args_build():
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=20,
+        default=10,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=20,
+        default=10,
     )
     parser.add_argument('--attack_num_target',
         type=int,
@@ -504,7 +496,7 @@ def args_build():
     parser.add_argument('--attack_num_max',
         type=int,
         help='Maximum number of attacks (if 0, then use full dataset)',
-        default=0,
+        default=50,
     )
     parser.add_argument('--root',
         type=str,
