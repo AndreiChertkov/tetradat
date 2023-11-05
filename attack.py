@@ -110,9 +110,11 @@ class AttackAttr(Attack):
             torchvision.transforms.Normalize(
                 -np.array(self.norm_m), [1., 1., 1.])])
 
-        self.pixels = sort_matrix(x_attr)[:self.d].to(self.device)
-        self.x_base = self.trans_base(self.x).to(self.device)
-        self.x_base_hsv = color_rgb_to_hsv(self.x_base).to(self.device)
+        self.x = self.x.to(self.device)
+        x_attr = x_attr.to(self.device)
+        self.pixels = sort_matrix(x_attr)[:self.d]
+        self.x_base = self.trans_base(self.x)
+        self.x_base_hsv = color_rgb_to_hsv(self.x_base)
 
         #try:
         if True:
