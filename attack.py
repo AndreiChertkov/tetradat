@@ -111,7 +111,7 @@ class AttackAttr(Attack):
                 -np.array(self.norm_m), [1., 1., 1.])])
 
         I = np.unravel_index(np.argsort(x_attr, axis=None), x_attr.shape)
-        I = [(I[0][k], I[1][k]) for k in range(A.size)]
+        I = [(I[0][k], I[1][k]) for k in range(x_attr.size)]
         self.pixels = torch.tensor(I[::-1]).to(self.device)
 
         self.x = self.x.to(self.device)

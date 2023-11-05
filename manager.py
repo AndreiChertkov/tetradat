@@ -475,7 +475,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=int,
         help='Scale for the noize image',
-        default=15,
+        default=10,
     )
     parser.add_argument('--attr_steps',
         type=int,
