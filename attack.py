@@ -1,5 +1,5 @@
 import jax
-# jax.config.update('jax_enable_x64', True)
+jax.config.update('jax_enable_x64', True)
 jax.config.update('jax_platform_name', 'cpu')
 jax.default_device(jax.devices('cpu')[0])
 
@@ -33,8 +33,8 @@ class Attack:
 
         self.success = False     # Result of the attack
         self.changes = 0         # Number of changed pixels
-        self.dx1 = None          # L1 norm for changes
-        self.dx2 = None          # L2 norm for changes
+        self.dx1 = 0.            # L1 norm for changes
+        self.dx2 = 0.            # L2 norm for changes
 
         self.device = next(self.net.parameters()).device
         self.probs = torch.nn.Softmax(dim=1)
@@ -59,8 +59,8 @@ class Attack:
             self.success = self.c_new != self.c
 
         self.changes = torch.sum(torch.abs(self.x_new - self.x) > 1.E-14).item()
-        self.dx1 = torch.norm(self.x_new - self.x, p=1)
-        self.dx2 = torch.norm(self.x_new - self.x, p=2)
+        self.dx1 = torch.norm(self.x_new - self.x, p=1).item()
+        self.dx2 = torch.norm(self.x_new - self.x, p=2).item()
 
     def result(self):
         return {
@@ -85,10 +85,15 @@ class AttackAttr(Attack):
         h, s, v = torch.clone(self.x_base_hsv)
 
         h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
-        dh[h_target + dh > 1.] = dh[h_target + dh > 1.] - 1.
-        dh[h_target + dh < 0.] = 1. - dh[h_target + dh < 0.]
+        idx = h_target + dh > 1.
+        dh[idx] = dh[idx] - 1.
+        idx = h_target + dh < 0.
+        dh[idx] = 1. + dh[idx]
 
         h[self.pixels[:, 0], self.pixels[:, 1]] += dh
+
+        if torch.min(h) < 0. or torch.max(h) > 1.:
+            self.err += ' Invalid transformed image.'
 
         x = color_hsv_to_rgb(torch.stack((h, s, v)))
         x = self.trans(x)
@@ -112,18 +117,17 @@ class AttackAttr(Attack):
 
         I = np.unravel_index(np.argsort(x_attr, axis=None), x_attr.shape)
         I = [(I[0][k], I[1][k]) for k in range(x_attr.size)]
-        self.pixels = torch.tensor(I[::-1])[:self.d].to(self.device)
+        self.pixels = torch.tensor(I[::-1][:self.d]).to(self.device)
 
         self.x = self.x.to(self.device)
         self.x_base = self.trans_base(self.x)
         self.x_base_hsv = color_rgb_to_hsv(self.x_base)
 
-        #try:
-        if True:
+        try:
             i, y = protes(self.loss, d, n, self.m_max, k, k_top, k_gd, lr, r,
                 is_max=(True if self.target else False), log=True)
-        #except Exception as e:
-        #    pass
+        except Exception as e:
+            pass
 
         self.t += tpc() - t
         return self.result()
@@ -142,7 +146,20 @@ class AttackAttr(Attack):
 class AttackBs(Attack):
     def run(self, onepixel=100, pixle=100, square=4/255, seed=42):
         t = tpc()
+        self._build(onepixel, pixle, square, seed)
 
+        x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
+        c_ = torch.tensor([self.c]).to('cpu')
+
+        x_new = self.atk(x_, c_)[0].detach().to('cpu')
+
+        self.check(x_new)
+        self.m = self.atk.model_evals
+
+        self.t += tpc() - t
+        return self.result()
+
+    def _build(self, onepixel=100, pixle=100, square=4/255, seed=42):
         if self.name == 'onepixel':
             self.atk = _OnePixel(self.net,
                 pixels=onepixel,
@@ -168,17 +185,6 @@ class AttackBs(Attack):
 
         if self.target:
             self.atk.set_mode_targeted_by_label(quiet=True)
-
-        x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
-        c_ = torch.tensor([self.c]).to('cpu')
-
-        x_new = self.atk(x_, c_)[0].detach().to('cpu')
-
-        self.check(x_new)
-        self.m = self.atk.model_evals
-
-        self.t += tpc() - t
-        return self.result()
 
 
 class _OnePixel(torchattacks.OnePixel):

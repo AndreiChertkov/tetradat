@@ -281,17 +281,15 @@ class Manager:
         y_all = self.model.run(x).detach().to('cpu').numpy()
         y = y_all[c]
 
-        if np.argmax(y_all) != c and not target:
+        if np.argmax(y_all) != c:
             # Invalid prediction for target image; skip
             return
 
         if target:
             c_attack = np.argsort(y_all)[::-1][self.attack_num_target]
-            l_attack = self.data.labels[c_attack]
             y_attack = y_all[c_attack]
         else:
             c_attack = c
-            l_attack = None
             y_attack = y_all[np.argsort(y_all)[::-1][1]]
 
         text = f'\n--> # {i:-4d} | '
@@ -309,13 +307,13 @@ class Manager:
         if name:
             result = att.run()
         else:
-            self.log('')
+            print('')
             x_attr = self.model_attr.attrib(x, c_attack,
                 self.attr_steps, self.attr_iters)
             result = att.run(x_attr, self.opt_d, self.opt_n, self.opt_sc,
                 self.opt_k, self.opt_k_top, self.opt_k_gd, self.opt_lr,
                 self.opt_r)
-            self.log('')
+            print('')
 
         result['l'] = l
         result['l_new'] = self.data.labels[result['c_new']]
@@ -351,16 +349,16 @@ class Manager:
         self.data.plot_attr(x_attr,
             fpath=self.get_path(f'img/{c}/attr.png'))
 
+        x_attr_new = self.model_attr.attrib(att.x_new, c,
+            self.attr_steps, self.attr_iters)
+        self.data.plot_attr(x_attr_new,
+            fpath=self.get_path( f'img/{c}/attr_new.png'))
+
         if target:
             x_attr_target = self.model_attr.attrib(x, c_attack,
                 self.attr_steps, self.attr_iters)
             self.data.plot_attr(x_attr_target,
                 fpath=self.get_path(f'img/{c}/attr_target.png'))
-
-        x_attr_new = self.model_attr.attrib(att.x_new, c,
-            self.attr_steps, self.attr_iters)
-        self.data.plot_attr(x_attr_new,
-            fpath=self.get_path( f'img/{c}/attr_new.png'))
 
         return result
 
@@ -435,7 +433,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 1000,
+        default= 2500,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -450,32 +448,32 @@ def args_build():
     parser.add_argument('--opt_k',
         type=int,
         help='Batch size for optimization',
-        default=100,
+        default=50,
     )
     parser.add_argument('--opt_k_top',
         type=int,
         help='Number of selected candidates in the batch',
-        default=10,
+        default=5,
     )
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=100,
+        default=1,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=1.E-3,
+        default=1.E-1,
     )
     parser.add_argument('--opt_r',
         type=int,
         help='TT-rank of the constructed probability TT-tensor',
-        default=5,
+        default=2,
     )
     parser.add_argument('--opt_sc',
         type=int,
         help='Scale for the noize image',
-        default=10,
+        default=5,
     )
     parser.add_argument('--attr_steps',
         type=int,
