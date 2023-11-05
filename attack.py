@@ -110,9 +110,11 @@ class AttackAttr(Attack):
             torchvision.transforms.Normalize(
                 -np.array(self.norm_m), [1., 1., 1.])])
 
+        I = np.unravel_index(np.argsort(x_attr, axis=None), x_attr.shape)
+        I = [(I[0][k], I[1][k]) for k in range(A.size)]
+        self.pixels = torch.tensor(I[::-1]).to(self.device)
+
         self.x = self.x.to(self.device)
-        x_attr = torch.tensor(x_attr).to(self.device)
-        self.pixels = sort_matrix(x_attr)[:self.d]
         self.x_base = self.trans_base(self.x)
         self.x_base_hsv = color_rgb_to_hsv(self.x_base)
 
@@ -203,16 +205,6 @@ class _Square(torchattacks.Square):
         return super().get_logits(inputs, labels, *args, **kwargs)
 
 
-def change(x, changes, to_torch=False):
-    x = x.copy()
-    for p1, p2, dx in changes:
-        for ch in range(3):
-            x[ch, p1, p2] += dx if isinstance(dx, (int, float)) else dx[ch]
-    if to_torch:
-        x = torch.tensor(x, dtype=torch.float32)
-    return x
-
-
 def color_hsv_to_rgb(hsv):
     is_batch = len(hsv.shape) == 4
     if not is_batch:
@@ -257,9 +249,3 @@ def color_rgb_to_hsv(rgb):
     hsv = torch.cat([hsv_h, hsv_s, hsv_v], dim=1)
 
     return hsv if is_batch else hsv[0]
-
-
-def sort_matrix(A, rev=True):
-    I = np.unravel_index(np.argsort(A, axis=None), A.shape)
-    I = [(I[0][k], I[1][k]) for k in range(A.size)]
-    return torch.tensor(I[::-1] if rev else I)

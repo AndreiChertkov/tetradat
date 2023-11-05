@@ -8,7 +8,6 @@ import torch
 
 from attack import AttackAttr
 from attack import AttackBs
-from attack import change
 from data import DATA_NAMES
 from data import Data
 from model import MODEL_NAMES
