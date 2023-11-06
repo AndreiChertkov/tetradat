@@ -124,11 +124,12 @@ class AttackAttr(Attack):
         self.x_base = self.trans_base(self.x)
         self.x_base_hsv = color_rgb_to_hsv(self.x_base)
 
-        try:
+        #try:
+        if True:
             i, y = protes(self.loss, d, n, self.m_max, k, k_top, k_gd, lr, r,
                 is_max=(True if self.target else False), log=True)
-        except Exception as e:
-            pass
+        #except Exception as e:
+        #    pass
 
         self.t += tpc() - t
         return self.result()
