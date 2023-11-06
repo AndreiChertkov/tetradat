@@ -335,8 +335,8 @@ class Manager:
             text += f'evals {result["m"]:-5d}'
         self.log(text)
 
-        if not att.success or not show:
-            return result
+        #if not att.success or not show:
+        #    return result
 
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base.png'))
@@ -433,7 +433,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 1000,
+        default= 5000,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -458,12 +458,12 @@ def args_build():
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=100,
+        default=1,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=1.E-2,
+        default=5.E-2,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -473,7 +473,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=int,
         help='Scale for the noize image',
-        default=15,
+        default=5,
     )
     parser.add_argument('--attr_steps',
         type=int,

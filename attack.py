@@ -80,6 +80,36 @@ class Attack:
 
 class AttackAttr(Attack):
     def change(self, i):
+        delta = (np.array(i) - (self.n-1)/2) / self.sc
+        delta = torch.tensor(delta).to(self.device)
+
+        h, s, v = torch.clone(self.x_base_hsv)
+
+        s[self.pixels[:, 0], self.pixels[:, 1]] += delta
+        s[s > 1.] = 1.
+        s[s < 0.] = 0.
+
+        x = color_hsv_to_rgb(torch.stack((h, s, v)))
+        x = self.trans(x)
+
+        return x
+
+    def change_v(self, i):
+        delta = (np.array(i) - (self.n-1)/2) / self.sc
+        delta = torch.tensor(delta).to(self.device)
+
+        h, s, v = torch.clone(self.x_base_hsv)
+
+        v[self.pixels[:, 0], self.pixels[:, 1]] += delta
+        v[v > 1.] = 1.
+        v[v < 0.] = 0.
+
+        x = color_hsv_to_rgb(torch.stack((h, s, v)))
+        x = self.trans(x)
+
+        return x
+
+    def change_h(self, i):
         dh = (np.array(i) - (self.n-1)/2) / self.sc
         dh = torch.tensor(dh).to(self.device)
 
