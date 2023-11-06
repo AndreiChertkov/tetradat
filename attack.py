@@ -58,7 +58,8 @@ class Attack:
         else:
             self.success = self.c_new != self.c
 
-        self.changes = torch.sum(torch.abs(self.x_new - self.x) > 1.E-14).item()
+        self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
+        self.changes = torch.sum(self.changes > 1.E-14).item()
         self.dx1 = torch.norm(self.x_new - self.x, p=1).item()
         self.dx2 = torch.norm(self.x_new - self.x, p=2).item()
 

@@ -349,14 +349,14 @@ class Manager:
         self.data.plot_attr(x_attr,
             fpath=self.get_path(f'img/{c}/attr.png'))
 
-        x_attr_new = self.model_attr.attrib(att.x_new, c,
-            self.attr_steps, self.attr_iters)
+        x_attr_new = self.model_attr.attrib(att.x_new.detach().to('cpu'),
+            c, self.attr_steps, self.attr_iters)
         self.data.plot_attr(x_attr_new,
             fpath=self.get_path( f'img/{c}/attr_new.png'))
 
         if target:
-            x_attr_target = self.model_attr.attrib(x, c_attack,
-                self.attr_steps, self.attr_iters)
+            x_attr_target = self.model_attr.attrib(x.detach().to('cpu'),
+                c_attack, self.attr_steps, self.attr_iters)
             self.data.plot_attr(x_attr_target,
                 fpath=self.get_path(f'img/{c}/attr_target.png'))
 
@@ -433,7 +433,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 2500,
+        default= 5000,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -448,42 +448,42 @@ def args_build():
     parser.add_argument('--opt_k',
         type=int,
         help='Batch size for optimization',
-        default=50,
+        default=100,
     )
     parser.add_argument('--opt_k_top',
         type=int,
         help='Number of selected candidates in the batch',
-        default=5,
+        default=10,
     )
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=1,
+        default=100,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=1.E-1,
+        default=1.E-2,
     )
     parser.add_argument('--opt_r',
         type=int,
         help='TT-rank of the constructed probability TT-tensor',
-        default=2,
+        default=5,
     )
     parser.add_argument('--opt_sc',
         type=int,
         help='Scale for the noize image',
-        default=5,
+        default=15,
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attack_num_target',
         type=int,
