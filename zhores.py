@@ -1,26 +1,22 @@
 """Script to run computations on zhores cluster.
 
-Notes:
-- To check status, use "squeue" command.
-- Delete the running task as "scancel NUMBER".
+Run this script as `python zhores.py` or `python zhores.py init`.
+To check status, use "squeue"; to delete the running task do "scancel NUMBER".
 
-Do manually before the run (?): # TODO: move it into the code
-
-# module avail
-# module load python/anaconda3
-# conda info --envs
-# conda activate && conda remove --name tetradat --all -y
-# conda create --name tetradat python=3.8 -y
-# conda activate tetradat
-# conda list
-# pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 && pip install triton
-# conda list
+Please, install packages within the environment before the run of this script:
+$ module rm *
+$ module load python/anaconda3
+$ module load gpu/cuda-11.3
+$ conda remove --name tetradat --all -y
+$ conda create --name tetradat python=3.8 -y
+$ conda activate tetradat
+$ pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113
+$ pip install triton
 
 """
 import os
 import subprocess
 import sys
-import time
 
 
 MODEL_ATTR = 'alexnet'
@@ -30,16 +26,32 @@ BASELINES = ['onepixel', 'pixle', 'square']
 
 OPTIONS = {
     'args': {
-        'data': 'imagenet',
-        'task': 'attack_target',
-        'kind': 'attr'
+        'task': 'attack',
+        'kind': 'attr',
+        'data': 'imagenet'
     },
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
-        'days': 5,
+        'days': 3,
         'hours': 0,
         'memory': 30,
+        'out': 'zhores_out',
+        'gpu': True
+    }
+}
+OPTIONS_INIT = {
+    'args': {
+        'task': 'check',
+        'kind': 'model',
+        'data': 'imagenet'
+    },
+    'opts': {
+        'env': 'tetradat',
+        'file': 'manager',
+        'days': 0,
+        'hours': 3,
+        'memory': 15,
         'out': 'zhores_out',
         'gpu': True
     }
@@ -70,42 +82,16 @@ for j, bs in enumerate(BASELINES, 1):
         }
 
 
-OPTIONS_TEST = {
-    'args': {
-        'data': 'imagenet',
-        'task': 'check',
-    },
-    'opts': {
-        'env': 'tetradat',
-        'file': 'manager',
-        'days': 0,
-        'hours': 3,
-        'memory': 15,
-        'out': 'zhores_out',
-        'gpu': True
-    }
-}
-
-
-TASKS_TEST = {
-    'test': {
-        'args': [{
-            'kind': 'data',
-        }],
-    }
-}
+TASKS_INIT = {'test': {'args': [{'kind': 'data'}]}}
 for i, model in enumerate(MODELS, 1):
-    TASKS_TEST['test']['args'].append({
-            'kind': 'model',
-            'model': model
-        })
+    TASKS_INIT['test']['args'].append({'model': model})
 
 
 def zhores(kind='main'):
     if kind == 'main':
         options, tasks = OPTIONS, TASKS
-    elif kind == 'test':
-        options, tasks = OPTIONS_TEST, TASKS_TEST
+    elif kind == 'init':
+        options, tasks = OPTIONS_INIT, TASKS_INIT
     else:
         raise NotImplementedError
 
@@ -170,7 +156,6 @@ def zhores(kind='main'):
             f.write(text)
 
         prc = subprocess.getoutput(f'sbatch ___zhores_run_{task_name}.sh')
-        time.sleep(0.5)
         os.remove(f'___zhores_run_{task_name}.sh')
 
         if 'command not found' in prc:
