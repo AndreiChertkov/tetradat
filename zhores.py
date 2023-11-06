@@ -66,7 +66,7 @@ for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
         'args': {'model': model, 'model_attr': MODEL_ATTR},
         'opts': {
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}'
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
@@ -74,14 +74,14 @@ for j, bs in enumerate(BASELINES, 1):
         TASKS[f'{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
-                'out': f'result/imagenet-{model}/attack_target-bs_{bs}'
+                'out': f'result/imagenet-{model}/attack-bs_{bs}'
             }
         }
 
 
-TASKS_INIT = {'init': {'args': [{'kind': 'data'}]}}
+TASKS_INIT = {'ini-tet': {'args': [{'kind': 'data'}]}}
 for i, model in enumerate(MODELS, 1):
-    TASKS_INIT['init']['args'].append({'model': model})
+    TASKS_INIT['ini-tet']['args'].append({'model': model})
 
 
 def zhores(kind='main'):
@@ -122,7 +122,7 @@ def zhores(kind='main'):
         mem = str(opts['memory'])
         text += f'\n#SBATCH --mem={mem}GB'
 
-        text += '\n\nmodule rm *'
+        text += '\n\nmodule purge'
 
         text += '\nmodule load python/anaconda3'
 
@@ -130,7 +130,7 @@ def zhores(kind='main'):
             text += '\nmodule load gpu/cuda-11.3'
 
         env = opts['env']
-        text += '\n"$(conda shell.bash hook)"'
+        text += '\neval "$(conda shell.bash hook)"'
         text += f'\nsource activate {env}\n'
 
         args_list = task.get('args', {})

@@ -468,7 +468,7 @@ def args_build():
     parser.add_argument('--opt_r',
         type=int,
         help='TT-rank of the constructed probability TT-tensor',
-        default=5,
+        default=3,
     )
     parser.add_argument('--opt_sc',
         type=int,
