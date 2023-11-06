@@ -433,12 +433,12 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 1000,
+        default= 1000, # TODO
     )
     parser.add_argument('--opt_n',
         type=int,
         help='Mode size for optimization',
-        default=5,
+        default=5, # TODO
     )
     parser.add_argument('--opt_m',
         type=int,
@@ -458,17 +458,17 @@ def args_build():
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=10,
+        default=10, # TODO
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=1.E-2,
+        default=1.E-2, # TODO
     )
     parser.add_argument('--opt_r',
         type=int,
         help='TT-rank of the constructed probability TT-tensor',
-        default=3,
+        default=3, # TODO
     )
     parser.add_argument('--opt_sc',
         type=int,

@@ -12,11 +12,11 @@ $ conda remove --name tetradat --all -y
 $ conda create --name tetradat -y
 $ source activate tetradat
 $ conda install -n tetradat python=3.8 -y
+$ pip install --upgrade "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+$ pip install optax==0.1.4
 $ conda install libgcc -y
 $ pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib==3.7.0 requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 --force-reinstall
 $ pip install triton --force-reinstall
-$ pip install "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html --force-reinstall
-$ pip install optax==0.1.4
 > (use nvcc --version to check cuda)
 
 
