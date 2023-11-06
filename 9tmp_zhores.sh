@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=9I tmp-tet
+#SBATCH --job-name=9tmp-tet
 #SBATCH --output=9tmp_zhores_out.txt
 #SBATCH --time=0-3:00:00
 #SBATCH --partition gpu

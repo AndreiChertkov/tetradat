@@ -1,0 +1,576 @@
+[2023-11-06 19-49-21] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "mobilenet"
+Model attr.         : "alexnet"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 15
+Opt. dimension      : 500
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (     2.30 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (     0.61 sec.) 
+
+
+.... Start attack on images
+
+--> #    0 | c        0 | y     5.8e-01 | y_next 1.6e-02
+
+protes > m 1.0e+02 | t 6.132e+00 | y  5.4646e-01
+protes > m 2.0e+02 | t 7.635e+00 | y  5.2756e-01
+protes > m 3.0e+02 | t 9.107e+00 | y  5.2571e-01
+protes > m 4.0e+02 | t 1.060e+01 | y  5.1446e-01
+protes > m 5.0e+02 | t 1.207e+01 | y  5.0392e-01
+protes > m 6.0e+02 | t 1.355e+01 | y  4.9928e-01
+protes > m 7.0e+02 | t 1.502e+01 | y  4.9599e-01
+protes > m 9.0e+02 | t 1.797e+01 | y  4.8738e-01
+protes > m 1.0e+03 | t 1.944e+01 | y  4.8518e-01
+protes > m 1.1e+03 | t 2.092e+01 | y  4.8448e-01
+protes > m 1.2e+03 | t 2.237e+01 | y  4.7598e-01
+protes > m 1.3e+03 | t 2.385e+01 | y  4.7592e-01
+protes > m 1.4e+03 | t 2.531e+01 | y  4.5818e-01
+protes > m 1.6e+03 | t 2.825e+01 | y  4.5185e-01
+protes > m 1.8e+03 | t 3.119e+01 | y  4.5145e-01
+protes > m 1.9e+03 | t 3.266e+01 | y  4.4820e-01
+protes > m 2.0e+03 | t 3.412e+01 | y  4.4587e-01
+protes > m 2.1e+03 | t 3.561e+01 | y  4.3474e-01
+protes > m 2.3e+03 | t 3.853e+01 | y  4.3051e-01
+protes > m 2.5e+03 | t 4.147e+01 | y  4.2514e-01
+protes > m 2.7e+03 | t 4.440e+01 | y  4.1243e-01
+protes > m 3.0e+03 | t 4.881e+01 | y  4.1000e-01
+protes > m 3.1e+03 | t 5.027e+01 | y  4.0561e-01
+protes > m 3.3e+03 | t 5.322e+01 | y  3.9450e-01
+protes > m 3.4e+03 | t 5.468e+01 | y  3.8404e-01
+protes > m 3.7e+03 | t 5.909e+01 | y  3.7654e-01
+protes > m 4.0e+03 | t 6.350e+01 | y  3.7179e-01
+protes > m 4.4e+03 | t 6.936e+01 | y  3.6981e-01
+protes > m 4.5e+03 | t 7.083e+01 | y  3.6898e-01
+protes > m 4.6e+03 | t 7.229e+01 | y  3.6770e-01
+protes > m 4.7e+03 | t 7.377e+01 | y  3.6561e-01
+protes > m 4.8e+03 | t 7.523e+01 | y  3.6110e-01
+protes > m 5.0e+03 | t 7.818e+01 | y  3.6056e-01
+protes > m 5.1e+03 | t 7.966e+01 | y  3.5691e-01
+protes > m 5.4e+03 | t 8.406e+01 | y  3.5318e-01
+protes > m 5.5e+03 | t 8.553e+01 | y  3.5237e-01
+protes > m 5.6e+03 | t 8.700e+01 | y  3.4696e-01
+protes > m 6.0e+03 | t 9.287e+01 | y  3.4470e-01
+protes > m 6.1e+03 | t 9.433e+01 | y  3.4375e-01
+protes > m 6.3e+03 | t 9.726e+01 | y  3.4225e-01
+protes > m 6.4e+03 | t 9.874e+01 | y  3.4200e-01
+protes > m 6.6e+03 | t 1.017e+02 | y  3.4129e-01
+protes > m 6.8e+03 | t 1.046e+02 | y  3.3964e-01
+protes > m 7.0e+03 | t 1.076e+02 | y  3.3735e-01
+protes > m 7.1e+03 | t 1.090e+02 | y  3.3551e-01
+protes > m 7.2e+03 | t 1.105e+02 | y  3.3202e-01
+protes > m 7.3e+03 | t 1.120e+02 | y  3.3181e-01
+protes > m 7.5e+03 | t 1.149e+02 | y  3.2967e-01
+protes > m 7.7e+03 | t 1.179e+02 | y  3.2810e-01
+protes > m 7.9e+03 | t 1.208e+02 | y  3.2701e-01
+protes > m 8.0e+03 | t 1.223e+02 | y  3.2556e-01
+protes > m 8.5e+03 | t 1.296e+02 | y  3.2336e-01
+protes > m 8.8e+03 | t 1.340e+02 | y  3.2249e-01
+protes > m 9.2e+03 | t 1.399e+02 | y  3.2217e-01
+protes > m 9.3e+03 | t 1.414e+02 | y  3.2217e-01
+protes > m 9.4e+03 | t 1.429e+02 | y  3.2198e-01
+protes > m 9.5e+03 | t 1.443e+02 | y  3.2153e-01
+protes > m 9.6e+03 | t 1.458e+02 | y  3.2106e-01
+protes > m 9.7e+03 | t 1.473e+02 | y  3.2014e-01
+protes > m 9.8e+03 | t 1.487e+02 | y  3.1937e-01
+protes > m 9.9e+03 | t 1.502e+02 | y  3.1793e-01
+protes > m 1.0e+04 | t 1.511e+02 | y  3.1683e-01 <<< DONE
+
+    > fail | evals 10000
+
+--> #    1 | c        1 | y     6.0e-01 | y_next 3.8e-03
+
+protes > m 1.0e+02 | t 4.140e+00 | y  7.5135e-01
+protes > m 2.0e+02 | t 5.688e+00 | y  7.1378e-01
+protes > m 3.0e+02 | t 7.172e+00 | y  6.6988e-01
+protes > m 4.0e+02 | t 8.637e+00 | y  6.3635e-01
+protes > m 5.0e+02 | t 1.010e+01 | y  6.0505e-01
+protes > m 6.0e+02 | t 1.157e+01 | y  5.8974e-01
+protes > m 8.0e+02 | t 1.462e+01 | y  5.8753e-01
+protes > m 1.0e+03 | t 1.757e+01 | y  5.8117e-01
+protes > m 1.1e+03 | t 1.912e+01 | y  5.7197e-01
+protes > m 1.2e+03 | t 2.058e+01 | y  5.5561e-01
+protes > m 1.4e+03 | t 2.354e+01 | y  5.4114e-01
+protes > m 1.5e+03 | t 2.507e+01 | y  5.3494e-01
+protes > m 1.6e+03 | t 2.658e+01 | y  5.2587e-01
+protes > m 1.7e+03 | t 2.805e+01 | y  5.2364e-01
+protes > m 1.9e+03 | t 3.107e+01 | y  5.1307e-01
+protes > m 2.1e+03 | t 3.407e+01 | y  5.0842e-01
+protes > m 2.2e+03 | t 3.553e+01 | y  5.0711e-01
+protes > m 2.3e+03 | t 3.705e+01 | y  5.0112e-01
+protes > m 2.4e+03 | t 3.858e+01 | y  5.0064e-01
+protes > m 2.6e+03 | t 4.152e+01 | y  4.8478e-01
+protes > m 2.9e+03 | t 4.604e+01 | y  4.8229e-01
+protes > m 3.1e+03 | t 4.905e+01 | y  4.7877e-01
+protes > m 3.2e+03 | t 5.055e+01 | y  4.7135e-01
+protes > m 3.3e+03 | t 5.201e+01 | y  4.6828e-01
+protes > m 3.4e+03 | t 5.349e+01 | y  4.6779e-01
+protes > m 3.5e+03 | t 5.495e+01 | y  4.6627e-01
+protes > m 3.6e+03 | t 5.644e+01 | y  4.6220e-01
+protes > m 3.8e+03 | t 5.937e+01 | y  4.5817e-01
+protes > m 3.9e+03 | t 6.084e+01 | y  4.5673e-01
+protes > m 4.0e+03 | t 6.233e+01 | y  4.5070e-01
+protes > m 4.5e+03 | t 6.971e+01 | y  4.4797e-01
+protes > m 4.6e+03 | t 7.119e+01 | y  4.4731e-01
+protes > m 4.7e+03 | t 7.267e+01 | y  4.4001e-01
+protes > m 4.8e+03 | t 7.414e+01 | y  4.3291e-01
+protes > m 5.5e+03 | t 8.444e+01 | y  4.2860e-01
+protes > m 5.6e+03 | t 8.593e+01 | y  4.2751e-01
+protes > m 6.1e+03 | t 9.327e+01 | y  4.2600e-01
+protes > m 6.2e+03 | t 9.474e+01 | y  4.2221e-01
+protes > m 6.3e+03 | t 9.621e+01 | y  4.2128e-01
+protes > m 6.4e+03 | t 9.769e+01 | y  4.2096e-01
+protes > m 6.5e+03 | t 9.916e+01 | y  4.1520e-01
+protes > m 6.6e+03 | t 1.006e+02 | y  4.1325e-01
+protes > m 6.7e+03 | t 1.022e+02 | y  4.1257e-01
+protes > m 6.8e+03 | t 1.036e+02 | y  4.0747e-01
+protes > m 7.4e+03 | t 1.126e+02 | y  4.0486e-01
+protes > m 7.6e+03 | t 1.156e+02 | y  4.0299e-01
+protes > m 7.8e+03 | t 1.186e+02 | y  4.0071e-01
+protes > m 8.0e+03 | t 1.216e+02 | y  3.9799e-01
+protes > m 8.1e+03 | t 1.232e+02 | y  3.9620e-01
+protes > m 8.2e+03 | t 1.246e+02 | y  3.9543e-01
+protes > m 8.4e+03 | t 1.276e+02 | y  3.9322e-01
+protes > m 8.7e+03 | t 1.322e+02 | y  3.9126e-01
+protes > m 8.8e+03 | t 1.336e+02 | y  3.8997e-01
+protes > m 8.9e+03 | t 1.352e+02 | y  3.8936e-01
+protes > m 9.0e+03 | t 1.367e+02 | y  3.8861e-01
+protes > m 9.2e+03 | t 1.396e+02 | y  3.8772e-01
+protes > m 9.3e+03 | t 1.412e+02 | y  3.8374e-01
+protes > m 9.6e+03 | t 1.456e+02 | y  3.8274e-01
+protes > m 9.7e+03 | t 1.471e+02 | y  3.8250e-01
+protes > m 9.8e+03 | t 1.486e+02 | y  3.8232e-01
+protes > m 9.9e+03 | t 1.501e+02 | y  3.7833e-01
+protes > m 1.0e+04 | t 1.510e+02 | y  3.7833e-01 <<< DONE
+
+    > fail | evals 10000
+
+--> #    2 | c        2 | y     7.1e-01 | y_next 8.6e-02
+
+protes > m 1.0e+02 | t 4.071e+00 | y  6.9717e-01
+protes > m 2.0e+02 | t 5.541e+00 | y  6.9013e-01
+protes > m 3.0e+02 | t 7.014e+00 | y  6.8343e-01
+protes > m 4.0e+02 | t 8.488e+00 | y  6.8261e-01
+protes > m 5.0e+02 | t 9.964e+00 | y  6.8089e-01
+protes > m 6.0e+02 | t 1.144e+01 | y  6.7775e-01
+protes > m 7.0e+02 | t 1.290e+01 | y  6.7696e-01
+protes > m 8.0e+02 | t 1.439e+01 | y  6.7572e-01
+protes > m 9.0e+02 | t 1.585e+01 | y  6.7469e-01
+protes > m 1.0e+03 | t 1.733e+01 | y  6.7325e-01
+protes > m 1.1e+03 | t 1.878e+01 | y  6.7118e-01
+protes > m 1.2e+03 | t 2.024e+01 | y  6.7052e-01
+protes > m 1.5e+03 | t 2.460e+01 | y  6.7019e-01
+protes > m 1.6e+03 | t 2.606e+01 | y  6.6856e-01
+protes > m 1.9e+03 | t 3.041e+01 | y  6.6755e-01
+protes > m 2.1e+03 | t 3.332e+01 | y  6.6584e-01
+protes > m 2.4e+03 | t 3.767e+01 | y  6.6460e-01
+protes > m 2.6e+03 | t 4.057e+01 | y  6.6343e-01
+protes > m 2.7e+03 | t 4.203e+01 | y  6.6299e-01
+protes > m 2.9e+03 | t 4.492e+01 | y  6.6208e-01
+protes > m 3.0e+03 | t 4.638e+01 | y  6.6205e-01
+protes > m 3.1e+03 | t 4.783e+01 | y  6.6193e-01
+protes > m 3.2e+03 | t 4.929e+01 | y  6.6186e-01
+protes > m 3.4e+03 | t 5.219e+01 | y  6.6172e-01
+protes > m 3.5e+03 | t 5.364e+01 | y  6.6122e-01
+protes > m 3.6e+03 | t 5.510e+01 | y  6.6057e-01
+protes > m 4.0e+03 | t 6.089e+01 | y  6.5955e-01
+protes > m 4.5e+03 | t 6.816e+01 | y  6.5908e-01
+protes > m 4.6e+03 | t 6.960e+01 | y  6.5870e-01
+protes > m 4.7e+03 | t 7.106e+01 | y  6.5835e-01
+protes > m 4.9e+03 | t 7.396e+01 | y  6.5793e-01
+protes > m 5.0e+03 | t 7.541e+01 | y  6.5762e-01
+protes > m 5.1e+03 | t 7.685e+01 | y  6.5663e-01
+protes > m 5.4e+03 | t 8.121e+01 | y  6.5600e-01
+protes > m 5.7e+03 | t 8.555e+01 | y  6.5580e-01
+protes > m 5.8e+03 | t 8.701e+01 | y  6.5539e-01
+protes > m 6.0e+03 | t 8.991e+01 | y  6.5423e-01
+protes > m 6.7e+03 | t 1.000e+02 | y  6.5389e-01
+protes > m 7.0e+03 | t 1.044e+02 | y  6.5388e-01
+protes > m 7.1e+03 | t 1.059e+02 | y  6.5310e-01
+protes > m 7.3e+03 | t 1.087e+02 | y  6.5262e-01
+protes > m 7.4e+03 | t 1.102e+02 | y  6.5245e-01
+protes > m 7.7e+03 | t 1.145e+02 | y  6.5191e-01
+protes > m 7.9e+03 | t 1.174e+02 | y  6.5177e-01
+protes > m 8.4e+03 | t 1.247e+02 | y  6.5143e-01
+protes > m 8.7e+03 | t 1.290e+02 | y  6.5140e-01
+protes > m 8.8e+03 | t 1.304e+02 | y  6.5106e-01
+protes > m 8.9e+03 | t 1.319e+02 | y  6.5093e-01
+protes > m 9.0e+03 | t 1.333e+02 | y  6.5068e-01
+protes > m 9.2e+03 | t 1.362e+02 | y  6.5055e-01
+protes > m 9.8e+03 | t 1.449e+02 | y  6.5013e-01
+protes > m 1.0e+04 | t 1.472e+02 | y  6.4993e-01 <<< DONE
+
+    > fail | evals 10000
+
+--> #    3 | c        3 | y     7.9e-01 | y_next 4.5e-02
+
+protes > m 1.0e+02 | t 4.007e+00 | y  7.9210e-01
+protes > m 2.0e+02 | t 5.468e+00 | y  7.7690e-01
+protes > m 3.0e+02 | t 6.950e+00 | y  7.7288e-01
+protes > m 4.0e+02 | t 8.408e+00 | y  7.6501e-01
+protes > m 5.0e+02 | t 9.867e+00 | y  7.6170e-01
+protes > m 6.0e+02 | t 1.133e+01 | y  7.5036e-01
+protes > m 7.0e+02 | t 1.279e+01 | y  7.4879e-01
+protes > m 8.0e+02 | t 1.425e+01 | y  7.4451e-01
+protes > m 9.0e+02 | t 1.570e+01 | y  7.3883e-01
+protes > m 1.0e+03 | t 1.716e+01 | y  7.3162e-01
+protes > m 1.1e+03 | t 1.860e+01 | y  7.2878e-01
+protes > m 1.2e+03 | t 2.005e+01 | y  7.2618e-01
+protes > m 1.3e+03 | t 2.149e+01 | y  7.2326e-01
+protes > m 1.4e+03 | t 2.297e+01 | y  7.2072e-01
+protes > m 1.6e+03 | t 2.589e+01 | y  7.1988e-01
+protes > m 1.7e+03 | t 2.735e+01 | y  7.1673e-01
+protes > m 1.8e+03 | t 2.881e+01 | y  7.1452e-01
+protes > m 1.9e+03 | t 3.027e+01 | y  7.0997e-01
+protes > m 2.0e+03 | t 3.173e+01 | y  7.0794e-01
+protes > m 2.1e+03 | t 3.320e+01 | y  7.0643e-01
+protes > m 2.2e+03 | t 3.465e+01 | y  7.0206e-01
+protes > m 2.3e+03 | t 3.610e+01 | y  7.0202e-01
+protes > m 2.4e+03 | t 3.754e+01 | y  6.9720e-01
+protes > m 2.6e+03 | t 4.048e+01 | y  6.9570e-01
+protes > m 2.7e+03 | t 4.193e+01 | y  6.9445e-01
+protes > m 2.8e+03 | t 4.339e+01 | y  6.9182e-01
+protes > m 3.1e+03 | t 4.776e+01 | y  6.9143e-01
+protes > m 3.3e+03 | t 5.066e+01 | y  6.8966e-01
+protes > m 3.4e+03 | t 5.211e+01 | y  6.8887e-01
+protes > m 3.5e+03 | t 5.356e+01 | y  6.8761e-01
+protes > m 3.9e+03 | t 5.939e+01 | y  6.8717e-01
+protes > m 4.0e+03 | t 6.086e+01 | y  6.8668e-01
+protes > m 4.1e+03 | t 6.231e+01 | y  6.8349e-01
+protes > m 4.3e+03 | t 6.525e+01 | y  6.8345e-01
+protes > m 4.4e+03 | t 6.669e+01 | y  6.8313e-01
+protes > m 4.5e+03 | t 6.814e+01 | y  6.8254e-01
+protes > m 4.6e+03 | t 6.959e+01 | y  6.8127e-01
+protes > m 4.8e+03 | t 7.250e+01 | y  6.7966e-01
+protes > m 4.9e+03 | t 7.396e+01 | y  6.7842e-01
+protes > m 5.8e+03 | t 8.707e+01 | y  6.7822e-01
+protes > m 6.0e+03 | t 8.998e+01 | y  6.7658e-01
+protes > m 6.1e+03 | t 9.143e+01 | y  6.7620e-01
+protes > m 6.3e+03 | t 9.434e+01 | y  6.7525e-01
+protes > m 6.5e+03 | t 9.728e+01 | y  6.7204e-01
+protes > m 7.5e+03 | t 1.118e+02 | y  6.7123e-01
+protes > m 7.8e+03 | t 1.162e+02 | y  6.7101e-01
+protes > m 7.9e+03 | t 1.176e+02 | y  6.6909e-01
+protes > m 8.1e+03 | t 1.205e+02 | y  6.6877e-01
+protes > m 8.4e+03 | t 1.249e+02 | y  6.6725e-01
+protes > m 8.6e+03 | t 1.278e+02 | y  6.6713e-01
+protes > m 8.7e+03 | t 1.293e+02 | y  6.6682e-01
+protes > m 9.0e+03 | t 1.336e+02 | y  6.6659e-01
+protes > m 9.1e+03 | t 1.351e+02 | y  6.6627e-01
+protes > m 9.2e+03 | t 1.365e+02 | y  6.6416e-01
+protes > m 9.4e+03 | t 1.394e+02 | y  6.6410e-01
+protes > m 9.6e+03 | t 1.423e+02 | y  6.6384e-01
+protes > m 9.7e+03 | t 1.438e+02 | y  6.6356e-01
+protes > m 1.0e+04 | t 1.476e+02 | y  6.6356e-01 <<< DONE
+
+    > fail | evals 10000
+
+--> #    5 | c        5 | y     9.5e-01 | y_next 6.5e-03
+
+protes > m 1.0e+02 | t 4.070e+00 | y  9.4707e-01
+protes > m 2.0e+02 | t 5.518e+00 | y  9.4672e-01
+protes > m 3.0e+02 | t 6.989e+00 | y  9.4617e-01
+protes > m 4.0e+02 | t 8.441e+00 | y  9.4524e-01
+protes > m 5.0e+02 | t 9.889e+00 | y  9.4428e-01
+protes > m 7.0e+02 | t 1.280e+01 | y  9.4383e-01
+protes > m 8.0e+02 | t 1.424e+01 | y  9.4378e-01
+protes > m 9.0e+02 | t 1.570e+01 | y  9.4330e-01
+protes > m 1.0e+03 | t 1.714e+01 | y  9.4318e-01
+protes > m 1.1e+03 | t 1.861e+01 | y  9.4299e-01
+protes > m 1.2e+03 | t 2.005e+01 | y  9.4258e-01
+protes > m 1.4e+03 | t 2.295e+01 | y  9.4239e-01
+protes > m 1.5e+03 | t 2.441e+01 | y  9.4227e-01
+protes > m 1.6e+03 | t 2.585e+01 | y  9.4210e-01
+protes > m 1.7e+03 | t 2.729e+01 | y  9.4204e-01
+protes > m 1.8e+03 | t 2.876e+01 | y  9.4183e-01
+protes > m 2.0e+03 | t 3.165e+01 | y  9.4171e-01
+protes > m 2.1e+03 | t 3.309e+01 | y  9.4166e-01
+protes > m 2.2e+03 | t 3.455e+01 | y  9.4153e-01
+protes > m 2.3e+03 | t 3.600e+01 | y  9.4110e-01
+protes > m 2.6e+03 | t 4.036e+01 | y  9.4090e-01
+protes > m 2.8e+03 | t 4.327e+01 | y  9.4074e-01
+protes > m 2.9e+03 | t 4.473e+01 | y  9.4072e-01
+protes > m 3.1e+03 | t 4.763e+01 | y  9.4067e-01
+protes > m 3.2e+03 | t 4.908e+01 | y  9.4065e-01
+protes > m 3.3e+03 | t 5.053e+01 | y  9.4063e-01
+protes > m 3.4e+03 | t 5.196e+01 | y  9.4062e-01
+protes > m 3.5e+03 | t 5.342e+01 | y  9.4057e-01
+protes > m 3.6e+03 | t 5.487e+01 | y  9.4051e-01
+protes > m 3.7e+03 | t 5.632e+01 | y  9.4026e-01
+protes > m 3.8e+03 | t 5.776e+01 | y  9.4016e-01
+protes > m 4.2e+03 | t 6.356e+01 | y  9.4013e-01
+protes > m 4.5e+03 | t 6.790e+01 | y  9.4012e-01
+protes > m 4.6e+03 | t 6.935e+01 | y  9.4003e-01
+protes > m 4.8e+03 | t 7.226e+01 | y  9.3990e-01
+protes > m 4.9e+03 | t 7.370e+01 | y  9.3989e-01
+protes > m 5.0e+03 | t 7.515e+01 | y  9.3982e-01
+protes > m 5.2e+03 | t 7.805e+01 | y  9.3972e-01
+protes > m 5.5e+03 | t 8.242e+01 | y  9.3959e-01
+protes > m 5.8e+03 | t 8.673e+01 | y  9.3956e-01
+protes > m 5.9e+03 | t 8.820e+01 | y  9.3955e-01
+protes > m 6.1e+03 | t 9.109e+01 | y  9.3955e-01
+protes > m 6.2e+03 | t 9.254e+01 | y  9.3952e-01
+protes > m 6.3e+03 | t 9.399e+01 | y  9.3951e-01
+protes > m 6.4e+03 | t 9.543e+01 | y  9.3943e-01
+protes > m 6.8e+03 | t 1.012e+02 | y  9.3941e-01
+protes > m 6.9e+03 | t 1.027e+02 | y  9.3937e-01
+protes > m 7.1e+03 | t 1.056e+02 | y  9.3930e-01
+protes > m 7.2e+03 | t 1.070e+02 | y  9.3923e-01
+protes > m 7.4e+03 | t 1.099e+02 | y  9.3922e-01
+protes > m 7.5e+03 | t 1.114e+02 | y  9.3918e-01
+protes > m 7.7e+03 | t 1.143e+02 | y  9.3907e-01
+protes > m 8.1e+03 | t 1.201e+02 | y  9.3900e-01
+protes > m 8.7e+03 | t 1.287e+02 | y  9.3894e-01
+protes > m 9.0e+03 | t 1.331e+02 | y  9.3894e-01
+protes > m 9.1e+03 | t 1.345e+02 | y  9.3893e-01
+protes > m 9.2e+03 | t 1.360e+02 | y  9.3882e-01
+protes > m 9.9e+03 | t 1.461e+02 | y  9.3868e-01
+protes > m 1.0e+04 | t 1.470e+02 | y  9.3864e-01 <<< DONE
+
+    > fail | evals 10000
+
+--> #    7 | c        7 | y     3.8e-01 | y_next 1.1e-01
+
+protes > m 1.0e+02 | t 3.982e+00 | y  3.5047e-01
+protes > m 2.0e+02 | t 5.421e+00 | y  3.3108e-01
+protes > m 3.0e+02 | t 6.872e+00 | y  3.1329e-01
+protes > m 4.0e+02 | t 8.316e+00 | y  3.1121e-01
+protes > m 5.0e+02 | t 9.779e+00 | y  3.0250e-01
+protes > m 6.0e+02 | t 1.121e+01 | y  2.9135e-01
+protes > m 8.0e+02 | t 1.410e+01 | y  2.8630e-01
+protes > m 9.0e+02 | t 1.555e+01 | y  2.8284e-01
+protes > m 1.0e+03 | t 1.698e+01 | y  2.7891e-01
+protes > m 1.1e+03 | t 1.843e+01 | y  2.7494e-01
+protes > m 1.2e+03 | t 1.987e+01 | y  2.6847e-01
+protes > m 1.4e+03 | t 2.275e+01 | y  2.6661e-01
+protes > m 1.5e+03 | t 2.421e+01 | y  2.6346e-01
+protes > m 1.6e+03 | t 2.565e+01 | y  2.6173e-01
+protes > m 1.7e+03 | t 2.708e+01 | y  2.5653e-01
+protes > m 1.9e+03 | t 2.998e+01 | y  2.5375e-01
+protes > m 2.0e+03 | t 3.143e+01 | y  2.4893e-01
+protes > m 2.1e+03 | t 3.287e+01 | y  2.4671e-01
+protes > m 2.2e+03 | t 3.432e+01 | y  2.4093e-01
+protes > m 2.5e+03 | t 3.862e+01 | y  2.4008e-01
+protes > m 2.6e+03 | t 4.007e+01 | y  2.3753e-01
+protes > m 2.8e+03 | t 4.294e+01 | y  2.3458e-01
+protes > m 3.0e+03 | t 4.582e+01 | y  2.3136e-01
+protes > m 3.4e+03 | t 5.156e+01 | y  2.2944e-01
+protes > m 3.7e+03 | t 5.588e+01 | y  2.2941e-01
+protes > m 3.8e+03 | t 5.731e+01 | y  2.2834e-01
+protes > m 3.9e+03 | t 5.875e+01 | y  2.2728e-01
+protes > m 4.0e+03 | t 6.018e+01 | y  2.2631e-01
+protes > m 4.1e+03 | t 6.167e+01 | y  2.2578e-01
+protes > m 4.2e+03 | t 6.310e+01 | y  2.2523e-01
+protes > m 4.3e+03 | t 6.454e+01 | y  2.2430e-01
+protes > m 4.4e+03 | t 6.598e+01 | y  2.2406e-01
+protes > m 4.5e+03 | t 6.742e+01 | y  2.2255e-01
+protes > m 4.6e+03 | t 6.886e+01 | y  2.2236e-01
+protes > m 4.9e+03 | t 7.317e+01 | y  2.2210e-01
+protes > m 5.1e+03 | t 7.603e+01 | y  2.2160e-01
+protes > m 5.2e+03 | t 7.746e+01 | y  2.1970e-01
+protes > m 5.4e+03 | t 8.033e+01 | y  2.1953e-01
+protes > m 5.5e+03 | t 8.178e+01 | y  2.1902e-01
+protes > m 5.6e+03 | t 8.321e+01 | y  2.1719e-01
+protes > m 5.7e+03 | t 8.466e+01 | y  2.1548e-01
+protes > m 5.9e+03 | t 8.752e+01 | y  2.1443e-01
+protes > m 6.1e+03 | t 9.040e+01 | y  2.1240e-01
+protes > m 6.2e+03 | t 9.183e+01 | y  2.1185e-01
+protes > m 6.4e+03 | t 9.471e+01 | y  2.1157e-01
+protes > m 6.5e+03 | t 9.613e+01 | y  2.0995e-01
+protes > m 6.7e+03 | t 9.900e+01 | y  2.0952e-01
+protes > m 6.9e+03 | t 1.019e+02 | y  2.0949e-01
+protes > m 7.0e+03 | t 1.033e+02 | y  2.0922e-01
+protes > m 7.1e+03 | t 1.048e+02 | y  2.0878e-01
+protes > m 7.2e+03 | t 1.062e+02 | y  2.0762e-01
+protes > m 7.4e+03 | t 1.091e+02 | y  2.0715e-01
+protes > m 7.5e+03 | t 1.105e+02 | y  2.0686e-01
+protes > m 7.7e+03 | t 1.134e+02 | y  2.0674e-01
+protes > m 7.8e+03 | t 1.149e+02 | y  2.0666e-01
+protes > m 7.9e+03 | t 1.163e+02 | y  2.0626e-01
+protes > m 8.0e+03 | t 1.177e+02 | y  2.0583e-01
+protes > m 8.2e+03 | t 1.206e+02 | y  2.0534e-01
+protes > m 8.6e+03 | t 1.264e+02 | y  2.0518e-01
+protes > m 8.7e+03 | t 1.278e+02 | y  2.0513e-01
+protes > m 8.8e+03 | t 1.293e+02 | y  2.0408e-01
+protes > m 9.1e+03 | t 1.336e+02 | y  2.0342e-01
+protes > m 9.6e+03 | t 1.408e+02 | y  2.0301e-01
+protes > m 9.8e+03 | t 1.437e+02 | y  2.0300e-01
+protes > m 1.0e+04 | t 1.460e+02 | y  2.0300e-01 <<< DONE
+
+    > fail | evals 10000
+
+--> #    8 | c        8 | y     3.8e-01 | y_next 3.3e-01
+
+protes > m 1.0e+02 | t 4.001e+00 | y  3.6442e-01
+protes > m 2.0e+02 | t 5.439e+00 | y  3.5991e-01
+protes > m 2.0e+02 | t 5.504e+00 | y  3.5991e-01 <<< DONE
+
++++ >        c_new    7 | y_new 3.5e-01 | y_old 3.5e-01 | evals   206
+    : changes   329 | dx1 8.4e+01 | dx2 7.6e+00
+    : l_old : hen
+    : l_new : cock
+
+
+--> #    9 | c        9 | y     9.0e-01 | y_next 2.4e-03
+
+protes > m 1.0e+02 | t 4.036e+00 | y  8.9648e-01
+protes > m 2.0e+02 | t 5.484e+00 | y  8.9397e-01
+protes > m 3.0e+02 | t 6.935e+00 | y  8.9180e-01
+protes > m 4.0e+02 | t 8.382e+00 | y  8.8878e-01
+protes > m 5.0e+02 | t 9.820e+00 | y  8.8852e-01
+protes > m 6.0e+02 | t 1.129e+01 | y  8.8653e-01
+protes > m 7.0e+02 | t 1.273e+01 | y  8.8545e-01
+protes > m 8.0e+02 | t 1.418e+01 | y  8.8533e-01
+protes > m 9.0e+02 | t 1.561e+01 | y  8.8472e-01
+protes > m 1.0e+03 | t 1.707e+01 | y  8.8376e-01
+protes > m 1.1e+03 | t 1.850e+01 | y  8.8295e-01
+protes > m 1.2e+03 | t 1.996e+01 | y  8.8231e-01
+protes > m 1.3e+03 | t 2.142e+01 | y  8.8193e-01
+protes > m 1.4e+03 | t 2.286e+01 | y  8.8176e-01
+protes > m 1.5e+03 | t 2.429e+01 | y  8.8132e-01
+protes > m 1.6e+03 | t 2.573e+01 | y  8.8080e-01
+protes > m 1.7e+03 | t 2.718e+01 | y  8.8021e-01
+protes > m 1.8e+03 | t 2.862e+01 | y  8.7959e-01
+protes > m 2.0e+03 | t 3.150e+01 | y  8.7953e-01
+protes > m 2.1e+03 | t 3.297e+01 | y  8.7905e-01
+protes > m 2.2e+03 | t 3.439e+01 | y  8.7887e-01
+protes > m 2.4e+03 | t 3.727e+01 | y  8.7848e-01
+protes > m 2.6e+03 | t 4.013e+01 | y  8.7759e-01
+protes > m 2.9e+03 | t 4.446e+01 | y  8.7737e-01
+protes > m 3.0e+03 | t 4.589e+01 | y  8.7693e-01
+protes > m 3.2e+03 | t 4.877e+01 | y  8.7665e-01
+protes > m 3.3e+03 | t 5.021e+01 | y  8.7617e-01
+protes > m 3.4e+03 | t 5.166e+01 | y  8.7604e-01
+protes > m 3.5e+03 | t 5.308e+01 | y  8.7578e-01
+protes > m 3.7e+03 | t 5.595e+01 | y  8.7479e-01
+protes > m 3.9e+03 | t 5.885e+01 | y  8.7462e-01
+protes > m 4.0e+03 | t 6.029e+01 | y  8.7444e-01
+protes > m 4.2e+03 | t 6.315e+01 | y  8.7438e-01
+protes > m 4.4e+03 | t 6.603e+01 | y  8.7420e-01
+protes > m 4.7e+03 | t 7.035e+01 | y  8.7405e-01
+protes > m 4.8e+03 | t 7.177e+01 | y  8.7401e-01
+protes > m 4.9e+03 | t 7.322e+01 | y  8.7360e-01
+protes > m 5.3e+03 | t 7.898e+01 | y  8.7339e-01
+protes > m 5.4e+03 | t 8.042e+01 | y  8.7325e-01
+protes > m 5.7e+03 | t 8.473e+01 | y  8.7269e-01
+protes > m 6.2e+03 | t 9.198e+01 | y  8.7269e-01
+protes > m 6.3e+03 | t 9.340e+01 | y  8.7257e-01
+protes > m 6.5e+03 | t 9.629e+01 | y  8.7243e-01
+protes > m 6.7e+03 | t 9.919e+01 | y  8.7242e-01
+protes > m 6.8e+03 | t 1.006e+02 | y  8.7231e-01
+protes > m 6.9e+03 | t 1.021e+02 | y  8.7227e-01
+protes > m 7.0e+03 | t 1.035e+02 | y  8.7207e-01
+protes > m 7.3e+03 | t 1.079e+02 | y  8.7197e-01
+protes > m 7.5e+03 | t 1.108e+02 | y  8.7188e-01
+protes > m 7.7e+03 | t 1.137e+02 | y  8.7183e-01
+protes > m 7.8e+03 | t 1.151e+02 | y  8.7176e-01
+protes > m 8.0e+03 | t 1.180e+02 | y  8.7170e-01
+protes > m 8.5e+03 | t 1.253e+02 | y  8.7158e-01
+protes > m 8.7e+03 | t 1.282e+02 | y  8.7140e-01
+protes > m 9.5e+03 | t 1.399e+02 | y  8.7134e-01
+protes > m 1.0e+04 | t 1.466e+02 | y  8.7134e-01 <<< DONE
+
+    > fail | evals 10000
+
+--> #   10 | c       10 | y     3.3e-01 | y_next 1.5e-01
+
+
++++ >        c_new   11 | y_new 1.9e-01 | y_old 1.7e-01 | evals    23
+    : changes   335 | dx1 6.0e+01 | dx2 4.1e+00
+    : l_old : brambling, fringilla montifringilla
+    : l_new : goldfinch, carduelis carduelis
+
+
+--> #   11 | c       11 | y     7.6e-01 | y_next 2.0e-03
+
+protes > m 1.0e+02 | t 3.982e+00 | y  7.5080e-01
+protes > m 2.0e+02 | t 5.436e+00 | y  7.4617e-01
+protes > m 3.0e+02 | t 6.876e+00 | y  7.4438e-01
+protes > m 4.0e+02 | t 8.340e+00 | y  7.3553e-01
+protes > m 6.0e+02 | t 1.122e+01 | y  7.3333e-01
+protes > m 7.0e+02 | t 1.267e+01 | y  7.3212e-01
+protes > m 8.0e+02 | t 1.412e+01 | y  7.2971e-01
+protes > m 9.0e+02 | t 1.556e+01 | y  7.2887e-01
+protes > m 1.0e+03 | t 1.699e+01 | y  7.2705e-01
+protes > m 1.1e+03 | t 1.846e+01 | y  7.2379e-01
+protes > m 1.2e+03 | t 1.988e+01 | y  7.2349e-01
+protes > m 1.3e+03 | t 2.131e+01 | y  7.2231e-01
+protes > m 1.4e+03 | t 2.274e+01 | y  7.2060e-01
+protes > m 1.5e+03 | t 2.420e+01 | y  7.2049e-01
+protes > m 1.6e+03 | t 2.564e+01 | y  7.1967e-01
+protes > m 1.7e+03 | t 2.707e+01 | y  7.1931e-01
+protes > m 1.8e+03 | t 2.851e+01 | y  7.1800e-01
+protes > m 2.0e+03 | t 3.141e+01 | y  7.1745e-01
+protes > m 2.1e+03 | t 3.283e+01 | y  7.1718e-01
+protes > m 2.2e+03 | t 3.428e+01 | y  7.1663e-01
+protes > m 2.3e+03 | t 3.573e+01 | y  7.1661e-01
+protes > m 2.4e+03 | t 3.717e+01 | y  7.1564e-01
+protes > m 2.6e+03 | t 4.003e+01 | y  7.1487e-01
+protes > m 2.8e+03 | t 4.292e+01 | y  7.1483e-01
+protes > m 2.9e+03 | t 4.437e+01 | y  7.1453e-01
+protes > m 3.1e+03 | t 4.725e+01 | y  7.1431e-01
+protes > m 3.3e+03 | t 5.013e+01 | y  7.1412e-01
+protes > m 3.5e+03 | t 5.302e+01 | y  7.1293e-01
+protes > m 3.9e+03 | t 5.877e+01 | y  7.1290e-01
+protes > m 4.0e+03 | t 6.021e+01 | y  7.1251e-01
+protes > m 4.1e+03 | t 6.165e+01 | y  7.1197e-01
+protes > m 4.2e+03 | t 6.310e+01 | y  7.1197e-01
+protes > m 4.3e+03 | t 6.454e+01 | y  7.1162e-01
+protes > m 4.4e+03 | t 6.598e+01 | y  7.1139e-01
+protes > m 4.5e+03 | t 6.741e+01 | y  7.1060e-01
+protes > m 4.6e+03 | t 6.886e+01 | y  7.1028e-01
+protes > m 4.8e+03 | t 7.175e+01 | y  7.1010e-01
+protes > m 5.0e+03 | t 7.463e+01 | y  7.0951e-01
+protes > m 5.3e+03 | t 7.897e+01 | y  7.0937e-01
+protes > m 5.4e+03 | t 8.040e+01 | y  7.0910e-01
+protes > m 5.5e+03 | t 8.184e+01 | y  7.0905e-01
+protes > m 5.6e+03 | t 8.327e+01 | y  7.0899e-01
+protes > m 5.8e+03 | t 8.615e+01 | y  7.0870e-01
+protes > m 6.1e+03 | t 9.047e+01 | y  7.0844e-01
+protes > m 6.4e+03 | t 9.479e+01 | y  7.0830e-01
+protes > m 6.5e+03 | t 9.624e+01 | y  7.0810e-01
+protes > m 6.8e+03 | t 1.006e+02 | y  7.0745e-01
+protes > m 8.0e+03 | t 1.178e+02 | y  7.0745e-01
+protes > m 8.3e+03 | t 1.221e+02 | y  7.0703e-01
+protes > m 8.4e+03 | t 1.235e+02 | y  7.0665e-01
+protes > m 8.6e+03 | t 1.264e+02 | y  7.0656e-01
+protes > m 8.8e+03 | t 1.293e+02 | y  7.0647e-01
+protes > m 8.9e+03 | t 1.307e+02 | y  7.0619e-01
+protes > m 9.0e+03 | t 1.321e+02 | y  7.0617e-01
+protes > m 9.1e+03 | t 1.336e+02 | y  7.0614e-01
+protes > m 9.2e+03 | t 1.350e+02 | y  7.0593e-01
+protes > m 9.4e+03 | t 1.379e+02 | y  7.0574e-01
+protes > m 9.8e+03 | t 1.437e+02 | y  7.0567e-01
+protes > m 9.9e+03 | t 1.451e+02 | y  7.0542e-01
+protes > m 1.0e+04 | t 1.460e+02 | y  7.0542e-01 <<< DONE
+
+    > fail | evals 10000
+
+Completed. Successful: 20.00% (total images 10)
+DONE (  1203.17 sec.) 
+
+
+===================== -------------------------------------
+[2023-11-06 20-09-27] Work is finished (1206.10 sec. total)
+
+
