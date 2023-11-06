@@ -7,6 +7,7 @@ Please, install packages within the environment before the run of this script:
 $ module purge
 $ module load python/anaconda3
 $ module load gpu/cuda-11.3
+$ conda activate
 $ conda remove --name tetradat --all -y
 $ conda create --name tetradat -y
 $ source activate tetradat
@@ -14,7 +15,6 @@ $ conda install -n tetradat python=3.8 -y
 $ conda install libgcc -y
 $ pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib==3.7.0 requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 --force-reinstall
 $ pip install triton --force-reinstall
-$ conda list
 
 """
 import os
@@ -130,8 +130,8 @@ def zhores(kind='main'):
             text += '\nmodule load gpu/cuda-11.3'
 
         env = opts['env']
-        text += f'\n\nsource activate {env}'
-        text += f'\nconda activate {env}\n'
+        text += '\n"$(conda shell.bash hook)"'
+        text += f'\nsource activate {env}\n'
 
         args_list = task.get('args', {})
         if isinstance(args_list, dict):

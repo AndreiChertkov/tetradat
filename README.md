@@ -25,10 +25,7 @@ Library `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
         ```bash
         pip install teneva_opti==0.5.1 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3 torchattacks==3.4.0
         ```
-    - To run the code on GPU device (we used our zhores cluster, see `zhores.py` script for details):
-        ```bash
-        pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 && pip install triton
-        ```
+    - To run the code on GPU device, please see `zhores.py` script.
     > In the case of problems with `scikit-learn`, uninstall it as `pip uninstall scikit-learn -y` and then install it from the anaconda: `conda install -c anaconda scikit-learn`.
 
 5. Delete virtual environment at the end of the work (optional):
@@ -55,12 +52,12 @@ The calls with the following `ARGS` may be performed:
     - `python manager.py --task check --kind model --data imagenet --model vgg`
 
 - To run attacks with the proposed method:
-    - `python manager.py --task attack_target --kind attr --data imagenet --model googlenet --model_attr alexnet`
-        > You may use and of the models from above here.
+    - `python manager.py --task attack --kind attr --data imagenet --model googlenet --model_attr alexnet`
+        > You may use and of the models from above here. You may also try `--task attack_target`.
 
 - To run attacks with the baselines:
-    - `python manager.py --task attack_target --kind bs_onepixel --data imagenet --model googlenet`
-        > You may use and of the models from above here; and `bs_onepixel`, `bs_pixle`, `bs_square`.
+    - `python manager.py --task attack --kind bs_onepixel --data imagenet --model googlenet`
+        > You may use and of the models from above here; and `bs_onepixel`, `bs_pixle`, `bs_square`. You may also try `--task attack_target`.
 
 
 ## Authors

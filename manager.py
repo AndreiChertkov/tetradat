@@ -433,12 +433,12 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 5000,
+        default= 1000,
     )
     parser.add_argument('--opt_n',
         type=int,
         help='Mode size for optimization',
-        default=3,
+        default=5,
     )
     parser.add_argument('--opt_m',
         type=int,
@@ -458,12 +458,12 @@ def args_build():
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=100,
+        default=10,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=1.E-1,
+        default=1.E-2,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -473,17 +473,17 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=int,
         help='Scale for the noize image',
-        default=20,
+        default=15,
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=15,
+        default=10,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=15,
+        default=10,
     )
     parser.add_argument('--attack_num_target',
         type=int,
