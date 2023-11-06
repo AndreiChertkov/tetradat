@@ -4,14 +4,17 @@ Run this script as `python zhores.py` or `python zhores.py init`.
 To check status, use "squeue"; to delete the running task do "scancel NUMBER".
 
 Please, install packages within the environment before the run of this script:
-$ module rm *
+$ module purge
 $ module load python/anaconda3
 $ module load gpu/cuda-11.3
 $ conda remove --name tetradat --all -y
-$ conda create --name tetradat python=3.8 -y
-$ conda activate tetradat
-$ pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113
-$ pip install triton
+$ conda create --name tetradat -y
+$ source activate tetradat
+$ conda install -n tetradat python=3.8 -y
+$ conda install libgcc -y
+$ pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib==3.7.0 requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 --force-reinstall
+$ pip install triton --force-reinstall
+$ conda list
 
 """
 import os
@@ -52,7 +55,7 @@ OPTIONS_INIT = {
         'days': 0,
         'hours': 3,
         'memory': 15,
-        'out': 'zhores_out',
+        'out_name': 'zhores_init_out',
         'gpu': True
     }
 }
@@ -61,10 +64,7 @@ OPTIONS_INIT = {
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
-        'args': {
-            'model': model,
-            'model_attr': MODEL_ATTR
-        },
+        'args': {'model': model, 'model_attr': MODEL_ATTR},
         'opts': {
             'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}'
         }
@@ -72,19 +72,16 @@ for i, model in enumerate(MODELS, 1):
 for j, bs in enumerate(BASELINES, 1):
     for i, model in enumerate(MODELS, 1):
         TASKS[f'{j+1}{i}-tet'] = {
-            'args': {
-                'model': model,
-                'kind': f'bs_{bs}'
-            },
+            'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
                 'out': f'result/imagenet-{model}/attack_target-bs_{bs}'
             }
         }
 
 
-TASKS_INIT = {'test': {'args': [{'kind': 'data'}]}}
+TASKS_INIT = {'init': {'args': [{'kind': 'data'}]}}
 for i, model in enumerate(MODELS, 1):
-    TASKS_INIT['test']['args'].append({'model': model})
+    TASKS_INIT['init']['args'].append({'model': model})
 
 
 def zhores(kind='main'):
@@ -102,8 +99,8 @@ def zhores(kind='main'):
 
         text += f'\n#SBATCH --job-name={task_name}'
 
-        fold = opts['out'] or '.'
-        file = f'zhores_out_{task_name}.txt'
+        fold = opts.get('out', '.')
+        file = opts.get('out_name', f'zhores_out_{task_name}.txt')
         text += f'\n#SBATCH --output={fold}/{file}'
         os.makedirs(fold, exist_ok=True)
 
@@ -133,9 +130,8 @@ def zhores(kind='main'):
             text += '\nmodule load gpu/cuda-11.3'
 
         env = opts['env']
-        text += f'\nsource activate {env}'
-        text += f'\nconda activate {env}'
-        text += '\n'
+        text += f'\n\nsource activate {env}'
+        text += f'\nconda activate {env}\n'
 
         args_list = task.get('args', {})
         if isinstance(args_list, dict):
@@ -150,7 +146,7 @@ def zhores(kind='main'):
                 elif value is not None:
                     text += f' --{name} {value}'
 
-        text += '\n\n' + 'exit 0'
+        text += '\n\nexit 0'
 
         with open(f'___zhores_run_{task_name}.sh', 'w') as f:
             f.write(text)

@@ -8,12 +8,14 @@
 #SBATCH --gpus=1
 #SBATCH --mem=30GB
 
-module rm *
+module purge
 module load python/anaconda3
 module load gpu/cuda-11.3
 
+eval "$(conda shell.bash hook)"
+
 source activate tetradat
-conda activate tetradat
+# conda activate tetradat
 
 srun python3 manager.py --task attack --kind attr --data imagenet --model mobilenet --model_attr alexnet --attack_num_max 10
 
