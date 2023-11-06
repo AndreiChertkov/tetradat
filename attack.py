@@ -1,7 +1,7 @@
 import jax
-jax.config.update('jax_enable_x64', True)
-jax.config.update('jax_platform_name', 'cpu')
-jax.default_device(jax.devices('cpu')[0])
+#jax.config.update('jax_enable_x64', True)
+#jax.config.update('jax_platform_name', 'cpu')
+#jax.default_device(jax.devices('cpu')[0])
 
 
 import numpy as np
@@ -59,7 +59,7 @@ class Attack:
             self.success = self.c_new != self.c
 
         self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
-        self.changes = torch.sum(self.changes > 1.E-14).item()
+        self.changes = torch.sum(self.changes > 1.E-6).item()
         self.dx1 = torch.norm(self.x_new - self.x, p=1).item()
         self.dx2 = torch.norm(self.x_new - self.x, p=2).item()
 

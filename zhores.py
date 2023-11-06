@@ -15,6 +15,7 @@ $ conda install -n tetradat python=3.8 -y
 $ conda install libgcc -y
 $ pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib==3.7.0 requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 --force-reinstall
 $ pip install triton --force-reinstall
+$ pip install --upgrade "jax[cuda11_pip]"
 
 """
 import os
