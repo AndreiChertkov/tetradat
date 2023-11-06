@@ -17,242 +17,107 @@ Do manually before the run (?): # TODO: move it into the code
 # conda list
 
 """
-from copy import deepcopy as copy
 import os
 import subprocess
 import sys
 import time
 
 
+MODEL_ATTR = 'alexnet'
+MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg']
+BASELINES = ['onepixel', 'pixle', 'square']
+
+
 OPTIONS = {
     'args': {
-        'task': 'attack_target',
-        'kind': 'attr',
         'data': 'imagenet',
-        'model_attr': 'alexnet',
+        'task': 'attack_target',
+        'kind': 'attr'
     },
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
-        'days': 2,
+        'days': 5,
         'hours': 0,
         'memory': 30,
         'out': 'zhores_out',
-        'gpu': True,
+        'gpu': True
     }
 }
 
 
-TASKS = {
-    '11-tet': {
+TASKS = {}
+for i, model in enumerate(MODELS, 1):
+    TASKS[f'1{i}-tet'] = {
         'args': {
-            'model': 'googlenet',
+            'model': model,
+            'model_attr': MODEL_ATTR
         },
         'opts': {
-            'out': 'result/imagenet-googlenet/attack_target-attr-alexnet'
+            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}'
         }
-    },
-    '12-tet': {
-        'args': {
-            'model': 'inception',
-        },
-        'opts': {
-            'out': 'result/imagenet-inception/attack_target-attr-alexnet'
+    }
+for j, bs in enumerate(BASELINES, 1):
+    for i, model in enumerate(MODELS, 1):
+        TASKS[f'{j+1}{i}-tet'] = {
+            'args': {
+                'model': model,
+                'kind': f'bs_{bs}'
+            },
+            'opts': {
+                'out': f'result/imagenet-{model}/attack_target-bs_{bs}'
+            }
         }
+
+
+OPTIONS_TEST = {
+    'args': {
+        'data': 'imagenet',
+        'task': 'check',
     },
-    '13-tet': {
-        'args': {
-            'model': 'mobilenet',
-        },
-        'opts': {
-            'out': 'result/imagenet-mobilenet/attack_target-attr-alexnet'
-        }
-    },
-    '14-tet': {
-        'args': {
-            'model': 'resnet',
-        },
-        'opts': {
-            'out': 'result/imagenet-resnet/attack_target-attr-alexnet'
-        }
-    },
-    '15-tet': {
-        'args': {
-            'model': 'vgg',
-        },
-        'opts': {
-            'out': 'result/imagenet-vgg/attack_target-attr-alexnet'
-        }
-    },
-    '21-tet': {
-        'args': {
-            'model': 'googlenet',
-            'kind': 'bs_onepixel',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-googlenet/attack_target-bs_onepixel'
-        }
-    },
-    '22-tet': {
-        'args': {
-            'model': 'inception',
-            'kind': 'bs_onepixel',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-inception/attack_target-bs_onepixel'
-        }
-    },
-    '23-tet': {
-        'args': {
-            'model': 'mobilenet',
-            'kind': 'bs_onepixel',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-mobilenet/attack_target-bs_onepixel'
-        }
-    },
-    '24-tet': {
-        'args': {
-            'model': 'resnet',
-            'kind': 'bs_onepixel',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-resnet/attack_target-bs_onepixel'
-        }
-    },
-    '25-tet': {
-        'args': {
-            'model': 'vgg',
-            'kind': 'bs_onepixel',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-vgg/attack_target-bs_onepixel'
-        }
-    },
-    '31-tet': {
-        'args': {
-            'model': 'googlenet',
-            'kind': 'bs_pixle',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-googlenet/attack_target-bs_pixle'
-        }
-    },
-    '32-tet': {
-        'args': {
-            'model': 'inception',
-            'kind': 'bs_pixle',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-inception/attack_target-bs_pixle'
-        }
-    },
-    '33-tet': {
-        'args': {
-            'model': 'mobilenet',
-            'kind': 'bs_pixle',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-mobilenet/attack_target-bs_pixle'
-        }
-    },
-    '34-tet': {
-        'args': {
-            'model': 'resnet',
-            'kind': 'bs_pixle',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-resnet/attack_target-bs_pixle'
-        }
-    },
-    '35-tet': {
-        'args': {
-            'model': 'vgg',
-            'kind': 'bs_pixle',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-vgg/attack_target-bs_pixle'
-        }
-    },
-    '41-tet': {
-        'args': {
-            'model': 'googlenet',
-            'kind': 'bs_square',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-googlenet/attack_target-bs_square'
-        }
-    },
-    '42-tet': {
-        'args': {
-            'model': 'inception',
-            'kind': 'bs_square',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-inception/attack_target-bs_square'
-        }
-    },
-    '43-tet': {
-        'args': {
-            'model': 'mobilenet',
-            'kind': 'bs_square',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-mobilenet/attack_target-bs_square'
-        }
-    },
-    '44-tet': {
-        'args': {
-            'model': 'resnet',
-            'kind': 'bs_square',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-resnet/attack_target-bs_square'
-        }
-    },
-    '45-tet': {
-        'args': {
-            'model': 'vgg',
-            'kind': 'bs_square',
-            'model_attr': None
-        },
-        'opts': {
-            'out': 'result/imagenet-vgg/attack_target-bs_square'
-        }
-    },
+    'opts': {
+        'env': 'tetradat',
+        'file': 'manager',
+        'days': 0,
+        'hours': 3,
+        'memory': 15,
+        'out': 'zhores_out',
+        'gpu': True
+    }
 }
 
 
-def zhores(kind='main'):
-    if kind != 'main':
-        raise NotImplementedError
-    else:
-        tasks = TASKS
+TASKS_TEST = {
+    'test': {
+        'args': [{
+            'kind': 'data',
+        }],
+    }
+}
+for i, model in enumerate(MODELS, 1):
+    TASKS_TEST['test']['args'].append({
+            'kind': 'model',
+            'model': model
+        })
 
-    for name, task in tasks.items():
-        opts = {**OPTIONS.get('opts', {}), **task.get('opts', {})}
-        args = {**OPTIONS.get('args', {}), **task.get('args', {})}
+
+def zhores(kind='main'):
+    if kind == 'main':
+        options, tasks = OPTIONS, TASKS
+    elif kind == 'test':
+        options, tasks = OPTIONS_TEST, TASKS_TEST
+    else:
+        raise NotImplementedError
+
+    for task_name, task in tasks.items():
+        opts = {**options.get('opts', {}), **task.get('opts', {})}
 
         text = '#!/bin/bash -l\n'
 
-        text += f'\n#SBATCH --job-name={name}'
+        text += f'\n#SBATCH --job-name={task_name}'
 
-        fold = opts['out']
-        file = f'zhores_out_{name}.txt'
+        fold = opts['out'] or '.'
+        file = f'zhores_out_{task_name}.txt'
         text += f'\n#SBATCH --output={fold}/{file}'
         os.makedirs(fold, exist_ok=True)
 
@@ -261,7 +126,6 @@ def zhores(kind='main'):
         h = '0' + h if len(h) == 1 else h
         text += f'\n#SBATCH --time={d}-{h}:00:00'
 
-        with_gpu = True
         if opts['gpu']:
             text += '\n#SBATCH --partition gpu'
         else:
@@ -285,20 +149,29 @@ def zhores(kind='main'):
         env = opts['env']
         text += f'\nsource activate {env}'
         text += f'\nconda activate {env}'
+        text += '\n'
 
-        text += '\n\n' + f'srun python3 {opts["file"]}.py'
-        for name, value in args.items():
-            if value is not None:
-                text += f' --{name} {value}'
+        args_list = task.get('args', {})
+        if isinstance(args_list, dict):
+            args_list = [args_list]
+
+        for args in args_list:
+            text += f'\nsrun python3 {opts["file"]}.py'
+            args = {**options.get('args', {}), **args}
+            for name, value in args.items():
+                if isinstance(value, bool):
+                    text += f' --{name}'
+                elif value is not None:
+                    text += f' --{name} {value}'
 
         text += '\n\n' + 'exit 0'
 
-        with open('___zhores_run.sh', 'w') as f:
+        with open(f'___zhores_run_{task_name}.sh', 'w') as f:
             f.write(text)
 
-        prc = subprocess.getoutput('sbatch ___zhores_run.sh')
+        prc = subprocess.getoutput(f'sbatch ___zhores_run_{task_name}.sh')
         time.sleep(0.5)
-        os.remove('___zhores_run.sh')
+        os.remove(f'___zhores_run_{task_name}.sh')
 
         if 'command not found' in prc:
             print('!!! Error: can not run "sbatch"')
