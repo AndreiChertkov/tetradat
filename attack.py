@@ -1,7 +1,7 @@
-#import jax
+import jax
 #jax.config.update('jax_enable_x64', True)
-#jax.config.update('jax_platform_name', 'cpu')
-#jax.default_device(jax.devices('cpu')[0])
+jax.config.update('jax_platform_name', 'cpu')
+jax.default_device(jax.devices('cpu')[0])
 
 
 import numpy as np
@@ -95,6 +95,7 @@ class AttackAttr(Attack):
 
         if torch.min(h) < 0. or torch.max(h) > 1.:
             self.err += ' Invalid transformed image.'
+            print(self.err)
 
         x = color_hsv_to_rgb(torch.stack((h, s, v)))
         x = self.trans(x)
@@ -124,12 +125,11 @@ class AttackAttr(Attack):
         self.x_base = self.trans_base(self.x)
         self.x_base_hsv = color_rgb_to_hsv(self.x_base)
 
-        #try:
-        if True:
+        try:
             i, y = protes(self.loss, d, n, self.m_max, k, k_top, k_gd, lr, r,
                 is_max=(True if self.target else False), log=True)
-        #except Exception as e:
-        #    pass
+        except Exception as e:
+            pass
 
         self.t += tpc() - t
         return self.result()
