@@ -335,8 +335,8 @@ class Manager:
             text += f'evals {result["m"]:-5d}'
         self.log(text)
 
-        #if not att.success or not show:
-        #    return result
+        if not att.success or not show:
+            return result
 
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base.png'))
@@ -458,12 +458,12 @@ def args_build():
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=1,
+        default=100,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-2,
+        default=5.E-3,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -478,12 +478,12 @@ def args_build():
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attack_num_target',
         type=int,

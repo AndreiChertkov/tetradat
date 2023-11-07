@@ -25,14 +25,14 @@ BASELINES = ['onepixel', 'pixle', 'square']
 
 OPTIONS = {
     'args': {
-        'task': 'attack_target',
+        'task': 'attack', # 'attack_target',
         'kind': 'attr',
         'data': 'imagenet'
     },
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
-        'days': 6,
+        'days': 3,
         'hours': 0,
         'memory': 30,
         'out': 'zhores_out',
@@ -62,7 +62,7 @@ for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
         'args': {'model': model, 'model_attr': MODEL_ATTR},
         'opts': {
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}',
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}', # T!
             'days': 6,
         }
     }
@@ -71,7 +71,7 @@ for j, bs in enumerate(BASELINES, 1):
         TASKS[f'{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
-                'out': f'result/imagenet-{model}/attack_target-bs_{bs}'
+                'out': f'result/imagenet-{model}/attack-bs_{bs}' # T!
             }
         }
 
