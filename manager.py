@@ -15,14 +15,15 @@ from model import Model
 from utils import Log
 
 
-RESULT_SHOW = [0, 1, 2, 3, 4, 10, 15, 44, 56, 74, 88, 254, 300, 500, 583, 999]
+RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+    10, 15, 20, 21, 22, 23, 24, 25, 44, 56, 74, 88, 254, 300, 500, 583, 999]
 
 
 class Manager:
     def __init__(self, data, model, model_attr, task, kind, opt_d, opt_n, opt_m,
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
-                 attr_iters, attack_num_target, attack_num_max, root='result',
-                 postfix='', device=None):
+                 attr_iters, attack_num_target, attack_num_max,
+                 attack_label_top, root='result', postfix='', device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -44,6 +45,9 @@ class Manager:
 
         self.attack_num_target = attack_num_target
         self.attack_num_max = attack_num_max
+        self.attack_label_top = attack_label_top
+        if not self.attack_label_top:
+            self.attack_label_top = None
 
         self.set_rand()
         self.set_device(device)
@@ -312,7 +316,7 @@ class Manager:
                 self.attr_steps, self.attr_iters)
             result = att.run(x_attr, self.opt_d, self.opt_n, self.opt_sc,
                 self.opt_k, self.opt_k_top, self.opt_k_gd, self.opt_lr,
-                self.opt_r)
+                self.opt_r, self.attack_label_top)
             print('')
 
         result['l'] = l
@@ -433,7 +437,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default= 5000,
+        default=5000,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -471,29 +475,34 @@ def args_build():
         default=5,
     )
     parser.add_argument('--opt_sc',
-        type=int,
+        type=float,
         help='Scale for the noize image',
-        default=5,
+        default=0.5,
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=15,
+        default=10,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=15,
+        default=10,
     )
     parser.add_argument('--attack_num_target',
         type=int,
         help='Target top class number for targeted attack (>= 1)',
-        default=5,
+        default=1,
     )
     parser.add_argument('--attack_num_max',
         type=int,
         help='Maximum number of attacks (if 0, then use full dataset)',
         default=0,
+    )
+    parser.add_argument('--attack_label_top',
+        type=int,
+        help='Number of labels for label-based attack',
+        default=None
     )
     parser.add_argument('--root',
         type=str,
@@ -510,8 +519,8 @@ def args_build():
     return (args.data, args.model, args.model_attr, args.task, args.kind,
         args.opt_d, args.opt_n, args.opt_m, args.opt_k, args.opt_k_top,
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
-        args.attr_iters, args.attack_num_target, args.attack_num_max, args.root,
-        args.postfix)
+        args.attr_iters, args.attack_num_target, args.attack_num_max,
+        args.attack_label_top, args.root, args.postfix)
 
 
 if __name__ == '__main__':

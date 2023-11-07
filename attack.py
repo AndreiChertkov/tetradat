@@ -44,14 +44,14 @@ class Attack:
     def check(self, x_new):
         x = x_new[None].to(self.device)
         with torch.no_grad():
-            y_all = self.net(x)
-            y_all = self.probs(y_all)
-        y_all = y_all[0].detach().to('cpu').numpy()
+            self.y_all = self.net(x)
+            self.y_all = self.probs(self.y_all)
+        self.y_all = self.y_all[0].detach().to('cpu').numpy()
 
         self.x_new = x_new
-        self.c_new = np.argmax(y_all)
-        self.y_new = y_all[self.c_new]
-        self.y = y_all[self.c]
+        self.c_new = np.argmax(self.y_all)
+        self.y_new = self.y_all[self.c_new]
+        self.y = self.y_all[self.c]
 
         if self.target:
             self.success = self.c_new == self.c
@@ -80,59 +80,26 @@ class Attack:
 
 class AttackAttr(Attack):
     def change(self, i):
-        delta = (np.array(i) - (self.n-1)/2) / self.sc
-        delta = torch.tensor(delta).to(self.device)
-
         h, s, v = torch.clone(self.x_base_hsv)
+
+        delta = (np.array(i) - (self.n-1)/2) * self.sc
+        delta = torch.tensor(delta).to(self.device)
 
         s[self.pixels[:, 0], self.pixels[:, 1]] += delta
         s[s > 1.] = 1.
         s[s < 0.] = 0.
 
-        x = color_hsv_to_rgb(torch.stack((h, s, v)))
-        x = self.trans(x)
+        #h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
+        #idx = h_target + delta > 1.
+        #delta[idx] = delta[idx] - 1.
+        #idx = h_target + delta < 0.
+        #delta[idx] = 1. + delta[idx]
+        #h[self.pixels[:, 0], self.pixels[:, 1]] += delta
 
-        return x
+        x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
+        return self.trans(x_base)
 
-    def change_v(self, i):
-        delta = (np.array(i) - (self.n-1)/2) / self.sc
-        delta = torch.tensor(delta).to(self.device)
-
-        h, s, v = torch.clone(self.x_base_hsv)
-
-        v[self.pixels[:, 0], self.pixels[:, 1]] += delta
-        v[v > 1.] = 1.
-        v[v < 0.] = 0.
-
-        x = color_hsv_to_rgb(torch.stack((h, s, v)))
-        x = self.trans(x)
-
-        return x
-
-    def change_h(self, i):
-        dh = (np.array(i) - (self.n-1)/2) / self.sc
-        dh = torch.tensor(dh).to(self.device)
-
-        h, s, v = torch.clone(self.x_base_hsv)
-
-        h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
-        idx = h_target + dh > 1.
-        dh[idx] = dh[idx] - 1.
-        idx = h_target + dh < 0.
-        dh[idx] = 1. + dh[idx]
-
-        h[self.pixels[:, 0], self.pixels[:, 1]] += dh
-
-        if torch.min(h) < 0. or torch.max(h) > 1.:
-            self.err += ' Invalid transformed image.'
-            print(self.err)
-
-        x = color_hsv_to_rgb(torch.stack((h, s, v)))
-        x = self.trans(x)
-
-        return x
-
-    def run(self, x_attr, d, n, sc, k, k_top, k_gd, lr, r):
+    def run(self, x_attr, d, n, sc, k, k_top, k_gd, lr, r, label=None):
         t = tpc()
 
         self.d = d
@@ -155,8 +122,21 @@ class AttackAttr(Attack):
         self.x_base = self.trans_base(self.x)
         self.x_base_hsv = color_rgb_to_hsv(self.x_base)
 
+        if not label:
+            loss = self.loss
+        else:
+            loss = self.loss_label
+            self.check(self.x)
+            self.label_num = label
+            self.label_top = np.argsort(self.y_all)[::-1][:self.label_num]
+            if not self.target:
+                raise NotImplementedError
+            if self.c != self.label_top[1]:
+                raise NotImplementedError
+            #print('Labels start', self.label_top)
+
         try:
-            i, y = protes(self.loss, d, n, self.m_max, k, k_top, k_gd, lr, r,
+            i, y = protes(loss, d, n, self.m_max, k, k_top, k_gd, lr, r,
                 is_max=(True if self.target else False), log=True)
         except Exception as e:
             pass
@@ -174,9 +154,27 @@ class AttackAttr(Attack):
             result.append(self.y)
         return np.array(result)
 
+    def loss_label(self, I, rew=10.):
+        result = []
+        for i in I:
+            self.m += 1
+            self.check(self.change(i))
+            if self.success:
+                return
+            label_top = np.argsort(self.y_all)[::-1][:self.label_num]
+            reward = 0.
+            if self.c != label_top[1]:
+                reward -= 5 * rew * (self.label_num-2)
+            for k in range(self.label_num):
+                if not label_top[k] in self.label_top:
+                    reward += rew
+            result.append(reward)
+            #print('Labels curre', label_top, reward)
+        return np.array(result)
+
 
 class AttackBs(Attack):
-    def run(self, onepixel=100, pixle=100, square=4/255, seed=42):
+    def run(self, onepixel=500, pixle=100, square=8/255, seed=42):
         t = tpc()
         self._build(onepixel, pixle, square, seed)
 
@@ -191,7 +189,7 @@ class AttackBs(Attack):
         self.t += tpc() - t
         return self.result()
 
-    def _build(self, onepixel=100, pixle=100, square=4/255, seed=42):
+    def _build(self, onepixel, pixle, square, seed):
         if self.name == 'onepixel':
             self.atk = _OnePixel(self.net,
                 pixels=onepixel,
