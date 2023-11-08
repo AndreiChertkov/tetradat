@@ -39,24 +39,6 @@ OPTIONS = {
         'gpu': True
     }
 }
-OPTIONS_INIT = {
-    'args': {
-        'task': 'check',
-        'kind': 'model',
-        'data': 'imagenet'
-    },
-    'opts': {
-        'env': 'tetradat',
-        'file': 'manager',
-        'days': 0,
-        'hours': 1,
-        'memory': 15,
-        'out_name': 'zhores_init_out.txt',
-        'gpu': True
-    }
-}
-
-
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
@@ -76,6 +58,86 @@ for j, bs in enumerate(BASELINES, 1):
         }
 
 
+OPTIONS_SPEC = {
+    'args': {
+        'task': 'attack_target',
+        'kind': 'attr',
+        'data': 'imagenet',
+    },
+    'opts': {
+        'env': 'tetradat',
+        'file': 'manager',
+        'days': 2,
+        'hours': 0,
+        'memory': 30,
+        'out': 'zhores_out',
+        'gpu': True
+    }
+}
+TASKS_SPEC = {}
+for i, model in enumerate(MODELS, 1):
+    TASKS_SPEC[f'c2-1{i}-tet'] = {
+        'args': {
+            'model': model,
+            'model_attr': MODEL_ATTR,
+            'attack_num_target': '2',
+            'postfix': 'c2',
+        },
+        'opts': {
+            'days': 5,
+            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c2'
+        }
+    }
+
+
+OPTIONS_SPEC2 = {
+    'args': {
+        'task': 'attack_target',
+        'kind': 'attr',
+        'data': 'imagenet',
+    },
+    'opts': {
+        'env': 'tetradat',
+        'file': 'manager',
+        'days': 2,
+        'hours': 0,
+        'memory': 30,
+        'out': 'zhores_out',
+        'gpu': True
+    }
+}
+TASKS_SPEC2 = {}
+for i, model in enumerate(MODELS, 1):
+    TASKS_SPEC2[f'c3-1{i}-tet'] = {
+        'args': {
+            'model': model,
+            'model_attr': MODEL_ATTR,
+            'attack_num_target': '3',
+            'postfix': 'c3',
+        },
+        'opts': {
+            'days': 5,
+            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c3'
+        }
+    }
+
+
+OPTIONS_INIT = {
+    'args': {
+        'task': 'check',
+        'kind': 'model',
+        'data': 'imagenet'
+    },
+    'opts': {
+        'env': 'tetradat',
+        'file': 'manager',
+        'days': 0,
+        'hours': 1,
+        'memory': 15,
+        'out_name': 'zhores_init_out.txt',
+        'gpu': True
+    }
+}
 TASKS_INIT = {'ini-tet': {'args': [{'kind': 'data'}]}}
 for i, model in enumerate(MODELS, 1):
     TASKS_INIT['ini-tet']['args'].append({'model': model})
@@ -84,6 +146,10 @@ for i, model in enumerate(MODELS, 1):
 def zhores(kind='main'):
     if kind == 'main':
         options, tasks = OPTIONS, TASKS
+    elif kind == 'spec':
+        options, tasks = OPTIONS_SPEC, TASKS_SPEC
+    elif kind == 'spec2':
+        options, tasks = OPTIONS_SPEC2, TASKS_SPEC2
     elif kind == 'init':
         options, tasks = OPTIONS_INIT, TASKS_INIT
     else:
