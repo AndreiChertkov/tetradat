@@ -18,8 +18,8 @@ import subprocess
 import sys
 
 
+MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
 MODEL_ATTR = 'alexnet'
-MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg']
 BASELINES = ['onepixel', 'pixle', 'square']
 
 
@@ -27,12 +27,13 @@ OPTIONS = {
     'args': {
         'task': 'attack_target',
         'kind': 'attr',
-        'data': 'imagenet'
+        'data': 'imagenet',
+        'attack_num_target': '3',
+        'postfix': 'c3'
     },
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
-        'days': 2,
         'hours': 0,
         'memory': 30,
         'out': 'zhores_out',
@@ -41,85 +42,29 @@ OPTIONS = {
 }
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
-    TASKS[f'1{i}-tet'] = {
+    TASKS[f'c3-1{i}-tet'] = {
         'args': {'model': model, 'model_attr': MODEL_ATTR},
         'opts': {
-            'days': 5,
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}'
+            'days': 4,
+            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c3'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
     for i, model in enumerate(MODELS, 1):
-        TASKS[f'{j+1}{i}-tet'] = {
+        TASKS[f'c3-{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
-                'out': f'result/imagenet-{model}/attack_target-bs_{bs}'
+                'days': 3,
+                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-c3'
             }
         }
 
 
-OPTIONS_SPEC = {
-    'args': {
-        'task': 'attack_target',
-        'kind': 'attr',
-        'data': 'imagenet',
-    },
-    'opts': {
-        'env': 'tetradat',
-        'file': 'manager',
-        'days': 2,
-        'hours': 0,
-        'memory': 30,
-        'out': 'zhores_out',
-        'gpu': True
-    }
-}
-TASKS_SPEC = {}
-for i, model in enumerate(MODELS, 1):
-    TASKS_SPEC[f'c2-1{i}-tet'] = {
-        'args': {
-            'model': model,
-            'model_attr': MODEL_ATTR,
-            'attack_num_target': '2',
-            'postfix': 'c2',
-        },
-        'opts': {
-            'days': 5,
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c2'
-        }
-    }
-
-
-OPTIONS_SPEC2 = {
-    'args': {
-        'task': 'attack_target',
-        'kind': 'attr',
-        'data': 'imagenet',
-    },
-    'opts': {
-        'env': 'tetradat',
-        'file': 'manager',
-        'days': 2,
-        'hours': 0,
-        'memory': 30,
-        'out': 'zhores_out',
-        'gpu': True
-    }
-}
-TASKS_SPEC2 = {}
-for i, model in enumerate(MODELS, 1):
-    TASKS_SPEC2[f'c3-1{i}-tet'] = {
-        'args': {
-            'model': model,
-            'model_attr': MODEL_ATTR,
-            'attack_num_target': '3',
-            'postfix': 'c3',
-        },
-        'opts': {
-            'days': 5,
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c3'
-        }
-    }
+# TODO: remove it later
+names = list(TASKS.keys())
+for n in names:
+    if n in ['c3-11-tet', 'c3-12-tet', 'c3-13-tet', 'c3-14-tet', 'c3-15-tet']:
+        del TASKS[n]
 
 
 OPTIONS_INIT = {
@@ -146,10 +91,6 @@ for i, model in enumerate(MODELS, 1):
 def zhores(kind='main'):
     if kind == 'main':
         options, tasks = OPTIONS, TASKS
-    elif kind == 'spec':
-        options, tasks = OPTIONS_SPEC, TASKS_SPEC
-    elif kind == 'spec2':
-        options, tasks = OPTIONS_SPEC2, TASKS_SPEC2
     elif kind == 'init':
         options, tasks = OPTIONS_INIT, TASKS_INIT
     else:

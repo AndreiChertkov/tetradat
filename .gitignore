@@ -9,6 +9,7 @@
 __pycache__/
 _.md
 _pack/
+_text/
 _tmp/
 result*
 result/_data
