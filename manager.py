@@ -379,7 +379,7 @@ class Manager:
         for i in range(len(self.data.data_tst)):
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
-            res = self._attack(i, name, target, show=(i in RESULT_SHOW))
+            res = self._attack(i, name, target, show=True) # (i in RESULT_SHOW))
             if res is not None:
                 result[i] = res
 
