@@ -89,6 +89,10 @@ class AttackAttr(Attack):
         s[s > 1.] = 1.
         s[s < 0.] = 0.
 
+        #v[self.pixels[:, 0], self.pixels[:, 1]] += delta
+        #v[v > 1.] = 1.
+        #v[v < 0.] = 0.
+
         #h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
         #idx = h_target + delta > 1.
         #delta[idx] = delta[idx] - 1.
