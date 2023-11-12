@@ -25,11 +25,11 @@ BASELINES = ['onepixel', 'pixle', 'square']
 
 OPTIONS = {
     'args': {
-        'task': 'attack_target',
+        'task': 'attack', # _target',
         'kind': 'attr',
         'data': 'imagenet',
-        'attack_num_target': '100', # 3 TODO
-        'postfix': 'c100'           # c3 TODO
+        # 'attack_num_target': '100', # 3 TODO
+        # 'postfix': 'c100'           # c3 TODO
     },
     'opts': {
         'env': 'tetradat',
@@ -41,31 +41,26 @@ OPTIONS = {
     }
 }
 TASKS = {}
-#for i, model in enumerate(MODELS, 1):
-#    TASKS[f'c3-1{i}-tet'] = {
-#        'args': {'model': model, 'model_attr': MODEL_ATTR},
-#        'opts': {
-#            'days': 4,
-#            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c3'
-#        }
-#    }
+for i, model in enumerate(MODELS, 1):
+    TASKS[f'1{i}-tet'] = {
+        'args': {'model': model, 'model_attr': MODEL_ATTR, 'opt_d': 10000},
+        'opts': {
+            'days': 4,
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}'
+            #'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c3'
+        }
+    }
 for j, bs in enumerate(BASELINES, 1):
     for i, model in enumerate(MODELS, 1):
-        TASKS[f'-{j+1}{i}-tet'] = {
+        TASKS[f'{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
-                'days': 4,
-                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-c100'
+                'days': 3,
+                'out': f'result/imagenet-{model}/attack-bs_{bs}'
+                # 'out': f'result/imagenet-{model}/attack_target-bs_{bs}-c100'
                 # TODO c3
             }
         }
-
-
-# TODO: remove it later
-# names = list(TASKS.keys())
-#for n in names:
-#    if n in ['c3-11-tet', 'c3-12-tet', 'c3-13-tet', 'c3-14-tet', 'c3-15-tet']:
-#        del TASKS[n]
 
 
 OPTIONS_INIT = {

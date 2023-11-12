@@ -23,7 +23,8 @@ class Manager:
     def __init__(self, data, model, model_attr, task, kind, opt_d, opt_n, opt_m,
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
                  attr_iters, attack_num_target, attack_num_max,
-                 attack_label_top, root='result', postfix='', device=None):
+                 attack_label_top, root='result', postfix='',
+                 show_result_all=False, device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -48,6 +49,8 @@ class Manager:
         self.attack_label_top = attack_label_top
         if not self.attack_label_top:
             self.attack_label_top = None
+
+        self.show_result_all = show_result_all
 
         self.set_rand()
         self.set_device(device)
@@ -379,7 +382,8 @@ class Manager:
         for i in range(len(self.data.data_tst)):
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
-            res = self._attack(i, name, target, show=True) # (i in RESULT_SHOW))
+            show = self.show_result_all or i in RESULT_SHOW
+            res = self._attack(i, name, target, show=show)
             if res is not None:
                 result[i] = res
 
@@ -437,7 +441,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default=5000,
+        default=10000,
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -477,7 +481,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.5,
+        default=0.3,
     )
     parser.add_argument('--attr_steps',
         type=int,
@@ -514,13 +518,19 @@ def args_build():
         help='Postfix for the folder with results',
         default=''
     )
+    parser.add_argument('--show_result_all',
+        type=int,
+        help='Do we show all results (1) or only some of them (0)',
+        default=0,
+        choices=[0, 1]
+    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
         args.opt_d, args.opt_n, args.opt_m, args.opt_k, args.opt_k_top,
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
         args.attr_iters, args.attack_num_target, args.attack_num_max,
-        args.attack_label_top, args.root, args.postfix)
+        args.attack_label_top, args.root, args.postfix, args.show_result_all)
 
 
 if __name__ == '__main__':
