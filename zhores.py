@@ -18,8 +18,9 @@ import subprocess
 import sys
 
 
-MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
-MODEL_ATTR = 'alexnet'
+# vgg
+MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'alexnet', 'vit']
+MODEL_ATTR = 'vgg' # alexnet
 BASELINES = ['onepixel', 'pixle', 'square']
 
 
@@ -43,24 +44,25 @@ OPTIONS = {
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
-        'args': {'model': model, 'model_attr': MODEL_ATTR, 'opt_d': 10000},
+        'args': {'model': model, 'model_attr': MODEL_ATTR}, # 'opt_d': 10000
         'opts': {
             'days': 4,
             'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}'
             #'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c3'
         }
     }
-for j, bs in enumerate(BASELINES, 1):
-    for i, model in enumerate(MODELS, 1):
-        TASKS[f'{j+1}{i}-tet'] = {
-            'args': {'model': model, 'kind': f'bs_{bs}'},
-            'opts': {
-                'days': 3,
-                'out': f'result/imagenet-{model}/attack-bs_{bs}'
-                # 'out': f'result/imagenet-{model}/attack_target-bs_{bs}-c100'
-                # TODO c3
+if False:
+    for j, bs in enumerate(BASELINES, 1):
+        for i, model in enumerate(MODELS, 1):
+            TASKS[f'{j+1}{i}-tet'] = {
+                'args': {'model': model, 'kind': f'bs_{bs}'},
+                'opts': {
+                    'days': 3,
+                    'out': f'result/imagenet-{model}/attack-bs_{bs}'
+                    # 'out': f'result/imagenet-{model}/attack_target-bs_{bs}-c100'
+                    # TODO c3
+                }
             }
-        }
 
 
 OPTIONS_INIT = {

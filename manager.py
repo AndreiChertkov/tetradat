@@ -441,7 +441,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default=10000,
+        default=1000, # old 10K
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -481,17 +481,17 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.3,
+        default=0.1, # old 0.3
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=10,
+        default=15, # old 10
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=10,
+        default=15, # old 10
     )
     parser.add_argument('--attack_num_target',
         type=int,
