@@ -18,19 +18,18 @@ import subprocess
 import sys
 
 
-# vgg
-MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'alexnet', 'vit']
-MODEL_ATTR = 'vgg' # alexnet
+MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
+MODEL_ATTR = 'alexnet'
 BASELINES = ['onepixel', 'pixle', 'square']
 
 
 OPTIONS = {
     'args': {
-        'task': 'attack', # _target',
+        'task': 'attack_target',
         'kind': 'attr',
         'data': 'imagenet',
-        # 'attack_num_target': '100', # 3 TODO
-        # 'postfix': 'c100'           # c3 TODO
+        'attack_num_target': '100',
+        'postfix': 'c100'
     },
     'opts': {
         'env': 'tetradat',
@@ -44,11 +43,10 @@ OPTIONS = {
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
-        'args': {'model': model, 'model_attr': MODEL_ATTR}, # 'opt_d': 10000
+        'args': {'model': model, 'model_attr': MODEL_ATTR},
         'opts': {
-            'days': 4,
-            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}'
-            #'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c3'
+            'days': 6,
+            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c100'
         }
     }
 if False:

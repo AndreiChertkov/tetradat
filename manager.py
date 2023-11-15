@@ -295,9 +295,11 @@ class Manager:
         if target:
             c_attack = np.argsort(y_all)[::-1][self.attack_num_target]
             y_attack = y_all[c_attack]
+            x_attack = self.data.get(c_attack, tst=True)[0]
         else:
             c_attack = c
             y_attack = y_all[np.argsort(y_all)[::-1][1]]
+            x_attack = None # TODO: maybe get next class ?
 
         text = f'\n--> # {i:-4d} | '
         text += f'c     {c:-4d} | '
@@ -315,11 +317,27 @@ class Manager:
             result = att.run()
         else:
             print('')
-            x_attr = self.model_attr.attrib(x, c_attack,
-                self.attr_steps, self.attr_iters)
-            result = att.run(x_attr, self.opt_d, self.opt_n, self.opt_sc,
-                self.opt_k, self.opt_k_top, self.opt_k_gd, self.opt_lr,
-                self.opt_r, self.attack_label_top)
+            att.prep(self.model_attr.net, self.opt_d,
+                self.attr_steps, self.attr_iters, x_attack, c)
+
+            P = None
+            if True:
+                print('\n\n\nAttack on helper model - start')
+
+                m = int(self.opt_m / 2) # TODO: check
+                att0 = AttackAttr(self.model_attr.net, x, c_attack, m,
+                    'tetradat', self.data.norm_m, self.data.norm_v, target)
+                att0.d = att.d
+                att0.pixels = att.pixels
+                att0.run(self.opt_n, self.opt_sc, self.opt_k,
+                    self.opt_k_top, self.opt_k_gd, self.opt_lr,
+                    self.opt_r, self.attack_label_top)
+                P = att0.P
+                print('\n\nAttack on helper model - end\n\n\n')
+
+            result = att.run(self.opt_n, self.opt_sc, self.opt_k,
+                self.opt_k_top, self.opt_k_gd, self.opt_lr,
+                self.opt_r, self.attack_label_top, P=P)
             print('')
 
         result['l'] = l
@@ -353,19 +371,15 @@ class Manager:
         if name is not None:
             return result
 
-        self.data.plot_attr(x_attr,
-            fpath=self.get_path(f'img/{c}/attr.png'))
-
-        x_attr_new = self.model_attr.attrib(att.x_new.detach().to('cpu'),
-            c, self.attr_steps, self.attr_iters)
-        self.data.plot_attr(x_attr_new,
-            fpath=self.get_path( f'img/{c}/attr_new.png'))
-
-        if target:
-            x_attr_target = self.model_attr.attrib(x.detach().to('cpu'),
-                c_attack, self.attr_steps, self.attr_iters)
-            self.data.plot_attr(x_attr_target,
-                fpath=self.get_path(f'img/{c}/attr_target.png'))
+        if att.x_attr is not None:
+            self.data.plot_attr(att.x_attr,
+                fpath=self.get_path(f'img/{c}/attr.png'))
+        if att.x_attr1 is not None:
+            self.data.plot_attr(att.x_attr1,
+                fpath=self.get_path(f'img/{c}/attr1.png'))
+        if att.x_attr2 is not None:
+            self.data.plot_attr(att.x_attr2,
+                fpath=self.get_path(f'img/{c}/attr2.png'))
 
         return result
 
@@ -441,7 +455,7 @@ def args_build():
     parser.add_argument('--opt_d',
         type=int,
         help='Dimension for optimization',
-        default=1000, # old 10K
+        default=int(224 * 224 / 10),
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -451,7 +465,7 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=10000,
+        default=20000, # 10000 TODO: check
     )
     parser.add_argument('--opt_k',
         type=int,
@@ -481,17 +495,17 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.1, # old 0.3
+        default=0.8, # TODO: check
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=15, # old 10
+        default=10,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=15, # old 10
+        default=10,
     )
     parser.add_argument('--attack_num_target',
         type=int,

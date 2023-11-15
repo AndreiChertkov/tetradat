@@ -5,7 +5,7 @@ jax.default_device(jax.devices('cpu')[0])
 
 
 import numpy as np
-from protes import protes
+from protes_spec import protes
 from time import perf_counter as tpc
 import torch
 import torchattacks
@@ -40,6 +40,14 @@ class Attack:
         self.probs = torch.nn.Softmax(dim=1)
 
         self.err = None
+
+        self.trans = torchvision.transforms.Normalize(
+            self.norm_m, self.norm_v)
+        self.trans_base = torchvision.transforms.Compose([
+            torchvision.transforms.Normalize(
+                [0., 0., 0.], 1./np.array(self.norm_v)),
+            torchvision.transforms.Normalize(
+                -np.array(self.norm_m), [1., 1., 1.])])
 
     def check(self, x_new):
         x = x_new[None].to(self.device)
@@ -79,48 +87,130 @@ class Attack:
 
 
 class AttackAttr(Attack):
-    def change(self, i):
+    def attrib(self, net, x, c, steps=10, iters=10):
+        x = self.trans_base(x)
+        x = np.uint8(np.moveaxis(x.numpy(), 0, 2) * 256)
+
+        def _img_to_x(x):
+            # m = np.array([0.485, 0.456, 0.406]).reshape([1, 1, 3])
+            # s = np.array([0.229, 0.224, 0.225]).reshape([1, 1, 3])
+            # x = (x / 255 - m) / s
+            x = np.transpose(x, (2, 0, 1)) / 255
+            x = torch.tensor(x, dtype=torch.float32, device=self.device)
+            x = self.trans(x).unsqueeze(0)
+            #x = np.expand_dims(x, 0)
+            #x = np.array(x)
+            x = torch.tensor(x, dtype=torch.float32, device=self.device)
+            return x
+
+        def _iter(x):
+            x = _img_to_x(x)
+            x.requires_grad_()
+            y = self.probs(net(x))[0, c]
+            net.zero_grad()
+            y.backward()
+            return x.grad.detach().cpu().numpy()[0]
+
+        def _thr(a, p=60):
+            if p >= 100:
+                return np.min(a)
+            a_sort = np.sort(np.abs(a.flatten()))[::-1]
+            s = 100. * np.cumsum(a_sort) / np.sum(a)
+            i = np.where(s >= p)[0]
+            return a_sort[i[0]]
+
+        ig = []
+        for _ in range(iters):
+            x0 = 255. * np.random.random(x.shape)
+            xs = [x0 + 1.*i/steps * (x-x0) for i in range(steps)]
+
+            g = [_iter(x_) for x_ in xs]
+            g_avg = np.average(g, axis=0)
+            g_avg = np.transpose(g_avg, (1, 2, 0))
+
+            x_delta = _img_to_x(x) - _img_to_x(x0)
+            x_delta = x_delta.detach().squeeze(0).cpu().numpy()
+            x_delta = np.transpose(x_delta, (1, 2, 0))
+
+            ig.append(x_delta * g_avg)
+
+        a = np.average(np.array(ig), axis=0)
+
+        a = np.average(np.clip(a, 0., 1.), axis=2)
+        m = _thr(a, 1)
+        e = _thr(a, 100)
+        a_thr = (np.abs(a) - e) / (m - e)
+        a_thr *= np.sign(a)
+        a_thr *= (a_thr >= 0.)
+        x = np.expand_dims(np.clip(a_thr, 0., 1.), 2) * [0, 255, 0]
+
+        x = np.moveaxis(x, 2, 0)
+        x = 0.2989 * x[0, :, :] + 0.5870 * x[1, :, :] + 0.1140 * x[2, :, :]
+        return x / np.max(x)
+
+    def change(self, i, with_h=False, with_s=True, with_v=False):
         h, s, v = torch.clone(self.x_base_hsv)
 
         delta = (np.array(i) - (self.n-1)/2) * self.sc
         delta = torch.tensor(delta).to(self.device)
 
-        #s[self.pixels[:, 0], self.pixels[:, 1]] += delta
-        #s[s > 1.] = 1.
-        #s[s < 0.] = 0.
+        if with_h:
+            h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
+            idx = h_target + delta > 1.
+            delta[idx] = delta[idx] - 1.
+            idx = h_target + delta < 0.
+            delta[idx] = 1. + delta[idx]
+            h[self.pixels[:, 0], self.pixels[:, 1]] += delta
 
-        v[self.pixels[:, 0], self.pixels[:, 1]] += delta
-        v[v > 1.] = 1.
-        v[v < 0.] = 0.
+        if with_s:
+            s[self.pixels[:, 0], self.pixels[:, 1]] += delta
+            s[s > 1.] = 1.
+            s[s < 0.] = 0.
 
-        #h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
-        #idx = h_target + delta > 1.
-        #delta[idx] = delta[idx] - 1.
-        #idx = h_target + delta < 0.
-        #delta[idx] = 1. + delta[idx]
-        #h[self.pixels[:, 0], self.pixels[:, 1]] += delta
+        if with_v:
+            v[self.pixels[:, 0], self.pixels[:, 1]] += delta
+            v[v > 1.] = 1.
+            v[v < 0.] = 0.
 
         x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
         return self.trans(x_base)
 
-    def run(self, x_attr, d, n, sc, k, k_top, k_gd, lr, r, label=None):
+    def prep(self, net, d, attr_steps, attr_iters, x_attack=None, c_base=None):
         t = tpc()
 
         self.d = d
+
+        if x_attack is None or c_base is None:
+            self.x_attr1 = None
+            self.x_attr2 = None
+            self.x_attr = self.attrib(net, self.x, self.c,
+                attr_steps, attr_iters)
+        else:
+            #self.x_attr1 = self.attrib(net, x_attack, self.c,
+            #    attr_steps, attr_iters)
+            #self.x_attr2 = self.attrib(net, self.x, c_base,
+            #    attr_steps, attr_iters)
+            # self.x_attr = self.x_attr1 #- self.x_attr2
+            self.x_attr = self.attrib(net, self.x, self.c,
+                attr_steps, attr_iters)
+            self.x_attr1 = None
+            self.x_attr2 = None
+
+        sh = self.x_attr.shape
+        sz = self.x_attr.size
+
+        I = np.unravel_index(np.argsort(self.x_attr, axis=None), sh)
+        I = [(I[0][k], I[1][k]) for k in range(sz)]
+
+        self.pixels = torch.tensor(I[::-1][:self.d]).to(self.device)
+
+        self.t += tpc() - t
+
+    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, P=None):
+        t = tpc()
+
         self.n = n
         self.sc = sc
-
-        self.trans = torchvision.transforms.Normalize(
-            self.norm_m, self.norm_v)
-        self.trans_base = torchvision.transforms.Compose([
-            torchvision.transforms.Normalize(
-                [0., 0., 0.], 1./np.array(self.norm_v)),
-            torchvision.transforms.Normalize(
-                -np.array(self.norm_m), [1., 1., 1.])])
-
-        I = np.unravel_index(np.argsort(x_attr, axis=None), x_attr.shape)
-        I = [(I[0][k], I[1][k]) for k in range(x_attr.size)]
-        self.pixels = torch.tensor(I[::-1][:self.d]).to(self.device)
 
         self.x = self.x.to(self.device)
         self.x_base = self.trans_base(self.x)
@@ -139,11 +229,16 @@ class AttackAttr(Attack):
                 raise NotImplementedError
             #print('Labels start', self.label_top)
 
+        info = {}
         try:
-            i, y = protes(loss, d, n, self.m_max, k, k_top, k_gd, lr, r,
-                is_max=(True if self.target else False), log=True)
+            is_max = True if self.target else False
+            i, y = protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd,
+                lr, r, P=P, info=info, is_max=is_max, log=True)
         except Exception as e:
+            print(e)
             pass
+
+        self.P = info['P']
 
         self.t += tpc() - t
         return self.result()
