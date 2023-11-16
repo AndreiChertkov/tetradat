@@ -318,10 +318,10 @@ class Manager:
         else:
             print('')
             att.prep(self.model_attr.net, self.opt_d,
-                self.attr_steps, self.attr_iters, x_attack, c)
+                self.attr_steps, self.attr_iters) # , x_attack, c)
 
             P = None
-            if True:
+            if False:
                 print('\n\n\nAttack on helper model - start')
 
                 m = int(self.opt_m / 2) # TODO: check
@@ -465,27 +465,27 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=20000, # 10000 TODO: check
+        default=50000, # 10000 TODO: check
     )
     parser.add_argument('--opt_k',
         type=int,
         help='Batch size for optimization',
-        default=100,
+        default=50 # 100,
     )
     parser.add_argument('--opt_k_top',
         type=int,
         help='Number of selected candidates in the batch',
-        default=10,
+        default=5 # 10,
     )
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=100,
+        default=1 # 100,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-3,
+        default=5.E-2 # 5.E-3,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -500,12 +500,12 @@ def args_build():
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attack_num_target',
         type=int,

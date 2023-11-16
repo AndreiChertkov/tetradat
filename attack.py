@@ -191,10 +191,10 @@ class AttackAttr(Attack):
             #self.x_attr2 = self.attrib(net, self.x, c_base,
             #    attr_steps, attr_iters)
             # self.x_attr = self.x_attr1 #- self.x_attr2
-            self.x_attr = self.attrib(net, self.x, self.c,
-                attr_steps, attr_iters)
             self.x_attr1 = None
             self.x_attr2 = None
+            self.x_attr = self.attrib(net, self.x, self.c,
+                attr_steps, attr_iters)
 
         sh = self.x_attr.shape
         sz = self.x_attr.size
