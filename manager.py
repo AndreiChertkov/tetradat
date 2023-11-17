@@ -24,7 +24,7 @@ class Manager:
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root='result', postfix='',
-                 show_result_all=False, device=None):
+                 show_result_all=False, with_pretrain=False, device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -51,6 +51,7 @@ class Manager:
             self.attack_label_top = None
 
         self.show_result_all = show_result_all
+        self.with_pretrain = with_pretrain
 
         self.set_rand()
         self.set_device(device)
@@ -321,7 +322,7 @@ class Manager:
                 self.attr_steps, self.attr_iters) # , x_attack, c)
 
             P = None
-            if False:
+            if self.with_pretrain:
                 print('\n\n\nAttack on helper model - start')
 
                 m = int(self.opt_m / 2) # TODO: check
@@ -465,27 +466,27 @@ def args_build():
     parser.add_argument('--opt_m',
         type=int,
         help='Budget for optimization',
-        default=50000, # 10000 TODO: check
+        default=10000,
     )
     parser.add_argument('--opt_k',
         type=int,
         help='Batch size for optimization',
-        default=50 # 100,
+        default=100,
     )
     parser.add_argument('--opt_k_top',
         type=int,
         help='Number of selected candidates in the batch',
-        default=5 # 10,
+        default=10,
     )
     parser.add_argument('--opt_k_gd',
         type=int,
         help='Number of gradient lifting iterations',
-        default=1 # 100,
+        default=100,
     )
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-2 # 5.E-3,
+        default=5.E-3,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -495,7 +496,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.8, # TODO: check
+        default=0.75,
     )
     parser.add_argument('--attr_steps',
         type=int,
@@ -538,13 +539,20 @@ def args_build():
         default=0,
         choices=[0, 1]
     )
+    parser.add_argument('--with_pretrain',
+        type=int,
+        help='Do we pretrain the optimizer (1) or not (0)',
+        default=0,
+        choices=[0, 1]
+    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
         args.opt_d, args.opt_n, args.opt_m, args.opt_k, args.opt_k_top,
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
         args.attr_iters, args.attack_num_target, args.attack_num_max,
-        args.attack_label_top, args.root, args.postfix, args.show_result_all)
+        args.attack_label_top, args.root, args.postfix, args.show_result_all,
+        args.with_pretrain)
 
 
 if __name__ == '__main__':

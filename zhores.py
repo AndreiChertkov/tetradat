@@ -18,19 +18,21 @@ import subprocess
 import sys
 
 
-MODELS = ['vgg']
-# ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
+MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
 MODEL_ATTR = 'alexnet'
-BASELINES = ['onepixel', 'pixle', 'square']
+BASELINES = [] # ['onepixel', 'pixle', 'square']
 
 
+POSTFIX = 'exp1' # Not empty!
 OPTIONS = {
     'args': {
-        'task': 'attack_target',
+        'task': 'attack',  # _target
         'kind': 'attr',
         'data': 'imagenet',
-        'attack_num_target': '100',
-        'postfix': 'c100'
+        'with_pretrain': 1,
+        'opt_sc': 0.75,
+        # 'attack_num_target': '100',
+        'postfix': POSTFIX # 'c100'
     },
     'opts': {
         'env': 'tetradat',
@@ -46,8 +48,8 @@ for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
         'args': {'model': model, 'model_attr': MODEL_ATTR},
         'opts': {
-            'days': 16,
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-c100'
+            'days': 6,
+            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-{POSTFIX}'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
@@ -55,8 +57,8 @@ for j, bs in enumerate(BASELINES, 1):
         TASKS[f'{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
-                'days': 8,
-                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-c100'
+                'days': 4,
+                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-{POSTFIX}'
             }
         }
 
