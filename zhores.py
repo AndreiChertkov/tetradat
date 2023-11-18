@@ -20,19 +20,14 @@ import sys
 
 MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
 MODEL_ATTR = 'alexnet'
-BASELINES = [] # ['onepixel', 'pixle', 'square']
+BASELINES = ['onepixel', 'pixle', 'square']
 
 
-POSTFIX = 'exp1' # Not empty!
 OPTIONS = {
     'args': {
-        'task': 'attack',  # _target
-        'kind': 'attr',
+        'task': 'attack',
+        'kind': 'attr_top',
         'data': 'imagenet',
-        'with_pretrain': 1,
-        'opt_sc': 0.75,
-        # 'attack_num_target': '100',
-        'postfix': POSTFIX # 'c100'
     },
     'opts': {
         'env': 'tetradat',
@@ -46,10 +41,13 @@ OPTIONS = {
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
-        'args': {'model': model, 'model_attr': MODEL_ATTR},
+        'args': {
+            'model': model,
+            'model_attr': MODEL_ATTR,
+        },
         'opts': {
             'days': 6,
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}-{POSTFIX}'
+            'out': f'result/imagenet-{model}/attack-attr_top-{MODEL_ATTR}'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
@@ -57,8 +55,8 @@ for j, bs in enumerate(BASELINES, 1):
         TASKS[f'{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
-                'days': 4,
-                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-{POSTFIX}'
+                'days': 5,
+                'out': f'result/imagenet-{model}/attack-bs_{bs}'
             }
         }
 

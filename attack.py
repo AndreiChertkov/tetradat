@@ -1,5 +1,5 @@
 import jax
-#jax.config.update('jax_enable_x64', True)
+jax.config.update('jax_enable_x64', True)
 jax.config.update('jax_platform_name', 'cpu')
 jax.default_device(jax.devices('cpu')[0])
 
@@ -48,6 +48,8 @@ class Attack:
                 [0., 0., 0.], 1./np.array(self.norm_v)),
             torchvision.transforms.Normalize(
                 -np.array(self.norm_m), [1., 1., 1.])])
+
+        self.d = int(self.x.shape[1] * self.x.shape[2])
 
     def check(self, x_new):
         x = x_new[None].to(self.device)
@@ -148,7 +150,7 @@ class AttackAttr(Attack):
         x = 0.2989 * x[0, :, :] + 0.5870 * x[1, :, :] + 0.1140 * x[2, :, :]
         return x / np.max(x)
 
-    def change(self, i, with_h=False, with_s=True, with_v=False):
+    def change(self, i, with_h=True, with_s=False, with_v=False):
         h, s, v = torch.clone(self.x_base_hsv)
 
         delta = (np.array(i) - (self.n-1)/2) * self.sc
@@ -175,34 +177,40 @@ class AttackAttr(Attack):
         x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
         return self.trans(x_base)
 
-    def prep(self, net, d, attr_steps, attr_iters, x_attack=None, c_base=None):
+    def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
         t = tpc()
 
-        self.d = d
+        self.weights = None
 
-        if x_attack is None or c_base is None:
-            self.x_attr1 = None
-            self.x_attr2 = None
-            self.x_attr = self.attrib(net, self.x, self.c,
-                attr_steps, attr_iters)
-        else:
-            #self.x_attr1 = self.attrib(net, x_attack, self.c,
-            #    attr_steps, attr_iters)
-            #self.x_attr2 = self.attrib(net, self.x, c_base,
-            #    attr_steps, attr_iters)
-            # self.x_attr = self.x_attr1 #- self.x_attr2
-            self.x_attr1 = None
-            self.x_attr2 = None
-            self.x_attr = self.attrib(net, self.x, self.c,
-                attr_steps, attr_iters)
+        if net is None:
+            if d is not None:
+                raise NotImplementedError
+            n = int(np.sqrt(self.d))
+            I = []
+            for i in range(n):
+                for j in range(n):
+                    I.append([i, j])
+            self.pixels = torch.tensor(I).to(self.device)
+            return
+
+        self.x_attr = self.attrib(net, self.x, self.c,
+            attr_steps, attr_iters)
 
         sh = self.x_attr.shape
         sz = self.x_attr.size
 
         I = np.unravel_index(np.argsort(self.x_attr, axis=None), sh)
         I = [(I[0][k], I[1][k]) for k in range(sz)]
+        I = I[::-1]
 
-        self.pixels = torch.tensor(I[::-1][:self.d]).to(self.device)
+        if d is not None:
+            self.d = d
+            I = I[:self.d]
+        else:
+            self.weights = np.array([self.x_attr[i] for i in I])
+            self.weights[self.weights < thr] = thr
+
+        self.pixels = torch.tensor(I).to(self.device)
 
         self.t += tpc() - t
 
@@ -229,16 +237,21 @@ class AttackAttr(Attack):
                 raise NotImplementedError
             #print('Labels start', self.label_top)
 
+        weights = None
+        if self.weights is not None:
+            if n != 3:
+                raise NotImplementedError
+            weights = [[w/2, 1.-w, w/2] for w in self.weights]
+
         info = {}
         try:
             is_max = True if self.target else False
             i, y = protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd,
-                lr, r, P=P, info=info, is_max=is_max, log=True)
+                lr, r, P=P, weights=weights, info=info, is_max=is_max, log=True)
         except Exception as e:
-            print(e)
             pass
 
-        self.P = info['P']
+        self.P = info.get('P')
 
         self.t += tpc() - t
         return self.result()
@@ -273,7 +286,7 @@ class AttackAttr(Attack):
 
 
 class AttackBs(Attack):
-    def run(self, onepixel=100, pixle=100, square=5/255, seed=42):
+    def run(self, onepixel=100, pixle=100, square=8/255, seed=42):
         t = tpc()
         self._build(onepixel, pixle, square, seed)
 

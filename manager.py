@@ -1,4 +1,5 @@
 import argparse
+from distutils.util import strtobool
 import numpy as np
 import os
 import random
@@ -23,8 +24,8 @@ class Manager:
     def __init__(self, data, model, model_attr, task, kind, opt_d, opt_n, opt_m,
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
                  attr_iters, attack_num_target, attack_num_max,
-                 attack_label_top, root='result', postfix='',
-                 show_result_all=False, with_pretrain=False, device=None):
+                 attack_label_top, root, postfix, show_result_all,
+                 skip_attr_fails, with_pretrain, device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -51,6 +52,7 @@ class Manager:
             self.attack_label_top = None
 
         self.show_result_all = show_result_all
+        self.skip_attr_fails = skip_attr_fails
         self.with_pretrain = with_pretrain
 
         self.set_rand()
@@ -159,28 +161,42 @@ class Manager:
         if self.kind:
             info += f'Kind of task        : "{self.kind}"\n'
 
-        if self.task in ['attack', 'attack_target'] and self.kind == 'attr':
-            if self.opt_sc:
-                info += f'Opt. scale          : {self.opt_sc}\n'
-            if self.opt_d:
-                info += f'Opt. dimension      : {self.opt_d}\n'
-            if self.opt_n:
-                info += f'Opt. mode size      : {self.opt_n}\n'
-            if self.opt_m:
-                info += f'Opt. budget         : {self.opt_m}\n'
-            if self.opt_k:
-                info += f'Opt. batch size     : {self.opt_k}\n'
-            if self.opt_k_top:
-                info += f'Opt. k-top          : {self.opt_k_top}\n'
-            if self.opt_k_top:
-                info += f'Opt. gd iters       : {self.opt_k_gd}\n'
-            if self.opt_lr:
-                info += f'Opt. learn. rate    : {self.opt_lr}\n'
-            if self.opt_r:
-                info += f'Opt. TT-rank        : {self.opt_r}\n'
-        if self.task == 'attack_target' and self.kind == 'attr':
-            if self.attack_num_target is not None:
-                info += f'Target class (delt) : {self.attack_num_target}\n'
+        is_att = self.task in ['attack', 'attack_target']
+        is_att = is_att and self.kind in ['base', 'attr', 'attr_top']
+        is_att_target = is_att and self.task in ['attack_target']
+
+        if self.opt_sc and is_att:
+            info += f'Opt. scale          : {self.opt_sc}\n'
+        if self.opt_d and is_att and self.kind in ['attr_top']:
+            info += f'Opt. dimension      : {self.opt_d}\n'
+        if self.opt_n and is_att:
+            info += f'Opt. mode size      : {self.opt_n}\n'
+        if self.opt_m and is_att:
+            info += f'Opt. budget         : {self.opt_m}\n'
+        if self.opt_k and is_att:
+            info += f'Opt. batch size     : {self.opt_k}\n'
+        if self.opt_k_top and is_att:
+            info += f'Opt. k-top          : {self.opt_k_top}\n'
+        if self.opt_k_gd and is_att:
+            info += f'Opt. gd iters       : {self.opt_k_gd}\n'
+        if self.opt_lr and is_att:
+            info += f'Opt. learn. rate    : {self.opt_lr}\n'
+        if self.opt_r and is_att:
+            info += f'Opt. TT-rank        : {self.opt_r}\n'
+        if self.attr_steps and is_att and self.kind in ['attr', 'attr_top']:
+            info += f'Attribution steps   : {self.attr_steps}\n'
+        if self.attr_iters and is_att and self.kind in ['attr', 'attr_top']:
+            info += f'Attribution iters   : {self.attr_iters}\n'
+        if self.attack_num_max and self.task in ['attack', 'attack_target']:
+            info += f'Max num of attacks  : {self.attack_num_max}\n'
+        if self.skip_attr_fails and self.task in ['attack', 'attack_target']:
+            info += f'Skip fails for attr : {self.skip_attr_fails}\n'
+        if self.with_pretrain and is_att:
+            info += f'Pretrain opti       : {self.with_pretrain}\n'
+        if self.attack_num_target is not None and self.task == 'attack_target':
+            info += f'Target class (delt) : {self.attack_num_target}\n'
+
+        # TODO: add "attack_label_top"
 
         self.log = Log(self.get_path('log.txt'))
         self.log.title(f'Computations ({self.device})', info)
@@ -209,6 +225,12 @@ class Manager:
         torch.manual_seed(seed)
 
     def task_attack_attr(self):
+        self._attacks(with_attr=True)
+
+    def task_attack_attr_top(self):
+        self._attacks(with_attr_top=True)
+
+    def task_attack_base(self):
         self._attacks()
 
     def task_attack_bs_onepixel(self):
@@ -221,6 +243,12 @@ class Manager:
         self._attacks('square')
 
     def task_attack_target_attr(self):
+        self._attacks(target=True, with_attr=True)
+
+    def task_attack_target_attr_top(self):
+        self._attacks(target=True, with_attr_top=True)
+
+    def task_attack_target_base(self):
         self._attacks(target=True)
 
     def task_attack_target_bs_onepixel(self):
@@ -283,7 +311,8 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
-    def _attack(self, i, name=None, target=False, show=False):
+    def _attack(self, i, name=None, target=False,
+                with_attr=False, with_attr_top=False, show=False):
         x, c, l = self.data.get(i, tst=True)
 
         y_all = self.model.run(x).detach().to('cpu').numpy()
@@ -291,7 +320,15 @@ class Manager:
 
         if np.argmax(y_all) != c:
             # Invalid prediction for target image; skip
+            print(f'WRN : base model is failed for "{c}" (SKIP)')
             return
+
+        if self.skip_attr_fails and self.model_attr is not None:
+            y_all_attr = self.model_attr.run(x).detach().to('cpu').numpy()
+            if np.argmax(y_all_attr) != c:
+                # Invalid prediction for target image; skip
+                print(f'WRN : attr model is failed for "{c}" (SKIP)')
+                return
 
         if target:
             c_attack = np.argsort(y_all)[::-1][self.attack_num_target]
@@ -318,14 +355,16 @@ class Manager:
             result = att.run()
         else:
             print('')
-            att.prep(self.model_attr.net, self.opt_d,
-                self.attr_steps, self.attr_iters) # , x_attack, c)
+
+            net = self.model_attr.net if with_attr or with_attr_top else None
+            d = self.opt_d if with_attr_top else None
+
+            att.prep(net, d, self.attr_steps, self.attr_iters)
 
             P = None
             if self.with_pretrain:
                 print('\n\n\nAttack on helper model - start')
-
-                m = int(self.opt_m / 2) # TODO: check
+                m = int(self.opt_m)
                 att0 = AttackAttr(self.model_attr.net, x, c_attack, m,
                     'tetradat', self.data.norm_m, self.data.norm_v, target)
                 att0.d = att.d
@@ -361,30 +400,20 @@ class Manager:
             text += f'evals {result["m"]:-5d}'
         self.log(text)
 
-        if not att.success or not show:
-            return result
+        if True: # TODO att.success and show:
+            self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+                fpath=self.get_path(f'img/{c}/base.png'))
+            self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
+                fpath=self.get_path(f'img/{c}/changed.png'))
 
-        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
-            fpath=self.get_path(f'img/{c}/base.png'))
-        self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
-            fpath=self.get_path(f'img/{c}/changed.png'))
-
-        if name is not None:
-            return result
-
-        if att.x_attr is not None:
-            self.data.plot_attr(att.x_attr,
-                fpath=self.get_path(f'img/{c}/attr.png'))
-        if att.x_attr1 is not None:
-            self.data.plot_attr(att.x_attr1,
-                fpath=self.get_path(f'img/{c}/attr1.png'))
-        if att.x_attr2 is not None:
-            self.data.plot_attr(att.x_attr2,
-                fpath=self.get_path(f'img/{c}/attr2.png'))
+            if name and att.x_attr is not None:
+                self.data.plot_attr(att.x_attr,
+                    fpath=self.get_path(f'img/{c}/attr.png'))
 
         return result
 
-    def _attacks(self, name=None, target=False):
+    def _attacks(self, name=None, target=False,
+                 with_attr=False, with_attr_top=False):
         if target:
             title = 'Start targeted attack on images'
         else:
@@ -398,7 +427,7 @@ class Manager:
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
             show = self.show_result_all or i in RESULT_SHOW
-            res = self._attack(i, name, target, show=show)
+            res = self._attack(i, name, target, with_attr, with_attr_top, show)
             if res is not None:
                 result[i] = res
 
@@ -422,40 +451,40 @@ def args_build():
         description='Library for generation of adversarial examples for artificial neural networks using tensor train (TT) decomposition and optimizer based on it, i.e., PROTES optimizer.',
         epilog = '© Andrei Chertkov'
     )
-    parser.add_argument('-d', '--data',
+    parser.add_argument('--data',
         type=str,
         help='Name of the used dataset',
         default=None,
         choices=DATA_NAMES
     )
-    parser.add_argument('-m', '--model',
+    parser.add_argument('--model',
         type=str,
         help='Name of the used model',
         default=None,
         choices=MODEL_NAMES
     )
-    parser.add_argument('-a', '--model_attr',
+    parser.add_argument('--model_attr',
         type=str,
         help='Name of the used model for attribution',
         default=None,
         choices=MODEL_NAMES
     )
-    parser.add_argument('-t', '--task',
+    parser.add_argument('--task',
         type=str,
         help='Name of the task',
-        default='attack_target',
+        default='attack',
         choices=['check', 'attack', 'attack_target']
     )
-    parser.add_argument('-k', '--kind',
+    parser.add_argument('--kind',
         type=str,
         help='Kind of the task',
         default='attr',
-        choices=['data', 'model', 'attr',
+        choices=['data', 'model', 'base', 'attr', 'attr_top',
             'bs_onepixel', 'bs_pixle', 'bs_square']
     )
     parser.add_argument('--opt_d',
         type=int,
-        help='Dimension for optimization',
+        help='Dimension for optimization (for attack "attr_top")',
         default=int(224 * 224 / 10),
     )
     parser.add_argument('--opt_n',
@@ -496,17 +525,17 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.75,
+        default=0.1,
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=15,
+        default=25,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=15,
+        default=25,
     )
     parser.add_argument('--attack_num_target',
         type=int,
@@ -534,16 +563,25 @@ def args_build():
         default=''
     )
     parser.add_argument('--show_result_all',
-        type=int,
-        help='Do we show all results (1) or only some of them (0)',
-        default=0,
-        choices=[0, 1]
+        type=lambda x: bool(strtobool(x)),
+        help='Do we show all results or only some of them',
+        nargs="?",
+        const=True,
+        default=False
+    )
+    parser.add_argument('--skip_attr_fails',
+        type=lambda x: bool(strtobool(x)),
+        help='Do we skip images, for which attr model fails to predict',
+        nargs="?",
+        const=True,
+        default=True
     )
     parser.add_argument('--with_pretrain',
-        type=int,
-        help='Do we pretrain the optimizer (1) or not (0)',
-        default=0,
-        choices=[0, 1]
+        type=lambda x: bool(strtobool(x)),
+        help='Do we pretrain the optimizer on attr-model',
+        nargs="?",
+        const=True,
+        default=False
     )
 
     args = parser.parse_args()
@@ -552,7 +590,7 @@ def args_build():
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
-        args.with_pretrain)
+        args.skip_attr_fails, args.with_pretrain)
 
 
 if __name__ == '__main__':

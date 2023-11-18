@@ -5,7 +5,7 @@ from time import perf_counter as tpc
 
 
 def protes(f, d, n, m=None, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, seed=0,
-           is_max=False, log=False, info={}, P=None,
+           is_max=False, log=False, info={}, P=None, weights=None,
            with_info_i_opt_list=False, with_info_full=False):
     time = tpc()
     info.update({'d': d, 'n': n, 'm_max': m, 'm': 0, 'k': k, 'k_top': k_top,
@@ -31,7 +31,11 @@ def protes(f, d, n, m=None, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, seed=0,
 
     interface_matrices = jax.jit(_interface_matrices)
     sample = jax.jit(jax.vmap(_sample, (None, None, None, None, 0)))
+    sample_w = jax.jit(jax.vmap(_sample_w, (None, None, None, None, None, 0)))
     likelihood = jax.jit(jax.vmap(_likelihood, (None, None, None, None, 0)))
+
+    if weights is not None:
+        weights = jnp.array(weights)
 
     @jax.jit
     def loss(P_cur, I_cur):
@@ -49,11 +53,16 @@ def protes(f, d, n, m=None, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, seed=0,
         P_cur = jax.tree_util.tree_map(lambda p, u: p + u, P_cur, updates)
         return state, P_cur
 
+    is_new = False
+    
     while True:
         Pl, Pm, Pr = P
         Zm = interface_matrices(Pm, Pr)
         rng, key = jax.random.split(rng)
-        I = sample(Pl, Pm, Pr, Zm, jax.random.split(key, k))
+        if weights is None:
+            I = sample(Pl, Pm, Pr, Zm, jax.random.split(key, k))
+        else:
+            I = sample_w(Pl, Pm, Pr, Zm, weights, jax.random.split(key, k))
 
         y = f(I)
         if y is None:
@@ -196,6 +205,33 @@ def _sample(Yl, Ym, Yr, Zm, key):
     Q, il = body(jnp.ones(1), (keys[0], Yl, Zm[0]))
     Q, im = jax.lax.scan(body, Q, (keys[1:-1], Ym, Zm[1:]))
     Q, ir = body(Q, (keys[-1], Yr, jnp.ones(1)))
+
+    il = jnp.array(il, dtype=jnp.int32)
+    ir = jnp.array(ir, dtype=jnp.int32)
+    return jnp.hstack((il, im, ir))
+
+
+def _sample_w(Yl, Ym, Yr, Zm, weights, key):
+    """Generate sample according to given probability TT-tensor."""
+    def body(Q, data):
+        key_cur, Y_cur, Z_cur, w_cur = data
+
+        G = jnp.einsum('r,riq,q->i', Q, Y_cur, Z_cur)
+        G = jnp.abs(G * w_cur)
+        G /= jnp.sum(G)
+
+        i = jax.random.choice(key_cur, jnp.arange(Y_cur.shape[1]), p=G)
+
+        Q = jnp.einsum('r,rq->q', Q, Y_cur[:, i, :])
+        Q /= jnp.linalg.norm(Q)
+
+        return Q, i
+
+    keys = jax.random.split(key, len(Ym) + 2)
+
+    Q, il = body(jnp.ones(1), (keys[0], Yl, Zm[0], weights[0]))
+    Q, im = jax.lax.scan(body, Q, (keys[1:-1], Ym, Zm[1:], weights[1:-1]))
+    Q, ir = body(Q, (keys[-1], Yr, jnp.ones(1), weights[-1]))
 
     il = jnp.array(il, dtype=jnp.int32)
     ir = jnp.array(ir, dtype=jnp.int32)
