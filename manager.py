@@ -400,13 +400,13 @@ class Manager:
             text += f'evals {result["m"]:-5d}'
         self.log(text)
 
-        if True: # TODO att.success and show:
+        if att.success and show:
             self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
                 fpath=self.get_path(f'img/{c}/base.png'))
             self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
                 fpath=self.get_path(f'img/{c}/changed.png'))
 
-            if name and att.x_attr is not None:
+            if not name and att.x_attr is not None:
                 self.data.plot_attr(att.x_attr,
                     fpath=self.get_path(f'img/{c}/attr.png'))
 
@@ -525,7 +525,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.1,
+        default=0.2,
     )
     parser.add_argument('--attr_steps',
         type=int,
