@@ -5,7 +5,7 @@ jax.default_device(jax.devices('cpu')[0])
 
 
 import numpy as np
-from protes_spec import protes
+from protes import protes
 from time import perf_counter as tpc
 import torch
 import torchattacks
@@ -65,8 +65,10 @@ class Attack:
 
         if self.target:
             self.success = self.c_new == self.c
+            self.y2 = self.y_all[np.argsort(self.y_all)[::-1][0]]
         else:
             self.success = self.c_new != self.c
+            self.y2 = self.y_all[np.argsort(self.y_all)[::-1][1]]
 
         self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
         self.changes = torch.sum(self.changes > 1.E-6).item()
@@ -180,8 +182,6 @@ class AttackAttr(Attack):
     def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
         t = tpc()
 
-        self.weights = None
-
         if net is None:
             if d is not None:
                 raise NotImplementedError
@@ -207,14 +207,13 @@ class AttackAttr(Attack):
             self.d = d
             I = I[:self.d]
         else:
-            self.weights = np.array([self.x_attr[i] for i in I])
-            self.weights[self.weights < thr] = thr
+            raise NotImplementedError
 
         self.pixels = torch.tensor(I).to(self.device)
 
         self.t += tpc() - t
 
-    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, P=None):
+    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None):
         t = tpc()
 
         self.n = n
@@ -237,21 +236,13 @@ class AttackAttr(Attack):
                 raise NotImplementedError
             #print('Labels start', self.label_top)
 
-        weights = None
-        if self.weights is not None:
-            if n != 3:
-                raise NotImplementedError
-            weights = [[w/2, 1.-w, w/2] for w in self.weights]
-
-        info = {}
         try:
             is_max = True if self.target else False
             i, y = protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd,
-                lr, r, P=P, weights=weights, info=info, is_max=is_max, log=True)
+                lr, r, is_max=is_max, log=True)
         except Exception as e:
+            print(e)
             pass
-
-        self.P = info.get('P')
 
         self.t += tpc() - t
         return self.result()
@@ -263,7 +254,7 @@ class AttackAttr(Attack):
             self.check(self.change(i))
             if self.success:
                 return
-            result.append(self.y)
+            result.append(self.y - self.y2)
         return np.array(result)
 
     def loss_label(self, I, rew=10.):
@@ -286,7 +277,7 @@ class AttackAttr(Attack):
 
 
 class AttackBs(Attack):
-    def run(self, onepixel=100, pixle=100, square=8/255, seed=42):
+    def run(self, onepixel=100, pixle=100, square=5/255, seed=42):
         t = tpc()
         self._build(onepixel, pixle, square, seed)
 

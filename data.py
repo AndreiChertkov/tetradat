@@ -4,6 +4,7 @@ import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import subprocess
 import sys
 import torch
 from torch.utils.data import DataLoader
@@ -11,7 +12,6 @@ import torchvision
 
 
 from data_opts import DATA_OPTS
-from utils import load_repo
 
 
 DATA_NAMES = list(DATA_OPTS.keys())
@@ -296,3 +296,8 @@ class Data:
         # TODO: see https://github.com/pytorch/vision/blob/f69eee6108cd047ac8b62a2992244e9ab3c105e1/torchvision/transforms/_presets.py#L38
 
         self.tr = torchvision.transforms.Compose([self.tr_tens, self.tr_norm])
+
+
+def load_repo(url, fpath):
+    prc = subprocess.getoutput(f'cd {fpath} && git clone {url}')
+    print(prc)

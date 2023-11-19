@@ -1,4 +1,5 @@
 import argparse
+from datetime import datetime
 from distutils.util import strtobool
 import numpy as np
 import os
@@ -13,11 +14,49 @@ from data import DATA_NAMES
 from data import Data
 from model import MODEL_NAMES
 from model import Model
-from utils import Log
 
 
 RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
     10, 15, 20, 21, 22, 23, 24, 25, 44, 56, 74, 88, 254, 300, 500, 583, 999]
+
+
+class Log:
+    def __init__(self, fpath=None):
+        self.fpath = fpath
+        self.is_new = True
+
+    def __call__(self, text):
+        print(text)
+        if self.fpath:
+            with open(self.fpath, 'w' if self.is_new else 'a') as f:
+                f.write(text + '\n')
+        self.is_new = False
+
+    def end(self):
+        dt = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+        content = f'Work is finished ({tpc()-self.tm:-.2f} sec. total)'
+        text = '\n\n' + '=' * 21 + ' ' + '-' * len(content) + '\n'
+        text += f'[{dt}] {content}\n\n'
+        self(text)
+
+    def prc(self, content=''):
+        self(f'\n.... {content}')
+        return tpc()
+
+    def res(self, t, content=''):
+        self(f'DONE ({t:-9.2f} sec.) {content}')
+
+    def title(self, content, info):
+        self.tm = tpc()
+        dt = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+        text = f'[{dt}] {content}'
+        text += '\n' + '=' * 21 + ' ' + '-' * len(content) + '\n'
+        text += info
+        text += '=' * (22 + len(content)) + '\n'
+        self(text)
+
+    def wrn(self, content=''):
+        self(f'WRN ! {content}')
 
 
 class Manager:
@@ -25,7 +64,7 @@ class Manager:
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
-                 skip_attr_fails, with_pretrain, device=None):
+                 skip_attr_fails, device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -53,7 +92,6 @@ class Manager:
 
         self.show_result_all = show_result_all
         self.skip_attr_fails = skip_attr_fails
-        self.with_pretrain = with_pretrain
 
         self.set_rand()
         self.set_device(device)
@@ -191,8 +229,6 @@ class Manager:
             info += f'Max num of attacks  : {self.attack_num_max}\n'
         if self.skip_attr_fails and self.task in ['attack', 'attack_target']:
             info += f'Skip fails for attr : {self.skip_attr_fails}\n'
-        if self.with_pretrain and is_att:
-            info += f'Pretrain opti       : {self.with_pretrain}\n'
         if self.attack_num_target is not None and self.task == 'attack_target':
             info += f'Target class (delt) : {self.attack_num_target}\n'
 
@@ -361,23 +397,9 @@ class Manager:
 
             att.prep(net, d, self.attr_steps, self.attr_iters)
 
-            P = None
-            if self.with_pretrain:
-                print('\n\n\nAttack on helper model - start')
-                m = int(self.opt_m)
-                att0 = AttackAttr(self.model_attr.net, x, c_attack, m,
-                    'tetradat', self.data.norm_m, self.data.norm_v, target)
-                att0.d = att.d
-                att0.pixels = att.pixels
-                att0.run(self.opt_n, self.opt_sc, self.opt_k,
-                    self.opt_k_top, self.opt_k_gd, self.opt_lr,
-                    self.opt_r, self.attack_label_top)
-                P = att0.P
-                print('\n\nAttack on helper model - end\n\n\n')
-
             result = att.run(self.opt_n, self.opt_sc, self.opt_k,
                 self.opt_k_top, self.opt_k_gd, self.opt_lr,
-                self.opt_r, self.attack_label_top, P=P)
+                self.opt_r, self.attack_label_top)
             print('')
 
         result['l'] = l
@@ -500,12 +522,12 @@ def args_build():
     parser.add_argument('--opt_k',
         type=int,
         help='Batch size for optimization',
-        default=100,
+        default=20,
     )
     parser.add_argument('--opt_k_top',
         type=int,
         help='Number of selected candidates in the batch',
-        default=10,
+        default=5,
     )
     parser.add_argument('--opt_k_gd',
         type=int,
@@ -515,32 +537,32 @@ def args_build():
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-3,
+        default=5.E-1,
     )
     parser.add_argument('--opt_r',
         type=int,
         help='TT-rank of the constructed probability TT-tensor',
-        default=5,
+        default=2,
     )
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.2,
+        default=0.25,
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=25,
+        default=10,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=25,
+        default=10,
     )
     parser.add_argument('--attack_num_target',
         type=int,
         help='Target top class number for targeted attack (>= 1)',
-        default=1,
+        default=100,
     )
     parser.add_argument('--attack_num_max',
         type=int,
@@ -576,13 +598,6 @@ def args_build():
         const=True,
         default=True
     )
-    parser.add_argument('--with_pretrain',
-        type=lambda x: bool(strtobool(x)),
-        help='Do we pretrain the optimizer on attr-model',
-        nargs="?",
-        const=True,
-        default=False
-    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
@@ -590,7 +605,7 @@ def args_build():
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
-        args.skip_attr_fails, args.with_pretrain)
+        args.skip_attr_fails)
 
 
 if __name__ == '__main__':

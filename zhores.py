@@ -28,10 +28,12 @@ OPTIONS = {
         'task': 'attack',
         'kind': 'attr_top',
         'data': 'imagenet',
+        'model_attr': MODEL_ATTR
     },
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
+        'days': 6,
         'hours': 0,
         'memory': 40,
         'out': 'zhores_out',
@@ -41,12 +43,8 @@ OPTIONS = {
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
-        'args': {
-            'model': model,
-            'model_attr': MODEL_ATTR,
-        },
+        'args': {'model': model},
         'opts': {
-            'days': 6,
             'out': f'result/imagenet-{model}/attack-attr_top-{MODEL_ATTR}'
         }
     }
