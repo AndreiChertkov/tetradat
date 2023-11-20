@@ -17,7 +17,8 @@ from model import Model
 
 
 RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    10, 15, 20, 21, 22, 23, 24, 25, 44, 56, 74, 88, 254, 300, 500, 583, 999]
+    10, 15, 20, 21, 22, 23, 24, 25, 44, 56, 74, 88, 95, 97, 99,
+    100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 254, 300, 500, 583, 999]
 
 
 class Log:
@@ -275,9 +276,6 @@ class Manager:
     def task_attack_bs_pixle(self):
         self._attacks('pixle')
 
-    def task_attack_bs_square(self):
-        self._attacks('square')
-
     def task_attack_target_attr(self):
         self._attacks(target=True, with_attr=True)
 
@@ -292,9 +290,6 @@ class Manager:
 
     def task_attack_target_bs_pixle(self):
         self._attacks('pixle', target=True)
-
-    def task_attack_target_bs_square(self):
-        self._attacks('square', target=True)
 
     def task_check_data(self):
         name = self.data.name
@@ -369,11 +364,9 @@ class Manager:
         if target:
             c_attack = np.argsort(y_all)[::-1][self.attack_num_target]
             y_attack = y_all[c_attack]
-            x_attack = self.data.get(c_attack, tst=True)[0]
         else:
             c_attack = c
             y_attack = y_all[np.argsort(y_all)[::-1][1]]
-            x_attack = None # TODO: maybe get next class ?
 
         text = f'\n--> # {i:-4d} | '
         text += f'c     {c:-4d} | '
@@ -502,7 +495,7 @@ def args_build():
         help='Kind of the task',
         default='attr',
         choices=['data', 'model', 'base', 'attr', 'attr_top',
-            'bs_onepixel', 'bs_pixle', 'bs_square']
+            'bs_onepixel', 'bs_pixle']
     )
     parser.add_argument('--opt_d',
         type=int,
@@ -522,12 +515,12 @@ def args_build():
     parser.add_argument('--opt_k',
         type=int,
         help='Batch size for optimization',
-        default=20,
+        default=100,
     )
     parser.add_argument('--opt_k_top',
         type=int,
         help='Number of selected candidates in the batch',
-        default=5,
+        default=10,
     )
     parser.add_argument('--opt_k_gd',
         type=int,
@@ -537,32 +530,32 @@ def args_build():
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-1,
+        default=5.E-2,
     )
     parser.add_argument('--opt_r',
         type=int,
         help='TT-rank of the constructed probability TT-tensor',
-        default=2,
+        default=5,
     )
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.25,
+        default=0.4,
     )
     parser.add_argument('--attr_steps',
         type=int,
         help='Number of attribution steps',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attr_iters',
         type=int,
         help='Number of attribution iterations',
-        default=10,
+        default=15,
     )
     parser.add_argument('--attack_num_target',
         type=int,
         help='Target top class number for targeted attack (>= 1)',
-        default=100,
+        default=10,
     )
     parser.add_argument('--attack_num_max',
         type=int,

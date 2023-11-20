@@ -152,7 +152,7 @@ class AttackAttr(Attack):
         x = 0.2989 * x[0, :, :] + 0.5870 * x[1, :, :] + 0.1140 * x[2, :, :]
         return x / np.max(x)
 
-    def change(self, i, with_h=True, with_s=False, with_v=False):
+    def change(self, i, with_h=False, with_s=True, with_v=False):
         h, s, v = torch.clone(self.x_base_hsv)
 
         delta = (np.array(i) - (self.n-1)/2) * self.sc
@@ -277,9 +277,9 @@ class AttackAttr(Attack):
 
 
 class AttackBs(Attack):
-    def run(self, onepixel=100, pixle=100, square=5/255, seed=42):
+    def run(self, onepixel=100, pixle=100, seed=42):
         t = tpc()
-        self._build(onepixel, pixle, square, seed)
+        self._build(onepixel, pixle, seed)
 
         x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
         c_ = torch.tensor([self.c]).to('cpu')
@@ -292,7 +292,7 @@ class AttackBs(Attack):
         self.t += tpc() - t
         return self.result()
 
-    def _build(self, onepixel, pixle, square, seed):
+    def _build(self, onepixel, pixle, seed):
         if self.name == 'onepixel':
             self.atk = _OnePixel(self.net,
                 pixels=onepixel,
@@ -304,12 +304,6 @@ class AttackBs(Attack):
             self.atk = _Pixle(self.net,
                 restarts=restarts,
                 max_iterations=max_iterations)
-
-        elif self.name == 'square':
-            self.atk = _Square(self.net,
-                eps=square,
-                n_queries=self.m_max,
-                seed=seed)
 
         else:
             raise NotImplementedError(f'Baseline "{self.name}" not supported')
@@ -329,14 +323,6 @@ class _OnePixel(torchattacks.OnePixel):
 
 
 class _Pixle(torchattacks.Pixle):
-    def get_logits(self, inputs, labels=None, *args, **kwargs):
-        if not hasattr(self, 'model_evals'):
-            self.model_evals = 0
-        self.model_evals += inputs.shape[0]
-        return super().get_logits(inputs, labels, *args, **kwargs)
-
-
-class _Square(torchattacks.Square):
     def get_logits(self, inputs, labels=None, *args, **kwargs):
         if not hasattr(self, 'model_evals'):
             self.model_evals = 0

@@ -18,14 +18,14 @@ import subprocess
 import sys
 
 
-MODELS = ['googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
-MODEL_ATTR = 'alexnet'
-BASELINES = ['onepixel', 'pixle', 'square']
+MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet', 'vit']
+MODEL_ATTR = 'vgg'
+BASELINES = ['onepixel', 'pixle']
 
 
 OPTIONS = {
     'args': {
-        'task': 'attack',
+        'task': 'attack_target',
         'kind': 'attr_top',
         'data': 'imagenet',
         'model_attr': MODEL_ATTR
@@ -33,7 +33,6 @@ OPTIONS = {
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
-        'days': 6,
         'hours': 0,
         'memory': 40,
         'out': 'zhores_out',
@@ -45,7 +44,8 @@ for i, model in enumerate(MODELS, 1):
     TASKS[f'1{i}-tet'] = {
         'args': {'model': model},
         'opts': {
-            'out': f'result/imagenet-{model}/attack-attr_top-{MODEL_ATTR}'
+            'days': 6,
+            'out': f'result/imagenet-{model}/attack_target-attr_top-{MODEL_ATTR}'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
@@ -54,7 +54,7 @@ for j, bs in enumerate(BASELINES, 1):
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
                 'days': 5,
-                'out': f'result/imagenet-{model}/attack-bs_{bs}'
+                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-{MODEL_ATTR}'
             }
         }
 

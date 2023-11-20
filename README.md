@@ -57,7 +57,7 @@ The calls with the following `ARGS` may be performed:
 
 - To run attacks with the baselines:
     - `python manager.py --task attack --kind bs_onepixel --data imagenet --model googlenet`
-        > You may use and of the models from above here; and `bs_onepixel`, `bs_pixle`, `bs_square`. You may also try `--task attack_target`.
+        > You may use and of the models from above here; and `bs_onepixel` or `bs_pixle`. You may also try `--task attack_target`.
 
 
 ## Authors
