@@ -20,7 +20,7 @@ import sys
 
 MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet', 'vit']
 MODEL_ATTR = 'vgg'
-BASELINES = ['onepixel', 'pixle']
+BASELINES = [] #'onepixel', 'pixle']
 
 
 OPTIONS = {
@@ -41,11 +41,12 @@ OPTIONS = {
 }
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
-    TASKS[f'n1{i}-tet'] = {
+    TASKS[f't1{i}-tet'] = {
         'args': {'model': model},
         'opts': {
             'days': 6,
-            'out': f'result/imagenet-{model}/attack-attr_top-{MODEL_ATTR}' # _target
+            'opt_sc': 0.75,
+            'out': f'result/imagenet-{model}/attack_target-attr_top-{MODEL_ATTR}'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
@@ -54,7 +55,7 @@ for j, bs in enumerate(BASELINES, 1):
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
                 'days': 5,
-                'out': f'result/imagenet-{model}/attack-bs_{bs}-{MODEL_ATTR}' # _target
+                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-{MODEL_ATTR}'
             }
         }
 
