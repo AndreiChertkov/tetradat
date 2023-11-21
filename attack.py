@@ -152,7 +152,25 @@ class AttackAttr(Attack):
         x = 0.2989 * x[0, :, :] + 0.5870 * x[1, :, :] + 0.1140 * x[2, :, :]
         return x / np.max(x)
 
-    def change(self, i, with_h=False, with_s=True, with_v=False):
+    def change(self, i):
+        h, s, v = torch.clone(self.x_base_hsv)
+
+        dn = (self.n-1) / 2
+        delta = (np.array(i) - (self.n-1)/2) * self.sc / dn
+        delta = torch.tensor(delta).to(self.device)
+
+        ind = delta < 0
+        pix = self.pixels[ind]
+        s[pix[:, 0], pix[:, 1]] += delta[ind] * s[pix[:, 0], pix[:, 1]]
+
+        ind = delta > 0
+        pix = self.pixels[ind]
+        v[pix[:, 0], pix[:, 1]] += delta[ind] * (1. - v[pix[:, 0], pix[:, 1]])
+
+        x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
+        return self.trans(x_base)
+
+    def change_old(self, i, with_h=False, with_s=True, with_v=False):
         h, s, v = torch.clone(self.x_base_hsv)
 
         delta = (np.array(i) - (self.n-1)/2) * self.sc
@@ -255,6 +273,7 @@ class AttackAttr(Attack):
             if self.success:
                 return
             result.append(self.y - self.y2)
+
         return np.array(result)
 
     def loss_label(self, I, rew=10.):

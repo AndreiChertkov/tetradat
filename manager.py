@@ -530,7 +530,7 @@ def args_build():
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-2,
+        default=5.E-1,
     )
     parser.add_argument('--opt_r',
         type=int,
@@ -540,7 +540,7 @@ def args_build():
     parser.add_argument('--opt_sc',
         type=float,
         help='Scale for the noize image',
-        default=0.4,
+        default=0.5,
     )
     parser.add_argument('--attr_steps',
         type=int,
