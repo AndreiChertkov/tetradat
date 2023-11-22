@@ -4,8 +4,9 @@ jax.config.update('jax_platform_name', 'cpu')
 jax.default_device(jax.devices('cpu')[0])
 
 
+from copy import deepcopy as copy
 import numpy as np
-from protes import protes
+from protes_own import protes
 from time import perf_counter as tpc
 import torch
 import torchattacks
@@ -88,6 +89,65 @@ class Attack:
             'dx1': self.dx1,
             'dx2': self.dx2,
             'err': self.err}
+
+
+class AttackAttrMulti:
+    def __init__(self, *args):
+        self.args = args
+        self.m_max = int(args[3])
+        self.m = 0
+        self.t = 0.
+
+    def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
+        att = AttackAttr(*self.args)
+        att.prep(net, d, attr_steps, attr_iters, thr)
+        self.x_attr = att.x_attr
+        self.pixels = att.pixels
+        self.d = att.d
+        self.t = att.t
+
+    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, sc_delt=0.2):
+        t = tpc()
+
+        self.P = None
+        self.sc = sc + sc_delt
+        result_best = None
+
+        while self.sc > sc_delt * 1.5:
+            self.sc -= sc_delt
+
+            print(f'\n AttackMulti start (sc = {self.sc:-7.1e})\n')
+
+            att = AttackAttr(*self.args)
+            att.d = self.d
+            att.m_max = self.m_max - self.m
+            att.x_attr = self.x_attr
+            att.pixels = self.pixels
+
+            result = att.run(n, self.sc, k, k_top, k_gd, lr, r, label, P=self.P)
+            self.P = att.P
+            self.m += result['m']
+
+            if result_best is None or result['success']:
+                result_best = copy(result)
+                result_best['sc'] = self.sc
+                self.x_new = copy(att.x_new)
+                self.success = att.success
+
+            text = f'\n\n AttackMulti end (m_total = {self.m:-7.1e})'
+            text += ' | ! success' if result['success'] else ' | - fail'
+            text += '\n\n\n'
+            print(text)
+
+            if self.m + k > self.m_max:
+                break
+
+        self.t += tpc() - t
+
+        result_best['m'] = self.m
+        result_best['t'] = self.t
+
+        return result_best
 
 
 class AttackAttr(Attack):
@@ -197,6 +257,35 @@ class AttackAttr(Attack):
         x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
         return self.trans(x_base)
 
+    def loss(self, I):
+        result = []
+        for i in I:
+            self.m += 1
+            self.check(self.change(i))
+            if self.success:
+                return
+            result.append(self.y - self.y2)
+
+        return np.array(result)
+
+    def loss_label(self, I, rew=10.):
+        result = []
+        for i in I:
+            self.m += 1
+            self.check(self.change(i))
+            if self.success:
+                return
+            label_top = np.argsort(self.y_all)[::-1][:self.label_num]
+            reward = 0.
+            if self.c != label_top[1]:
+                reward -= 5 * rew * (self.label_num-2)
+            for k in range(self.label_num):
+                if not label_top[k] in self.label_top:
+                    reward += rew
+            result.append(reward)
+            #print('Labels curre', label_top, reward)
+        return np.array(result)
+
     def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
         t = tpc()
 
@@ -231,7 +320,7 @@ class AttackAttr(Attack):
 
         self.t += tpc() - t
 
-    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None):
+    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, P=None):
         t = tpc()
 
         self.n = n
@@ -254,45 +343,14 @@ class AttackAttr(Attack):
                 raise NotImplementedError
             #print('Labels start', self.label_top)
 
-        try:
-            is_max = True if self.target else False
-            i, y = protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd,
-                lr, r, is_max=is_max, log=True)
-        except Exception as e:
-            print(e)
-            pass
+        is_max = True if self.target else False
+        info = {}
+        i, y = protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd,
+            lr, r, info=info, P=P, is_max=is_max, log=True)
+        self.P = info['P']
 
         self.t += tpc() - t
         return self.result()
-
-    def loss(self, I):
-        result = []
-        for i in I:
-            self.m += 1
-            self.check(self.change(i))
-            if self.success:
-                return
-            result.append(self.y - self.y2)
-
-        return np.array(result)
-
-    def loss_label(self, I, rew=10.):
-        result = []
-        for i in I:
-            self.m += 1
-            self.check(self.change(i))
-            if self.success:
-                return
-            label_top = np.argsort(self.y_all)[::-1][:self.label_num]
-            reward = 0.
-            if self.c != label_top[1]:
-                reward -= 5 * rew * (self.label_num-2)
-            for k in range(self.label_num):
-                if not label_top[k] in self.label_top:
-                    reward += rew
-            result.append(reward)
-            #print('Labels curre', label_top, reward)
-        return np.array(result)
 
 
 class AttackBs(Attack):

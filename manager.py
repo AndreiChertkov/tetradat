@@ -9,6 +9,7 @@ import torch
 
 
 from attack import AttackAttr
+from attack import AttackAttrMulti
 from attack import AttackBs
 from data import DATA_NAMES
 from data import Data
@@ -201,12 +202,12 @@ class Manager:
             info += f'Kind of task        : "{self.kind}"\n'
 
         is_att = self.task in ['attack', 'attack_target']
-        is_att = is_att and self.kind in ['base', 'attr', 'attr_top']
+        is_att = is_att and self.kind in ['base', 'attr']
         is_att_target = is_att and self.task in ['attack_target']
 
         if self.opt_sc and is_att:
             info += f'Opt. scale          : {self.opt_sc}\n'
-        if self.opt_d and is_att and self.kind in ['attr_top']:
+        if self.opt_d and is_att and self.kind in ['attr']:
             info += f'Opt. dimension      : {self.opt_d}\n'
         if self.opt_n and is_att:
             info += f'Opt. mode size      : {self.opt_n}\n'
@@ -222,9 +223,9 @@ class Manager:
             info += f'Opt. learn. rate    : {self.opt_lr}\n'
         if self.opt_r and is_att:
             info += f'Opt. TT-rank        : {self.opt_r}\n'
-        if self.attr_steps and is_att and self.kind in ['attr', 'attr_top']:
+        if self.attr_steps and is_att and self.kind in ['attr']:
             info += f'Attribution steps   : {self.attr_steps}\n'
-        if self.attr_iters and is_att and self.kind in ['attr', 'attr_top']:
+        if self.attr_iters and is_att and self.kind in ['attr']:
             info += f'Attribution iters   : {self.attr_iters}\n'
         if self.attack_num_max and self.task in ['attack', 'attack_target']:
             info += f'Max num of attacks  : {self.attack_num_max}\n'
@@ -264,9 +265,6 @@ class Manager:
     def task_attack_attr(self):
         self._attacks(with_attr=True)
 
-    def task_attack_attr_top(self):
-        self._attacks(with_attr_top=True)
-
     def task_attack_base(self):
         self._attacks()
 
@@ -278,9 +276,6 @@ class Manager:
 
     def task_attack_target_attr(self):
         self._attacks(target=True, with_attr=True)
-
-    def task_attack_target_attr_top(self):
-        self._attacks(target=True, with_attr_top=True)
 
     def task_attack_target_base(self):
         self._attacks(target=True)
@@ -342,8 +337,7 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
-    def _attack(self, i, name=None, target=False,
-                with_attr=False, with_attr_top=False, show=False):
+    def _attack(self, i, name=None, target=False, with_attr=False, show=False):
         x, c, l = self.data.get(i, tst=True)
 
         y_all = self.model.run(x).detach().to('cpu').numpy()
@@ -376,7 +370,7 @@ class Manager:
         text += f'y_{"att" if target else "next"} {y_attack:-7.1e}'
         self.log(text)
 
-        Att = AttackBs if name else AttackAttr
+        Att = AttackBs if name else AttackAttrMulti
         att = Att(self.model.net, x, c_attack, self.opt_m, name or 'tetradat',
             self.data.norm_m, self.data.norm_v, target)
 
@@ -385,10 +379,8 @@ class Manager:
         else:
             print('')
 
-            net = self.model_attr.net if with_attr or with_attr_top else None
-            d = self.opt_d if with_attr_top else None
-
-            att.prep(net, d, self.attr_steps, self.attr_iters)
+            net = self.model_attr.net if with_attr else None
+            att.prep(net, self.opt_d, self.attr_steps, self.attr_iters)
 
             result = att.run(self.opt_n, self.opt_sc, self.opt_k,
                 self.opt_k_top, self.opt_k_gd, self.opt_lr,
@@ -427,8 +419,7 @@ class Manager:
 
         return result
 
-    def _attacks(self, name=None, target=False,
-                 with_attr=False, with_attr_top=False):
+    def _attacks(self, name=None, target=False, with_attr=False):
         if target:
             title = 'Start targeted attack on images'
         else:
@@ -442,7 +433,7 @@ class Manager:
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
             show = self.show_result_all or i in RESULT_SHOW
-            res = self._attack(i, name, target, with_attr, with_attr_top, show)
+            res = self._attack(i, name, target, with_attr, show)
             if res is not None:
                 result[i] = res
 
@@ -494,13 +485,12 @@ def args_build():
         type=str,
         help='Kind of the task',
         default='attr',
-        choices=['data', 'model', 'base', 'attr', 'attr_top',
-            'bs_onepixel', 'bs_pixle']
+        choices=['data', 'model', 'base', 'attr', 'bs_onepixel', 'bs_pixle']
     )
     parser.add_argument('--opt_d',
         type=int,
-        help='Dimension for optimization (for attack "attr_top")',
-        default=int(224 * 224 / 10),
+        help='Dimension for optimization (for attack "attr")',
+        default=5000 # int(224 * 224 / 10),
     )
     parser.add_argument('--opt_n',
         type=int,
@@ -539,8 +529,8 @@ def args_build():
     )
     parser.add_argument('--opt_sc',
         type=float,
-        help='Scale for the noize image',
-        default=0.5,
+        help='Scale (initial) for the noize image',
+        default=1.0,
     )
     parser.add_argument('--attr_steps',
         type=int,
@@ -582,7 +572,7 @@ def args_build():
         help='Do we show all results or only some of them',
         nargs="?",
         const=True,
-        default=False
+        default=True
     )
     parser.add_argument('--skip_attr_fails',
         type=lambda x: bool(strtobool(x)),
