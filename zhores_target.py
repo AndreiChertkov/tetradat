@@ -25,9 +25,10 @@ BASELINES = [] #'onepixel', 'pixle']
 
 OPTIONS = {
     'args': {
-        'task': 'attack', # _target
-        'kind': 'attr_top',
+        'task': 'attack_target',
+        'kind': 'attr',
         'data': 'imagenet',
+        'opt_d': 10000,
         'model_attr': MODEL_ATTR
     },
     'opts': {
@@ -45,13 +46,12 @@ for i, model in enumerate(MODELS, 1):
         'args': {'model': model},
         'opts': {
             'days': 6,
-            'opt_sc': 0.75,
-            'out': f'result/imagenet-{model}/attack_target-attr_top-{MODEL_ATTR}'
+            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
     for i, model in enumerate(MODELS, 1):
-        TASKS[f'n{j+1}{i}-tet'] = {
+        TASKS[f't{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
                 'days': 5,
