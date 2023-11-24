@@ -20,20 +20,19 @@ import sys
 
 MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet', 'vit']
 MODEL_ATTR = 'vgg'
-BASELINES = [] #'onepixel', 'pixle']
+BASELINES = ['onepixel', 'pixle', 'square']
 
 
 OPTIONS = {
     'args': {
-        'task': 'attack_target',
-        'kind': 'attr',
+        'task': 'attack',
         'data': 'imagenet',
-        'opt_d': 10000,
         'model_attr': MODEL_ATTR
     },
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
+        'days': 6,
         'hours': 0,
         'memory': 40,
         'out': 'zhores_out',
@@ -42,20 +41,19 @@ OPTIONS = {
 }
 TASKS = {}
 for i, model in enumerate(MODELS, 1):
-    TASKS[f't1{i}-tet'] = {
-        'args': {'model': model},
+    continue # TODO: remove
+    TASKS[f'1{i}-tet'] = {
+        'args': {'model': model, 'kind': 'attr'},
         'opts': {
-            'days': 6,
-            'out': f'result/imagenet-{model}/attack_target-attr-{MODEL_ATTR}'
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}'
         }
     }
 for j, bs in enumerate(BASELINES, 1):
     for i, model in enumerate(MODELS, 1):
-        TASKS[f't{j+1}{i}-tet'] = {
+        TASKS[f'{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
             'opts': {
-                'days': 5,
-                'out': f'result/imagenet-{model}/attack_target-bs_{bs}-{MODEL_ATTR}'
+                'out': f'result/imagenet-{model}/attack-bs_{bs}-{MODEL_ATTR}'
             }
         }
 

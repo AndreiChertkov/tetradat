@@ -274,6 +274,9 @@ class Manager:
     def task_attack_bs_pixle(self):
         self._attacks('pixle')
 
+    def task_attack_bs_square(self):
+        self._attacks('square')
+
     def task_attack_target_attr(self):
         self._attacks(target=True, with_attr=True)
 
@@ -285,6 +288,9 @@ class Manager:
 
     def task_attack_target_bs_pixle(self):
         self._attacks('pixle', target=True)
+
+    def task_attack_target_bs_square(self):
+        self._attacks('square', target=True)
 
     def task_check_data(self):
         name = self.data.name
@@ -408,12 +414,16 @@ class Manager:
         self.log(text)
 
         if att.success and show:
-            self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
-                fpath=self.get_path(f'img/{c}/base.png'))
             self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
                 fpath=self.get_path(f'img/{c}/changed.png'))
 
+            if not name:
+                # We plot original images only for our method:
+                self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+                    fpath=self.get_path(f'img/{c}/base.png'))
+
             if not name and att.x_attr is not None:
+                # We plot attribution only for our method:
                 self.data.plot_attr(att.x_attr,
                     fpath=self.get_path(f'img/{c}/attr.png'))
 
@@ -485,7 +495,8 @@ def args_build():
         type=str,
         help='Kind of the task',
         default='attr',
-        choices=['data', 'model', 'base', 'attr', 'bs_onepixel', 'bs_pixle']
+        choices=['data', 'model', 'base', 'attr',
+            'bs_onepixel', 'bs_pixle', 'bs_square']
     )
     parser.add_argument('--opt_d',
         type=int,
