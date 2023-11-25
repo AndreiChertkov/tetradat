@@ -230,33 +230,6 @@ class AttackAttr(Attack):
         x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
         return self.trans(x_base)
 
-    def change_old(self, i, with_h=False, with_s=True, with_v=False):
-        h, s, v = torch.clone(self.x_base_hsv)
-
-        delta = (np.array(i) - (self.n-1)/2) * self.sc
-        delta = torch.tensor(delta).to(self.device)
-
-        if with_h:
-            h_target = h[self.pixels[:, 0], self.pixels[:, 1]]
-            idx = h_target + delta > 1.
-            delta[idx] = delta[idx] - 1.
-            idx = h_target + delta < 0.
-            delta[idx] = 1. + delta[idx]
-            h[self.pixels[:, 0], self.pixels[:, 1]] += delta
-
-        if with_s:
-            s[self.pixels[:, 0], self.pixels[:, 1]] += delta
-            s[s > 1.] = 1.
-            s[s < 0.] = 0.
-
-        if with_v:
-            v[self.pixels[:, 0], self.pixels[:, 1]] += delta
-            v[v > 1.] = 1.
-            v[v < 0.] = 0.
-
-        x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
-        return self.trans(x_base)
-
     def loss(self, I):
         result = []
         for i in I:
@@ -268,23 +241,37 @@ class AttackAttr(Attack):
 
         return np.array(result)
 
-    def loss_label(self, I, rew=10.):
-        result = []
-        for i in I:
+    def loss_label(self, I):
+        """This is the loss function for the label-based attacks.
+
+        Note that we do not use network's scores here. We just collect
+        top-labels from the network's prediction.
+
+        """
+        result = np.zeros(len(I), dtype=int)
+
+        for num, i in enumerate(I):
+            # Run the neural network for the current permuted image:
             self.m += 1
             self.check(self.change(i))
             if self.success:
                 return
+
+            # Collect "label_num" top-labels from prediction:
             label_top = np.argsort(self.y_all)[::-1][:self.label_num]
-            reward = 0.
-            if self.c != label_top[1]:
-                reward -= 5 * rew * (self.label_num-2)
-            for k in range(self.label_num):
+
+            # Count the number of new labels in the top-set:
+            for k in range(1, self.label_num):
                 if not label_top[k] in self.label_top:
-                    reward += rew
-            result.append(reward)
-            #print('Labels curre', label_top, reward)
-        return np.array(result)
+                    result[num] += 1
+
+        # We select only samples with the highest number of new labels
+        # (but if now such samples are in batch, then we do not train):
+        num = np.max(result)
+        if num == 0:
+            return []
+        else:
+            return np.where(result == num)[0]
 
     def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
         t = tpc()
@@ -333,20 +320,17 @@ class AttackAttr(Attack):
         if not label:
             loss = self.loss
         else:
+            if label < 3:
+                raise NotImplementedError
             loss = self.loss_label
             self.check(self.x)
             self.label_num = label
             self.label_top = np.argsort(self.y_all)[::-1][:self.label_num]
-            if not self.target:
-                raise NotImplementedError
-            if self.c != self.label_top[1]:
-                raise NotImplementedError
-            #print('Labels start', self.label_top)
 
-        is_max = True if self.target else False
+        is_max = True if self.target or label else False
         info = {}
-        i, y = protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd,
-            lr, r, info=info, P=P, is_max=is_max, log=True)
+        protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd, lr, r,
+            info=info, P=P, is_max=is_max, is_func_ind=bool(label), log=True)
         self.P = info['P']
 
         self.t += tpc() - t

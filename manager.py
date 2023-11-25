@@ -233,8 +233,8 @@ class Manager:
             info += f'Skip fails for attr : {self.skip_attr_fails}\n'
         if self.attack_num_target is not None and self.task == 'attack_target':
             info += f'Target class (delt) : {self.attack_num_target}\n'
-
-        # TODO: add "attack_label_top"
+        if self.attack_label_top is not None:
+            info += f'Labels (lbl att)    : {self.attack_label_top}\n'
 
         self.log = Log(self.get_path('log.txt'))
         self.log.title(f'Computations ({self.device})', info)
@@ -391,6 +391,7 @@ class Manager:
             result = att.run(self.opt_n, self.opt_sc, self.opt_k,
                 self.opt_k_top, self.opt_k_gd, self.opt_lr,
                 self.opt_r, self.attack_label_top)
+
             print('')
 
         result['l'] = l
