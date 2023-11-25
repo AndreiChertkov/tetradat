@@ -354,7 +354,7 @@ class AttackAttr(Attack):
 
 
 class AttackBs(Attack):
-    def run(self, onepixel=100, pixle=100, square=8/255, seed=42):
+    def run(self, onepixel=100, pixle=100, square=4/255, seed=42):
         t = tpc()
         self._build(onepixel, pixle, square, seed)
 

@@ -20,7 +20,7 @@ import sys
 
 MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet', 'vit']
 MODEL_ATTR = 'vgg'
-BASELINES = ['onepixel', 'pixle', 'square']
+BASELINES = ['square'] # ['onepixel', 'pixle', 'square'] TODO
 
 
 OPTIONS = {
@@ -32,7 +32,7 @@ OPTIONS = {
     'opts': {
         'env': 'tetradat',
         'file': 'manager',
-        'days': 6,
+        'days': 4, # TODO 6
         'hours': 0,
         'memory': 40,
         'out': 'zhores_out',
