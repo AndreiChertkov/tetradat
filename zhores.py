@@ -33,7 +33,7 @@ OPTIONS = {
         'env': 'tetradat',
         'file': 'manager',
         'days': 6,
-        'hours': 0,
+        'hours': 23,
         'memory': 40,
         'out': 'zhores_out',
         'gpu': True
