@@ -1,6 +1,6 @@
 # Code from the repository https://github.com/anabatsh/PROTES
 # We fix "is_new" flag, add suppor for return of final probability tensor
-# and add support for target function indices-return.
+# and add support for empty indices-return from target function.
 
 
 import jax
@@ -11,8 +11,7 @@ from time import perf_counter as tpc
 
 def protes(f, d, n, m=None, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, seed=0,
            is_max=False, log=False, info={}, P=None,
-           with_info_i_opt_list=False, with_info_full=False,
-           is_func_ind=False):
+           with_info_i_opt_list=False, with_info_full=False):
     time = tpc()
     info.update({'d': d, 'n': n, 'm_max': m, 'm': 0, 'k': k, 'k_top': k_top,
         'k_gd': k_gd, 'lr': lr, 'r': r, 'seed': seed, 'is_max': is_max,
@@ -69,23 +68,17 @@ def protes(f, d, n, m=None, k=100, k_top=10, k_gd=1, lr=5.E-2, r=5, seed=0,
         if y is None:
             break
 
-        if is_func_ind:
-            # In this case, y - is a batch of indices, not function values.
-            ind = y[:k]
-            info['m'] += len(ind)
-            if not len(ind):
-                continue
-            info['y_opt'] = len(ind)
-            is_new = True
-        else:
-            y = jnp.array(y)
-            info['m'] += y.shape[0]
+        info['m'] += k
 
-            is_new = _process(P, I, y, info, with_info_i_opt_list,
-                with_info_full)
+        if len(y) == 0:
+            continue
 
-            ind = jnp.argsort(y, kind='stable')
-            ind = (ind[::-1] if is_max else ind)[:k_top]
+        y = jnp.array(y)
+
+        is_new = _process(P, I, y, info, with_info_i_opt_list, with_info_full)
+
+        ind = jnp.argsort(y, kind='stable')
+        ind = (ind[::-1] if is_max else ind)[:k_top]
 
         for _ in range(k_gd):
             state, P = optimize(state, P, I[ind, :])

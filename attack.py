@@ -114,6 +114,9 @@ class AttackAttrMulti:
         result_best = None
 
         while self.sc > sc_delt * 1.5:
+            if self.m + k >= self.m_max:
+                break
+
             self.sc -= sc_delt
 
             print(f'\n AttackMulti start (sc = {self.sc:-7.1e})\n')
@@ -138,9 +141,6 @@ class AttackAttrMulti:
             text += ' | ! success' if result['success'] else ' | - fail'
             text += '\n\n\n'
             print(text)
-
-            if self.m + k > self.m_max:
-                break
 
         self.t += tpc() - t
 
@@ -248,7 +248,7 @@ class AttackAttr(Attack):
         top-labels from the network's prediction.
 
         """
-        result = np.zeros(len(I), dtype=int)
+        result = np.zeros(len(I))
 
         for num, i in enumerate(I):
             # Run the neural network for the current permuted image:
@@ -261,17 +261,17 @@ class AttackAttr(Attack):
             label_top = np.argsort(self.y_all)[::-1][:self.label_num]
 
             # Count the number of new labels in the top-set:
-            for k in range(1, self.label_num):
+            for k in range(2, self.label_num):
                 if not label_top[k] in self.label_top:
                     result[num] += 1
+                    if not label_top[k] in self.label_list:
+                        # Additional reward for first-time label:
+                        result[num] += 100.
+                        self.label_list.append(label_top[k])
 
         # We select only samples with the highest number of new labels
-        # (but if now such samples are in batch, then we do not train):
-        num = np.max(result)
-        if num == 0:
-            return []
-        else:
-            return np.where(result == num)[0]
+        # (but if no enough such samples are in batch, then we do not train):
+        return result if len(np.where(result > 0)[0]) >= self.opt_k_top else []
 
     def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
         t = tpc()
@@ -312,6 +312,8 @@ class AttackAttr(Attack):
 
         self.n = n
         self.sc = sc
+        self.opt_k = k
+        self.opt_k_top = k_top
 
         self.x = self.x.to(self.device)
         self.x_base = self.trans_base(self.x)
@@ -326,11 +328,12 @@ class AttackAttr(Attack):
             self.check(self.x)
             self.label_num = label
             self.label_top = np.argsort(self.y_all)[::-1][:self.label_num]
+            self.label_list = []
 
         is_max = True if self.target or label else False
         info = {}
         protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd, lr, r,
-            info=info, P=P, is_max=is_max, is_func_ind=bool(label), log=True)
+            info=info, P=P, is_max=is_max, log=True)
         self.P = info['P']
 
         self.t += tpc() - t

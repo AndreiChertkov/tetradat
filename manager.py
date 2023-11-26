@@ -440,7 +440,7 @@ class Manager:
         tm = self.log.prc(title)
 
         result = {}
-        for i in range(len(self.data.data_tst)):
+        for i in range(10, len(self.data.data_tst)): # TODO
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
             show = self.show_result_all or i in RESULT_SHOW
