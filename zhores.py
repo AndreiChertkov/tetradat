@@ -18,7 +18,7 @@ import subprocess
 import sys
 
 
-MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet', 'vit']
+MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet']
 MODEL_ATTR = 'vgg'
 BASELINES = ['onepixel', 'pixle', 'square']
 
@@ -58,13 +58,11 @@ for i, model in enumerate(MODELS, 1):
         }
     }
 for i, model in enumerate(MODELS, 1):
-    TASKS[f'il1{i}-tet'] = {
+    TASKS[f'nl1{i}-tet'] = {
         'args': {'model': model, 'kind': 'attr',
-            'postfix': 'label0', 'attack_label_top': 5}
-            # 'opt_k': 50, 'opt_k_top': 5, 'opt_lr': 1.E-2
-            }
+            'postfix': 'labelp', 'attack_label_top': 5}
         'opts': {
-            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-label0'
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-labelp'
         }
     }
 
