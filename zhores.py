@@ -50,14 +50,14 @@ for j, bs in enumerate(BASELINES, 1):
             }
         }
 for i, model in enumerate(MODELS, 1):
-    continue # TODO: remove
-    TASKS[f'1{i}-tet'] = {
-        'args': {'model': model, 'kind': 'attr'},
+    TASKS[f's1{i}-tet'] = {
+        'args': {'model': model, 'kind': 'attr', 'postfix': 'step'},
         'opts': {
-            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}'
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-step'
         }
     }
 for i, model in enumerate(MODELS, 1):
+    continue # TODO: remove
     TASKS[f'nl1{i}-tet'] = {
         'args': {'model': model, 'kind': 'attr',
             'postfix': 'labelp', 'attack_label_top': 5},

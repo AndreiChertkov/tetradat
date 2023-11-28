@@ -106,14 +106,16 @@ class AttackAttrMulti:
         self.d = att.d
         self.t = att.t
 
-    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, sc_delt=0.2):
+    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, sc_delt=0.33):
+        # sc_delt=0.2 # TODO: move back!
         t = tpc()
 
         self.P = None
         self.sc = sc + sc_delt
         result_best = None
 
-        while self.sc > sc_delt * 1.5:
+        # while self.sc > sc_delt * 1.5: # TODO: move back!
+        while self.sc > 0.0001:
             if self.m + k >= self.m_max:
                 break
 
