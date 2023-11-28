@@ -60,7 +60,7 @@ for i, model in enumerate(MODELS, 1):
 for i, model in enumerate(MODELS, 1):
     TASKS[f'nl1{i}-tet'] = {
         'args': {'model': model, 'kind': 'attr',
-            'postfix': 'labelp', 'attack_label_top': 5}
+            'postfix': 'labelp', 'attack_label_top': 5},
         'opts': {
             'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-labelp'
         }
