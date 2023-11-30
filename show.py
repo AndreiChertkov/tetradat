@@ -7,7 +7,7 @@ MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet']
 MODEL_ATTR = 'vgg'
 BASELINES = ['onepixel', 'pixle', 'square']
 CLASSES = 1000
-SEED = 0
+SEED = 1
 
 
 def get_image(num, model, bs=None):
@@ -61,6 +61,7 @@ def plot(with_onepixel=True, num_total=5, dpi=300):
 
 def show():
     for model in MODELS:
+        np.random.seed(SEED)
         for num, bs in enumerate(BASELINES):
             show_method(model, bs,  title=(num==0))
         show_method(model)
@@ -97,5 +98,4 @@ def show_method(model, bs=None, title=False):
 
 
 if __name__ == '__main__':
-    np.random.seed(SEED)
     show()

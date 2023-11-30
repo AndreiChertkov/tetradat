@@ -441,8 +441,6 @@ class Manager:
 
         result = {}
         for i in range(len(self.data.data_tst)):
-            if i >= 12 and i < 700: # TODO: remove it!!!
-                continue
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
             show = self.show_result_all or i in RESULT_SHOW

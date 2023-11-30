@@ -51,9 +51,9 @@ for j, bs in enumerate(BASELINES, 1):
         }
 for i, model in enumerate(MODELS, 1):
     TASKS[f's1{i}-tet'] = {
-        'args': {'model': model, 'kind': 'attr', 'postfix': 'step'},
+        'args': {'model': model, 'kind': 'attr', 'postfix': 'scale'},
         'opts': {
-            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-step'
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-scale'
         }
     }
 for i, model in enumerate(MODELS, 1):
