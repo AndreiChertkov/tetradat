@@ -41,7 +41,6 @@ OPTIONS = {
 }
 TASKS = {}
 for j, bs in enumerate(BASELINES, 1):
-    continue # TODO: remove
     for i, model in enumerate(MODELS, 1):
         TASKS[f'{j+1}{i}-tet'] = {
             'args': {'model': model, 'kind': f'bs_{bs}'},
@@ -50,19 +49,10 @@ for j, bs in enumerate(BASELINES, 1):
             }
         }
 for i, model in enumerate(MODELS, 1):
-    TASKS[f's1{i}-tet'] = {
-        'args': {'model': model, 'kind': 'attr', 'postfix': 'scale'},
+    TASKS[f'1{i}-tet'] = {
+        'args': {'model': model, 'kind': 'attr'},
         'opts': {
-            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-scale'
-        }
-    }
-for i, model in enumerate(MODELS, 1):
-    continue # TODO: remove
-    TASKS[f'nl1{i}-tet'] = {
-        'args': {'model': model, 'kind': 'attr',
-            'postfix': 'labelp', 'attack_label_top': 5},
-        'opts': {
-            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}-labelp'
+            'out': f'result/imagenet-{model}/attack-attr-{MODEL_ATTR}'
         }
     }
 

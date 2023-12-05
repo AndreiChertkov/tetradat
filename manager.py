@@ -532,7 +532,7 @@ def args_build():
     parser.add_argument('--opt_lr',
         type=float,
         help='Learning rate for gradient lifting iterations',
-        default=5.E-1,
+        default=1.E-2,
     )
     parser.add_argument('--opt_r',
         type=int,
