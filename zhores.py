@@ -9,7 +9,7 @@ $ conda activate && conda remove --name tetradat --all -y
 $ conda create --name tetradat -y && source activate tetradat
 $ conda install -n tetradat python=3.8 -y && pip install --upgrade pip
 $ conda install libgcc -y
-$ pip install teneva_opti==0.5.1 torch==1.12.1+cu113 torchvision==0.13.1+cu113 matplotlib==3.7.0 requests urllib3 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 --force-reinstall
+$ pip install numpy matplotlib==3.7.0 requests urllib3 protes==0.3.6 torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchattacks==3.4.0 --extra-index-url https://download.pytorch.org/whl/cu113 --force-reinstall
 $ pip install triton --force-reinstall
 
 """

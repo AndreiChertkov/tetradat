@@ -119,12 +119,12 @@ class Data:
         cmap = self.opts['plot_cmap']
         return self.plot_base(x, title, size, cmap, fpath, is_new)
 
-    def plot_attr(self, x, fpath=None):
+    def plot_attr(self, x, size=12, fpath=None):
         x = torch.tensor(x) if not torch.is_tensor(x) else x
         x = x.detach().to('cpu').squeeze().numpy()
         x = np.clip(x, 0, 1) if np.mean(x) < 2 else np.clip(x, 0, 255)
 
-        fig = plt.figure(figsize=(12, 12))
+        fig = plt.figure(figsize=(size, size))
         plt.imshow(x)
         plt.axis('off')
 

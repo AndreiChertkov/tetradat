@@ -7,9 +7,15 @@
 .ipynb_checkpoints
 .thumbs.db
 __pycache__/
-_.md
+
+_audio/
+_doc/
 _pack/
+_share/
+_slides/
 _text/
 _tmp/
+_video/
+_.md
+
 result*
-result/_data

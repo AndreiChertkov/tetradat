@@ -3,7 +3,7 @@
 
 ## Description
 
-Library `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for generation of adversarial examples for artificial neural networks from computer vision domain using tensor train (TT) decomposition and PROTES optimizer based on it. Please, see [teneva](https://github.com/AndreiChertkov/teneva) and [PROTES](https://github.com/anabatsh/PROTES) repositories for details.
+Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for generation of adversarial examples for artificial neural networks from computer vision domain using tensor train (TT) decomposition and PROTES optimizer based on it. Please, see [teneva](https://github.com/AndreiChertkov/teneva) and [PROTES](https://github.com/anabatsh/PROTES) repositories for details.
 
 
 ## Installation
@@ -23,10 +23,9 @@ Library `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
 4. Install dependencies:
     - To run the code on CPU device:
         ```bash
-        pip install teneva_opti==0.5.1 torch==1.12.1 torchvision==0.13.1 matplotlib requests urllib3 torchattacks==3.4.0
+        pip install numpy matplotlib requests urllib3 protes==0.3.6 torch==1.12.1 torchvision==0.13.1 torchattacks==3.4.0
         ```
     - To run the code on GPU device, please see `zhores.py` script.
-    > In the case of problems with `scikit-learn`, uninstall it as `pip uninstall scikit-learn -y` and then install it from the anaconda: `conda install -c anaconda scikit-learn`.
 
 5. Delete virtual environment at the end of the work (optional):
     ```bash
@@ -51,13 +50,20 @@ The calls with the following `ARGS` may be performed:
     - `python manager.py --task check --kind model --data imagenet --model resnet`
     - `python manager.py --task check --kind model --data imagenet --model vgg`
 
-- To run attacks with the proposed method:
-    - `python manager.py --task attack --kind attr --data imagenet --model googlenet --model_attr alexnet`
-        > You may use and of the models from above here. You may also try `--task attack_target`.
+- To run attacks with the proposed TETRADAT method:
+    - `python manager.py --task attack --kind attr --data imagenet --model googlenet --model_attr vgg`
+        > You may use any of the models from above here.
 
 - To run attacks with the baselines:
-    - `python manager.py --task attack --kind bs_onepixel --data imagenet --model googlenet`
-        > You may use and of the models from above here; and `bs_onepixel` or `bs_pixle`. You may also try `--task attack_target`.
+    - `python manager.py --task attack --kind bs_onepixel --data imagenet --model googlenet --model_attr vgg`
+        > You may use any of the models from above here; and `bs_onepixel` or `bs_pixle`. We set `model_attr` argument above to skip the images for which the `vgg` model fails.
+
+- To run the demo attack with the proposed TETRADAT method:
+    - `python manager.py --task attack --kind attr --data imagenet --model googlenet --model_attr vgg`
+
+- To present the computation results:
+    - `python show.py`
+        > Data for tables will be in the console output and images will be in `result/_show` folder.
 
 
 ## Authors

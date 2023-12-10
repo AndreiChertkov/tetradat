@@ -299,6 +299,82 @@ class Manager:
         self.data.plot_many(fpath=self.get_path(f'img/{name}.png'))
         self.log.res(tpc()-tm)
 
+    def task_check_demo(self):
+        """This function performs demo run of our method."""
+        SEED_DEMO = 42
+        ROOT = 'result_base'
+        DATASET = 'imagenet'
+        MODEL = 'mobilenet'
+        MODEL_ATTR = 'vgg'
+        
+        np.random.seed(SEED_DEMO)
+
+        while True:
+            i = np.random.choice(1000)
+            fold = f'{ROOT}/{DATASET}-{MODEL}/attack-attr-{MODEL_ATTR}/'
+            fold += f'img/{i}/'
+            if os.path.isdir(fold):
+                break
+
+        self.model_name = MODEL
+        self.load_model()
+
+        self.model_attr_name = MODEL_ATTR
+        self.load_model_attr()
+
+        x, c, l = self.data.get(i, tst=True)
+        y_all = self.model.run(x).detach().to('cpu').numpy()
+        y = y_all[c]
+        self.log(f'\n--> # {i:-4d} | c     {c:-4d} | y     {y:-7.1e}')
+
+        att = AttackAttrMulti(self.model.net, x, c, self.opt_m, 'tetradat',
+            self.data.norm_m, self.data.norm_v)
+
+        print('')
+
+        att.prep(self.model_attr.net, self.opt_d,
+            self.attr_steps, self.attr_iters)
+
+        result = att.run(self.opt_n, self.opt_sc, self.opt_k,
+            self.opt_k_top, self.opt_k_gd, self.opt_lr, self.opt_r)
+
+        result['l'] = l
+        result['l_new'] = self.data.labels[result['c_new']]
+
+        y_all_new = self.model.run(att.x_new).detach().to('cpu').numpy()
+        y_old = y_all_new[c]
+        
+        text = f'+++ >        c_new {result["c_new"]:-4d} | '
+        text += f'y_new {result["y_new"]:-7.1e} | '
+        text += f'y_old {y_old:-7.1e} | '
+        text += f'evals {result["m"]:-5d}\n'
+        text += f'    : changes {result["changes"]:-5d} | '
+        text += f'dx1 {result["dx1"]:-7.1e} | '
+        text += f'dx2 {result["dx2"]:-7.1e}\n'
+        text += f'    : l_old : {result["l"][:50]}\n'
+        text += f'    : l_new : {result["l_new"][:50]}\n'
+        self.log(text)
+
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=self.get_path(f'img/{c}/base.png'))
+
+        self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
+            fpath=self.get_path(f'img/{c}/changed.png'))
+
+        self.data.plot_attr(att.x_attr, size=6,
+            fpath=self.get_path(f'img/{c}/attr.png'))
+
+        x_attr_used = np.zeros(att.x_attr.shape)
+        for (i, j) in att.pixels:
+            x_attr_used[i, j] = att.x_attr[i, j]
+        self.data.plot_attr(x_attr_used,
+            fpath=self.get_path(f'img/{c}/attr_used.png'))
+        
+        dx = self.data.tr_norm_inv(att.x_new) - self.data.tr_norm_inv(x)
+        dx = dx * 10 # Note this!
+        self.data.plot_base(dx, '', size=6,
+            fpath=self.get_path(f'img/{c}/changes_x10.png'))
+
     def task_check_model(self, trn=True, tst=True):
         tm = self.log.prc(f'Check model accuracy')
 
@@ -490,13 +566,13 @@ def args_build():
         type=str,
         help='Name of the task',
         default='attack',
-        choices=['check', 'attack', 'attack_target']
+        choices=['attack', 'attack_target', 'check']
     )
     parser.add_argument('--kind',
         type=str,
         help='Kind of the task',
         default='attr',
-        choices=['data', 'model', 'base', 'attr',
+        choices=['data', 'demo', 'model', 'base', 'attr',
             'bs_onepixel', 'bs_pixle', 'bs_square']
     )
     parser.add_argument('--opt_d',

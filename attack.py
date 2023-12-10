@@ -6,7 +6,7 @@ jax.default_device(jax.devices('cpu')[0])
 
 from copy import deepcopy as copy
 import numpy as np
-from protes_own import protes
+from protes import protes
 from time import perf_counter as tpc
 import torch
 import torchattacks
@@ -113,12 +113,11 @@ class AttackAttrMulti:
         self.sc = sc + sc_delt
         result_best = None
 
-        # while self.sc > sc_delt * 1.5: # TODO
         while self.sc > 0.01:
             if self.m + k >= self.m_max:
                 break
 
-            if self.sc - sc_delt < 0.01: # TODO
+            if self.sc - sc_delt < 0.01:
                 sc_delt /= 2
 
             self.sc -= sc_delt
@@ -337,7 +336,7 @@ class AttackAttr(Attack):
         is_max = True if self.target or label else False
         info = {}
         protes(loss, self.d, self.n, self.m_max, k, k_top, k_gd, lr, r,
-            info=info, P=P, is_max=is_max, log=True)
+            info=info, P=P, is_max=is_max, with_info_p=True, log=True)
         self.P = info['P']
 
         self.t += tpc() - t
