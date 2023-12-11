@@ -1,0 +1,610 @@
+[2023-12-05 16-32-27] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.03 sec.) 
+
+
+.... Loading "resnet" model
+DONE (    92.36 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     5.76 sec.) 
+
+
+.... Start attack on images
+
+--> #  200 | c      200 | y     8.3e-01 | y_next 2.2e-03
++++ >        c_new  198 | y_new 2.2e-01 | y_old 1.6e-01 | evals 10000
+    : changes  3377 | dx1 8.8e+03 | dx2 1.3e+02
+    : l_old : tibetan terrier, chrysanthemum dog
+    : l_new : standard schnauzer
+
+
+--> #  201 | c      201 | y     9.0e-01 | y_next 2.2e-03
++++ >        c_new  193 | y_new 4.2e-01 | y_old 2.7e-01 | evals  9924
+    : changes  3345 | dx1 3.1e+03 | dx2 4.2e+01
+    : l_old : silky terrier, sydney silky
+    : l_new : australian terrier
+
+
+--> #  202 | c      202 | y     5.8e-01 | y_next 9.5e-02
++++ >        c_new  181 | y_new 1.7e-01 | y_old 1.6e-01 | evals  9975
+    : changes  3344 | dx1 9.2e+02 | dx2 1.4e+01
+    : l_old : soft-coated wheaten terrier
+    : l_new : bedlington terrier
+
+
+--> #  203 | c      203 | y     8.2e-01 | y_next 1.0e-02
++++ >        c_new  192 | y_new 4.1e-01 | y_old 3.9e-01 | evals  9982
+    : changes  3032 | dx1 8.5e+02 | dx2 1.3e+01
+    : l_old : west highland white terrier
+    : l_new : cairn, cairn terrier
+
+
+--> #  205 | c      205 | y     7.8e-01 | y_next 2.0e-02
++++ >        c_new  208 | y_new 4.2e-01 | y_old 4.0e-01 | evals  9943
+    : changes  3107 | dx1 1.9e+02 | dx2 2.7e+00
+    : l_old : flat-coated retriever
+    : l_new : labrador retriever
+
+
+--> #  206 | c      206 | y     6.8e-01 | y_next 3.5e-02
++++ >        c_new  221 | y_new 3.4e-01 | y_old 3.1e-01 | evals  9927
+    : changes  3359 | dx1 4.3e+02 | dx2 5.9e+00
+    : l_old : curly-coated retriever
+    : l_new : irish water spaniel
+
+
+--> #  207 | c      207 | y     8.7e-01 | y_next 7.7e-03
++++ >        c_new  472 | y_new 2.2e-01 | y_old 2.1e-01 | evals  9959
+    : changes  3309 | dx1 2.2e+03 | dx2 3.3e+01
+    : l_old : golden retriever
+    : l_new : canoe
+
+
+--> #  208 | c      208 | y     8.8e-01 | y_next 1.9e-03
++++ >        c_new  205 | y_new 3.4e-01 | y_old 3.3e-01 | evals  9982
+    : changes  2590 | dx1 1.9e+03 | dx2 2.6e+01
+    : l_old : labrador retriever
+    : l_new : flat-coated retriever
+
+
+--> #  209 | c      209 | y     7.1e-01 | y_next 6.7e-02
++++ >        c_new  208 | y_new 3.9e-01 | y_old 3.8e-01 | evals  9911
+    : changes  3228 | dx1 4.2e+02 | dx2 5.8e+00
+    : l_old : chesapeake bay retriever
+    : l_new : labrador retriever
+
+
+--> #  210 | c      210 | y     8.2e-01 | y_next 4.5e-03
++++ >        c_new  180 | y_new 3.8e-01 | y_old 3.6e-01 | evals  9915
+    : changes  3362 | dx1 1.2e+03 | dx2 1.8e+01
+    : l_old : german short-haired pointer
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+--> #  211 | c      211 | y     7.7e-01 | y_next 3.7e-03
++++ >        c_new  209 | y_new 3.3e-01 | y_old 2.6e-01 | evals  9907
+    : changes  3359 | dx1 2.0e+03 | dx2 2.8e+01
+    : l_old : vizsla, hungarian pointer
+    : l_new : chesapeake bay retriever
+
+
+--> #  213 | c      213 | y     8.0e-01 | y_next 1.3e-02
++++ >        c_new  205 | y_new 3.0e-01 | y_old 2.9e-01 | evals  9980
+    : changes  3380 | dx1 1.2e+03 | dx2 1.7e+01
+    : l_old : irish setter, red setter
+    : l_new : flat-coated retriever
+
+
+--> #  214 | c      214 | y     8.5e-01 | y_next 1.9e-03
++++ >        c_new  293 | y_new 1.4e-01 | y_old 1.3e-01 | evals  9952
+    : changes  3347 | dx1 1.1e+04 | dx2 1.7e+02
+    : l_old : gordon setter
+    : l_new : cheetah, chetah, acinonyx jubatus
+
+
+--> #  216 | c      216 | y     8.3e-01 | y_next 3.8e-03
+    > fail | evals 10000
+
+--> #  217 | c      217 | y     7.5e-01 | y_next 4.7e-02
++++ >        c_new  264 | y_new 1.8e-01 | y_old 1.3e-01 | evals  9976
+    : changes  3360 | dx1 2.2e+03 | dx2 3.1e+01
+    : l_old : english springer, english springer spaniel
+    : l_new : cardigan, cardigan welsh corgi
+
+
+--> #  218 | c      218 | y     9.1e-01 | y_next 3.4e-03
++++ >        c_new  215 | y_new 4.0e-01 | y_old 3.8e-01 | evals  9923
+    : changes  3278 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : welsh springer spaniel
+    : l_new : brittany spaniel
+
+
+--> #  219 | c      219 | y     8.4e-01 | y_next 4.2e-03
++++ >        c_new  194 | y_new 2.1e-01 | y_old 1.9e-01 | evals  9983
+    : changes  3310 | dx1 3.7e+03 | dx2 5.5e+01
+    : l_old : cocker spaniel, english cocker spaniel, cocker
+    : l_new : dandie dinmont, dandie dinmont terrier
+
+
+--> #  220 | c      220 | y     8.9e-01 | y_next 3.1e-03
++++ >        c_new  175 | y_new 3.9e-01 | y_old 3.5e-01 | evals  9983
+    : changes  3471 | dx1 2.6e+03 | dx2 3.3e+01
+    : l_old : sussex spaniel
+    : l_new : otterhound, otter hound
+
+
+--> #  221 | c      221 | y     8.3e-01 | y_next 1.0e-02
+    > fail | evals 10000
+
+--> #  222 | c      222 | y     8.4e-01 | y_next 5.1e-03
++++ >        c_new  257 | y_new 4.4e-01 | y_old 3.8e-01 | evals  9910
+    : changes  3293 | dx1 4.5e+03 | dx2 6.7e+01
+    : l_old : kuvasz
+    : l_new : great pyrenees
+
+
+--> #  223 | c      223 | y     8.6e-01 | y_next 3.2e-03
++++ >        c_new  224 | y_new 3.6e-01 | y_old 3.2e-01 | evals  9953
+    : changes  3273 | dx1 7.5e+02 | dx2 1.1e+01
+    : l_old : schipperke
+    : l_new : groenendael
+
+
+--> #  224 | c      224 | y     7.0e-01 | y_next 1.0e-02
++++ >        c_new  223 | y_new 3.1e-01 | y_old 2.8e-01 | evals  9925
+    : changes  3347 | dx1 1.5e+03 | dx2 2.1e+01
+    : l_old : groenendael
+    : l_new : schipperke
+
+
+--> #  225 | c      225 | y     7.1e-01 | y_next 1.9e-03
+    > fail | evals 10000
+
+--> #  226 | c      226 | y     8.4e-01 | y_next 1.3e-02
++++ >        c_new  233 | y_new 4.1e-01 | y_old 3.7e-01 | evals  9971
+    : changes  3412 | dx1 8.2e+02 | dx2 1.1e+01
+    : l_old : briard
+    : l_new : bouvier des flandres, bouviers des flandres
+
+
+--> #  228 | c      228 | y     8.6e-01 | y_next 4.6e-04
+    > fail | evals 10000
+
+--> #  229 | c      229 | y     8.1e-01 | y_next 3.6e-03
+    > fail | evals 10000
+
+--> #  231 | c      231 | y     4.4e-01 | y_next 3.5e-01
++++ >        c_new  230 | y_new 3.9e-01 | y_old 3.9e-01 | evals  2046
+    : changes  2958 | dx1 7.7e+01 | dx2 1.1e+00
+    : l_old : collie
+    : l_new : shetland sheepdog, shetland sheep dog, shetland
+
+
+--> #  232 | c      232 | y     6.9e-01 | y_next 1.3e-01
++++ >        c_new  248 | y_new 1.6e-01 | y_old 1.6e-01 | evals  9963
+    : changes  3355 | dx1 4.7e+03 | dx2 6.6e+01
+    : l_old : border collie
+    : l_new : eskimo dog, husky
+
+
+--> #  233 | c      233 | y     8.0e-01 | y_next 2.6e-02
++++ >        c_new  197 | y_new 3.3e-01 | y_old 3.2e-01 | evals  9937
+    : changes  2845 | dx1 2.1e+02 | dx2 3.1e+00
+    : l_old : bouvier des flandres, bouviers des flandres
+    : l_new : giant schnauzer
+
+
+--> #  234 | c      234 | y     7.7e-01 | y_next 4.1e-03
++++ >        c_new  214 | y_new 3.1e-01 | y_old 3.0e-01 | evals  9967
+    : changes  3160 | dx1 6.3e+03 | dx2 9.0e+01
+    : l_old : rottweiler
+    : l_new : gordon setter
+
+
+--> #  235 | c      235 | y     8.5e-01 | y_next 4.8e-03
++++ >        c_new  164 | y_new 3.7e-01 | y_old 3.5e-01 | evals  9999
+    : changes  3308 | dx1 7.4e+02 | dx2 1.1e+01
+    : l_old : german shepherd, german shepherd dog, german polic
+    : l_new : bluetick
+
+
+--> #  236 | c      236 | y     8.8e-01 | y_next 5.1e-03
++++ >        c_new  209 | y_new 5.8e-01 | y_old 2.7e-01 | evals  9980
+    : changes  3376 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : doberman, doberman pinscher
+    : l_new : chesapeake bay retriever
+
+
+--> #  237 | c      237 | y     8.3e-01 | y_next 1.7e-03
+    > fail | evals 10000
+
+--> #  238 | c      238 | y     6.0e-01 | y_next 1.1e-01
++++ >        c_new  241 | y_new 3.4e-01 | y_old 3.4e-01 | evals  9999
+    : changes  2751 | dx1 6.9e+02 | dx2 1.1e+01
+    : l_old : greater swiss mountain dog
+    : l_new : entlebucher
+
+
+--> #  241 | c      241 | y     7.8e-01 | y_next 3.9e-02
++++ >        c_new  238 | y_new 2.9e-01 | y_old 2.9e-01 | evals  9923
+    : changes  3331 | dx1 9.8e+02 | dx2 1.5e+01
+    : l_old : entlebucher
+    : l_new : greater swiss mountain dog
+
+
+--> #  242 | c      242 | y     8.5e-01 | y_next 3.3e-03
++++ >        c_new  243 | y_new 3.1e-01 | y_old 3.0e-01 | evals  9967
+    : changes  3341 | dx1 6.4e+03 | dx2 9.7e+01
+    : l_old : boxer
+    : l_new : bull mastiff
+
+
+--> #  243 | c      243 | y     8.6e-01 | y_next 3.2e-02
++++ >        c_new  254 | y_new 4.0e-01 | y_old 4.0e-01 | evals  9971
+    : changes  3279 | dx1 2.5e+02 | dx2 3.8e+00
+    : l_old : bull mastiff
+    : l_new : pug, pug-dog
+
+
+--> #  244 | c      244 | y     7.2e-01 | y_next 2.6e-02
+    > fail | evals 10000
+
+--> #  245 | c      245 | y     9.0e-01 | y_next 1.6e-03
++++ >        c_new  273 | y_new 1.8e-01 | y_old 1.6e-01 | evals  9957
+    : changes  3397 | dx1 4.0e+03 | dx2 5.6e+01
+    : l_old : french bulldog
+    : l_new : dingo, warrigal, warragal, canis dingo
+
+
+--> #  246 | c      246 | y     8.8e-01 | y_next 1.1e-03
++++ >        c_new  195 | y_new 1.9e-01 | y_old 1.7e-01 | evals  9988
+    : changes  3242 | dx1 1.7e+03 | dx2 2.3e+01
+    : l_old : great dane
+    : l_new : boston bull, boston terrier
+
+
+--> #  247 | c      247 | y     8.3e-01 | y_next 1.5e-03
++++ >        c_new  239 | y_new 4.0e-01 | y_old 2.8e-01 | evals 10000
+    : changes  3091 | dx1 9.1e+03 | dx2 1.3e+02
+    : l_old : saint bernard, st bernard
+    : l_new : bernese mountain dog
+
+
+--> #  248 | c      248 | y     4.3e-01 | y_next 2.9e-01
++++ >        c_new  250 | y_new 3.7e-01 | y_old 3.6e-01 | evals  9985
+    : changes  3276 | dx1 2.6e+02 | dx2 4.0e+00
+    : l_old : eskimo dog, husky
+    : l_new : siberian husky
+
+
+--> #  249 | c      249 | y     7.5e-01 | y_next 7.7e-02
++++ >        c_new  174 | y_new 3.3e-01 | y_old 3.2e-01 | evals  9935
+    : changes  3300 | dx1 6.5e+02 | dx2 9.6e+00
+    : l_old : malamute, malemute, alaskan malamute
+    : l_new : norwegian elkhound, elkhound
+
+
+--> #  251 | c      251 | y     8.3e-01 | y_next 1.8e-03
++++ >        c_new  855 | y_new 2.7e-01 | y_old 2.0e-01 | evals  9992
+    : changes  3365 | dx1 1.3e+04 | dx2 2.0e+02
+    : l_old : dalmatian, coach dog, carriage dog
+    : l_new : thimble
+
+
+--> #  252 | c      252 | y     7.8e-01 | y_next 2.2e-03
++++ >        c_new  256 | y_new 3.5e-01 | y_old 2.9e-01 | evals  9921
+    : changes  3370 | dx1 9.0e+02 | dx2 1.2e+01
+    : l_old : affenpinscher, monkey pinscher, monkey dog
+    : l_new : newfoundland, newfoundland dog
+
+
+--> #  253 | c      253 | y     8.6e-01 | y_next 2.2e-03
++++ >        c_new  173 | y_new 4.1e-01 | y_old 3.1e-01 | evals  9907
+    : changes  3312 | dx1 3.6e+03 | dx2 4.8e+01
+    : l_old : basenji
+    : l_new : ibizan hound, ibizan podenco
+
+
+--> #  254 | c      254 | y     7.1e-01 | y_next 6.5e-03
++++ >        c_new  903 | y_new 2.7e-01 | y_old 2.6e-01 | evals  9967
+    : changes  3338 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : pug, pug-dog
+    : l_new : wig
+
+
+--> #  255 | c      255 | y     8.5e-01 | y_next 9.7e-04
++++ >        c_new  293 | y_new 9.9e-02 | y_old 9.8e-02 | evals  9975
+    : changes  3394 | dx1 7.1e+03 | dx2 1.0e+02
+    : l_old : leonberg
+    : l_new : cheetah, chetah, acinonyx jubatus
+
+
+--> #  256 | c      256 | y     8.5e-01 | y_next 1.0e-02
++++ >        c_new  205 | y_new 3.3e-01 | y_old 3.0e-01 | evals  9926
+    : changes  3347 | dx1 5.1e+03 | dx2 7.5e+01
+    : l_old : newfoundland, newfoundland dog
+    : l_new : flat-coated retriever
+
+
+--> #  257 | c      257 | y     8.7e-01 | y_next 1.6e-03
++++ >        c_new  258 | y_new 3.1e-01 | y_old 3.0e-01 | evals  9984
+    : changes  3159 | dx1 2.1e+03 | dx2 3.9e+01
+    : l_old : great pyrenees
+    : l_new : samoyed, samoyede
+
+
+--> #  258 | c      258 | y     8.2e-01 | y_next 5.0e-03
++++ >        c_new  279 | y_new 4.0e-01 | y_old 3.4e-01 | evals  9926
+    : changes  3335 | dx1 1.4e+03 | dx2 2.1e+01
+    : l_old : samoyed, samoyede
+    : l_new : arctic fox, white fox, alopex lagopus
+
+
+--> #  259 | c      259 | y     7.8e-01 | y_next 4.3e-03
++++ >        c_new  151 | y_new 2.7e-01 | y_old 2.7e-01 | evals  9946
+    : changes  3318 | dx1 1.6e+03 | dx2 2.1e+01
+    : l_old : pomeranian
+    : l_new : chihuahua
+
+
+--> #  260 | c      260 | y     7.9e-01 | y_next 4.5e-03
++++ >        c_new  258 | y_new 3.6e-01 | y_old 3.1e-01 | evals  9932
+    : changes  3292 | dx1 8.4e+02 | dx2 1.3e+01
+    : l_old : chow, chow chow
+    : l_new : samoyed, samoyede
+
+
+--> #  261 | c      261 | y     8.2e-01 | y_next 1.2e-03
+    > fail | evals 10000
+
+--> #  262 | c      262 | y     8.6e-01 | y_next 4.6e-03
++++ >        c_new  182 | y_new 3.9e-01 | y_old 3.4e-01 | evals 10000
+    : changes  3403 | dx1 9.0e+03 | dx2 1.3e+02
+    : l_old : brabancon griffon
+    : l_new : border terrier
+
+
+--> #  263 | c      263 | y     8.2e-01 | y_next 4.1e-02
++++ >        c_new  188 | y_new 1.0e-01 | y_old 1.0e-01 | evals  9951
+    : changes  3366 | dx1 6.5e+03 | dx2 9.5e+01
+    : l_old : pembroke, pembroke welsh corgi
+    : l_new : wire-haired fox terrier
+
+
+--> #  264 | c      264 | y     8.8e-01 | y_next 7.1e-02
++++ >        c_new  263 | y_new 4.5e-01 | y_old 4.4e-01 | evals  9988
+    : changes  3202 | dx1 6.1e+02 | dx2 8.8e+00
+    : l_old : cardigan, cardigan welsh corgi
+    : l_new : pembroke, pembroke welsh corgi
+
+
+--> #  265 | c      265 | y     5.8e-01 | y_next 2.3e-01
++++ >        c_new  266 | y_new 4.1e-01 | y_old 3.8e-01 | evals  9953
+    : changes  3360 | dx1 6.7e+02 | dx2 9.2e+00
+    : l_old : toy poodle
+    : l_new : miniature poodle
+
+
+--> #  266 | c      266 | y     7.6e-01 | y_next 5.8e-02
++++ >        c_new  221 | y_new 3.5e-01 | y_old 3.0e-01 | evals  9925
+    : changes  3323 | dx1 7.2e+02 | dx2 1.0e+01
+    : l_old : miniature poodle
+    : l_new : irish water spaniel
+
+
+--> #  268 | c      268 | y     7.9e-01 | y_next 2.0e-03
++++ >        c_new  288 | y_new 1.4e-01 | y_old 1.3e-01 | evals  9918
+    : changes  3399 | dx1 5.4e+03 | dx2 7.1e+01
+    : l_old : mexican hairless
+    : l_new : leopard, panthera pardus
+
+
+--> #  269 | c      269 | y     6.7e-01 | y_next 1.6e-01
++++ >        c_new  273 | y_new 4.1e-01 | y_old 4.1e-01 | evals  9913
+    : changes  3367 | dx1 1.2e+03 | dx2 1.7e+01
+    : l_old : timber wolf, grey wolf, gray wolf, canis lupus
+    : l_new : dingo, warrigal, warragal, canis dingo
+
+
+--> #  270 | c      270 | y     8.4e-01 | y_next 1.5e-02
++++ >        c_new  170 | y_new 4.1e-01 | y_old 2.3e-01 | evals  9910
+    : changes  3348 | dx1 1.5e+03 | dx2 2.4e+01
+    : l_old : white wolf, arctic wolf, canis lupus tundrarum
+    : l_new : irish wolfhound
+
+
+--> #  271 | c      271 | y     8.3e-01 | y_next 8.7e-04
++++ >        c_new  286 | y_new 1.6e-01 | y_old 1.6e-01 | evals  9994
+    : changes  3377 | dx1 5.6e+03 | dx2 8.1e+01
+    : l_old : red wolf, maned wolf, canis rufus, canis niger
+    : l_new : cougar, puma, catamount, mountain lion, painter, p
+
+
+--> #  273 | c      273 | y     8.9e-01 | y_next 7.2e-03
++++ >        c_new  350 | y_new 2.2e-01 | y_old 2.2e-01 | evals  9972
+    : changes  3361 | dx1 9.1e+02 | dx2 1.3e+01
+    : l_old : dingo, warrigal, warragal, canis dingo
+    : l_new : ibex, capra ibex
+
+
+--> #  274 | c      274 | y     7.0e-01 | y_next 3.6e-03
++++ >        c_new  264 | y_new 3.6e-01 | y_old 3.4e-01 | evals  9929
+    : changes  3336 | dx1 6.4e+03 | dx2 8.8e+01
+    : l_old : dhole, cuon alpinus
+    : l_new : cardigan, cardigan welsh corgi
+
+
+--> #  275 | c      275 | y     8.6e-01 | y_next 1.8e-02
++++ >        c_new  276 | y_new 3.8e-01 | y_old 3.6e-01 | evals  9926
+    : changes  3402 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : african hunting dog, hyena dog, cape hunting dog, 
+    : l_new : hyena, hyaena
+
+
+--> #  276 | c      276 | y     8.1e-01 | y_next 4.5e-02
++++ >        c_new  170 | y_new 3.3e-01 | y_old 2.0e-01 | evals  9913
+    : changes  3321 | dx1 8.5e+03 | dx2 1.2e+02
+    : l_old : hyena, hyaena
+    : l_new : irish wolfhound
+
+
+--> #  277 | c      277 | y     8.1e-01 | y_next 1.4e-02
++++ >        c_new  280 | y_new 3.2e-01 | y_old 3.1e-01 | evals  9945
+    : changes  3433 | dx1 1.4e+03 | dx2 1.9e+01
+    : l_old : red fox, vulpes vulpes
+    : l_new : grey fox, gray fox, urocyon cinereoargenteus
+
+
+--> #  279 | c      279 | y     8.3e-01 | y_next 3.4e-03
++++ >        c_new  295 | y_new 2.7e-01 | y_old 1.7e-01 | evals  9939
+    : changes  3296 | dx1 7.7e+03 | dx2 1.1e+02
+    : l_old : arctic fox, white fox, alopex lagopus
+    : l_new : american black bear, black bear, ursus americanus,
+
+
+--> #  280 | c      280 | y     8.3e-01 | y_next 8.1e-03
++++ >        c_new  298 | y_new 4.5e-01 | y_old 3.2e-01 | evals  9971
+    : changes  3333 | dx1 1.2e+03 | dx2 1.6e+01
+    : l_old : grey fox, gray fox, urocyon cinereoargenteus
+    : l_new : mongoose
+
+
+--> #  283 | c      283 | y     8.7e-01 | y_next 1.7e-03
++++ >        c_new  282 | y_new 4.0e-01 | y_old 3.0e-01 | evals  9963
+    : changes  3339 | dx1 6.7e+03 | dx2 8.8e+01
+    : l_old : persian cat
+    : l_new : tiger cat
+
+
+--> #  284 | c      284 | y     8.7e-01 | y_next 8.9e-04
++++ >        c_new  225 | y_new 4.2e-01 | y_old 1.3e-01 | evals  9933
+    : changes  3263 | dx1 4.6e+03 | dx2 6.6e+01
+    : l_old : siamese cat, siamese
+    : l_new : malinois
+
+
+--> #  285 | c      285 | y     7.7e-01 | y_next 6.0e-03
++++ >        c_new  281 | y_new 3.5e-01 | y_old 3.4e-01 | evals  9932
+    : changes  3417 | dx1 2.9e+03 | dx2 4.0e+01
+    : l_old : egyptian cat
+    : l_new : tabby, tabby cat
+
+
+--> #  286 | c      286 | y     8.4e-01 | y_next 5.7e-03
++++ >        c_new  350 | y_new 3.6e-01 | y_old 2.8e-01 | evals  9942
+    : changes  3279 | dx1 1.6e+03 | dx2 2.4e+01
+    : l_old : cougar, puma, catamount, mountain lion, painter, p
+    : l_new : ibex, capra ibex
+
+
+--> #  287 | c      287 | y     8.3e-01 | y_next 1.1e-03
++++ >        c_new  281 | y_new 2.5e-01 | y_old 1.4e-01 | evals  9913
+    : changes  3224 | dx1 5.4e+03 | dx2 8.3e+01
+    : l_old : lynx, catamount
+    : l_new : tabby, tabby cat
+
+
+--> #  288 | c      288 | y     7.9e-01 | y_next 3.5e-03
++++ >        c_new  289 | y_new 4.2e-01 | y_old 3.4e-01 | evals  9955
+    : changes  3368 | dx1 9.5e+03 | dx2 1.3e+02
+    : l_old : leopard, panthera pardus
+    : l_new : snow leopard, ounce, panthera uncia
+
+
+--> #  289 | c      289 | y     7.4e-01 | y_next 6.0e-02
++++ >        c_new  288 | y_new 3.4e-01 | y_old 3.3e-01 | evals  9976
+    : changes  3333 | dx1 6.0e+03 | dx2 8.6e+01
+    : l_old : snow leopard, ounce, panthera uncia
+    : l_new : leopard, panthera pardus
+
+
+--> #  291 | c      291 | y     6.3e-01 | y_next 2.8e-01
++++ >        c_new  276 | y_new 4.5e-01 | y_old 4.4e-01 | evals   498
+    : changes  2943 | dx1 5.5e+01 | dx2 8.2e-01
+    : l_old : lion, king of beasts, panthera leo
+    : l_new : hyena, hyaena
+
+
+--> #  292 | c      292 | y     6.6e-01 | y_next 4.3e-02
++++ >        c_new  290 | y_new 2.6e-01 | y_old 2.4e-01 | evals  9963
+    : changes  3386 | dx1 3.9e+03 | dx2 5.2e+01
+    : l_old : tiger, panthera tigris
+    : l_new : jaguar, panther, panthera onca, felis onca
+
+
+--> #  293 | c      293 | y     8.4e-01 | y_next 1.8e-03
+    > fail | evals 10000
+
+--> #  294 | c      294 | y     8.2e-01 | y_next 1.8e-03
++++ >        c_new  296 | y_new 3.4e-01 | y_old 2.5e-01 | evals  9920
+    : changes  3461 | dx1 4.0e+03 | dx2 6.1e+01
+    : l_old : brown bear, bruin, ursus arctos
+    : l_new : ice bear, polar bear, ursus maritimus, thalarctos 
+
+
+--> #  295 | c      295 | y     8.4e-01 | y_next 1.4e-02
++++ >        c_new  297 | y_new 4.4e-01 | y_old 4.1e-01 | evals  9913
+    : changes  3306 | dx1 2.5e+03 | dx2 3.8e+01
+    : l_old : american black bear, black bear, ursus americanus,
+    : l_new : sloth bear, melursus ursinus, ursus ursinus
+
+
+--> #  296 | c      296 | y     8.2e-01 | y_next 2.6e-03
++++ >        c_new  132 | y_new 2.7e-01 | y_old 1.5e-01 | evals  9958
+    : changes  3290 | dx1 4.0e+03 | dx2 5.7e+01
+    : l_old : ice bear, polar bear, ursus maritimus, thalarctos 
+    : l_new : american egret, great white heron, egretta albus
+
+
+--> #  297 | c      297 | y     8.1e-01 | y_next 5.0e-04
++++ >        c_new  379 | y_new 1.9e-01 | y_old 1.2e-01 | evals  9965
+    : changes  3294 | dx1 5.0e+03 | dx2 7.3e+01
+    : l_old : sloth bear, melursus ursinus, ursus ursinus
+    : l_new : howler monkey, howler
+
+
+--> #  298 | c      298 | y     7.9e-01 | y_next 3.0e-03
++++ >        c_new  357 | y_new 3.8e-01 | y_old 2.9e-01 | evals  9976
+    : changes  3363 | dx1 5.9e+03 | dx2 7.8e+01
+    : l_old : mongoose
+    : l_new : mink
+
+
+--> #  299 | c      299 | y     8.0e-01 | y_next 5.0e-02
++++ >        c_new  298 | y_new 4.3e-01 | y_old 3.3e-01 | evals  9994
+    : changes  3375 | dx1 4.8e+03 | dx2 7.0e+01
+    : l_old : meerkat, mierkat
+    : l_new : mongoose
+
+
+Completed. Successful: 89.53% (total images 86)
+DONE ( 63999.28 sec.) 
+
+
+===================== --------------------------------------
+[2023-12-06 10-20-44] Work is finished (64097.56 sec. total)
+
+

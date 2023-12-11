@@ -1,0 +1,2873 @@
+[2023-11-24 12-17-25] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_onepixel"
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.03 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (    13.61 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     3.05 sec.) 
+
+
+.... Start attack on images with baseline "onepixel"
+
+--> #    0 | c        0 | y     9.9e-01 | y_next 6.2e-03
+    > fail | evals 10019
+
+--> #    1 | c        1 | y     1.0e+00 | y_next 5.0e-05
+    > fail | evals 10019
+
+--> #    2 | c        2 | y     7.3e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #    3 | c        3 | y     9.9e-01 | y_next 8.5e-03
+    > fail | evals 10019
+
+--> #    5 | c        5 | y     8.4e-01 | y_next 1.5e-01
++++ >        c_new    6 | y_new 5.7e-01 | y_old 4.3e-01 | evals  1001
+    : changes   100 | dx1 5.4e+02 | dx2 3.8e+01
+    : l_old : electric ray, crampfish, numbfish, torpedo
+    : l_new : stingray
+
+
+--> #    6 | c        6 | y     6.0e-01 | y_next 3.1e-01
+    > fail | evals 10019
+
+--> #    7 | c        7 | y     7.2e-01 | y_next 2.3e-01
++++ >        c_new   86 | y_new 5.0e-01 | y_old 3.8e-01 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.7e+01
+    : l_old : cock
+    : l_new : partridge
+
+
+--> #    8 | c        8 | y     3.2e-01 | y_next 3.1e-01
++++ >        c_new  128 | y_new 4.8e-01 | y_old 5.4e-02 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : hen
+    : l_new : black stork, ciconia nigra
+
+
+--> #    9 | c        9 | y     9.0e-01 | y_next 6.1e-02
+    > fail | evals 10019
+
+--> #   10 | c       10 | y     6.9e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #   11 | c       11 | y     1.0e+00 | y_next 3.0e-04
+    > fail | evals 10019
+
+--> #   12 | c       12 | y     1.0e+00 | y_next 4.0e-05
+    > fail | evals 10019
+
+--> #   14 | c       14 | y     1.0e+00 | y_next 2.5e-04
+    > fail | evals 10019
+
+--> #   15 | c       15 | y     1.0e+00 | y_next 3.4e-04
+    > fail | evals 10019
+
+--> #   16 | c       16 | y     1.0e+00 | y_next 3.2e-05
+    > fail | evals 10019
+
+--> #   17 | c       17 | y     1.0e+00 | y_next 5.7e-06
+    > fail | evals 10019
+
+--> #   18 | c       18 | y     9.2e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #   19 | c       19 | y     1.0e+00 | y_next 1.7e-06
+    > fail | evals 10019
+
+--> #   20 | c       20 | y     1.0e+00 | y_next 1.3e-05
+    > fail | evals 10019
+
+--> #   22 | c       22 | y     9.3e-01 | y_next 5.2e-02
+    > fail | evals 10019
+
+--> #   24 | c       24 | y     1.0e+00 | y_next 8.9e-10
+    > fail | evals 10019
+
+--> #   25 | c       25 | y     1.0e+00 | y_next 4.8e-04
+    > fail | evals 10019
+
+--> #   26 | c       26 | y     4.3e-01 | y_next 3.6e-01
++++ >        c_new   32 | y_new 6.1e-01 | y_old 2.2e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : common newt, triturus vulgaris
+    : l_new : tailed frog, bell toad, ribbed toad, tailed toad, 
+
+
+--> #   27 | c       27 | y     9.7e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #   28 | c       28 | y     9.5e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #   30 | c       30 | y     9.9e-01 | y_next 5.2e-03
+    > fail | evals 10019
+
+--> #   32 | c       32 | y     9.8e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #   34 | c       34 | y     9.7e-01 | y_next 6.3e-03
+    > fail | evals 10019
+
+--> #   35 | c       35 | y     2.9e-01 | y_next 1.2e-01
++++ >        c_new   50 | y_new 1.9e-01 | y_old 9.7e-02 | evals  1001
+    : changes    99 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : mud turtle
+    : l_new : american alligator, alligator mississipiensis
+
+
+--> #   36 | c       36 | y     6.4e-01 | y_next 2.4e-01
++++ >        c_new   35 | y_new 4.3e-01 | y_old 4.1e-01 | evals  1001
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : terrapin
+    : l_new : mud turtle
+
+
+--> #   38 | c       38 | y     7.4e-01 | y_next 5.9e-02
+    > fail | evals 10019
+
+--> #   39 | c       39 | y     7.3e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #   42 | c       42 | y     9.7e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #   43 | c       43 | y     7.9e-01 | y_next 5.1e-02
++++ >        c_new  377 | y_new 2.1e-01 | y_old 7.9e-02 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.2e+01
+    : l_old : frilled lizard, chlamydosaurus kingi
+    : l_new : marmoset
+
+
+--> #   45 | c       45 | y     9.7e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #   47 | c       47 | y     5.7e-01 | y_next 2.2e-01
++++ >        c_new  116 | y_new 5.4e-01 | y_old 1.8e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : african chameleon, chamaeleo chamaeleon
+    : l_new : chiton, coat-of-mail shell, sea cradle, polyplacop
+
+
+--> #   48 | c       48 | y     7.2e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #   49 | c       49 | y     5.5e-01 | y_next 1.9e-01
++++ >        c_new   81 | y_new 3.7e-01 | y_old 3.0e-01 | evals  2003
+    : changes    99 | dx1 4.0e+02 | dx2 2.9e+01
+    : l_old : african crocodile, nile crocodile, crocodylus nilo
+    : l_new : ptarmigan
+
+
+--> #   51 | c       51 | y     9.4e-01 | y_next 1.6e-02
++++ >        c_new  396 | y_new 7.6e-01 | y_old 1.6e-02 | evals  1001
+    : changes   100 | dx1 5.4e+02 | dx2 3.7e+01
+    : l_old : triceratops
+    : l_new : lionfish
+
+
+--> #   52 | c       52 | y     9.8e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #   53 | c       53 | y     7.6e-01 | y_next 1.3e-01
++++ >        c_new   31 | y_new 3.7e-01 | y_old 3.2e-01 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : ringneck snake, ring-necked snake, ring snake
+    : l_new : tree frog, tree-frog
+
+
+--> #   57 | c       57 | y     3.7e-01 | y_next 2.1e-01
++++ >        c_new   62 | y_new 2.8e-01 | y_old 2.7e-01 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : garter snake, grass snake
+    : l_new : rock python, rock snake, python sebae
+
+
+--> #   59 | c       59 | y     8.5e-01 | y_next 1.0e-01
++++ >        c_new  311 | y_new 1.7e-01 | y_old 1.2e-01 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : vine snake
+    : l_new : grasshopper, hopper
+
+
+--> #   61 | c       61 | y     8.9e-01 | y_next 3.7e-02
++++ >        c_new  307 | y_new 2.3e-01 | y_old 2.3e-01 | evals  2003
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : boa constrictor, constrictor constrictor
+    : l_new : weevil
+
+
+--> #   63 | c       63 | y     8.6e-01 | y_next 6.1e-02
+    > fail | evals 10019
+
+--> #   67 | c       67 | y     3.9e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #   68 | c       68 | y     3.3e-01 | y_next 2.4e-01
++++ >        c_new   60 | y_new 2.0e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : sidewinder, horned rattlesnake, crotalus cerastes
+    : l_new : night snake, hypsiglena torquata
+
+
+--> #   69 | c       69 | y     1.0e+00 | y_next 1.8e-06
+    > fail | evals 10019
+
+--> #   70 | c       70 | y     9.5e-01 | y_next 1.5e-02
++++ >        c_new  815 | y_new 5.8e-01 | y_old 7.5e-03 | evals  1001
+    : changes   100 | dx1 5.1e+02 | dx2 3.5e+01
+    : l_old : harvestman, daddy longlegs, phalangium opilio
+    : l_new : spider web, spider`s web
+
+
+--> #   71 | c       71 | y     1.0e+00 | y_next 1.0e-03
+    > fail | evals 10019
+
+--> #   72 | c       72 | y     6.1e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #   74 | c       74 | y     5.5e-01 | y_next 1.6e-01
++++ >        c_new  307 | y_new 3.9e-01 | y_old 3.4e-01 | evals  2003
+    : changes   100 | dx1 3.7e+02 | dx2 2.7e+01
+    : l_old : garden spider, aranea diademata
+    : l_new : weevil
+
+
+--> #   75 | c       75 | y     8.9e-01 | y_next 5.5e-02
+    > fail | evals 10019
+
+--> #   76 | c       76 | y     1.0e+00 | y_next 1.3e-05
+    > fail | evals 10019
+
+--> #   77 | c       77 | y     2.1e-01 | y_next 2.1e-01
++++ >        c_new  972 | y_new 3.3e-01 | y_old 7.5e-02 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.9e+01
+    : l_old : wolf spider, hunting spider
+    : l_new : cliff, drop, drop-off
+
+
+--> #   78 | c       78 | y     9.2e-01 | y_next 3.4e-02
+    > fail | evals 10019
+
+--> #   79 | c       79 | y     1.0e+00 | y_next 2.6e-05
+    > fail | evals 10019
+
+--> #   80 | c       80 | y     1.0e+00 | y_next 1.5e-04
+    > fail | evals 10019
+
+--> #   81 | c       81 | y     9.9e-01 | y_next 2.1e-03
+    > fail | evals 10019
+
+--> #   82 | c       82 | y     8.7e-01 | y_next 6.9e-02
+    > fail | evals 10019
+
+--> #   84 | c       84 | y     1.0e+00 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #   86 | c       86 | y     5.4e-01 | y_next 4.6e-01
++++ >        c_new   82 | y_new 5.2e-01 | y_old 4.8e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : partridge
+    : l_new : ruffed grouse, partridge, bonasa umbellus
+
+
+--> #   87 | c       87 | y     9.0e-01 | y_next 9.7e-02
+    > fail | evals 10019
+
+--> #   88 | c       88 | y     1.0e+00 | y_next 3.2e-06
+    > fail | evals 10019
+
+--> #   89 | c       89 | y     1.0e+00 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #   90 | c       90 | y     1.0e+00 | y_next 7.6e-09
+    > fail | evals 10019
+
+--> #   92 | c       92 | y     1.0e+00 | y_next 4.0e-04
+    > fail | evals 10019
+
+--> #   93 | c       93 | y     9.9e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #   94 | c       94 | y     9.9e-01 | y_next 4.4e-03
+    > fail | evals 10019
+
+--> #   95 | c       95 | y     9.7e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #   96 | c       96 | y     3.0e-01 | y_next 7.1e-02
++++ >        c_new   97 | y_new 6.2e-02 | y_old 3.8e-02 | evals  1502
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : toucan
+    : l_new : drake
+
+
+--> #   97 | c       97 | y     9.5e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #   98 | c       98 | y     3.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #   99 | c       99 | y     9.7e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  101 | c      101 | y     5.8e-01 | y_next 2.4e-01
++++ >        c_new  380 | y_new 1.7e-01 | y_old 8.0e-02 | evals  3005
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : tusker
+    : l_new : titi, titi monkey
+
+
+--> #  102 | c      102 | y     1.0e+00 | y_next 3.7e-05
+    > fail | evals 10019
+
+--> #  103 | c      103 | y     7.5e-01 | y_next 3.8e-02
+    > fail | evals 10019
+
+--> #  104 | c      104 | y     2.8e-01 | y_next 1.9e-01
++++ >        c_new  277 | y_new 2.3e-01 | y_old 2.0e-01 | evals  2504
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : wallaby, brush kangaroo
+    : l_new : red fox, vulpes vulpes
+
+
+--> #  105 | c      105 | y     9.6e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  106 | c      106 | y     9.1e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  109 | c      109 | y     9.6e-01 | y_next 6.8e-03
+    > fail | evals 10019
+
+--> #  111 | c      111 | y     1.0e+00 | y_next 2.2e-04
+    > fail | evals 10019
+
+--> #  113 | c      113 | y     4.1e-01 | y_next 2.2e-01
++++ >        c_new  328 | y_new 3.8e-01 | y_old 2.3e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : snail
+    : l_new : sea urchin
+
+
+--> #  114 | c      114 | y     4.2e-01 | y_next 8.4e-02
+    > fail | evals 10019
+
+--> #  115 | c      115 | y     3.5e-01 | y_next 1.2e-01
++++ >        c_new  108 | y_new 4.0e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : sea slug, nudibranch
+    : l_new : sea anemone, anemone
+
+
+--> #  116 | c      116 | y     9.9e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  117 | c      117 | y     1.0e+00 | y_next 1.2e-04
+    > fail | evals 10019
+
+--> #  119 | c      119 | y     4.3e-01 | y_next 2.7e-01
++++ >        c_new  125 | y_new 4.1e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : rock crab, cancer irroratus
+    : l_new : hermit crab
+
+
+--> #  120 | c      120 | y     9.4e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  121 | c      121 | y     9.6e-01 | y_next 4.6e-03
+    > fail | evals 10019
+
+--> #  123 | c      123 | y     9.0e-01 | y_next 9.6e-02
+    > fail | evals 10019
+
+--> #  124 | c      124 | y     3.4e-01 | y_next 6.7e-02
+    > fail | evals 10019
+
+--> #  126 | c      126 | y     1.0e+00 | y_next 1.2e-04
+    > fail | evals 10019
+
+--> #  127 | c      127 | y     9.9e-01 | y_next 5.9e-03
+    > fail | evals 10019
+
+--> #  128 | c      128 | y     1.0e+00 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  129 | c      129 | y     9.7e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  130 | c      130 | y     9.6e-01 | y_next 5.9e-03
+    > fail | evals 10019
+
+--> #  131 | c      131 | y     1.0e+00 | y_next 5.4e-04
+    > fail | evals 10019
+
+--> #  132 | c      132 | y     8.2e-01 | y_next 6.5e-02
+    > fail | evals 10019
+
+--> #  133 | c      133 | y     7.9e-01 | y_next 1.7e-01
++++ >        c_new   62 | y_new 5.7e-01 | y_old 3.5e-01 | evals  1001
+    : changes    99 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : bittern
+    : l_new : rock python, rock snake, python sebae
+
+
+--> #  135 | c      135 | y     8.8e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  136 | c      136 | y     1.0e+00 | y_next 1.4e-04
+    > fail | evals 10019
+
+--> #  137 | c      137 | y     2.7e-01 | y_next 2.1e-01
++++ >        c_new  131 | y_new 2.4e-01 | y_old 2.0e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : american coot, marsh hen, mud hen, water hen, fuli
+    : l_new : little blue heron, egretta caerulea
+
+
+--> #  138 | c      138 | y     1.0e+00 | y_next 8.9e-05
+    > fail | evals 10019
+
+--> #  139 | c      139 | y     9.8e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  140 | c      140 | y     7.7e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  141 | c      141 | y     1.0e+00 | y_next 2.5e-03
+    > fail | evals 10019
+
+--> #  142 | c      142 | y     4.2e-01 | y_next 2.7e-01
++++ >        c_new  135 | y_new 4.6e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : dowitcher
+    : l_new : limpkin, aramus pictus
+
+
+--> #  144 | c      144 | y     9.6e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  145 | c      145 | y     1.0e+00 | y_next 3.9e-07
+    > fail | evals 10019
+
+--> #  146 | c      146 | y     9.9e-01 | y_next 3.7e-03
++++ >        c_new  149 | y_new 8.8e-01 | y_old 5.0e-02 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.3e+01
+    : l_old : albatross, mollymawk
+    : l_new : dugong, dugong dugon
+
+
+--> #  147 | c      147 | y     9.7e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  148 | c      148 | y     7.5e-01 | y_next 1.5e-01
++++ >        c_new  145 | y_new 4.2e-01 | y_old 2.8e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : killer whale, killer, orca, grampus, sea wolf, orc
+    : l_new : king penguin, aptenodytes patagonica
+
+
+--> #  149 | c      149 | y     9.9e-01 | y_next 6.8e-03
+    > fail | evals 10019
+
+--> #  150 | c      150 | y     1.0e+00 | y_next 5.7e-06
+    > fail | evals 10019
+
+--> #  151 | c      151 | y     9.2e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  152 | c      152 | y     9.7e-01 | y_next 2.5e-02
++++ >        c_new  242 | y_new 3.2e-01 | y_old 1.9e-01 | evals  1502
+    : changes    99 | dx1 5.3e+02 | dx2 3.6e+01
+    : l_old : japanese spaniel
+    : l_new : boxer
+
+
+--> #  153 | c      153 | y     9.2e-01 | y_next 6.5e-02
+    > fail | evals 10019
+
+--> #  154 | c      154 | y     9.6e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  155 | c      155 | y     6.8e-01 | y_next 3.1e-01
+    > fail | evals 10019
+
+--> #  156 | c      156 | y     8.4e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  157 | c      157 | y     1.0e+00 | y_next 2.5e-04
+    > fail | evals 10019
+
+--> #  160 | c      160 | y     7.1e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  161 | c      161 | y     9.6e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  164 | c      164 | y     7.5e-01 | y_next 2.3e-01
++++ >        c_new  210 | y_new 5.8e-01 | y_old 4.0e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : bluetick
+    : l_new : german short-haired pointer
+
+
+--> #  165 | c      165 | y     8.3e-01 | y_next 8.8e-02
++++ >        c_new  993 | y_new 4.6e-01 | y_old 1.9e-02 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : black-and-tan coonhound
+    : l_new : gyromitra
+
+
+--> #  166 | c      166 | y     7.9e-01 | y_next 6.3e-02
+    > fail | evals 10019
+
+--> #  167 | c      167 | y     5.4e-01 | y_next 3.3e-01
++++ >        c_new  166 | y_new 4.1e-01 | y_old 3.4e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : english foxhound
+    : l_new : walker hound, walker foxhound
+
+
+--> #  169 | c      169 | y     8.0e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  170 | c      170 | y     9.4e-01 | y_next 5.9e-02
+    > fail | evals 10019
+
+--> #  172 | c      172 | y     9.4e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  173 | c      173 | y     9.5e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  176 | c      176 | y     9.8e-01 | y_next 6.1e-03
+    > fail | evals 10019
+
+--> #  177 | c      177 | y     7.4e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  178 | c      178 | y     9.9e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  179 | c      179 | y     9.4e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  181 | c      181 | y     9.5e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  182 | c      182 | y     1.0e+00 | y_next 3.2e-04
+    > fail | evals 10019
+
+--> #  183 | c      183 | y     9.4e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  184 | c      184 | y     2.0e-01 | y_next 1.5e-01
++++ >        c_new  208 | y_new 1.5e-01 | y_old 5.4e-02 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : irish terrier
+    : l_new : labrador retriever
+
+
+--> #  185 | c      185 | y     8.8e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  187 | c      187 | y     3.8e-01 | y_next 3.6e-01
++++ >        c_new  185 | y_new 2.7e-01 | y_old 1.9e-01 | evals  1502
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : yorkshire terrier
+    : l_new : norfolk terrier
+
+
+--> #  188 | c      188 | y     9.9e-01 | y_next 6.1e-03
+    > fail | evals 10019
+
+--> #  189 | c      189 | y     9.0e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  190 | c      190 | y     9.5e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  191 | c      191 | y     2.9e-01 | y_next 8.2e-02
++++ >        c_new  164 | y_new 1.2e-01 | y_old 5.5e-02 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.3e+01
+    : l_old : airedale, airedale terrier
+    : l_new : bluetick
+
+
+--> #  192 | c      192 | y     6.3e-01 | y_next 6.3e-02
+    > fail | evals 10019
+
+--> #  194 | c      194 | y     6.1e-01 | y_next 1.6e-01
++++ >        c_new  265 | y_new 3.9e-01 | y_old 3.6e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.6e+01
+    : l_old : dandie dinmont, dandie dinmont terrier
+    : l_new : toy poodle
+
+
+--> #  195 | c      195 | y     9.7e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  197 | c      197 | y     7.4e-01 | y_next 2.4e-01
+    > fail | evals 10019
+
+--> #  198 | c      198 | y     7.4e-01 | y_next 2.0e-01
+    > fail | evals 10019
+
+--> #  200 | c      200 | y     3.9e-01 | y_next 3.2e-01
++++ >        c_new  252 | y_new 5.9e-01 | y_old 1.0e-01 | evals  1001
+    : changes    99 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : tibetan terrier, chrysanthemum dog
+    : l_new : affenpinscher, monkey pinscher, monkey dog
+
+
+--> #  201 | c      201 | y     9.8e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  202 | c      202 | y     1.9e-01 | y_next 1.1e-01
++++ >        c_new  181 | y_new 7.8e-01 | y_old 4.9e-03 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : soft-coated wheaten terrier
+    : l_new : bedlington terrier
+
+
+--> #  203 | c      203 | y     2.8e-01 | y_next 1.8e-01
++++ >        c_new  552 | y_new 4.4e-01 | y_old 1.0e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.5e+01
+    : l_old : west highland white terrier
+    : l_new : feather boa, boa
+
+
+--> #  205 | c      205 | y     7.0e-01 | y_next 5.4e-02
++++ >        c_new   50 | y_new 3.5e-01 | y_old 2.0e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : flat-coated retriever
+    : l_new : american alligator, alligator mississipiensis
+
+
+--> #  206 | c      206 | y     9.6e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  208 | c      208 | y     7.4e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  209 | c      209 | y     4.1e-01 | y_next 1.7e-01
++++ >        c_new  344 | y_new 7.8e-01 | y_old 6.9e-02 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : chesapeake bay retriever
+    : l_new : hippopotamus, hippo, river horse, hippopotamus amp
+
+
+--> #  210 | c      210 | y     5.5e-01 | y_next 1.3e-01
++++ >        c_new  119 | y_new 7.8e-02 | y_old 6.5e-02 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : german short-haired pointer
+    : l_new : rock crab, cancer irroratus
+
+
+--> #  211 | c      211 | y     4.9e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  213 | c      213 | y     8.6e-01 | y_next 2.3e-02
++++ >        c_new  274 | y_new 1.9e-01 | y_old 1.6e-01 | evals  2003
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : irish setter, red setter
+    : l_new : dhole, cuon alpinus
+
+
+--> #  214 | c      214 | y     5.7e-01 | y_next 3.1e-01
++++ >        c_new  205 | y_new 5.7e-01 | y_old 3.3e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : gordon setter
+    : l_new : flat-coated retriever
+
+
+--> #  216 | c      216 | y     1.0e+00 | y_next 1.1e-04
+    > fail | evals 10019
+
+--> #  218 | c      218 | y     9.3e-01 | y_next 3.3e-02
+    > fail | evals 10019
+
+--> #  219 | c      219 | y     6.4e-01 | y_next 6.6e-02
++++ >        c_new  202 | y_new 2.5e-01 | y_old 1.8e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : cocker spaniel, english cocker spaniel, cocker
+    : l_new : soft-coated wheaten terrier
+
+
+--> #  220 | c      220 | y     9.0e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  221 | c      221 | y     8.8e-01 | y_next 7.6e-02
++++ >        c_new  183 | y_new 5.3e-01 | y_old 4.3e-01 | evals  3005
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : irish water spaniel
+    : l_new : kerry blue terrier
+
+
+--> #  222 | c      222 | y     9.9e-01 | y_next 5.6e-03
+    > fail | evals 10019
+
+--> #  223 | c      223 | y     5.2e-01 | y_next 2.6e-01
++++ >        c_new  245 | y_new 5.4e-01 | y_old 2.2e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : schipperke
+    : l_new : french bulldog
+
+
+--> #  224 | c      224 | y     3.4e-01 | y_next 3.3e-01
++++ >        c_new  197 | y_new 3.7e-01 | y_old 9.6e-02 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : groenendael
+    : l_new : giant schnauzer
+
+
+--> #  225 | c      225 | y     9.8e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  226 | c      226 | y     6.1e-01 | y_next 8.0e-02
+    > fail | evals 10019
+
+--> #  227 | c      227 | y     3.3e-01 | y_next 2.6e-01
++++ >        c_new  158 | y_new 3.0e-01 | y_old 1.4e-01 | evals  1001
+    : changes    99 | dx1 4.7e+02 | dx2 3.4e+01
+    : l_old : kelpie
+    : l_new : toy terrier
+
+
+--> #  228 | c      228 | y     1.0e+00 | y_next 1.0e-04
+    > fail | evals 10019
+
+--> #  229 | c      229 | y     9.2e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  232 | c      232 | y     9.6e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  233 | c      233 | y     2.4e-01 | y_next 1.5e-01
++++ >        c_new  224 | y_new 4.6e-01 | y_old 1.4e-01 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.5e+01
+    : l_old : bouvier des flandres, bouviers des flandres
+    : l_new : groenendael
+
+
+--> #  234 | c      234 | y     7.9e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  235 | c      235 | y     3.3e-01 | y_next 8.0e-02
++++ >        c_new  191 | y_new 1.8e-01 | y_old 1.7e-01 | evals  3005
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : german shepherd, german shepherd dog, german polic
+    : l_new : airedale, airedale terrier
+
+
+--> #  236 | c      236 | y     6.1e-01 | y_next 8.0e-02
++++ >        c_new  206 | y_new 5.6e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.2e+01
+    : l_old : doberman, doberman pinscher
+    : l_new : curly-coated retriever
+
+
+--> #  237 | c      237 | y     9.5e-01 | y_next 3.4e-02
+    > fail | evals 10019
+
+--> #  242 | c      242 | y     9.3e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  243 | c      243 | y     5.4e-01 | y_next 7.8e-02
+    > fail | evals 10019
+
+--> #  244 | c      244 | y     1.0e+00 | y_next 3.0e-04
+    > fail | evals 10019
+
+--> #  245 | c      245 | y     2.0e-01 | y_next 8.6e-02
++++ >        c_new  993 | y_new 3.9e-01 | y_old 1.4e-03 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.4e+01
+    : l_old : french bulldog
+    : l_new : gyromitra
+
+
+--> #  247 | c      247 | y     7.3e-01 | y_next 9.8e-02
+    > fail | evals 10019
+
+--> #  248 | c      248 | y     4.2e-01 | y_next 3.7e-01
++++ >        c_new  250 | y_new 3.8e-01 | y_old 2.5e-01 | evals  1001
+    : changes    99 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : eskimo dog, husky
+    : l_new : siberian husky
+
+
+--> #  251 | c      251 | y     1.0e+00 | y_next 2.9e-05
+    > fail | evals 10019
+
+--> #  253 | c      253 | y     9.5e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  254 | c      254 | y     9.2e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  255 | c      255 | y     1.0e+00 | y_next 2.8e-04
+    > fail | evals 10019
+
+--> #  256 | c      256 | y     9.8e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  257 | c      257 | y     5.5e-01 | y_next 3.1e-01
++++ >        c_new  258 | y_new 5.5e-01 | y_old 3.2e-01 | evals  1001
+    : changes    99 | dx1 4.8e+02 | dx2 3.3e+01
+    : l_old : great pyrenees
+    : l_new : samoyed, samoyede
+
+
+--> #  260 | c      260 | y     5.2e-01 | y_next 2.7e-01
++++ >        c_new  258 | y_new 4.6e-01 | y_old 3.0e-01 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : chow, chow chow
+    : l_new : samoyed, samoyede
+
+
+--> #  261 | c      261 | y     9.8e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  262 | c      262 | y     9.4e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  263 | c      263 | y     7.7e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  268 | c      268 | y     9.5e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  269 | c      269 | y     5.8e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  270 | c      270 | y     5.1e-01 | y_next 1.1e-01
++++ >        c_new  266 | y_new 1.9e-01 | y_old 1.8e-01 | evals  1001
+    : changes    99 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : white wolf, arctic wolf, canis lupus tundrarum
+    : l_new : miniature poodle
+
+
+--> #  271 | c      271 | y     1.0e+00 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  273 | c      273 | y     3.0e-01 | y_next 2.0e-01
++++ >        c_new  278 | y_new 1.9e-01 | y_old 1.8e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 2.9e+01
+    : l_old : dingo, warrigal, warragal, canis dingo
+    : l_new : kit fox, vulpes macrotis
+
+
+--> #  274 | c      274 | y     9.5e-01 | y_next 3.4e-02
+    > fail | evals 10019
+
+--> #  275 | c      275 | y     8.0e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  276 | c      276 | y     9.9e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #  277 | c      277 | y     2.6e-01 | y_next 2.3e-01
++++ >        c_new  273 | y_new 2.9e-01 | y_old 4.4e-02 | evals  1001
+    : changes   100 | dx1 5.6e+02 | dx2 3.8e+01
+    : l_old : red fox, vulpes vulpes
+    : l_new : dingo, warrigal, warragal, canis dingo
+
+
+--> #  279 | c      279 | y     9.2e-01 | y_next 3.6e-02
++++ >        c_new  342 | y_new 5.0e-01 | y_old 3.5e-01 | evals  4007
+    : changes    99 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : arctic fox, white fox, alopex lagopus
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  280 | c      280 | y     9.4e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  283 | c      283 | y     9.2e-01 | y_next 4.8e-02
+    > fail | evals 10019
+
+--> #  284 | c      284 | y     9.9e-01 | y_next 5.9e-04
+    > fail | evals 10019
+
+--> #  285 | c      285 | y     9.0e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  287 | c      287 | y     9.5e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  288 | c      288 | y     9.9e-01 | y_next 5.4e-03
+    > fail | evals 10019
+
+--> #  289 | c      289 | y     8.0e-01 | y_next 8.6e-02
+    > fail | evals 10019
+
+--> #  293 | c      293 | y     9.4e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  294 | c      294 | y     5.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  295 | c      295 | y     9.5e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  296 | c      296 | y     7.4e-01 | y_next 9.8e-02
++++ >        c_new  357 | y_new 1.9e-01 | y_old 8.8e-02 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : ice bear, polar bear, ursus maritimus, thalarctos 
+    : l_new : mink
+
+
+--> #  297 | c      297 | y     1.0e+00 | y_next 8.3e-04
+    > fail | evals 10019
+
+--> #  298 | c      298 | y     8.5e-01 | y_next 9.3e-02
+    > fail | evals 10019
+
+--> #  299 | c      299 | y     9.8e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  300 | c      300 | y     9.8e-01 | y_next 9.6e-03
+    > fail | evals 10019
+
+--> #  301 | c      301 | y     9.7e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  302 | c      302 | y     9.4e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  303 | c      303 | y     8.1e-01 | y_next 8.0e-02
+    > fail | evals 10019
+
+--> #  305 | c      305 | y     6.5e-01 | y_next 1.3e-01
++++ >        c_new  306 | y_new 3.8e-01 | y_old 3.6e-01 | evals  3506
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : dung beetle
+    : l_new : rhinoceros beetle
+
+
+--> #  306 | c      306 | y     8.3e-01 | y_next 1.7e-01
++++ >        c_new  302 | y_new 6.5e-01 | y_old 3.3e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : rhinoceros beetle
+    : l_new : ground beetle, carabid beetle
+
+
+--> #  307 | c      307 | y     5.0e-01 | y_next 3.2e-01
++++ >        c_new  310 | y_new 3.3e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : weevil
+    : l_new : ant, emmet, pismire
+
+
+--> #  308 | c      308 | y     1.0e+00 | y_next 4.3e-04
+    > fail | evals 10019
+
+--> #  309 | c      309 | y     7.9e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #  310 | c      310 | y     6.6e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  312 | c      312 | y     9.8e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  313 | c      313 | y     9.8e-01 | y_next 5.0e-03
+    > fail | evals 10019
+
+--> #  317 | c      317 | y     3.7e-01 | y_next 3.4e-01
++++ >        c_new  312 | y_new 3.8e-01 | y_old 2.9e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.5e+01
+    : l_old : leafhopper
+    : l_new : cricket
+
+
+--> #  318 | c      318 | y     9.7e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  321 | c      321 | y     1.0e+00 | y_next 9.2e-05
+    > fail | evals 10019
+
+--> #  322 | c      322 | y     8.8e-01 | y_next 5.9e-02
+    > fail | evals 10019
+
+--> #  323 | c      323 | y     1.0e+00 | y_next 1.6e-05
+    > fail | evals 10019
+
+--> #  324 | c      324 | y     9.8e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  325 | c      325 | y     4.5e-01 | y_next 1.7e-01
++++ >        c_new  815 | y_new 2.8e-01 | y_old 2.5e-01 | evals  2003
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : sulphur butterfly, sulfur butterfly
+    : l_new : spider web, spider`s web
+
+
+--> #  326 | c      326 | y     2.3e-01 | y_next 1.0e-01
++++ >        c_new  815 | y_new 1.3e-01 | y_old 6.5e-03 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : lycaenid, lycaenid butterfly
+    : l_new : spider web, spider`s web
+
+
+--> #  327 | c      327 | y     1.0e+00 | y_next 6.6e-06
+    > fail | evals 10019
+
+--> #  328 | c      328 | y     2.5e-01 | y_next 2.5e-01
++++ >        c_new  109 | y_new 3.2e-01 | y_old 1.7e-01 | evals  1001
+    : changes    99 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : sea urchin
+    : l_new : brain coral
+
+
+--> #  329 | c      329 | y     9.6e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  330 | c      330 | y     5.5e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  331 | c      331 | y     5.3e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  332 | c      332 | y     6.8e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  333 | c      333 | y     9.5e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  334 | c      334 | y     9.2e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  335 | c      335 | y     8.4e-01 | y_next 2.2e-02
++++ >        c_new  390 | y_new 1.1e-01 | y_old 6.1e-02 | evals  2003
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : fox squirrel, eastern fox squirrel, sciurus niger
+    : l_new : eel
+
+
+--> #  336 | c      336 | y     9.9e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  337 | c      337 | y     9.6e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  338 | c      338 | y     8.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  339 | c      339 | y     9.9e-01 | y_next 6.5e-03
+    > fail | evals 10019
+
+--> #  340 | c      340 | y     1.0e+00 | y_next 3.7e-05
+    > fail | evals 10019
+
+--> #  341 | c      341 | y     9.8e-01 | y_next 6.0e-03
+    > fail | evals 10019
+
+--> #  343 | c      343 | y     8.2e-01 | y_next 1.7e-01
++++ >        c_new  342 | y_new 5.0e-01 | y_old 4.6e-01 | evals  2504
+    : changes   100 | dx1 3.8e+02 | dx2 2.6e+01
+    : l_old : warthog
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  344 | c      344 | y     9.8e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  346 | c      346 | y     9.3e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  347 | c      347 | y     5.2e-01 | y_next 5.9e-02
++++ >        c_new  221 | y_new 1.0e-01 | y_old 7.4e-02 | evals  1001
+    : changes   100 | dx1 3.7e+02 | dx2 2.6e+01
+    : l_old : bison
+    : l_new : irish water spaniel
+
+
+--> #  348 | c      348 | y     8.9e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  349 | c      349 | y     4.2e-01 | y_next 2.4e-01
++++ >        c_new  209 | y_new 3.6e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.8e+01
+    : l_old : bighorn, bighorn sheep, cimarron, rocky mountain b
+    : l_new : chesapeake bay retriever
+
+
+--> #  350 | c      350 | y     9.9e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  352 | c      352 | y     5.8e-01 | y_next 2.4e-01
++++ >        c_new  331 | y_new 2.2e-01 | y_old 1.9e-01 | evals  5510
+    : changes   100 | dx1 3.5e+02 | dx2 2.5e+01
+    : l_old : impala, aepyceros melampus
+    : l_new : hare
+
+
+--> #  353 | c      353 | y     5.3e-01 | y_next 4.6e-01
++++ >        c_new  352 | y_new 6.4e-01 | y_old 3.4e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : gazelle
+    : l_new : impala, aepyceros melampus
+
+
+--> #  355 | c      355 | y     9.9e-01 | y_next 5.6e-03
+    > fail | evals 10019
+
+--> #  357 | c      357 | y     9.1e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  359 | c      359 | y     5.5e-01 | y_next 2.5e-01
++++ >        c_new  356 | y_new 6.8e-01 | y_old 1.5e-01 | evals  1001
+    : changes   100 | dx1 5.2e+02 | dx2 3.7e+01
+    : l_old : black-footed ferret, ferret, mustela nigripes
+    : l_new : weasel
+
+
+--> #  360 | c      360 | y     4.6e-01 | y_next 9.0e-02
+    > fail | evals 10019
+
+--> #  362 | c      362 | y     1.0e+00 | y_next 3.0e-05
+    > fail | evals 10019
+
+--> #  364 | c      364 | y     9.7e-01 | y_next 2.1e-02
++++ >        c_new  105 | y_new 6.1e-01 | y_old 3.1e-01 | evals  1001
+    : changes    99 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : three-toed sloth, ai, bradypus tridactylus
+    : l_new : koala, koala bear, kangaroo bear, native bear, pha
+
+
+--> #  365 | c      365 | y     9.9e-01 | y_next 4.4e-03
+    > fail | evals 10019
+
+--> #  367 | c      367 | y     3.3e-01 | y_next 3.0e-01
++++ >        c_new  297 | y_new 5.7e-01 | y_old 1.2e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : chimpanzee, chimp, pan troglodytes
+    : l_new : sloth bear, melursus ursinus, ursus ursinus
+
+
+--> #  368 | c      368 | y     2.6e-01 | y_next 1.7e-01
++++ >        c_new  284 | y_new 9.5e-02 | y_old 3.1e-02 | evals  1001
+    : changes   100 | dx1 5.1e+02 | dx2 3.5e+01
+    : l_old : gibbon, hylobates lar
+    : l_new : siamese cat, siamese
+
+
+--> #  369 | c      369 | y     9.8e-01 | y_next 9.4e-03
+    > fail | evals 10019
+
+--> #  370 | c      370 | y     1.0e+00 | y_next 1.6e-04
+    > fail | evals 10019
+
+--> #  371 | c      371 | y     9.9e-01 | y_next 6.4e-03
+    > fail | evals 10019
+
+--> #  372 | c      372 | y     7.7e-01 | y_next 2.2e-01
+    > fail | evals 10019
+
+--> #  373 | c      373 | y     9.9e-01 | y_next 3.0e-03
+    > fail | evals 10019
+
+--> #  375 | c      375 | y     6.0e-01 | y_next 1.0e-01
++++ >        c_new  374 | y_new 2.7e-01 | y_old 1.8e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : colobus, colobus monkey
+    : l_new : langur
+
+
+--> #  376 | c      376 | y     1.0e+00 | y_next 7.3e-05
+    > fail | evals 10019
+
+--> #  377 | c      377 | y     8.8e-01 | y_next 3.2e-02
++++ >        c_new  103 | y_new 1.1e-01 | y_old 6.7e-03 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.3e+01
+    : l_old : marmoset
+    : l_new : platypus, duckbill, duckbilled platypus, duck-bill
+
+
+--> #  378 | c      378 | y     2.9e-01 | y_next 2.3e-01
++++ >        c_new  105 | y_new 4.3e-01 | y_old 9.1e-02 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : capuchin, ringtail, cebus capucinus
+    : l_new : koala, koala bear, kangaroo bear, native bear, pha
+
+
+--> #  379 | c      379 | y     6.7e-01 | y_next 8.1e-02
++++ >        c_new   30 | y_new 2.4e-01 | y_old 2.1e-01 | evals  1502
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : howler monkey, howler
+    : l_new : bullfrog, rana catesbeiana
+
+
+--> #  381 | c      381 | y     9.3e-01 | y_next 3.3e-02
+    > fail | evals 10019
+
+--> #  382 | c      382 | y     5.8e-01 | y_next 3.0e-01
++++ >        c_new  381 | y_new 4.2e-01 | y_old 3.8e-01 | evals  1001
+    : changes    99 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : squirrel monkey, saimiri sciureus
+    : l_new : spider monkey, ateles geoffroyi
+
+
+--> #  383 | c      383 | y     3.1e-01 | y_next 1.6e-01
++++ >        c_new  287 | y_new 1.5e-01 | y_old 1.4e-01 | evals  1001
+    : changes    99 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : madagascar cat, ring-tailed lemur, lemur catta
+    : l_new : lynx, catamount
+
+
+--> #  386 | c      386 | y     9.8e-01 | y_next 9.7e-03
+    > fail | evals 10019
+
+--> #  387 | c      387 | y     1.0e+00 | y_next 1.1e-05
+    > fail | evals 10019
+
+--> #  388 | c      388 | y     1.0e+00 | y_next 1.5e-08
+    > fail | evals 10019
+
+--> #  389 | c      389 | y     1.0e+00 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  391 | c      391 | y     1.0e+00 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  392 | c      392 | y     7.6e-01 | y_next 1.1e-01
++++ >        c_new    6 | y_new 5.4e-01 | y_old 2.1e-02 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.5e+01
+    : l_old : rock beauty, holocanthus tricolor
+    : l_new : stingray
+
+
+--> #  393 | c      393 | y     7.6e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  396 | c      396 | y     5.3e-01 | y_next 2.1e-01
++++ >        c_new    6 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : lionfish
+    : l_new : stingray
+
+
+--> #  397 | c      397 | y     1.0e+00 | y_next 4.2e-04
+    > fail | evals 10019
+
+--> #  399 | c      399 | y     8.3e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  400 | c      400 | y     9.8e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  402 | c      402 | y     9.9e-01 | y_next 4.7e-03
+    > fail | evals 10019
+
+--> #  403 | c      403 | y     9.7e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  404 | c      404 | y     3.7e-01 | y_next 1.0e-01
++++ >        c_new  705 | y_new 1.8e-01 | y_old 1.5e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : airliner
+    : l_new : passenger car, coach, carriage
+
+
+--> #  405 | c      405 | y     8.7e-01 | y_next 7.4e-02
++++ >        c_new  593 | y_new 3.9e-01 | y_old 5.5e-02 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : airship, dirigible
+    : l_new : harmonica, mouth organ, harp, mouth harp
+
+
+--> #  407 | c      407 | y     9.9e-01 | y_next 7.5e-03
+    > fail | evals 10019
+
+--> #  408 | c      408 | y     2.8e-01 | y_next 8.3e-02
++++ >        c_new  412 | y_new 2.3e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.4e+01
+    : l_old : amphibian, amphibious vehicle
+    : l_new : ashcan, trash can, garbage can, wastebin, ash bin,
+
+
+--> #  409 | c      409 | y     4.9e-01 | y_next 4.8e-01
++++ >        c_new  892 | y_new 5.6e-01 | y_old 4.0e-01 | evals  1001
+    : changes   100 | dx1 5.1e+02 | dx2 3.5e+01
+    : l_old : analog clock
+    : l_new : wall clock
+
+
+--> #  410 | c      410 | y     9.9e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  414 | c      414 | y     5.4e-01 | y_next 8.1e-02
++++ >        c_new  620 | y_new 9.3e-02 | y_old 1.1e-02 | evals  1001
+    : changes   100 | dx1 5.2e+02 | dx2 3.6e+01
+    : l_old : backpack, back pack, knapsack, packsack, rucksack,
+    : l_new : laptop, laptop computer
+
+
+--> #  415 | c      415 | y     3.9e-01 | y_next 8.0e-02
+    > fail | evals 10019
+
+--> #  416 | c      416 | y     7.8e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  417 | c      417 | y     1.0e+00 | y_next 1.4e-04
+    > fail | evals 10019
+
+--> #  419 | c      419 | y     9.5e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  420 | c      420 | y     4.2e-01 | y_next 3.8e-02
++++ >        c_new  461 | y_new 5.7e-02 | y_old 3.9e-02 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : banjo
+    : l_new : breastplate, aegis, egis
+
+
+--> #  421 | c      421 | y     2.7e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  422 | c      422 | y     1.0e+00 | y_next 2.3e-04
+    > fail | evals 10019
+
+--> #  423 | c      423 | y     9.4e-01 | y_next 4.1e-02
++++ >        c_new  541 | y_new 9.3e-01 | y_old 4.3e-02 | evals  1001
+    : changes   100 | dx1 5.6e+02 | dx2 3.9e+01
+    : l_old : barber chair
+    : l_new : drum, membranophone, tympan
+
+
+--> #  425 | c      425 | y     1.0e+00 | y_next 7.1e-04
+    > fail | evals 10019
+
+--> #  428 | c      428 | y     8.5e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  429 | c      429 | y     1.0e+00 | y_next 5.0e-06
+    > fail | evals 10019
+
+--> #  430 | c      430 | y     8.9e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  431 | c      431 | y     8.7e-01 | y_next 5.3e-02
++++ >        c_new  753 | y_new 4.4e-01 | y_old 4.4e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : bassinet
+    : l_new : radiator
+
+
+--> #  433 | c      433 | y     5.9e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  435 | c      435 | y     5.7e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  436 | c      436 | y     7.5e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  437 | c      437 | y     1.0e+00 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  438 | c      438 | y     6.2e-01 | y_next 3.0e-01
+    > fail | evals 10019
+
+--> #  439 | c      439 | y     1.0e+00 | y_next 1.8e-04
+    > fail | evals 10019
+
+--> #  440 | c      440 | y     9.1e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  441 | c      441 | y     4.9e-01 | y_next 1.8e-01
++++ >        c_new  737 | y_new 1.8e-01 | y_old 8.9e-02 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : beer glass
+    : l_new : pop bottle, soda bottle
+
+
+--> #  443 | c      443 | y     1.0e+00 | y_next 1.5e-04
+    > fail | evals 10019
+
+--> #  444 | c      444 | y     9.2e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  447 | c      447 | y     9.4e-01 | y_next 3.2e-02
++++ >        c_new  613 | y_new 3.6e-01 | y_old 2.7e-01 | evals  4508
+    : changes   100 | dx1 5.8e+02 | dx2 3.9e+01
+    : l_old : binoculars, field glasses, opera glasses
+    : l_new : joystick
+
+
+--> #  448 | c      448 | y     1.0e+00 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  450 | c      450 | y     1.0e+00 | y_next 4.2e-04
+    > fail | evals 10019
+
+--> #  451 | c      451 | y     9.9e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  452 | c      452 | y     6.9e-01 | y_next 1.1e-01
++++ >        c_new  515 | y_new 2.6e-01 | y_old 1.8e-01 | evals  4007
+    : changes   100 | dx1 5.4e+02 | dx2 3.7e+01
+    : l_old : bonnet, poke bonnet
+    : l_new : cowboy hat, ten-gallon hat
+
+
+--> #  453 | c      453 | y     2.9e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  454 | c      454 | y     7.0e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #  459 | c      459 | y     3.7e-01 | y_next 1.8e-01
++++ >        c_new  836 | y_new 1.4e-01 | y_old 5.1e-02 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : brassiere, bra, bandeau
+    : l_new : sunglass
+
+
+--> #  461 | c      461 | y     7.4e-01 | y_next 2.1e-01
++++ >        c_new  524 | y_new 5.6e-01 | y_old 3.3e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : breastplate, aegis, egis
+    : l_new : cuirass
+
+
+--> #  464 | c      464 | y     7.5e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  465 | c      465 | y     9.9e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  466 | c      466 | y     1.0e+00 | y_next 3.8e-05
+    > fail | evals 10019
+
+--> #  467 | c      467 | y     4.7e-01 | y_next 1.8e-01
++++ >        c_new  119 | y_new 3.0e-01 | y_old 2.0e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.3e+01
+    : l_old : butcher shop, meat market
+    : l_new : rock crab, cancer irroratus
+
+
+--> #  468 | c      468 | y     6.0e-01 | y_next 3.2e-01
++++ >        c_new  779 | y_new 5.1e-01 | y_old 4.3e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : cab, hack, taxi, taxicab
+    : l_new : school bus
+
+
+--> #  470 | c      470 | y     8.2e-01 | y_next 6.0e-02
++++ >        c_new  971 | y_new 4.5e-01 | y_old 3.0e-02 | evals  1001
+    : changes   100 | dx1 5.6e+02 | dx2 3.8e+01
+    : l_old : candle, taper, wax light
+    : l_new : bubble
+
+
+--> #  471 | c      471 | y     9.9e-01 | y_next 2.5e-03
+    > fail | evals 10019
+
+--> #  472 | c      472 | y     1.0e+00 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  474 | c      474 | y     7.9e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  475 | c      475 | y     9.5e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  478 | c      478 | y     9.7e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  479 | c      479 | y     9.6e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  481 | c      481 | y     9.9e-01 | y_next 9.1e-03
+    > fail | evals 10019
+
+--> #  483 | c      483 | y     7.9e-01 | y_next 6.9e-02
+    > fail | evals 10019
+
+--> #  484 | c      484 | y     5.7e-01 | y_next 4.2e-01
+    > fail | evals 10019
+
+--> #  485 | c      485 | y     1.2e-01 | y_next 1.1e-01
++++ >        c_new  695 | y_new 2.0e-01 | y_old 6.0e-02 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.6e+01
+    : l_old : cd player
+    : l_new : padlock
+
+
+--> #  488 | c      488 | y     5.0e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  489 | c      489 | y     8.8e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  490 | c      490 | y     1.0e+00 | y_next 1.6e-05
+    > fail | evals 10019
+
+--> #  492 | c      492 | y     8.2e-01 | y_next 3.7e-02
+    > fail | evals 10019
+
+--> #  493 | c      493 | y     9.6e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  494 | c      494 | y     1.0e+00 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #  495 | c      495 | y     1.0e+00 | y_next 4.1e-04
+    > fail | evals 10019
+
+--> #  496 | c      496 | y     8.9e-01 | y_next 8.6e-02
+    > fail | evals 10019
+
+--> #  497 | c      497 | y     7.3e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  498 | c      498 | y     1.0e+00 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  500 | c      500 | y     7.8e-01 | y_next 9.0e-02
+    > fail | evals 10019
+
+--> #  504 | c      504 | y     5.2e-01 | y_next 9.9e-02
+    > fail | evals 10019
+
+--> #  510 | c      510 | y     1.0e+00 | y_next 2.2e-05
+    > fail | evals 10019
+
+--> #  511 | c      511 | y     9.1e-01 | y_next 3.5e-02
+    > fail | evals 10019
+
+--> #  512 | c      512 | y     7.9e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  513 | c      513 | y     8.1e-01 | y_next 8.7e-02
++++ >        c_new  464 | y_new 4.9e-01 | y_old 4.1e-01 | evals  1001
+    : changes   100 | dx1 5.1e+02 | dx2 3.5e+01
+    : l_old : cornet, horn, trumpet, trump
+    : l_new : buckle
+
+
+--> #  514 | c      514 | y     1.0e+00 | y_next 5.3e-07
+    > fail | evals 10019
+
+--> #  515 | c      515 | y     8.1e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  516 | c      516 | y     9.0e-01 | y_next 9.4e-03
+    > fail | evals 10019
+
+--> #  518 | c      518 | y     1.0e+00 | y_next 2.6e-04
+    > fail | evals 10019
+
+--> #  522 | c      522 | y     6.6e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  523 | c      523 | y     3.9e-01 | y_next 5.5e-02
+    > fail | evals 10019
+
+--> #  524 | c      524 | y     9.3e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  525 | c      525 | y     1.0e+00 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  527 | c      527 | y     3.2e-01 | y_next 2.4e-01
++++ >        c_new  664 | y_new 2.1e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 5.2e+02 | dx2 3.6e+01
+    : l_old : desktop computer
+    : l_new : monitor
+
+
+--> #  528 | c      528 | y     3.8e-01 | y_next 1.8e-01
++++ >        c_new  771 | y_new 2.5e-01 | y_old 2.2e-01 | evals  2003
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : dial telephone, dial phone
+    : l_new : safe
+
+
+--> #  530 | c      530 | y     9.8e-01 | y_next 8.0e-03
++++ >        c_new    1 | y_new 1.1e-01 | y_old 6.7e-02 | evals  1502
+    : changes   100 | dx1 6.5e+02 | dx2 4.3e+01
+    : l_old : digital clock
+    : l_new : goldfish, carassius auratus
+
+
+--> #  532 | c      532 | y     6.2e-01 | y_next 2.9e-01
++++ >        c_new  579 | y_new 7.0e-01 | y_old 1.4e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : dining table, board
+    : l_new : grand piano, grand
+
+
+--> #  533 | c      533 | y     9.0e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  535 | c      535 | y     8.9e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  536 | c      536 | y     4.1e-01 | y_next 2.3e-01
++++ >        c_new  403 | y_new 3.9e-01 | y_old 2.0e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : dock, dockage, docking facility
+    : l_new : aircraft carrier, carrier, flattop, attack aircraf
+
+
+--> #  537 | c      537 | y     9.7e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  538 | c      538 | y     8.9e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  539 | c      539 | y     8.6e-01 | y_next 4.3e-02
+    > fail | evals 10019
+
+--> #  541 | c      541 | y     9.8e-01 | y_next 7.2e-03
+    > fail | evals 10019
+
+--> #  542 | c      542 | y     8.0e-01 | y_next 6.9e-02
+    > fail | evals 10019
+
+--> #  543 | c      543 | y     7.3e-01 | y_next 2.1e-01
++++ >        c_new  731 | y_new 3.8e-01 | y_old 3.5e-02 | evals  1001
+    : changes   100 | dx1 6.1e+02 | dx2 4.1e+01
+    : l_old : dumbbell
+    : l_new : plunger, plumber`s helper
+
+
+--> #  544 | c      544 | y     9.7e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  546 | c      546 | y     8.5e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  547 | c      547 | y     8.0e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  548 | c      548 | y     6.9e-01 | y_next 7.6e-02
+    > fail | evals 10019
+
+--> #  549 | c      549 | y     5.2e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  550 | c      550 | y     1.0e+00 | y_next 2.0e-04
+    > fail | evals 10019
+
+--> #  551 | c      551 | y     8.5e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  552 | c      552 | y     1.0e+00 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  554 | c      554 | y     9.9e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  555 | c      555 | y     6.8e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  556 | c      556 | y     7.1e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  557 | c      557 | y     7.1e-01 | y_next 2.1e-01
++++ >        c_new  498 | y_new 4.8e-01 | y_old 4.2e-01 | evals  7013
+    : changes    99 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : flagpole, flagstaff
+    : l_new : cinema, movie theater, movie theatre, movie house,
+
+
+--> #  558 | c      558 | y     6.9e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  560 | c      560 | y     8.9e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  561 | c      561 | y     8.3e-01 | y_next 9.3e-02
+    > fail | evals 10019
+
+--> #  564 | c      564 | y     6.5e-01 | y_next 3.5e-01
++++ >        c_new  669 | y_new 5.5e-01 | y_old 4.5e-01 | evals  3005
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : four-poster
+    : l_new : mosquito net
+
+
+--> #  565 | c      565 | y     1.0e+00 | y_next 2.0e-09
+    > fail | evals 10019
+
+--> #  566 | c      566 | y     2.0e-01 | y_next 1.5e-01
++++ >        c_new  819 | y_new 2.4e-01 | y_old 8.2e-02 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.5e+01
+    : l_old : french horn, horn
+    : l_new : stage
+
+
+--> #  567 | c      567 | y     8.6e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  569 | c      569 | y     7.2e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  570 | c      570 | y     6.2e-01 | y_next 1.3e-01
++++ >        c_new  328 | y_new 1.8e-01 | y_old 1.2e-01 | evals  3005
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : gasmask, respirator, gas helmet
+    : l_new : sea urchin
+
+
+--> #  572 | c      572 | y     9.3e-01 | y_next 3.5e-02
+    > fail | evals 10019
+
+--> #  573 | c      573 | y     8.6e-01 | y_next 1.3e-01
++++ >        c_new  518 | y_new 5.7e-01 | y_old 4.2e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : go-kart
+    : l_new : crash helmet
+
+
+--> #  574 | c      574 | y     9.9e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  575 | c      575 | y     1.0e+00 | y_next 1.1e-05
+    > fail | evals 10019
+
+--> #  576 | c      576 | y     1.0e+00 | y_next 1.3e-05
+    > fail | evals 10019
+
+--> #  577 | c      577 | y     7.8e-01 | y_next 1.3e-01
++++ >        c_new  618 | y_new 3.4e-01 | y_old 8.6e-02 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.4e+01
+    : l_old : gong, tam-tam
+    : l_new : ladle
+
+
+--> #  578 | c      578 | y     6.7e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  579 | c      579 | y     1.0e+00 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  580 | c      580 | y     1.0e+00 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  582 | c      582 | y     7.1e-01 | y_next 9.2e-02
+    > fail | evals 10019
+
+--> #  583 | c      583 | y     2.3e-01 | y_next 2.2e-01
++++ >        c_new  706 | y_new 5.6e-01 | y_old 5.6e-02 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : guillotine
+    : l_new : patio, terrace
+
+
+--> #  585 | c      585 | y     5.4e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  586 | c      586 | y     5.3e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  588 | c      588 | y     1.0e+00 | y_next 2.3e-04
+    > fail | evals 10019
+
+--> #  589 | c      589 | y     9.8e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  590 | c      590 | y     5.3e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  592 | c      592 | y     9.3e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  593 | c      593 | y     9.9e-01 | y_next 3.7e-03
+    > fail | evals 10019
+
+--> #  595 | c      595 | y     9.8e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  597 | c      597 | y     9.1e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  598 | c      598 | y     2.4e-01 | y_next 1.9e-01
++++ >        c_new  624 | y_new 1.5e-01 | y_old 1.0e-01 | evals  2003
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : home theater, home theatre
+    : l_new : library
+
+
+--> #  599 | c      599 | y     2.7e-01 | y_next 2.1e-01
++++ >        c_new  329 | y_new 3.1e-01 | y_old 8.1e-02 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : honeycomb
+    : l_new : sea cucumber, holothurian
+
+
+--> #  600 | c      600 | y     6.6e-01 | y_next 1.3e-01
++++ >        c_new   75 | y_new 2.7e-01 | y_old 1.4e-01 | evals  1001
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : hook, claw
+    : l_new : black widow, latrodectus mactans
+
+
+--> #  601 | c      601 | y     9.4e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  602 | c      602 | y     4.9e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  603 | c      603 | y     9.8e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  604 | c      604 | y     9.9e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #  605 | c      605 | y     1.0e+00 | y_next 3.1e-05
+    > fail | evals 10019
+
+--> #  606 | c      606 | y     9.0e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  607 | c      607 | y     1.0e+00 | y_next 3.2e-07
+    > fail | evals 10019
+
+--> #  608 | c      608 | y     1.9e-01 | y_next 6.0e-02
++++ >        c_new  695 | y_new 1.3e-01 | y_old 3.2e-02 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : jean, blue jean, denim
+    : l_new : padlock
+
+
+--> #  609 | c      609 | y     2.4e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  610 | c      610 | y     8.8e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  611 | c      611 | y     1.0e+00 | y_next 6.9e-04
+    > fail | evals 10019
+
+--> #  615 | c      615 | y     6.3e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #  616 | c      616 | y     4.8e-01 | y_next 8.0e-02
++++ >        c_new  434 | y_new 2.9e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : knot
+    : l_new : bath towel
+
+
+--> #  617 | c      617 | y     7.8e-02 | y_next 4.1e-02
++++ >        c_new  559 | y_new 5.4e-02 | y_old 2.3e-02 | evals  1001
+    : changes    99 | dx1 4.2e+02 | dx2 3.1e+01
+    : l_old : lab coat, laboratory coat
+    : l_new : folding chair
+
+
+--> #  618 | c      618 | y     7.9e-01 | y_next 7.4e-02
+    > fail | evals 10019
+
+--> #  621 | c      621 | y     8.0e-01 | y_next 7.4e-02
+    > fail | evals 10019
+
+--> #  622 | c      622 | y     1.0e+00 | y_next 9.7e-04
+    > fail | evals 10019
+
+--> #  623 | c      623 | y     5.5e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  624 | c      624 | y     9.1e-01 | y_next 6.4e-02
+    > fail | evals 10019
+
+--> #  625 | c      625 | y     1.0e+00 | y_next 6.4e-05
+    > fail | evals 10019
+
+--> #  627 | c      627 | y     9.8e-01 | y_next 8.1e-03
+    > fail | evals 10019
+
+--> #  628 | c      628 | y     9.9e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  629 | c      629 | y     3.0e-01 | y_next 1.2e-01
++++ >        c_new  907 | y_new 2.7e-01 | y_old 3.2e-02 | evals  1001
+    : changes   100 | dx1 5.9e+02 | dx2 4.0e+01
+    : l_old : lipstick, lip rouge
+    : l_new : wine bottle
+
+
+--> #  630 | c      630 | y     9.6e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  632 | c      632 | y     7.6e-01 | y_next 1.3e-01
++++ >        c_new  651 | y_new 5.9e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.4e+01
+    : l_old : loudspeaker, speaker, speaker unit, loudspeaker sy
+    : l_new : microwave, microwave oven
+
+
+--> #  635 | c      635 | y     9.9e-01 | y_next 8.9e-03
+    > fail | evals 10019
+
+--> #  636 | c      636 | y     7.3e-01 | y_next 1.7e-01
++++ >        c_new  790 | y_new 3.6e-01 | y_old 2.8e-01 | evals  3506
+    : changes   100 | dx1 5.1e+02 | dx2 3.5e+01
+    : l_old : mailbag, postbag
+    : l_new : shopping basket
+
+
+--> #  637 | c      637 | y     1.0e+00 | y_next 1.2e-04
+    > fail | evals 10019
+
+--> #  640 | c      640 | y     8.1e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  642 | c      642 | y     1.0e+00 | y_next 5.6e-06
+    > fail | evals 10019
+
+--> #  647 | c      647 | y     4.3e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  648 | c      648 | y     9.0e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  649 | c      649 | y     1.0e+00 | y_next 2.0e-04
+    > fail | evals 10019
+
+--> #  651 | c      651 | y     3.5e-01 | y_next 1.6e-01
++++ >        c_new  485 | y_new 2.2e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.4e+01
+    : l_old : microwave, microwave oven
+    : l_new : cd player
+
+
+--> #  652 | c      652 | y     6.8e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  653 | c      653 | y     7.2e-02 | y_next 5.2e-02
++++ >        c_new  815 | y_new 7.3e-02 | y_old 9.6e-03 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : milk can
+    : l_new : spider web, spider`s web
+
+
+--> #  655 | c      655 | y     1.6e-01 | y_next 9.9e-02
++++ >        c_new  747 | y_new 1.2e-01 | y_old 7.2e-02 | evals  1001
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : miniskirt, mini
+    : l_new : punching bag, punch bag, punching ball, punchball
+
+
+--> #  656 | c      656 | y     4.2e-01 | y_next 2.4e-01
++++ >        c_new  436 | y_new 3.2e-01 | y_old 2.9e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : minivan
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  660 | c      660 | y     9.8e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  661 | c      661 | y     1.0e+00 | y_next 3.5e-04
+    > fail | evals 10019
+
+--> #  665 | c      665 | y     4.9e-01 | y_next 1.1e-01
++++ >        c_new  762 | y_new 1.6e-01 | y_old 1.3e-01 | evals  1001
+    : changes    99 | dx1 5.8e+02 | dx2 3.9e+01
+    : l_old : moped
+    : l_new : restaurant, eating house, eating place, eatery
+
+
+--> #  666 | c      666 | y     1.3e-01 | y_next 9.3e-02
++++ >        c_new  149 | y_new 1.4e-01 | y_old 3.9e-02 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : mortar
+    : l_new : dugong, dugong dugon
+
+
+--> #  667 | c      667 | y     9.1e-01 | y_next 7.0e-02
+    > fail | evals 10019
+
+--> #  668 | c      668 | y     9.8e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  669 | c      669 | y     1.0e+00 | y_next 1.9e-04
+    > fail | evals 10019
+
+--> #  670 | c      670 | y     6.5e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  672 | c      672 | y     9.6e-01 | y_next 9.7e-03
+    > fail | evals 10019
+
+--> #  674 | c      674 | y     9.9e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  675 | c      675 | y     9.2e-01 | y_next 5.1e-02
++++ >        c_new  757 | y_new 4.2e-01 | y_old 4.1e-01 | evals  2504
+    : changes   100 | dx1 3.7e+02 | dx2 2.6e+01
+    : l_old : moving van
+    : l_new : recreational vehicle, rv, r.v.
+
+
+--> #  676 | c      676 | y     1.0e+00 | y_next 2.6e-04
+    > fail | evals 10019
+
+--> #  682 | c      682 | y     6.6e-01 | y_next 9.1e-02
++++ >        c_new  733 | y_new 1.5e-01 | y_old 8.1e-02 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.4e+01
+    : l_old : obelisk
+    : l_new : pole
+
+
+--> #  683 | c      683 | y     9.0e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  684 | c      684 | y     2.2e-01 | y_next 1.5e-01
++++ >        c_new  884 | y_new 2.0e-01 | y_old 8.7e-02 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.5e+01
+    : l_old : ocarina, sweet potato
+    : l_new : vault
+
+
+--> #  685 | c      685 | y     1.0e+00 | y_next 2.8e-05
+    > fail | evals 10019
+
+--> #  686 | c      686 | y     7.5e-01 | y_next 7.8e-02
+    > fail | evals 10019
+
+--> #  687 | c      687 | y     9.8e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  688 | c      688 | y     9.7e-01 | y_next 8.1e-03
+    > fail | evals 10019
+
+--> #  690 | c      690 | y     6.3e-01 | y_next 2.0e-01
++++ >        c_new  603 | y_new 5.2e-01 | y_old 2.7e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : oxcart
+    : l_new : horse cart, horse-cart
+
+
+--> #  693 | c      693 | y     2.3e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  694 | c      694 | y     1.0e+00 | y_next 1.9e-05
+    > fail | evals 10019
+
+--> #  695 | c      695 | y     8.7e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  697 | c      697 | y     8.5e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  698 | c      698 | y     7.5e-01 | y_next 7.6e-02
+    > fail | evals 10019
+
+--> #  699 | c      699 | y     7.3e-01 | y_next 3.9e-02
++++ >        c_new  256 | y_new 7.0e-02 | y_old 4.7e-02 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : panpipe, pandean pipe, syrinx
+    : l_new : newfoundland, newfoundland dog
+
+
+--> #  701 | c      701 | y     8.0e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  705 | c      705 | y     9.9e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  706 | c      706 | y     5.9e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  707 | c      707 | y     9.9e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  708 | c      708 | y     6.9e-01 | y_next 1.7e-01
++++ >        c_new  900 | y_new 5.2e-01 | y_old 3.0e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : pedestal, plinth, footstall
+    : l_new : water tower
+
+
+--> #  709 | c      709 | y     9.9e-01 | y_next 3.9e-03
+    > fail | evals 10019
+
+--> #  715 | c      715 | y     9.5e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  716 | c      716 | y     4.2e-01 | y_next 1.6e-01
++++ >        c_new  406 | y_new 2.5e-01 | y_old 2.4e-01 | evals  2003
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : picket fence, paling
+    : l_new : altar
+
+
+--> #  718 | c      718 | y     9.2e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  719 | c      719 | y     9.4e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  721 | c      721 | y     9.2e-01 | y_next 7.7e-03
+    > fail | evals 10019
+
+--> #  723 | c      723 | y     1.0e+00 | y_next 1.9e-04
+    > fail | evals 10019
+
+--> #  724 | c      724 | y     7.8e-01 | y_next 7.5e-02
+    > fail | evals 10019
+
+--> #  728 | c      728 | y     6.7e-01 | y_next 5.6e-02
++++ >        c_new  898 | y_new 4.1e-01 | y_old 1.7e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : plastic bag
+    : l_new : water bottle
+
+
+--> #  731 | c      731 | y     2.5e-01 | y_next 6.6e-02
+    > fail | evals 10019
+
+--> #  732 | c      732 | y     3.2e-01 | y_next 8.3e-02
++++ >        c_new  620 | y_new 1.2e-01 | y_old 5.7e-02 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : polaroid camera, polaroid land camera
+    : l_new : laptop, laptop computer
+
+
+--> #  733 | c      733 | y     9.9e-01 | y_next 6.8e-03
+    > fail | evals 10019
+
+--> #  735 | c      735 | y     5.3e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  737 | c      737 | y     9.4e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  738 | c      738 | y     7.7e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  741 | c      741 | y     9.8e-01 | y_next 4.7e-03
+    > fail | evals 10019
+
+--> #  742 | c      742 | y     2.2e-01 | y_next 1.2e-01
++++ >        c_new  754 | y_new 1.7e-01 | y_old 5.2e-02 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : printer
+    : l_new : radio, wireless
+
+
+--> #  743 | c      743 | y     4.1e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  745 | c      745 | y     1.7e-01 | y_next 1.0e-01
++++ >        c_new  468 | y_new 1.2e-01 | y_old 7.3e-03 | evals  1001
+    : changes   100 | dx1 5.5e+02 | dx2 3.8e+01
+    : l_old : projector
+    : l_new : cab, hack, taxi, taxicab
+
+
+--> #  746 | c      746 | y     1.0e+00 | y_next 1.1e-04
+    > fail | evals 10019
+
+--> #  747 | c      747 | y     9.0e-01 | y_next 3.3e-02
+    > fail | evals 10019
+
+--> #  748 | c      748 | y     7.0e-01 | y_next 2.4e-01
+    > fail | evals 10019
+
+--> #  751 | c      751 | y     5.0e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #  752 | c      752 | y     9.9e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  755 | c      755 | y     1.0e+00 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  756 | c      756 | y     2.4e-01 | y_next 1.2e-01
++++ >        c_new  897 | y_new 2.9e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 3.6e+02 | dx2 2.4e+01
+    : l_old : rain barrel
+    : l_new : washer, automatic washer, washing machine
+
+
+--> #  757 | c      757 | y     7.1e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  758 | c      758 | y     8.1e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  759 | c      759 | y     1.0e+00 | y_next 6.0e-05
+    > fail | evals 10019
+
+--> #  760 | c      760 | y     8.8e-01 | y_next 3.2e-02
++++ >        c_new  553 | y_new 6.2e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.4e+01
+    : l_old : refrigerator, icebox
+    : l_new : file, file cabinet, filing cabinet
+
+
+--> #  762 | c      762 | y     4.8e-01 | y_next 8.3e-02
+    > fail | evals 10019
+
+--> #  765 | c      765 | y     6.4e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  766 | c      766 | y     3.7e-01 | y_next 1.8e-01
++++ >        c_new  827 | y_new 2.3e-01 | y_old 2.3e-01 | evals  1001
+    : changes    99 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : rotisserie
+    : l_new : stove
+
+
+--> #  768 | c      768 | y     9.9e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  769 | c      769 | y     1.0e+00 | y_next 6.9e-04
+    > fail | evals 10019
+
+--> #  770 | c      770 | y     1.0e+00 | y_next 1.6e-04
+    > fail | evals 10019
+
+--> #  771 | c      771 | y     5.8e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  772 | c      772 | y     1.0e+00 | y_next 1.3e-06
+    > fail | evals 10019
+
+--> #  774 | c      774 | y     2.7e-01 | y_next 9.2e-02
+    > fail | evals 10019
+
+--> #  776 | c      776 | y     2.8e-01 | y_next 6.0e-02
++++ >        c_new  596 | y_new 1.3e-01 | y_old 1.8e-02 | evals  1001
+    : changes   100 | dx1 5.5e+02 | dx2 3.7e+01
+    : l_old : sax, saxophone
+    : l_new : hatchet
+
+
+--> #  777 | c      777 | y     5.5e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  778 | c      778 | y     9.0e-01 | y_next 7.8e-02
++++ >        c_new  426 | y_new 4.9e-01 | y_old 4.5e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : scale, weighing machine
+    : l_new : barometer
+
+
+--> #  781 | c      781 | y     9.9e-01 | y_next 3.0e-03
+    > fail | evals 10019
+
+--> #  783 | c      783 | y     9.9e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  787 | c      787 | y     9.1e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  789 | c      789 | y     9.5e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  790 | c      790 | y     9.0e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  791 | c      791 | y     2.6e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  794 | c      794 | y     9.5e-02 | y_next 8.8e-02
++++ >        c_new  435 | y_new 1.4e-01 | y_old 6.7e-02 | evals  1001
+    : changes   100 | dx1 3.7e+02 | dx2 2.6e+01
+    : l_old : shower curtain
+    : l_new : bathtub, bathing tub, bath, tub
+
+
+--> #  795 | c      795 | y     9.8e-01 | y_next 2.9e-03
+    > fail | evals 10019
+
+--> #  796 | c      796 | y     9.7e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  797 | c      797 | y     9.1e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  798 | c      798 | y     1.0e+00 | y_next 2.4e-05
+    > fail | evals 10019
+
+--> #  799 | c      799 | y     1.1e-01 | y_next 5.8e-02
++++ >        c_new  423 | y_new 8.6e-02 | y_old 2.8e-02 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : sliding door
+    : l_new : barber chair
+
+
+--> #  800 | c      800 | y     7.7e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  801 | c      801 | y     7.6e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  802 | c      802 | y     9.9e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  803 | c      803 | y     9.9e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #  804 | c      804 | y     6.4e-01 | y_next 1.1e-01
++++ >        c_new  438 | y_new 2.3e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.6e+01
+    : l_old : soap dispenser
+    : l_new : beaker
+
+
+--> #  805 | c      805 | y     9.7e-01 | y_next 6.9e-03
+    > fail | evals 10019
+
+--> #  806 | c      806 | y     9.6e-01 | y_next 7.2e-03
+    > fail | evals 10019
+
+--> #  809 | c      809 | y     6.4e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  811 | c      811 | y     3.7e-01 | y_next 1.8e-01
++++ >        c_new  546 | y_new 4.8e-01 | y_old 2.8e-02 | evals  1001
+    : changes   100 | dx1 5.7e+02 | dx2 3.9e+01
+    : l_old : space heater
+    : l_new : electric guitar
+
+
+--> #  812 | c      812 | y     9.9e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  814 | c      814 | y     9.9e-01 | y_next 4.6e-03
+    > fail | evals 10019
+
+--> #  816 | c      816 | y     9.6e-01 | y_next 2.3e-02
++++ >        c_new  618 | y_new 4.5e-01 | y_old 2.9e-01 | evals  1001
+    : changes    98 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : spindle
+    : l_new : ladle
+
+
+--> #  817 | c      817 | y     7.5e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  818 | c      818 | y     3.6e-01 | y_next 1.8e-01
++++ >        c_new  740 | y_new 2.2e-01 | y_old 3.7e-02 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : spotlight, spot
+    : l_new : power drill
+
+
+--> #  819 | c      819 | y     4.2e-01 | y_next 2.1e-01
++++ >        c_new  490 | y_new 2.8e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 5.3e+02 | dx2 3.6e+01
+    : l_old : stage
+    : l_new : chain mail, ring mail, mail, chain armor, chain ar
+
+
+--> #  820 | c      820 | y     6.6e-01 | y_next 1.7e-01
++++ >        c_new  547 | y_new 4.3e-01 | y_old 3.3e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : steam locomotive
+    : l_new : electric locomotive
+
+
+--> #  821 | c      821 | y     9.9e-01 | y_next 5.4e-03
+    > fail | evals 10019
+
+--> #  822 | c      822 | y     7.5e-01 | y_next 5.1e-02
++++ >        c_new  427 | y_new 2.3e-01 | y_old 1.9e-01 | evals  8015
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : steel drum
+    : l_new : barrel, cask
+
+
+--> #  823 | c      823 | y     9.9e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #  825 | c      825 | y     6.1e-01 | y_next 2.5e-01
++++ >        c_new  972 | y_new 4.2e-01 | y_old 3.1e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : stone wall
+    : l_new : cliff, drop, drop-off
+
+
+--> #  826 | c      826 | y     7.7e-01 | y_next 1.0e-01
++++ >        c_new  528 | y_new 6.0e-01 | y_old 2.7e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : stopwatch, stop watch
+    : l_new : dial telephone, dial phone
+
+
+--> #  827 | c      827 | y     8.8e-01 | y_next 6.4e-02
+    > fail | evals 10019
+
+--> #  828 | c      828 | y     9.9e-01 | y_next 3.7e-03
+    > fail | evals 10019
+
+--> #  829 | c      829 | y     8.3e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  830 | c      830 | y     3.0e-01 | y_next 8.1e-02
++++ >        c_new  491 | y_new 2.4e-01 | y_old 1.7e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : stretcher
+    : l_new : chain saw, chainsaw
+
+
+--> #  831 | c      831 | y     5.9e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  832 | c      832 | y     9.8e-01 | y_next 7.4e-03
+    > fail | evals 10019
+
+--> #  833 | c      833 | y     5.8e-01 | y_next 2.6e-01
++++ >        c_new  628 | y_new 3.9e-01 | y_old 2.9e-01 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : submarine, pigboat, sub, u-boat
+    : l_new : liner, ocean liner
+
+
+--> #  834 | c      834 | y     5.3e-01 | y_next 1.1e-01
++++ >        c_new  490 | y_new 1.3e-01 | y_old 7.2e-02 | evals  1001
+    : changes   100 | dx1 5.1e+02 | dx2 3.6e+01
+    : l_old : suit, suit of clothes
+    : l_new : chain mail, ring mail, mail, chain armor, chain ar
+
+
+--> #  835 | c      835 | y     8.6e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  839 | c      839 | y     5.9e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #  842 | c      842 | y     2.2e-01 | y_next 8.5e-02
++++ >        c_new  642 | y_new 1.7e-01 | y_old 7.5e-02 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : swimming trunks, bathing trunks
+    : l_new : marimba, xylophone
+
+
+--> #  843 | c      843 | y     9.7e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  846 | c      846 | y     1.0e+00 | y_next 4.9e-04
+    > fail | evals 10019
+
+--> #  847 | c      847 | y     9.9e-01 | y_next 7.0e-03
+    > fail | evals 10019
+
+--> #  849 | c      849 | y     5.5e-01 | y_next 2.5e-01
++++ >        c_new  725 | y_new 4.2e-01 | y_old 3.5e-01 | evals  1001
+    : changes   100 | dx1 5.8e+02 | dx2 4.0e+01
+    : l_old : teapot
+    : l_new : pitcher, ewer
+
+
+--> #  850 | c      850 | y     9.5e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  852 | c      852 | y     6.2e-01 | y_next 1.5e-01
++++ >        c_new  158 | y_new 3.1e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : tennis ball
+    : l_new : toy terrier
+
+
+--> #  853 | c      853 | y     4.3e-01 | y_next 8.4e-02
+    > fail | evals 10019
+
+--> #  854 | c      854 | y     9.9e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  856 | c      856 | y     9.2e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  858 | c      858 | y     8.8e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  859 | c      859 | y     8.7e-01 | y_next 4.3e-02
++++ >        c_new  485 | y_new 2.7e-01 | y_old 1.4e-01 | evals  1001
+    : changes   100 | dx1 5.3e+02 | dx2 3.7e+01
+    : l_old : toaster
+    : l_new : cd player
+
+
+--> #  861 | c      861 | y     9.8e-01 | y_next 5.9e-03
+    > fail | evals 10019
+
+--> #  863 | c      863 | y     1.0e+00 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  865 | c      865 | y     3.4e-01 | y_next 2.0e-01
+    > fail | evals 10019
+
+--> #  866 | c      866 | y     6.2e-01 | y_next 2.7e-01
++++ >        c_new  803 | y_new 5.0e-01 | y_old 4.1e-01 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.5e+01
+    : l_old : tractor
+    : l_new : snowplow, snowplough
+
+
+--> #  867 | c      867 | y     5.4e-01 | y_next 2.7e-01
++++ >        c_new  757 | y_new 3.1e-01 | y_old 2.8e-01 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : trailer truck, tractor trailer, trucking rig, rig,
+    : l_new : recreational vehicle, rv, r.v.
+
+
+--> #  868 | c      868 | y     4.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  869 | c      869 | y     7.2e-01 | y_next 2.5e-01
++++ >        c_new  414 | y_new 7.9e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : trench coat
+    : l_new : backpack, back pack, knapsack, packsack, rucksack,
+
+
+--> #  872 | c      872 | y     5.4e-01 | y_next 2.0e-01
+    > fail | evals 10019
+
+--> #  873 | c      873 | y     7.6e-01 | y_next 9.7e-02
+    > fail | evals 10019
+
+--> #  875 | c      875 | y     2.1e-01 | y_next 1.7e-01
++++ >        c_new  971 | y_new 8.2e-02 | y_old 1.2e-02 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : trombone
+    : l_new : bubble
+
+
+--> #  877 | c      877 | y     5.0e-01 | y_next 1.6e-01
++++ >        c_new  409 | y_new 4.7e-01 | y_old 8.0e-04 | evals  1001
+    : changes   100 | dx1 6.3e+02 | dx2 4.3e+01
+    : l_old : turnstile
+    : l_new : analog clock
+
+
+--> #  878 | c      878 | y     5.7e-01 | y_next 4.3e-01
++++ >        c_new  810 | y_new 5.9e-01 | y_old 4.1e-01 | evals  1001
+    : changes   100 | dx1 5.6e+02 | dx2 3.8e+01
+    : l_old : typewriter keyboard
+    : l_new : space bar
+
+
+--> #  881 | c      881 | y     7.5e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  882 | c      882 | y     1.4e-01 | y_next 1.1e-01
++++ >        c_new  683 | y_new 6.5e-02 | y_old 4.8e-02 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.2e+01
+    : l_old : vacuum, vacuum cleaner
+    : l_new : oboe, hautboy, hautbois
+
+
+--> #  884 | c      884 | y     8.0e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  886 | c      886 | y     9.4e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  888 | c      888 | y     1.0e+00 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  890 | c      890 | y     1.0e+00 | y_next 3.0e-06
+    > fail | evals 10019
+
+--> #  891 | c      891 | y     4.6e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  892 | c      892 | y     4.8e-01 | y_next 2.3e-01
++++ >        c_new  844 | y_new 3.7e-01 | y_old 2.2e-01 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.3e+01
+    : l_old : wall clock
+    : l_new : switch, electric switch, electrical switch
+
+
+--> #  894 | c      894 | y     3.9e-01 | y_next 1.4e-01
++++ >        c_new  648 | y_new 1.6e-01 | y_old 1.4e-01 | evals  3005
+    : changes   100 | dx1 3.6e+02 | dx2 2.4e+01
+    : l_old : wardrobe, closet, press
+    : l_new : medicine chest, medicine cabinet
+
+
+--> #  895 | c      895 | y     6.6e-01 | y_next 9.3e-02
++++ >        c_new   58 | y_new 1.7e-01 | y_old 1.4e-02 | evals  1001
+    : changes   100 | dx1 3.5e+02 | dx2 2.4e+01
+    : l_old : warplane, military plane
+    : l_new : water snake
+
+
+--> #  897 | c      897 | y     9.3e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  900 | c      900 | y     1.0e+00 | y_next 4.3e-07
+    > fail | evals 10019
+
+--> #  901 | c      901 | y     3.9e-01 | y_next 3.9e-01
++++ >        c_new  653 | y_new 7.2e-01 | y_old 9.6e-02 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 2.9e+01
+    : l_old : whiskey jug
+    : l_new : milk can
+
+
+--> #  903 | c      903 | y     5.6e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  905 | c      905 | y     9.2e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  906 | c      906 | y     8.1e-01 | y_next 6.3e-02
++++ >        c_new  617 | y_new 3.2e-01 | y_old 3.1e-01 | evals  1001
+    : changes   100 | dx1 3.7e+02 | dx2 2.5e+01
+    : l_old : windsor tie
+    : l_new : lab coat, laboratory coat
+
+
+--> #  908 | c      908 | y     9.8e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  914 | c      914 | y     3.9e-01 | y_next 3.8e-01
++++ >        c_new  724 | y_new 4.0e-01 | y_old 1.8e-01 | evals  1001
+    : changes   100 | dx1 3.5e+02 | dx2 2.4e+01
+    : l_old : yawl
+    : l_new : pirate, pirate ship
+
+
+--> #  916 | c      916 | y     1.0e+00 | y_next 2.1e-04
+    > fail | evals 10019
+
+--> #  919 | c      919 | y     4.0e-01 | y_next 7.2e-02
+    > fail | evals 10019
+
+--> #  920 | c      920 | y     1.0e+00 | y_next 8.2e-07
+    > fail | evals 10019
+
+--> #  921 | c      921 | y     9.6e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  922 | c      922 | y     8.2e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  923 | c      923 | y     9.4e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  924 | c      924 | y     8.6e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  925 | c      925 | y     9.0e-01 | y_next 3.1e-02
+    > fail | evals 10019
+
+--> #  926 | c      926 | y     2.8e-01 | y_next 1.6e-01
++++ >        c_new  941 | y_new 3.1e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : hot pot, hotpot
+    : l_new : acorn squash
+
+
+--> #  928 | c      928 | y     7.2e-01 | y_next 1.1e-01
++++ >        c_new  929 | y_new 4.4e-01 | y_old 4.0e-01 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.5e+01
+    : l_old : ice cream, icecream
+    : l_new : ice lolly, lolly, lollipop, popsicle
+
+
+--> #  930 | c      930 | y     5.3e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #  932 | c      932 | y     9.4e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  933 | c      933 | y     1.0e+00 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  934 | c      934 | y     6.0e-01 | y_next 2.4e-01
+    > fail | evals 10019
+
+--> #  935 | c      935 | y     8.8e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  936 | c      936 | y     9.6e-01 | y_next 5.6e-03
+    > fail | evals 10019
+
+--> #  937 | c      937 | y     1.0e+00 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  938 | c      938 | y     8.9e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  939 | c      939 | y     1.0e+00 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  940 | c      940 | y     1.0e+00 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  941 | c      941 | y     7.1e-01 | y_next 7.9e-02
+    > fail | evals 10019
+
+--> #  942 | c      942 | y     6.2e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  945 | c      945 | y     9.8e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  946 | c      946 | y     6.5e-01 | y_next 3.5e-01
+    > fail | evals 10019
+
+--> #  947 | c      947 | y     8.2e-01 | y_next 2.7e-02
++++ >        c_new  109 | y_new 3.1e-01 | y_old 7.2e-03 | evals  1001
+    : changes   100 | dx1 5.2e+02 | dx2 3.6e+01
+    : l_old : mushroom
+    : l_new : brain coral
+
+
+--> #  948 | c      948 | y     8.3e-01 | y_next 8.1e-02
+    > fail | evals 10019
+
+--> #  949 | c      949 | y     1.0e+00 | y_next 9.2e-06
+    > fail | evals 10019
+
+--> #  950 | c      950 | y     3.5e-01 | y_next 2.4e-01
++++ >        c_new  967 | y_new 4.8e-01 | y_old 1.2e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : orange
+    : l_new : espresso
+
+
+--> #  951 | c      951 | y     8.0e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  952 | c      952 | y     1.0e+00 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  953 | c      953 | y     9.8e-01 | y_next 3.7e-03
+    > fail | evals 10019
+
+--> #  955 | c      955 | y     7.2e-01 | y_next 4.8e-02
+    > fail | evals 10019
+
+--> #  956 | c      956 | y     9.8e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  957 | c      957 | y     1.0e+00 | y_next 2.2e-04
+    > fail | evals 10019
+
+--> #  958 | c      958 | y     9.6e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  961 | c      961 | y     1.5e-01 | y_next 8.7e-02
++++ >        c_new  910 | y_new 1.0e-01 | y_old 9.4e-02 | evals  3005
+    : changes   100 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : dough
+    : l_new : wooden spoon
+
+
+--> #  963 | c      963 | y     1.0e+00 | y_next 1.6e-05
+    > fail | evals 10019
+
+--> #  964 | c      964 | y     9.9e-01 | y_next 8.1e-03
+    > fail | evals 10019
+
+--> #  967 | c      967 | y     5.3e-01 | y_next 1.7e-01
++++ >        c_new  855 | y_new 2.9e-01 | y_old 2.4e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : espresso
+    : l_new : thimble
+
+
+--> #  968 | c      968 | y     6.7e-01 | y_next 1.1e-01
++++ >        c_new  659 | y_new 5.4e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.5e+01
+    : l_old : cup
+    : l_new : mixing bowl
+
+
+--> #  969 | c      969 | y     1.0e+00 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  973 | c      973 | y     8.0e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  974 | c      974 | y     8.7e-01 | y_next 4.9e-02
++++ >        c_new  562 | y_new 5.0e-01 | y_old 4.3e-02 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : geyser
+    : l_new : fountain
+
+
+--> #  975 | c      975 | y     4.4e-01 | y_next 3.2e-01
++++ >        c_new  977 | y_new 4.1e-01 | y_old 3.5e-01 | evals  1001
+    : changes    99 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : lakeside, lakeshore
+    : l_new : sandbar, sand bar
+
+
+--> #  977 | c      977 | y     8.9e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  980 | c      980 | y     8.2e-01 | y_next 8.9e-02
++++ >        c_new  853 | y_new 3.7e-01 | y_old 3.3e-01 | evals  9017
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : volcano
+    : l_new : thatch, thatched roof
+
+
+--> #  981 | c      981 | y     6.7e-01 | y_next 3.2e-01
+    > fail | evals 10019
+
+--> #  982 | c      982 | y     9.7e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  983 | c      983 | y     7.8e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #  984 | c      984 | y     1.0e+00 | y_next 3.3e-04
+    > fail | evals 10019
+
+--> #  985 | c      985 | y     1.0e+00 | y_next 2.1e-04
+    > fail | evals 10019
+
+--> #  986 | c      986 | y     1.0e+00 | y_next 2.5e-05
+    > fail | evals 10019
+
+--> #  989 | c      989 | y     1.0e+00 | y_next 5.6e-04
+    > fail | evals 10019
+
+--> #  990 | c      990 | y     6.9e-01 | y_next 9.3e-02
+    > fail | evals 10019
+
+--> #  992 | c      992 | y     8.5e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  993 | c      993 | y     9.9e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  994 | c      994 | y     1.0e+00 | y_next 2.8e-04
+    > fail | evals 10019
+
+--> #  995 | c      995 | y     1.0e+00 | y_next 1.0e-03
+    > fail | evals 10019
+
+--> #  996 | c      996 | y     1.0e+00 | y_next 2.7e-04
+    > fail | evals 10019
+
+Completed. Successful: 27.60% (total images 692)
+DONE ( 30497.02 sec.) 
+
+
+===================== --------------------------------------
+[2023-11-24 20-45-58] Work is finished (30513.73 sec. total)
+
+

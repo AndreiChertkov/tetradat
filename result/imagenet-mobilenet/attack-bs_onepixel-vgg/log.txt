@@ -1,0 +1,2722 @@
+[2023-11-24 12-17-25] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "mobilenet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_onepixel"
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.06 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (    13.27 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     3.40 sec.) 
+
+
+.... Start attack on images with baseline "onepixel"
+
+--> #    0 | c        0 | y     5.8e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #    1 | c        1 | y     6.0e-01 | y_next 3.8e-03
+    > fail | evals 10019
+
+--> #    2 | c        2 | y     7.1e-01 | y_next 8.6e-02
+    > fail | evals 10019
+
+--> #    3 | c        3 | y     7.9e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #    5 | c        5 | y     9.5e-01 | y_next 6.5e-03
+    > fail | evals 10019
+
+--> #    7 | c        7 | y     3.8e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #    8 | c        8 | y     3.8e-01 | y_next 3.3e-01
+    > fail | evals 10019
+
+--> #    9 | c        9 | y     9.0e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #   10 | c       10 | y     3.3e-01 | y_next 1.5e-01
++++ >        c_new   12 | y_new 3.1e-01 | y_old 8.2e-02 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : brambling, fringilla montifringilla
+    : l_new : house finch, linnet, carpodacus mexicanus
+
+
+--> #   11 | c       11 | y     7.6e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #   12 | c       12 | y     7.5e-01 | y_next 9.5e-03
+    > fail | evals 10019
+
+--> #   13 | c       13 | y     3.7e-01 | y_next 1.3e-01
++++ >        c_new   91 | y_new 1.8e-01 | y_old 9.7e-02 | evals  4508
+    : changes    99 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : junco, snowbird
+    : l_new : coucal
+
+
+--> #   14 | c       14 | y     8.9e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #   15 | c       15 | y     7.4e-01 | y_next 3.6e-03
+    > fail | evals 10019
+
+--> #   16 | c       16 | y     9.3e-01 | y_next 2.1e-03
+    > fail | evals 10019
+
+--> #   17 | c       17 | y     8.7e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #   18 | c       18 | y     7.5e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #   19 | c       19 | y     8.2e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #   20 | c       20 | y     7.6e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #   22 | c       22 | y     6.8e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #   24 | c       24 | y     7.6e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #   25 | c       25 | y     8.3e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #   26 | c       26 | y     2.9e-01 | y_next 1.3e-01
++++ >        c_new   32 | y_new 2.4e-01 | y_old 2.3e-01 | evals  5510
+    : changes   100 | dx1 4.4e+02 | dx2 3.2e+01
+    : l_old : common newt, triturus vulgaris
+    : l_new : tailed frog, bell toad, ribbed toad, tailed toad, 
+
+
+--> #   27 | c       27 | y     8.4e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #   28 | c       28 | y     7.9e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #   30 | c       30 | y     8.3e-01 | y_next 8.8e-03
+    > fail | evals 10019
+
+--> #   31 | c       31 | y     6.4e-01 | y_next 2.1e-01
+    > fail | evals 10019
+
+--> #   32 | c       32 | y     9.0e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #   34 | c       34 | y     7.9e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #   35 | c       35 | y     8.6e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #   36 | c       36 | y     5.8e-01 | y_next 7.7e-02
+    > fail | evals 10019
+
+--> #   38 | c       38 | y     6.8e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #   39 | c       39 | y     8.3e-01 | y_next 7.0e-03
+    > fail | evals 10019
+
+--> #   41 | c       41 | y     3.0e-01 | y_next 1.0e-01
++++ >        c_new   67 | y_new 1.7e-01 | y_old 9.9e-02 | evals  1001
+    : changes   100 | dx1 3.7e+02 | dx2 2.6e+01
+    : l_old : whiptail, whiptail lizard
+    : l_new : diamondback, diamondback rattlesnake, crotalus ada
+
+
+--> #   42 | c       42 | y     8.3e-01 | y_next 3.4e-02
+    > fail | evals 10019
+
+--> #   43 | c       43 | y     7.7e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #   45 | c       45 | y     8.1e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #   47 | c       47 | y     7.9e-01 | y_next 9.7e-03
+    > fail | evals 10019
+
+--> #   48 | c       48 | y     8.7e-01 | y_next 3.7e-02
+    > fail | evals 10019
+
+--> #   49 | c       49 | y     8.1e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #   51 | c       51 | y     5.6e-01 | y_next 1.6e-01
++++ >        c_new   47 | y_new 2.8e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 5.5e+02 | dx2 3.8e+01
+    : l_old : triceratops
+    : l_new : african chameleon, chamaeleo chamaeleon
+
+
+--> #   52 | c       52 | y     4.7e-01 | y_next 7.6e-02
+    > fail | evals 10019
+
+--> #   53 | c       53 | y     8.9e-01 | y_next 5.4e-03
+    > fail | evals 10019
+
+--> #   57 | c       57 | y     6.0e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #   59 | c       59 | y     6.9e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #   61 | c       61 | y     8.7e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #   62 | c       62 | y     3.6e-01 | y_next 3.3e-01
++++ >        c_new   61 | y_new 3.7e-01 | y_old 2.6e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : rock python, rock snake, python sebae
+    : l_new : boa constrictor, constrictor constrictor
+
+
+--> #   63 | c       63 | y     7.2e-01 | y_next 6.5e-02
+    > fail | evals 10019
+
+--> #   67 | c       67 | y     7.0e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #   68 | c       68 | y     3.7e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #   69 | c       69 | y     7.2e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #   70 | c       70 | y     7.2e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #   71 | c       71 | y     9.3e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #   72 | c       72 | y     4.2e-01 | y_next 2.2e-01
+    > fail | evals 10019
+
+--> #   74 | c       74 | y     6.1e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #   75 | c       75 | y     7.1e-01 | y_next 5.2e-02
+    > fail | evals 10019
+
+--> #   76 | c       76 | y     8.3e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #   77 | c       77 | y     6.1e-01 | y_next 6.2e-02
+    > fail | evals 10019
+
+--> #   78 | c       78 | y     4.6e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #   79 | c       79 | y     8.6e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #   80 | c       80 | y     7.5e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #   81 | c       81 | y     9.3e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #   82 | c       82 | y     7.9e-01 | y_next 5.4e-02
+    > fail | evals 10019
+
+--> #   84 | c       84 | y     8.1e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #   85 | c       85 | y     4.9e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #   86 | c       86 | y     5.5e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #   87 | c       87 | y     8.3e-01 | y_next 5.0e-03
+    > fail | evals 10019
+
+--> #   88 | c       88 | y     7.9e-01 | y_next 9.3e-03
+    > fail | evals 10019
+
+--> #   89 | c       89 | y     8.5e-01 | y_next 4.6e-03
+    > fail | evals 10019
+
+--> #   90 | c       90 | y     8.3e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #   91 | c       91 | y     5.9e-01 | y_next 2.3e-02
++++ >        c_new   16 | y_new 1.9e-01 | y_old 1.5e-01 | evals  4508
+    : changes   100 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : coucal
+    : l_new : bulbul
+
+
+--> #   92 | c       92 | y     9.1e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #   93 | c       93 | y     8.5e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #   94 | c       94 | y     9.0e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #   95 | c       95 | y     8.6e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #   96 | c       96 | y     5.2e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #   97 | c       97 | y     8.6e-01 | y_next 9.9e-03
+    > fail | evals 10019
+
+--> #   98 | c       98 | y     2.5e-01 | y_next 2.1e-01
++++ >        c_new  139 | y_new 2.0e-01 | y_old 1.7e-01 | evals  1001
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : red-breasted merganser, mergus serrator
+    : l_new : ruddy turnstone, arenaria interpres
+
+
+--> #   99 | c       99 | y     7.3e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  100 | c      100 | y     7.2e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  101 | c      101 | y     7.7e-01 | y_next 6.5e-02
+    > fail | evals 10019
+
+--> #  102 | c      102 | y     8.2e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  103 | c      103 | y     9.7e-01 | y_next 4.8e-03
+    > fail | evals 10019
+
+--> #  105 | c      105 | y     8.7e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  106 | c      106 | y     4.9e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  108 | c      108 | y     9.2e-01 | y_next 5.8e-03
+    > fail | evals 10019
+
+--> #  109 | c      109 | y     8.3e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  110 | c      110 | y     8.0e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  111 | c      111 | y     7.8e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  112 | c      112 | y     7.4e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  113 | c      113 | y     6.7e-01 | y_next 3.5e-02
+    > fail | evals 10019
+
+--> #  114 | c      114 | y     7.5e-01 | y_next 8.2e-03
+    > fail | evals 10019
+
+--> #  115 | c      115 | y     6.2e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  116 | c      116 | y     8.9e-01 | y_next 2.5e-03
+    > fail | evals 10019
+
+--> #  117 | c      117 | y     8.4e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  119 | c      119 | y     3.9e-01 | y_next 2.7e-01
++++ >        c_new  120 | y_new 3.0e-01 | y_old 2.9e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.0e+01
+    : l_old : rock crab, cancer irroratus
+    : l_new : fiddler crab
+
+
+--> #  120 | c      120 | y     6.6e-01 | y_next 7.8e-03
+    > fail | evals 10019
+
+--> #  121 | c      121 | y     9.0e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  123 | c      123 | y     9.1e-01 | y_next 5.8e-03
+    > fail | evals 10019
+
+--> #  124 | c      124 | y     3.6e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  125 | c      125 | y     6.0e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  126 | c      126 | y     8.8e-01 | y_next 4.7e-03
+    > fail | evals 10019
+
+--> #  127 | c      127 | y     9.1e-01 | y_next 7.2e-03
+    > fail | evals 10019
+
+--> #  128 | c      128 | y     9.3e-01 | y_next 8.3e-03
+    > fail | evals 10019
+
+--> #  129 | c      129 | y     8.6e-01 | y_next 8.4e-03
+    > fail | evals 10019
+
+--> #  130 | c      130 | y     8.3e-01 | y_next 7.8e-03
+    > fail | evals 10019
+
+--> #  131 | c      131 | y     8.2e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  132 | c      132 | y     6.0e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  133 | c      133 | y     9.5e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  135 | c      135 | y     6.3e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  136 | c      136 | y     8.3e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  137 | c      137 | y     8.7e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  138 | c      138 | y     8.5e-01 | y_next 6.2e-03
+    > fail | evals 10019
+
+--> #  139 | c      139 | y     7.3e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  140 | c      140 | y     8.9e-01 | y_next 2.5e-03
+    > fail | evals 10019
+
+--> #  141 | c      141 | y     8.6e-01 | y_next 8.8e-03
+    > fail | evals 10019
+
+--> #  142 | c      142 | y     6.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  143 | c      143 | y     3.6e-01 | y_next 8.9e-02
+    > fail | evals 10019
+
+--> #  144 | c      144 | y     9.4e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  145 | c      145 | y     7.9e-01 | y_next 9.9e-03
+    > fail | evals 10019
+
+--> #  146 | c      146 | y     6.9e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  147 | c      147 | y     7.8e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  148 | c      148 | y     7.0e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  149 | c      149 | y     9.3e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  150 | c      150 | y     8.2e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  151 | c      151 | y     8.6e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  152 | c      152 | y     4.4e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  153 | c      153 | y     6.4e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  154 | c      154 | y     8.7e-01 | y_next 3.3e-02
+    > fail | evals 10019
+
+--> #  155 | c      155 | y     6.3e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  156 | c      156 | y     4.0e-01 | y_next 3.0e-01
++++ >        c_new  218 | y_new 4.9e-01 | y_old 2.2e-01 | evals  1001
+    : changes    99 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : blenheim spaniel
+    : l_new : welsh springer spaniel
+
+
+--> #  157 | c      157 | y     8.5e-01 | y_next 9.0e-03
+    > fail | evals 10019
+
+--> #  160 | c      160 | y     5.4e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  161 | c      161 | y     8.3e-01 | y_next 3.8e-02
+    > fail | evals 10019
+
+--> #  164 | c      164 | y     5.3e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  165 | c      165 | y     8.2e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  166 | c      166 | y     7.3e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  167 | c      167 | y     6.2e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  168 | c      168 | y     3.4e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  169 | c      169 | y     6.2e-01 | y_next 5.4e-02
+    > fail | evals 10019
+
+--> #  170 | c      170 | y     5.1e-01 | y_next 4.0e-01
++++ >        c_new  177 | y_new 5.6e-01 | y_old 3.4e-01 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : irish wolfhound
+    : l_new : scottish deerhound, deerhound
+
+
+--> #  172 | c      172 | y     9.4e-01 | y_next 7.7e-03
+    > fail | evals 10019
+
+--> #  173 | c      173 | y     6.8e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  176 | c      176 | y     8.0e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  177 | c      177 | y     3.9e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  178 | c      178 | y     8.2e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  179 | c      179 | y     7.2e-01 | y_next 2.2e-01
+    > fail | evals 10019
+
+--> #  181 | c      181 | y     8.5e-01 | y_next 5.7e-03
+    > fail | evals 10019
+
+--> #  182 | c      182 | y     8.8e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  183 | c      183 | y     8.6e-01 | y_next 9.0e-03
+    > fail | evals 10019
+
+--> #  185 | c      185 | y     7.5e-01 | y_next 8.3e-02
+    > fail | evals 10019
+
+--> #  187 | c      187 | y     6.0e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  188 | c      188 | y     7.6e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  189 | c      189 | y     7.7e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  190 | c      190 | y     9.1e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  192 | c      192 | y     4.9e-01 | y_next 2.0e-01
++++ >        c_new  186 | y_new 3.5e-01 | y_old 3.4e-01 | evals  5009
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : cairn, cairn terrier
+    : l_new : norwich terrier
+
+
+--> #  194 | c      194 | y     7.7e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  195 | c      195 | y     7.4e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  196 | c      196 | y     7.8e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  197 | c      197 | y     7.1e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  198 | c      198 | y     5.1e-01 | y_next 3.5e-01
++++ >        c_new  196 | y_new 4.9e-01 | y_old 3.8e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : standard schnauzer
+    : l_new : miniature schnauzer
+
+
+--> #  199 | c      199 | y     8.3e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  200 | c      200 | y     9.3e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  201 | c      201 | y     8.7e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  202 | c      202 | y     6.3e-01 | y_next 3.8e-02
+    > fail | evals 10019
+
+--> #  203 | c      203 | y     4.5e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  205 | c      205 | y     4.3e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  207 | c      207 | y     5.7e-01 | y_next 3.5e-02
+    > fail | evals 10019
+
+--> #  208 | c      208 | y     7.6e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  209 | c      209 | y     4.8e-01 | y_next 3.1e-01
++++ >        c_new  208 | y_new 5.4e-01 | y_old 2.6e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : chesapeake bay retriever
+    : l_new : labrador retriever
+
+
+--> #  210 | c      210 | y     7.8e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  211 | c      211 | y     5.1e-01 | y_next 1.7e-01
++++ >        c_new  209 | y_new 3.7e-01 | y_old 2.8e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.2e+01
+    : l_old : vizsla, hungarian pointer
+    : l_new : chesapeake bay retriever
+
+
+--> #  213 | c      213 | y     8.0e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  214 | c      214 | y     9.3e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  216 | c      216 | y     8.1e-01 | y_next 6.4e-03
+    > fail | evals 10019
+
+--> #  217 | c      217 | y     9.0e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  218 | c      218 | y     6.9e-01 | y_next 5.9e-02
+    > fail | evals 10019
+
+--> #  219 | c      219 | y     9.4e-01 | y_next 6.6e-03
+    > fail | evals 10019
+
+--> #  220 | c      220 | y     8.4e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  221 | c      221 | y     8.6e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  222 | c      222 | y     8.3e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  223 | c      223 | y     4.3e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  224 | c      224 | y     7.3e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  225 | c      225 | y     6.8e-01 | y_next 5.2e-02
+    > fail | evals 10019
+
+--> #  226 | c      226 | y     5.1e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  227 | c      227 | y     5.3e-01 | y_next 5.4e-02
+    > fail | evals 10019
+
+--> #  228 | c      228 | y     8.4e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  229 | c      229 | y     5.8e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  232 | c      232 | y     7.9e-01 | y_next 7.8e-02
+    > fail | evals 10019
+
+--> #  233 | c      233 | y     2.8e-01 | y_next 2.7e-01
++++ >        c_new  197 | y_new 1.3e-01 | y_old 1.2e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : bouvier des flandres, bouviers des flandres
+    : l_new : giant schnauzer
+
+
+--> #  234 | c      234 | y     8.3e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  235 | c      235 | y     8.4e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  236 | c      236 | y     6.1e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  237 | c      237 | y     7.9e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  238 | c      238 | y     5.2e-01 | y_next 2.4e-01
+    > fail | evals 10019
+
+--> #  241 | c      241 | y     2.3e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  242 | c      242 | y     8.4e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  243 | c      243 | y     4.2e-01 | y_next 3.9e-01
++++ >        c_new  254 | y_new 6.9e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 3.0e+01
+    : l_old : bull mastiff
+    : l_new : pug, pug-dog
+
+
+--> #  244 | c      244 | y     8.0e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  245 | c      245 | y     7.5e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  246 | c      246 | y     3.6e-01 | y_next 7.6e-02
+    > fail | evals 10019
+
+--> #  247 | c      247 | y     7.9e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  248 | c      248 | y     4.5e-01 | y_next 3.6e-01
+    > fail | evals 10019
+
+--> #  249 | c      249 | y     2.8e-01 | y_next 1.5e-01
++++ >        c_new  174 | y_new 2.9e-01 | y_old 1.8e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : malamute, malemute, alaskan malamute
+    : l_new : norwegian elkhound, elkhound
+
+
+--> #  251 | c      251 | y     8.1e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  252 | c      252 | y     5.9e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  253 | c      253 | y     6.8e-01 | y_next 3.8e-02
+    > fail | evals 10019
+
+--> #  254 | c      254 | y     6.4e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  255 | c      255 | y     9.1e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  256 | c      256 | y     6.0e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  257 | c      257 | y     3.2e-01 | y_next 2.4e-01
++++ >        c_new  258 | y_new 3.2e-01 | y_old 2.3e-01 | evals  3506
+    : changes   100 | dx1 4.4e+02 | dx2 3.0e+01
+    : l_old : great pyrenees
+    : l_new : samoyed, samoyede
+
+
+--> #  258 | c      258 | y     4.1e-01 | y_next 2.1e-01
++++ >        c_new  279 | y_new 2.1e-01 | y_old 1.5e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 2.9e+01
+    : l_old : samoyed, samoyede
+    : l_new : arctic fox, white fox, alopex lagopus
+
+
+--> #  259 | c      259 | y     8.7e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  260 | c      260 | y     4.9e-01 | y_next 1.7e-01
++++ >        c_new  258 | y_new 3.5e-01 | y_old 3.3e-01 | evals  2003
+    : changes   100 | dx1 4.0e+02 | dx2 2.9e+01
+    : l_old : chow, chow chow
+    : l_new : samoyed, samoyede
+
+
+--> #  261 | c      261 | y     6.5e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  262 | c      262 | y     8.9e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  263 | c      263 | y     8.5e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  264 | c      264 | y     8.1e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  266 | c      266 | y     2.3e-01 | y_next 2.1e-01
++++ >        c_new  221 | y_new 2.7e-01 | y_old 1.7e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : miniature poodle
+    : l_new : irish water spaniel
+
+
+--> #  268 | c      268 | y     8.5e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  269 | c      269 | y     6.7e-01 | y_next 7.7e-02
+    > fail | evals 10019
+
+--> #  270 | c      270 | y     8.2e-01 | y_next 6.1e-02
+    > fail | evals 10019
+
+--> #  271 | c      271 | y     9.4e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  273 | c      273 | y     3.6e-01 | y_next 9.1e-02
++++ >        c_new  286 | y_new 2.2e-01 | y_old 2.2e-01 | evals  1502
+    : changes    99 | dx1 4.0e+02 | dx2 2.9e+01
+    : l_old : dingo, warrigal, warragal, canis dingo
+    : l_new : cougar, puma, catamount, mountain lion, painter, p
+
+
+--> #  274 | c      274 | y     7.6e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  275 | c      275 | y     7.3e-01 | y_next 8.5e-02
+    > fail | evals 10019
+
+--> #  276 | c      276 | y     6.8e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  277 | c      277 | y     5.0e-01 | y_next 7.7e-02
++++ >        c_new  104 | y_new 1.7e-01 | y_old 1.6e-01 | evals  6011
+    : changes   100 | dx1 5.2e+02 | dx2 3.6e+01
+    : l_old : red fox, vulpes vulpes
+    : l_new : wallaby, brush kangaroo
+
+
+--> #  279 | c      279 | y     9.7e-01 | y_next 8.2e-03
+    > fail | evals 10019
+
+--> #  280 | c      280 | y     8.6e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  283 | c      283 | y     5.3e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  284 | c      284 | y     7.6e-01 | y_next 3.9e-03
+    > fail | evals 10019
+
+--> #  285 | c      285 | y     6.3e-01 | y_next 8.0e-02
+    > fail | evals 10019
+
+--> #  286 | c      286 | y     4.2e-01 | y_next 1.6e-01
++++ >        c_new  299 | y_new 5.3e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : cougar, puma, catamount, mountain lion, painter, p
+    : l_new : meerkat, mierkat
+
+
+--> #  287 | c      287 | y     6.6e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  288 | c      288 | y     9.3e-01 | y_next 6.9e-03
+    > fail | evals 10019
+
+--> #  289 | c      289 | y     7.5e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  292 | c      292 | y     6.5e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  293 | c      293 | y     6.4e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  294 | c      294 | y     8.8e-01 | y_next 7.8e-03
+    > fail | evals 10019
+
+--> #  295 | c      295 | y     7.6e-01 | y_next 7.5e-02
+    > fail | evals 10019
+
+--> #  296 | c      296 | y     7.6e-01 | y_next 6.2e-03
+    > fail | evals 10019
+
+--> #  297 | c      297 | y     9.2e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  298 | c      298 | y     7.7e-01 | y_next 4.3e-02
+    > fail | evals 10019
+
+--> #  299 | c      299 | y     7.4e-01 | y_next 6.7e-02
+    > fail | evals 10019
+
+--> #  300 | c      300 | y     8.2e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  301 | c      301 | y     5.9e-01 | y_next 2.2e-01
+    > fail | evals 10019
+
+--> #  302 | c      302 | y     8.1e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  303 | c      303 | y     7.1e-01 | y_next 5.5e-02
+    > fail | evals 10019
+
+--> #  304 | c      304 | y     5.4e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  305 | c      305 | y     1.8e-01 | y_next 1.5e-01
++++ >        c_new  302 | y_new 1.6e-01 | y_old 9.9e-02 | evals  1001
+    : changes    99 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : dung beetle
+    : l_new : ground beetle, carabid beetle
+
+
+--> #  306 | c      306 | y     8.1e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  307 | c      307 | y     6.5e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  308 | c      308 | y     5.5e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  309 | c      309 | y     8.2e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  310 | c      310 | y     6.3e-01 | y_next 4.7e-02
+    > fail | evals 10019
+
+--> #  312 | c      312 | y     9.0e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  313 | c      313 | y     7.1e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  314 | c      314 | y     3.1e-01 | y_next 1.7e-01
++++ >        c_new  464 | y_new 2.6e-01 | y_old 1.2e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : cockroach, roach
+    : l_new : buckle
+
+
+--> #  317 | c      317 | y     6.7e-01 | y_next 5.2e-02
+    > fail | evals 10019
+
+--> #  318 | c      318 | y     9.0e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  321 | c      321 | y     8.2e-01 | y_next 7.0e-03
+    > fail | evals 10019
+
+--> #  322 | c      322 | y     7.8e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  323 | c      323 | y     8.3e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  324 | c      324 | y     7.5e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  325 | c      325 | y     6.9e-01 | y_next 6.8e-02
+    > fail | evals 10019
+
+--> #  327 | c      327 | y     7.4e-01 | y_next 6.8e-03
+    > fail | evals 10019
+
+--> #  328 | c      328 | y     6.7e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  329 | c      329 | y     8.4e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  330 | c      330 | y     8.2e-01 | y_next 6.2e-02
+    > fail | evals 10019
+
+--> #  331 | c      331 | y     7.4e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  332 | c      332 | y     6.7e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  333 | c      333 | y     6.1e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  334 | c      334 | y     3.7e-01 | y_next 1.6e-01
++++ >        c_new  337 | y_new 4.0e-01 | y_old 1.1e-01 | evals  1001
+    : changes    99 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : porcupine, hedgehog
+    : l_new : beaver
+
+
+--> #  335 | c      335 | y     8.9e-01 | y_next 9.3e-03
+    > fail | evals 10019
+
+--> #  336 | c      336 | y     9.7e-01 | y_next 8.0e-04
+    > fail | evals 10019
+
+--> #  337 | c      337 | y     6.6e-01 | y_next 6.8e-02
+    > fail | evals 10019
+
+--> #  338 | c      338 | y     7.7e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  339 | c      339 | y     8.8e-01 | y_next 7.1e-03
+    > fail | evals 10019
+
+--> #  340 | c      340 | y     7.3e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  341 | c      341 | y     7.2e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  343 | c      343 | y     5.9e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  344 | c      344 | y     9.3e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  345 | c      345 | y     7.5e-01 | y_next 8.0e-02
+    > fail | evals 10019
+
+--> #  346 | c      346 | y     8.9e-01 | y_next 7.8e-03
+    > fail | evals 10019
+
+--> #  347 | c      347 | y     3.9e-01 | y_next 1.7e-01
++++ >        c_new  350 | y_new 2.9e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 3.7e+02 | dx2 2.6e+01
+    : l_old : bison
+    : l_new : ibex, capra ibex
+
+
+--> #  348 | c      348 | y     9.1e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  349 | c      349 | y     4.8e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  350 | c      350 | y     7.5e-01 | y_next 4.8e-02
+    > fail | evals 10019
+
+--> #  351 | c      351 | y     4.4e-01 | y_next 3.0e-01
++++ >        c_new  352 | y_new 3.2e-01 | y_old 3.0e-01 | evals  3005
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : hartebeest
+    : l_new : impala, aepyceros melampus
+
+
+--> #  352 | c      352 | y     8.5e-01 | y_next 4.2e-02
+    > fail | evals 10019
+
+--> #  353 | c      353 | y     6.0e-01 | y_next 2.5e-01
+    > fail | evals 10019
+
+--> #  354 | c      354 | y     3.9e-01 | y_next 8.9e-02
+    > fail | evals 10019
+
+--> #  355 | c      355 | y     6.8e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  357 | c      357 | y     4.0e-01 | y_next 5.9e-02
+    > fail | evals 10019
+
+--> #  359 | c      359 | y     4.8e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  360 | c      360 | y     5.9e-01 | y_next 7.5e-02
+    > fail | evals 10019
+
+--> #  361 | c      361 | y     4.2e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  362 | c      362 | y     8.7e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  363 | c      363 | y     5.3e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  364 | c      364 | y     7.7e-01 | y_next 6.2e-03
+    > fail | evals 10019
+
+--> #  365 | c      365 | y     8.0e-01 | y_next 6.4e-03
+    > fail | evals 10019
+
+--> #  367 | c      367 | y     3.2e-01 | y_next 1.8e-01
++++ >        c_new  366 | y_new 2.6e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : chimpanzee, chimp, pan troglodytes
+    : l_new : gorilla, gorilla gorilla
+
+
+--> #  368 | c      368 | y     6.8e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  369 | c      369 | y     7.7e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  370 | c      370 | y     8.1e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  371 | c      371 | y     6.8e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  372 | c      372 | y     5.9e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #  373 | c      373 | y     7.8e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  374 | c      374 | y     3.9e-01 | y_next 1.2e-01
++++ >        c_new  383 | y_new 2.6e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.6e+01
+    : l_old : langur
+    : l_new : madagascar cat, ring-tailed lemur, lemur catta
+
+
+--> #  376 | c      376 | y     7.4e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  377 | c      377 | y     7.3e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  378 | c      378 | y     6.8e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  379 | c      379 | y     7.9e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  381 | c      381 | y     9.4e-01 | y_next 8.3e-03
+    > fail | evals 10019
+
+--> #  382 | c      382 | y     7.0e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  383 | c      383 | y     8.8e-01 | y_next 5.6e-03
+    > fail | evals 10019
+
+--> #  385 | c      385 | y     7.3e-01 | y_next 6.3e-02
+    > fail | evals 10019
+
+--> #  386 | c      386 | y     8.1e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  387 | c      387 | y     9.0e-01 | y_next 2.9e-03
+    > fail | evals 10019
+
+--> #  388 | c      388 | y     7.5e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  389 | c      389 | y     7.0e-01 | y_next 7.8e-02
+    > fail | evals 10019
+
+--> #  391 | c      391 | y     7.3e-01 | y_next 4.7e-02
+    > fail | evals 10019
+
+--> #  392 | c      392 | y     7.5e-01 | y_next 5.5e-03
+    > fail | evals 10019
+
+--> #  393 | c      393 | y     4.8e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  394 | c      394 | y     8.7e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  397 | c      397 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  398 | c      398 | y     8.2e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  399 | c      399 | y     8.4e-01 | y_next 8.3e-03
+    > fail | evals 10019
+
+--> #  400 | c      400 | y     7.0e-01 | y_next 6.4e-02
+    > fail | evals 10019
+
+--> #  402 | c      402 | y     7.5e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  403 | c      403 | y     7.8e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  404 | c      404 | y     8.6e-01 | y_next 6.8e-02
+    > fail | evals 10019
+
+--> #  405 | c      405 | y     9.8e-01 | y_next 3.1e-04
+    > fail | evals 10019
+
+--> #  406 | c      406 | y     3.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  407 | c      407 | y     8.0e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  408 | c      408 | y     4.3e-01 | y_next 6.7e-02
+    > fail | evals 10019
+
+--> #  410 | c      410 | y     6.9e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  411 | c      411 | y     6.1e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  412 | c      412 | y     5.3e-01 | y_next 4.2e-02
+    > fail | evals 10019
+
+--> #  414 | c      414 | y     7.9e-01 | y_next 6.6e-02
++++ >        c_new  732 | y_new 1.7e-01 | y_old 7.1e-02 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.3e+01
+    : l_old : backpack, back pack, knapsack, packsack, rucksack,
+    : l_new : polaroid camera, polaroid land camera
+
+
+--> #  415 | c      415 | y     5.9e-01 | y_next 5.5e-02
+    > fail | evals 10019
+
+--> #  416 | c      416 | y     6.4e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  417 | c      417 | y     7.2e-01 | y_next 9.8e-03
+    > fail | evals 10019
+
+--> #  418 | c      418 | y     3.5e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  419 | c      419 | y     9.4e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  420 | c      420 | y     8.8e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  421 | c      421 | y     5.1e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #  422 | c      422 | y     4.5e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  423 | c      423 | y     7.6e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  425 | c      425 | y     9.1e-01 | y_next 4.7e-03
+    > fail | evals 10019
+
+--> #  426 | c      426 | y     1.9e-01 | y_next 1.1e-01
++++ >        c_new  769 | y_new 2.3e-01 | y_old 7.5e-02 | evals  1001
+    : changes   100 | dx1 5.4e+02 | dx2 3.8e+01
+    : l_old : barometer
+    : l_new : rule, ruler
+
+
+--> #  428 | c      428 | y     9.0e-01 | y_next 5.6e-03
+    > fail | evals 10019
+
+--> #  429 | c      429 | y     6.8e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  430 | c      430 | y     5.3e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  431 | c      431 | y     8.9e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  432 | c      432 | y     8.3e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  433 | c      433 | y     9.6e-01 | y_next 4.3e-03
+    > fail | evals 10019
+
+--> #  434 | c      434 | y     7.3e-01 | y_next 5.2e-02
+    > fail | evals 10019
+
+--> #  436 | c      436 | y     9.1e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  437 | c      437 | y     6.9e-01 | y_next 6.3e-02
+    > fail | evals 10019
+
+--> #  439 | c      439 | y     7.9e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  440 | c      440 | y     4.3e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  441 | c      441 | y     3.0e-01 | y_next 7.9e-02
+    > fail | evals 10019
+
+--> #  443 | c      443 | y     7.8e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  444 | c      444 | y     9.0e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #  445 | c      445 | y     4.3e-01 | y_next 2.3e-01
++++ >        c_new  459 | y_new 3.9e-01 | y_old 3.4e-01 | evals  2003
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : bikini, two-piece
+    : l_new : brassiere, bra, bandeau
+
+
+--> #  447 | c      447 | y     5.1e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  448 | c      448 | y     9.1e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  449 | c      449 | y     6.0e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  450 | c      450 | y     4.1e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  451 | c      451 | y     6.3e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  452 | c      452 | y     9.3e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  453 | c      453 | y     7.5e-01 | y_next 8.2e-02
+    > fail | evals 10019
+
+--> #  454 | c      454 | y     7.3e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  455 | c      455 | y     3.0e-01 | y_next 2.5e-01
++++ >        c_new  855 | y_new 3.0e-01 | y_old 1.5e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : bottlecap
+    : l_new : thimble
+
+
+--> #  459 | c      459 | y     2.7e-01 | y_next 1.5e-01
++++ >        c_new  639 | y_new 2.4e-01 | y_old 5.3e-02 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : brassiere, bra, bandeau
+    : l_new : maillot, tank suit
+
+
+--> #  460 | c      460 | y     7.9e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  461 | c      461 | y     6.0e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  462 | c      462 | y     3.8e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  463 | c      463 | y     7.8e-01 | y_next 9.0e-02
+    > fail | evals 10019
+
+--> #  464 | c      464 | y     6.9e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  465 | c      465 | y     8.6e-01 | y_next 6.3e-03
+    > fail | evals 10019
+
+--> #  466 | c      466 | y     9.0e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  467 | c      467 | y     4.8e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  468 | c      468 | y     9.3e-01 | y_next 6.0e-03
+    > fail | evals 10019
+
+--> #  469 | c      469 | y     2.9e-01 | y_next 6.1e-02
+    > fail | evals 10019
+
+--> #  470 | c      470 | y     9.5e-01 | y_next 7.7e-03
+    > fail | evals 10019
+
+--> #  471 | c      471 | y     5.9e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  472 | c      472 | y     7.2e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  473 | c      473 | y     7.1e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  475 | c      475 | y     4.4e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  478 | c      478 | y     7.8e-01 | y_next 9.3e-03
+    > fail | evals 10019
+
+--> #  479 | c      479 | y     7.9e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  480 | c      480 | y     7.4e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  481 | c      481 | y     7.3e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  483 | c      483 | y     8.0e-01 | y_next 7.5e-03
+    > fail | evals 10019
+
+--> #  484 | c      484 | y     6.0e-01 | y_next 2.7e-01
+    > fail | evals 10019
+
+--> #  485 | c      485 | y     6.8e-01 | y_next 2.8e-02
++++ >        c_new  528 | y_new 1.7e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.5e+01
+    : l_old : cd player
+    : l_new : dial telephone, dial phone
+
+
+--> #  488 | c      488 | y     2.6e-01 | y_next 8.1e-02
+    > fail | evals 10019
+
+--> #  489 | c      489 | y     8.2e-01 | y_next 9.1e-03
+    > fail | evals 10019
+
+--> #  490 | c      490 | y     6.5e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  492 | c      492 | y     7.1e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  493 | c      493 | y     7.9e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  494 | c      494 | y     9.2e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  495 | c      495 | y     7.9e-01 | y_next 5.6e-03
+    > fail | evals 10019
+
+--> #  496 | c      496 | y     8.7e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #  497 | c      497 | y     6.2e-01 | y_next 7.9e-02
+    > fail | evals 10019
+
+--> #  498 | c      498 | y     2.9e-01 | y_next 2.3e-01
++++ >        c_new  424 | y_new 2.9e-01 | y_old 2.8e-01 | evals  5009
+    : changes    99 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : cinema, movie theater, movie theatre, movie house,
+    : l_new : barbershop
+
+
+--> #  500 | c      500 | y     6.8e-01 | y_next 4.7e-02
+    > fail | evals 10019
+
+--> #  503 | c      503 | y     6.7e-01 | y_next 6.7e-02
+    > fail | evals 10019
+
+--> #  504 | c      504 | y     7.8e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  505 | c      505 | y     3.0e-01 | y_next 2.4e-01
++++ >        c_new  504 | y_new 2.6e-01 | y_old 2.0e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.0e+01
+    : l_old : coffeepot
+    : l_new : coffee mug
+
+
+--> #  506 | c      506 | y     5.7e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  507 | c      507 | y     9.0e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  508 | c      508 | y     4.0e-01 | y_next 2.0e-01
+    > fail | evals 10019
+
+--> #  510 | c      510 | y     7.0e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  511 | c      511 | y     8.2e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  512 | c      512 | y     4.4e-01 | y_next 8.9e-02
+    > fail | evals 10019
+
+--> #  513 | c      513 | y     3.3e-01 | y_next 2.5e-01
++++ >        c_new  566 | y_new 3.2e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.5e+01
+    : l_old : cornet, horn, trumpet, trump
+    : l_new : french horn, horn
+
+
+--> #  514 | c      514 | y     6.8e-01 | y_next 9.5e-03
+    > fail | evals 10019
+
+--> #  515 | c      515 | y     3.6e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  516 | c      516 | y     9.2e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  518 | c      518 | y     9.2e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  521 | c      521 | y     2.9e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  522 | c      522 | y     7.7e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  523 | c      523 | y     7.0e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  524 | c      524 | y     5.8e-01 | y_next 2.5e-01
+    > fail | evals 10019
+
+--> #  525 | c      525 | y     9.8e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  526 | c      526 | y     4.2e-01 | y_next 5.9e-02
+    > fail | evals 10019
+
+--> #  527 | c      527 | y     2.8e-01 | y_next 2.5e-01
++++ >        c_new  664 | y_new 2.5e-01 | y_old 2.2e-01 | evals  1001
+    : changes   100 | dx1 5.2e+02 | dx2 3.5e+01
+    : l_old : desktop computer
+    : l_new : monitor
+
+
+--> #  528 | c      528 | y     6.4e-01 | y_next 8.0e-02
+    > fail | evals 10019
+
+--> #  530 | c      530 | y     6.8e-01 | y_next 7.0e-02
+    > fail | evals 10019
+
+--> #  532 | c      532 | y     7.9e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  533 | c      533 | y     8.8e-01 | y_next 3.0e-03
+    > fail | evals 10019
+
+--> #  535 | c      535 | y     8.5e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  536 | c      536 | y     4.3e-01 | y_next 6.5e-02
+    > fail | evals 10019
+
+--> #  537 | c      537 | y     7.0e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  538 | c      538 | y     7.0e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  539 | c      539 | y     7.6e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  540 | c      540 | y     3.2e-01 | y_next 6.0e-02
++++ >        c_new  403 | y_new 1.7e-01 | y_old 1.5e-01 | evals  3005
+    : changes   100 | dx1 3.4e+02 | dx2 2.4e+01
+    : l_old : drilling platform, offshore rig
+    : l_new : aircraft carrier, carrier, flattop, attack aircraf
+
+
+--> #  541 | c      541 | y     8.8e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  542 | c      542 | y     9.3e-01 | y_next 4.2e-02
+    > fail | evals 10019
+
+--> #  543 | c      543 | y     9.1e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  544 | c      544 | y     5.2e-01 | y_next 6.3e-02
+    > fail | evals 10019
+
+--> #  545 | c      545 | y     5.7e-01 | y_next 7.8e-02
+    > fail | evals 10019
+
+--> #  546 | c      546 | y     6.1e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  547 | c      547 | y     6.5e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  548 | c      548 | y     6.5e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  549 | c      549 | y     5.1e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  550 | c      550 | y     8.3e-01 | y_next 8.2e-03
+    > fail | evals 10019
+
+--> #  551 | c      551 | y     8.4e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  552 | c      552 | y     8.0e-01 | y_next 5.7e-03
+    > fail | evals 10019
+
+--> #  553 | c      553 | y     7.4e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  554 | c      554 | y     7.6e-01 | y_next 6.6e-03
+    > fail | evals 10019
+
+--> #  555 | c      555 | y     3.0e-01 | y_next 2.9e-01
++++ >        c_new  661 | y_new 3.2e-01 | y_old 2.7e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : fire engine, fire truck
+    : l_new : model t
+
+
+--> #  557 | c      557 | y     9.3e-01 | y_next 4.1e-03
+    > fail | evals 10019
+
+--> #  558 | c      558 | y     8.0e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  559 | c      559 | y     5.9e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  560 | c      560 | y     5.6e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #  561 | c      561 | y     6.3e-01 | y_next 4.7e-02
+    > fail | evals 10019
+
+--> #  564 | c      564 | y     3.3e-01 | y_next 3.3e-01
++++ >        c_new  669 | y_new 3.3e-01 | y_old 3.1e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : four-poster
+    : l_new : mosquito net
+
+
+--> #  565 | c      565 | y     8.0e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  566 | c      566 | y     7.8e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  567 | c      567 | y     5.4e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  569 | c      569 | y     6.4e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  570 | c      570 | y     8.2e-01 | y_next 1.0e-01
++++ >        c_new  828 | y_new 4.3e-01 | y_old 3.7e-01 | evals  8516
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : gasmask, respirator, gas helmet
+    : l_new : strainer
+
+
+--> #  571 | c      571 | y     8.7e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  572 | c      572 | y     8.5e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  573 | c      573 | y     5.3e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  574 | c      574 | y     8.4e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  575 | c      575 | y     7.5e-01 | y_next 6.8e-03
+    > fail | evals 10019
+
+--> #  576 | c      576 | y     8.9e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  577 | c      577 | y     6.7e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  578 | c      578 | y     5.7e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  579 | c      579 | y     7.6e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  580 | c      580 | y     5.3e-01 | y_next 7.6e-02
+    > fail | evals 10019
+
+--> #  581 | c      581 | y     2.6e-01 | y_next 2.2e-01
++++ >        c_new  436 | y_new 2.5e-01 | y_old 2.2e-01 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.8e+01
+    : l_old : grille, radiator grille
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  582 | c      582 | y     5.4e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #  583 | c      583 | y     8.5e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  584 | c      584 | y     3.9e-01 | y_next 9.5e-02
+    > fail | evals 10019
+
+--> #  585 | c      585 | y     8.0e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  586 | c      586 | y     4.8e-01 | y_next 4.8e-02
+    > fail | evals 10019
+
+--> #  588 | c      588 | y     8.4e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  589 | c      589 | y     9.2e-01 | y_next 6.7e-03
+    > fail | evals 10019
+
+--> #  590 | c      590 | y     8.1e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  592 | c      592 | y     8.1e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  593 | c      593 | y     9.3e-01 | y_next 8.4e-03
+    > fail | evals 10019
+
+--> #  595 | c      595 | y     8.1e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  597 | c      597 | y     9.5e-01 | y_next 3.9e-03
+    > fail | evals 10019
+
+--> #  600 | c      600 | y     6.5e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  601 | c      601 | y     6.0e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  602 | c      602 | y     4.8e-01 | y_next 3.0e-01
+    > fail | evals 10019
+
+--> #  603 | c      603 | y     8.2e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  604 | c      604 | y     8.5e-01 | y_next 8.7e-04
+    > fail | evals 10019
+
+--> #  605 | c      605 | y     8.7e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  606 | c      606 | y     9.4e-01 | y_next 3.9e-03
+    > fail | evals 10019
+
+--> #  607 | c      607 | y     7.7e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  608 | c      608 | y     5.8e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  609 | c      609 | y     2.2e-01 | y_next 1.7e-01
++++ >        c_new  656 | y_new 2.0e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.1e+01
+    : l_old : jeep, landrover
+    : l_new : minivan
+
+
+--> #  610 | c      610 | y     8.7e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  611 | c      611 | y     8.4e-01 | y_next 8.2e-04
+    > fail | evals 10019
+
+--> #  612 | c      612 | y     6.3e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  615 | c      615 | y     6.9e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  616 | c      616 | y     7.9e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  617 | c      617 | y     2.0e-01 | y_next 3.4e-02
+    > fail | evals 10019
+
+--> #  618 | c      618 | y     9.9e-01 | y_next 7.3e-04
+    > fail | evals 10019
+
+--> #  620 | c      620 | y     6.3e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  621 | c      621 | y     3.8e-01 | y_next 1.5e-01
++++ >        c_new  866 | y_new 2.4e-01 | y_old 2.2e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : lawn mower, mower
+    : l_new : tractor
+
+
+--> #  622 | c      622 | y     8.1e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  624 | c      624 | y     7.4e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  625 | c      625 | y     8.5e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  627 | c      627 | y     9.4e-01 | y_next 8.6e-03
+    > fail | evals 10019
+
+--> #  628 | c      628 | y     8.0e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  629 | c      629 | y     8.4e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  630 | c      630 | y     8.4e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  632 | c      632 | y     7.7e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  633 | c      633 | y     8.5e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  634 | c      634 | y     7.6e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  635 | c      635 | y     3.8e-01 | y_next 2.0e-01
++++ >        c_new  826 | y_new 2.9e-01 | y_old 2.8e-01 | evals  2504
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : magnetic compass
+    : l_new : stopwatch, stop watch
+
+
+--> #  636 | c      636 | y     2.6e-01 | y_next 2.1e-01
++++ >        c_new  790 | y_new 3.0e-01 | y_old 1.7e-01 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : mailbag, postbag
+    : l_new : shopping basket
+
+
+--> #  637 | c      637 | y     8.7e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  640 | c      640 | y     7.4e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  642 | c      642 | y     6.9e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  643 | c      643 | y     4.9e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  645 | c      645 | y     8.6e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  647 | c      647 | y     1.4e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  648 | c      648 | y     7.9e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  649 | c      649 | y     4.6e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  650 | c      650 | y     4.9e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  651 | c      651 | y     9.4e-01 | y_next 8.4e-03
+    > fail | evals 10019
+
+--> #  652 | c      652 | y     8.8e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  653 | c      653 | y     6.9e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  654 | c      654 | y     3.6e-01 | y_next 1.3e-01
++++ >        c_new  436 | y_new 2.6e-01 | y_old 2.3e-01 | evals  4508
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : minibus
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  655 | c      655 | y     4.4e-01 | y_next 1.2e-01
++++ >        c_new  851 | y_new 3.2e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.6e+01
+    : l_old : miniskirt, mini
+    : l_new : television, television system
+
+
+--> #  656 | c      656 | y     7.9e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  657 | c      657 | y     3.4e-01 | y_next 2.7e-01
+    > fail | evals 10019
+
+--> #  660 | c      660 | y     5.9e-01 | y_next 7.2e-03
+    > fail | evals 10019
+
+--> #  661 | c      661 | y     6.5e-01 | y_next 7.4e-02
+    > fail | evals 10019
+
+--> #  665 | c      665 | y     8.6e-01 | y_next 5.9e-02
+    > fail | evals 10019
+
+--> #  666 | c      666 | y     7.9e-01 | y_next 3.3e-02
+    > fail | evals 10019
+
+--> #  667 | c      667 | y     8.3e-01 | y_next 9.8e-02
+    > fail | evals 10019
+
+--> #  668 | c      668 | y     8.5e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  669 | c      669 | y     9.3e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  670 | c      670 | y     5.9e-01 | y_next 2.2e-01
+    > fail | evals 10019
+
+--> #  672 | c      672 | y     1.8e-01 | y_next 1.4e-01
++++ >        c_new  349 | y_new 1.8e-01 | y_old 7.7e-02 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : mountain tent
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+
+--> #  674 | c      674 | y     6.6e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  675 | c      675 | y     6.9e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #  676 | c      676 | y     9.8e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  680 | c      680 | y     4.6e-01 | y_next 4.5e-01
++++ >        c_new  731 | y_new 6.6e-01 | y_old 2.8e-01 | evals  1001
+    : changes   100 | dx1 5.1e+02 | dx2 3.5e+01
+    : l_old : nipple
+    : l_new : plunger, plumber`s helper
+
+
+--> #  681 | c      681 | y     5.3e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  682 | c      682 | y     6.8e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  683 | c      683 | y     8.2e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  684 | c      684 | y     7.9e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  685 | c      685 | y     8.5e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  686 | c      686 | y     8.2e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  687 | c      687 | y     7.8e-01 | y_next 4.3e-03
+    > fail | evals 10019
+
+--> #  688 | c      688 | y     8.1e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  690 | c      690 | y     3.5e-01 | y_next 2.0e-01
+    > fail | evals 10019
+
+--> #  691 | c      691 | y     5.5e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  693 | c      693 | y     7.6e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  694 | c      694 | y     8.8e-01 | y_next 7.7e-04
+    > fail | evals 10019
+
+--> #  695 | c      695 | y     5.4e-01 | y_next 2.6e-01
+    > fail | evals 10019
+
+--> #  697 | c      697 | y     4.2e-01 | y_next 1.3e-01
++++ >        c_new  638 | y_new 2.6e-01 | y_old 2.0e-01 | evals  1001
+    : changes    99 | dx1 3.9e+02 | dx2 2.8e+01
+    : l_old : pajama, pyjama, pj`s, jammies
+    : l_new : maillot
+
+
+--> #  698 | c      698 | y     8.6e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  699 | c      699 | y     6.3e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  700 | c      700 | y     3.0e-01 | y_next 9.2e-02
++++ >        c_new  969 | y_new 4.2e-01 | y_old 1.3e-02 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : paper towel
+    : l_new : eggnog
+
+
+--> #  701 | c      701 | y     5.0e-01 | y_next 2.3e-01
++++ >        c_new  417 | y_new 3.6e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 3.7e+02 | dx2 2.6e+01
+    : l_old : parachute, chute
+    : l_new : balloon
+
+
+--> #  704 | c      704 | y     7.2e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  705 | c      705 | y     9.1e-01 | y_next 6.3e-03
+    > fail | evals 10019
+
+--> #  706 | c      706 | y     4.8e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  707 | c      707 | y     5.0e-01 | y_next 8.4e-02
+    > fail | evals 10019
+
+--> #  708 | c      708 | y     7.4e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  709 | c      709 | y     8.8e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  711 | c      711 | y     5.7e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  714 | c      714 | y     7.9e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  715 | c      715 | y     7.7e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  716 | c      716 | y     5.7e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  718 | c      718 | y     7.8e-01 | y_next 4.9e-02
+    > fail | evals 10019
+
+--> #  719 | c      719 | y     8.2e-01 | y_next 5.2e-03
+    > fail | evals 10019
+
+--> #  720 | c      720 | y     4.4e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  721 | c      721 | y     9.9e-01 | y_next 5.6e-04
+    > fail | evals 10019
+
+--> #  723 | c      723 | y     8.1e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  724 | c      724 | y     8.8e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  726 | c      726 | y     6.9e-01 | y_next 5.3e-02
+    > fail | evals 10019
+
+--> #  727 | c      727 | y     1.9e-01 | y_next 6.2e-02
+    > fail | evals 10019
+
+--> #  728 | c      728 | y     5.0e-01 | y_next 2.7e-01
++++ >        c_new  692 | y_new 5.6e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : plastic bag
+    : l_new : packet
+
+
+--> #  729 | c      729 | y     2.7e-01 | y_next 6.5e-02
+    > fail | evals 10019
+
+--> #  731 | c      731 | y     9.7e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  732 | c      732 | y     7.4e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  733 | c      733 | y     9.1e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  735 | c      735 | y     8.5e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  737 | c      737 | y     4.6e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  738 | c      738 | y     6.5e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  741 | c      741 | y     8.8e-01 | y_next 9.6e-04
+    > fail | evals 10019
+
+--> #  743 | c      743 | y     2.5e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  746 | c      746 | y     8.8e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  747 | c      747 | y     9.9e-01 | y_next 4.5e-04
+    > fail | evals 10019
+
+--> #  748 | c      748 | y     6.5e-01 | y_next 2.1e-01
+    > fail | evals 10019
+
+--> #  749 | c      749 | y     9.0e-01 | y_next 5.4e-03
+    > fail | evals 10019
+
+--> #  752 | c      752 | y     6.8e-01 | y_next 6.6e-02
+    > fail | evals 10019
+
+--> #  755 | c      755 | y     8.2e-01 | y_next 3.7e-02
+    > fail | evals 10019
+
+--> #  756 | c      756 | y     8.4e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  757 | c      757 | y     6.8e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  758 | c      758 | y     7.9e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  759 | c      759 | y     8.9e-01 | y_next 4.3e-03
+    > fail | evals 10019
+
+--> #  760 | c      760 | y     3.7e-01 | y_next 1.2e-01
++++ >        c_new  799 | y_new 2.6e-01 | y_old 1.9e-01 | evals  2003
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : refrigerator, icebox
+    : l_new : sliding door
+
+
+--> #  762 | c      762 | y     6.2e-01 | y_next 3.8e-02
+    > fail | evals 10019
+
+--> #  763 | c      763 | y     4.9e-01 | y_next 9.3e-02
+    > fail | evals 10019
+
+--> #  765 | c      765 | y     7.7e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  766 | c      766 | y     6.0e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  768 | c      768 | y     9.5e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  769 | c      769 | y     8.9e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  770 | c      770 | y     7.9e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  772 | c      772 | y     8.9e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  773 | c      773 | y     6.5e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  774 | c      774 | y     3.4e-01 | y_next 1.4e-01
++++ >        c_new  679 | y_new 3.2e-01 | y_old 7.6e-02 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : sandal
+    : l_new : necklace
+
+
+--> #  776 | c      776 | y     7.1e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  777 | c      777 | y     8.9e-01 | y_next 6.4e-02
+    > fail | evals 10019
+
+--> #  778 | c      778 | y     9.8e-01 | y_next 3.6e-03
+    > fail | evals 10019
+
+--> #  779 | c      779 | y     8.2e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  780 | c      780 | y     1.4e-01 | y_next 1.2e-01
++++ >        c_new  536 | y_new 1.5e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : schooner
+    : l_new : dock, dockage, docking facility
+
+
+--> #  781 | c      781 | y     9.2e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  783 | c      783 | y     7.3e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  784 | c      784 | y     5.2e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  786 | c      786 | y     3.3e-01 | y_next 7.9e-02
++++ >        c_new  492 | y_new 1.6e-01 | y_old 1.4e-01 | evals  1001
+    : changes   100 | dx1 4.4e+02 | dx2 3.2e+01
+    : l_old : sewing machine
+    : l_new : chest
+
+
+--> #  787 | c      787 | y     9.7e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  789 | c      789 | y     6.8e-01 | y_next 5.6e-02
+    > fail | evals 10019
+
+--> #  790 | c      790 | y     8.4e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  791 | c      791 | y     9.0e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  792 | c      792 | y     7.8e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  794 | c      794 | y     2.9e-01 | y_next 2.3e-01
++++ >        c_new  876 | y_new 2.7e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : shower curtain
+    : l_new : tub, vat
+
+
+--> #  795 | c      795 | y     8.9e-01 | y_next 8.5e-03
+    > fail | evals 10019
+
+--> #  796 | c      796 | y     7.1e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  797 | c      797 | y     9.3e-01 | y_next 4.9e-03
+    > fail | evals 10019
+
+--> #  798 | c      798 | y     8.7e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  799 | c      799 | y     4.7e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  800 | c      800 | y     5.9e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  801 | c      801 | y     5.2e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  802 | c      802 | y     7.5e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  803 | c      803 | y     8.6e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  804 | c      804 | y     9.8e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  805 | c      805 | y     3.3e-01 | y_next 4.3e-02
+    > fail | evals 10019
+
+--> #  806 | c      806 | y     9.3e-01 | y_next 4.4e-03
+    > fail | evals 10019
+
+--> #  809 | c      809 | y     7.4e-01 | y_next 5.4e-02
+    > fail | evals 10019
+
+--> #  810 | c      810 | y     6.2e-01 | y_next 2.2e-01
+    > fail | evals 10019
+
+--> #  811 | c      811 | y     7.6e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  812 | c      812 | y     8.8e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  814 | c      814 | y     8.3e-01 | y_next 7.0e-03
+    > fail | evals 10019
+
+--> #  816 | c      816 | y     9.4e-01 | y_next 8.9e-03
+    > fail | evals 10019
+
+--> #  817 | c      817 | y     4.3e-01 | y_next 2.8e-01
++++ >        c_new  511 | y_new 3.9e-01 | y_old 3.2e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : sports car, sport car
+    : l_new : convertible
+
+
+--> #  818 | c      818 | y     8.8e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  820 | c      820 | y     3.3e-01 | y_next 3.0e-01
++++ >        c_new  705 | y_new 4.4e-01 | y_old 2.1e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.3e+01
+    : l_old : steam locomotive
+    : l_new : passenger car, coach, carriage
+
+
+--> #  821 | c      821 | y     5.6e-01 | y_next 1.9e-01
+    > fail | evals 10019
+
+--> #  822 | c      822 | y     8.8e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  823 | c      823 | y     6.4e-01 | y_next 3.1e-02
+    > fail | evals 10019
+
+--> #  824 | c      824 | y     5.0e-01 | y_next 6.4e-02
+    > fail | evals 10019
+
+--> #  825 | c      825 | y     3.9e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  826 | c      826 | y     5.0e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  827 | c      827 | y     9.5e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #  828 | c      828 | y     9.2e-01 | y_next 8.6e-03
+    > fail | evals 10019
+
+--> #  829 | c      829 | y     7.9e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  830 | c      830 | y     8.3e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  831 | c      831 | y     5.8e-01 | y_next 5.4e-02
++++ >        c_new  736 | y_new 3.0e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : studio couch, day bed
+    : l_new : pool table, billiard table, snooker table
+
+
+--> #  832 | c      832 | y     5.5e-01 | y_next 9.1e-02
+    > fail | evals 10019
+
+--> #  833 | c      833 | y     2.6e-01 | y_next 1.8e-01
++++ >        c_new  628 | y_new 4.0e-01 | y_old 1.9e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : submarine, pigboat, sub, u-boat
+    : l_new : liner, ocean liner
+
+
+--> #  834 | c      834 | y     5.5e-01 | y_next 2.7e-01
+    > fail | evals 10019
+
+--> #  835 | c      835 | y     3.6e-01 | y_next 1.7e-01
++++ >        c_new  769 | y_new 2.4e-01 | y_old 1.8e-01 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.9e+01
+    : l_old : sundial
+    : l_new : rule, ruler
+
+
+--> #  839 | c      839 | y     2.5e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  842 | c      842 | y     6.9e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  843 | c      843 | y     8.2e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  845 | c      845 | y     9.3e-01 | y_next 5.5e-03
+    > fail | evals 10019
+
+--> #  846 | c      846 | y     6.5e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  847 | c      847 | y     8.7e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  849 | c      849 | y     7.6e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  850 | c      850 | y     9.0e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  852 | c      852 | y     6.6e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  853 | c      853 | y     3.8e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  854 | c      854 | y     8.1e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  856 | c      856 | y     7.7e-01 | y_next 3.5e-02
+    > fail | evals 10019
+
+--> #  858 | c      858 | y     8.7e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  859 | c      859 | y     7.5e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  861 | c      861 | y     8.1e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  862 | c      862 | y     3.9e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  863 | c      863 | y     8.5e-01 | y_next 4.8e-02
+    > fail | evals 10019
+
+--> #  864 | c      864 | y     4.4e-01 | y_next 6.0e-02
+    > fail | evals 10019
+
+--> #  865 | c      865 | y     3.7e-01 | y_next 9.9e-02
+    > fail | evals 10019
+
+--> #  866 | c      866 | y     5.8e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  867 | c      867 | y     6.6e-01 | y_next 2.4e-01
+    > fail | evals 10019
+
+--> #  868 | c      868 | y     9.9e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  869 | c      869 | y     6.0e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  873 | c      873 | y     5.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  874 | c      874 | y     3.3e-01 | y_next 1.7e-01
++++ >        c_new  705 | y_new 2.2e-01 | y_old 2.2e-01 | evals  7514
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : trolleybus, trolley coach, trackless trolley
+    : l_new : passenger car, coach, carriage
+
+
+--> #  875 | c      875 | y     8.4e-01 | y_next 6.3e-02
+    > fail | evals 10019
+
+--> #  876 | c      876 | y     5.2e-01 | y_next 3.3e-01
+    > fail | evals 10019
+
+--> #  877 | c      877 | y     1.5e-01 | y_next 1.1e-01
++++ >        c_new  769 | y_new 1.1e-01 | y_old 5.8e-02 | evals  2003
+    : changes   100 | dx1 6.2e+02 | dx2 4.1e+01
+    : l_old : turnstile
+    : l_new : rule, ruler
+
+
+--> #  878 | c      878 | y     5.0e-01 | y_next 2.9e-01
+    > fail | evals 10019
+
+--> #  879 | c      879 | y     8.7e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  880 | c      880 | y     5.5e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  881 | c      881 | y     6.3e-01 | y_next 6.2e-02
+    > fail | evals 10019
+
+--> #  882 | c      882 | y     9.3e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  884 | c      884 | y     6.2e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  886 | c      886 | y     8.6e-01 | y_next 3.8e-03
+    > fail | evals 10019
+
+--> #  888 | c      888 | y     8.9e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  889 | c      889 | y     6.3e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  890 | c      890 | y     8.1e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  891 | c      891 | y     6.0e-01 | y_next 8.3e-02
+    > fail | evals 10019
+
+--> #  892 | c      892 | y     7.6e-01 | y_next 4.2e-02
+    > fail | evals 10019
+
+--> #  894 | c      894 | y     8.6e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  895 | c      895 | y     6.3e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #  897 | c      897 | y     7.7e-01 | y_next 6.9e-02
+    > fail | evals 10019
+
+--> #  900 | c      900 | y     7.2e-01 | y_next 7.1e-03
+    > fail | evals 10019
+
+--> #  901 | c      901 | y     8.7e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  903 | c      903 | y     5.8e-01 | y_next 4.2e-02
+    > fail | evals 10019
+
+--> #  905 | c      905 | y     9.0e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  906 | c      906 | y     6.9e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  907 | c      907 | y     4.4e-01 | y_next 8.4e-02
++++ >        c_new  546 | y_new 2.3e-01 | y_old 2.0e-01 | evals  5510
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : wine bottle
+    : l_new : electric guitar
+
+
+--> #  908 | c      908 | y     9.4e-01 | y_next 9.8e-04
+    > fail | evals 10019
+
+--> #  913 | c      913 | y     3.7e-01 | y_next 2.1e-01
++++ >        c_new  460 | y_new 2.8e-01 | y_old 2.5e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.9e+01
+    : l_old : wreck
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  914 | c      914 | y     5.9e-01 | y_next 2.1e-01
+    > fail | evals 10019
+
+--> #  916 | c      916 | y     8.3e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  918 | c      918 | y     6.1e-01 | y_next 3.5e-02
++++ >        c_new  696 | y_new 1.7e-01 | y_old 1.6e-01 | evals  3506
+    : changes   100 | dx1 4.9e+02 | dx2 3.5e+01
+    : l_old : crossword puzzle, crossword
+    : l_new : paintbrush
+
+
+--> #  919 | c      919 | y     7.1e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  920 | c      920 | y     6.2e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  921 | c      921 | y     6.7e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  922 | c      922 | y     7.7e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  923 | c      923 | y     4.3e-01 | y_next 8.7e-02
+    > fail | evals 10019
+
+--> #  924 | c      924 | y     6.4e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  925 | c      925 | y     6.3e-01 | y_next 4.8e-02
+    > fail | evals 10019
+
+--> #  926 | c      926 | y     6.4e-01 | y_next 6.8e-02
+    > fail | evals 10019
+
+--> #  927 | c      927 | y     6.5e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  928 | c      928 | y     7.9e-01 | y_next 6.2e-02
+    > fail | evals 10019
+
+--> #  929 | c      929 | y     4.4e-01 | y_next 1.6e-01
++++ >        c_new  928 | y_new 3.2e-01 | y_old 2.6e-01 | evals  1502
+    : changes   100 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : ice lolly, lolly, lollipop, popsicle
+    : l_new : ice cream, icecream
+
+
+--> #  930 | c      930 | y     7.6e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  931 | c      931 | y     6.0e-01 | y_next 7.0e-02
+    > fail | evals 10019
+
+--> #  932 | c      932 | y     7.0e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  933 | c      933 | y     8.8e-01 | y_next 5.2e-03
+    > fail | evals 10019
+
+--> #  934 | c      934 | y     2.9e-01 | y_next 1.3e-01
++++ >        c_new  909 | y_new 1.8e-01 | y_old 6.6e-02 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : hotdog, hot dog, red hot
+    : l_new : wok
+
+
+--> #  935 | c      935 | y     8.1e-01 | y_next 6.8e-02
+    > fail | evals 10019
+
+--> #  936 | c      936 | y     8.2e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  937 | c      937 | y     7.7e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  938 | c      938 | y     9.2e-01 | y_next 3.8e-03
+    > fail | evals 10019
+
+--> #  939 | c      939 | y     8.4e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  940 | c      940 | y     9.1e-01 | y_next 6.6e-03
+    > fail | evals 10019
+
+--> #  941 | c      941 | y     6.3e-01 | y_next 5.4e-02
+    > fail | evals 10019
+
+--> #  942 | c      942 | y     8.8e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  944 | c      944 | y     7.7e-01 | y_next 8.0e-02
+    > fail | evals 10019
+
+--> #  945 | c      945 | y     7.7e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  946 | c      946 | y     6.9e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  947 | c      947 | y     7.9e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  948 | c      948 | y     8.3e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  949 | c      949 | y     8.4e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  950 | c      950 | y     8.4e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  951 | c      951 | y     4.8e-01 | y_next 2.8e-01
++++ >        c_new  950 | y_new 4.3e-01 | y_old 3.5e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.5e+01
+    : l_old : lemon
+    : l_new : orange
+
+
+--> #  952 | c      952 | y     7.4e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  953 | c      953 | y     6.5e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  954 | c      954 | y     6.8e-01 | y_next 6.1e-02
+    > fail | evals 10019
+
+--> #  955 | c      955 | y     6.1e-01 | y_next 6.1e-02
+    > fail | evals 10019
+
+--> #  956 | c      956 | y     7.0e-01 | y_next 5.8e-02
+    > fail | evals 10019
+
+--> #  957 | c      957 | y     9.2e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  958 | c      958 | y     8.6e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  961 | c      961 | y     4.6e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  963 | c      963 | y     7.0e-01 | y_next 7.7e-03
+    > fail | evals 10019
+
+--> #  964 | c      964 | y     9.1e-01 | y_next 6.1e-03
+    > fail | evals 10019
+
+--> #  966 | c      966 | y     4.3e-01 | y_next 3.1e-01
++++ >        c_new  907 | y_new 4.9e-01 | y_old 2.4e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : red wine
+    : l_new : wine bottle
+
+
+--> #  967 | c      967 | y     5.6e-01 | y_next 1.5e-01
++++ >        c_new  441 | y_new 2.5e-01 | y_old 2.4e-01 | evals  9518
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : espresso
+    : l_new : beer glass
+
+
+--> #  968 | c      968 | y     4.9e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  969 | c      969 | y     7.5e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  971 | c      971 | y     7.8e-01 | y_next 6.4e-02
+    > fail | evals 10019
+
+--> #  972 | c      972 | y     5.0e-01 | y_next 1.1e-01
+    > fail | evals 10019
+
+--> #  973 | c      973 | y     8.2e-01 | y_next 3.1e-02
+    > fail | evals 10019
+
+--> #  974 | c      974 | y     7.0e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  975 | c      975 | y     3.8e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  977 | c      977 | y     6.7e-01 | y_next 7.9e-02
+    > fail | evals 10019
+
+--> #  979 | c      979 | y     3.5e-01 | y_next 1.7e-01
+    > fail | evals 10019
+
+--> #  980 | c      980 | y     9.0e-01 | y_next 9.9e-03
+    > fail | evals 10019
+
+--> #  981 | c      981 | y     7.6e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  982 | c      982 | y     9.3e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  983 | c      983 | y     4.6e-01 | y_next 9.2e-02
+    > fail | evals 10019
+
+--> #  984 | c      984 | y     8.1e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  985 | c      985 | y     8.4e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  986 | c      986 | y     8.5e-01 | y_next 1.0e-03
+    > fail | evals 10019
+
+--> #  989 | c      989 | y     8.6e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  990 | c      990 | y     8.8e-01 | y_next 9.7e-03
+    > fail | evals 10019
+
+--> #  991 | c      991 | y     4.7e-01 | y_next 8.6e-02
+    > fail | evals 10019
+
+--> #  992 | c      992 | y     7.7e-01 | y_next 8.2e-02
+    > fail | evals 10019
+
+--> #  993 | c      993 | y     8.1e-01 | y_next 9.6e-03
+    > fail | evals 10019
+
+--> #  994 | c      994 | y     7.6e-01 | y_next 5.0e-03
+    > fail | evals 10019
+
+--> #  995 | c      995 | y     8.5e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  996 | c      996 | y     8.4e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  999 | c      999 | y     7.7e-01 | y_next 9.3e-02
+    > fail | evals 10019
+
+Completed. Successful:  9.99% (total images 791)
+DONE ( 43578.87 sec.) 
+
+
+===================== --------------------------------------
+[2023-11-25 00-24-00] Work is finished (43595.63 sec. total)
+
+

@@ -1,0 +1,1338 @@
+[2023-12-02 22-24-25] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "resnet" model
+DONE (   179.04 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.78 sec.) 
+
+
+.... Start attack on images
+
+--> #  500 | c      500 | y     8.4e-01 | y_next 4.2e-03
++++ >        c_new  980 | y_new 2.3e-01 | y_old 2.2e-01 | evals  9999
+    : changes  3365 | dx1 6.0e+02 | dx2 9.3e+00
+    : l_old : cliff dwelling
+    : l_new : volcano
+
+
+--> #  503 | c      503 | y     9.0e-01 | y_next 4.6e-04
++++ >        c_new  441 | y_new 2.9e-01 | y_old 2.9e-01 | evals  9902
+    : changes  3378 | dx1 3.2e+03 | dx2 4.4e+01
+    : l_old : cocktail shaker
+    : l_new : beer glass
+
+
+--> #  504 | c      504 | y     6.2e-01 | y_next 6.3e-02
++++ >        c_new  968 | y_new 1.7e-01 | y_old 1.6e-01 | evals  9963
+    : changes  3362 | dx1 3.2e+03 | dx2 5.1e+01
+    : l_old : coffee mug
+    : l_new : cup
+
+
+--> #  505 | c      505 | y     4.7e-01 | y_next 1.8e-01
++++ >        c_new  849 | y_new 3.2e-01 | y_old 3.1e-01 | evals  9991
+    : changes  3349 | dx1 3.3e+02 | dx2 4.4e+00
+    : l_old : coffeepot
+    : l_new : teapot
+
+
+--> #  506 | c      506 | y     8.8e-01 | y_next 8.1e-04
++++ >        c_new  646 | y_new 3.0e-01 | y_old 2.9e-01 | evals  9935
+    : changes  3343 | dx1 5.1e+03 | dx2 6.9e+01
+    : l_old : coil, spiral, volute, whorl, helix
+    : l_new : maze, labyrinth
+
+
+--> #  507 | c      507 | y     7.7e-01 | y_next 5.2e-03
+    > fail | evals 10000
+
+--> #  508 | c      508 | y     5.8e-01 | y_next 2.1e-01
++++ >        c_new  810 | y_new 4.2e-01 | y_old 4.0e-01 | evals  9979
+    : changes  3303 | dx1 8.8e+03 | dx2 1.3e+02
+    : l_old : computer keyboard, keypad
+    : l_new : space bar
+
+
+--> #  510 | c      510 | y     7.8e-01 | y_next 4.2e-03
++++ >        c_new   45 | y_new 1.5e-01 | y_old 1.4e-01 | evals  9925
+    : changes  3320 | dx1 7.7e+03 | dx2 1.1e+02
+    : l_old : container ship, containership, container vessel
+    : l_new : gila monster, heloderma suspectum
+
+
+--> #  511 | c      511 | y     8.0e-01 | y_next 5.6e-03
++++ >        c_new  817 | y_new 3.6e-01 | y_old 3.6e-01 | evals  9930
+    : changes  3236 | dx1 7.7e+03 | dx2 1.2e+02
+    : l_old : convertible
+    : l_new : sports car, sport car
+
+
+--> #  512 | c      512 | y     7.6e-01 | y_next 5.3e-03
++++ >        c_new  473 | y_new 2.8e-01 | y_old 2.7e-01 | evals  9936
+    : changes  3299 | dx1 7.7e+03 | dx2 1.2e+02
+    : l_old : corkscrew, bottle screw
+    : l_new : can opener, tin opener
+
+
+--> #  513 | c      513 | y     8.3e-01 | y_next 2.5e-03
++++ >        c_new  566 | y_new 3.9e-01 | y_old 3.9e-01 | evals  9925
+    : changes  3282 | dx1 4.6e+03 | dx2 7.4e+01
+    : l_old : cornet, horn, trumpet, trump
+    : l_new : french horn, horn
+
+
+--> #  514 | c      514 | y     8.1e-01 | y_next 8.3e-04
+    > fail | evals 10000
+
+--> #  515 | c      515 | y     9.4e-01 | y_next 2.8e-03
++++ >        c_new  808 | y_new 4.1e-01 | y_old 4.0e-01 | evals  9948
+    : changes  3183 | dx1 2.2e+03 | dx2 3.4e+01
+    : l_old : cowboy hat, ten-gallon hat
+    : l_new : sombrero
+
+
+--> #  516 | c      516 | y     9.6e-01 | y_next 3.5e-03
++++ >        c_new  887 | y_new 3.1e-01 | y_old 3.1e-01 | evals  9945
+    : changes  3269 | dx1 3.6e+03 | dx2 5.1e+01
+    : l_old : cradle
+    : l_new : vestment
+
+
+--> #  518 | c      518 | y     7.5e-01 | y_next 2.9e-02
++++ >        c_new  621 | y_new 2.0e-01 | y_old 2.0e-01 | evals  9925
+    : changes  3407 | dx1 7.1e+03 | dx2 1.1e+02
+    : l_old : crash helmet
+    : l_new : lawn mower, mower
+
+
+--> #  521 | c      521 | y     7.8e-01 | y_next 2.2e-03
++++ >        c_new  827 | y_new 9.4e-02 | y_old 9.0e-02 | evals  9926
+    : changes  3373 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : crock pot
+    : l_new : stove
+
+
+--> #  522 | c      522 | y     9.0e-01 | y_next 1.1e-03
++++ >        c_new  903 | y_new 1.8e-01 | y_old 1.7e-01 | evals  9955
+    : changes  3283 | dx1 4.3e+03 | dx2 6.3e+01
+    : l_old : croquet ball
+    : l_new : wig
+
+
+--> #  523 | c      523 | y     9.1e-01 | y_next 1.6e-03
++++ >        c_new  160 | y_new 2.5e-01 | y_old 2.1e-01 | evals  9910
+    : changes  1713 | dx1 1.7e+03 | dx2 2.6e+01
+    : l_old : crutch
+    : l_new : afghan hound, afghan
+
+
+--> #  524 | c      524 | y     6.7e-01 | y_next 7.9e-02
++++ >        c_new  787 | y_new 3.3e-01 | y_old 3.2e-01 | evals  9925
+    : changes  3232 | dx1 9.1e+02 | dx2 1.3e+01
+    : l_old : cuirass
+    : l_new : shield, buckler
+
+
+--> #  525 | c      525 | y     8.4e-01 | y_next 4.6e-04
+    > fail | evals 10000
+
+--> #  526 | c      526 | y     4.7e-01 | y_next 1.3e-01
++++ >        c_new  620 | y_new 2.9e-01 | y_old 2.8e-01 | evals  9960
+    : changes  3201 | dx1 3.8e+02 | dx2 5.5e+00
+    : l_old : desk
+    : l_new : laptop, laptop computer
+
+
+--> #  527 | c      527 | y     3.4e-01 | y_next 3.3e-01
++++ >        c_new  664 | y_new 3.3e-01 | y_old 3.3e-01 | evals   285
+    : changes  2054 | dx1 7.2e+01 | dx2 1.2e+00
+    : l_old : desktop computer
+    : l_new : monitor
+
+
+--> #  528 | c      528 | y     8.3e-01 | y_next 1.8e-02
++++ >        c_new  707 | y_new 3.7e-01 | y_old 3.6e-01 | evals  9978
+    : changes  3399 | dx1 2.6e+03 | dx2 3.8e+01
+    : l_old : dial telephone, dial phone
+    : l_new : pay-phone, pay-station
+
+
+--> #  529 | c      529 | y     9.2e-01 | y_next 2.6e-03
++++ >        c_new  443 | y_new 3.0e-01 | y_old 2.8e-01 | evals  9989
+    : changes  3402 | dx1 5.8e+03 | dx2 8.2e+01
+    : l_old : diaper, nappy, napkin
+    : l_new : bib
+
+
+--> #  530 | c      530 | y     8.1e-01 | y_next 9.3e-03
++++ >        c_new  980 | y_new 4.9e-01 | y_old 2.1e-01 | evals  9955
+    : changes  3104 | dx1 4.8e+03 | dx2 8.0e+01
+    : l_old : digital clock
+    : l_new : volcano
+
+
+--> #  532 | c      532 | y     7.8e-01 | y_next 1.2e-02
++++ >        c_new  579 | y_new 2.4e-01 | y_old 2.3e-01 | evals  9920
+    : changes  3283 | dx1 8.7e+03 | dx2 1.3e+02
+    : l_old : dining table, board
+    : l_new : grand piano, grand
+
+
+--> #  533 | c      533 | y     7.8e-01 | y_next 3.2e-03
++++ >        c_new  109 | y_new 1.6e-01 | y_old 1.6e-01 | evals  9903
+    : changes  3407 | dx1 5.3e+03 | dx2 7.1e+01
+    : l_old : dishrag, dishcloth
+    : l_new : brain coral
+
+
+--> #  535 | c      535 | y     8.7e-01 | y_next 4.0e-03
++++ >        c_new  686 | y_new 2.8e-01 | y_old 2.5e-01 | evals  9958
+    : changes  3366 | dx1 3.5e+03 | dx2 4.9e+01
+    : l_old : disk brake, disc brake
+    : l_new : oil filter
+
+
+--> #  536 | c      536 | y     8.4e-01 | y_next 1.4e-02
++++ >        c_new  484 | y_new 2.3e-01 | y_old 2.1e-01 | evals  9947
+    : changes  3422 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : dock, dockage, docking facility
+    : l_new : catamaran
+
+
+--> #  537 | c      537 | y     7.9e-01 | y_next 2.0e-02
+    > fail | evals 10000
+
+--> #  538 | c      538 | y     6.0e-01 | y_next 1.3e-01
++++ >        c_new  668 | y_new 3.9e-01 | y_old 3.7e-01 | evals  9938
+    : changes  3297 | dx1 1.0e+03 | dx2 1.6e+01
+    : l_old : dome
+    : l_new : mosque
+
+
+--> #  539 | c      539 | y     7.7e-01 | y_next 9.0e-04
++++ >        c_new  949 | y_new 2.6e-01 | y_old 2.6e-01 | evals  9946
+    : changes  2920 | dx1 2.6e+03 | dx2 3.8e+01
+    : l_old : doormat, welcome mat
+    : l_new : strawberry
+
+
+--> #  540 | c      540 | y     6.4e-01 | y_next 3.9e-02
++++ >        c_new  510 | y_new 3.3e-01 | y_old 2.8e-01 | evals  9955
+    : changes  3321 | dx1 6.0e+02 | dx2 8.2e+00
+    : l_old : drilling platform, offshore rig
+    : l_new : container ship, containership, container vessel
+
+
+--> #  541 | c      541 | y     7.1e-01 | y_next 3.3e-02
++++ >        c_new  619 | y_new 2.4e-01 | y_old 2.1e-01 | evals  9950
+    : changes  3135 | dx1 4.1e+03 | dx2 6.6e+01
+    : l_old : drum, membranophone, tympan
+    : l_new : lampshade, lamp shade
+
+
+--> #  542 | c      542 | y     7.9e-01 | y_next 1.4e-02
++++ >        c_new  587 | y_new 4.5e-01 | y_old 3.5e-01 | evals  9915
+    : changes  3363 | dx1 2.4e+03 | dx2 3.2e+01
+    : l_old : drumstick
+    : l_new : hammer
+
+
+--> #  543 | c      543 | y     9.2e-01 | y_next 1.5e-02
++++ >        c_new  154 | y_new 1.9e-01 | y_old 1.9e-01 | evals  9913
+    : changes  2394 | dx1 1.9e+03 | dx2 4.4e+01
+    : l_old : dumbbell
+    : l_new : pekinese, pekingese, peke
+
+
+--> #  544 | c      544 | y     8.3e-01 | y_next 1.1e-02
++++ >        c_new  521 | y_new 3.6e-01 | y_old 3.4e-01 | evals  9919
+    : changes  2775 | dx1 8.3e+02 | dx2 1.4e+01
+    : l_old : dutch oven
+    : l_new : crock pot
+
+
+--> #  545 | c      545 | y     7.1e-01 | y_next 4.2e-03
++++ >        c_new  632 | y_new 2.5e-01 | y_old 2.5e-01 | evals  9918
+    : changes  3333 | dx1 2.3e+03 | dx2 3.4e+01
+    : l_old : electric fan, blower
+    : l_new : loudspeaker, speaker, speaker unit, loudspeaker sy
+
+
+--> #  546 | c      546 | y     7.7e-01 | y_next 2.0e-02
+    > fail | evals 10000
+
+--> #  547 | c      547 | y     8.1e-01 | y_next 2.4e-02
++++ >        c_new  705 | y_new 4.2e-01 | y_old 4.2e-01 | evals  9946
+    : changes  3278 | dx1 2.3e+03 | dx2 3.6e+01
+    : l_old : electric locomotive
+    : l_new : passenger car, coach, carriage
+
+
+--> #  548 | c      548 | y     7.2e-01 | y_next 3.1e-02
++++ >        c_new  453 | y_new 2.2e-01 | y_old 2.0e-01 | evals  9908
+    : changes  3190 | dx1 1.3e+03 | dx2 2.0e+01
+    : l_old : entertainment center
+    : l_new : bookcase
+
+
+--> #  549 | c      549 | y     6.1e-01 | y_next 3.5e-03
++++ >        c_new  674 | y_new 2.1e-01 | y_old 2.1e-01 | evals  9985
+    : changes  3327 | dx1 3.9e+03 | dx2 6.0e+01
+    : l_old : envelope
+    : l_new : mousetrap
+
+
+--> #  550 | c      550 | y     7.5e-01 | y_next 3.3e-03
++++ >        c_new  435 | y_new 9.0e-02 | y_old 8.1e-02 | evals  9977
+    : changes  2543 | dx1 4.9e+03 | dx2 8.1e+01
+    : l_old : espresso maker
+    : l_new : bathtub, bathing tub, bath, tub
+
+
+--> #  551 | c      551 | y     6.4e-01 | y_next 4.0e-02
++++ >        c_new  910 | y_new 2.7e-01 | y_old 2.5e-01 | evals  9979
+    : changes  3347 | dx1 4.7e+03 | dx2 6.9e+01
+    : l_old : face powder
+    : l_new : wooden spoon
+
+
+--> #  552 | c      552 | y     8.1e-01 | y_next 4.0e-03
++++ >        c_new  903 | y_new 3.7e-01 | y_old 3.6e-01 | evals  9977
+    : changes  3325 | dx1 5.2e+03 | dx2 7.0e+01
+    : l_old : feather boa, boa
+    : l_new : wig
+
+
+--> #  553 | c      553 | y     8.2e-01 | y_next 5.9e-03
++++ >        c_new  534 | y_new 3.2e-01 | y_old 3.2e-01 | evals  9979
+    : changes  3278 | dx1 1.7e+03 | dx2 2.6e+01
+    : l_old : file, file cabinet, filing cabinet
+    : l_new : dishwasher, dish washer, dishwashing machine
+
+
+--> #  554 | c      554 | y     8.0e-01 | y_next 2.1e-03
++++ >        c_new  628 | y_new 2.4e-01 | y_old 2.4e-01 | evals  9913
+    : changes  3390 | dx1 5.3e+03 | dx2 8.4e+01
+    : l_old : fireboat
+    : l_new : liner, ocean liner
+
+
+--> #  555 | c      555 | y     5.9e-01 | y_next 7.3e-02
++++ >        c_new  661 | y_new 3.0e-01 | y_old 2.9e-01 | evals  9932
+    : changes  3300 | dx1 5.9e+02 | dx2 8.5e+00
+    : l_old : fire engine, fire truck
+    : l_new : model t
+
+
+--> #  556 | c      556 | y     8.5e-01 | y_next 5.7e-03
++++ >        c_new  663 | y_new 2.5e-01 | y_old 2.1e-01 | evals  9916
+    : changes  2402 | dx1 2.7e+03 | dx2 5.3e+01
+    : l_old : fire screen, fireguard
+    : l_new : monastery
+
+
+--> #  557 | c      557 | y     8.1e-01 | y_next 1.7e-02
++++ >        c_new  491 | y_new 3.3e-01 | y_old 3.2e-01 | evals 10000
+    : changes  3324 | dx1 3.0e+03 | dx2 5.1e+01
+    : l_old : flagpole, flagstaff
+    : l_new : chain saw, chainsaw
+
+
+--> #  558 | c      558 | y     8.7e-01 | y_next 4.0e-03
++++ >        c_new  902 | y_new 3.8e-01 | y_old 3.3e-01 | evals  9933
+    : changes  3400 | dx1 2.1e+03 | dx2 3.0e+01
+    : l_old : flute, transverse flute
+    : l_new : whistle
+
+
+--> #  559 | c      559 | y     8.1e-01 | y_next 6.0e-04
++++ >        c_new  843 | y_new 2.7e-01 | y_old 2.1e-01 | evals  9932
+    : changes  3391 | dx1 1.1e+04 | dx2 1.5e+02
+    : l_old : folding chair
+    : l_new : swing
+
+
+--> #  560 | c      560 | y     7.1e-01 | y_next 2.2e-03
++++ >        c_new  805 | y_new 2.8e-01 | y_old 2.5e-01 | evals  9930
+    : changes  3274 | dx1 5.5e+03 | dx2 8.5e+01
+    : l_old : football helmet
+    : l_new : soccer ball
+
+
+--> #  561 | c      561 | y     8.3e-01 | y_next 4.9e-04
++++ >        c_new  803 | y_new 3.5e-01 | y_old 2.0e-01 | evals  9999
+    : changes  3259 | dx1 4.9e+03 | dx2 7.0e+01
+    : l_old : forklift
+    : l_new : snowplow, snowplough
+
+
+--> #  564 | c      564 | y     6.8e-01 | y_next 8.7e-02
++++ >        c_new  669 | y_new 3.7e-01 | y_old 3.6e-01 | evals  9990
+    : changes  3183 | dx1 7.5e+02 | dx2 1.1e+01
+    : l_old : four-poster
+    : l_new : mosquito net
+
+
+--> #  565 | c      565 | y     8.4e-01 | y_next 3.9e-04
++++ >        c_new  803 | y_new 1.3e-01 | y_old 1.3e-01 | evals  9925
+    : changes  3349 | dx1 1.2e+04 | dx2 1.7e+02
+    : l_old : freight car
+    : l_new : snowplow, snowplough
+
+
+--> #  566 | c      566 | y     7.6e-01 | y_next 6.7e-03
++++ >        c_new  776 | y_new 3.3e-01 | y_old 2.7e-01 | evals  9991
+    : changes  3348 | dx1 4.8e+03 | dx2 6.9e+01
+    : l_old : french horn, horn
+    : l_new : sax, saxophone
+
+
+--> #  567 | c      567 | y     9.2e-01 | y_next 1.1e-02
++++ >        c_new  544 | y_new 3.2e-01 | y_old 3.2e-01 | evals  9998
+    : changes  3368 | dx1 3.0e+03 | dx2 4.2e+01
+    : l_old : frying pan, frypan, skillet
+    : l_new : dutch oven
+
+
+--> #  569 | c      569 | y     8.2e-01 | y_next 1.2e-02
++++ >        c_new  822 | y_new 4.1e-01 | y_old 2.9e-01 | evals  9997
+    : changes  1742 | dx1 2.8e+03 | dx2 4.4e+01
+    : l_old : garbage truck, dustcart
+    : l_new : steel drum
+
+
+--> #  570 | c      570 | y     8.5e-01 | y_next 7.7e-04
++++ >        c_new    5 | y_new 4.6e-01 | y_old 4.0e-01 | evals  9957
+    : changes  3315 | dx1 4.5e+03 | dx2 6.1e+01
+    : l_old : gasmask, respirator, gas helmet
+    : l_new : electric ray, crampfish, numbfish, torpedo
+
+
+--> #  571 | c      571 | y     9.8e-01 | y_next 9.1e-04
++++ >        c_new  491 | y_new 1.8e-01 | y_old 1.5e-01 | evals  9988
+    : changes  3362 | dx1 1.6e+03 | dx2 2.3e+01
+    : l_old : gas pump, gasoline pump, petrol pump, island dispe
+    : l_new : chain saw, chainsaw
+
+
+--> #  572 | c      572 | y     8.0e-01 | y_next 2.6e-03
++++ >        c_new  968 | y_new 3.4e-01 | y_old 2.8e-01 | evals  9905
+    : changes  3309 | dx1 7.2e+03 | dx2 1.0e+02
+    : l_old : goblet
+    : l_new : cup
+
+
+--> #  573 | c      573 | y     8.5e-01 | y_next 4.7e-03
++++ >        c_new  621 | y_new 3.0e-01 | y_old 2.8e-01 | evals  9933
+    : changes  3305 | dx1 1.5e+03 | dx2 2.2e+01
+    : l_old : go-kart
+    : l_new : lawn mower, mower
+
+
+--> #  574 | c      574 | y     7.7e-01 | y_next 3.0e-03
++++ >        c_new  328 | y_new 3.8e-01 | y_old 2.7e-01 | evals  9956
+    : changes  3347 | dx1 4.9e+03 | dx2 7.4e+01
+    : l_old : golf ball
+    : l_new : sea urchin
+
+
+--> #  575 | c      575 | y     8.6e-01 | y_next 2.6e-04
+    > fail | evals 10000
+
+--> #  576 | c      576 | y     9.1e-01 | y_next 2.9e-04
++++ >        c_new  820 | y_new 4.6e-02 | y_old 4.5e-02 | evals  9983
+    : changes  3229 | dx1 1.3e+04 | dx2 2.0e+02
+    : l_old : gondola
+    : l_new : steam locomotive
+
+
+--> #  577 | c      577 | y     5.9e-01 | y_next 2.6e-01
++++ >        c_new  494 | y_new 3.7e-01 | y_old 3.6e-01 | evals  9967
+    : changes  3352 | dx1 7.3e+03 | dx2 1.0e+02
+    : l_old : gong, tam-tam
+    : l_new : chime, bell, gong
+
+
+--> #  578 | c      578 | y     7.0e-01 | y_next 6.1e-02
++++ >        c_new  876 | y_new 1.7e-01 | y_old 1.6e-01 | evals  9958
+    : changes  3371 | dx1 1.7e+03 | dx2 2.4e+01
+    : l_old : gown
+    : l_new : tub, vat
+
+
+--> #  579 | c      579 | y     7.5e-01 | y_next 1.8e-03
+    > fail | evals 10000
+
+--> #  580 | c      580 | y     8.7e-01 | y_next 1.7e-03
++++ >        c_new  562 | y_new 3.8e-01 | y_old 3.6e-01 | evals  9986
+    : changes  3318 | dx1 4.7e+03 | dx2 7.1e+01
+    : l_old : greenhouse, nursery, glasshouse
+    : l_new : fountain
+
+
+--> #  581 | c      581 | y     7.9e-01 | y_next 4.4e-02
++++ >        c_new  656 | y_new 3.8e-01 | y_old 3.7e-01 | evals  9955
+    : changes  3394 | dx1 2.3e+03 | dx2 3.4e+01
+    : l_old : grille, radiator grille
+    : l_new : minivan
+
+
+--> #  582 | c      582 | y     7.6e-01 | y_next 1.7e-02
++++ >        c_new  206 | y_new 2.6e-01 | y_old 2.6e-01 | evals  9948
+    : changes  3359 | dx1 2.0e+03 | dx2 3.0e+01
+    : l_old : grocery store, grocery, food market, market
+    : l_new : curly-coated retriever
+
+
+--> #  583 | c      583 | y     8.8e-01 | y_next 8.3e-04
++++ >        c_new  706 | y_new 2.8e-01 | y_old 2.7e-01 | evals  9967
+    : changes  3012 | dx1 5.3e+03 | dx2 8.1e+01
+    : l_old : guillotine
+    : l_new : patio, terrace
+
+
+--> #  584 | c      584 | y     7.7e-01 | y_next 3.8e-02
++++ >        c_new  457 | y_new 3.2e-01 | y_old 2.8e-01 | evals  9981
+    : changes  3379 | dx1 2.4e+03 | dx2 3.6e+01
+    : l_old : hair slide
+    : l_new : bow tie, bow-tie, bowtie
+
+
+--> #  585 | c      585 | y     9.0e-01 | y_next 6.2e-03
++++ >        c_new  435 | y_new 2.2e-01 | y_old 1.9e-01 | evals  9903
+    : changes  3292 | dx1 6.7e+03 | dx2 1.2e+02
+    : l_old : hair spray
+    : l_new : bathtub, bathing tub, bath, tub
+
+
+--> #  586 | c      586 | y     9.2e-01 | y_next 1.3e-03
++++ >        c_new  471 | y_new 2.1e-01 | y_old 1.9e-01 | evals  9943
+    : changes  3352 | dx1 2.9e+03 | dx2 4.3e+01
+    : l_old : half track
+    : l_new : cannon
+
+
+--> #  588 | c      588 | y     8.8e-01 | y_next 2.0e-03
+    > fail | evals 10000
+
+--> #  589 | c      589 | y     7.9e-01 | y_next 4.6e-04
+    > fail | evals 10000
+
+--> #  590 | c      590 | y     6.8e-01 | y_next 1.9e-02
++++ >        c_new  426 | y_new 2.9e-01 | y_old 2.8e-01 | evals  9918
+    : changes  3249 | dx1 1.9e+03 | dx2 3.2e+01
+    : l_old : hand-held computer, hand-held microcomputer
+    : l_new : barometer
+
+
+--> #  592 | c      592 | y     8.8e-01 | y_next 6.2e-04
++++ >        c_new  662 | y_new 2.5e-01 | y_old 2.3e-01 | evals  9969
+    : changes  3352 | dx1 5.2e+03 | dx2 7.3e+01
+    : l_old : hard disc, hard disk, fixed disk
+    : l_new : modem
+
+
+--> #  593 | c      593 | y     9.1e-01 | y_next 1.9e-04
++++ >        c_new  769 | y_new 3.9e-01 | y_old 3.7e-01 | evals  9916
+    : changes  3325 | dx1 7.4e+03 | dx2 1.2e+02
+    : l_old : harmonica, mouth organ, harp, mouth harp
+    : l_new : rule, ruler
+
+
+--> #  594 | c      594 | y     9.6e-01 | y_next 8.6e-04
++++ >        c_new  582 | y_new 2.3e-01 | y_old 2.3e-01 | evals  9916
+    : changes  3332 | dx1 4.2e+03 | dx2 6.0e+01
+    : l_old : harp
+    : l_new : grocery store, grocery, food market, market
+
+
+--> #  595 | c      595 | y     8.6e-01 | y_next 4.7e-02
++++ >        c_new  856 | y_new 2.4e-01 | y_old 2.2e-01 | evals  9997
+    : changes  3408 | dx1 2.1e+03 | dx2 3.2e+01
+    : l_old : harvester, reaper
+    : l_new : thresher, thrasher, threshing machine
+
+
+--> #  597 | c      597 | y     8.0e-01 | y_next 1.4e-02
+    > fail | evals 10000
+
+--> #  598 | c      598 | y     8.4e-01 | y_next 7.4e-02
++++ >        c_new  548 | y_new 4.4e-01 | y_old 4.4e-01 | evals  9964
+    : changes  3305 | dx1 2.9e+03 | dx2 4.3e+01
+    : l_old : home theater, home theatre
+    : l_new : entertainment center
+
+
+--> #  599 | c      599 | y     6.3e-01 | y_next 8.7e-02
++++ >        c_new  329 | y_new 1.4e-01 | y_old 1.2e-01 | evals  9907
+    : changes  3358 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : honeycomb
+    : l_new : sea cucumber, holothurian
+
+
+--> #  600 | c      600 | y     7.7e-01 | y_next 1.7e-02
++++ >        c_new  769 | y_new 2.6e-01 | y_old 2.3e-01 | evals 10000
+    : changes  1745 | dx1 1.5e+03 | dx2 2.2e+01
+    : l_old : hook, claw
+    : l_new : rule, ruler
+
+
+--> #  601 | c      601 | y     6.9e-01 | y_next 1.2e-01
++++ >        c_new  689 | y_new 4.0e-01 | y_old 4.0e-01 | evals  9951
+    : changes  3383 | dx1 2.0e+03 | dx2 2.7e+01
+    : l_old : hoopskirt, crinoline
+    : l_new : overskirt
+
+
+--> #  602 | c      602 | y     6.5e-01 | y_next 7.8e-03
++++ >        c_new  702 | y_new 4.0e-01 | y_old 3.8e-01 | evals  9985
+    : changes  3352 | dx1 4.6e+03 | dx2 7.0e+01
+    : l_old : horizontal bar, high bar
+    : l_new : parallel bars, bars
+
+
+--> #  603 | c      603 | y     7.5e-01 | y_next 1.9e-03
++++ >        c_new  354 | y_new 3.4e-01 | y_old 2.7e-01 | evals  9989
+    : changes  3341 | dx1 2.9e+03 | dx2 4.0e+01
+    : l_old : horse cart, horse-cart
+    : l_new : arabian camel, dromedary, camelus dromedarius
+
+
+--> #  604 | c      604 | y     8.7e-01 | y_next 2.8e-04
+    > fail | evals 10000
+
+--> #  605 | c      605 | y     7.0e-01 | y_next 1.2e-03
+    > fail | evals 10000
+
+--> #  606 | c      606 | y     8.3e-01 | y_next 5.0e-04
+    > fail | evals 10000
+
+--> #  607 | c      607 | y     8.0e-01 | y_next 5.2e-04
++++ >        c_new  950 | y_new 2.0e-01 | y_old 1.4e-01 | evals  9929
+    : changes  3423 | dx1 6.6e+03 | dx2 1.0e+02
+    : l_old : jack-o`-lantern
+    : l_new : orange
+
+
+--> #  608 | c      608 | y     9.9e-01 | y_next 1.5e-03
++++ >        c_new  772 | y_new 4.3e-01 | y_old 4.1e-01 | evals  9952
+    : changes  3425 | dx1 1.5e+03 | dx2 2.2e+01
+    : l_old : jean, blue jean, denim
+    : l_new : safety pin
+
+
+--> #  609 | c      609 | y     8.4e-01 | y_next 1.3e-03
++++ >        c_new  717 | y_new 1.8e-01 | y_old 1.7e-01 | evals  9956
+    : changes  3324 | dx1 5.4e+03 | dx2 8.0e+01
+    : l_old : jeep, landrover
+    : l_new : pickup, pickup truck
+
+
+--> #  610 | c      610 | y     7.6e-01 | y_next 4.4e-03
++++ >        c_new  490 | y_new 4.6e-01 | y_old 3.5e-01 | evals  9986
+    : changes  3398 | dx1 2.5e+03 | dx2 3.3e+01
+    : l_old : jersey, t-shirt, tee shirt
+    : l_new : chain mail, ring mail, mail, chain armor, chain ar
+
+
+--> #  611 | c      611 | y     8.4e-01 | y_next 3.5e-04
+    > fail | evals 10000
+
+--> #  612 | c      612 | y     8.6e-01 | y_next 8.7e-03
++++ >        c_new  870 | y_new 4.2e-01 | y_old 4.1e-01 | evals  9935
+    : changes  3308 | dx1 2.5e+03 | dx2 3.7e+01
+    : l_old : jinrikisha, ricksha, rickshaw
+    : l_new : tricycle, trike, velocipede
+
+
+--> #  615 | c      615 | y     7.6e-01 | y_next 3.0e-02
++++ >        c_new  560 | y_new 2.2e-01 | y_old 2.1e-01 | evals  9999
+    : changes  3276 | dx1 1.6e+03 | dx2 2.4e+01
+    : l_old : knee pad
+    : l_new : football helmet
+
+
+--> #  616 | c      616 | y     7.8e-01 | y_next 1.2e-03
++++ >        c_new  562 | y_new 2.4e-01 | y_old 2.0e-01 | evals  9910
+    : changes  3318 | dx1 4.6e+03 | dx2 7.0e+01
+    : l_old : knot
+    : l_new : fountain
+
+
+--> #  617 | c      617 | y     7.4e-01 | y_next 2.9e-02
++++ >        c_new  899 | y_new 2.9e-01 | y_old 2.8e-01 | evals  9911
+    : changes  3329 | dx1 1.1e+03 | dx2 1.7e+01
+    : l_old : lab coat, laboratory coat
+    : l_new : water jug
+
+
+--> #  618 | c      618 | y     8.2e-01 | y_next 4.4e-03
++++ >        c_new  828 | y_new 3.3e-01 | y_old 2.4e-01 | evals  9970
+    : changes  3237 | dx1 5.8e+03 | dx2 9.2e+01
+    : l_old : ladle
+    : l_new : strainer
+
+
+--> #  620 | c      620 | y     8.4e-01 | y_next 1.4e-01
++++ >        c_new  681 | y_new 4.4e-01 | y_old 4.2e-01 | evals  9904
+    : changes  3322 | dx1 2.3e+03 | dx2 3.3e+01
+    : l_old : laptop, laptop computer
+    : l_new : notebook, notebook computer
+
+
+--> #  622 | c      622 | y     8.3e-01 | y_next 7.9e-04
++++ >        c_new  756 | y_new 6.5e-01 | y_old 1.5e-01 | evals  9932
+    : changes  3295 | dx1 8.9e+03 | dx2 1.2e+02
+    : l_old : lens cap, lens cover
+    : l_new : rain barrel
+
+
+--> #  623 | c      623 | y     8.5e-01 | y_next 7.7e-03
++++ >        c_new  784 | y_new 2.5e-01 | y_old 2.5e-01 | evals  9968
+    : changes  3428 | dx1 3.9e+03 | dx2 5.1e+01
+    : l_old : letter opener, paper knife, paperknife
+    : l_new : screwdriver
+
+
+--> #  624 | c      624 | y     8.2e-01 | y_next 3.3e-03
++++ >        c_new  453 | y_new 3.5e-01 | y_old 3.4e-01 | evals  9949
+    : changes  3360 | dx1 2.9e+03 | dx2 4.2e+01
+    : l_old : library
+    : l_new : bookcase
+
+
+--> #  625 | c      625 | y     9.0e-01 | y_next 3.8e-04
+    > fail | evals 10000
+
+--> #  627 | c      627 | y     8.6e-01 | y_next 5.0e-04
++++ >        c_new  609 | y_new 3.0e-01 | y_old 2.6e-01 | evals  9969
+    : changes  2755 | dx1 6.9e+03 | dx2 1.2e+02
+    : l_old : limousine, limo
+    : l_new : jeep, landrover
+
+
+--> #  628 | c      628 | y     8.0e-01 | y_next 4.5e-02
++++ >        c_new  536 | y_new 3.1e-01 | y_old 3.1e-01 | evals  9962
+    : changes  3294 | dx1 9.0e+03 | dx2 1.3e+02
+    : l_old : liner, ocean liner
+    : l_new : dock, dockage, docking facility
+
+
+--> #  629 | c      629 | y     8.2e-01 | y_next 9.6e-04
++++ >        c_new  738 | y_new 2.6e-01 | y_old 2.5e-01 | evals  9966
+    : changes  2489 | dx1 5.6e+03 | dx2 9.0e+01
+    : l_old : lipstick, lip rouge
+    : l_new : pot, flowerpot
+
+
+--> #  630 | c      630 | y     8.0e-01 | y_next 7.0e-04
+    > fail | evals 10000
+
+--> #  632 | c      632 | y     7.3e-01 | y_next 2.4e-02
++++ >        c_new  754 | y_new 2.9e-01 | y_old 2.4e-01 | evals  9942
+    : changes  3078 | dx1 6.9e+03 | dx2 1.3e+02
+    : l_old : loudspeaker, speaker, speaker unit, loudspeaker sy
+    : l_new : radio, wireless
+
+
+--> #  633 | c      633 | y     9.0e-01 | y_next 3.0e-03
++++ >        c_new  971 | y_new 4.6e-01 | y_old 3.0e-01 | evals  9939
+    : changes  1742 | dx1 4.0e+03 | dx2 6.7e+01
+    : l_old : loupe, jeweler`s loupe
+    : l_new : bubble
+
+
+--> #  634 | c      634 | y     9.2e-01 | y_next 8.9e-04
++++ >        c_new  791 | y_new 3.0e-01 | y_old 2.9e-01 | evals  9980
+    : changes  1706 | dx1 5.8e+03 | dx2 9.3e+01
+    : l_old : lumbermill, sawmill
+    : l_new : shopping cart
+
+
+--> #  635 | c      635 | y     8.4e-01 | y_next 1.0e-03
++++ >        c_new  826 | y_new 4.7e-01 | y_old 3.3e-01 | evals  9955
+    : changes  3271 | dx1 5.7e+03 | dx2 8.3e+01
+    : l_old : magnetic compass
+    : l_new : stopwatch, stop watch
+
+
+--> #  636 | c      636 | y     7.8e-01 | y_next 2.5e-02
++++ >        c_new  748 | y_new 2.6e-01 | y_old 2.3e-01 | evals  9953
+    : changes  3361 | dx1 6.8e+03 | dx2 9.8e+01
+    : l_old : mailbag, postbag
+    : l_new : purse
+
+
+--> #  637 | c      637 | y     8.2e-01 | y_next 9.6e-04
+    > fail | evals 10000
+
+--> #  640 | c      640 | y     8.5e-01 | y_next 5.9e-04
+    > fail | evals 10000
+
+--> #  642 | c      642 | y     8.2e-01 | y_next 7.0e-04
++++ >        c_new  577 | y_new 2.1e-01 | y_old 1.7e-01 | evals  9959
+    : changes  3344 | dx1 5.9e+03 | dx2 8.8e+01
+    : l_old : marimba, xylophone
+    : l_new : gong, tam-tam
+
+
+--> #  643 | c      643 | y     8.1e-01 | y_next 4.0e-02
++++ >        c_new  887 | y_new 2.7e-01 | y_old 2.7e-01 | evals  9933
+    : changes  3370 | dx1 1.1e+03 | dx2 1.6e+01
+    : l_old : mask
+    : l_new : vestment
+
+
+--> #  644 | c      644 | y     8.2e-01 | y_next 2.1e-02
++++ >        c_new  677 | y_new 2.5e-01 | y_old 2.2e-01 | evals  9916
+    : changes  3197 | dx1 7.4e+02 | dx2 1.3e+01
+    : l_old : matchstick
+    : l_new : nail
+
+
+--> #  645 | c      645 | y     8.1e-01 | y_next 2.4e-03
++++ >        c_new  638 | y_new 8.7e-02 | y_old 7.2e-02 | evals  9926
+    : changes  3257 | dx1 6.4e+03 | dx2 9.7e+01
+    : l_old : maypole
+    : l_new : maillot
+
+
+--> #  647 | c      647 | y     8.7e-01 | y_next 2.5e-02
++++ >        c_new  509 | y_new 3.2e-01 | y_old 3.2e-01 | evals  9999
+    : changes  3289 | dx1 2.1e+03 | dx2 2.9e+01
+    : l_old : measuring cup
+    : l_new : confectionery, confectionary, candy store
+
+
+--> #  648 | c      648 | y     8.3e-01 | y_next 3.3e-02
++++ >        c_new  896 | y_new 3.7e-01 | y_old 3.5e-01 | evals  9902
+    : changes  3073 | dx1 1.7e+03 | dx2 2.6e+01
+    : l_old : medicine chest, medicine cabinet
+    : l_new : washbasin, handbasin, washbowl, lavabo, wash-hand 
+
+
+--> #  649 | c      649 | y     8.0e-01 | y_next 6.1e-04
+    > fail | evals 10000
+
+--> #  650 | c      650 | y     9.9e-01 | y_next 6.4e-04
++++ >        c_new  469 | y_new 2.7e-01 | y_old 2.1e-01 | evals  9942
+    : changes  2750 | dx1 1.8e+03 | dx2 3.3e+01
+    : l_old : microphone, mike
+    : l_new : caldron, cauldron
+
+
+--> #  651 | c      651 | y     7.9e-01 | y_next 3.4e-03
++++ >        c_new  811 | y_new 2.8e-01 | y_old 2.5e-01 | evals  9977
+    : changes  2890 | dx1 3.2e+03 | dx2 4.7e+01
+    : l_old : microwave, microwave oven
+    : l_new : space heater
+
+
+--> #  652 | c      652 | y     6.6e-01 | y_next 9.1e-03
++++ >        c_new  876 | y_new 2.2e-01 | y_old 2.0e-01 | evals  9958
+    : changes  3402 | dx1 4.1e+03 | dx2 5.8e+01
+    : l_old : military uniform
+    : l_new : tub, vat
+
+
+--> #  653 | c      653 | y     7.9e-01 | y_next 3.7e-03
++++ >        c_new   76 | y_new 5.0e-02 | y_old 4.6e-02 | evals  9916
+    : changes  1732 | dx1 1.6e+03 | dx2 2.2e+01
+    : l_old : milk can
+    : l_new : tarantula
+
+
+--> #  654 | c      654 | y     8.6e-01 | y_next 2.3e-02
++++ >        c_new  609 | y_new 4.3e-01 | y_old 3.2e-01 | evals  9976
+    : changes  3207 | dx1 3.1e+03 | dx2 5.4e+01
+    : l_old : minibus
+    : l_new : jeep, landrover
+
+
+--> #  655 | c      655 | y     6.4e-01 | y_next 1.8e-02
++++ >        c_new  568 | y_new 2.2e-01 | y_old 2.2e-01 | evals  9959
+    : changes  3295 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : miniskirt, mini
+    : l_new : fur coat
+
+
+--> #  656 | c      656 | y     8.3e-01 | y_next 2.2e-03
+    > fail | evals 10000
+
+--> #  657 | c      657 | y     5.4e-01 | y_next 3.1e-01
++++ >        c_new  744 | y_new 3.4e-01 | y_old 3.4e-01 | evals  9985
+    : changes  3334 | dx1 8.1e+02 | dx2 1.1e+01
+    : l_old : missile
+    : l_new : projectile, missile
+
+
+--> #  660 | c      660 | y     7.9e-01 | y_next 1.9e-03
++++ >        c_new  497 | y_new 2.3e-01 | y_old 2.1e-01 | evals  9997
+    : changes  2920 | dx1 2.5e+03 | dx2 4.4e+01
+    : l_old : mobile home, manufactured home
+    : l_new : church, church building
+
+
+--> #  661 | c      661 | y     8.2e-01 | y_next 3.2e-03
++++ >        c_new  717 | y_new 4.3e-01 | y_old 2.5e-01 | evals  9936
+    : changes  3355 | dx1 3.1e+03 | dx2 4.5e+01
+    : l_old : model t
+    : l_new : pickup, pickup truck
+
+
+--> #  665 | c      665 | y     8.0e-01 | y_next 1.8e-02
++++ >        c_new  762 | y_new 3.2e-01 | y_old 2.9e-01 | evals  9985
+    : changes  3314 | dx1 1.2e+03 | dx2 1.9e+01
+    : l_old : moped
+    : l_new : restaurant, eating house, eating place, eatery
+
+
+--> #  666 | c      666 | y     8.4e-01 | y_next 1.2e-03
++++ >        c_new  696 | y_new 2.0e-01 | y_old 1.9e-01 | evals  9904
+    : changes  3282 | dx1 3.4e+03 | dx2 5.5e+01
+    : l_old : mortar
+    : l_new : paintbrush
+
+
+--> #  667 | c      667 | y     8.9e-01 | y_next 1.6e-02
++++ >        c_new  552 | y_new 3.9e-01 | y_old 3.3e-01 | evals  9939
+    : changes  3207 | dx1 5.4e+03 | dx2 8.0e+01
+    : l_old : mortarboard
+    : l_new : feather boa, boa
+
+
+--> #  668 | c      668 | y     8.0e-01 | y_next 1.5e-03
+    > fail | evals 10000
+
+--> #  669 | c      669 | y     7.4e-01 | y_next 2.1e-03
++++ >        c_new  148 | y_new 1.5e-01 | y_old 1.4e-01 | evals  9945
+    : changes  2623 | dx1 2.8e+03 | dx2 4.9e+01
+    : l_old : mosquito net
+    : l_new : killer whale, killer, orca, grampus, sea wolf, orc
+
+
+--> #  670 | c      670 | y     7.4e-01 | y_next 5.0e-02
++++ >        c_new  555 | y_new 2.6e-01 | y_old 2.6e-01 | evals  9962
+    : changes  3327 | dx1 1.4e+03 | dx2 2.0e+01
+    : l_old : motor scooter, scooter
+    : l_new : fire engine, fire truck
+
+
+--> #  671 | c      671 | y     6.9e-01 | y_next 2.8e-02
++++ >        c_new  444 | y_new 3.0e-01 | y_old 2.8e-01 | evals  9913
+    : changes  3281 | dx1 1.1e+03 | dx2 1.7e+01
+    : l_old : mountain bike, all-terrain bike, off-roader
+    : l_new : bicycle-built-for-two, tandem bicycle, tandem
+
+
+--> #  672 | c      672 | y     4.1e-01 | y_next 1.1e-01
++++ >        c_new  348 | y_new 2.7e-01 | y_old 2.6e-01 | evals 10000
+    : changes  3001 | dx1 2.4e+02 | dx2 3.8e+00
+    : l_old : mountain tent
+    : l_new : ram, tup
+
+
+--> #  674 | c      674 | y     8.0e-01 | y_next 1.4e-03
++++ >        c_new  539 | y_new 3.2e-01 | y_old 2.4e-01 | evals  9969
+    : changes  3366 | dx1 5.9e+03 | dx2 8.8e+01
+    : l_old : mousetrap
+    : l_new : doormat, welcome mat
+
+
+--> #  675 | c      675 | y     7.6e-01 | y_next 5.3e-03
++++ >        c_new  867 | y_new 2.9e-01 | y_old 2.9e-01 | evals  9902
+    : changes  3219 | dx1 4.4e+03 | dx2 6.9e+01
+    : l_old : moving van
+    : l_new : trailer truck, tractor trailer, trucking rig, rig,
+
+
+--> #  676 | c      676 | y     9.0e-01 | y_next 6.4e-04
+    > fail | evals 10000
+
+--> #  680 | c      680 | y     8.5e-01 | y_next 2.1e-03
++++ >        c_new  731 | y_new 4.5e-01 | y_old 4.5e-01 | evals  9977
+    : changes  3196 | dx1 2.5e+03 | dx2 4.1e+01
+    : l_old : nipple
+    : l_new : plunger, plumber`s helper
+
+
+--> #  681 | c      681 | y     8.3e-01 | y_next 6.9e-02
++++ >        c_new  767 | y_new 2.8e-01 | y_old 2.7e-01 | evals  9918
+    : changes  3462 | dx1 1.3e+03 | dx2 1.7e+01
+    : l_old : notebook, notebook computer
+    : l_new : rubber eraser, rubber, pencil eraser
+
+
+--> #  682 | c      682 | y     6.9e-01 | y_next 2.2e-03
++++ >        c_new  460 | y_new 3.0e-01 | y_old 2.8e-01 | evals  9923
+    : changes  3244 | dx1 3.2e+03 | dx2 4.4e+01
+    : l_old : obelisk
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  683 | c      683 | y     5.7e-01 | y_next 4.0e-03
++++ >        c_new  558 | y_new 2.4e-01 | y_old 2.2e-01 | evals  9933
+    : changes  3289 | dx1 5.0e+03 | dx2 7.5e+01
+    : l_old : oboe, hautboy, hautbois
+    : l_new : flute, transverse flute
+
+
+--> #  684 | c      684 | y     7.5e-01 | y_next 7.6e-04
++++ >        c_new  327 | y_new 4.5e-01 | y_old 3.7e-01 | evals  9938
+    : changes  3368 | dx1 4.7e+03 | dx2 6.5e+01
+    : l_old : ocarina, sweet potato
+    : l_new : starfish, sea star
+
+
+--> #  685 | c      685 | y     8.5e-01 | y_next 6.0e-04
++++ >        c_new  426 | y_new 3.2e-01 | y_old 2.6e-01 | evals  9956
+    : changes  3156 | dx1 7.3e+03 | dx2 1.1e+02
+    : l_old : odometer, hodometer, mileometer, milometer
+    : l_new : barometer
+
+
+--> #  686 | c      686 | y     6.8e-01 | y_next 6.0e-03
++++ >        c_new  746 | y_new 4.8e-01 | y_old 4.0e-01 | evals  9943
+    : changes  3347 | dx1 2.8e+03 | dx2 3.9e+01
+    : l_old : oil filter
+    : l_new : puck, hockey puck
+
+
+--> #  687 | c      687 | y     8.1e-01 | y_next 4.3e-03
++++ >        c_new  497 | y_new 3.2e-01 | y_old 3.0e-01 | evals  9967
+    : changes  3344 | dx1 4.9e+03 | dx2 7.1e+01
+    : l_old : organ, pipe organ
+    : l_new : church, church building
+
+
+--> #  688 | c      688 | y     8.1e-01 | y_next 3.0e-03
+    > fail | evals 10000
+
+--> #  690 | c      690 | y     7.1e-01 | y_next 1.4e-01
++++ >        c_new  345 | y_new 3.5e-01 | y_old 3.3e-01 | evals  9923
+    : changes  3238 | dx1 1.2e+03 | dx2 1.8e+01
+    : l_old : oxcart
+    : l_new : ox
+
+
+--> #  691 | c      691 | y     9.0e-01 | y_next 9.5e-04
+    > fail | evals 10000
+
+--> #  693 | c      693 | y     7.4e-01 | y_next 1.2e-01
++++ >        c_new  472 | y_new 4.3e-01 | y_old 4.2e-01 | evals  9919
+    : changes  1747 | dx1 1.4e+03 | dx2 2.3e+01
+    : l_old : paddle, boat paddle
+    : l_new : canoe
+
+
+--> #  694 | c      694 | y     8.6e-01 | y_next 3.2e-04
+    > fail | evals 10000
+
+--> #  695 | c      695 | y     8.3e-01 | y_next 2.4e-02
++++ >        c_new  488 | y_new 4.1e-01 | y_old 4.0e-01 | evals  9928
+    : changes  3083 | dx1 4.9e+03 | dx2 7.5e+01
+    : l_old : padlock
+    : l_new : chain
+
+
+--> #  697 | c      697 | y     8.5e-01 | y_next 5.0e-03
++++ >        c_new  638 | y_new 1.5e-01 | y_old 1.4e-01 | evals  9950
+    : changes  3332 | dx1 1.7e+03 | dx2 2.3e+01
+    : l_old : pajama, pyjama, pj`s, jammies
+    : l_new : maillot
+
+
+--> #  698 | c      698 | y     8.9e-01 | y_next 1.2e-02
++++ >        c_new  483 | y_new 3.8e-01 | y_old 3.4e-01 | evals  9967
+    : changes  3287 | dx1 7.0e+03 | dx2 1.1e+02
+    : l_old : palace
+    : l_new : castle
+
+
+--> #  699 | c      699 | y     8.2e-01 | y_next 7.3e-04
++++ >        c_new  813 | y_new 1.1e-01 | y_old 8.2e-02 | evals  9969
+    : changes  3245 | dx1 7.2e+03 | dx2 1.2e+02
+    : l_old : panpipe, pandean pipe, syrinx
+    : l_new : spatula
+
+
+--> #  700 | c      700 | y     8.7e-01 | y_next 3.2e-03
++++ >        c_new  647 | y_new 2.2e-01 | y_old 2.2e-01 | evals  9970
+    : changes  2808 | dx1 1.6e+03 | dx2 3.4e+01
+    : l_old : paper towel
+    : l_new : measuring cup
+
+
+--> #  701 | c      701 | y     8.8e-01 | y_next 1.4e-03
++++ >        c_new  506 | y_new 2.5e-01 | y_old 2.4e-01 | evals  9912
+    : changes  3331 | dx1 2.4e+03 | dx2 3.1e+01
+    : l_old : parachute, chute
+    : l_new : coil, spiral, volute, whorl, helix
+
+
+--> #  704 | c      704 | y     8.0e-01 | y_next 2.8e-02
++++ >        c_new  355 | y_new 3.5e-01 | y_old 3.3e-01 | evals  9958
+    : changes  3325 | dx1 1.6e+03 | dx2 2.3e+01
+    : l_old : parking meter
+    : l_new : llama
+
+
+--> #  705 | c      705 | y     8.3e-01 | y_next 7.6e-04
+    > fail | evals 10000
+
+--> #  706 | c      706 | y     8.8e-01 | y_next 1.8e-02
++++ >        c_new  727 | y_new 2.3e-01 | y_old 1.8e-01 | evals  9996
+    : changes  3296 | dx1 2.1e+03 | dx2 3.0e+01
+    : l_old : patio, terrace
+    : l_new : planetarium
+
+
+--> #  707 | c      707 | y     7.8e-01 | y_next 6.7e-03
++++ >        c_new  571 | y_new 3.8e-01 | y_old 2.9e-01 | evals  9929
+    : changes  3372 | dx1 4.7e+03 | dx2 7.1e+01
+    : l_old : pay-phone, pay-station
+    : l_new : gas pump, gasoline pump, petrol pump, island dispe
+
+
+--> #  708 | c      708 | y     8.5e-01 | y_next 1.5e-02
++++ >        c_new  900 | y_new 3.7e-01 | y_old 3.7e-01 | evals  9928
+    : changes  3323 | dx1 2.8e+03 | dx2 5.1e+01
+    : l_old : pedestal, plinth, footstall
+    : l_new : water tower
+
+
+--> #  709 | c      709 | y     8.0e-01 | y_next 4.9e-03
+    > fail | evals 10000
+
+--> #  711 | c      711 | y     8.3e-01 | y_next 2.9e-02
++++ >        c_new  631 | y_new 4.7e-01 | y_old 3.9e-01 | evals  9986
+    : changes  3326 | dx1 2.2e+03 | dx2 3.2e+01
+    : l_old : perfume, essence
+    : l_new : lotion
+
+
+--> #  714 | c      714 | y     8.7e-01 | y_next 3.6e-03
++++ >        c_new  591 | y_new 4.0e-01 | y_old 3.9e-01 | evals  9908
+    : changes  3288 | dx1 2.3e+03 | dx2 3.2e+01
+    : l_old : pick, plectrum, plectron
+    : l_new : handkerchief, hankie, hanky, hankey
+
+
+--> #  715 | c      715 | y     7.6e-01 | y_next 2.0e-03
++++ >        c_new  126 | y_new 2.4e-01 | y_old 1.6e-01 | evals  9981
+    : changes  3347 | dx1 5.3e+03 | dx2 7.3e+01
+    : l_old : pickelhaube
+    : l_new : isopod
+
+
+--> #  716 | c      716 | y     9.1e-01 | y_next 1.2e-02
++++ >        c_new  444 | y_new 1.7e-01 | y_old 1.6e-01 | evals  9993
+    : changes  3381 | dx1 3.8e+03 | dx2 6.3e+01
+    : l_old : picket fence, paling
+    : l_new : bicycle-built-for-two, tandem bicycle, tandem
+
+
+--> #  718 | c      718 | y     8.7e-01 | y_next 2.3e-02
++++ >        c_new  483 | y_new 2.4e-01 | y_old 2.3e-01 | evals  9988
+    : changes  3420 | dx1 4.2e+03 | dx2 6.1e+01
+    : l_old : pier
+    : l_new : castle
+
+
+--> #  719 | c      719 | y     8.1e-01 | y_next 6.0e-04
+    > fail | evals 10000
+
+--> #  720 | c      720 | y     8.4e-01 | y_next 1.8e-02
++++ >        c_new  686 | y_new 3.5e-01 | y_old 3.2e-01 | evals  9974
+    : changes  3162 | dx1 3.9e+02 | dx2 6.2e+00
+    : l_old : pill bottle
+    : l_new : oil filter
+
+
+--> #  721 | c      721 | y     7.6e-01 | y_next 6.3e-04
++++ >        c_new  893 | y_new 1.8e-01 | y_old 1.8e-01 | evals  9935
+    : changes  3410 | dx1 4.2e+03 | dx2 6.0e+01
+    : l_old : pillow
+    : l_new : wallet, billfold, notecase, pocketbook
+
+
+--> #  723 | c      723 | y     8.2e-01 | y_next 8.2e-04
++++ >        c_new  985 | y_new 2.0e-01 | y_old 1.7e-01 | evals  9990
+    : changes  3363 | dx1 3.9e+03 | dx2 5.9e+01
+    : l_old : pinwheel
+    : l_new : daisy
+
+
+--> #  724 | c      724 | y     8.1e-01 | y_next 2.7e-03
++++ >        c_new  913 | y_new 3.4e-01 | y_old 3.1e-01 | evals  9957
+    : changes  3365 | dx1 3.8e+03 | dx2 5.4e+01
+    : l_old : pirate, pirate ship
+    : l_new : wreck
+
+
+--> #  726 | c      726 | y     6.9e-01 | y_next 8.5e-04
++++ >        c_new  674 | y_new 1.6e-01 | y_old 1.4e-01 | evals  9962
+    : changes  3340 | dx1 2.3e+03 | dx2 3.2e+01
+    : l_old : plane, carpenter`s plane, woodworking plane
+    : l_new : mousetrap
+
+
+--> #  727 | c      727 | y     9.8e-01 | y_next 8.0e-04
++++ >        c_new  494 | y_new 2.0e-01 | y_old 1.6e-01 | evals  9969
+    : changes  3372 | dx1 2.9e+03 | dx2 4.1e+01
+    : l_old : planetarium
+    : l_new : chime, bell, gong
+
+
+--> #  728 | c      728 | y     8.6e-01 | y_next 3.3e-03
++++ >        c_new  692 | y_new 4.1e-01 | y_old 3.9e-01 | evals  9966
+    : changes  3320 | dx1 1.3e+03 | dx2 2.1e+01
+    : l_old : plastic bag
+    : l_new : packet
+
+
+--> #  729 | c      729 | y     7.7e-01 | y_next 2.2e-03
++++ >        c_new  648 | y_new 1.7e-01 | y_old 1.7e-01 | evals  9946
+    : changes  3324 | dx1 2.9e+03 | dx2 4.5e+01
+    : l_old : plate rack
+    : l_new : medicine chest, medicine cabinet
+
+
+--> #  731 | c      731 | y     9.2e-01 | y_next 6.0e-04
++++ >        c_new  896 | y_new 4.2e-01 | y_old 4.1e-01 | evals  9918
+    : changes  2293 | dx1 4.7e+03 | dx2 7.0e+01
+    : l_old : plunger, plumber`s helper
+    : l_new : washbasin, handbasin, washbowl, lavabo, wash-hand 
+
+
+--> #  732 | c      732 | y     8.3e-01 | y_next 2.5e-03
++++ >        c_new  759 | y_new 3.0e-01 | y_old 2.8e-01 | evals  9981
+    : changes  3336 | dx1 2.7e+03 | dx2 3.9e+01
+    : l_old : polaroid camera, polaroid land camera
+    : l_new : reflex camera
+
+
+--> #  733 | c      733 | y     9.5e-01 | y_next 7.8e-04
++++ >        c_new  517 | y_new 3.8e-01 | y_old 3.6e-01 | evals  9912
+    : changes  3175 | dx1 2.5e+03 | dx2 3.8e+01
+    : l_old : pole
+    : l_new : crane
+
+
+--> #  734 | c      734 | y     8.2e-01 | y_next 2.9e-02
++++ >        c_new  654 | y_new 2.9e-01 | y_old 2.8e-01 | evals  9933
+    : changes  3118 | dx1 1.3e+03 | dx2 2.1e+01
+    : l_old : police van, police wagon, paddy wagon, patrol wago
+    : l_new : minibus
+
+
+--> #  735 | c      735 | y     7.6e-01 | y_next 4.1e-03
+    > fail | evals 10000
+
+--> #  737 | c      737 | y     8.6e-01 | y_next 9.5e-03
++++ >        c_new  440 | y_new 3.7e-01 | y_old 3.7e-01 | evals  9981
+    : changes  3339 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : pop bottle, soda bottle
+    : l_new : beer bottle
+
+
+--> #  738 | c      738 | y     8.3e-01 | y_next 1.7e-02
++++ >        c_new  580 | y_new 3.5e-01 | y_old 3.0e-01 | evals  9997
+    : changes  3355 | dx1 2.3e+03 | dx2 3.6e+01
+    : l_old : pot, flowerpot
+    : l_new : greenhouse, nursery, glasshouse
+
+
+--> #  739 | c      739 | y     8.9e-01 | y_next 5.3e-03
++++ >        c_new  499 | y_new 3.1e-01 | y_old 3.1e-01 | evals  9950
+    : changes  1594 | dx1 2.5e+03 | dx2 4.2e+01
+    : l_old : potter`s wheel
+    : l_new : cleaver, meat cleaver, chopper
+
+
+--> #  741 | c      741 | y     8.3e-01 | y_next 4.2e-04
+    > fail | evals 10000
+
+--> #  742 | c      742 | y     7.5e-01 | y_next 7.5e-03
++++ >        c_new  681 | y_new 3.7e-01 | y_old 3.4e-01 | evals  9973
+    : changes  3335 | dx1 1.3e+03 | dx2 2.0e+01
+    : l_old : printer
+    : l_new : notebook, notebook computer
+
+
+--> #  743 | c      743 | y     9.6e-01 | y_next 4.7e-03
++++ >        c_new  270 | y_new 2.4e-01 | y_old 2.0e-01 | evals  9997
+    : changes  3390 | dx1 5.8e+03 | dx2 8.4e+01
+    : l_old : prison, prison house
+    : l_new : white wolf, arctic wolf, canis lupus tundrarum
+
+
+--> #  745 | c      745 | y     7.1e-01 | y_next 4.1e-03
++++ >        c_new  606 | y_new 1.2e-01 | y_old 1.2e-01 | evals  9905
+    : changes  3317 | dx1 1.2e+03 | dx2 1.7e+01
+    : l_old : projector
+    : l_new : iron, smoothing iron
+
+
+--> #  746 | c      746 | y     7.8e-01 | y_next 1.2e-03
++++ >        c_new  795 | y_new 2.7e-01 | y_old 2.4e-01 | evals  9901
+    : changes  3344 | dx1 7.3e+03 | dx2 1.3e+02
+    : l_old : puck, hockey puck
+    : l_new : ski
+
+
+--> #  747 | c      747 | y     8.5e-01 | y_next 1.1e-03
++++ >        c_new  907 | y_new 2.0e-01 | y_old 1.4e-01 | evals  9966
+    : changes  3303 | dx1 5.6e+03 | dx2 9.3e+01
+    : l_old : punching bag, punch bag, punching ball, punchball
+    : l_new : wine bottle
+
+
+--> #  748 | c      748 | y     6.6e-01 | y_next 8.7e-02
++++ >        c_new  636 | y_new 1.7e-01 | y_old 1.6e-01 | evals  9991
+    : changes  3382 | dx1 2.4e+03 | dx2 3.0e+01
+    : l_old : purse
+    : l_new : mailbag, postbag
+
+
+--> #  749 | c      749 | y     8.1e-01 | y_next 1.3e-03
++++ >        c_new  771 | y_new 3.1e-01 | y_old 2.8e-01 | evals  9976
+    : changes  3304 | dx1 1.9e+03 | dx2 2.8e+01
+    : l_old : quill, quill pen
+    : l_new : safe
+
+
+Completed. Successful: 85.15% (total images 202)
+DONE (151596.80 sec.) 
+
+
+===================== ---------------------------------------
+[2023-12-04 16-34-03] Work is finished (151778.64 sec. total)
+
+

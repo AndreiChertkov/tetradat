@@ -1,0 +1,30 @@
+[2023-12-07 11-21-56] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Task                : "check"
+Kind of task        : "model"
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (    69.82 sec.) 
+
+
+.... Check model accuracy
+Accuracy   tst : 74.20% (      742 /      1000) | time =     240.12 sec
+
+DONE (   240.12 sec.) 
+
+.... Plot several model predictions
+DONE (     2.66 sec.) 
+
+
+===================== ------------------------------------
+[2023-12-07 11-27-08] Work is finished (312.62 sec. total)
+
+

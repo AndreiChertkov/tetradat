@@ -1,0 +1,32 @@
+[2023-12-11 13-05-35] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Task                : "check"
+Kind of task        : "demo"
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.02 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (    20.78 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.93 sec.) 
+
+
+--> #  270 | c      270 | y     8.2e-01
++++ >        c_new  269 | y_new 3.9e-01 | y_old 3.9e-01 | evals 10008
+    : changes  3325 | dx1 1.5e+03 | dx2 2.4e+01
+    : l_old : white wolf, arctic wolf, canis lupus tundrarum
+    : l_new : timber wolf, grey wolf, gray wolf, canis lupus
+
+
+
+===================== ------------------------------------
+[2023-12-11 13-16-31] Work is finished (656.25 sec. total)
+
+

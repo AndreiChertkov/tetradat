@@ -1,0 +1,30 @@
+[2023-12-07 11-29-35] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "googlenet"
+Task                : "check"
+Kind of task        : "model"
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "googlenet" model
+DONE (    75.02 sec.) 
+
+
+.... Check model accuracy
+Accuracy   tst : 79.50% (      795 /      1000) | time =      60.48 sec
+
+DONE (    60.48 sec.) 
+
+.... Plot several model predictions
+DONE (    16.00 sec.) 
+
+
+===================== ------------------------------------
+[2023-12-07 11-32-07] Work is finished (151.71 sec. total)
+
+

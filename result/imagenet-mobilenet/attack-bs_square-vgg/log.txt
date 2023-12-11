@@ -1,0 +1,5446 @@
+[2023-11-25 20-11-40] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "mobilenet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (     7.13 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.47 sec.) 
+
+
+.... Start attack on images with baseline "square"
+
+--> #    0 | c        0 | y     5.8e-01 | y_next 1.6e-02
++++ >        c_new  389 | y_new 2.4e-01 | y_old 2.4e-01 | evals  4656
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tench, tinca tinca
+    : l_new : barracouta, snoek
+
+
+--> #    1 | c        1 | y     6.0e-01 | y_next 3.8e-03
++++ >        c_new    0 | y_new 1.5e-01 | y_old 1.5e-01 | evals  4050
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : goldfish, carassius auratus
+    : l_new : tench, tinca tinca
+
+
+--> #    2 | c        2 | y     7.1e-01 | y_next 8.6e-02
++++ >        c_new  394 | y_new 2.5e-01 | y_old 2.4e-01 | evals   129
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : great white shark, white shark, man-eater, man-eat
+    : l_new : sturgeon
+
+
+--> #    3 | c        3 | y     7.9e-01 | y_next 4.5e-02
++++ >        c_new    2 | y_new 3.7e-01 | y_old 3.5e-01 | evals   794
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tiger shark, galeocerdo cuvieri
+    : l_new : great white shark, white shark, man-eater, man-eat
+
+
+--> #    5 | c        5 | y     9.5e-01 | y_next 6.5e-03
++++ >        c_new  148 | y_new 4.3e-01 | y_old 4.3e-01 | evals  6274
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : electric ray, crampfish, numbfish, torpedo
+    : l_new : killer whale, killer, orca, grampus, sea wolf, orc
+
+
+--> #    7 | c        7 | y     3.8e-01 | y_next 1.1e-01
++++ >        c_new    8 | y_new 1.6e-01 | y_old 1.6e-01 | evals   214
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cock
+    : l_new : hen
+
+
+--> #    8 | c        8 | y     3.8e-01 | y_next 3.3e-01
++++ >        c_new    7 | y_new 3.7e-01 | y_old 3.6e-01 | evals    29
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hen
+    : l_new : cock
+
+
+--> #    9 | c        9 | y     9.0e-01 | y_next 2.4e-03
++++ >        c_new  355 | y_new 1.4e-01 | y_old 1.4e-01 | evals  1087
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ostrich, struthio camelus
+    : l_new : llama
+
+
+--> #   10 | c       10 | y     3.3e-01 | y_next 1.5e-01
++++ >        c_new  904 | y_new 2.6e-01 | y_old 2.4e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : brambling, fringilla montifringilla
+    : l_new : window screen
+
+
+--> #   11 | c       11 | y     7.6e-01 | y_next 2.0e-03
+    > fail | evals 10003
+
+--> #   12 | c       12 | y     7.5e-01 | y_next 9.5e-03
++++ >        c_new   10 | y_new 3.0e-01 | y_old 2.8e-01 | evals  2104
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : house finch, linnet, carpodacus mexicanus
+    : l_new : brambling, fringilla montifringilla
+
+
+--> #   13 | c       13 | y     3.7e-01 | y_next 1.3e-01
++++ >        c_new   10 | y_new 1.8e-01 | y_old 1.6e-01 | evals    61
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : junco, snowbird
+    : l_new : brambling, fringilla montifringilla
+
+
+--> #   14 | c       14 | y     8.9e-01 | y_next 1.7e-03
++++ >        c_new   17 | y_new 3.6e-01 | y_old 3.6e-01 | evals  3696
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : indigo bunting, indigo finch, indigo bird, passeri
+    : l_new : jay
+
+
+--> #   15 | c       15 | y     7.4e-01 | y_next 3.6e-03
++++ >        c_new   91 | y_new 2.4e-01 | y_old 2.3e-01 | evals  4860
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : robin, american robin, turdus migratorius
+    : l_new : coucal
+
+
+--> #   16 | c       16 | y     9.3e-01 | y_next 2.1e-03
++++ >        c_new   94 | y_new 3.0e-01 | y_old 2.9e-01 | evals  2725
+    : changes 50173 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bulbul
+    : l_new : hummingbird
+
+
+--> #   17 | c       17 | y     8.7e-01 | y_next 3.2e-03
++++ >        c_new   19 | y_new 1.5e-01 | y_old 1.4e-01 | evals  1595
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : jay
+    : l_new : chickadee
+
+
+--> #   18 | c       18 | y     7.5e-01 | y_next 2.3e-02
++++ >        c_new  134 | y_new 2.6e-01 | y_old 2.6e-01 | evals   685
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : magpie
+    : l_new : crane
+
+
+--> #   19 | c       19 | y     8.2e-01 | y_next 2.3e-03
++++ >        c_new  453 | y_new 3.1e-01 | y_old 3.1e-01 | evals  3662
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chickadee
+    : l_new : bookcase
+
+
+--> #   20 | c       20 | y     7.6e-01 | y_next 1.2e-02
++++ >        c_new  141 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1679
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : water ouzel, dipper
+    : l_new : redshank, tringa totanus
+
+
+--> #   22 | c       22 | y     6.8e-01 | y_next 2.8e-02
++++ >        c_new   21 | y_new 3.0e-01 | y_old 2.9e-01 | evals   506
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bald eagle, american eagle, haliaeetus leucocephal
+    : l_new : kite
+
+
+--> #   24 | c       24 | y     7.6e-01 | y_next 1.7e-03
+    > fail | evals 10003
+
+--> #   25 | c       25 | y     8.3e-01 | y_next 2.2e-02
++++ >        c_new   28 | y_new 3.7e-01 | y_old 3.7e-01 | evals  6343
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : european fire salamander, salamandra salamandra
+    : l_new : spotted salamander, ambystoma maculatum
+
+
+--> #   26 | c       26 | y     2.9e-01 | y_next 1.3e-01
++++ >        c_new   38 | y_new 2.3e-01 | y_old 2.2e-01 | evals    65
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : common newt, triturus vulgaris
+    : l_new : banded gecko
+
+
+--> #   27 | c       27 | y     8.4e-01 | y_next 2.0e-02
++++ >        c_new   26 | y_new 3.7e-01 | y_old 3.7e-01 | evals  7264
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : eft
+    : l_new : common newt, triturus vulgaris
+
+
+--> #   28 | c       28 | y     7.9e-01 | y_next 1.4e-02
++++ >        c_new   25 | y_new 3.5e-01 | y_old 3.4e-01 | evals  8553
+    : changes 50040 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : spotted salamander, ambystoma maculatum
+    : l_new : european fire salamander, salamandra salamandra
+
+
+--> #   30 | c       30 | y     8.3e-01 | y_next 8.8e-03
+    > fail | evals 10003
+
+--> #   31 | c       31 | y     6.4e-01 | y_next 2.1e-01
++++ >        c_new   32 | y_new 3.9e-01 | y_old 3.9e-01 | evals    64
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : tree frog, tree-frog
+    : l_new : tailed frog, bell toad, ribbed toad, tailed toad, 
+
+
+--> #   32 | c       32 | y     9.0e-01 | y_next 1.6e-02
++++ >        c_new   30 | y_new 3.8e-01 | y_old 3.7e-01 | evals  4578
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tailed frog, bell toad, ribbed toad, tailed toad, 
+    : l_new : bullfrog, rana catesbeiana
+
+
+--> #   34 | c       34 | y     7.9e-01 | y_next 1.3e-02
++++ >        c_new   36 | y_new 3.2e-01 | y_old 3.2e-01 | evals  2879
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : leatherback turtle, leatherback, leathery turtle, 
+    : l_new : terrapin
+
+
+--> #   35 | c       35 | y     8.6e-01 | y_next 4.6e-02
++++ >        c_new   36 | y_new 4.0e-01 | y_old 4.0e-01 | evals  1602
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mud turtle
+    : l_new : terrapin
+
+
+--> #   36 | c       36 | y     5.8e-01 | y_next 7.7e-02
++++ >        c_new   33 | y_new 2.9e-01 | y_old 2.9e-01 | evals   550
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : terrapin
+    : l_new : loggerhead, loggerhead turtle, caretta caretta
+
+
+--> #   38 | c       38 | y     6.8e-01 | y_next 5.1e-02
++++ >        c_new   60 | y_new 2.3e-01 | y_old 2.3e-01 | evals   143
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : banded gecko
+    : l_new : night snake, hypsiglena torquata
+
+
+--> #   39 | c       39 | y     8.3e-01 | y_next 7.0e-03
++++ >        c_new   48 | y_new 2.3e-01 | y_old 2.3e-01 | evals  6793
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : common iguana, iguana, iguana iguana
+    : l_new : komodo dragon, komodo lizard, dragon lizard, giant
+
+
+--> #   41 | c       41 | y     3.0e-01 | y_next 1.0e-01
++++ >        c_new   67 | y_new 1.7e-01 | y_old 1.6e-01 | evals    36
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : whiptail, whiptail lizard
+    : l_new : diamondback, diamondback rattlesnake, crotalus ada
+
+
+--> #   42 | c       42 | y     8.3e-01 | y_next 3.4e-02
++++ >        c_new   46 | y_new 3.0e-01 | y_old 3.0e-01 | evals   590
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : agama
+    : l_new : green lizard, lacerta viridis
+
+
+--> #   43 | c       43 | y     7.7e-01 | y_next 1.1e-01
++++ >        c_new   42 | y_new 3.5e-01 | y_old 3.5e-01 | evals   239
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : frilled lizard, chlamydosaurus kingi
+    : l_new : agama
+
+
+--> #   45 | c       45 | y     8.1e-01 | y_next 2.6e-03
++++ >        c_new   63 | y_new 2.4e-01 | y_old 2.4e-01 | evals  4389
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gila monster, heloderma suspectum
+    : l_new : indian cobra, naja naja
+
+
+--> #   47 | c       47 | y     7.9e-01 | y_next 9.7e-03
++++ >        c_new   39 | y_new 2.8e-01 | y_old 2.8e-01 | evals  2454
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : african chameleon, chamaeleo chamaeleon
+    : l_new : common iguana, iguana, iguana iguana
+
+
+--> #   48 | c       48 | y     8.7e-01 | y_next 3.7e-02
++++ >        c_new  343 | y_new 4.1e-01 | y_old 4.0e-01 | evals   587
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : komodo dragon, komodo lizard, dragon lizard, giant
+    : l_new : warthog
+
+
+--> #   49 | c       49 | y     8.1e-01 | y_next 5.3e-02
++++ >        c_new   50 | y_new 3.9e-01 | y_old 3.9e-01 | evals   574
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : african crocodile, nile crocodile, crocodylus nilo
+    : l_new : american alligator, alligator mississipiensis
+
+
+--> #   51 | c       51 | y     5.6e-01 | y_next 1.6e-01
++++ >        c_new   71 | y_new 3.2e-01 | y_old 1.8e-01 | evals     3
+    : changes 50176 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : triceratops
+    : l_new : scorpion
+
+
+--> #   52 | c       52 | y     4.7e-01 | y_next 7.6e-02
++++ >        c_new   54 | y_new 2.4e-01 | y_old 2.3e-01 | evals  1113
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : thunder snake, worm snake, carphophis amoenus
+    : l_new : hognose snake, puff adder, sand viper
+
+
+--> #   53 | c       53 | y     8.9e-01 | y_next 5.4e-03
++++ >        c_new   52 | y_new 3.6e-01 | y_old 3.6e-01 | evals  9962
+    : changes 50174 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ringneck snake, ring-necked snake, ring snake
+    : l_new : thunder snake, worm snake, carphophis amoenus
+
+
+--> #   57 | c       57 | y     6.0e-01 | y_next 3.0e-02
++++ >        c_new   52 | y_new 2.1e-01 | y_old 2.1e-01 | evals  2512
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : garter snake, grass snake
+    : l_new : thunder snake, worm snake, carphophis amoenus
+
+
+--> #   59 | c       59 | y     6.9e-01 | y_next 1.6e-01
++++ >        c_new   55 | y_new 3.8e-01 | y_old 3.8e-01 | evals   910
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : vine snake
+    : l_new : green snake, grass snake
+
+
+--> #   61 | c       61 | y     8.7e-01 | y_next 7.3e-03
++++ >        c_new   42 | y_new 2.2e-01 | y_old 2.1e-01 | evals  2214
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : boa constrictor, constrictor constrictor
+    : l_new : agama
+
+
+--> #   62 | c       62 | y     3.6e-01 | y_next 3.3e-01
++++ >        c_new   61 | y_new 3.7e-01 | y_old 3.0e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rock python, rock snake, python sebae
+    : l_new : boa constrictor, constrictor constrictor
+
+
+--> #   63 | c       63 | y     7.2e-01 | y_next 6.5e-02
++++ >        c_new  883 | y_new 3.7e-01 | y_old 3.7e-01 | evals   533
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : indian cobra, naja naja
+    : l_new : vase
+
+
+--> #   67 | c       67 | y     7.0e-01 | y_next 5.8e-02
++++ >        c_new   54 | y_new 3.4e-01 | y_old 3.4e-01 | evals  2120
+    : changes 49850 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : diamondback, diamondback rattlesnake, crotalus ada
+    : l_new : hognose snake, puff adder, sand viper
+
+
+--> #   68 | c       68 | y     3.7e-01 | y_next 1.4e-01
++++ >        c_new   66 | y_new 2.4e-01 | y_old 2.4e-01 | evals   674
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sidewinder, horned rattlesnake, crotalus cerastes
+    : l_new : horned viper, cerastes, sand viper, horned asp, ce
+
+
+--> #   69 | c       69 | y     7.2e-01 | y_next 1.2e-02
++++ >        c_new  126 | y_new 2.0e-01 | y_old 2.0e-01 | evals  1790
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : trilobite
+    : l_new : isopod
+
+
+--> #   70 | c       70 | y     7.2e-01 | y_next 1.2e-02
++++ >        c_new   75 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1356
+    : changes 50034 | dx1 9.4e+03 | dx2 2.5e+01
+    : l_old : harvestman, daddy longlegs, phalangium opilio
+    : l_new : black widow, latrodectus mactans
+
+
+--> #   71 | c       71 | y     9.3e-01 | y_next 2.2e-03
++++ >        c_new  854 | y_new 3.2e-01 | y_old 3.0e-01 | evals  4722
+    : changes 50071 | dx1 8.4e+03 | dx2 2.4e+01
+    : l_old : scorpion
+    : l_new : theater curtain, theatre curtain
+
+
+--> #   72 | c       72 | y     4.2e-01 | y_next 2.2e-01
++++ >        c_new   74 | y_new 2.7e-01 | y_old 2.7e-01 | evals   547
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : black and gold garden spider, argiope aurantia
+    : l_new : garden spider, aranea diademata
+
+
+--> #   74 | c       74 | y     6.1e-01 | y_next 1.3e-01
++++ >        c_new   72 | y_new 4.1e-01 | y_old 4.1e-01 | evals  1994
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : garden spider, aranea diademata
+    : l_new : black and gold garden spider, argiope aurantia
+
+
+--> #   75 | c       75 | y     7.1e-01 | y_next 5.2e-02
++++ >        c_new   73 | y_new 2.2e-01 | y_old 2.2e-01 | evals   373
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : black widow, latrodectus mactans
+    : l_new : barn spider, araneus cavaticus
+
+
+--> #   76 | c       76 | y     8.3e-01 | y_next 1.3e-02
++++ >        c_new   77 | y_new 3.3e-01 | y_old 3.2e-01 | evals  2368
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tarantula
+    : l_new : wolf spider, hunting spider
+
+
+--> #   77 | c       77 | y     6.1e-01 | y_next 6.2e-02
++++ >        c_new   76 | y_new 3.4e-01 | y_old 3.1e-01 | evals   297
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : wolf spider, hunting spider
+    : l_new : tarantula
+
+
+--> #   78 | c       78 | y     4.6e-01 | y_next 7.3e-02
++++ >        c_new  307 | y_new 1.7e-01 | y_old 1.7e-01 | evals    60
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tick
+    : l_new : weevil
+
+
+--> #   79 | c       79 | y     8.6e-01 | y_next 3.3e-03
+    > fail | evals 10003
+
+--> #   80 | c       80 | y     7.5e-01 | y_next 2.3e-02
++++ >        c_new   83 | y_new 2.6e-01 | y_old 2.6e-01 | evals  1129
+    : changes 50092 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : black grouse
+    : l_new : prairie chicken, prairie grouse, prairie fowl
+
+
+--> #   81 | c       81 | y     9.3e-01 | y_next 2.0e-03
++++ >        c_new   89 | y_new 2.0e-01 | y_old 1.9e-01 | evals  3665
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ptarmigan
+    : l_new : sulphur-crested cockatoo, kakatoe galerita, cacatu
+
+
+--> #   82 | c       82 | y     7.9e-01 | y_next 5.4e-02
++++ >        c_new   83 | y_new 3.5e-01 | y_old 3.5e-01 | evals   962
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ruffed grouse, partridge, bonasa umbellus
+    : l_new : prairie chicken, prairie grouse, prairie fowl
+
+
+--> #   84 | c       84 | y     8.1e-01 | y_next 1.8e-02
++++ >        c_new   91 | y_new 3.8e-01 | y_old 3.8e-01 | evals  2161
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : peacock
+    : l_new : coucal
+
+
+--> #   85 | c       85 | y     4.9e-01 | y_next 5.1e-02
++++ >        c_new  363 | y_new 1.6e-01 | y_old 1.6e-01 | evals   386
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : quail
+    : l_new : armadillo
+
+
+--> #   86 | c       86 | y     5.5e-01 | y_next 1.7e-01
+    > fail | evals 10003
+
+--> #   87 | c       87 | y     8.3e-01 | y_next 5.0e-03
++++ >        c_new   88 | y_new 3.4e-01 | y_old 3.4e-01 | evals  4201
+    : changes 49574 | dx1 9.1e+03 | dx2 2.5e+01
+    : l_old : african grey, african gray, psittacus erithacus
+    : l_new : macaw
+
+
+--> #   88 | c       88 | y     7.9e-01 | y_next 9.3e-03
++++ >        c_new   90 | y_new 2.4e-01 | y_old 2.4e-01 | evals  6287
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : macaw
+    : l_new : lorikeet
+
+
+--> #   89 | c       89 | y     8.5e-01 | y_next 4.6e-03
++++ >        c_new   99 | y_new 3.5e-01 | y_old 3.5e-01 | evals  2079
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sulphur-crested cockatoo, kakatoe galerita, cacatu
+    : l_new : goose
+
+
+--> #   90 | c       90 | y     8.3e-01 | y_next 1.6e-03
+    > fail | evals 10003
+
+--> #   91 | c       91 | y     5.9e-01 | y_next 2.3e-02
++++ >        c_new   16 | y_new 1.8e-01 | y_old 1.7e-01 | evals   497
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coucal
+    : l_new : bulbul
+
+
+--> #   92 | c       92 | y     9.1e-01 | y_next 3.4e-03
++++ >        c_new   95 | y_new 2.7e-01 | y_old 2.6e-01 | evals  6132
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bee eater
+    : l_new : jacamar
+
+
+--> #   93 | c       93 | y     8.5e-01 | y_next 2.9e-02
++++ >        c_new   23 | y_new 3.9e-01 | y_old 3.5e-01 | evals  1255
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hornbill
+    : l_new : vulture
+
+
+--> #   94 | c       94 | y     9.0e-01 | y_next 2.2e-03
++++ >        c_new   16 | y_new 2.6e-01 | y_old 2.6e-01 | evals  2756
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hummingbird
+    : l_new : bulbul
+
+
+--> #   95 | c       95 | y     8.6e-01 | y_next 2.3e-02
++++ >        c_new   92 | y_new 3.6e-01 | y_old 3.6e-01 | evals  2688
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : jacamar
+    : l_new : bee eater
+
+
+--> #   96 | c       96 | y     5.2e-01 | y_next 1.9e-01
++++ >        c_new   93 | y_new 3.9e-01 | y_old 3.9e-01 | evals    94
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : toucan
+    : l_new : hornbill
+
+
+--> #   97 | c       97 | y     8.6e-01 | y_next 9.9e-03
++++ >        c_new   98 | y_new 3.3e-01 | y_old 3.2e-01 | evals  2737
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : drake
+    : l_new : red-breasted merganser, mergus serrator
+
+
+--> #   98 | c       98 | y     2.5e-01 | y_next 2.1e-01
++++ >        c_new   23 | y_new 1.4e-01 | y_old 1.3e-01 | evals    18
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : red-breasted merganser, mergus serrator
+    : l_new : vulture
+
+
+--> #   99 | c       99 | y     7.3e-01 | y_next 5.6e-02
++++ >        c_new  138 | y_new 3.8e-01 | y_old 3.8e-01 | evals   385
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : goose
+    : l_new : bustard
+
+
+--> #  100 | c      100 | y     7.2e-01 | y_next 1.3e-02
++++ >        c_new   99 | y_new 1.9e-01 | y_old 1.8e-01 | evals   510
+    : changes 49654 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : black swan, cygnus atratus
+    : l_new : goose
+
+
+--> #  101 | c      101 | y     7.7e-01 | y_next 6.5e-02
++++ >        c_new  385 | y_new 3.7e-01 | y_old 3.6e-01 | evals  1210
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tusker
+    : l_new : indian elephant, elephas maximus
+
+
+--> #  102 | c      102 | y     8.2e-01 | y_next 2.6e-03
++++ >        c_new  334 | y_new 3.0e-01 | y_old 3.0e-01 | evals  9042
+    : changes 50163 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : echidna, spiny anteater, anteater
+    : l_new : porcupine, hedgehog
+
+
+--> #  103 | c      103 | y     9.7e-01 | y_next 4.8e-03
++++ >        c_new  342 | y_new 3.6e-01 | y_old 3.5e-01 | evals  1133
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : platypus, duckbill, duckbilled platypus, duck-bill
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  105 | c      105 | y     8.7e-01 | y_next 1.4e-02
++++ >        c_new  106 | y_new 3.5e-01 | y_old 3.4e-01 | evals  2169
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : koala, koala bear, kangaroo bear, native bear, pha
+    : l_new : wombat
+
+
+--> #  106 | c      106 | y     4.9e-01 | y_next 1.0e-01
++++ >        c_new  333 | y_new 2.7e-01 | y_old 2.7e-01 | evals   264
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wombat
+    : l_new : hamster
+
+
+--> #  108 | c      108 | y     9.2e-01 | y_next 5.8e-03
++++ >        c_new  328 | y_new 4.5e-01 | y_old 4.4e-01 | evals  2408
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sea anemone, anemone
+    : l_new : sea urchin
+
+
+--> #  109 | c      109 | y     8.3e-01 | y_next 2.3e-03
++++ >        c_new  973 | y_new 3.5e-01 | y_old 3.5e-01 | evals  9712
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : brain coral
+    : l_new : coral reef
+
+
+--> #  110 | c      110 | y     8.0e-01 | y_next 2.1e-02
++++ >        c_new  115 | y_new 2.8e-01 | y_old 2.8e-01 | evals  4950
+    : changes 50161 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : flatworm, platyhelminth
+    : l_new : sea slug, nudibranch
+
+
+--> #  111 | c      111 | y     7.8e-01 | y_next 1.3e-02
++++ >        c_new   59 | y_new 3.0e-01 | y_old 3.0e-01 | evals  4438
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : nematode, nematode worm, roundworm
+    : l_new : vine snake
+
+
+--> #  112 | c      112 | y     7.4e-01 | y_next 2.1e-02
++++ >        c_new    1 | y_new 2.7e-01 | y_old 2.6e-01 | evals   304
+    : changes 50139 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : conch
+    : l_new : goldfish, carassius auratus
+
+
+--> #  113 | c      113 | y     6.7e-01 | y_next 3.5e-02
++++ >        c_new  116 | y_new 3.5e-01 | y_old 3.4e-01 | evals  2385
+    : changes 49982 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : snail
+    : l_new : chiton, coat-of-mail shell, sea cradle, polyplacop
+
+
+--> #  114 | c      114 | y     7.5e-01 | y_next 8.2e-03
++++ >        c_new  794 | y_new 1.7e-01 | y_old 1.6e-01 | evals  1133
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : slug
+    : l_new : shower curtain
+
+
+--> #  115 | c      115 | y     6.2e-01 | y_next 5.6e-02
++++ >        c_new  397 | y_new 1.5e-01 | y_old 1.4e-01 | evals   212
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sea slug, nudibranch
+    : l_new : puffer, pufferfish, blowfish, globefish
+
+
+--> #  116 | c      116 | y     8.9e-01 | y_next 2.5e-03
++++ >        c_new   69 | y_new 2.2e-01 | y_old 2.2e-01 | evals  5766
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chiton, coat-of-mail shell, sea cradle, polyplacop
+    : l_new : trilobite
+
+
+--> #  117 | c      117 | y     8.4e-01 | y_next 1.5e-02
++++ >        c_new  577 | y_new 4.3e-01 | y_old 4.2e-01 | evals  2411
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chambered nautilus, pearly nautilus, nautilus
+    : l_new : gong, tam-tam
+
+
+--> #  119 | c      119 | y     3.9e-01 | y_next 2.7e-01
++++ >        c_new  120 | y_new 3.0e-01 | y_old 2.9e-01 | evals    11
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rock crab, cancer irroratus
+    : l_new : fiddler crab
+
+
+--> #  120 | c      120 | y     6.6e-01 | y_next 7.8e-03
++++ >        c_new  119 | y_new 2.2e-01 | y_old 2.2e-01 | evals  4586
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : fiddler crab
+    : l_new : rock crab, cancer irroratus
+
+
+--> #  121 | c      121 | y     9.0e-01 | y_next 3.3e-03
++++ >        c_new  123 | y_new 3.8e-01 | y_old 3.7e-01 | evals  3823
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : king crab, alaska crab, alaskan king crab, alaska 
+    : l_new : spiny lobster, langouste, rock lobster, crawfish, 
+
+
+--> #  123 | c      123 | y     9.1e-01 | y_next 5.8e-03
++++ >        c_new  396 | y_new 3.4e-01 | y_old 3.2e-01 | evals  1799
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : spiny lobster, langouste, rock lobster, crawfish, 
+    : l_new : lionfish
+
+
+--> #  124 | c      124 | y     3.6e-01 | y_next 1.4e-01
++++ >        c_new  119 | y_new 2.6e-01 | y_old 2.5e-01 | evals   231
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : crayfish, crawfish, crawdad, crawdaddy
+    : l_new : rock crab, cancer irroratus
+
+
+--> #  125 | c      125 | y     6.0e-01 | y_next 1.7e-01
++++ >        c_new  113 | y_new 3.4e-01 | y_old 3.1e-01 | evals    61
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hermit crab
+    : l_new : snail
+
+
+--> #  126 | c      126 | y     8.8e-01 | y_next 4.7e-03
++++ >        c_new   71 | y_new 2.5e-01 | y_old 2.5e-01 | evals  5531
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : isopod
+    : l_new : scorpion
+
+
+--> #  127 | c      127 | y     9.1e-01 | y_next 7.2e-03
++++ >        c_new  128 | y_new 3.8e-01 | y_old 3.7e-01 | evals  9768
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : white stork, ciconia ciconia
+    : l_new : black stork, ciconia nigra
+
+
+--> #  128 | c      128 | y     9.3e-01 | y_next 8.3e-03
++++ >        c_new  143 | y_new 3.9e-01 | y_old 3.8e-01 | evals  1006
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : black stork, ciconia nigra
+    : l_new : oystercatcher, oyster catcher
+
+
+--> #  129 | c      129 | y     8.6e-01 | y_next 8.4e-03
++++ >        c_new  132 | y_new 3.5e-01 | y_old 3.5e-01 | evals  1685
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : spoonbill
+    : l_new : american egret, great white heron, egretta albus
+
+
+--> #  130 | c      130 | y     8.3e-01 | y_next 7.8e-03
++++ >        c_new    1 | y_new 3.4e-01 | y_old 3.4e-01 | evals  1815
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : flamingo
+    : l_new : goldfish, carassius auratus
+
+
+--> #  131 | c      131 | y     8.2e-01 | y_next 1.1e-02
++++ >        c_new  133 | y_new 2.2e-01 | y_old 2.2e-01 | evals  1528
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : little blue heron, egretta caerulea
+    : l_new : bittern
+
+
+--> #  132 | c      132 | y     6.0e-01 | y_next 2.9e-02
++++ >        c_new  146 | y_new 2.6e-01 | y_old 2.5e-01 | evals  1460
+    : changes 50153 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : american egret, great white heron, egretta albus
+    : l_new : albatross, mollymawk
+
+
+--> #  133 | c      133 | y     9.5e-01 | y_next 1.1e-02
++++ >        c_new  138 | y_new 4.4e-01 | y_old 4.3e-01 | evals  1538
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bittern
+    : l_new : bustard
+
+
+--> #  135 | c      135 | y     6.3e-01 | y_next 1.7e-02
++++ >        c_new   82 | y_new 1.3e-01 | y_old 1.3e-01 | evals  1064
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : limpkin, aramus pictus
+    : l_new : ruffed grouse, partridge, bonasa umbellus
+
+
+--> #  136 | c      136 | y     8.3e-01 | y_next 1.8e-02
++++ >        c_new  137 | y_new 3.0e-01 | y_old 3.0e-01 | evals  4377
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : european gallinule, porphyrio porphyrio
+    : l_new : american coot, marsh hen, mud hen, water hen, fuli
+
+
+--> #  137 | c      137 | y     8.7e-01 | y_next 2.6e-02
++++ >        c_new  100 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1275
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : american coot, marsh hen, mud hen, water hen, fuli
+    : l_new : black swan, cygnus atratus
+
+
+--> #  138 | c      138 | y     8.5e-01 | y_next 6.2e-03
++++ >        c_new    9 | y_new 2.9e-01 | y_old 2.9e-01 | evals  6828
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bustard
+    : l_new : ostrich, struthio camelus
+
+
+--> #  139 | c      139 | y     7.3e-01 | y_next 1.4e-02
++++ >        c_new  904 | y_new 2.9e-01 | y_old 2.9e-01 | evals  4939
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ruddy turnstone, arenaria interpres
+    : l_new : window screen
+
+
+--> #  140 | c      140 | y     8.9e-01 | y_next 2.5e-03
++++ >        c_new  142 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1313
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : red-backed sandpiper, dunlin, erolia alpina
+    : l_new : dowitcher
+
+
+--> #  141 | c      141 | y     8.6e-01 | y_next 8.8e-03
++++ >        c_new  143 | y_new 2.0e-01 | y_old 2.0e-01 | evals  1824
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : redshank, tringa totanus
+    : l_new : oystercatcher, oyster catcher
+
+
+--> #  142 | c      142 | y     6.7e-01 | y_next 1.0e-01
++++ >        c_new  141 | y_new 4.6e-01 | y_old 2.5e-01 | evals    82
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dowitcher
+    : l_new : redshank, tringa totanus
+
+
+--> #  143 | c      143 | y     3.6e-01 | y_next 8.9e-02
++++ >        c_new   98 | y_new 1.4e-01 | y_old 1.1e-01 | evals    99
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : oystercatcher, oyster catcher
+    : l_new : red-breasted merganser, mergus serrator
+
+
+--> #  144 | c      144 | y     9.4e-01 | y_next 3.3e-03
++++ >        c_new  138 | y_new 2.5e-01 | y_old 2.5e-01 | evals  4655
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pelican
+    : l_new : bustard
+
+
+--> #  145 | c      145 | y     7.9e-01 | y_next 9.9e-03
++++ >        c_new   96 | y_new 2.3e-01 | y_old 2.3e-01 | evals  3265
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : king penguin, aptenodytes patagonica
+    : l_new : toucan
+
+
+--> #  146 | c      146 | y     6.9e-01 | y_next 2.3e-02
++++ >        c_new   99 | y_new 2.8e-01 | y_old 2.8e-01 | evals  1215
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : albatross, mollymawk
+    : l_new : goose
+
+
+--> #  147 | c      147 | y     7.8e-01 | y_next 2.2e-02
++++ >        c_new  913 | y_new 4.1e-01 | y_old 3.6e-01 | evals   811
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : grey whale, gray whale, devilfish, eschrichtius gi
+    : l_new : wreck
+
+
+--> #  148 | c      148 | y     7.0e-01 | y_next 5.6e-02
++++ >        c_new  562 | y_new 3.0e-01 | y_old 2.8e-01 | evals   272
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : killer whale, killer, orca, grampus, sea wolf, orc
+    : l_new : fountain
+
+
+--> #  149 | c      149 | y     9.3e-01 | y_next 2.8e-03
++++ >        c_new    3 | y_new 1.8e-01 | y_old 1.8e-01 | evals  2202
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dugong, dugong dugon
+    : l_new : tiger shark, galeocerdo cuvieri
+
+
+--> #  150 | c      150 | y     8.2e-01 | y_next 2.4e-03
++++ >        c_new  360 | y_new 1.1e-01 | y_old 1.1e-01 | evals  6075
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sea lion
+    : l_new : otter
+
+
+--> #  151 | c      151 | y     8.6e-01 | y_next 1.2e-02
++++ >        c_new  158 | y_new 3.5e-01 | y_old 3.4e-01 | evals  7680
+    : changes 50172 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chihuahua
+    : l_new : toy terrier
+
+
+--> #  152 | c      152 | y     4.4e-01 | y_next 1.2e-01
++++ >        c_new  154 | y_new 2.9e-01 | y_old 2.8e-01 | evals   294
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : japanese spaniel
+    : l_new : pekinese, pekingese, peke
+
+
+--> #  153 | c      153 | y     6.4e-01 | y_next 4.9e-02
++++ >        c_new  204 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1198
+    : changes 50174 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : maltese dog, maltese terrier, maltese
+    : l_new : lhasa, lhasa apso
+
+
+--> #  154 | c      154 | y     8.7e-01 | y_next 3.3e-02
++++ >        c_new  155 | y_new 3.2e-01 | y_old 3.1e-01 | evals   514
+    : changes 50021 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pekinese, pekingese, peke
+    : l_new : shih-tzu
+
+
+--> #  155 | c      155 | y     6.3e-01 | y_next 1.2e-01
++++ >        c_new  204 | y_new 4.0e-01 | y_old 4.0e-01 | evals  2481
+    : changes 50158 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : shih-tzu
+    : l_new : lhasa, lhasa apso
+
+
+--> #  156 | c      156 | y     4.0e-01 | y_next 3.0e-01
++++ >        c_new  218 | y_new 4.6e-01 | y_old 2.7e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : blenheim spaniel
+    : l_new : welsh springer spaniel
+
+
+--> #  157 | c      157 | y     8.5e-01 | y_next 9.0e-03
+    > fail | evals 10003
+
+--> #  160 | c      160 | y     5.4e-01 | y_next 4.9e-02
++++ >        c_new  219 | y_new 3.1e-01 | y_old 3.1e-01 | evals   700
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : afghan hound, afghan
+    : l_new : cocker spaniel, english cocker spaniel, cocker
+
+
+--> #  161 | c      161 | y     8.3e-01 | y_next 3.8e-02
++++ >        c_new  162 | y_new 3.8e-01 | y_old 3.7e-01 | evals  2233
+    : changes 50176 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : basset, basset hound
+    : l_new : beagle
+
+
+--> #  164 | c      164 | y     5.3e-01 | y_next 1.5e-01
++++ >        c_new  210 | y_new 2.9e-01 | y_old 2.9e-01 | evals    45
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : bluetick
+    : l_new : german short-haired pointer
+
+
+--> #  165 | c      165 | y     8.2e-01 | y_next 1.6e-02
++++ >        c_new  236 | y_new 3.5e-01 | y_old 3.4e-01 | evals   532
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : black-and-tan coonhound
+    : l_new : doberman, doberman pinscher
+
+
+--> #  166 | c      166 | y     7.3e-01 | y_next 1.0e-01
++++ >        c_new  162 | y_new 4.2e-01 | y_old 3.7e-01 | evals   369
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : walker hound, walker foxhound
+    : l_new : beagle
+
+
+--> #  167 | c      167 | y     6.2e-01 | y_next 1.8e-01
++++ >        c_new  166 | y_new 3.7e-01 | y_old 3.7e-01 | evals  2042
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : english foxhound
+    : l_new : walker hound, walker foxhound
+
+
+--> #  168 | c      168 | y     3.4e-01 | y_next 1.2e-01
++++ >        c_new  159 | y_new 1.8e-01 | y_old 1.7e-01 | evals   260
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : redbone
+    : l_new : rhodesian ridgeback
+
+
+--> #  169 | c      169 | y     6.2e-01 | y_next 5.4e-02
++++ >        c_new  222 | y_new 3.1e-01 | y_old 3.0e-01 | evals   959
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : borzoi, russian wolfhound
+    : l_new : kuvasz
+
+
+--> #  170 | c      170 | y     5.1e-01 | y_next 4.0e-01
++++ >        c_new  177 | y_new 5.2e-01 | y_old 4.1e-01 | evals    18
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : irish wolfhound
+    : l_new : scottish deerhound, deerhound
+
+
+--> #  172 | c      172 | y     9.4e-01 | y_next 7.7e-03
++++ >        c_new  171 | y_new 3.7e-01 | y_old 3.6e-01 | evals  1695
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : whippet
+    : l_new : italian greyhound
+
+
+--> #  173 | c      173 | y     6.8e-01 | y_next 2.5e-02
++++ >        c_new  172 | y_new 2.0e-01 | y_old 2.0e-01 | evals  1209
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ibizan hound, ibizan podenco
+    : l_new : whippet
+
+
+--> #  176 | c      176 | y     8.0e-01 | y_next 3.0e-02
++++ >        c_new  160 | y_new 3.0e-01 | y_old 3.0e-01 | evals  2575
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : saluki, gazelle hound
+    : l_new : afghan hound, afghan
+
+
+--> #  177 | c      177 | y     3.9e-01 | y_next 1.5e-01
++++ >        c_new  170 | y_new 2.2e-01 | y_old 2.1e-01 | evals    39
+    : changes 50150 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : scottish deerhound, deerhound
+    : l_new : irish wolfhound
+
+
+--> #  178 | c      178 | y     8.2e-01 | y_next 4.5e-03
++++ >        c_new  246 | y_new 2.7e-01 | y_old 2.7e-01 | evals  4714
+    : changes 50162 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : weimaraner
+    : l_new : great dane
+
+
+--> #  179 | c      179 | y     7.2e-01 | y_next 2.2e-01
++++ >        c_new  180 | y_new 4.7e-01 | y_old 4.6e-01 | evals   476
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : staffordshire bullterrier, staffordshire bull terr
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+--> #  181 | c      181 | y     8.5e-01 | y_next 5.7e-03
++++ >        c_new  202 | y_new 3.1e-01 | y_old 2.8e-01 | evals  2129
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bedlington terrier
+    : l_new : soft-coated wheaten terrier
+
+
+--> #  182 | c      182 | y     8.8e-01 | y_next 2.6e-03
++++ >        c_new  184 | y_new 2.7e-01 | y_old 2.7e-01 | evals  4062
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : border terrier
+    : l_new : irish terrier
+
+
+--> #  183 | c      183 | y     8.6e-01 | y_next 9.0e-03
++++ >        c_new  210 | y_new 3.9e-01 | y_old 3.8e-01 | evals  1820
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : kerry blue terrier
+    : l_new : german short-haired pointer
+
+
+--> #  185 | c      185 | y     7.5e-01 | y_next 8.3e-02
++++ >        c_new  184 | y_new 4.2e-01 | y_old 3.9e-01 | evals   549
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : norfolk terrier
+    : l_new : irish terrier
+
+
+--> #  187 | c      187 | y     6.0e-01 | y_next 1.3e-01
++++ >        c_new  201 | y_new 3.2e-01 | y_old 3.2e-01 | evals  1007
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : yorkshire terrier
+    : l_new : silky terrier, sydney silky
+
+
+--> #  188 | c      188 | y     7.6e-01 | y_next 3.6e-02
++++ >        c_new  189 | y_new 3.2e-01 | y_old 3.2e-01 | evals  6362
+    : changes 50136 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wire-haired fox terrier
+    : l_new : lakeland terrier
+
+
+--> #  189 | c      189 | y     7.7e-01 | y_next 1.1e-01
++++ >        c_new  188 | y_new 4.3e-01 | y_old 4.3e-01 | evals  1416
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lakeland terrier
+    : l_new : wire-haired fox terrier
+
+
+--> #  190 | c      190 | y     9.1e-01 | y_next 1.5e-02
++++ >        c_new  194 | y_new 4.0e-01 | y_old 3.9e-01 | evals  1399
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sealyham terrier, sealyham
+    : l_new : dandie dinmont, dandie dinmont terrier
+
+
+--> #  192 | c      192 | y     4.9e-01 | y_next 2.0e-01
++++ >        c_new  186 | y_new 3.3e-01 | y_old 3.2e-01 | evals    82
+    : changes 50173 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : cairn, cairn terrier
+    : l_new : norwich terrier
+
+
+--> #  194 | c      194 | y     7.7e-01 | y_next 1.1e-02
++++ >        c_new  182 | y_new 2.4e-01 | y_old 2.2e-01 | evals   552
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dandie dinmont, dandie dinmont terrier
+    : l_new : border terrier
+
+
+--> #  195 | c      195 | y     7.4e-01 | y_next 2.7e-02
++++ >        c_new  245 | y_new 3.2e-01 | y_old 3.1e-01 | evals  7097
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : boston bull, boston terrier
+    : l_new : french bulldog
+
+
+--> #  196 | c      196 | y     7.8e-01 | y_next 1.2e-01
++++ >        c_new  189 | y_new 4.4e-01 | y_old 4.3e-01 | evals   264
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : miniature schnauzer
+    : l_new : lakeland terrier
+
+
+--> #  197 | c      197 | y     7.1e-01 | y_next 1.7e-01
++++ >        c_new  198 | y_new 4.1e-01 | y_old 4.1e-01 | evals  1180
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : giant schnauzer
+    : l_new : standard schnauzer
+
+
+--> #  198 | c      198 | y     5.1e-01 | y_next 3.5e-01
++++ >        c_new  196 | y_new 4.3e-01 | y_old 4.1e-01 | evals    74
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : standard schnauzer
+    : l_new : miniature schnauzer
+
+
+--> #  199 | c      199 | y     8.3e-01 | y_next 2.1e-02
++++ >        c_new  233 | y_new 3.7e-01 | y_old 3.6e-01 | evals   613
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : scotch terrier, scottish terrier, scottie
+    : l_new : bouvier des flandres, bouviers des flandres
+
+
+--> #  200 | c      200 | y     9.3e-01 | y_next 1.5e-02
++++ >        c_new  196 | y_new 4.1e-01 | y_old 3.9e-01 | evals   748
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tibetan terrier, chrysanthemum dog
+    : l_new : miniature schnauzer
+
+
+--> #  201 | c      201 | y     8.7e-01 | y_next 2.7e-02
++++ >        c_new  193 | y_new 4.1e-01 | y_old 4.1e-01 | evals  1615
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : silky terrier, sydney silky
+    : l_new : australian terrier
+
+
+--> #  202 | c      202 | y     6.3e-01 | y_next 3.8e-02
++++ >        c_new  233 | y_new 2.2e-01 | y_old 2.2e-01 | evals  2160
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : soft-coated wheaten terrier
+    : l_new : bouvier des flandres, bouviers des flandres
+
+
+--> #  203 | c      203 | y     4.5e-01 | y_next 1.6e-01
++++ >        c_new  229 | y_new 3.1e-01 | y_old 2.7e-01 | evals   113
+    : changes 50101 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : west highland white terrier
+    : l_new : old english sheepdog, bobtail
+
+
+--> #  205 | c      205 | y     4.3e-01 | y_next 1.5e-01
++++ >        c_new  214 | y_new 3.3e-01 | y_old 2.6e-01 | evals    61
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : flat-coated retriever
+    : l_new : gordon setter
+
+
+--> #  207 | c      207 | y     5.7e-01 | y_next 3.5e-02
++++ >        c_new  208 | y_new 2.0e-01 | y_old 2.0e-01 | evals  1192
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : golden retriever
+    : l_new : labrador retriever
+
+
+--> #  208 | c      208 | y     7.6e-01 | y_next 1.2e-01
++++ >        c_new  205 | y_new 4.2e-01 | y_old 4.1e-01 | evals   397
+    : changes 50170 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : labrador retriever
+    : l_new : flat-coated retriever
+
+
+--> #  209 | c      209 | y     4.8e-01 | y_next 3.1e-01
++++ >        c_new  208 | y_new 6.0e-01 | y_old 1.3e-01 | evals     3
+    : changes 50169 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chesapeake bay retriever
+    : l_new : labrador retriever
+
+
+--> #  210 | c      210 | y     7.8e-01 | y_next 2.1e-02
++++ >        c_new  217 | y_new 2.9e-01 | y_old 2.9e-01 | evals  3690
+    : changes 50168 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : german short-haired pointer
+    : l_new : english springer, english springer spaniel
+
+
+--> #  211 | c      211 | y     5.1e-01 | y_next 1.7e-01
++++ >        c_new  209 | y_new 4.2e-01 | y_old 2.8e-01 | evals    15
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : vizsla, hungarian pointer
+    : l_new : chesapeake bay retriever
+
+
+--> #  213 | c      213 | y     8.0e-01 | y_next 2.5e-02
++++ >        c_new  220 | y_new 3.4e-01 | y_old 2.5e-01 | evals  1224
+    : changes 50047 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : irish setter, red setter
+    : l_new : sussex spaniel
+
+
+--> #  214 | c      214 | y     9.3e-01 | y_next 1.3e-02
++++ >        c_new  205 | y_new 3.8e-01 | y_old 3.6e-01 | evals   756
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gordon setter
+    : l_new : flat-coated retriever
+
+
+--> #  216 | c      216 | y     8.1e-01 | y_next 6.4e-03
++++ >        c_new  212 | y_new 3.5e-01 | y_old 3.5e-01 | evals  1918
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : clumber, clumber spaniel
+    : l_new : english setter
+
+
+--> #  217 | c      217 | y     9.0e-01 | y_next 5.3e-03
++++ >        c_new  264 | y_new 1.6e-01 | y_old 1.6e-01 | evals  1020
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : english springer, english springer spaniel
+    : l_new : cardigan, cardigan welsh corgi
+
+
+--> #  218 | c      218 | y     6.9e-01 | y_next 5.9e-02
++++ >        c_new  217 | y_new 2.5e-01 | y_old 1.9e-01 | evals    65
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : welsh springer spaniel
+    : l_new : english springer, english springer spaniel
+
+
+--> #  219 | c      219 | y     9.4e-01 | y_next 6.6e-03
++++ >        c_new  216 | y_new 3.6e-01 | y_old 3.6e-01 | evals  1481
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cocker spaniel, english cocker spaniel, cocker
+    : l_new : clumber, clumber spaniel
+
+
+--> #  220 | c      220 | y     8.4e-01 | y_next 1.7e-02
++++ >        c_new  213 | y_new 2.9e-01 | y_old 2.9e-01 | evals  2069
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sussex spaniel
+    : l_new : irish setter, red setter
+
+
+--> #  221 | c      221 | y     8.6e-01 | y_next 1.4e-02
++++ >        c_new  267 | y_new 3.2e-01 | y_old 2.9e-01 | evals  2057
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : irish water spaniel
+    : l_new : standard poodle
+
+
+--> #  222 | c      222 | y     8.3e-01 | y_next 1.6e-02
++++ >        c_new  257 | y_new 4.0e-01 | y_old 3.9e-01 | evals  3904
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : kuvasz
+    : l_new : great pyrenees
+
+
+--> #  223 | c      223 | y     4.3e-01 | y_next 4.1e-02
++++ >        c_new  463 | y_new 1.4e-01 | y_old 1.4e-01 | evals   341
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : schipperke
+    : l_new : bucket, pail
+
+
+--> #  224 | c      224 | y     7.3e-01 | y_next 1.5e-02
++++ >        c_new  261 | y_new 3.5e-01 | y_old 2.9e-01 | evals   316
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : groenendael
+    : l_new : keeshond
+
+
+--> #  225 | c      225 | y     6.8e-01 | y_next 5.2e-02
++++ >        c_new  235 | y_new 3.0e-01 | y_old 3.0e-01 | evals  2312
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : malinois
+    : l_new : german shepherd, german shepherd dog, german polic
+
+
+--> #  226 | c      226 | y     5.1e-01 | y_next 1.6e-01
++++ >        c_new  233 | y_new 2.7e-01 | y_old 2.6e-01 | evals   315
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : briard
+    : l_new : bouvier des flandres, bouviers des flandres
+
+
+--> #  227 | c      227 | y     5.3e-01 | y_next 5.4e-02
++++ >        c_new  151 | y_new 1.9e-01 | y_old 1.8e-01 | evals   506
+    : changes 49696 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : kelpie
+    : l_new : chihuahua
+
+
+--> #  228 | c      228 | y     8.4e-01 | y_next 1.7e-03
+    > fail | evals 10003
+
+--> #  229 | c      229 | y     5.8e-01 | y_next 5.0e-02
++++ >        c_new  228 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1569
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : old english sheepdog, bobtail
+    : l_new : komondor
+
+
+--> #  232 | c      232 | y     7.9e-01 | y_next 7.8e-02
++++ >        c_new  231 | y_new 3.1e-01 | y_old 3.1e-01 | evals  4069
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : border collie
+    : l_new : collie
+
+
+--> #  233 | c      233 | y     2.8e-01 | y_next 2.7e-01
++++ >        c_new  160 | y_new 4.1e-01 | y_old 4.3e-02 | evals     3
+    : changes 48443 | dx1 9.1e+03 | dx2 2.5e+01
+    : l_old : bouvier des flandres, bouviers des flandres
+    : l_new : afghan hound, afghan
+
+
+--> #  234 | c      234 | y     8.3e-01 | y_next 2.3e-02
++++ >        c_new  214 | y_new 3.8e-01 | y_old 3.5e-01 | evals  1162
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rottweiler
+    : l_new : gordon setter
+
+
+--> #  235 | c      235 | y     8.4e-01 | y_next 9.2e-03
++++ >        c_new  182 | y_new 3.2e-01 | y_old 3.2e-01 | evals  2054
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : german shepherd, german shepherd dog, german polic
+    : l_new : border terrier
+
+
+--> #  236 | c      236 | y     6.1e-01 | y_next 5.1e-02
++++ >        c_new  237 | y_new 1.7e-01 | y_old 1.6e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : doberman, doberman pinscher
+    : l_new : miniature pinscher
+
+
+--> #  237 | c      237 | y     7.9e-01 | y_next 5.3e-02
++++ >        c_new  151 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1801
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : miniature pinscher
+    : l_new : chihuahua
+
+
+--> #  238 | c      238 | y     5.2e-01 | y_next 2.4e-01
++++ >        c_new  240 | y_new 3.0e-01 | y_old 2.9e-01 | evals   252
+    : changes 50152 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : greater swiss mountain dog
+    : l_new : appenzeller
+
+
+--> #  241 | c      241 | y     2.3e-01 | y_next 1.0e-01
++++ >        c_new  238 | y_new 1.5e-01 | y_old 1.4e-01 | evals   359
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : entlebucher
+    : l_new : greater swiss mountain dog
+
+
+--> #  242 | c      242 | y     8.4e-01 | y_next 2.6e-02
++++ >        c_new  243 | y_new 3.1e-01 | y_old 3.1e-01 | evals  6594
+    : changes 50168 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : boxer
+    : l_new : bull mastiff
+
+
+--> #  243 | c      243 | y     4.2e-01 | y_next 3.9e-01
++++ >        c_new  254 | y_new 5.9e-01 | y_old 2.7e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bull mastiff
+    : l_new : pug, pug-dog
+
+
+--> #  244 | c      244 | y     8.0e-01 | y_next 1.4e-02
++++ >        c_new  234 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1628
+    : changes 48810 | dx1 9.3e+03 | dx2 2.5e+01
+    : l_old : tibetan mastiff
+    : l_new : rottweiler
+
+
+--> #  245 | c      245 | y     7.5e-01 | y_next 5.7e-02
++++ >        c_new  151 | y_new 4.2e-01 | y_old 4.1e-01 | evals  1338
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : french bulldog
+    : l_new : chihuahua
+
+
+--> #  246 | c      246 | y     3.6e-01 | y_next 7.6e-02
++++ >        c_new  180 | y_new 2.1e-01 | y_old 2.0e-01 | evals   217
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : great dane
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+--> #  247 | c      247 | y     7.9e-01 | y_next 2.1e-02
++++ >        c_new  239 | y_new 3.1e-01 | y_old 3.1e-01 | evals   528
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : saint bernard, st bernard
+    : l_new : bernese mountain dog
+
+
+--> #  248 | c      248 | y     4.5e-01 | y_next 3.6e-01
++++ >        c_new  250 | y_new 3.7e-01 | y_old 3.7e-01 | evals     3
+    : changes 50152 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : eskimo dog, husky
+    : l_new : siberian husky
+
+
+--> #  249 | c      249 | y     2.8e-01 | y_next 1.5e-01
++++ >        c_new  174 | y_new 2.2e-01 | y_old 1.7e-01 | evals     4
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : malamute, malemute, alaskan malamute
+    : l_new : norwegian elkhound, elkhound
+
+
+--> #  251 | c      251 | y     8.1e-01 | y_next 1.3e-03
+    > fail | evals 10003
+
+--> #  252 | c      252 | y     5.9e-01 | y_next 4.0e-02
++++ >        c_new  226 | y_new 1.4e-01 | y_old 9.7e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : affenpinscher, monkey pinscher, monkey dog
+    : l_new : briard
+
+
+--> #  253 | c      253 | y     6.8e-01 | y_next 3.8e-02
++++ >        c_new  173 | y_new 3.1e-01 | y_old 3.0e-01 | evals  1563
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : basenji
+    : l_new : ibizan hound, ibizan podenco
+
+
+--> #  254 | c      254 | y     6.4e-01 | y_next 2.5e-02
++++ >        c_new  195 | y_new 2.4e-01 | y_old 2.2e-01 | evals  1304
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pug, pug-dog
+    : l_new : boston bull, boston terrier
+
+
+--> #  255 | c      255 | y     9.1e-01 | y_next 3.3e-03
++++ >        c_new  170 | y_new 3.3e-01 | y_old 3.1e-01 | evals  4237
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : leonberg
+    : l_new : irish wolfhound
+
+
+--> #  256 | c      256 | y     6.0e-01 | y_next 1.5e-01
++++ >        c_new  244 | y_new 3.6e-01 | y_old 3.3e-01 | evals   304
+    : changes 50026 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : newfoundland, newfoundland dog
+    : l_new : tibetan mastiff
+
+
+--> #  257 | c      257 | y     3.2e-01 | y_next 2.4e-01
++++ >        c_new  258 | y_new 3.4e-01 | y_old 2.9e-01 | evals     4
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : great pyrenees
+    : l_new : samoyed, samoyede
+
+
+--> #  258 | c      258 | y     4.1e-01 | y_next 2.1e-01
++++ >        c_new  279 | y_new 2.7e-01 | y_old 4.3e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : samoyed, samoyede
+    : l_new : arctic fox, white fox, alopex lagopus
+
+
+--> #  259 | c      259 | y     8.7e-01 | y_next 1.8e-02
++++ >        c_new  151 | y_new 4.2e-01 | y_old 4.1e-01 | evals  1534
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pomeranian
+    : l_new : chihuahua
+
+
+--> #  260 | c      260 | y     4.9e-01 | y_next 1.7e-01
++++ >        c_new  258 | y_new 3.4e-01 | y_old 3.3e-01 | evals   135
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chow, chow chow
+    : l_new : samoyed, samoyede
+
+
+--> #  261 | c      261 | y     6.5e-01 | y_next 1.2e-02
++++ >        c_new  259 | y_new 2.9e-01 | y_old 2.9e-01 | evals  1893
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : keeshond
+    : l_new : pomeranian
+
+
+--> #  262 | c      262 | y     8.9e-01 | y_next 2.1e-02
++++ >        c_new  252 | y_new 3.6e-01 | y_old 3.6e-01 | evals  2557
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : brabancon griffon
+    : l_new : affenpinscher, monkey pinscher, monkey dog
+
+
+--> #  263 | c      263 | y     8.5e-01 | y_next 5.7e-02
++++ >        c_new  264 | y_new 4.1e-01 | y_old 4.0e-01 | evals  4356
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pembroke, pembroke welsh corgi
+    : l_new : cardigan, cardigan welsh corgi
+
+
+--> #  264 | c      264 | y     8.1e-01 | y_next 7.1e-02
++++ >        c_new  263 | y_new 3.5e-01 | y_old 3.3e-01 | evals  2301
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cardigan, cardigan welsh corgi
+    : l_new : pembroke, pembroke welsh corgi
+
+
+--> #  266 | c      266 | y     2.3e-01 | y_next 2.1e-01
++++ >        c_new  267 | y_new 2.9e-01 | y_old 1.9e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : miniature poodle
+    : l_new : standard poodle
+
+
+--> #  268 | c      268 | y     8.5e-01 | y_next 2.1e-02
++++ >        c_new  171 | y_new 3.3e-01 | y_old 3.3e-01 | evals  2171
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mexican hairless
+    : l_new : italian greyhound
+
+
+--> #  269 | c      269 | y     6.7e-01 | y_next 7.7e-02
++++ >        c_new  271 | y_new 3.0e-01 | y_old 3.0e-01 | evals   712
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : timber wolf, grey wolf, gray wolf, canis lupus
+    : l_new : red wolf, maned wolf, canis rufus, canis niger
+
+
+--> #  270 | c      270 | y     8.2e-01 | y_next 6.1e-02
++++ >        c_new  257 | y_new 3.7e-01 | y_old 3.6e-01 | evals    68
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : white wolf, arctic wolf, canis lupus tundrarum
+    : l_new : great pyrenees
+
+
+--> #  271 | c      271 | y     9.4e-01 | y_next 2.3e-03
++++ >        c_new  277 | y_new 2.9e-01 | y_old 2.9e-01 | evals  2176
+    : changes 50157 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : red wolf, maned wolf, canis rufus, canis niger
+    : l_new : red fox, vulpes vulpes
+
+
+--> #  273 | c      273 | y     3.6e-01 | y_next 9.1e-02
++++ >        c_new  286 | y_new 2.8e-01 | y_old 2.3e-01 | evals    26
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dingo, warrigal, warragal, canis dingo
+    : l_new : cougar, puma, catamount, mountain lion, painter, p
+
+
+--> #  274 | c      274 | y     7.6e-01 | y_next 5.0e-02
++++ >        c_new  273 | y_new 3.8e-01 | y_old 3.8e-01 | evals   531
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dhole, cuon alpinus
+    : l_new : dingo, warrigal, warragal, canis dingo
+
+
+--> #  275 | c      275 | y     7.3e-01 | y_next 8.5e-02
++++ >        c_new  276 | y_new 3.9e-01 | y_old 3.5e-01 | evals   280
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : african hunting dog, hyena dog, cape hunting dog, 
+    : l_new : hyena, hyaena
+
+
+--> #  276 | c      276 | y     6.8e-01 | y_next 2.9e-02
++++ >        c_new  275 | y_new 2.7e-01 | y_old 2.7e-01 | evals  4552
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hyena, hyaena
+    : l_new : african hunting dog, hyena dog, cape hunting dog, 
+
+
+--> #  277 | c      277 | y     5.0e-01 | y_next 7.7e-02
++++ >        c_new  104 | y_new 1.5e-01 | y_old 1.4e-01 | evals    20
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : red fox, vulpes vulpes
+    : l_new : wallaby, brush kangaroo
+
+
+--> #  279 | c      279 | y     9.7e-01 | y_next 8.2e-03
++++ >        c_new  278 | y_new 2.9e-01 | y_old 2.9e-01 | evals  2877
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : arctic fox, white fox, alopex lagopus
+    : l_new : kit fox, vulpes macrotis
+
+
+--> #  280 | c      280 | y     8.6e-01 | y_next 1.7e-02
++++ >        c_new  277 | y_new 3.8e-01 | y_old 3.8e-01 | evals  3712
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : grey fox, gray fox, urocyon cinereoargenteus
+    : l_new : red fox, vulpes vulpes
+
+
+--> #  283 | c      283 | y     5.3e-01 | y_next 1.0e-01
++++ >        c_new  282 | y_new 2.7e-01 | y_old 2.7e-01 | evals   590
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : persian cat
+    : l_new : tiger cat
+
+
+--> #  284 | c      284 | y     7.6e-01 | y_next 3.9e-03
++++ >        c_new  904 | y_new 3.3e-01 | y_old 3.2e-01 | evals  2920
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : siamese cat, siamese
+    : l_new : window screen
+
+
+--> #  285 | c      285 | y     6.3e-01 | y_next 8.0e-02
++++ >        c_new  281 | y_new 3.5e-01 | y_old 3.0e-01 | evals   613
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : egyptian cat
+    : l_new : tabby, tabby cat
+
+
+--> #  286 | c      286 | y     4.2e-01 | y_next 1.6e-01
++++ >        c_new  299 | y_new 3.0e-01 | y_old 2.8e-01 | evals    65
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cougar, puma, catamount, mountain lion, painter, p
+    : l_new : meerkat, mierkat
+
+
+--> #  287 | c      287 | y     6.6e-01 | y_next 2.7e-02
++++ >        c_new  281 | y_new 2.2e-01 | y_old 2.0e-01 | evals    70
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lynx, catamount
+    : l_new : tabby, tabby cat
+
+
+--> #  288 | c      288 | y     9.3e-01 | y_next 6.9e-03
++++ >        c_new  290 | y_new 3.4e-01 | y_old 3.4e-01 | evals  3709
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : leopard, panthera pardus
+    : l_new : jaguar, panther, panthera onca, felis onca
+
+
+--> #  289 | c      289 | y     7.5e-01 | y_next 1.8e-02
++++ >        c_new  293 | y_new 3.0e-01 | y_old 3.0e-01 | evals  1767
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : snow leopard, ounce, panthera uncia
+    : l_new : cheetah, chetah, acinonyx jubatus
+
+
+--> #  292 | c      292 | y     6.5e-01 | y_next 1.3e-01
++++ >        c_new  282 | y_new 4.0e-01 | y_old 4.0e-01 | evals  3549
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tiger, panthera tigris
+    : l_new : tiger cat
+
+
+--> #  293 | c      293 | y     6.4e-01 | y_next 5.1e-02
++++ >        c_new  291 | y_new 2.8e-01 | y_old 2.7e-01 | evals  1159
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cheetah, chetah, acinonyx jubatus
+    : l_new : lion, king of beasts, panthera leo
+
+
+--> #  294 | c      294 | y     8.8e-01 | y_next 7.8e-03
++++ >        c_new  296 | y_new 3.5e-01 | y_old 3.5e-01 | evals  2451
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : brown bear, bruin, ursus arctos
+    : l_new : ice bear, polar bear, ursus maritimus, thalarctos 
+
+
+--> #  295 | c      295 | y     7.6e-01 | y_next 7.5e-02
++++ >        c_new  297 | y_new 3.6e-01 | y_old 3.2e-01 | evals   761
+    : changes 50166 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : american black bear, black bear, ursus americanus,
+    : l_new : sloth bear, melursus ursinus, ursus ursinus
+
+
+--> #  296 | c      296 | y     7.6e-01 | y_next 6.2e-03
++++ >        c_new  279 | y_new 2.7e-01 | y_old 2.1e-01 | evals   208
+    : changes 50154 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ice bear, polar bear, ursus maritimus, thalarctos 
+    : l_new : arctic fox, white fox, alopex lagopus
+
+
+--> #  297 | c      297 | y     9.2e-01 | y_next 3.2e-03
++++ >        c_new  369 | y_new 3.1e-01 | y_old 3.0e-01 | evals  1248
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sloth bear, melursus ursinus, ursus ursinus
+    : l_new : siamang, hylobates syndactylus, symphalangus synda
+
+
+--> #  298 | c      298 | y     7.7e-01 | y_next 4.3e-02
++++ >        c_new  299 | y_new 3.5e-01 | y_old 3.5e-01 | evals  1675
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mongoose
+    : l_new : meerkat, mierkat
+
+
+--> #  299 | c      299 | y     7.4e-01 | y_next 6.7e-02
++++ >        c_new  298 | y_new 2.3e-01 | y_old 2.3e-01 | evals  2543
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : meerkat, mierkat
+    : l_new : mongoose
+
+
+--> #  300 | c      300 | y     8.2e-01 | y_next 2.0e-02
++++ >        c_new  303 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1155
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tiger beetle
+    : l_new : long-horned beetle, longicorn, longicorn beetle
+
+
+--> #  301 | c      301 | y     5.9e-01 | y_next 2.2e-01
++++ >        c_new  304 | y_new 3.7e-01 | y_old 3.6e-01 | evals   241
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ladybug, ladybeetle, lady beetle, ladybird, ladybi
+    : l_new : leaf beetle, chrysomelid
+
+
+--> #  302 | c      302 | y     8.1e-01 | y_next 1.3e-02
++++ >        c_new  304 | y_new 3.6e-01 | y_old 3.5e-01 | evals  4118
+    : changes 49625 | dx1 9.4e+03 | dx2 2.5e+01
+    : l_old : ground beetle, carabid beetle
+    : l_new : leaf beetle, chrysomelid
+
+
+--> #  303 | c      303 | y     7.1e-01 | y_next 5.5e-02
++++ >        c_new  300 | y_new 2.0e-01 | y_old 1.9e-01 | evals  2445
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : long-horned beetle, longicorn, longicorn beetle
+    : l_new : tiger beetle
+
+
+--> #  304 | c      304 | y     5.4e-01 | y_next 1.1e-01
++++ >        c_new  307 | y_new 2.9e-01 | y_old 2.9e-01 | evals   534
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : leaf beetle, chrysomelid
+    : l_new : weevil
+
+
+--> #  305 | c      305 | y     1.8e-01 | y_next 1.5e-01
++++ >        c_new  302 | y_new 1.9e-01 | y_old 1.6e-01 | evals     4
+    : changes 50172 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dung beetle
+    : l_new : ground beetle, carabid beetle
+
+
+--> #  306 | c      306 | y     8.1e-01 | y_next 2.6e-02
++++ >        c_new  305 | y_new 3.4e-01 | y_old 3.3e-01 | evals  2040
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rhinoceros beetle
+    : l_new : dung beetle
+
+
+--> #  307 | c      307 | y     6.5e-01 | y_next 4.9e-02
++++ >        c_new  311 | y_new 1.8e-01 | y_old 1.7e-01 | evals   226
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : weevil
+    : l_new : grasshopper, hopper
+
+
+--> #  308 | c      308 | y     5.5e-01 | y_next 5.7e-02
++++ >        c_new  319 | y_new 3.1e-01 | y_old 2.9e-01 | evals   294
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : fly
+    : l_new : dragonfly, darning needle, devil`s darning needle,
+
+
+--> #  309 | c      309 | y     8.2e-01 | y_next 1.0e-02
++++ >        c_new  319 | y_new 3.6e-01 | y_old 3.3e-01 | evals  1345
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bee
+    : l_new : dragonfly, darning needle, devil`s darning needle,
+
+
+--> #  310 | c      310 | y     6.3e-01 | y_next 4.7e-02
++++ >        c_new  312 | y_new 2.3e-01 | y_old 2.2e-01 | evals   329
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ant, emmet, pismire
+    : l_new : cricket
+
+
+--> #  312 | c      312 | y     9.0e-01 | y_next 2.0e-02
++++ >        c_new  311 | y_new 4.0e-01 | y_old 4.0e-01 | evals  1884
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cricket
+    : l_new : grasshopper, hopper
+
+
+--> #  313 | c      313 | y     7.1e-01 | y_next 2.9e-02
++++ >        c_new  489 | y_new 2.2e-01 | y_old 2.1e-01 | evals   654
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : walking stick, walkingstick, stick insect
+    : l_new : chainlink fence
+
+
+--> #  314 | c      314 | y     3.1e-01 | y_next 1.7e-01
++++ >        c_new  868 | y_new 5.0e-01 | y_old 6.3e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cockroach, roach
+    : l_new : tray
+
+
+--> #  317 | c      317 | y     6.7e-01 | y_next 5.2e-02
++++ >        c_new  316 | y_new 2.3e-01 | y_old 2.3e-01 | evals  4159
+    : changes 50176 | dx1 9.6e+03 | dx2 2.6e+01
+    : l_old : leafhopper
+    : l_new : cicada, cicala
+
+
+--> #  318 | c      318 | y     9.0e-01 | y_next 3.3e-03
++++ >        c_new  320 | y_new 2.5e-01 | y_old 2.5e-01 | evals  2556
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lacewing, lacewing fly
+    : l_new : damselfly
+
+
+--> #  321 | c      321 | y     8.2e-01 | y_next 7.0e-03
++++ >        c_new  326 | y_new 2.6e-01 | y_old 2.6e-01 | evals  4544
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : admiral
+    : l_new : lycaenid, lycaenid butterfly
+
+
+--> #  322 | c      322 | y     7.8e-01 | y_next 1.4e-02
++++ >        c_new  325 | y_new 3.4e-01 | y_old 3.4e-01 | evals  6215
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ringlet, ringlet butterfly
+    : l_new : sulphur butterfly, sulfur butterfly
+
+
+--> #  323 | c      323 | y     8.3e-01 | y_next 3.1e-03
++++ >        c_new  453 | y_new 3.8e-01 | y_old 3.8e-01 | evals  5880
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : monarch, monarch butterfly, milkweed butterfly, da
+    : l_new : bookcase
+
+
+--> #  324 | c      324 | y     7.5e-01 | y_next 1.7e-02
++++ >        c_new  325 | y_new 3.5e-01 | y_old 3.5e-01 | evals  4722
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cabbage butterfly
+    : l_new : sulphur butterfly, sulfur butterfly
+
+
+--> #  325 | c      325 | y     6.9e-01 | y_next 6.8e-02
++++ >        c_new  322 | y_new 3.4e-01 | y_old 3.3e-01 | evals  1339
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sulphur butterfly, sulfur butterfly
+    : l_new : ringlet, ringlet butterfly
+
+
+--> #  327 | c      327 | y     7.4e-01 | y_next 6.8e-03
++++ >        c_new  932 | y_new 1.6e-01 | y_old 1.5e-01 | evals  2811
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : starfish, sea star
+    : l_new : pretzel
+
+
+--> #  328 | c      328 | y     6.7e-01 | y_next 5.0e-02
++++ >        c_new  109 | y_new 1.9e-01 | y_old 1.9e-01 | evals   942
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sea urchin
+    : l_new : brain coral
+
+
+--> #  329 | c      329 | y     8.4e-01 | y_next 1.6e-02
++++ >        c_new  110 | y_new 3.2e-01 | y_old 3.1e-01 | evals   759
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sea cucumber, holothurian
+    : l_new : flatworm, platyhelminth
+
+
+--> #  330 | c      330 | y     8.2e-01 | y_next 6.2e-02
++++ >        c_new  331 | y_new 4.2e-01 | y_old 4.0e-01 | evals  1654
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wood rabbit, cottontail, cottontail rabbit
+    : l_new : hare
+
+
+--> #  331 | c      331 | y     7.4e-01 | y_next 7.3e-02
++++ >        c_new   18 | y_new 3.3e-01 | y_old 3.2e-01 | evals   572
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hare
+    : l_new : magpie
+
+
+--> #  332 | c      332 | y     6.7e-01 | y_next 3.0e-02
++++ >        c_new  333 | y_new 2.6e-01 | y_old 2.6e-01 | evals   318
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : angora, angora rabbit
+    : l_new : hamster
+
+
+--> #  333 | c      333 | y     6.1e-01 | y_next 1.8e-02
++++ >        c_new  338 | y_new 1.7e-01 | y_old 1.7e-01 | evals  2540
+    : changes 50172 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hamster
+    : l_new : guinea pig, cavia cobaya
+
+
+--> #  334 | c      334 | y     3.7e-01 | y_next 1.6e-01
++++ >        c_new  337 | y_new 2.5e-01 | y_old 2.1e-01 | evals    63
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : porcupine, hedgehog
+    : l_new : beaver
+
+
+--> #  335 | c      335 | y     8.9e-01 | y_next 9.3e-03
++++ >        c_new   43 | y_new 3.1e-01 | y_old 2.9e-01 | evals   353
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : fox squirrel, eastern fox squirrel, sciurus niger
+    : l_new : frilled lizard, chlamydosaurus kingi
+
+
+--> #  336 | c      336 | y     9.7e-01 | y_next 8.0e-04
++++ >        c_new  360 | y_new 3.5e-01 | y_old 3.3e-01 | evals  2464
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : marmot
+    : l_new : otter
+
+
+--> #  337 | c      337 | y     6.6e-01 | y_next 6.8e-02
++++ >        c_new  294 | y_new 3.6e-01 | y_old 2.6e-01 | evals    96
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : beaver
+    : l_new : brown bear, bruin, ursus arctos
+
+
+--> #  338 | c      338 | y     7.7e-01 | y_next 3.6e-02
++++ >        c_new  333 | y_new 3.4e-01 | y_old 3.3e-01 | evals  2032
+    : changes 50176 | dx1 9.0e+03 | dx2 2.5e+01
+    : l_old : guinea pig, cavia cobaya
+    : l_new : hamster
+
+
+--> #  339 | c      339 | y     8.8e-01 | y_next 7.1e-03
++++ >        c_new  351 | y_new 3.7e-01 | y_old 3.6e-01 | evals  3225
+    : changes 50167 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sorrel
+    : l_new : hartebeest
+
+
+--> #  340 | c      340 | y     7.3e-01 | y_next 1.6e-03
+    > fail | evals 10003
+
+--> #  341 | c      341 | y     7.2e-01 | y_next 2.0e-02
++++ >        c_new  467 | y_new 1.6e-01 | y_old 1.6e-01 | evals  2809
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hog, pig, grunter, squealer, sus scrofa
+    : l_new : butcher shop, meat market
+
+
+--> #  343 | c      343 | y     5.9e-01 | y_next 1.6e-01
++++ >        c_new  342 | y_new 3.5e-01 | y_old 3.5e-01 | evals   580
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : warthog
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  344 | c      344 | y     9.3e-01 | y_next 2.8e-02
++++ >        c_new  341 | y_new 4.8e-01 | y_old 4.4e-01 | evals  2095
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hippopotamus, hippo, river horse, hippopotamus amp
+    : l_new : hog, pig, grunter, squealer, sus scrofa
+
+
+--> #  345 | c      345 | y     7.5e-01 | y_next 8.0e-02
++++ >        c_new  348 | y_new 3.7e-01 | y_old 3.5e-01 | evals  1436
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ox
+    : l_new : ram, tup
+
+
+--> #  346 | c      346 | y     8.9e-01 | y_next 7.8e-03
++++ >        c_new  345 | y_new 3.0e-01 | y_old 2.9e-01 | evals  2328
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : water buffalo, water ox, asiatic buffalo, bubalus 
+    : l_new : ox
+
+
+--> #  347 | c      347 | y     3.9e-01 | y_next 1.7e-01
++++ >        c_new  349 | y_new 2.8e-01 | y_old 2.6e-01 | evals   128
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bison
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+
+--> #  348 | c      348 | y     9.1e-01 | y_next 1.3e-02
++++ >        c_new  349 | y_new 3.5e-01 | y_old 3.5e-01 | evals  3130
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ram, tup
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+
+--> #  349 | c      349 | y     4.8e-01 | y_next 1.5e-01
++++ >        c_new  348 | y_new 3.0e-01 | y_old 3.0e-01 | evals    60
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bighorn, bighorn sheep, cimarron, rocky mountain b
+    : l_new : ram, tup
+
+
+--> #  350 | c      350 | y     7.5e-01 | y_next 4.8e-02
++++ >        c_new  349 | y_new 3.3e-01 | y_old 2.5e-01 | evals   535
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ibex, capra ibex
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+
+--> #  351 | c      351 | y     4.4e-01 | y_next 3.0e-01
++++ >        c_new  352 | y_new 3.3e-01 | y_old 2.8e-01 | evals     3
+    : changes 49881 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : hartebeest
+    : l_new : impala, aepyceros melampus
+
+
+--> #  352 | c      352 | y     8.5e-01 | y_next 4.2e-02
++++ >        c_new  353 | y_new 3.8e-01 | y_old 3.8e-01 | evals  2356
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : impala, aepyceros melampus
+    : l_new : gazelle
+
+
+--> #  353 | c      353 | y     6.0e-01 | y_next 2.5e-01
++++ >        c_new  352 | y_new 4.2e-01 | y_old 4.2e-01 | evals   309
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gazelle
+    : l_new : impala, aepyceros melampus
+
+
+--> #  354 | c      354 | y     3.9e-01 | y_next 8.9e-02
++++ >        c_new    7 | y_new 2.0e-01 | y_old 1.9e-01 | evals    56
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : arabian camel, dromedary, camelus dromedarius
+    : l_new : cock
+
+
+--> #  355 | c      355 | y     6.8e-01 | y_next 2.5e-02
++++ >        c_new  104 | y_new 2.7e-01 | y_old 2.6e-01 | evals   296
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : llama
+    : l_new : wallaby, brush kangaroo
+
+
+--> #  357 | c      357 | y     4.0e-01 | y_next 5.9e-02
++++ >        c_new  334 | y_new 1.5e-01 | y_old 1.5e-01 | evals   205
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mink
+    : l_new : porcupine, hedgehog
+
+
+--> #  359 | c      359 | y     4.8e-01 | y_next 1.7e-01
++++ >        c_new  356 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1134
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : black-footed ferret, ferret, mustela nigripes
+    : l_new : weasel
+
+
+--> #  360 | c      360 | y     5.9e-01 | y_next 7.5e-02
++++ >        c_new  337 | y_new 2.3e-01 | y_old 2.2e-01 | evals    74
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : otter
+    : l_new : beaver
+
+
+--> #  361 | c      361 | y     4.2e-01 | y_next 5.8e-02
++++ >        c_new  357 | y_new 2.1e-01 | y_old 1.7e-01 | evals    97
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : skunk, polecat, wood pussy
+    : l_new : mink
+
+
+--> #  362 | c      362 | y     8.7e-01 | y_next 4.2e-03
++++ >        c_new  388 | y_new 2.6e-01 | y_old 2.5e-01 | evals  8124
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : badger
+    : l_new : giant panda, panda, panda bear, coon bear, ailurop
+
+
+--> #  363 | c      363 | y     5.3e-01 | y_next 3.9e-02
++++ >        c_new   46 | y_new 1.9e-01 | y_old 1.5e-01 | evals    82
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : armadillo
+    : l_new : green lizard, lacerta viridis
+
+
+--> #  364 | c      364 | y     7.7e-01 | y_next 6.2e-03
++++ >        c_new  384 | y_new 2.0e-01 | y_old 1.9e-01 | evals  1933
+    : changes 50074 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : three-toed sloth, ai, bradypus tridactylus
+    : l_new : indri, indris, indri indri, indri brevicaudatus
+
+
+--> #  365 | c      365 | y     8.0e-01 | y_next 6.4e-03
++++ >        c_new  379 | y_new 4.3e-01 | y_old 4.1e-01 | evals  2358
+    : changes 50089 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : orangutan, orang, orangutang, pongo pygmaeus
+    : l_new : howler monkey, howler
+
+
+--> #  367 | c      367 | y     3.2e-01 | y_next 1.8e-01
++++ >        c_new  366 | y_new 2.5e-01 | y_old 2.4e-01 | evals     6
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chimpanzee, chimp, pan troglodytes
+    : l_new : gorilla, gorilla gorilla
+
+
+--> #  368 | c      368 | y     6.8e-01 | y_next 4.0e-02
++++ >        c_new  388 | y_new 2.5e-01 | y_old 2.3e-01 | evals   316
+    : changes 50176 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : gibbon, hylobates lar
+    : l_new : giant panda, panda, panda bear, coon bear, ailurop
+
+
+--> #  369 | c      369 | y     7.7e-01 | y_next 5.0e-02
++++ >        c_new  367 | y_new 3.6e-01 | y_old 3.6e-01 | evals  2201
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : siamang, hylobates syndactylus, symphalangus synda
+    : l_new : chimpanzee, chimp, pan troglodytes
+
+
+--> #  370 | c      370 | y     8.1e-01 | y_next 1.1e-02
++++ >        c_new  371 | y_new 2.6e-01 | y_old 2.6e-01 | evals  4155
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : guenon, guenon monkey
+    : l_new : patas, hussar monkey, erythrocebus patas
+
+
+--> #  371 | c      371 | y     6.8e-01 | y_next 4.6e-02
++++ >        c_new  370 | y_new 2.9e-01 | y_old 2.9e-01 | evals  2857
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : patas, hussar monkey, erythrocebus patas
+    : l_new : guenon, guenon monkey
+
+
+--> #  372 | c      372 | y     5.9e-01 | y_next 1.9e-01
++++ >        c_new  373 | y_new 4.2e-01 | y_old 3.6e-01 | evals   258
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : baboon
+    : l_new : macaque
+
+
+--> #  373 | c      373 | y     7.8e-01 | y_next 2.8e-02
++++ >        c_new  370 | y_new 1.4e-01 | y_old 1.3e-01 | evals   279
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : macaque
+    : l_new : guenon, guenon monkey
+
+
+--> #  374 | c      374 | y     3.9e-01 | y_next 1.2e-01
++++ >        c_new  383 | y_new 2.7e-01 | y_old 2.6e-01 | evals    41
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : langur
+    : l_new : madagascar cat, ring-tailed lemur, lemur catta
+
+
+--> #  376 | c      376 | y     7.4e-01 | y_next 1.3e-02
++++ >        c_new  373 | y_new 2.6e-01 | y_old 2.6e-01 | evals  3378
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : proboscis monkey, nasalis larvatus
+    : l_new : macaque
+
+
+--> #  377 | c      377 | y     7.3e-01 | y_next 1.3e-01
++++ >        c_new  380 | y_new 3.5e-01 | y_old 3.4e-01 | evals   144
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : marmoset
+    : l_new : titi, titi monkey
+
+
+--> #  378 | c      378 | y     6.8e-01 | y_next 1.1e-01
++++ >        c_new  380 | y_new 3.0e-01 | y_old 2.9e-01 | evals   511
+    : changes 50173 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : capuchin, ringtail, cebus capucinus
+    : l_new : titi, titi monkey
+
+
+--> #  379 | c      379 | y     7.9e-01 | y_next 1.9e-02
++++ >        c_new   91 | y_new 3.0e-01 | y_old 2.9e-01 | evals   941
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : howler monkey, howler
+    : l_new : coucal
+
+
+--> #  381 | c      381 | y     9.4e-01 | y_next 8.3e-03
++++ >        c_new  379 | y_new 3.0e-01 | y_old 3.0e-01 | evals  3599
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : spider monkey, ateles geoffroyi
+    : l_new : howler monkey, howler
+
+
+--> #  382 | c      382 | y     7.0e-01 | y_next 1.3e-01
++++ >        c_new  381 | y_new 4.0e-01 | y_old 4.0e-01 | evals  5963
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : squirrel monkey, saimiri sciureus
+    : l_new : spider monkey, ateles geoffroyi
+
+
+--> #  383 | c      383 | y     8.8e-01 | y_next 5.6e-03
++++ >        c_new  336 | y_new 1.3e-01 | y_old 1.2e-01 | evals  1168
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : madagascar cat, ring-tailed lemur, lemur catta
+    : l_new : marmot
+
+
+--> #  385 | c      385 | y     7.3e-01 | y_next 6.3e-02
++++ >        c_new  386 | y_new 3.3e-01 | y_old 3.3e-01 | evals   508
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : indian elephant, elephas maximus
+    : l_new : african elephant, loxodonta africana
+
+
+--> #  386 | c      386 | y     8.1e-01 | y_next 5.3e-02
++++ >        c_new  101 | y_new 3.6e-01 | y_old 3.6e-01 | evals  4673
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : african elephant, loxodonta africana
+    : l_new : tusker
+
+
+--> #  387 | c      387 | y     9.0e-01 | y_next 2.9e-03
++++ >        c_new  388 | y_new 3.7e-01 | y_old 3.6e-01 | evals  5723
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lesser panda, red panda, panda, bear cat, cat bear
+    : l_new : giant panda, panda, panda bear, coon bear, ailurop
+
+
+--> #  388 | c      388 | y     7.5e-01 | y_next 2.2e-03
+    > fail | evals 10003
+
+--> #  389 | c      389 | y     7.0e-01 | y_next 7.8e-02
++++ >        c_new    0 | y_new 3.8e-01 | y_old 3.8e-01 | evals   704
+    : changes 49723 | dx1 9.6e+03 | dx2 2.6e+01
+    : l_old : barracouta, snoek
+    : l_new : tench, tinca tinca
+
+
+--> #  391 | c      391 | y     7.3e-01 | y_next 4.7e-02
++++ >        c_new  389 | y_new 3.2e-01 | y_old 2.9e-01 | evals  1063
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coho, cohoe, coho salmon, blue jack, silver salmon
+    : l_new : barracouta, snoek
+
+
+--> #  392 | c      392 | y     7.5e-01 | y_next 5.5e-03
++++ >        c_new    5 | y_new 1.8e-01 | y_old 1.8e-01 | evals  1662
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rock beauty, holocanthus tricolor
+    : l_new : electric ray, crampfish, numbfish, torpedo
+
+
+--> #  393 | c      393 | y     4.8e-01 | y_next 1.3e-01
++++ >        c_new  108 | y_new 2.9e-01 | y_old 2.8e-01 | evals  1248
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : anemone fish
+    : l_new : sea anemone, anemone
+
+
+--> #  394 | c      394 | y     8.7e-01 | y_next 5.3e-03
++++ >        c_new  391 | y_new 2.1e-01 | y_old 2.1e-01 | evals   761
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sturgeon
+    : l_new : coho, cohoe, coho salmon, blue jack, silver salmon
+
+
+--> #  397 | c      397 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10003
+
+--> #  398 | c      398 | y     8.2e-01 | y_next 1.2e-02
++++ >        c_new  772 | y_new 3.7e-01 | y_old 3.6e-01 | evals  1231
+    : changes 49998 | dx1 9.2e+03 | dx2 2.5e+01
+    : l_old : abacus
+    : l_new : safety pin
+
+
+--> #  399 | c      399 | y     8.4e-01 | y_next 8.3e-03
++++ >        c_new  834 | y_new 2.4e-01 | y_old 2.2e-01 | evals   738
+    : changes 50168 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : abaya
+    : l_new : suit, suit of clothes
+
+
+--> #  400 | c      400 | y     7.0e-01 | y_next 6.4e-02
++++ >        c_new  667 | y_new 3.5e-01 | y_old 3.5e-01 | evals  2631
+    : changes 45694 | dx1 7.9e+03 | dx2 2.3e+01
+    : l_old : academic gown, academic robe, judge`s robe
+    : l_new : mortarboard
+
+
+--> #  402 | c      402 | y     7.5e-01 | y_next 1.4e-02
++++ >        c_new  546 | y_new 1.9e-01 | y_old 1.9e-01 | evals  4732
+    : changes 50124 | dx1 9.6e+03 | dx2 2.5e+01
+    : l_old : acoustic guitar
+    : l_new : electric guitar
+
+
+--> #  403 | c      403 | y     7.8e-01 | y_next 2.1e-02
++++ >        c_new  540 | y_new 3.6e-01 | y_old 3.5e-01 | evals  1421
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : aircraft carrier, carrier, flattop, attack aircraf
+    : l_new : drilling platform, offshore rig
+
+
+--> #  404 | c      404 | y     8.6e-01 | y_next 6.8e-02
++++ >        c_new  908 | y_new 4.1e-01 | y_old 4.1e-01 | evals  1664
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : airliner
+    : l_new : wing
+
+
+--> #  405 | c      405 | y     9.8e-01 | y_next 3.1e-04
++++ >        c_new  782 | y_new 2.6e-01 | y_old 2.6e-01 | evals   235
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : airship, dirigible
+    : l_new : screen, crt screen
+
+
+--> #  406 | c      406 | y     3.7e-01 | y_next 1.0e-01
++++ >        c_new  687 | y_new 2.6e-01 | y_old 2.5e-01 | evals    80
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : altar
+    : l_new : organ, pipe organ
+
+
+--> #  407 | c      407 | y     8.0e-01 | y_next 1.0e-02
++++ >        c_new  734 | y_new 2.5e-01 | y_old 2.5e-01 | evals  6616
+    : changes 50171 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ambulance
+    : l_new : police van, police wagon, paddy wagon, patrol wago
+
+
+--> #  408 | c      408 | y     4.3e-01 | y_next 6.7e-02
++++ >        c_new  847 | y_new 2.1e-01 | y_old 1.9e-01 | evals   254
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : amphibian, amphibious vehicle
+    : l_new : tank, army tank, armored combat vehicle, armoured 
+
+
+--> #  410 | c      410 | y     6.9e-01 | y_next 1.4e-02
++++ >        c_new  660 | y_new 1.9e-01 | y_old 1.9e-01 | evals  2479
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : apiary, bee house
+    : l_new : mobile home, manufactured home
+
+
+--> #  411 | c      411 | y     6.1e-01 | y_next 1.3e-01
++++ >        c_new  697 | y_new 3.3e-01 | y_old 3.3e-01 | evals   821
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : apron
+    : l_new : pajama, pyjama, pj`s, jammies
+
+
+--> #  412 | c      412 | y     5.3e-01 | y_next 4.2e-02
++++ >        c_new  796 | y_new 1.9e-01 | y_old 1.8e-01 | evals   291
+    : changes 49630 | dx1 9.4e+03 | dx2 2.5e+01
+    : l_old : ashcan, trash can, garbage can, wastebin, ash bin,
+    : l_new : ski mask
+
+
+--> #  414 | c      414 | y     7.9e-01 | y_next 6.6e-02
++++ >        c_new  636 | y_new 2.3e-01 | y_old 2.3e-01 | evals    52
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : backpack, back pack, knapsack, packsack, rucksack,
+    : l_new : mailbag, postbag
+
+
+--> #  415 | c      415 | y     5.9e-01 | y_next 5.5e-02
++++ >        c_new  928 | y_new 2.3e-01 | y_old 2.3e-01 | evals   931
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bakery, bakeshop, bakehouse
+    : l_new : ice cream, icecream
+
+
+--> #  416 | c      416 | y     6.4e-01 | y_next 1.5e-01
++++ >        c_new  702 | y_new 3.4e-01 | y_old 3.4e-01 | evals   256
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : balance beam, beam
+    : l_new : parallel bars, bars
+
+
+--> #  417 | c      417 | y     7.2e-01 | y_next 9.8e-03
++++ >        c_new  405 | y_new 2.8e-01 | y_old 2.7e-01 | evals  7848
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : balloon
+    : l_new : airship, dirigible
+
+
+--> #  418 | c      418 | y     3.5e-01 | y_next 1.1e-01
++++ >        c_new  563 | y_new 2.4e-01 | y_old 2.3e-01 | evals    38
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ballpoint, ballpoint pen, ballpen, biro
+    : l_new : fountain pen
+
+
+--> #  419 | c      419 | y     9.4e-01 | y_next 1.3e-02
++++ >        c_new  692 | y_new 2.7e-01 | y_old 2.7e-01 | evals  2060
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : band aid
+    : l_new : packet
+
+
+--> #  420 | c      420 | y     8.8e-01 | y_next 1.1e-02
++++ >        c_new  541 | y_new 2.3e-01 | y_old 2.2e-01 | evals  2944
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : banjo
+    : l_new : drum, membranophone, tympan
+
+
+--> #  421 | c      421 | y     5.1e-01 | y_next 6.0e-02
++++ >        c_new  516 | y_new 1.7e-01 | y_old 1.7e-01 | evals  1638
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bannister, banister, balustrade, balusters, handra
+    : l_new : cradle
+
+
+--> #  422 | c      422 | y     4.5e-01 | y_next 2.3e-02
++++ >        c_new  602 | y_new 1.6e-01 | y_old 1.6e-01 | evals  3513
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : barbell
+    : l_new : horizontal bar, high bar
+
+
+--> #  423 | c      423 | y     7.6e-01 | y_next 3.9e-02
++++ >        c_new  424 | y_new 2.5e-01 | y_old 2.5e-01 | evals  4079
+    : changes 50111 | dx1 9.2e+03 | dx2 2.5e+01
+    : l_old : barber chair
+    : l_new : barbershop
+
+
+--> #  425 | c      425 | y     9.1e-01 | y_next 4.7e-03
++++ >        c_new  449 | y_new 2.9e-01 | y_old 2.8e-01 | evals  9093
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : barn
+    : l_new : boathouse
+
+
+--> #  426 | c      426 | y     1.9e-01 | y_next 1.1e-01
++++ >        c_new  769 | y_new 2.2e-01 | y_old 1.9e-02 | evals     3
+    : changes 49240 | dx1 9.0e+03 | dx2 2.5e+01
+    : l_old : barometer
+    : l_new : rule, ruler
+
+
+--> #  428 | c      428 | y     9.0e-01 | y_next 5.6e-03
++++ >        c_new  516 | y_new 2.1e-01 | y_old 2.1e-01 | evals  3663
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : barrow, garden cart, lawn cart, wheelbarrow
+    : l_new : cradle
+
+
+--> #  429 | c      429 | y     6.8e-01 | y_next 4.0e-03
++++ >        c_new  427 | y_new 2.3e-01 | y_old 2.2e-01 | evals  1265
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : baseball
+    : l_new : barrel, cask
+
+
+--> #  430 | c      430 | y     5.3e-01 | y_next 1.7e-01
++++ >        c_new  890 | y_new 3.3e-01 | y_old 2.9e-01 | evals    25
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : basketball
+    : l_new : volleyball
+
+
+--> #  431 | c      431 | y     8.9e-01 | y_next 5.3e-02
++++ >        c_new  516 | y_new 4.4e-01 | y_old 4.4e-01 | evals  1933
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bassinet
+    : l_new : cradle
+
+
+--> #  432 | c      432 | y     8.3e-01 | y_next 1.6e-02
++++ >        c_new  776 | y_new 3.2e-01 | y_old 3.2e-01 | evals  2050
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bassoon
+    : l_new : sax, saxophone
+
+
+--> #  433 | c      433 | y     9.6e-01 | y_next 4.3e-03
++++ >        c_new    6 | y_new 4.4e-01 | y_old 4.3e-01 | evals  1632
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bathing cap, swimming cap
+    : l_new : stingray
+
+
+--> #  434 | c      434 | y     7.3e-01 | y_next 5.2e-02
++++ >        c_new  850 | y_new 2.5e-01 | y_old 2.5e-01 | evals   278
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bath towel
+    : l_new : teddy, teddy bear
+
+
+--> #  436 | c      436 | y     9.1e-01 | y_next 3.2e-02
++++ >        c_new  656 | y_new 4.7e-01 | y_old 4.6e-01 | evals  3528
+    : changes 50168 | dx1 8.8e+03 | dx2 2.4e+01
+    : l_old : beach wagon, station wagon, wagon, estate car, bea
+    : l_new : minivan
+
+
+--> #  437 | c      437 | y     6.9e-01 | y_next 6.3e-02
++++ >        c_new  900 | y_new 3.2e-01 | y_old 3.2e-01 | evals   759
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : beacon, lighthouse, beacon light, pharos
+    : l_new : water tower
+
+
+--> #  439 | c      439 | y     7.9e-01 | y_next 9.2e-03
++++ >        c_new  796 | y_new 2.9e-01 | y_old 2.8e-01 | evals  1194
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bearskin, busby, shako
+    : l_new : ski mask
+
+
+--> #  440 | c      440 | y     4.3e-01 | y_next 1.5e-01
++++ >        c_new  907 | y_new 2.2e-01 | y_old 2.1e-01 | evals   147
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : beer bottle
+    : l_new : wine bottle
+
+
+--> #  441 | c      441 | y     3.0e-01 | y_next 7.9e-02
++++ >        c_new  572 | y_new 1.9e-01 | y_old 1.0e-01 | evals     3
+    : changes 50175 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : beer glass
+    : l_new : goblet
+
+
+--> #  443 | c      443 | y     7.8e-01 | y_next 2.4e-03
++++ >        c_new  411 | y_new 3.1e-01 | y_old 3.0e-01 | evals  8305
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bib
+    : l_new : apron
+
+
+--> #  444 | c      444 | y     9.0e-01 | y_next 7.3e-03
++++ >        c_new  870 | y_new 3.6e-01 | y_old 3.6e-01 | evals  4745
+    : changes 50028 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bicycle-built-for-two, tandem bicycle, tandem
+    : l_new : tricycle, trike, velocipede
+
+
+--> #  445 | c      445 | y     4.3e-01 | y_next 2.3e-01
++++ >        c_new  459 | y_new 8.0e-01 | y_old 6.7e-02 | evals     3
+    : changes 50148 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bikini, two-piece
+    : l_new : brassiere, bra, bandeau
+
+
+--> #  447 | c      447 | y     5.1e-01 | y_next 1.8e-02
++++ >        c_new  632 | y_new 8.7e-02 | y_old 8.7e-02 | evals  1820
+    : changes 46578 | dx1 7.3e+03 | dx2 2.2e+01
+    : l_old : binoculars, field glasses, opera glasses
+    : l_new : loudspeaker, speaker, speaker unit, loudspeaker sy
+
+
+--> #  448 | c      448 | y     9.1e-01 | y_next 2.7e-03
++++ >        c_new  637 | y_new 4.3e-01 | y_old 4.0e-01 | evals  6167
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : birdhouse
+    : l_new : mailbox, letter box
+
+
+--> #  449 | c      449 | y     6.0e-01 | y_next 1.2e-01
++++ >        c_new  706 | y_new 3.4e-01 | y_old 1.2e-01 | evals     4
+    : changes 50173 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : boathouse
+    : l_new : patio, terrace
+
+
+--> #  450 | c      450 | y     4.1e-01 | y_next 2.4e-02
++++ >        c_new  573 | y_new 1.1e-01 | y_old 1.1e-01 | evals  3169
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bobsled, bobsleigh, bob
+    : l_new : go-kart
+
+
+--> #  451 | c      451 | y     6.3e-01 | y_next 1.6e-01
++++ >        c_new  464 | y_new 3.4e-01 | y_old 3.4e-01 | evals   346
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bolo tie, bolo, bola tie, bola
+    : l_new : buckle
+
+
+--> #  452 | c      452 | y     9.3e-01 | y_next 3.5e-03
++++ >        c_new  643 | y_new 3.9e-01 | y_old 3.8e-01 | evals  1555
+    : changes 47365 | dx1 8.3e+03 | dx2 2.4e+01
+    : l_old : bonnet, poke bonnet
+    : l_new : mask
+
+
+--> #  453 | c      453 | y     7.5e-01 | y_next 8.2e-02
++++ >        c_new  624 | y_new 4.1e-01 | y_old 4.1e-01 | evals  2609
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bookcase
+    : l_new : library
+
+
+--> #  454 | c      454 | y     7.3e-01 | y_next 1.6e-01
++++ >        c_new  860 | y_new 4.4e-01 | y_old 4.4e-01 | evals  1088
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bookshop, bookstore, bookstall
+    : l_new : tobacco shop, tobacconist shop, tobacconist
+
+
+--> #  455 | c      455 | y     3.0e-01 | y_next 2.5e-01
++++ >        c_new  855 | y_new 2.4e-01 | y_old 2.3e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bottlecap
+    : l_new : thimble
+
+
+--> #  459 | c      459 | y     2.7e-01 | y_next 1.5e-01
++++ >        c_new  638 | y_new 1.9e-01 | y_old 1.9e-01 | evals    36
+    : changes 50128 | dx1 9.3e+03 | dx2 2.5e+01
+    : l_old : brassiere, bra, bandeau
+    : l_new : maillot
+
+
+--> #  460 | c      460 | y     7.9e-01 | y_next 1.7e-01
++++ >        c_new  437 | y_new 4.7e-01 | y_old 4.6e-01 | evals   216
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : breakwater, groin, groyne, mole, bulwark, seawall,
+    : l_new : beacon, lighthouse, beacon light, pharos
+
+
+--> #  461 | c      461 | y     6.0e-01 | y_next 1.4e-01
++++ >        c_new  524 | y_new 3.7e-01 | y_old 3.7e-01 | evals  1242
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : breastplate, aegis, egis
+    : l_new : cuirass
+
+
+--> #  462 | c      462 | y     3.8e-01 | y_next 1.2e-01
++++ >        c_new  840 | y_new 2.7e-01 | y_old 2.7e-01 | evals    52
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : broom
+    : l_new : swab, swob, mop
+
+
+--> #  463 | c      463 | y     7.8e-01 | y_next 9.0e-02
++++ >        c_new  792 | y_new 2.5e-01 | y_old 2.4e-01 | evals    21
+    : changes 50176 | dx1 9.6e+03 | dx2 2.5e+01
+    : l_old : bucket, pail
+    : l_new : shovel
+
+
+--> #  464 | c      464 | y     6.9e-01 | y_next 1.3e-01
++++ >        c_new  584 | y_new 4.1e-01 | y_old 4.1e-01 | evals   636
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : buckle
+    : l_new : hair slide
+
+
+--> #  465 | c      465 | y     8.6e-01 | y_next 6.3e-03
++++ >        c_new  906 | y_new 3.2e-01 | y_old 3.1e-01 | evals  1532
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bulletproof vest
+    : l_new : windsor tie
+
+
+--> #  466 | c      466 | y     9.0e-01 | y_next 1.7e-03
++++ >        c_new  547 | y_new 3.2e-01 | y_old 3.1e-01 | evals  9184
+    : changes 50175 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : bullet train, bullet
+    : l_new : electric locomotive
+
+
+--> #  467 | c      467 | y     4.8e-01 | y_next 1.1e-01
++++ >        c_new  499 | y_new 2.4e-01 | y_old 2.1e-01 | evals    74
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : butcher shop, meat market
+    : l_new : cleaver, meat cleaver, chopper
+
+
+--> #  468 | c      468 | y     9.3e-01 | y_next 6.0e-03
++++ >        c_new  817 | y_new 3.5e-01 | y_old 3.5e-01 | evals  3270
+    : changes 50118 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : cab, hack, taxi, taxicab
+    : l_new : sports car, sport car
+
+
+--> #  469 | c      469 | y     2.9e-01 | y_next 6.1e-02
++++ >        c_new  427 | y_new 1.8e-01 | y_old 1.5e-01 | evals   223
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : caldron, cauldron
+    : l_new : barrel, cask
+
+
+--> #  470 | c      470 | y     9.5e-01 | y_next 7.7e-03
++++ >        c_new  862 | y_new 3.7e-01 | y_old 3.5e-01 | evals   755
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : candle, taper, wax light
+    : l_new : torch
+
+
+--> #  471 | c      471 | y     5.9e-01 | y_next 1.3e-02
++++ >        c_new  744 | y_new 1.5e-01 | y_old 1.5e-01 | evals  4680
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cannon
+    : l_new : projectile, missile
+
+
+--> #  472 | c      472 | y     7.2e-01 | y_next 3.6e-02
++++ >        c_new  693 | y_new 2.3e-01 | y_old 2.3e-01 | evals  8284
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : canoe
+    : l_new : paddle, boat paddle
+
+
+--> #  473 | c      473 | y     7.1e-01 | y_next 1.2e-01
++++ >        c_new  763 | y_new 3.4e-01 | y_old 3.4e-01 | evals   391
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : can opener, tin opener
+    : l_new : revolver, six-gun, six-shooter
+
+
+--> #  475 | c      475 | y     4.4e-01 | y_next 1.2e-01
++++ >        c_new  851 | y_new 4.9e-01 | y_old 1.4e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : car mirror
+    : l_new : television, television system
+
+
+--> #  478 | c      478 | y     7.8e-01 | y_next 9.3e-03
++++ >        c_new  549 | y_new 4.1e-01 | y_old 4.1e-01 | evals  5093
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : carton
+    : l_new : envelope
+
+
+--> #  479 | c      479 | y     7.9e-01 | y_next 5.1e-02
++++ >        c_new  535 | y_new 4.0e-01 | y_old 4.0e-01 | evals  3567
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : car wheel
+    : l_new : disk brake, disc brake
+
+
+--> #  480 | c      480 | y     7.4e-01 | y_next 4.1e-02
++++ >        c_new  707 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1800
+    : changes 50176 | dx1 9.5e+03 | dx2 2.5e+01
+    : l_old : cash machine, cash dispenser, automated teller mac
+    : l_new : pay-phone, pay-station
+
+
+--> #  481 | c      481 | y     7.3e-01 | y_next 2.2e-02
+    > fail | evals 10003
+
+--> #  483 | c      483 | y     8.0e-01 | y_next 7.5e-03
++++ >        c_new  497 | y_new 3.5e-01 | y_old 3.4e-01 | evals  9463
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : castle
+    : l_new : church, church building
+
+
+--> #  484 | c      484 | y     6.0e-01 | y_next 2.7e-01
++++ >        c_new  871 | y_new 4.3e-01 | y_old 4.3e-01 | evals   231
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : catamaran
+    : l_new : trimaran
+
+
+--> #  485 | c      485 | y     6.8e-01 | y_next 2.8e-02
++++ >        c_new  570 | y_new 2.8e-01 | y_old 2.4e-01 | evals   263
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cd player
+    : l_new : gasmask, respirator, gas helmet
+
+
+--> #  488 | c      488 | y     2.6e-01 | y_next 8.1e-02
++++ >        c_new  902 | y_new 1.4e-01 | y_old 1.3e-01 | evals   323
+    : changes 50169 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chain
+    : l_new : whistle
+
+
+--> #  489 | c      489 | y     8.2e-01 | y_next 9.1e-03
++++ >        c_new  912 | y_new 3.0e-01 | y_old 3.0e-01 | evals  7037
+    : changes 50025 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : chainlink fence
+    : l_new : worm fence, snake fence, snake-rail fence, virgini
+
+
+--> #  490 | c      490 | y     6.5e-01 | y_next 1.5e-02
++++ >        c_new  474 | y_new 2.1e-01 | y_old 2.1e-01 | evals  2139
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chain mail, ring mail, mail, chain armor, chain ar
+    : l_new : cardigan
+
+
+--> #  492 | c      492 | y     7.1e-01 | y_next 5.6e-02
++++ >        c_new  876 | y_new 2.9e-01 | y_old 2.0e-01 | evals     3
+    : changes 49079 | dx1 9.2e+03 | dx2 2.5e+01
+    : l_old : chest
+    : l_new : tub, vat
+
+
+--> #  493 | c      493 | y     7.9e-01 | y_next 1.2e-02
++++ >        c_new  556 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1530
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chiffonier, commode
+    : l_new : fire screen, fireguard
+
+
+--> #  494 | c      494 | y     9.2e-01 | y_next 2.0e-02
++++ >        c_new  442 | y_new 3.7e-01 | y_old 3.7e-01 | evals  5285
+    : changes 50012 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : chime, bell, gong
+    : l_new : bell cote, bell cot
+
+
+--> #  495 | c      495 | y     7.9e-01 | y_next 5.6e-03
++++ >        c_new  894 | y_new 3.6e-01 | y_old 3.6e-01 | evals  7704
+    : changes 50172 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : china cabinet, china closet
+    : l_new : wardrobe, closet, press
+
+
+--> #  496 | c      496 | y     8.7e-01 | y_next 7.3e-03
++++ >        c_new  709 | y_new 2.8e-01 | y_old 2.5e-01 | evals  2145
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : christmas stocking
+    : l_new : pencil box, pencil case
+
+
+--> #  497 | c      497 | y     6.2e-01 | y_next 7.9e-02
++++ >        c_new  425 | y_new 1.7e-01 | y_old 1.6e-01 | evals     3
+    : changes 50150 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : church, church building
+    : l_new : barn
+
+
+--> #  498 | c      498 | y     2.9e-01 | y_next 2.3e-01
++++ >        c_new  424 | y_new 2.7e-01 | y_old 2.7e-01 | evals     4
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cinema, movie theater, movie theatre, movie house,
+    : l_new : barbershop
+
+
+--> #  500 | c      500 | y     6.8e-01 | y_next 4.7e-02
++++ >        c_new  972 | y_new 2.4e-01 | y_old 2.4e-01 | evals   535
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cliff dwelling
+    : l_new : cliff, drop, drop-off
+
+
+--> #  503 | c      503 | y     6.7e-01 | y_next 6.7e-02
++++ >        c_new  441 | y_new 3.6e-01 | y_old 3.5e-01 | evals  1125
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cocktail shaker
+    : l_new : beer glass
+
+
+--> #  504 | c      504 | y     7.8e-01 | y_next 1.1e-01
++++ >        c_new  968 | y_new 4.6e-01 | y_old 4.5e-01 | evals  2566
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coffee mug
+    : l_new : cup
+
+
+--> #  505 | c      505 | y     3.0e-01 | y_next 2.4e-01
++++ >        c_new  504 | y_new 2.7e-01 | y_old 2.0e-01 | evals    10
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coffeepot
+    : l_new : coffee mug
+
+
+--> #  506 | c      506 | y     5.7e-01 | y_next 5.3e-02
++++ >        c_new  936 | y_new 2.5e-01 | y_old 2.5e-01 | evals  3580
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coil, spiral, volute, whorl, helix
+    : l_new : head cabbage
+
+
+--> #  507 | c      507 | y     9.0e-01 | y_next 1.2e-02
++++ >        c_new  455 | y_new 3.4e-01 | y_old 3.4e-01 | evals  2514
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : combination lock
+    : l_new : bottlecap
+
+
+--> #  508 | c      508 | y     4.0e-01 | y_next 2.0e-01
++++ >        c_new  810 | y_new 2.6e-01 | y_old 2.6e-01 | evals   225
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : computer keyboard, keypad
+    : l_new : space bar
+
+
+--> #  510 | c      510 | y     7.0e-01 | y_next 9.2e-03
++++ >        c_new  628 | y_new 1.2e-02 | y_old 1.2e-02 | evals  6888
+    : changes 50002 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : container ship, containership, container vessel
+    : l_new : liner, ocean liner
+
+
+--> #  511 | c      511 | y     8.2e-01 | y_next 5.0e-02
++++ >        c_new  817 | y_new 3.7e-01 | y_old 3.7e-01 | evals  3555
+    : changes 50171 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : convertible
+    : l_new : sports car, sport car
+
+
+--> #  512 | c      512 | y     4.4e-01 | y_next 8.9e-02
++++ >        c_new  473 | y_new 2.5e-01 | y_old 2.5e-01 | evals   469
+    : changes 50174 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : corkscrew, bottle screw
+    : l_new : can opener, tin opener
+
+
+--> #  513 | c      513 | y     3.3e-01 | y_next 2.5e-01
++++ >        c_new  566 | y_new 3.0e-01 | y_old 2.8e-01 | evals    16
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cornet, horn, trumpet, trump
+    : l_new : french horn, horn
+
+
+--> #  514 | c      514 | y     6.8e-01 | y_next 9.5e-03
+    > fail | evals 10003
+
+--> #  515 | c      515 | y     3.6e-01 | y_next 1.5e-01
++++ >        c_new  808 | y_new 2.5e-01 | y_old 2.5e-01 | evals   564
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cowboy hat, ten-gallon hat
+    : l_new : sombrero
+
+
+--> #  516 | c      516 | y     9.2e-01 | y_next 1.3e-02
++++ >        c_new  594 | y_new 2.7e-01 | y_old 2.5e-01 | evals   764
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cradle
+    : l_new : harp
+
+
+--> #  518 | c      518 | y     9.2e-01 | y_next 1.3e-02
++++ >        c_new  670 | y_new 3.5e-01 | y_old 3.5e-01 | evals  3230
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : crash helmet
+    : l_new : motor scooter, scooter
+
+
+--> #  521 | c      521 | y     2.9e-01 | y_next 7.3e-02
++++ >        c_new  544 | y_new 2.4e-01 | y_old 2.4e-01 | evals   663
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : crock pot
+    : l_new : dutch oven
+
+
+--> #  522 | c      522 | y     7.7e-01 | y_next 1.9e-02
++++ >        c_new  736 | y_new 1.7e-01 | y_old 1.7e-01 | evals  4730
+    : changes 50165 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : croquet ball
+    : l_new : pool table, billiard table, snooker table
+
+
+--> #  523 | c      523 | y     7.0e-01 | y_next 2.2e-02
++++ >        c_new  877 | y_new 6.6e-02 | y_old 6.2e-02 | evals   511
+    : changes 49999 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : crutch
+    : l_new : turnstile
+
+
+--> #  524 | c      524 | y     5.8e-01 | y_next 2.5e-01
++++ >        c_new  461 | y_new 2.5e-01 | y_old 2.5e-01 | evals  2169
+    : changes 50166 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cuirass
+    : l_new : breastplate, aegis, egis
+
+
+--> #  525 | c      525 | y     9.8e-01 | y_next 1.7e-03
++++ >        c_new  716 | y_new 3.9e-01 | y_old 3.9e-01 | evals  2242
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dam, dike, dyke
+    : l_new : picket fence, paling
+
+
+--> #  526 | c      526 | y     4.2e-01 | y_next 5.9e-02
++++ >        c_new  530 | y_new 3.5e-01 | y_old 3.2e-01 | evals    59
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : desk
+    : l_new : digital clock
+
+
+--> #  527 | c      527 | y     2.8e-01 | y_next 2.5e-01
++++ >        c_new  664 | y_new 2.8e-01 | y_old 2.6e-01 | evals     4
+    : changes 50144 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : desktop computer
+    : l_new : monitor
+
+
+--> #  528 | c      528 | y     6.4e-01 | y_next 8.0e-02
++++ >        c_new  707 | y_new 4.2e-01 | y_old 4.2e-01 | evals   818
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dial telephone, dial phone
+    : l_new : pay-phone, pay-station
+
+
+--> #  530 | c      530 | y     6.8e-01 | y_next 7.0e-02
++++ >        c_new  607 | y_new 3.1e-01 | y_old 1.6e-01 | evals     3
+    : changes 48436 | dx1 7.4e+03 | dx2 2.2e+01
+    : l_old : digital clock
+    : l_new : jack-o`-lantern
+
+
+--> #  532 | c      532 | y     7.9e-01 | y_next 4.9e-02
++++ >        c_new  495 | y_new 4.6e-01 | y_old 4.5e-01 | evals  2234
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dining table, board
+    : l_new : china cabinet, china closet
+
+
+--> #  533 | c      533 | y     8.8e-01 | y_next 3.0e-03
++++ >        c_new  806 | y_new 3.6e-01 | y_old 3.6e-01 | evals  8355
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dishrag, dishcloth
+    : l_new : sock
+
+
+--> #  535 | c      535 | y     8.5e-01 | y_next 2.2e-02
++++ >        c_new  759 | y_new 2.1e-01 | y_old 2.1e-01 | evals   606
+    : changes 50171 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : disk brake, disc brake
+    : l_new : reflex camera
+
+
+--> #  536 | c      536 | y     4.3e-01 | y_next 6.5e-02
++++ >        c_new  814 | y_new 2.3e-01 | y_old 1.8e-01 | evals    97
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dock, dockage, docking facility
+    : l_new : speedboat
+
+
+--> #  537 | c      537 | y     7.0e-01 | y_next 3.2e-02
++++ >        c_new  248 | y_new 3.0e-01 | y_old 3.0e-01 | evals  2316
+    : changes 49938 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dogsled, dog sled, dog sleigh
+    : l_new : eskimo dog, husky
+
+
+--> #  538 | c      538 | y     7.0e-01 | y_next 1.3e-01
++++ >        c_new  668 | y_new 4.0e-01 | y_old 4.0e-01 | evals  1059
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dome
+    : l_new : mosque
+
+
+--> #  539 | c      539 | y     7.6e-01 | y_next 4.5e-02
++++ >        c_new  893 | y_new 2.2e-01 | y_old 2.1e-01 | evals  1459
+    : changes 50099 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : doormat, welcome mat
+    : l_new : wallet, billfold, notecase, pocketbook
+
+
+--> #  540 | c      540 | y     3.2e-01 | y_next 6.0e-02
++++ >        c_new  403 | y_new 2.3e-01 | y_old 7.1e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : drilling platform, offshore rig
+    : l_new : aircraft carrier, carrier, flattop, attack aircraf
+
+
+--> #  541 | c      541 | y     8.8e-01 | y_next 2.4e-02
++++ >        c_new  420 | y_new 3.3e-01 | y_old 3.3e-01 | evals  2232
+    : changes 50138 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : drum, membranophone, tympan
+    : l_new : banjo
+
+
+--> #  542 | c      542 | y     9.3e-01 | y_next 4.2e-02
++++ >        c_new  541 | y_new 3.0e-01 | y_old 3.0e-01 | evals  3581
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : drumstick
+    : l_new : drum, membranophone, tympan
+
+
+--> #  543 | c      543 | y     9.1e-01 | y_next 2.1e-02
++++ >        c_new  422 | y_new 4.0e-01 | y_old 3.9e-01 | evals  1182
+    : changes 48495 | dx1 7.4e+03 | dx2 2.3e+01
+    : l_old : dumbbell
+    : l_new : barbell
+
+
+--> #  544 | c      544 | y     5.2e-01 | y_next 6.3e-02
++++ >        c_new  849 | y_new 1.8e-01 | y_old 1.8e-01 | evals  1337
+    : changes 50043 | dx1 9.5e+03 | dx2 2.6e+01
+    : l_old : dutch oven
+    : l_new : teapot
+
+
+--> #  545 | c      545 | y     5.7e-01 | y_next 7.8e-02
++++ >        c_new  904 | y_new 2.4e-01 | y_old 2.4e-01 | evals   429
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : electric fan, blower
+    : l_new : window screen
+
+
+--> #  546 | c      546 | y     6.1e-01 | y_next 5.3e-02
++++ >        c_new  420 | y_new 1.4e-01 | y_old 1.4e-01 | evals  6236
+    : changes 50176 | dx1 9.6e+03 | dx2 2.6e+01
+    : l_old : electric guitar
+    : l_new : banjo
+
+
+--> #  547 | c      547 | y     6.5e-01 | y_next 1.2e-01
++++ >        c_new  705 | y_new 3.9e-01 | y_old 3.9e-01 | evals   630
+    : changes 50176 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : electric locomotive
+    : l_new : passenger car, coach, carriage
+
+
+--> #  548 | c      548 | y     6.5e-01 | y_next 5.3e-02
++++ >        c_new  851 | y_new 2.5e-01 | y_old 2.5e-01 | evals  2166
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : entertainment center
+    : l_new : television, television system
+
+
+--> #  549 | c      549 | y     5.1e-01 | y_next 1.3e-01
++++ >        c_new  591 | y_new 1.6e-01 | y_old 1.2e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : envelope
+    : l_new : handkerchief, hankie, hanky, hankey
+
+
+--> #  550 | c      550 | y     8.3e-01 | y_next 8.2e-03
++++ >        c_new  859 | y_new 1.9e-01 | y_old 1.9e-01 | evals  3588
+    : changes 49713 | dx1 9.5e+03 | dx2 2.6e+01
+    : l_old : espresso maker
+    : l_new : toaster
+
+
+--> #  551 | c      551 | y     8.4e-01 | y_next 1.6e-02
++++ >        c_new  696 | y_new 2.4e-01 | y_old 2.4e-01 | evals  3017
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : face powder
+    : l_new : paintbrush
+
+
+--> #  552 | c      552 | y     8.0e-01 | y_next 5.7e-03
++++ >        c_new  903 | y_new 3.6e-01 | y_old 3.6e-01 | evals  8776
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : feather boa, boa
+    : l_new : wig
+
+
+--> #  553 | c      553 | y     7.4e-01 | y_next 4.9e-02
++++ >        c_new  534 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1119
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : file, file cabinet, filing cabinet
+    : l_new : dishwasher, dish washer, dishwashing machine
+
+
+--> #  554 | c      554 | y     7.6e-01 | y_next 6.6e-03
++++ >        c_new  562 | y_new 2.9e-01 | y_old 2.9e-01 | evals  8274
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : fireboat
+    : l_new : fountain
+
+
+--> #  555 | c      555 | y     3.0e-01 | y_next 2.9e-01
++++ >        c_new  661 | y_new 3.0e-01 | y_old 2.9e-01 | evals    18
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : fire engine, fire truck
+    : l_new : model t
+
+
+--> #  557 | c      557 | y     9.3e-01 | y_next 4.1e-03
++++ >        c_new  498 | y_new 3.3e-01 | y_old 3.2e-01 | evals  2417
+    : changes 50169 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : flagpole, flagstaff
+    : l_new : cinema, movie theater, movie theatre, movie house,
+
+
+--> #  558 | c      558 | y     8.0e-01 | y_next 1.5e-02
++++ >        c_new  629 | y_new 3.2e-01 | y_old 3.2e-01 | evals  1375
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : flute, transverse flute
+    : l_new : lipstick, lip rouge
+
+
+--> #  559 | c      559 | y     5.9e-01 | y_next 4.9e-02
++++ >        c_new  854 | y_new 1.8e-01 | y_old 1.7e-01 | evals   872
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : folding chair
+    : l_new : theater curtain, theatre curtain
+
+
+--> #  560 | c      560 | y     5.6e-01 | y_next 6.0e-02
++++ >        c_new  768 | y_new 2.4e-01 | y_old 2.4e-01 | evals   706
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : football helmet
+    : l_new : rugby ball
+
+
+--> #  561 | c      561 | y     6.3e-01 | y_next 4.7e-02
++++ >        c_new  803 | y_new 2.6e-01 | y_old 2.6e-01 | evals  2922
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : forklift
+    : l_new : snowplow, snowplough
+
+
+--> #  564 | c      564 | y     3.3e-01 | y_next 3.3e-01
++++ >        c_new  669 | y_new 4.1e-01 | y_old 2.9e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : four-poster
+    : l_new : mosquito net
+
+
+--> #  565 | c      565 | y     8.0e-01 | y_next 3.3e-03
++++ >        c_new  854 | y_new 2.4e-01 | y_old 2.4e-01 | evals  8382
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : freight car
+    : l_new : theater curtain, theatre curtain
+
+
+--> #  566 | c      566 | y     7.8e-01 | y_next 1.6e-02
++++ >        c_new  513 | y_new 3.2e-01 | y_old 3.2e-01 | evals  2010
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : french horn, horn
+    : l_new : cornet, horn, trumpet, trump
+
+
+--> #  567 | c      567 | y     5.4e-01 | y_next 1.5e-01
++++ >        c_new  963 | y_new 6.1e-01 | y_old 1.0e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : frying pan, frypan, skillet
+    : l_new : pizza, pizza pie
+
+
+--> #  569 | c      569 | y     6.4e-01 | y_next 2.3e-02
++++ >        c_new  652 | y_new 5.6e-02 | y_old 3.0e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : garbage truck, dustcart
+    : l_new : military uniform
+
+
+--> #  570 | c      570 | y     8.2e-01 | y_next 1.0e-01
++++ >        c_new  828 | y_new 4.2e-01 | y_old 3.7e-01 | evals   288
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gasmask, respirator, gas helmet
+    : l_new : strainer
+
+
+--> #  571 | c      571 | y     8.7e-01 | y_next 4.1e-02
++++ >        c_new  877 | y_new 3.7e-01 | y_old 3.6e-01 | evals   206
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gas pump, gasoline pump, petrol pump, island dispe
+    : l_new : turnstile
+
+
+--> #  572 | c      572 | y     8.5e-01 | y_next 2.1e-02
++++ >        c_new  666 | y_new 3.1e-01 | y_old 3.1e-01 | evals  2089
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : goblet
+    : l_new : mortar
+
+
+--> #  573 | c      573 | y     5.3e-01 | y_next 1.1e-01
++++ >        c_new  621 | y_new 2.7e-01 | y_old 2.7e-01 | evals   257
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : go-kart
+    : l_new : lawn mower, mower
+
+
+--> #  574 | c      574 | y     8.4e-01 | y_next 2.4e-03
+    > fail | evals 10003
+
+--> #  575 | c      575 | y     7.5e-01 | y_next 6.8e-03
++++ >        c_new  621 | y_new 1.7e-01 | y_old 1.7e-01 | evals  4403
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : golfcart, golf cart
+    : l_new : lawn mower, mower
+
+
+--> #  576 | c      576 | y     8.9e-01 | y_next 3.2e-03
++++ >        c_new  467 | y_new 4.2e-01 | y_old 3.9e-01 | evals  3384
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gondola
+    : l_new : butcher shop, meat market
+
+
+--> #  577 | c      577 | y     6.7e-01 | y_next 1.4e-01
++++ >        c_new  494 | y_new 4.4e-01 | y_old 4.3e-01 | evals  1594
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gong, tam-tam
+    : l_new : chime, bell, gong
+
+
+--> #  578 | c      578 | y     5.7e-01 | y_next 1.4e-01
++++ >        c_new  982 | y_new 4.4e-01 | y_old 4.3e-01 | evals    18
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gown
+    : l_new : groom, bridegroom
+
+
+--> #  579 | c      579 | y     7.6e-01 | y_next 2.0e-02
++++ >        c_new  881 | y_new 1.5e-02 | y_old 1.5e-02 | evals  6457
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : grand piano, grand
+    : l_new : upright, upright piano
+
+
+--> #  580 | c      580 | y     5.3e-01 | y_next 7.6e-02
++++ >        c_new  738 | y_new 2.1e-01 | y_old 2.0e-01 | evals  1179
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : greenhouse, nursery, glasshouse
+    : l_new : pot, flowerpot
+
+
+--> #  581 | c      581 | y     2.6e-01 | y_next 2.2e-01
++++ >        c_new  656 | y_new 4.7e-01 | y_old 8.6e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : grille, radiator grille
+    : l_new : minivan
+
+
+--> #  582 | c      582 | y     5.4e-01 | y_next 1.9e-01
++++ >        c_new  956 | y_new 3.6e-01 | y_old 3.4e-01 | evals   280
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : grocery store, grocery, food market, market
+    : l_new : custard apple
+
+
+--> #  583 | c      583 | y     8.5e-01 | y_next 2.9e-02
++++ >        c_new  799 | y_new 2.5e-01 | y_old 2.4e-01 | evals   264
+    : changes 50095 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : guillotine
+    : l_new : sliding door
+
+
+--> #  584 | c      584 | y     3.9e-01 | y_next 9.5e-02
++++ >        c_new  457 | y_new 2.8e-01 | y_old 2.8e-01 | evals   586
+    : changes 50168 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hair slide
+    : l_new : bow tie, bow-tie, bowtie
+
+
+--> #  585 | c      585 | y     8.0e-01 | y_next 1.2e-02
++++ >        c_new  629 | y_new 2.0e-01 | y_old 1.9e-01 | evals   534
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hair spray
+    : l_new : lipstick, lip rouge
+
+
+--> #  586 | c      586 | y     4.8e-01 | y_next 4.8e-02
++++ >        c_new  471 | y_new 2.1e-01 | y_old 2.1e-01 | evals   525
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : half track
+    : l_new : cannon
+
+
+--> #  588 | c      588 | y     8.4e-01 | y_next 1.7e-02
+    > fail | evals 10003
+
+--> #  589 | c      589 | y     9.2e-01 | y_next 6.7e-03
++++ >        c_new  650 | y_new 3.0e-01 | y_old 3.0e-01 | evals  7120
+    : changes 50176 | dx1 9.1e+03 | dx2 2.5e+01
+    : l_old : hand blower, blow dryer, blow drier, hair dryer, h
+    : l_new : microphone, mike
+
+
+--> #  590 | c      590 | y     8.1e-01 | y_next 1.5e-02
++++ >        c_new  530 | y_new 1.9e-01 | y_old 1.9e-01 | evals  1821
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : hand-held computer, hand-held microcomputer
+    : l_new : digital clock
+
+
+--> #  592 | c      592 | y     8.1e-01 | y_next 1.8e-03
++++ >        c_new  458 | y_new 4.0e-01 | y_old 3.9e-01 | evals  7488
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hard disc, hard disk, fixed disk
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  593 | c      593 | y     9.3e-01 | y_next 8.4e-03
++++ >        c_new  767 | y_new 4.0e-01 | y_old 3.8e-01 | evals  2217
+    : changes 50173 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : harmonica, mouth organ, harp, mouth harp
+    : l_new : rubber eraser, rubber, pencil eraser
+
+
+--> #  595 | c      595 | y     8.1e-01 | y_next 1.6e-02
++++ >        c_new  517 | y_new 3.8e-01 | y_old 3.8e-01 | evals  2576
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : harvester, reaper
+    : l_new : crane
+
+
+--> #  597 | c      597 | y     9.5e-01 | y_next 3.9e-03
+    > fail | evals 10003
+
+--> #  600 | c      600 | y     6.5e-01 | y_next 1.0e-01
++++ >        c_new  695 | y_new 3.7e-01 | y_old 3.6e-01 | evals   307
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hook, claw
+    : l_new : padlock
+
+
+--> #  601 | c      601 | y     6.0e-01 | y_next 1.6e-01
++++ >        c_new  689 | y_new 3.5e-01 | y_old 3.5e-01 | evals   535
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hoopskirt, crinoline
+    : l_new : overskirt
+
+
+--> #  602 | c      602 | y     4.8e-01 | y_next 3.0e-01
++++ >        c_new  702 | y_new 4.1e-01 | y_old 4.0e-01 | evals   125
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : horizontal bar, high bar
+    : l_new : parallel bars, bars
+
+
+--> #  603 | c      603 | y     8.2e-01 | y_next 1.0e-02
++++ >        c_new  690 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1259
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : horse cart, horse-cart
+    : l_new : oxcart
+
+
+--> #  604 | c      604 | y     8.5e-01 | y_next 8.7e-04
+    > fail | evals 10003
+
+--> #  605 | c      605 | y     8.7e-01 | y_next 1.2e-03
++++ >        c_new  854 | y_new 8.9e-02 | y_old 8.8e-02 | evals  6700
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ipod
+    : l_new : theater curtain, theatre curtain
+
+
+--> #  606 | c      606 | y     9.4e-01 | y_next 3.9e-03
++++ >        c_new  482 | y_new 3.2e-01 | y_old 3.1e-01 | evals  3682
+    : changes 50175 | dx1 9.2e+03 | dx2 2.5e+01
+    : l_old : iron, smoothing iron
+    : l_new : cassette player
+
+
+--> #  607 | c      607 | y     7.7e-01 | y_next 4.2e-03
+    > fail | evals 10003
+
+--> #  608 | c      608 | y     5.8e-01 | y_next 1.9e-02
++++ >        c_new  464 | y_new 2.9e-01 | y_old 2.8e-01 | evals  2109
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : jean, blue jean, denim
+    : l_new : buckle
+
+
+--> #  609 | c      609 | y     2.2e-01 | y_next 1.7e-01
++++ >        c_new  656 | y_new 1.9e-01 | y_old 1.9e-01 | evals    30
+    : changes 50163 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : jeep, landrover
+    : l_new : minivan
+
+
+--> #  610 | c      610 | y     8.7e-01 | y_next 2.0e-02
++++ >        c_new  841 | y_new 3.6e-01 | y_old 3.5e-01 | evals  2628
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : jersey, t-shirt, tee shirt
+    : l_new : sweatshirt
+
+
+--> #  611 | c      611 | y     8.4e-01 | y_next 8.2e-04
+    > fail | evals 10003
+
+--> #  612 | c      612 | y     6.3e-01 | y_next 5.6e-02
++++ >        c_new  444 | y_new 2.4e-01 | y_old 2.3e-01 | evals   458
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : jinrikisha, ricksha, rickshaw
+    : l_new : bicycle-built-for-two, tandem bicycle, tandem
+
+
+--> #  615 | c      615 | y     6.9e-01 | y_next 2.3e-01
++++ >        c_new  450 | y_new 4.1e-01 | y_old 4.1e-01 | evals    20
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : knee pad
+    : l_new : bobsled, bobsleigh, bob
+
+
+--> #  616 | c      616 | y     7.9e-01 | y_next 1.0e-02
++++ >        c_new  506 | y_new 3.5e-01 | y_old 3.5e-01 | evals  1636
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : knot
+    : l_new : coil, spiral, volute, whorl, helix
+
+
+--> #  617 | c      617 | y     2.0e-01 | y_next 3.4e-02
++++ >        c_new  624 | y_new 1.2e-01 | y_old 1.1e-01 | evals   205
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lab coat, laboratory coat
+    : l_new : library
+
+
+--> #  618 | c      618 | y     9.9e-01 | y_next 7.3e-04
++++ >        c_new  623 | y_new 3.4e-01 | y_old 3.3e-01 | evals  9193
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ladle
+    : l_new : letter opener, paper knife, paperknife
+
+
+--> #  620 | c      620 | y     6.3e-01 | y_next 1.7e-01
++++ >        c_new  681 | y_new 2.8e-01 | y_old 2.7e-01 | evals   663
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : laptop, laptop computer
+    : l_new : notebook, notebook computer
+
+
+--> #  621 | c      621 | y     3.8e-01 | y_next 1.5e-01
++++ >        c_new  595 | y_new 2.0e-01 | y_old 1.4e-01 | evals     3
+    : changes 50166 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lawn mower, mower
+    : l_new : harvester, reaper
+
+
+--> #  622 | c      622 | y     8.1e-01 | y_next 2.8e-03
++++ >        c_new  768 | y_new 2.4e-01 | y_old 2.4e-01 | evals  8596
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lens cap, lens cover
+    : l_new : rugby ball
+
+
+--> #  624 | c      624 | y     7.4e-01 | y_next 3.2e-02
++++ >        c_new  454 | y_new 3.0e-01 | y_old 3.0e-01 | evals  4224
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : library
+    : l_new : bookshop, bookstore, bookstall
+
+
+--> #  625 | c      625 | y     8.5e-01 | y_next 1.2e-03
+    > fail | evals 10003
+
+--> #  627 | c      627 | y     9.4e-01 | y_next 8.6e-03
++++ >        c_new  609 | y_new 3.6e-01 | y_old 3.6e-01 | evals  1881
+    : changes 49977 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : limousine, limo
+    : l_new : jeep, landrover
+
+
+--> #  628 | c      628 | y     8.0e-01 | y_next 1.7e-02
++++ >        c_new  536 | y_new 2.4e-01 | y_old 2.4e-01 | evals  6030
+    : changes 50171 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : liner, ocean liner
+    : l_new : dock, dockage, docking facility
+
+
+--> #  629 | c      629 | y     8.4e-01 | y_next 5.1e-03
++++ >        c_new  744 | y_new 4.0e-01 | y_old 3.9e-01 | evals  3819
+    : changes 49618 | dx1 7.3e+03 | dx2 2.3e+01
+    : l_old : lipstick, lip rouge
+    : l_new : projectile, missile
+
+
+--> #  630 | c      630 | y     8.4e-01 | y_next 1.2e-02
++++ >        c_new  774 | y_new 3.5e-01 | y_old 3.5e-01 | evals  2252
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : loafer
+    : l_new : sandal
+
+
+--> #  632 | c      632 | y     7.7e-01 | y_next 3.0e-02
++++ >        c_new  651 | y_new 3.0e-01 | y_old 3.0e-01 | evals   819
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : loudspeaker, speaker, speaker unit, loudspeaker sy
+    : l_new : microwave, microwave oven
+
+
+--> #  633 | c      633 | y     8.5e-01 | y_next 2.4e-02
++++ >        c_new  823 | y_new 3.0e-01 | y_old 3.0e-01 | evals   410
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : loupe, jeweler`s loupe
+    : l_new : stethoscope
+
+
+--> #  634 | c      634 | y     7.6e-01 | y_next 2.9e-02
++++ >        c_new  565 | y_new 2.8e-01 | y_old 2.1e-01 | evals   206
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lumbermill, sawmill
+    : l_new : freight car
+
+
+--> #  635 | c      635 | y     3.8e-01 | y_next 2.0e-01
++++ >        c_new  826 | y_new 2.8e-01 | y_old 2.8e-01 | evals   133
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : magnetic compass
+    : l_new : stopwatch, stop watch
+
+
+--> #  636 | c      636 | y     2.6e-01 | y_next 2.1e-01
++++ >        c_new  748 | y_new 2.3e-01 | y_old 2.3e-01 | evals    15
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mailbag, postbag
+    : l_new : purse
+
+
+--> #  637 | c      637 | y     8.7e-01 | y_next 4.5e-03
+    > fail | evals 10003
+
+--> #  640 | c      640 | y     7.4e-01 | y_next 2.4e-02
++++ >        c_new  458 | y_new 2.9e-01 | y_old 2.8e-01 | evals  1224
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : manhole cover
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  642 | c      642 | y     6.9e-01 | y_next 1.3e-02
++++ >        c_new  914 | y_new 2.3e-01 | y_old 2.3e-01 | evals  4393
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : marimba, xylophone
+    : l_new : yawl
+
+
+--> #  643 | c      643 | y     4.9e-01 | y_next 1.5e-01
++++ >        c_new  552 | y_new 3.0e-01 | y_old 2.9e-01 | evals   220
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mask
+    : l_new : feather boa, boa
+
+
+--> #  645 | c      645 | y     8.6e-01 | y_next 4.0e-03
++++ >        c_new  832 | y_new 2.3e-01 | y_old 2.3e-01 | evals  4368
+    : changes 50169 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : maypole
+    : l_new : stupa, tope
+
+
+--> #  647 | c      647 | y     1.4e-01 | y_next 5.7e-02
++++ >        c_new  794 | y_new 9.1e-02 | y_old 7.1e-02 | evals     3
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : measuring cup
+    : l_new : shower curtain
+
+
+--> #  648 | c      648 | y     7.9e-01 | y_next 2.8e-02
++++ >        c_new  896 | y_new 2.1e-01 | y_old 2.1e-01 | evals  1427
+    : changes 50145 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : medicine chest, medicine cabinet
+    : l_new : washbasin, handbasin, washbowl, lavabo, wash-hand 
+
+
+--> #  649 | c      649 | y     4.6e-01 | y_next 1.5e-02
++++ >        c_new  825 | y_new 8.6e-02 | y_old 8.6e-02 | evals  6516
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : megalith, megalithic structure
+    : l_new : stone wall
+
+
+--> #  650 | c      650 | y     4.9e-01 | y_next 3.9e-02
++++ >        c_new  504 | y_new 1.3e-01 | y_old 1.2e-01 | evals   621
+    : changes 49646 | dx1 8.6e+03 | dx2 2.4e+01
+    : l_old : microphone, mike
+    : l_new : coffee mug
+
+
+--> #  651 | c      651 | y     9.4e-01 | y_next 8.4e-03
++++ >        c_new  485 | y_new 3.3e-01 | y_old 3.2e-01 | evals  1059
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : microwave, microwave oven
+    : l_new : cd player
+
+
+--> #  652 | c      652 | y     8.8e-01 | y_next 3.5e-03
++++ >        c_new  391 | y_new 3.3e-01 | y_old 3.3e-01 | evals  3909
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : military uniform
+    : l_new : coho, cohoe, coho salmon, blue jack, silver salmon
+
+
+--> #  653 | c      653 | y     6.9e-01 | y_next 4.5e-02
++++ >        c_new  463 | y_new 2.7e-01 | y_old 2.2e-01 | evals   214
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : milk can
+    : l_new : bucket, pail
+
+
+--> #  654 | c      654 | y     3.6e-01 | y_next 1.3e-01
++++ >        c_new  757 | y_new 2.4e-01 | y_old 2.4e-01 | evals   473
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : minibus
+    : l_new : recreational vehicle, rv, r.v.
+
+
+--> #  655 | c      655 | y     4.4e-01 | y_next 1.2e-01
++++ >        c_new  851 | y_new 2.3e-01 | y_old 2.2e-01 | evals    61
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : miniskirt, mini
+    : l_new : television, television system
+
+
+--> #  656 | c      656 | y     7.9e-01 | y_next 5.8e-02
++++ >        c_new  436 | y_new 3.1e-01 | y_old 3.0e-01 | evals   510
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : minivan
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  657 | c      657 | y     3.4e-01 | y_next 2.7e-01
++++ >        c_new  744 | y_new 2.8e-01 | y_old 2.8e-01 | evals    72
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : missile
+    : l_new : projectile, missile
+
+
+--> #  660 | c      660 | y     5.9e-01 | y_next 7.2e-03
++++ >        c_new  727 | y_new 1.8e-01 | y_old 1.6e-01 | evals   678
+    : changes 50053 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : mobile home, manufactured home
+    : l_new : planetarium
+
+
+--> #  661 | c      661 | y     6.5e-01 | y_next 7.4e-02
++++ >        c_new  581 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1091
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : model t
+    : l_new : grille, radiator grille
+
+
+--> #  665 | c      665 | y     8.6e-01 | y_next 5.9e-02
++++ >        c_new  762 | y_new 1.5e-01 | y_old 1.4e-01 | evals   129
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : moped
+    : l_new : restaurant, eating house, eating place, eatery
+
+
+--> #  666 | c      666 | y     7.9e-01 | y_next 3.3e-02
++++ >        c_new  587 | y_new 2.0e-01 | y_old 1.7e-01 | evals   645
+    : changes 50155 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mortar
+    : l_new : hammer
+
+
+--> #  667 | c      667 | y     8.3e-01 | y_next 9.8e-02
++++ >        c_new  400 | y_new 4.0e-01 | y_old 4.0e-01 | evals  5348
+    : changes 50157 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mortarboard
+    : l_new : academic gown, academic robe, judge`s robe
+
+
+--> #  668 | c      668 | y     8.5e-01 | y_next 1.1e-02
++++ >        c_new  663 | y_new 2.8e-01 | y_old 2.8e-01 | evals  7589
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mosque
+    : l_new : monastery
+
+
+--> #  669 | c      669 | y     9.3e-01 | y_next 1.2e-03
++++ >        c_new  971 | y_new 4.1e-01 | y_old 4.0e-01 | evals  1784
+    : changes 50000 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mosquito net
+    : l_new : bubble
+
+
+--> #  670 | c      670 | y     5.9e-01 | y_next 2.2e-01
++++ >        c_new  665 | y_new 3.9e-01 | y_old 3.9e-01 | evals   602
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : motor scooter, scooter
+    : l_new : moped
+
+
+--> #  672 | c      672 | y     1.8e-01 | y_next 1.4e-01
++++ >        c_new  349 | y_new 2.0e-01 | y_old 8.5e-02 | evals     3
+    : changes 49728 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : mountain tent
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+
+--> #  674 | c      674 | y     6.6e-01 | y_next 1.1e-02
++++ >        c_new  893 | y_new 1.7e-01 | y_old 1.7e-01 | evals  1226
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mousetrap
+    : l_new : wallet, billfold, notecase, pocketbook
+
+
+--> #  675 | c      675 | y     6.9e-01 | y_next 6.0e-02
++++ >        c_new  867 | y_new 3.1e-01 | y_old 3.0e-01 | evals  1337
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : moving van
+    : l_new : trailer truck, tractor trailer, trucking rig, rig,
+
+
+--> #  676 | c      676 | y     9.8e-01 | y_next 2.4e-03
++++ >        c_new  560 | y_new 3.8e-01 | y_old 3.7e-01 | evals  2796
+    : changes 46617 | dx1 8.6e+03 | dx2 2.4e+01
+    : l_old : muzzle
+    : l_new : football helmet
+
+
+--> #  680 | c      680 | y     4.6e-01 | y_next 4.5e-01
++++ >        c_new  731 | y_new 3.6e-01 | y_old 2.2e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : nipple
+    : l_new : plunger, plumber`s helper
+
+
+--> #  681 | c      681 | y     5.3e-01 | y_next 1.4e-01
++++ >        c_new  549 | y_new 1.5e-01 | y_old 2.3e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : notebook, notebook computer
+    : l_new : envelope
+
+
+--> #  682 | c      682 | y     6.8e-01 | y_next 1.4e-02
++++ >        c_new  863 | y_new 2.8e-01 | y_old 2.6e-01 | evals   700
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : obelisk
+    : l_new : totem pole
+
+
+--> #  683 | c      683 | y     8.2e-01 | y_next 2.3e-02
++++ >        c_new  432 | y_new 3.1e-01 | y_old 3.1e-01 | evals  2911
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : oboe, hautboy, hautbois
+    : l_new : bassoon
+
+
+--> #  684 | c      684 | y     7.9e-01 | y_next 1.0e-02
++++ >        c_new  584 | y_new 2.4e-01 | y_old 2.3e-01 | evals  1256
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ocarina, sweet potato
+    : l_new : hair slide
+
+
+--> #  685 | c      685 | y     8.5e-01 | y_next 2.3e-03
++++ >        c_new  826 | y_new 2.3e-01 | y_old 2.3e-01 | evals  9959
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : odometer, hodometer, mileometer, milometer
+    : l_new : stopwatch, stop watch
+
+
+--> #  686 | c      686 | y     8.2e-01 | y_next 3.9e-02
++++ >        c_new  710 | y_new 3.4e-01 | y_old 3.1e-01 | evals   523
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : oil filter
+    : l_new : pencil sharpener
+
+
+--> #  687 | c      687 | y     7.8e-01 | y_next 4.3e-03
++++ >        c_new  406 | y_new 2.7e-01 | y_old 2.7e-01 | evals  7425
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : organ, pipe organ
+    : l_new : altar
+
+
+--> #  688 | c      688 | y     8.1e-01 | y_next 2.6e-03
+    > fail | evals 10003
+
+--> #  690 | c      690 | y     3.5e-01 | y_next 2.0e-01
++++ >        c_new  345 | y_new 2.6e-01 | y_old 2.6e-01 | evals    52
+    : changes 50151 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : oxcart
+    : l_new : ox
+
+
+--> #  691 | c      691 | y     5.5e-01 | y_next 2.6e-02
++++ >        c_new  838 | y_new 6.7e-02 | y_old 6.5e-02 | evals  2076
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : oxygen mask
+    : l_new : sunscreen, sunblock, sun blocker
+
+
+--> #  693 | c      693 | y     7.6e-01 | y_next 1.6e-01
++++ >        c_new  472 | y_new 4.2e-01 | y_old 3.9e-01 | evals    55
+    : changes 50054 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : paddle, boat paddle
+    : l_new : canoe
+
+
+--> #  694 | c      694 | y     8.8e-01 | y_next 7.7e-04
++++ >        c_new  425 | y_new 4.1e-01 | y_old 4.1e-01 | evals  8289
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : paddlewheel, paddle wheel
+    : l_new : barn
+
+
+--> #  695 | c      695 | y     5.4e-01 | y_next 2.6e-01
++++ >        c_new  488 | y_new 4.1e-01 | y_old 4.0e-01 | evals   227
+    : changes 50104 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : padlock
+    : l_new : chain
+
+
+--> #  697 | c      697 | y     4.2e-01 | y_next 1.3e-01
++++ >        c_new  638 | y_new 2.4e-01 | y_old 2.4e-01 | evals   623
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pajama, pyjama, pj`s, jammies
+    : l_new : maillot
+
+
+--> #  698 | c      698 | y     8.6e-01 | y_next 1.5e-02
++++ >        c_new  538 | y_new 3.3e-01 | y_old 3.2e-01 | evals   968
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : palace
+    : l_new : dome
+
+
+--> #  699 | c      699 | y     6.3e-01 | y_next 2.2e-02
++++ >        c_new    0 | y_new 2.6e-01 | y_old 2.6e-01 | evals   210
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : panpipe, pandean pipe, syrinx
+    : l_new : tench, tinca tinca
+
+
+--> #  700 | c      700 | y     3.0e-01 | y_next 9.2e-02
++++ >        c_new  969 | y_new 1.3e-01 | y_old 1.6e-02 | evals     3
+    : changes 50089 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : paper towel
+    : l_new : eggnog
+
+
+--> #  701 | c      701 | y     5.0e-01 | y_next 2.3e-01
++++ >        c_new  417 | y_new 3.5e-01 | y_old 3.5e-01 | evals    67
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : parachute, chute
+    : l_new : balloon
+
+
+--> #  704 | c      704 | y     7.2e-01 | y_next 1.1e-01
++++ >        c_new  707 | y_new 2.7e-01 | y_old 2.5e-01 | evals   232
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : parking meter
+    : l_new : pay-phone, pay-station
+
+
+--> #  705 | c      705 | y     9.1e-01 | y_next 6.3e-03
++++ >        c_new  547 | y_new 3.5e-01 | y_old 3.5e-01 | evals  6032
+    : changes 50118 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : passenger car, coach, carriage
+    : l_new : electric locomotive
+
+
+--> #  706 | c      706 | y     4.8e-01 | y_next 1.7e-01
++++ >        c_new  663 | y_new 3.1e-01 | y_old 3.0e-01 | evals    39
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : patio, terrace
+    : l_new : monastery
+
+
+--> #  707 | c      707 | y     5.0e-01 | y_next 8.4e-02
++++ >        c_new  571 | y_new 2.6e-01 | y_old 2.6e-01 | evals   232
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pay-phone, pay-station
+    : l_new : gas pump, gasoline pump, petrol pump, island dispe
+
+
+--> #  708 | c      708 | y     7.4e-01 | y_next 1.4e-01
++++ >        c_new  900 | y_new 4.2e-01 | y_old 4.0e-01 | evals   288
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pedestal, plinth, footstall
+    : l_new : water tower
+
+
+--> #  709 | c      709 | y     8.8e-01 | y_next 1.8e-02
++++ >        c_new  496 | y_new 3.5e-01 | y_old 3.4e-01 | evals  5831
+    : changes 47222 | dx1 7.2e+03 | dx2 2.2e+01
+    : l_old : pencil box, pencil case
+    : l_new : christmas stocking
+
+
+--> #  711 | c      711 | y     5.7e-01 | y_next 1.4e-01
++++ >        c_new  631 | y_new 3.3e-01 | y_old 3.2e-01 | evals   233
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : perfume, essence
+    : l_new : lotion
+
+
+--> #  714 | c      714 | y     7.9e-01 | y_next 2.8e-02
++++ >        c_new  392 | y_new 2.6e-01 | y_old 2.6e-01 | evals   577
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pick, plectrum, plectron
+    : l_new : rock beauty, holocanthus tricolor
+
+
+--> #  715 | c      715 | y     7.7e-01 | y_next 1.2e-01
++++ >        c_new  652 | y_new 4.5e-01 | y_old 4.0e-01 | evals   231
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pickelhaube
+    : l_new : military uniform
+
+
+--> #  716 | c      716 | y     5.7e-01 | y_next 5.6e-02
++++ >        c_new  791 | y_new 2.1e-01 | y_old 2.0e-01 | evals   674
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : picket fence, paling
+    : l_new : shopping cart
+
+
+--> #  718 | c      718 | y     7.8e-01 | y_next 4.9e-02
++++ >        c_new  554 | y_new 3.5e-01 | y_old 3.5e-01 | evals   570
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pier
+    : l_new : fireboat
+
+
+--> #  719 | c      719 | y     8.2e-01 | y_next 5.2e-03
++++ >        c_new  710 | y_new 3.5e-01 | y_old 3.4e-01 | evals  2526
+    : changes 49004 | dx1 8.9e+03 | dx2 2.5e+01
+    : l_old : piggy bank, penny bank
+    : l_new : pencil sharpener
+
+
+--> #  720 | c      720 | y     4.4e-01 | y_next 1.1e-01
++++ >        c_new  686 | y_new 2.8e-01 | y_old 2.7e-01 | evals   166
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pill bottle
+    : l_new : oil filter
+
+
+--> #  721 | c      721 | y     9.9e-01 | y_next 5.6e-04
++++ >        c_new  443 | y_new 3.8e-01 | y_old 3.8e-01 | evals  2149
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pillow
+    : l_new : bib
+
+
+--> #  723 | c      723 | y     8.1e-01 | y_next 2.7e-03
+    > fail | evals 10003
+
+--> #  724 | c      724 | y     8.8e-01 | y_next 1.3e-02
++++ >        c_new  913 | y_new 3.7e-01 | y_old 3.6e-01 | evals  1215
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pirate, pirate ship
+    : l_new : wreck
+
+
+--> #  726 | c      726 | y     6.9e-01 | y_next 5.3e-02
++++ >        c_new  788 | y_new 3.1e-01 | y_old 3.0e-01 | evals   291
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : plane, carpenter`s plane, woodworking plane
+    : l_new : shoe shop, shoe-shop, shoe store
+
+
+--> #  727 | c      727 | y     1.9e-01 | y_next 6.2e-02
++++ >        c_new  545 | y_new 8.8e-02 | y_old 7.5e-02 | evals    74
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : planetarium
+    : l_new : electric fan, blower
+
+
+--> #  728 | c      728 | y     5.0e-01 | y_next 2.7e-01
++++ >        c_new  692 | y_new 3.5e-01 | y_old 3.5e-01 | evals    35
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : plastic bag
+    : l_new : packet
+
+
+--> #  729 | c      729 | y     2.7e-01 | y_next 6.5e-02
++++ >        c_new  453 | y_new 1.5e-01 | y_old 1.5e-01 | evals   527
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : plate rack
+    : l_new : bookcase
+
+
+--> #  731 | c      731 | y     9.7e-01 | y_next 4.5e-03
++++ >        c_new  486 | y_new 2.4e-01 | y_old 2.0e-01 | evals    68
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : plunger, plumber`s helper
+    : l_new : cello, violoncello
+
+
+--> #  732 | c      732 | y     7.4e-01 | y_next 3.0e-02
++++ >        c_new  745 | y_new 2.5e-01 | y_old 2.4e-01 | evals   771
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : polaroid camera, polaroid land camera
+    : l_new : projector
+
+
+--> #  733 | c      733 | y     9.1e-01 | y_next 9.2e-03
++++ >        c_new  718 | y_new 3.2e-01 | y_old 3.1e-01 | evals   756
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pole
+    : l_new : pier
+
+
+--> #  735 | c      735 | y     8.5e-01 | y_next 1.4e-02
++++ >        c_new  824 | y_new 3.6e-01 | y_old 3.5e-01 | evals  4408
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : poncho
+    : l_new : stole
+
+
+--> #  737 | c      737 | y     4.6e-01 | y_next 1.1e-01
++++ >        c_new  440 | y_new 2.9e-01 | y_old 2.9e-01 | evals   209
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pop bottle, soda bottle
+    : l_new : beer bottle
+
+
+--> #  738 | c      738 | y     6.5e-01 | y_next 5.0e-02
++++ >        c_new  706 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1577
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pot, flowerpot
+    : l_new : patio, terrace
+
+
+--> #  741 | c      741 | y     8.8e-01 | y_next 9.6e-04
++++ >        c_new  611 | y_new 4.4e-01 | y_old 4.3e-01 | evals  8558
+    : changes 50134 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : prayer rug, prayer mat
+    : l_new : jigsaw puzzle
+
+
+--> #  743 | c      743 | y     2.5e-01 | y_next 5.8e-02
++++ >        c_new  981 | y_new 1.4e-01 | y_old 1.3e-01 | evals   552
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : prison, prison house
+    : l_new : ballplayer, baseball player
+
+
+--> #  746 | c      746 | y     8.8e-01 | y_next 4.5e-03
+    > fail | evals 10003
+
+--> #  747 | c      747 | y     9.9e-01 | y_next 4.5e-04
++++ >        c_new  653 | y_new 3.1e-01 | y_old 3.0e-01 | evals  4566
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : punching bag, punch bag, punching ball, punchball
+    : l_new : milk can
+
+
+--> #  748 | c      748 | y     6.5e-01 | y_next 2.1e-01
++++ >        c_new  636 | y_new 4.3e-01 | y_old 4.2e-01 | evals   595
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : purse
+    : l_new : mailbag, postbag
+
+
+--> #  749 | c      749 | y     9.0e-01 | y_next 5.4e-03
++++ >        c_new  794 | y_new 3.1e-01 | y_old 2.8e-01 | evals   558
+    : changes 50043 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : quill, quill pen
+    : l_new : shower curtain
+
+
+--> #  752 | c      752 | y     6.8e-01 | y_next 6.6e-02
++++ >        c_new  545 | y_new 3.1e-01 | y_old 3.1e-01 | evals  1417
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : racket, racquet
+    : l_new : electric fan, blower
+
+
+--> #  755 | c      755 | y     8.2e-01 | y_next 3.7e-02
++++ >        c_new  807 | y_new 4.0e-01 | y_old 3.9e-01 | evals  2073
+    : changes 50084 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : radio telescope, radio reflector
+    : l_new : solar dish, solar collector, solar furnace
+
+
+--> #  756 | c      756 | y     8.4e-01 | y_next 7.1e-02
++++ >        c_new  882 | y_new 2.5e-01 | y_old 2.5e-01 | evals   157
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rain barrel
+    : l_new : vacuum, vacuum cleaner
+
+
+--> #  757 | c      757 | y     6.8e-01 | y_next 1.7e-01
++++ >        c_new  660 | y_new 3.9e-01 | y_old 3.6e-01 | evals    74
+    : changes 50137 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : recreational vehicle, rv, r.v.
+    : l_new : mobile home, manufactured home
+
+
+--> #  758 | c      758 | y     7.9e-01 | y_next 1.5e-02
++++ >        c_new  759 | y_new 2.2e-01 | y_old 2.2e-01 | evals  2860
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : reel
+    : l_new : reflex camera
+
+
+--> #  759 | c      759 | y     8.9e-01 | y_next 4.3e-03
++++ >        c_new  872 | y_new 3.2e-01 | y_old 3.2e-01 | evals  4699
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : reflex camera
+    : l_new : tripod
+
+
+--> #  760 | c      760 | y     3.7e-01 | y_next 1.2e-01
++++ >        c_new  799 | y_new 2.6e-01 | y_old 1.4e-01 | evals    52
+    : changes 50175 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : refrigerator, icebox
+    : l_new : sliding door
+
+
+--> #  762 | c      762 | y     6.2e-01 | y_next 3.8e-02
++++ >        c_new  415 | y_new 2.6e-01 | y_old 2.5e-01 | evals   540
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : restaurant, eating house, eating place, eatery
+    : l_new : bakery, bakeshop, bakehouse
+
+
+--> #  763 | c      763 | y     4.9e-01 | y_next 9.3e-02
++++ >        c_new  777 | y_new 2.2e-01 | y_old 1.7e-01 | evals   233
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : revolver, six-gun, six-shooter
+    : l_new : scabbard
+
+
+--> #  765 | c      765 | y     7.7e-01 | y_next 2.0e-02
++++ >        c_new  532 | y_new 2.6e-01 | y_old 2.6e-01 | evals  1004
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rocking chair, rocker
+    : l_new : dining table, board
+
+
+--> #  766 | c      766 | y     6.0e-01 | y_next 1.7e-01
++++ >        c_new  760 | y_new 3.5e-01 | y_old 3.5e-01 | evals    86
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rotisserie
+    : l_new : refrigerator, icebox
+
+
+--> #  768 | c      768 | y     9.5e-01 | y_next 1.1e-02
++++ >        c_new  852 | y_new 2.6e-01 | y_old 2.5e-01 | evals  5197
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rugby ball
+    : l_new : tennis ball
+
+
+--> #  769 | c      769 | y     8.9e-01 | y_next 2.7e-03
++++ >        c_new  918 | y_new 3.5e-01 | y_old 3.3e-01 | evals   628
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rule, ruler
+    : l_new : crossword puzzle, crossword
+
+
+--> #  770 | c      770 | y     7.9e-01 | y_next 1.2e-02
++++ >        c_new  774 | y_new 2.1e-01 | y_old 2.1e-01 | evals  4908
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : running shoe
+    : l_new : sandal
+
+
+--> #  772 | c      772 | y     8.9e-01 | y_next 3.1e-03
++++ >        c_new  422 | y_new 1.8e-01 | y_old 1.7e-01 | evals  3924
+    : changes 49914 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : safety pin
+    : l_new : barbell
+
+
+--> #  773 | c      773 | y     6.5e-01 | y_next 3.9e-02
++++ >        c_new  899 | y_new 7.2e-02 | y_old 6.4e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : saltshaker, salt shaker
+    : l_new : water jug
+
+
+--> #  774 | c      774 | y     3.4e-01 | y_next 1.4e-01
++++ >        c_new  679 | y_new 1.9e-01 | y_old 1.8e-01 | evals   205
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sandal
+    : l_new : necklace
+
+
+--> #  776 | c      776 | y     7.1e-01 | y_next 4.1e-02
++++ >        c_new  594 | y_new 3.8e-01 | y_old 3.7e-01 | evals   307
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sax, saxophone
+    : l_new : harp
+
+
+--> #  777 | c      777 | y     8.9e-01 | y_next 6.4e-02
++++ >        c_new  623 | y_new 4.5e-01 | y_old 4.5e-01 | evals  1203
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : scabbard
+    : l_new : letter opener, paper knife, paperknife
+
+
+--> #  778 | c      778 | y     9.8e-01 | y_next 3.6e-03
++++ >        c_new  704 | y_new 3.1e-01 | y_old 3.1e-01 | evals  5663
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : scale, weighing machine
+    : l_new : parking meter
+
+
+--> #  779 | c      779 | y     8.2e-01 | y_next 1.9e-02
++++ >        c_new  874 | y_new 2.8e-01 | y_old 2.8e-01 | evals   807
+    : changes 50162 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : school bus
+    : l_new : trolleybus, trolley coach, trackless trolley
+
+
+--> #  780 | c      780 | y     1.4e-01 | y_next 1.2e-01
++++ >        c_new  536 | y_new 1.3e-01 | y_old 8.1e-02 | evals     3
+    : changes 50165 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : schooner
+    : l_new : dock, dockage, docking facility
+
+
+--> #  781 | c      781 | y     9.2e-01 | y_next 1.6e-03
++++ >        c_new  424 | y_new 3.4e-01 | y_old 3.4e-01 | evals  2405
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : scoreboard
+    : l_new : barbershop
+
+
+--> #  783 | c      783 | y     7.3e-01 | y_next 1.6e-02
+    > fail | evals 10003
+
+--> #  784 | c      784 | y     5.2e-01 | y_next 7.1e-02
++++ >        c_new  563 | y_new 2.7e-01 | y_old 2.3e-01 | evals    65
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : screwdriver
+    : l_new : fountain pen
+
+
+--> #  786 | c      786 | y     3.3e-01 | y_next 7.9e-02
++++ >        c_new  492 | y_new 2.1e-01 | y_old 2.0e-01 | evals   102
+    : changes 50168 | dx1 9.6e+03 | dx2 2.6e+01
+    : l_old : sewing machine
+    : l_new : chest
+
+
+--> #  787 | c      787 | y     9.7e-01 | y_next 3.1e-03
++++ >        c_new  607 | y_new 3.2e-01 | y_old 3.2e-01 | evals  2671
+    : changes 49655 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : shield, buckler
+    : l_new : jack-o`-lantern
+
+
+--> #  789 | c      789 | y     6.8e-01 | y_next 5.6e-02
++++ >        c_new  799 | y_new 2.5e-01 | y_old 2.5e-01 | evals  5915
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : shoji
+    : l_new : sliding door
+
+
+--> #  790 | c      790 | y     8.4e-01 | y_next 2.8e-02
++++ >        c_new  520 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1302
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : shopping basket
+    : l_new : crib, cot
+
+
+--> #  791 | c      791 | y     9.0e-01 | y_next 1.2e-02
++++ >        c_new  752 | y_new 4.0e-01 | y_old 3.8e-01 | evals   664
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : shopping cart
+    : l_new : racket, racquet
+
+
+--> #  792 | c      792 | y     7.8e-01 | y_next 3.0e-02
++++ >        c_new  840 | y_new 2.6e-01 | y_old 2.5e-01 | evals  1501
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : shovel
+    : l_new : swab, swob, mop
+
+
+--> #  794 | c      794 | y     2.9e-01 | y_next 2.3e-01
++++ >        c_new  876 | y_new 2.2e-01 | y_old 2.1e-01 | evals    23
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : shower curtain
+    : l_new : tub, vat
+
+
+--> #  795 | c      795 | y     8.9e-01 | y_next 8.5e-03
++++ >        c_new  746 | y_new 3.8e-01 | y_old 3.7e-01 | evals  1515
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ski
+    : l_new : puck, hockey puck
+
+
+--> #  796 | c      796 | y     7.1e-01 | y_next 2.0e-02
++++ >        c_new  643 | y_new 2.3e-01 | y_old 2.3e-01 | evals  7167
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ski mask
+    : l_new : mask
+
+
+--> #  797 | c      797 | y     9.3e-01 | y_next 4.9e-03
++++ >        c_new  669 | y_new 3.6e-01 | y_old 3.6e-01 | evals  4370
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sleeping bag
+    : l_new : mosquito net
+
+
+--> #  798 | c      798 | y     8.7e-01 | y_next 1.7e-02
++++ >        c_new  769 | y_new 4.0e-01 | y_old 3.9e-01 | evals  6484
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : slide rule, slipstick
+    : l_new : rule, ruler
+
+
+--> #  799 | c      799 | y     4.7e-01 | y_next 1.3e-01
++++ >        c_new  753 | y_new 3.1e-01 | y_old 3.0e-01 | evals    88
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sliding door
+    : l_new : radiator
+
+
+--> #  800 | c      800 | y     5.9e-01 | y_next 3.9e-02
++++ >        c_new  886 | y_new 2.6e-01 | y_old 2.4e-01 | evals   964
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : slot, one-armed bandit
+    : l_new : vending machine
+
+
+--> #  801 | c      801 | y     5.2e-01 | y_next 4.0e-02
++++ >        c_new  570 | y_new 1.8e-01 | y_old 1.7e-01 | evals   601
+    : changes 50176 | dx1 9.3e+03 | dx2 2.5e+01
+    : l_old : snorkel
+    : l_new : gasmask, respirator, gas helmet
+
+
+--> #  802 | c      802 | y     7.5e-01 | y_next 1.5e-02
++++ >        c_new  450 | y_new 4.3e-01 | y_old 4.2e-01 | evals   502
+    : changes 50027 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : snowmobile
+    : l_new : bobsled, bobsleigh, bob
+
+
+--> #  803 | c      803 | y     8.6e-01 | y_next 1.4e-02
++++ >        c_new  864 | y_new 3.3e-01 | y_old 3.3e-01 | evals  4643
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : snowplow, snowplough
+    : l_new : tow truck, tow car, wrecker
+
+
+--> #  804 | c      804 | y     9.8e-01 | y_next 2.8e-03
++++ >        c_new  512 | y_new 1.6e-01 | y_old 1.6e-01 | evals  2276
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : soap dispenser
+    : l_new : corkscrew, bottle screw
+
+
+--> #  805 | c      805 | y     3.3e-01 | y_next 4.3e-02
++++ >        c_new   35 | y_new 1.9e-01 | y_old 1.5e-01 | evals    21
+    : changes 50173 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : soccer ball
+    : l_new : mud turtle
+
+
+--> #  806 | c      806 | y     9.3e-01 | y_next 4.4e-03
++++ >        c_new  435 | y_new 3.7e-01 | y_old 3.6e-01 | evals  2846
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sock
+    : l_new : bathtub, bathing tub, bath, tub
+
+
+--> #  809 | c      809 | y     7.4e-01 | y_next 5.4e-02
++++ >        c_new  659 | y_new 3.6e-01 | y_old 3.6e-01 | evals  2396
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : soup bowl
+    : l_new : mixing bowl
+
+
+--> #  810 | c      810 | y     6.2e-01 | y_next 2.2e-01
++++ >        c_new  878 | y_new 3.8e-01 | y_old 3.7e-01 | evals  1258
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : space bar
+    : l_new : typewriter keyboard
+
+
+--> #  811 | c      811 | y     7.6e-01 | y_next 2.7e-02
++++ >        c_new  818 | y_new 3.0e-01 | y_old 3.0e-01 | evals  2997
+    : changes 48119 | dx1 7.5e+03 | dx2 2.3e+01
+    : l_old : space heater
+    : l_new : spotlight, spot
+
+
+--> #  812 | c      812 | y     8.8e-01 | y_next 2.2e-02
++++ >        c_new  403 | y_new 3.4e-01 | y_old 3.4e-01 | evals  1618
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : space shuttle
+    : l_new : aircraft carrier, carrier, flattop, attack aircraf
+
+
+--> #  814 | c      814 | y     8.3e-01 | y_next 7.0e-03
++++ >        c_new  405 | y_new 3.1e-01 | y_old 3.1e-01 | evals  3259
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : speedboat
+    : l_new : airship, dirigible
+
+
+--> #  816 | c      816 | y     9.4e-01 | y_next 8.9e-03
++++ >        c_new  618 | y_new 4.1e-01 | y_old 4.1e-01 | evals  1874
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : spindle
+    : l_new : ladle
+
+
+--> #  817 | c      817 | y     4.3e-01 | y_next 2.8e-01
++++ >        c_new  511 | y_new 4.1e-01 | y_old 3.9e-01 | evals    40
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sports car, sport car
+    : l_new : convertible
+
+
+--> #  818 | c      818 | y     8.8e-01 | y_next 1.7e-02
++++ >        c_new  570 | y_new 3.6e-01 | y_old 3.5e-01 | evals  1097
+    : changes 50159 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : spotlight, spot
+    : l_new : gasmask, respirator, gas helmet
+
+
+--> #  820 | c      820 | y     3.3e-01 | y_next 3.0e-01
++++ >        c_new  705 | y_new 4.9e-01 | y_old 1.5e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : steam locomotive
+    : l_new : passenger car, coach, carriage
+
+
+--> #  821 | c      821 | y     5.6e-01 | y_next 1.9e-01
++++ >        c_new  718 | y_new 3.7e-01 | y_old 3.7e-01 | evals  1453
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : steel arch bridge
+    : l_new : pier
+
+
+--> #  822 | c      822 | y     8.8e-01 | y_next 1.7e-02
++++ >        c_new  541 | y_new 3.5e-01 | y_old 3.5e-01 | evals  5415
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : steel drum
+    : l_new : drum, membranophone, tympan
+
+
+--> #  823 | c      823 | y     6.4e-01 | y_next 3.1e-02
++++ >        c_new  633 | y_new 2.3e-01 | y_old 2.1e-01 | evals   521
+    : changes 50176 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : stethoscope
+    : l_new : loupe, jeweler`s loupe
+
+
+--> #  824 | c      824 | y     5.0e-01 | y_next 6.4e-02
++++ >        c_new  735 | y_new 2.0e-01 | y_old 1.9e-01 | evals   374
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : stole
+    : l_new : poncho
+
+
+--> #  825 | c      825 | y     3.9e-01 | y_next 1.5e-01
++++ >        c_new  913 | y_new 2.0e-01 | y_old 2.0e-01 | evals    75
+    : changes 50132 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : stone wall
+    : l_new : wreck
+
+
+--> #  826 | c      826 | y     5.0e-01 | y_next 1.5e-01
++++ >        c_new  426 | y_new 3.1e-01 | y_old 3.1e-01 | evals   205
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : stopwatch, stop watch
+    : l_new : barometer
+
+
+--> #  827 | c      827 | y     9.5e-01 | y_next 7.3e-03
++++ >        c_new  651 | y_new 3.8e-01 | y_old 3.8e-01 | evals  4493
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : stove
+    : l_new : microwave, microwave oven
+
+
+--> #  828 | c      828 | y     9.2e-01 | y_next 8.6e-03
++++ >        c_new  556 | y_new 4.4e-01 | y_old 4.3e-01 | evals  2338
+    : changes 47297 | dx1 7.4e+03 | dx2 2.3e+01
+    : l_old : strainer
+    : l_new : fire screen, fireguard
+
+
+--> #  829 | c      829 | y     7.9e-01 | y_next 5.8e-02
++++ >        c_new  874 | y_new 3.8e-01 | y_old 3.7e-01 | evals  1270
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : streetcar, tram, tramcar, trolley, trolley car
+    : l_new : trolleybus, trolley coach, trackless trolley
+
+
+--> #  830 | c      830 | y     8.3e-01 | y_next 3.2e-02
++++ >        c_new  491 | y_new 1.5e-01 | y_old 1.5e-01 | evals   313
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : stretcher
+    : l_new : chain saw, chainsaw
+
+
+--> #  831 | c      831 | y     5.8e-01 | y_next 5.4e-02
++++ >        c_new  789 | y_new 1.8e-01 | y_old 1.7e-01 | evals   388
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : studio couch, day bed
+    : l_new : shoji
+
+
+--> #  832 | c      832 | y     5.5e-01 | y_next 9.1e-02
++++ >        c_new  538 | y_new 3.1e-01 | y_old 3.1e-01 | evals   360
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : stupa, tope
+    : l_new : dome
+
+
+--> #  833 | c      833 | y     2.6e-01 | y_next 1.8e-01
++++ >        c_new  403 | y_new 3.3e-01 | y_old 9.2e-02 | evals     3
+    : changes 50043 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : submarine, pigboat, sub, u-boat
+    : l_new : aircraft carrier, carrier, flattop, attack aircraf
+
+
+--> #  834 | c      834 | y     5.5e-01 | y_next 2.7e-01
++++ >        c_new  906 | y_new 4.6e-01 | y_old 4.0e-01 | evals    15
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : suit, suit of clothes
+    : l_new : windsor tie
+
+
+--> #  835 | c      835 | y     3.6e-01 | y_next 1.7e-01
++++ >        c_new  769 | y_new 1.7e-01 | y_old 1.6e-01 | evals    21
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sundial
+    : l_new : rule, ruler
+
+
+--> #  839 | c      839 | y     2.5e-01 | y_next 7.1e-02
++++ >        c_new  645 | y_new 1.1e-01 | y_old 1.0e-01 | evals   130
+    : changes 50127 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : suspension bridge
+    : l_new : maypole
+
+
+--> #  842 | c      842 | y     6.9e-01 | y_next 4.1e-02
++++ >        c_new  433 | y_new 2.9e-01 | y_old 2.8e-01 | evals   683
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : swimming trunks, bathing trunks
+    : l_new : bathing cap, swimming cap
+
+
+--> #  843 | c      843 | y     8.2e-01 | y_next 7.1e-02
++++ >        c_new  488 | y_new 3.7e-01 | y_old 3.7e-01 | evals    74
+    : changes 50168 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : swing
+    : l_new : chain
+
+
+--> #  845 | c      845 | y     9.3e-01 | y_next 5.5e-03
++++ >        c_new  784 | y_new 1.9e-01 | y_old 1.9e-01 | evals  2286
+    : changes 50073 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : syringe
+    : l_new : screwdriver
+
+
+--> #  846 | c      846 | y     6.5e-01 | y_next 1.3e-01
++++ >        c_new  619 | y_new 3.1e-01 | y_old 3.1e-01 | evals  2660
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : table lamp
+    : l_new : lampshade, lamp shade
+
+
+--> #  847 | c      847 | y     8.7e-01 | y_next 1.6e-02
++++ >        c_new  408 | y_new 4.0e-01 | y_old 4.0e-01 | evals  4204
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tank, army tank, armored combat vehicle, armoured 
+    : l_new : amphibian, amphibious vehicle
+
+
+--> #  849 | c      849 | y     7.6e-01 | y_next 5.8e-02
++++ >        c_new  505 | y_new 3.0e-01 | y_old 3.0e-01 | evals  2046
+    : changes 50157 | dx1 8.2e+03 | dx2 2.3e+01
+    : l_old : teapot
+    : l_new : coffeepot
+
+
+--> #  850 | c      850 | y     9.0e-01 | y_next 2.8e-03
++++ >        c_new  385 | y_new 3.1e-01 | y_old 3.0e-01 | evals  1084
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : teddy, teddy bear
+    : l_new : indian elephant, elephas maximus
+
+
+--> #  852 | c      852 | y     6.6e-01 | y_next 1.0e-01
++++ >        c_new  179 | y_new 3.8e-01 | y_old 3.8e-01 | evals   635
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tennis ball
+    : l_new : staffordshire bullterrier, staffordshire bull terr
+
+
+--> #  853 | c      853 | y     3.8e-01 | y_next 5.0e-02
++++ >        c_new  958 | y_new 1.7e-01 | y_old 1.7e-01 | evals  1466
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : thatch, thatched roof
+    : l_new : hay
+
+
+--> #  854 | c      854 | y     8.1e-01 | y_next 1.7e-02
++++ >        c_new  401 | y_new 1.4e-01 | y_old 1.4e-01 | evals  4962
+    : changes 50176 | dx1 9.5e+03 | dx2 2.5e+01
+    : l_old : theater curtain, theatre curtain
+    : l_new : accordion, piano accordion, squeeze box
+
+
+--> #  856 | c      856 | y     7.7e-01 | y_next 3.5e-02
++++ >        c_new  864 | y_new 3.7e-01 | y_old 3.6e-01 | evals  1168
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : thresher, thrasher, threshing machine
+    : l_new : tow truck, tow car, wrecker
+
+
+--> #  858 | c      858 | y     8.7e-01 | y_next 1.1e-02
++++ >        c_new  807 | y_new 3.9e-01 | y_old 3.8e-01 | evals  5702
+    : changes 50172 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tile roof
+    : l_new : solar dish, solar collector, solar furnace
+
+
+--> #  859 | c      859 | y     7.5e-01 | y_next 2.1e-02
++++ >        c_new  482 | y_new 1.6e-01 | y_old 1.6e-01 | evals   424
+    : changes 48981 | dx1 8.7e+03 | dx2 2.5e+01
+    : l_old : toaster
+    : l_new : cassette player
+
+
+--> #  861 | c      861 | y     8.1e-01 | y_next 2.6e-02
++++ >        c_new  999 | y_new 3.9e-01 | y_old 3.8e-01 | evals  2795
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : toilet seat
+    : l_new : toilet tissue, toilet paper, bathroom tissue
+
+
+--> #  862 | c      862 | y     3.9e-01 | y_next 5.7e-02
++++ >        c_new  642 | y_new 2.4e-01 | y_old 2.0e-01 | evals   329
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : torch
+    : l_new : marimba, xylophone
+
+
+--> #  863 | c      863 | y     8.5e-01 | y_next 4.8e-02
++++ >        c_new  733 | y_new 4.7e-01 | y_old 4.7e-01 | evals  5463
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : totem pole
+    : l_new : pole
+
+
+--> #  864 | c      864 | y     4.4e-01 | y_next 6.0e-02
++++ >        c_new  734 | y_new 1.7e-01 | y_old 1.6e-01 | evals    56
+    : changes 50089 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tow truck, tow car, wrecker
+    : l_new : police van, police wagon, paddy wagon, patrol wago
+
+
+--> #  865 | c      865 | y     3.7e-01 | y_next 9.9e-02
++++ >        c_new  454 | y_new 2.0e-01 | y_old 2.0e-01 | evals   387
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : toyshop
+    : l_new : bookshop, bookstore, bookstall
+
+
+--> #  866 | c      866 | y     5.8e-01 | y_next 1.1e-01
++++ >        c_new  595 | y_new 2.9e-01 | y_old 2.9e-01 | evals  1106
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : tractor
+    : l_new : harvester, reaper
+
+
+--> #  867 | c      867 | y     6.6e-01 | y_next 2.4e-01
++++ >        c_new  675 | y_new 4.4e-01 | y_old 4.2e-01 | evals    95
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : trailer truck, tractor trailer, trucking rig, rig,
+    : l_new : moving van
+
+
+--> #  868 | c      868 | y     9.9e-01 | y_next 1.4e-03
++++ >        c_new  729 | y_new 4.2e-01 | y_old 4.2e-01 | evals  1531
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tray
+    : l_new : plate rack
+
+
+--> #  869 | c      869 | y     6.0e-01 | y_next 1.1e-01
++++ >        c_new  834 | y_new 3.2e-01 | y_old 2.8e-01 | evals    55
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : trench coat
+    : l_new : suit, suit of clothes
+
+
+--> #  873 | c      873 | y     5.7e-01 | y_next 1.0e-01
++++ >        c_new  834 | y_new 3.2e-01 | y_old 3.1e-01 | evals   295
+    : changes 50176 | dx1 9.7e+03 | dx2 2.6e+01
+    : l_old : triumphal arch
+    : l_new : suit, suit of clothes
+
+
+--> #  874 | c      874 | y     3.3e-01 | y_next 1.7e-01
++++ >        c_new  705 | y_new 2.3e-01 | y_old 1.9e-01 | evals     3
+    : changes 49826 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : trolleybus, trolley coach, trackless trolley
+    : l_new : passenger car, coach, carriage
+
+
+--> #  875 | c      875 | y     8.4e-01 | y_next 6.3e-02
++++ >        c_new  513 | y_new 4.4e-01 | y_old 4.4e-01 | evals  1011
+    : changes 50104 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : trombone
+    : l_new : cornet, horn, trumpet, trump
+
+
+--> #  876 | c      876 | y     5.2e-01 | y_next 3.3e-01
++++ >        c_new  435 | y_new 4.3e-01 | y_old 4.3e-01 | evals   212
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : tub, vat
+    : l_new : bathtub, bathing tub, bath, tub
+
+
+--> #  877 | c      877 | y     1.5e-01 | y_next 1.1e-01
++++ >        c_new  872 | y_new 1.7e-01 | y_old 1.6e-01 | evals    94
+    : changes 48984 | dx1 7.8e+03 | dx2 2.3e+01
+    : l_old : turnstile
+    : l_new : tripod
+
+
+--> #  878 | c      878 | y     5.0e-01 | y_next 2.9e-01
++++ >        c_new  810 | y_new 4.1e-01 | y_old 4.1e-01 | evals   302
+    : changes 49419 | dx1 8.8e+03 | dx2 2.5e+01
+    : l_old : typewriter keyboard
+    : l_new : space bar
+
+
+--> #  879 | c      879 | y     8.7e-01 | y_next 1.4e-02
++++ >        c_new  452 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1657
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : umbrella
+    : l_new : bonnet, poke bonnet
+
+
+--> #  880 | c      880 | y     5.5e-01 | y_next 4.6e-02
++++ >        c_new  665 | y_new 3.0e-01 | y_old 2.4e-01 | evals   226
+    : changes 50169 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : unicycle, monocycle
+    : l_new : moped
+
+
+--> #  881 | c      881 | y     6.3e-01 | y_next 6.2e-02
++++ >        c_new  579 | y_new 3.2e-01 | y_old 3.1e-01 | evals  1230
+    : changes 50135 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : upright, upright piano
+    : l_new : grand piano, grand
+
+
+--> #  882 | c      882 | y     9.3e-01 | y_next 1.9e-02
++++ >        c_new  740 | y_new 3.8e-01 | y_old 3.5e-01 | evals   415
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : vacuum, vacuum cleaner
+    : l_new : power drill
+
+
+--> #  884 | c      884 | y     6.2e-01 | y_next 1.1e-01
++++ >        c_new  663 | y_new 3.6e-01 | y_old 3.5e-01 | evals  2251
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : vault
+    : l_new : monastery
+
+
+--> #  886 | c      886 | y     8.6e-01 | y_next 3.8e-03
++++ >        c_new  800 | y_new 2.3e-01 | y_old 2.3e-01 | evals  6164
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : vending machine
+    : l_new : slot, one-armed bandit
+
+
+--> #  888 | c      888 | y     8.9e-01 | y_next 2.3e-03
++++ >        c_new  718 | y_new 3.1e-01 | y_old 3.0e-01 | evals  3177
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : viaduct
+    : l_new : pier
+
+
+--> #  889 | c      889 | y     6.3e-01 | y_next 7.3e-02
++++ >        c_new  674 | y_new 1.8e-01 | y_old 1.6e-01 | evals    59
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : violin, fiddle
+    : l_new : mousetrap
+
+
+--> #  890 | c      890 | y     8.1e-01 | y_next 1.5e-02
++++ >        c_new  430 | y_new 2.6e-01 | y_old 2.5e-01 | evals  4061
+    : changes 50169 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : volleyball
+    : l_new : basketball
+
+
+--> #  891 | c      891 | y     6.0e-01 | y_next 8.3e-02
++++ >        c_new  659 | y_new 2.9e-01 | y_old 2.7e-01 | evals   362
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : waffle iron
+    : l_new : mixing bowl
+
+
+--> #  892 | c      892 | y     7.6e-01 | y_next 4.2e-02
++++ >        c_new  409 | y_new 2.9e-01 | y_old 2.9e-01 | evals  3251
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : wall clock
+    : l_new : analog clock
+
+
+--> #  894 | c      894 | y     8.6e-01 | y_next 2.7e-02
++++ >        c_new  648 | y_new 3.6e-01 | y_old 3.5e-01 | evals   511
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wardrobe, closet, press
+    : l_new : medicine chest, medicine cabinet
+
+
+--> #  895 | c      895 | y     6.3e-01 | y_next 1.0e-01
++++ >        c_new  908 | y_new 3.0e-01 | y_old 3.0e-01 | evals   874
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : warplane, military plane
+    : l_new : wing
+
+
+--> #  897 | c      897 | y     7.7e-01 | y_next 6.9e-02
++++ >        c_new  534 | y_new 4.1e-01 | y_old 3.9e-01 | evals   762
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : washer, automatic washer, washing machine
+    : l_new : dishwasher, dish washer, dishwashing machine
+
+
+--> #  900 | c      900 | y     7.2e-01 | y_next 7.1e-03
++++ >        c_new  894 | y_new 9.9e-02 | y_old 9.7e-02 | evals  4574
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : water tower
+    : l_new : wardrobe, closet, press
+
+
+--> #  901 | c      901 | y     8.7e-01 | y_next 3.0e-02
++++ >        c_new  899 | y_new 2.7e-01 | y_old 2.7e-01 | evals   878
+    : changes 49568 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : whiskey jug
+    : l_new : water jug
+
+
+--> #  903 | c      903 | y     5.8e-01 | y_next 4.2e-02
++++ >        c_new  578 | y_new 2.4e-01 | y_old 2.3e-01 | evals   755
+    : changes 50013 | dx1 9.4e+03 | dx2 2.5e+01
+    : l_old : wig
+    : l_new : gown
+
+
+--> #  905 | c      905 | y     9.0e-01 | y_next 1.2e-02
++++ >        c_new  619 | y_new 3.1e-01 | y_old 2.9e-01 | evals  2025
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : window shade
+    : l_new : lampshade, lamp shade
+
+
+--> #  906 | c      906 | y     6.9e-01 | y_next 4.1e-02
++++ >        c_new  834 | y_new 3.6e-01 | y_old 3.5e-01 | evals  2716
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : windsor tie
+    : l_new : suit, suit of clothes
+
+
+--> #  907 | c      907 | y     4.4e-01 | y_next 8.4e-02
++++ >        c_new  546 | y_new 2.1e-01 | y_old 2.1e-01 | evals   113
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wine bottle
+    : l_new : electric guitar
+
+
+--> #  908 | c      908 | y     9.4e-01 | y_next 9.8e-04
++++ >        c_new  437 | y_new 3.0e-01 | y_old 2.6e-01 | evals  1160
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wing
+    : l_new : beacon, lighthouse, beacon light, pharos
+
+
+--> #  913 | c      913 | y     3.7e-01 | y_next 2.1e-01
++++ >        c_new  460 | y_new 2.5e-01 | y_old 2.5e-01 | evals    49
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wreck
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  914 | c      914 | y     5.9e-01 | y_next 2.1e-01
++++ >        c_new  780 | y_new 3.9e-01 | y_old 3.7e-01 | evals    87
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : yawl
+    : l_new : schooner
+
+
+--> #  916 | c      916 | y     8.3e-01 | y_next 1.8e-03
++++ >        c_new  769 | y_new 3.4e-01 | y_old 3.3e-01 | evals  2285
+    : changes 48545 | dx1 8.9e+03 | dx2 2.5e+01
+    : l_old : web site, website, internet site, site
+    : l_new : rule, ruler
+
+
+--> #  918 | c      918 | y     6.1e-01 | y_next 3.5e-02
++++ >        c_new  767 | y_new 1.9e-01 | y_old 1.7e-01 | evals  1069
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : crossword puzzle, crossword
+    : l_new : rubber eraser, rubber, pencil eraser
+
+
+--> #  919 | c      919 | y     7.1e-01 | y_next 1.6e-02
++++ >        c_new  448 | y_new 1.8e-01 | y_old 1.8e-01 | evals  2160
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : street sign
+    : l_new : birdhouse
+
+
+--> #  920 | c      920 | y     6.2e-01 | y_next 5.1e-03
++++ >        c_new  894 | y_new 2.1e-02 | y_old 2.0e-02 | evals  2295
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : traffic light, traffic signal, stoplight
+    : l_new : wardrobe, closet, press
+
+
+--> #  921 | c      921 | y     6.7e-01 | y_next 3.2e-02
++++ >        c_new  917 | y_new 2.5e-01 | y_old 2.5e-01 | evals  3472
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : book jacket, dust cover, dust jacket, dust wrapper
+    : l_new : comic book
+
+
+--> #  922 | c      922 | y     7.7e-01 | y_next 2.0e-02
++++ >        c_new  886 | y_new 2.4e-01 | y_old 2.4e-01 | evals  7431
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : menu
+    : l_new : vending machine
+
+
+--> #  923 | c      923 | y     4.3e-01 | y_next 8.7e-02
++++ >        c_new  925 | y_new 2.9e-01 | y_old 2.9e-01 | evals   809
+    : changes 50042 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : plate
+    : l_new : consomme
+
+
+--> #  924 | c      924 | y     6.4e-01 | y_next 5.1e-02
++++ >        c_new  910 | y_new 2.3e-01 | y_old 2.1e-01 | evals    68
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : guacamole
+    : l_new : wooden spoon
+
+
+--> #  925 | c      925 | y     6.3e-01 | y_next 4.8e-02
++++ >        c_new  809 | y_new 3.8e-01 | y_old 3.6e-01 | evals  1227
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : consomme
+    : l_new : soup bowl
+
+
+--> #  926 | c      926 | y     6.4e-01 | y_next 6.8e-02
++++ >        c_new  925 | y_new 3.5e-01 | y_old 3.4e-01 | evals   701
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hot pot, hotpot
+    : l_new : consomme
+
+
+--> #  927 | c      927 | y     6.5e-01 | y_next 2.3e-01
++++ >        c_new  928 | y_new 4.4e-01 | y_old 4.4e-01 | evals   234
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : trifle
+    : l_new : ice cream, icecream
+
+
+--> #  928 | c      928 | y     7.9e-01 | y_next 6.2e-02
++++ >        c_new  876 | y_new 2.3e-01 | y_old 2.3e-01 | evals   327
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ice cream, icecream
+    : l_new : tub, vat
+
+
+--> #  929 | c      929 | y     4.4e-01 | y_next 1.6e-01
++++ >        c_new  928 | y_new 1.9e-01 | y_old 1.8e-01 | evals   247
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ice lolly, lolly, lollipop, popsicle
+    : l_new : ice cream, icecream
+
+
+--> #  930 | c      930 | y     7.6e-01 | y_next 4.1e-02
++++ >        c_new  934 | y_new 3.4e-01 | y_old 3.4e-01 | evals  1610
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : french loaf
+    : l_new : hotdog, hot dog, red hot
+
+
+--> #  931 | c      931 | y     6.0e-01 | y_next 7.0e-02
++++ >        c_new  964 | y_new 1.7e-01 | y_old 1.5e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bagel, beigel
+    : l_new : potpie
+
+
+--> #  932 | c      932 | y     7.0e-01 | y_next 2.4e-02
++++ >        c_new  488 | y_new 2.9e-01 | y_old 2.7e-01 | evals   830
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pretzel
+    : l_new : chain
+
+
+--> #  933 | c      933 | y     8.8e-01 | y_next 5.2e-03
++++ >        c_new  931 | y_new 4.3e-01 | y_old 4.3e-01 | evals  7498
+    : changes 50138 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cheeseburger
+    : l_new : bagel, beigel
+
+
+--> #  934 | c      934 | y     2.9e-01 | y_next 1.3e-01
++++ >        c_new  909 | y_new 1.2e-01 | y_old 9.9e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hotdog, hot dog, red hot
+    : l_new : wok
+
+
+--> #  935 | c      935 | y     8.1e-01 | y_next 6.8e-02
++++ >        c_new  962 | y_new 4.1e-01 | y_old 4.0e-01 | evals  1503
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : mashed potato
+    : l_new : meat loaf, meatloaf
+
+
+--> #  936 | c      936 | y     8.2e-01 | y_next 2.1e-02
++++ >        c_new  938 | y_new 4.1e-01 | y_old 4.1e-01 | evals  2919
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : head cabbage
+    : l_new : cauliflower
+
+
+--> #  937 | c      937 | y     7.7e-01 | y_next 1.9e-02
++++ >        c_new  938 | y_new 3.4e-01 | y_old 3.4e-01 | evals  7897
+    : changes 50173 | dx1 8.9e+03 | dx2 2.4e+01
+    : l_old : broccoli
+    : l_new : cauliflower
+
+
+--> #  938 | c      938 | y     9.2e-01 | y_next 3.8e-03
++++ >        c_new  582 | y_new 1.9e-01 | y_old 1.9e-01 | evals  8448
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cauliflower
+    : l_new : grocery store, grocery, food market, market
+
+
+--> #  939 | c      939 | y     8.4e-01 | y_next 1.2e-02
++++ >        c_new  943 | y_new 3.8e-01 | y_old 3.8e-01 | evals  6739
+    : changes 49866 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : zucchini, courgette
+    : l_new : cucumber, cuke
+
+
+--> #  940 | c      940 | y     9.1e-01 | y_next 6.6e-03
++++ >        c_new  941 | y_new 3.7e-01 | y_old 3.6e-01 | evals  4846
+    : changes 50176 | dx1 8.7e+03 | dx2 2.3e+01
+    : l_old : spaghetti squash
+    : l_new : acorn squash
+
+
+--> #  941 | c      941 | y     6.3e-01 | y_next 5.4e-02
++++ >        c_new  940 | y_new 4.6e-01 | y_old 8.1e-02 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : acorn squash
+    : l_new : spaghetti squash
+
+
+--> #  942 | c      942 | y     8.8e-01 | y_next 1.2e-02
++++ >        c_new  941 | y_new 3.3e-01 | y_old 3.3e-01 | evals  6388
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : butternut squash
+    : l_new : acorn squash
+
+
+--> #  944 | c      944 | y     7.7e-01 | y_next 8.0e-02
++++ >        c_new  945 | y_new 4.6e-01 | y_old 4.1e-01 | evals   598
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : artichoke, globe artichoke
+    : l_new : bell pepper
+
+
+--> #  945 | c      945 | y     7.7e-01 | y_next 3.2e-03
++++ >        c_new  950 | y_new 2.5e-01 | y_old 2.4e-01 | evals  1469
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bell pepper
+    : l_new : orange
+
+
+--> #  946 | c      946 | y     6.9e-01 | y_next 1.2e-01
++++ >        c_new  944 | y_new 3.9e-01 | y_old 3.9e-01 | evals  2528
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cardoon
+    : l_new : artichoke, globe artichoke
+
+
+--> #  947 | c      947 | y     7.9e-01 | y_next 5.7e-02
++++ >        c_new  815 | y_new 2.2e-01 | y_old 1.8e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mushroom
+    : l_new : spider web, spider`s web
+
+
+--> #  948 | c      948 | y     8.3e-01 | y_next 1.3e-02
++++ >        c_new  951 | y_new 3.6e-01 | y_old 3.5e-01 | evals  2767
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : granny smith
+    : l_new : lemon
+
+
+--> #  949 | c      949 | y     8.4e-01 | y_next 1.5e-02
++++ >        c_new  574 | y_new 3.9e-01 | y_old 3.9e-01 | evals  2494
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : strawberry
+    : l_new : golf ball
+
+
+--> #  950 | c      950 | y     8.4e-01 | y_next 2.0e-02
++++ >        c_new  942 | y_new 4.0e-01 | y_old 4.0e-01 | evals  1855
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : orange
+    : l_new : butternut squash
+
+
+--> #  951 | c      951 | y     4.8e-01 | y_next 2.8e-01
++++ >        c_new  950 | y_new 4.2e-01 | y_old 3.7e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lemon
+    : l_new : orange
+
+
+--> #  952 | c      952 | y     7.4e-01 | y_next 5.3e-03
+    > fail | evals 10003
+
+--> #  953 | c      953 | y     6.5e-01 | y_next 2.1e-02
++++ >        c_new  987 | y_new 2.8e-01 | y_old 2.8e-01 | evals  2699
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : pineapple, ananas
+    : l_new : corn
+
+
+--> #  954 | c      954 | y     6.8e-01 | y_next 6.1e-02
++++ >        c_new  955 | y_new 2.4e-01 | y_old 2.4e-01 | evals  3384
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : banana
+    : l_new : jackfruit, jak, jack
+
+
+--> #  955 | c      955 | y     6.1e-01 | y_next 6.1e-02
++++ >        c_new  415 | y_new 2.5e-01 | y_old 2.5e-01 | evals  1031
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : jackfruit, jak, jack
+    : l_new : bakery, bakeshop, bakehouse
+
+
+--> #  956 | c      956 | y     7.0e-01 | y_next 5.8e-02
++++ >        c_new  944 | y_new 3.2e-01 | y_old 3.2e-01 | evals  2032
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : custard apple
+    : l_new : artichoke, globe artichoke
+
+
+--> #  957 | c      957 | y     9.2e-01 | y_next 2.7e-03
++++ >        c_new  949 | y_new 3.3e-01 | y_old 3.3e-01 | evals  7789
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pomegranate
+    : l_new : strawberry
+
+
+--> #  958 | c      958 | y     8.6e-01 | y_next 4.0e-03
++++ >        c_new  649 | y_new 3.4e-01 | y_old 3.3e-01 | evals  1968
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hay
+    : l_new : megalith, megalithic structure
+
+
+--> #  961 | c      961 | y     4.6e-01 | y_next 1.5e-01
++++ >        c_new  659 | y_new 1.9e-01 | y_old 1.9e-01 | evals     3
+    : changes 50166 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dough
+    : l_new : mixing bowl
+
+
+--> #  963 | c      963 | y     7.0e-01 | y_next 7.7e-03
++++ >        c_new  927 | y_new 2.0e-01 | y_old 2.0e-01 | evals  9004
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : pizza, pizza pie
+    : l_new : trifle
+
+
+--> #  964 | c      964 | y     9.1e-01 | y_next 6.1e-03
++++ >        c_new  930 | y_new 3.6e-01 | y_old 3.5e-01 | evals  4910
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : potpie
+    : l_new : french loaf
+
+
+--> #  966 | c      966 | y     4.3e-01 | y_next 3.1e-01
++++ >        c_new  907 | y_new 3.9e-01 | y_old 3.9e-01 | evals    47
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : red wine
+    : l_new : wine bottle
+
+
+--> #  967 | c      967 | y     5.6e-01 | y_next 1.5e-01
++++ >        c_new  441 | y_new 3.2e-01 | y_old 2.8e-01 | evals    55
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : espresso
+    : l_new : beer glass
+
+
+--> #  968 | c      968 | y     4.9e-01 | y_next 1.4e-01
++++ >        c_new  504 | y_new 3.5e-01 | y_old 3.5e-01 | evals  1015
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cup
+    : l_new : coffee mug
+
+
+--> #  969 | c      969 | y     7.5e-01 | y_next 1.4e-02
++++ >        c_new  925 | y_new 2.6e-01 | y_old 2.6e-01 | evals  4189
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : eggnog
+    : l_new : consomme
+
+
+--> #  971 | c      971 | y     7.8e-01 | y_next 6.4e-02
++++ >        c_new  495 | y_new 3.8e-01 | y_old 3.4e-01 | evals   318
+    : changes 50171 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : bubble
+    : l_new : china cabinet, china closet
+
+
+--> #  972 | c      972 | y     5.0e-01 | y_next 1.1e-01
++++ >        c_new  825 | y_new 2.3e-01 | y_old 2.1e-01 | evals    22
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cliff, drop, drop-off
+    : l_new : stone wall
+
+
+--> #  973 | c      973 | y     8.2e-01 | y_next 3.1e-02
++++ >        c_new  879 | y_new 1.4e-01 | y_old 1.4e-01 | evals  1104
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coral reef
+    : l_new : umbrella
+
+
+--> #  974 | c      974 | y     7.0e-01 | y_next 1.4e-02
++++ >        c_new  755 | y_new 1.7e-01 | y_old 1.5e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : geyser
+    : l_new : radio telescope, radio reflector
+
+
+--> #  975 | c      975 | y     3.8e-01 | y_next 2.3e-01
++++ >        c_new  977 | y_new 3.1e-01 | y_old 3.0e-01 | evals    24
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lakeside, lakeshore
+    : l_new : sandbar, sand bar
+
+
+--> #  977 | c      977 | y     6.7e-01 | y_next 7.9e-02
++++ >        c_new  842 | y_new 2.9e-01 | y_old 2.8e-01 | evals   315
+    : changes 50175 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : sandbar, sand bar
+    : l_new : swimming trunks, bathing trunks
+
+
+--> #  979 | c      979 | y     3.5e-01 | y_next 1.7e-01
++++ >        c_new  980 | y_new 2.8e-01 | y_old 2.7e-01 | evals    79
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : valley, vale
+    : l_new : volcano
+
+
+--> #  980 | c      980 | y     9.0e-01 | y_next 9.9e-03
++++ >        c_new  972 | y_new 2.0e-01 | y_old 1.7e-01 | evals   205
+    : changes 50176 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : volcano
+    : l_new : cliff, drop, drop-off
+
+
+--> #  981 | c      981 | y     7.6e-01 | y_next 2.2e-02
++++ >        c_new  781 | y_new 4.2e-01 | y_old 3.8e-01 | evals  4585
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ballplayer, baseball player
+    : l_new : scoreboard
+
+
+--> #  982 | c      982 | y     9.3e-01 | y_next 1.2e-02
+    > fail | evals 10003
+
+--> #  983 | c      983 | y     4.6e-01 | y_next 9.2e-02
++++ >        c_new  329 | y_new 2.6e-01 | y_old 2.5e-01 | evals   732
+    : changes 50176 | dx1 9.8e+03 | dx2 2.6e+01
+    : l_old : scuba diver
+    : l_new : sea cucumber, holothurian
+
+
+--> #  984 | c      984 | y     8.1e-01 | y_next 1.3e-03
++++ >        c_new  904 | y_new 2.5e-01 | y_old 2.4e-01 | evals  3667
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : rapeseed
+    : l_new : window screen
+
+
+--> #  985 | c      985 | y     8.4e-01 | y_next 5.3e-03
+    > fail | evals 10003
+
+--> #  986 | c      986 | y     8.5e-01 | y_next 1.0e-03
+    > fail | evals 10003
+
+--> #  989 | c      989 | y     8.6e-01 | y_next 4.0e-03
++++ >        c_new  957 | y_new 3.8e-01 | y_old 3.8e-01 | evals  4456
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hip, rose hip, rosehip
+    : l_new : pomegranate
+
+
+--> #  990 | c      990 | y     8.8e-01 | y_next 9.7e-03
++++ >        c_new  502 | y_new 3.7e-01 | y_old 3.6e-01 | evals  1349
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : buckeye, horse chestnut, conker
+    : l_new : clog, geta, patten, sabot
+
+
+--> #  991 | c      991 | y     4.7e-01 | y_next 8.6e-02
++++ >        c_new  947 | y_new 2.3e-01 | y_old 2.3e-01 | evals  1043
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coral fungus
+    : l_new : mushroom
+
+
+--> #  992 | c      992 | y     7.7e-01 | y_next 8.2e-02
+    > fail | evals 10003
+
+--> #  993 | c      993 | y     8.1e-01 | y_next 9.6e-03
++++ >        c_new  995 | y_new 1.9e-01 | y_old 1.9e-01 | evals  7169
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : gyromitra
+    : l_new : earthstar
+
+
+--> #  994 | c      994 | y     7.6e-01 | y_next 5.0e-03
++++ >        c_new  949 | y_new 2.0e-01 | y_old 1.9e-01 | evals  7143
+    : changes 50170 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : stinkhorn, carrion fungus
+    : l_new : strawberry
+
+
+--> #  995 | c      995 | y     8.5e-01 | y_next 2.3e-03
++++ >        c_new  996 | y_new 3.3e-01 | y_old 3.3e-01 | evals  6086
+    : changes 50172 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : earthstar
+    : l_new : hen-of-the-woods, hen of the woods, polyporus fron
+
+
+--> #  996 | c      996 | y     8.4e-01 | y_next 4.2e-03
++++ >        c_new  947 | y_new 3.8e-01 | y_old 3.8e-01 | evals  8605
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hen-of-the-woods, hen of the woods, polyporus fron
+    : l_new : mushroom
+
+
+--> #  999 | c      999 | y     7.7e-01 | y_next 9.3e-02
++++ >        c_new  700 | y_new 4.0e-01 | y_old 4.0e-01 | evals   359
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : toilet tissue, toilet paper, bathroom tissue
+    : l_new : paper towel
+
+
+Completed. Successful: 96.08% (total images 791)
+DONE ( 13834.60 sec.) 
+
+
+===================== --------------------------------------
+[2023-11-26 00-02-23] Work is finished (13843.21 sec. total)
+
+

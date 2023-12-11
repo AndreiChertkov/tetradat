@@ -1,0 +1,30 @@
+[2023-12-07 16-04-43] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "vgg"
+Task                : "check"
+Kind of task        : "model"
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "vgg" model
+DONE (    66.55 sec.) 
+
+
+.... Check model accuracy
+Accuracy   tst : 84.00% (      840 /      1000) | time =     150.75 sec
+
+DONE (   150.76 sec.) 
+
+.... Plot several model predictions
+DONE (     2.91 sec.) 
+
+
+===================== ------------------------------------
+[2023-12-07 16-08-24] Work is finished (220.23 sec. total)
+
+

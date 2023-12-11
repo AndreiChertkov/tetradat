@@ -1,0 +1,617 @@
+[2023-12-05 16-32-27] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.03 sec.) 
+
+
+.... Loading "resnet" model
+DONE (    92.40 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     5.81 sec.) 
+
+
+.... Start attack on images
+
+--> #  300 | c      300 | y     7.8e-01 | y_next 1.2e-02
++++ >        c_new  307 | y_new 2.8e-01 | y_old 2.6e-01 | evals  9933
+    : changes  3293 | dx1 3.7e+03 | dx2 5.4e+01
+    : l_old : tiger beetle
+    : l_new : weevil
+
+
+--> #  301 | c      301 | y     7.4e-01 | y_next 9.4e-02
++++ >        c_new  304 | y_new 4.3e-01 | y_old 3.6e-01 | evals  9989
+    : changes  3390 | dx1 2.1e+03 | dx2 3.0e+01
+    : l_old : ladybug, ladybeetle, lady beetle, ladybird, ladybi
+    : l_new : leaf beetle, chrysomelid
+
+
+--> #  302 | c      302 | y     7.8e-01 | y_next 2.5e-02
++++ >        c_new  300 | y_new 3.8e-01 | y_old 3.6e-01 | evals  9917
+    : changes  2570 | dx1 7.9e+03 | dx2 1.4e+02
+    : l_old : ground beetle, carabid beetle
+    : l_new : tiger beetle
+
+
+--> #  303 | c      303 | y     9.5e-01 | y_next 1.2e-03
++++ >        c_new  314 | y_new 4.5e-01 | y_old 4.3e-01 | evals  9918
+    : changes  2999 | dx1 2.8e+03 | dx2 4.1e+01
+    : l_old : long-horned beetle, longicorn, longicorn beetle
+    : l_new : cockroach, roach
+
+
+--> #  304 | c      304 | y     8.3e-01 | y_next 6.7e-03
++++ >        c_new  307 | y_new 3.8e-01 | y_old 3.8e-01 | evals  9947
+    : changes  3445 | dx1 1.0e+03 | dx2 1.3e+01
+    : l_old : leaf beetle, chrysomelid
+    : l_new : weevil
+
+
+--> #  305 | c      305 | y     7.9e-01 | y_next 1.5e-02
++++ >        c_new  304 | y_new 4.2e-01 | y_old 4.0e-01 | evals  9978
+    : changes  3237 | dx1 1.1e+03 | dx2 1.8e+01
+    : l_old : dung beetle
+    : l_new : leaf beetle, chrysomelid
+
+
+--> #  306 | c      306 | y     7.9e-01 | y_next 9.2e-03
++++ >        c_new  302 | y_new 3.5e-01 | y_old 3.1e-01 | evals  9918
+    : changes  3367 | dx1 2.6e+03 | dx2 3.8e+01
+    : l_old : rhinoceros beetle
+    : l_new : ground beetle, carabid beetle
+
+
+--> #  307 | c      307 | y     7.6e-01 | y_next 6.6e-03
++++ >        c_new  309 | y_new 3.7e-01 | y_old 3.5e-01 | evals  9914
+    : changes  3148 | dx1 7.9e+02 | dx2 1.1e+01
+    : l_old : weevil
+    : l_new : bee
+
+
+--> #  308 | c      308 | y     7.8e-01 | y_next 1.2e-03
++++ >        c_new  318 | y_new 3.5e-01 | y_old 3.3e-01 | evals  9984
+    : changes  3325 | dx1 8.2e+03 | dx2 1.2e+02
+    : l_old : fly
+    : l_new : lacewing, lacewing fly
+
+
+--> #  309 | c      309 | y     7.7e-01 | y_next 1.1e-02
++++ >        c_new  308 | y_new 4.2e-01 | y_old 4.0e-01 | evals  9983
+    : changes  3341 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : bee
+    : l_new : fly
+
+
+--> #  310 | c      310 | y     8.4e-01 | y_next 7.0e-04
++++ >        c_new   79 | y_new 3.1e-01 | y_old 2.8e-01 | evals  9902
+    : changes  3354 | dx1 2.2e+03 | dx2 2.8e+01
+    : l_old : ant, emmet, pismire
+    : l_new : centipede
+
+
+--> #  312 | c      312 | y     8.6e-01 | y_next 1.5e-03
++++ >        c_new  307 | y_new 1.9e-01 | y_old 1.5e-01 | evals  9927
+    : changes  3364 | dx1 3.5e+03 | dx2 4.9e+01
+    : l_old : cricket
+    : l_new : weevil
+
+
+--> #  313 | c      313 | y     8.9e-01 | y_next 3.8e-04
++++ >        c_new  123 | y_new 3.5e-01 | y_old 2.9e-01 | evals  9901
+    : changes  3373 | dx1 6.7e+03 | dx2 9.8e+01
+    : l_old : walking stick, walkingstick, stick insect
+    : l_new : spiny lobster, langouste, rock lobster, crawfish, 
+
+
+--> #  314 | c      314 | y     7.9e-01 | y_next 3.3e-03
++++ >        c_new  464 | y_new 2.6e-01 | y_old 2.4e-01 | evals  9938
+    : changes  3408 | dx1 1.4e+03 | dx2 1.9e+01
+    : l_old : cockroach, roach
+    : l_new : buckle
+
+
+--> #  317 | c      317 | y     8.0e-01 | y_next 1.7e-03
++++ >        c_new  318 | y_new 6.1e-01 | y_old 2.6e-01 | evals  9978
+    : changes  3279 | dx1 3.9e+03 | dx2 5.7e+01
+    : l_old : leafhopper
+    : l_new : lacewing, lacewing fly
+
+
+--> #  318 | c      318 | y     8.2e-01 | y_next 5.2e-04
++++ >        c_new  312 | y_new 2.2e-01 | y_old 2.1e-01 | evals  9961
+    : changes  3379 | dx1 4.4e+03 | dx2 5.7e+01
+    : l_old : lacewing, lacewing fly
+    : l_new : cricket
+
+
+--> #  321 | c      321 | y     8.1e-01 | y_next 4.9e-04
++++ >        c_new  301 | y_new 2.2e-01 | y_old 1.0e-01 | evals  9910
+    : changes  3311 | dx1 5.1e+03 | dx2 7.7e+01
+    : l_old : admiral
+    : l_new : ladybug, ladybeetle, lady beetle, ladybird, ladybi
+
+
+--> #  322 | c      322 | y     8.4e-01 | y_next 2.4e-03
++++ >        c_new  329 | y_new 2.8e-01 | y_old 2.6e-01 | evals  9955
+    : changes  3292 | dx1 9.3e+03 | dx2 1.3e+02
+    : l_old : ringlet, ringlet butterfly
+    : l_new : sea cucumber, holothurian
+
+
+--> #  323 | c      323 | y     8.1e-01 | y_next 1.2e-03
+    > fail | evals 10000
+
+--> #  324 | c      324 | y     8.1e-01 | y_next 2.4e-03
++++ >        c_new  322 | y_new 3.4e-01 | y_old 2.5e-01 | evals  9922
+    : changes  3342 | dx1 7.2e+03 | dx2 1.2e+02
+    : l_old : cabbage butterfly
+    : l_new : ringlet, ringlet butterfly
+
+
+--> #  325 | c      325 | y     8.0e-01 | y_next 9.8e-03
++++ >        c_new  324 | y_new 4.0e-01 | y_old 3.4e-01 | evals  9985
+    : changes  3316 | dx1 2.0e+03 | dx2 2.7e+01
+    : l_old : sulphur butterfly, sulfur butterfly
+    : l_new : cabbage butterfly
+
+
+--> #  326 | c      326 | y     7.6e-01 | y_next 4.4e-03
++++ >        c_new  322 | y_new 3.0e-01 | y_old 2.6e-01 | evals  9924
+    : changes  3311 | dx1 1.2e+03 | dx2 1.9e+01
+    : l_old : lycaenid, lycaenid butterfly
+    : l_new : ringlet, ringlet butterfly
+
+
+--> #  327 | c      327 | y     7.4e-01 | y_next 1.2e-03
+    > fail | evals 10000
+
+--> #  328 | c      328 | y     8.3e-01 | y_next 1.4e-02
++++ >        c_new  108 | y_new 3.8e-01 | y_old 3.4e-01 | evals  9999
+    : changes  3354 | dx1 5.2e+03 | dx2 7.2e+01
+    : l_old : sea urchin
+    : l_new : sea anemone, anemone
+
+
+--> #  329 | c      329 | y     7.2e-01 | y_next 5.9e-04
++++ >        c_new   65 | y_new 2.9e-01 | y_old 1.3e-01 | evals  9945
+    : changes  3358 | dx1 1.2e+04 | dx2 1.6e+02
+    : l_old : sea cucumber, holothurian
+    : l_new : sea snake
+
+
+--> #  330 | c      330 | y     7.7e-01 | y_next 1.9e-02
++++ >        c_new  331 | y_new 3.8e-01 | y_old 3.7e-01 | evals  9936
+    : changes  3253 | dx1 3.2e+03 | dx2 4.5e+01
+    : l_old : wood rabbit, cottontail, cottontail rabbit
+    : l_new : hare
+
+
+--> #  331 | c      331 | y     6.4e-01 | y_next 1.6e-01
++++ >        c_new   18 | y_new 4.1e-01 | y_old 3.9e-01 | evals  9988
+    : changes  3319 | dx1 5.7e+02 | dx2 7.9e+00
+    : l_old : hare
+    : l_new : magpie
+
+
+--> #  332 | c      332 | y     8.6e-01 | y_next 1.3e-03
++++ >        c_new  284 | y_new 3.4e-01 | y_old 2.6e-01 | evals  9996
+    : changes  3364 | dx1 4.4e+03 | dx2 6.3e+01
+    : l_old : angora, angora rabbit
+    : l_new : siamese cat, siamese
+
+
+--> #  333 | c      333 | y     8.2e-01 | y_next 2.8e-03
+    > fail | evals 10000
+
+--> #  334 | c      334 | y     8.3e-01 | y_next 1.5e-03
++++ >        c_new  261 | y_new 2.5e-01 | y_old 2.2e-01 | evals  9905
+    : changes  3335 | dx1 3.2e+03 | dx2 4.4e+01
+    : l_old : porcupine, hedgehog
+    : l_new : keeshond
+
+
+--> #  335 | c      335 | y     6.2e-01 | y_next 1.4e-02
++++ >        c_new  378 | y_new 6.8e-02 | y_old 6.8e-02 | evals  9944
+    : changes  3374 | dx1 1.5e+03 | dx2 2.0e+01
+    : l_old : fox squirrel, eastern fox squirrel, sciurus niger
+    : l_new : capuchin, ringtail, cebus capucinus
+
+
+--> #  336 | c      336 | y     8.1e-01 | y_next 2.8e-03
++++ >        c_new  334 | y_new 3.7e-01 | y_old 2.0e-01 | evals  9980
+    : changes  3281 | dx1 5.8e+03 | dx2 8.7e+01
+    : l_old : marmot
+    : l_new : porcupine, hedgehog
+
+
+--> #  337 | c      337 | y     8.2e-01 | y_next 1.8e-03
++++ >        c_new  336 | y_new 4.2e-01 | y_old 3.8e-01 | evals  9940
+    : changes  3312 | dx1 1.4e+03 | dx2 1.9e+01
+    : l_old : beaver
+    : l_new : marmot
+
+
+--> #  338 | c      338 | y     8.8e-01 | y_next 9.2e-04
++++ >        c_new  253 | y_new 2.6e-01 | y_old 2.4e-01 | evals  9923
+    : changes  3219 | dx1 2.1e+03 | dx2 2.8e+01
+    : l_old : guinea pig, cavia cobaya
+    : l_new : basenji
+
+
+--> #  339 | c      339 | y     8.3e-01 | y_next 8.9e-04
++++ >        c_new  354 | y_new 1.7e-01 | y_old 1.6e-01 | evals  9967
+    : changes  3383 | dx1 7.5e+03 | dx2 1.1e+02
+    : l_old : sorrel
+    : l_new : arabian camel, dromedary, camelus dromedarius
+
+
+--> #  340 | c      340 | y     8.1e-01 | y_next 7.5e-04
+    > fail | evals 10000
+
+--> #  341 | c      341 | y     7.8e-01 | y_next 7.1e-04
++++ >        c_new  333 | y_new 1.7e-01 | y_old 1.5e-01 | evals  9971
+    : changes  3358 | dx1 4.1e+03 | dx2 5.5e+01
+    : l_old : hog, pig, grunter, squealer, sus scrofa
+    : l_new : hamster
+
+
+--> #  343 | c      343 | y     8.0e-01 | y_next 1.6e-02
++++ >        c_new  342 | y_new 3.8e-01 | y_old 3.6e-01 | evals  9918
+    : changes  3280 | dx1 2.4e+03 | dx2 3.4e+01
+    : l_old : warthog
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  344 | c      344 | y     8.5e-01 | y_next 3.7e-04
++++ >        c_new  341 | y_new 3.4e-01 | y_old 3.3e-01 | evals  9978
+    : changes  3434 | dx1 6.7e+02 | dx2 8.9e+00
+    : l_old : hippopotamus, hippo, river horse, hippopotamus amp
+    : l_new : hog, pig, grunter, squealer, sus scrofa
+
+
+--> #  345 | c      345 | y     8.9e-01 | y_next 3.2e-02
++++ >        c_new  347 | y_new 4.1e-01 | y_old 4.1e-01 | evals  9983
+    : changes  3293 | dx1 1.7e+03 | dx2 2.4e+01
+    : l_old : ox
+    : l_new : bison
+
+
+--> #  346 | c      346 | y     8.4e-01 | y_next 6.5e-03
++++ >        c_new  342 | y_new 2.0e-01 | y_old 1.7e-01 | evals  9930
+    : changes  3360 | dx1 2.4e+03 | dx2 3.3e+01
+    : l_old : water buffalo, water ox, asiatic buffalo, bubalus 
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  347 | c      347 | y     8.0e-01 | y_next 7.1e-03
++++ >        c_new  342 | y_new 3.5e-01 | y_old 3.5e-01 | evals  9971
+    : changes  3198 | dx1 3.6e+02 | dx2 5.2e+00
+    : l_old : bison
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  348 | c      348 | y     7.9e-01 | y_next 4.0e-03
++++ >        c_new   61 | y_new 2.2e-01 | y_old 1.8e-01 | evals  9961
+    : changes  3258 | dx1 8.5e+03 | dx2 1.2e+02
+    : l_old : ram, tup
+    : l_new : boa constrictor, constrictor constrictor
+
+
+--> #  349 | c      349 | y     7.9e-01 | y_next 7.7e-02
++++ >        c_new  348 | y_new 3.7e-01 | y_old 3.5e-01 | evals  9926
+    : changes  3367 | dx1 1.9e+03 | dx2 2.8e+01
+    : l_old : bighorn, bighorn sheep, cimarron, rocky mountain b
+    : l_new : ram, tup
+
+
+--> #  350 | c      350 | y     7.9e-01 | y_next 1.8e-03
++++ >        c_new  460 | y_new 1.2e-01 | y_old 1.1e-01 | evals  9949
+    : changes  3433 | dx1 7.7e+03 | dx2 1.1e+02
+    : l_old : ibex, capra ibex
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  351 | c      351 | y     7.0e-01 | y_next 7.1e-02
++++ >        c_new  352 | y_new 2.1e-01 | y_old 1.9e-01 | evals  9975
+    : changes  2887 | dx1 5.9e+02 | dx2 9.6e+00
+    : l_old : hartebeest
+    : l_new : impala, aepyceros melampus
+
+
+--> #  352 | c      352 | y     7.5e-01 | y_next 3.2e-02
++++ >        c_new  331 | y_new 3.1e-01 | y_old 2.7e-01 | evals  9961
+    : changes  3333 | dx1 1.4e+03 | dx2 1.8e+01
+    : l_old : impala, aepyceros melampus
+    : l_new : hare
+
+
+--> #  353 | c      353 | y     6.7e-01 | y_next 1.8e-01
++++ >        c_new  352 | y_new 4.2e-01 | y_old 4.1e-01 | evals  9909
+    : changes  3331 | dx1 5.7e+02 | dx2 8.0e+00
+    : l_old : gazelle
+    : l_new : impala, aepyceros melampus
+
+
+--> #  354 | c      354 | y     8.7e-01 | y_next 8.3e-03
++++ >        c_new  352 | y_new 2.0e-01 | y_old 1.9e-01 | evals  9932
+    : changes  3343 | dx1 2.3e+03 | dx2 3.4e+01
+    : l_old : arabian camel, dromedary, camelus dromedarius
+    : l_new : impala, aepyceros melampus
+
+
+--> #  355 | c      355 | y     8.0e-01 | y_next 7.4e-04
++++ >        c_new  104 | y_new 3.2e-01 | y_old 3.0e-01 | evals  9901
+    : changes  3351 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : llama
+    : l_new : wallaby, brush kangaroo
+
+
+--> #  357 | c      357 | y     7.1e-01 | y_next 3.5e-02
++++ >        c_new  336 | y_new 3.4e-01 | y_old 2.9e-01 | evals  9971
+    : changes  3367 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : mink
+    : l_new : marmot
+
+
+--> #  359 | c      359 | y     5.9e-01 | y_next 1.5e-01
++++ >        c_new  356 | y_new 3.6e-01 | y_old 3.6e-01 | evals  9961
+    : changes  3321 | dx1 1.5e+03 | dx2 2.1e+01
+    : l_old : black-footed ferret, ferret, mustela nigripes
+    : l_new : weasel
+
+
+--> #  360 | c      360 | y     8.5e-01 | y_next 2.0e-02
++++ >        c_new  356 | y_new 4.0e-01 | y_old 3.9e-01 | evals  9977
+    : changes  3091 | dx1 1.6e+03 | dx2 2.3e+01
+    : l_old : otter
+    : l_new : weasel
+
+
+--> #  361 | c      361 | y     8.0e-01 | y_next 3.3e-03
++++ >        c_new  345 | y_new 9.7e-02 | y_old 8.0e-02 | evals  9920
+    : changes  3396 | dx1 1.5e+03 | dx2 2.1e+01
+    : l_old : skunk, polecat, wood pussy
+    : l_new : ox
+
+
+--> #  362 | c      362 | y     7.9e-01 | y_next 2.4e-03
+    > fail | evals 10000
+
+--> #  363 | c      363 | y     8.8e-01 | y_next 7.0e-04
++++ >        c_new   30 | y_new 2.0e-01 | y_old 1.9e-01 | evals  9928
+    : changes  3329 | dx1 4.1e+02 | dx2 5.6e+00
+    : l_old : armadillo
+    : l_new : bullfrog, rana catesbeiana
+
+
+--> #  364 | c      364 | y     7.9e-01 | y_next 1.7e-03
++++ >        c_new  380 | y_new 2.6e-01 | y_old 2.2e-01 | evals  9903
+    : changes  3101 | dx1 5.1e+03 | dx2 7.9e+01
+    : l_old : three-toed sloth, ai, bradypus tridactylus
+    : l_new : titi, titi monkey
+
+
+--> #  365 | c      365 | y     7.2e-01 | y_next 2.9e-03
++++ >        c_new  150 | y_new 1.6e-01 | y_old 1.2e-01 | evals  9918
+    : changes  3305 | dx1 5.2e+03 | dx2 7.1e+01
+    : l_old : orangutan, orang, orangutang, pongo pygmaeus
+    : l_new : sea lion
+
+
+--> #  366 | c      366 | y     9.2e-01 | y_next 4.3e-03
++++ >        c_new  267 | y_new 1.4e-01 | y_old 1.4e-01 | evals  9979
+    : changes  2779 | dx1 3.0e+02 | dx2 4.9e+00
+    : l_old : gorilla, gorilla gorilla
+    : l_new : standard poodle
+
+
+--> #  367 | c      367 | y     7.6e-01 | y_next 4.5e-02
++++ >        c_new  366 | y_new 3.8e-01 | y_old 3.8e-01 | evals  9971
+    : changes  3145 | dx1 1.5e+02 | dx2 2.2e+00
+    : l_old : chimpanzee, chimp, pan troglodytes
+    : l_new : gorilla, gorilla gorilla
+
+
+--> #  368 | c      368 | y     8.2e-01 | y_next 9.2e-03
++++ >        c_new  379 | y_new 4.2e-01 | y_old 3.8e-01 | evals  9944
+    : changes  3349 | dx1 1.0e+03 | dx2 1.6e+01
+    : l_old : gibbon, hylobates lar
+    : l_new : howler monkey, howler
+
+
+--> #  369 | c      369 | y     7.0e-01 | y_next 3.9e-02
++++ >        c_new  368 | y_new 3.6e-01 | y_old 3.4e-01 | evals  9948
+    : changes  3358 | dx1 1.4e+03 | dx2 2.0e+01
+    : l_old : siamang, hylobates syndactylus, symphalangus synda
+    : l_new : gibbon, hylobates lar
+
+
+--> #  370 | c      370 | y     7.3e-01 | y_next 3.5e-03
++++ >        c_new  375 | y_new 3.5e-01 | y_old 3.2e-01 | evals  9902
+    : changes  3324 | dx1 6.9e+03 | dx2 1.0e+02
+    : l_old : guenon, guenon monkey
+    : l_new : colobus, colobus monkey
+
+
+--> #  371 | c      371 | y     7.7e-01 | y_next 1.3e-03
++++ >        c_new  370 | y_new 3.1e-01 | y_old 3.0e-01 | evals  9994
+    : changes  3314 | dx1 5.3e+03 | dx2 7.2e+01
+    : l_old : patas, hussar monkey, erythrocebus patas
+    : l_new : guenon, guenon monkey
+
+
+--> #  372 | c      372 | y     7.9e-01 | y_next 2.5e-03
++++ >        c_new  373 | y_new 3.9e-01 | y_old 3.5e-01 | evals  9980
+    : changes  3262 | dx1 2.5e+03 | dx2 3.5e+01
+    : l_old : baboon
+    : l_new : macaque
+
+
+--> #  373 | c      373 | y     7.9e-01 | y_next 1.1e-02
++++ >        c_new  296 | y_new 1.7e-01 | y_old 1.4e-01 | evals  9932
+    : changes  3250 | dx1 6.2e+03 | dx2 8.8e+01
+    : l_old : macaque
+    : l_new : ice bear, polar bear, ursus maritimus, thalarctos 
+
+
+--> #  374 | c      374 | y     8.4e-01 | y_next 1.4e-03
++++ >        c_new  372 | y_new 4.7e-01 | y_old 2.6e-01 | evals  9962
+    : changes  3395 | dx1 1.8e+03 | dx2 2.4e+01
+    : l_old : langur
+    : l_new : baboon
+
+
+--> #  375 | c      375 | y     8.6e-01 | y_next 2.9e-03
++++ >        c_new  374 | y_new 4.0e-01 | y_old 3.4e-01 | evals  9903
+    : changes  3335 | dx1 5.1e+02 | dx2 7.8e+00
+    : l_old : colobus, colobus monkey
+    : l_new : langur
+
+
+--> #  376 | c      376 | y     8.1e-01 | y_next 7.0e-04
+    > fail | evals 10000
+
+--> #  377 | c      377 | y     8.3e-01 | y_next 3.6e-02
++++ >        c_new  380 | y_new 3.0e-01 | y_old 2.8e-01 | evals  9942
+    : changes  3405 | dx1 1.5e+03 | dx2 2.1e+01
+    : l_old : marmoset
+    : l_new : titi, titi monkey
+
+
+--> #  378 | c      378 | y     6.6e-01 | y_next 6.4e-02
++++ >        c_new  373 | y_new 2.3e-01 | y_old 2.3e-01 | evals  9989
+    : changes  3320 | dx1 7.1e+02 | dx2 9.8e+00
+    : l_old : capuchin, ringtail, cebus capucinus
+    : l_new : macaque
+
+
+--> #  379 | c      379 | y     6.5e-01 | y_next 4.0e-02
++++ >        c_new  374 | y_new 3.1e-01 | y_old 3.0e-01 | evals  9934
+    : changes  3293 | dx1 5.8e+02 | dx2 8.9e+00
+    : l_old : howler monkey, howler
+    : l_new : langur
+
+
+--> #  381 | c      381 | y     6.4e-01 | y_next 6.5e-03
++++ >        c_new  370 | y_new 3.5e-01 | y_old 3.4e-01 | evals  9929
+    : changes  3251 | dx1 3.0e+03 | dx2 4.3e+01
+    : l_old : spider monkey, ateles geoffroyi
+    : l_new : guenon, guenon monkey
+
+
+--> #  382 | c      382 | y     7.2e-01 | y_next 9.0e-02
+    > fail | evals 10000
+
+--> #  383 | c      383 | y     8.1e-01 | y_next 6.7e-03
++++ >        c_new  362 | y_new 4.0e-01 | y_old 3.4e-01 | evals  9990
+    : changes  3295 | dx1 8.8e+02 | dx2 1.3e+01
+    : l_old : madagascar cat, ring-tailed lemur, lemur catta
+    : l_new : badger
+
+
+--> #  385 | c      385 | y     8.4e-01 | y_next 9.6e-03
++++ >        c_new  386 | y_new 3.4e-01 | y_old 3.3e-01 | evals 10000
+    : changes  3249 | dx1 2.8e+03 | dx2 4.1e+01
+    : l_old : indian elephant, elephas maximus
+    : l_new : african elephant, loxodonta africana
+
+
+--> #  386 | c      386 | y     7.5e-01 | y_next 4.9e-03
++++ >        c_new  977 | y_new 3.6e-01 | y_old 3.5e-01 | evals  9907
+    : changes  3335 | dx1 4.5e+03 | dx2 6.3e+01
+    : l_old : african elephant, loxodonta africana
+    : l_new : sandbar, sand bar
+
+
+--> #  387 | c      387 | y     8.4e-01 | y_next 1.2e-03
++++ >        c_new  380 | y_new 2.8e-01 | y_old 1.9e-01 | evals  9922
+    : changes  3384 | dx1 7.3e+03 | dx2 1.1e+02
+    : l_old : lesser panda, red panda, panda, bear cat, cat bear
+    : l_new : titi, titi monkey
+
+
+--> #  388 | c      388 | y     8.8e-01 | y_next 4.2e-04
+    > fail | evals 10000
+
+--> #  389 | c      389 | y     8.1e-01 | y_next 1.3e-02
++++ >        c_new    0 | y_new 4.2e-01 | y_old 4.1e-01 | evals  9958
+    : changes  3365 | dx1 2.5e+03 | dx2 3.8e+01
+    : l_old : barracouta, snoek
+    : l_new : tench, tinca tinca
+
+
+--> #  391 | c      391 | y     8.1e-01 | y_next 3.5e-03
++++ >        c_new    2 | y_new 2.3e-01 | y_old 2.1e-01 | evals  9987
+    : changes  3397 | dx1 7.4e+03 | dx2 1.1e+02
+    : l_old : coho, cohoe, coho salmon, blue jack, silver salmon
+    : l_new : great white shark, white shark, man-eater, man-eat
+
+
+--> #  392 | c      392 | y     8.7e-01 | y_next 8.7e-04
++++ >        c_new    5 | y_new 2.0e-01 | y_old 1.8e-01 | evals  9907
+    : changes  3366 | dx1 3.2e+03 | dx2 5.8e+01
+    : l_old : rock beauty, holocanthus tricolor
+    : l_new : electric ray, crampfish, numbfish, torpedo
+
+
+--> #  393 | c      393 | y     8.3e-01 | y_next 3.5e-02
++++ >        c_new  108 | y_new 3.6e-01 | y_old 3.4e-01 | evals  9985
+    : changes  3390 | dx1 4.3e+03 | dx2 6.1e+01
+    : l_old : anemone fish
+    : l_new : sea anemone, anemone
+
+
+--> #  394 | c      394 | y     8.5e-01 | y_next 6.9e-04
++++ >        c_new  206 | y_new 1.2e-01 | y_old 1.1e-01 | evals  9907
+    : changes  3269 | dx1 4.6e+03 | dx2 6.7e+01
+    : l_old : sturgeon
+    : l_new : curly-coated retriever
+
+
+--> #  397 | c      397 | y     7.7e-01 | y_next 9.5e-04
+    > fail | evals 10000
+
+--> #  398 | c      398 | y     8.4e-01 | y_next 4.9e-03
++++ >        c_new  784 | y_new 3.6e-01 | y_old 3.5e-01 | evals  9977
+    : changes  2883 | dx1 3.2e+03 | dx2 6.4e+01
+    : l_old : abacus
+    : l_new : screwdriver
+
+
+--> #  399 | c      399 | y     8.5e-01 | y_next 1.2e-03
++++ >        c_new  490 | y_new 3.9e-01 | y_old 3.7e-01 | evals  9933
+    : changes  3357 | dx1 1.4e+03 | dx2 2.0e+01
+    : l_old : abaya
+    : l_new : chain mail, ring mail, mail, chain armor, chain ar
+
+
+Completed. Successful: 89.66% (total images 87)
+DONE ( 68468.43 sec.) 
+
+
+===================== --------------------------------------
+[2023-12-06 11-35-14] Work is finished (68566.71 sec. total)
+
+

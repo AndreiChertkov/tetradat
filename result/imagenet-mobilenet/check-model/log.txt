@@ -1,0 +1,30 @@
+[2023-12-07 11-37-33] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "mobilenet"
+Task                : "check"
+Kind of task        : "model"
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (    18.59 sec.) 
+
+
+.... Check model accuracy
+Accuracy   tst : 84.70% (      847 /      1000) | time =      25.86 sec
+
+DONE (    25.87 sec.) 
+
+.... Plot several model predictions
+DONE (     2.73 sec.) 
+
+
+===================== -----------------------------------
+[2023-12-07 11-38-20] Work is finished (47.24 sec. total)
+
+

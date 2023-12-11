@@ -1,0 +1,24 @@
+[2023-12-07 11-19-33] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Task                : "check"
+Kind of task        : "data"
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     7.57 sec.) 
+
+
+.... Check data for "imagenet" dataset
+Dataset             : imagenet
+Number of classes   :       1000
+Size of tst dataset :       1000
+
+DONE (    10.40 sec.) 
+
+
+===================== -----------------------------------
+[2023-12-07 11-19-51] Work is finished (17.98 sec. total)
+
+

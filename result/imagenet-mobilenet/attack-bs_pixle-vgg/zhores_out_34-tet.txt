@@ -1,0 +1,5531 @@
+[2023-11-24 12-17-25] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "mobilenet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_pixle"
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.06 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (    13.56 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     3.11 sec.) 
+
+
+.... Start attack on images with baseline "pixle"
+
+--> #    0 | c        0 | y     5.8e-01 | y_next 1.6e-02
++++ >        c_new    1 | y_new 4.5e-02 | y_old 4.3e-02 | evals  5239
+    : changes  1783 | dx1 4.5e+03 | dx2 8.3e+01
+    : l_old : tench, tinca tinca
+    : l_new : goldfish, carassius auratus
+
+
+--> #    1 | c        1 | y     6.0e-01 | y_next 3.8e-03
++++ >        c_new  397 | y_new 3.2e-02 | y_old 3.0e-02 | evals  7655
+    : changes  1680 | dx1 5.3e+03 | dx2 1.0e+02
+    : l_old : goldfish, carassius auratus
+    : l_new : puffer, pufferfish, blowfish, globefish
+
+
+--> #    2 | c        2 | y     7.1e-01 | y_next 8.6e-02
++++ >        c_new  344 | y_new 1.1e-01 | y_old 1.0e-01 | evals  2353
+    : changes   657 | dx1 2.7e+03 | dx2 7.5e+01
+    : l_old : great white shark, white shark, man-eater, man-eat
+    : l_new : hippopotamus, hippo, river horse, hippopotamus amp
+
+
+--> #    3 | c        3 | y     7.9e-01 | y_next 4.5e-02
++++ >        c_new    2 | y_new 3.8e-01 | y_old 3.8e-01 | evals  2421
+    : changes  1238 | dx1 1.9e+03 | dx2 4.0e+01
+    : l_old : tiger shark, galeocerdo cuvieri
+    : l_new : great white shark, white shark, man-eater, man-eat
+
+WRN : base model is failed for "4" (SKIP)
+
+--> #    5 | c        5 | y     9.5e-01 | y_next 6.5e-03
++++ >        c_new    6 | y_new 4.2e-01 | y_old 3.8e-01 | evals  3249
+    : changes  1536 | dx1 8.0e+03 | dx2 1.6e+02
+    : l_old : electric ray, crampfish, numbfish, torpedo
+    : l_new : stingray
+
+WRN : base model is failed for "6" (SKIP)
+
+--> #    7 | c        7 | y     3.8e-01 | y_next 1.1e-01
++++ >        c_new   80 | y_new 1.3e-01 | y_old 1.1e-01 | evals   587
+    : changes   332 | dx1 1.1e+03 | dx2 4.5e+01
+    : l_old : cock
+    : l_new : black grouse
+
+
+--> #    8 | c        8 | y     3.8e-01 | y_next 3.3e-01
++++ >        c_new    7 | y_new 3.5e-01 | y_old 3.5e-01 | evals   811
+    : changes   250 | dx1 5.2e+02 | dx2 2.4e+01
+    : l_old : hen
+    : l_new : cock
+
+
+--> #    9 | c        9 | y     9.0e-01 | y_next 2.4e-03
++++ >        c_new  238 | y_new 1.4e-01 | y_old 1.4e-01 | evals  2153
+    : changes   784 | dx1 1.9e+03 | dx2 5.3e+01
+    : l_old : ostrich, struthio camelus
+    : l_new : greater swiss mountain dog
+
+
+--> #   10 | c       10 | y     3.3e-01 | y_next 1.5e-01
++++ >        c_new  141 | y_new 1.0e-01 | y_old 8.2e-02 | evals   847
+    : changes   468 | dx1 1.3e+03 | dx2 4.6e+01
+    : l_old : brambling, fringilla montifringilla
+    : l_new : redshank, tringa totanus
+
+
+--> #   11 | c       11 | y     7.6e-01 | y_next 2.0e-03
+    > fail | evals 10001
+
+--> #   12 | c       12 | y     7.5e-01 | y_next 9.5e-03
+    > fail | evals 10001
+
+--> #   13 | c       13 | y     3.7e-01 | y_next 1.3e-01
++++ >        c_new   91 | y_new 1.4e-01 | y_old 1.2e-01 | evals   369
+    : changes   187 | dx1 6.3e+02 | dx2 3.4e+01
+    : l_old : junco, snowbird
+    : l_new : coucal
+
+
+--> #   14 | c       14 | y     8.9e-01 | y_next 1.7e-03
+    > fail | evals 10001
+
+--> #   15 | c       15 | y     7.4e-01 | y_next 3.6e-03
++++ >        c_new   70 | y_new 8.8e-02 | y_old 7.4e-02 | evals  4615
+    : changes  2269 | dx1 5.6e+03 | dx2 9.2e+01
+    : l_old : robin, american robin, turdus migratorius
+    : l_new : harvestman, daddy longlegs, phalangium opilio
+
+
+--> #   16 | c       16 | y     9.3e-01 | y_next 2.1e-03
++++ >        c_new  133 | y_new 9.8e-02 | y_old 8.4e-02 | evals  3309
+    : changes  1355 | dx1 4.5e+03 | dx2 9.0e+01
+    : l_old : bulbul
+    : l_new : bittern
+
+
+--> #   17 | c       17 | y     8.7e-01 | y_next 3.2e-03
++++ >        c_new   19 | y_new 1.8e-01 | y_old 1.7e-01 | evals  3509
+    : changes  1581 | dx1 5.3e+03 | dx2 9.6e+01
+    : l_old : jay
+    : l_new : chickadee
+
+
+--> #   18 | c       18 | y     7.5e-01 | y_next 2.3e-02
++++ >        c_new  134 | y_new 1.5e-01 | y_old 1.5e-01 | evals  1767
+    : changes   703 | dx1 1.8e+03 | dx2 5.0e+01
+    : l_old : magpie
+    : l_new : crane
+
+
+--> #   19 | c       19 | y     8.2e-01 | y_next 2.3e-03
++++ >        c_new   13 | y_new 2.7e-01 | y_old 2.7e-01 | evals  7239
+    : changes  2019 | dx1 2.9e+03 | dx2 5.7e+01
+    : l_old : chickadee
+    : l_new : junco, snowbird
+
+
+--> #   20 | c       20 | y     7.6e-01 | y_next 1.2e-02
++++ >        c_new  141 | y_new 2.2e-01 | y_old 2.1e-01 | evals  1603
+    : changes  1001 | dx1 2.2e+03 | dx2 5.2e+01
+    : l_old : water ouzel, dipper
+    : l_new : redshank, tringa totanus
+
+WRN : base model is failed for "21" (SKIP)
+
+--> #   22 | c       22 | y     6.8e-01 | y_next 2.8e-02
++++ >        c_new   89 | y_new 2.0e-01 | y_old 2.0e-01 | evals  4105
+    : changes  1289 | dx1 2.6e+03 | dx2 8.0e+01
+    : l_old : bald eagle, american eagle, haliaeetus leucocephal
+    : l_new : sulphur-crested cockatoo, kakatoe galerita, cacatu
+
+WRN : base model is failed for "23" (SKIP)
+
+--> #   24 | c       24 | y     7.6e-01 | y_next 1.7e-03
+    > fail | evals 10001
+
+--> #   25 | c       25 | y     8.3e-01 | y_next 2.2e-02
++++ >        c_new   28 | y_new 3.2e-01 | y_old 3.2e-01 | evals  5119
+    : changes  2147 | dx1 7.3e+03 | dx2 1.1e+02
+    : l_old : european fire salamander, salamandra salamandra
+    : l_new : spotted salamander, ambystoma maculatum
+
+
+--> #   26 | c       26 | y     2.9e-01 | y_next 1.3e-01
++++ >        c_new   32 | y_new 2.3e-01 | y_old 2.2e-01 | evals   331
+    : changes   214 | dx1 7.9e+02 | dx2 3.8e+01
+    : l_old : common newt, triturus vulgaris
+    : l_new : tailed frog, bell toad, ribbed toad, tailed toad, 
+
+
+--> #   27 | c       27 | y     8.4e-01 | y_next 2.0e-02
++++ >        c_new  327 | y_new 1.8e-01 | y_old 1.7e-01 | evals  4483
+    : changes  2218 | dx1 8.0e+03 | dx2 1.3e+02
+    : l_old : eft
+    : l_new : starfish, sea star
+
+
+--> #   28 | c       28 | y     7.9e-01 | y_next 1.4e-02
++++ >        c_new   25 | y_new 3.3e-01 | y_old 3.2e-01 | evals  3111
+    : changes  1481 | dx1 5.7e+03 | dx2 1.1e+02
+    : l_old : spotted salamander, ambystoma maculatum
+    : l_new : european fire salamander, salamandra salamandra
+
+WRN : base model is failed for "29" (SKIP)
+
+--> #   30 | c       30 | y     8.3e-01 | y_next 8.8e-03
++++ >        c_new   31 | y_new 2.5e-01 | y_old 2.3e-01 | evals  4129
+    : changes  1784 | dx1 6.2e+03 | dx2 1.1e+02
+    : l_old : bullfrog, rana catesbeiana
+    : l_new : tree frog, tree-frog
+
+
+--> #   31 | c       31 | y     6.4e-01 | y_next 2.1e-01
++++ >        c_new   32 | y_new 3.8e-01 | y_old 3.6e-01 | evals   611
+    : changes   304 | dx1 1.1e+03 | dx2 4.5e+01
+    : l_old : tree frog, tree-frog
+    : l_new : tailed frog, bell toad, ribbed toad, tailed toad, 
+
+
+--> #   32 | c       32 | y     9.0e-01 | y_next 1.6e-02
++++ >        c_new   30 | y_new 2.9e-01 | y_old 2.8e-01 | evals  5631
+    : changes  2977 | dx1 5.5e+03 | dx2 7.5e+01
+    : l_old : tailed frog, bell toad, ribbed toad, tailed toad, 
+    : l_new : bullfrog, rana catesbeiana
+
+WRN : base model is failed for "33" (SKIP)
+
+--> #   34 | c       34 | y     7.9e-01 | y_next 1.3e-02
+    > fail | evals 10001
+
+--> #   35 | c       35 | y     8.6e-01 | y_next 4.6e-02
++++ >        c_new  344 | y_new 1.0e-01 | y_old 9.9e-02 | evals  1751
+    : changes  1073 | dx1 4.9e+03 | dx2 1.1e+02
+    : l_old : mud turtle
+    : l_new : hippopotamus, hippo, river horse, hippopotamus amp
+
+
+--> #   36 | c       36 | y     5.8e-01 | y_next 7.7e-02
++++ >        c_new   35 | y_new 2.5e-01 | y_old 2.5e-01 | evals  2719
+    : changes  1532 | dx1 4.0e+03 | dx2 7.3e+01
+    : l_old : terrapin
+    : l_new : mud turtle
+
+WRN : base model is failed for "37" (SKIP)
+
+--> #   38 | c       38 | y     6.8e-01 | y_next 5.1e-02
++++ >        c_new   60 | y_new 2.6e-01 | y_old 2.3e-01 | evals  1055
+    : changes   529 | dx1 1.2e+03 | dx2 3.9e+01
+    : l_old : banded gecko
+    : l_new : night snake, hypsiglena torquata
+
+
+--> #   39 | c       39 | y     8.3e-01 | y_next 7.0e-03
++++ >        c_new  344 | y_new 4.4e-02 | y_old 4.2e-02 | evals  5677
+    : changes  2430 | dx1 7.6e+03 | dx2 1.1e+02
+    : l_old : common iguana, iguana, iguana iguana
+    : l_new : hippopotamus, hippo, river horse, hippopotamus amp
+
+WRN : attr model is failed for "40" (SKIP)
+
+--> #   41 | c       41 | y     3.0e-01 | y_next 1.0e-01
++++ >        c_new   45 | y_new 1.1e-01 | y_old 1.1e-01 | evals   255
+    : changes   113 | dx1 4.2e+02 | dx2 2.8e+01
+    : l_old : whiptail, whiptail lizard
+    : l_new : gila monster, heloderma suspectum
+
+
+--> #   42 | c       42 | y     8.3e-01 | y_next 3.4e-02
++++ >        c_new   41 | y_new 1.8e-01 | y_old 1.7e-01 | evals  2735
+    : changes  1030 | dx1 2.2e+03 | dx2 5.5e+01
+    : l_old : agama
+    : l_new : whiptail, whiptail lizard
+
+
+--> #   43 | c       43 | y     7.7e-01 | y_next 1.1e-01
++++ >        c_new   42 | y_new 4.2e-01 | y_old 3.6e-01 | evals   747
+    : changes   465 | dx1 1.3e+03 | dx2 5.1e+01
+    : l_old : frilled lizard, chlamydosaurus kingi
+    : l_new : agama
+
+WRN : attr model is failed for "44" (SKIP)
+
+--> #   45 | c       45 | y     8.1e-01 | y_next 2.6e-03
++++ >        c_new  114 | y_new 3.1e-01 | y_old 2.9e-01 | evals  1719
+    : changes   875 | dx1 1.8e+03 | dx2 4.6e+01
+    : l_old : gila monster, heloderma suspectum
+    : l_new : slug
+
+WRN : attr model is failed for "46" (SKIP)
+
+--> #   47 | c       47 | y     7.9e-01 | y_next 9.7e-03
++++ >        c_new  109 | y_new 8.7e-02 | y_old 8.6e-02 | evals  2017
+    : changes  1137 | dx1 4.3e+03 | dx2 9.1e+01
+    : l_old : african chameleon, chamaeleo chamaeleon
+    : l_new : brain coral
+
+
+--> #   48 | c       48 | y     8.7e-01 | y_next 3.7e-02
++++ >        c_new  343 | y_new 3.3e-01 | y_old 2.9e-01 | evals   997
+    : changes   552 | dx1 2.4e+03 | dx2 7.4e+01
+    : l_old : komodo dragon, komodo lizard, dragon lizard, giant
+    : l_new : warthog
+
+
+--> #   49 | c       49 | y     8.1e-01 | y_next 5.3e-02
++++ >        c_new   50 | y_new 3.3e-01 | y_old 3.2e-01 | evals  1707
+    : changes   944 | dx1 3.5e+03 | dx2 8.1e+01
+    : l_old : african crocodile, nile crocodile, crocodylus nilo
+    : l_new : american alligator, alligator mississipiensis
+
+WRN : attr model is failed for "50" (SKIP)
+
+--> #   51 | c       51 | y     5.6e-01 | y_next 1.6e-01
++++ >        c_new   47 | y_new 2.9e-01 | y_old 2.8e-01 | evals   307
+    : changes   200 | dx1 4.3e+02 | dx2 2.3e+01
+    : l_old : triceratops
+    : l_new : african chameleon, chamaeleo chamaeleon
+
+
+--> #   52 | c       52 | y     4.7e-01 | y_next 7.6e-02
++++ >        c_new   53 | y_new 1.8e-01 | y_old 1.8e-01 | evals  1739
+    : changes   967 | dx1 3.8e+03 | dx2 8.6e+01
+    : l_old : thunder snake, worm snake, carphophis amoenus
+    : l_new : ringneck snake, ring-necked snake, ring snake
+
+
+--> #   53 | c       53 | y     8.9e-01 | y_next 5.4e-03
++++ >        c_new   25 | y_new 1.4e-01 | y_old 1.3e-01 | evals  2105
+    : changes  1358 | dx1 3.7e+03 | dx2 7.2e+01
+    : l_old : ringneck snake, ring-necked snake, ring snake
+    : l_new : european fire salamander, salamandra salamandra
+
+WRN : attr model is failed for "54" (SKIP)
+WRN : base model is failed for "55" (SKIP)
+WRN : base model is failed for "56" (SKIP)
+
+--> #   57 | c       57 | y     6.0e-01 | y_next 3.0e-02
++++ >        c_new   56 | y_new 8.7e-02 | y_old 8.3e-02 | evals  4429
+    : changes  1300 | dx1 4.8e+03 | dx2 9.5e+01
+    : l_old : garter snake, grass snake
+    : l_new : king snake, kingsnake
+
+WRN : attr model is failed for "58" (SKIP)
+
+--> #   59 | c       59 | y     6.9e-01 | y_next 1.6e-01
++++ >        c_new   55 | y_new 3.8e-01 | y_old 3.8e-01 | evals  2117
+    : changes   606 | dx1 1.7e+03 | dx2 5.2e+01
+    : l_old : vine snake
+    : l_new : green snake, grass snake
+
+WRN : base model is failed for "60" (SKIP)
+
+--> #   61 | c       61 | y     8.7e-01 | y_next 7.3e-03
++++ >        c_new  151 | y_new 7.3e-02 | y_old 6.9e-02 | evals  2433
+    : changes  1429 | dx1 5.2e+03 | dx2 9.8e+01
+    : l_old : boa constrictor, constrictor constrictor
+    : l_new : chihuahua
+
+
+--> #   62 | c       62 | y     3.6e-01 | y_next 3.3e-01
++++ >        c_new   61 | y_new 3.4e-01 | y_old 3.4e-01 | evals    67
+    : changes    36 | dx1 1.0e+02 | dx2 1.3e+01
+    : l_old : rock python, rock snake, python sebae
+    : l_new : boa constrictor, constrictor constrictor
+
+
+--> #   63 | c       63 | y     7.2e-01 | y_next 6.5e-02
++++ >        c_new  883 | y_new 2.0e-01 | y_old 1.7e-01 | evals   985
+    : changes   703 | dx1 2.5e+03 | dx2 6.8e+01
+    : l_old : indian cobra, naja naja
+    : l_new : vase
+
+WRN : attr model is failed for "64" (SKIP)
+WRN : base model is failed for "65" (SKIP)
+WRN : base model is failed for "66" (SKIP)
+
+--> #   67 | c       67 | y     7.0e-01 | y_next 5.8e-02
++++ >        c_new   54 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1117
+    : changes   593 | dx1 2.2e+03 | dx2 6.7e+01
+    : l_old : diamondback, diamondback rattlesnake, crotalus ada
+    : l_new : hognose snake, puff adder, sand viper
+
+
+--> #   68 | c       68 | y     3.7e-01 | y_next 1.4e-01
++++ >        c_new   66 | y_new 1.5e-01 | y_old 1.5e-01 | evals  2955
+    : changes   950 | dx1 3.7e+03 | dx2 8.7e+01
+    : l_old : sidewinder, horned rattlesnake, crotalus cerastes
+    : l_new : horned viper, cerastes, sand viper, horned asp, ce
+
+
+--> #   69 | c       69 | y     7.2e-01 | y_next 1.2e-02
++++ >        c_new   79 | y_new 1.1e-01 | y_old 1.1e-01 | evals  1037
+    : changes   685 | dx1 3.8e+03 | dx2 1.1e+02
+    : l_old : trilobite
+    : l_new : centipede
+
+
+--> #   70 | c       70 | y     7.2e-01 | y_next 1.2e-02
+    > fail | evals 10001
+
+--> #   71 | c       71 | y     9.3e-01 | y_next 2.2e-03
++++ >        c_new  123 | y_new 2.0e-01 | y_old 2.0e-01 | evals  3481
+    : changes  1216 | dx1 1.1e+03 | dx2 3.8e+01
+    : l_old : scorpion
+    : l_new : spiny lobster, langouste, rock lobster, crawfish, 
+
+
+--> #   72 | c       72 | y     4.2e-01 | y_next 2.2e-01
++++ >        c_new   73 | y_new 2.0e-01 | y_old 1.8e-01 | evals  1115
+    : changes   549 | dx1 1.8e+03 | dx2 5.8e+01
+    : l_old : black and gold garden spider, argiope aurantia
+    : l_new : barn spider, araneus cavaticus
+
+WRN : base model is failed for "73" (SKIP)
+
+--> #   74 | c       74 | y     6.1e-01 | y_next 1.3e-01
++++ >        c_new   72 | y_new 3.4e-01 | y_old 3.4e-01 | evals  1549
+    : changes   933 | dx1 2.8e+03 | dx2 6.6e+01
+    : l_old : garden spider, aranea diademata
+    : l_new : black and gold garden spider, argiope aurantia
+
+
+--> #   75 | c       75 | y     7.1e-01 | y_next 5.2e-02
++++ >        c_new   77 | y_new 3.2e-01 | y_old 2.8e-01 | evals  1037
+    : changes   508 | dx1 1.2e+03 | dx2 4.6e+01
+    : l_old : black widow, latrodectus mactans
+    : l_new : wolf spider, hunting spider
+
+
+--> #   76 | c       76 | y     8.3e-01 | y_next 1.3e-02
++++ >        c_new  958 | y_new 9.2e-02 | y_old 7.6e-02 | evals  6025
+    : changes  2364 | dx1 8.9e+03 | dx2 1.3e+02
+    : l_old : tarantula
+    : l_new : hay
+
+
+--> #   77 | c       77 | y     6.1e-01 | y_next 6.2e-02
++++ >        c_new   75 | y_new 2.9e-01 | y_old 2.5e-01 | evals   303
+    : changes   245 | dx1 1.7e+03 | dx2 6.9e+01
+    : l_old : wolf spider, hunting spider
+    : l_new : black widow, latrodectus mactans
+
+
+--> #   78 | c       78 | y     4.6e-01 | y_next 7.3e-02
++++ >        c_new  310 | y_new 1.6e-01 | y_old 1.6e-01 | evals   837
+    : changes   452 | dx1 1.8e+03 | dx2 6.0e+01
+    : l_old : tick
+    : l_new : ant, emmet, pismire
+
+
+--> #   79 | c       79 | y     8.6e-01 | y_next 3.3e-03
+    > fail | evals 10001
+
+--> #   80 | c       80 | y     7.5e-01 | y_next 2.3e-02
++++ >        c_new   83 | y_new 1.4e-01 | y_old 1.4e-01 | evals   845
+    : changes   501 | dx1 1.4e+03 | dx2 4.6e+01
+    : l_old : black grouse
+    : l_new : prairie chicken, prairie grouse, prairie fowl
+
+
+--> #   81 | c       81 | y     9.3e-01 | y_next 2.0e-03
++++ >        c_new  146 | y_new 2.7e-01 | y_old 2.6e-01 | evals  3507
+    : changes  1332 | dx1 4.0e+03 | dx2 7.9e+01
+    : l_old : ptarmigan
+    : l_new : albatross, mollymawk
+
+
+--> #   82 | c       82 | y     7.9e-01 | y_next 5.4e-02
++++ >        c_new   81 | y_new 2.6e-01 | y_old 2.5e-01 | evals  2339
+    : changes  1210 | dx1 2.3e+03 | dx2 4.9e+01
+    : l_old : ruffed grouse, partridge, bonasa umbellus
+    : l_new : ptarmigan
+
+WRN : base model is failed for "83" (SKIP)
+
+--> #   84 | c       84 | y     8.1e-01 | y_next 1.8e-02
++++ >        c_new  303 | y_new 1.6e-01 | y_old 1.4e-01 | evals  2109
+    : changes  1187 | dx1 5.0e+03 | dx2 1.0e+02
+    : l_old : peacock
+    : l_new : long-horned beetle, longicorn, longicorn beetle
+
+
+--> #   85 | c       85 | y     4.9e-01 | y_next 5.1e-02
++++ >        c_new  646 | y_new 1.3e-01 | y_old 1.3e-01 | evals  1355
+    : changes   893 | dx1 2.6e+03 | dx2 6.8e+01
+    : l_old : quail
+    : l_new : maze, labyrinth
+
+
+--> #   86 | c       86 | y     5.5e-01 | y_next 1.7e-01
+    > fail | evals 10001
+
+--> #   87 | c       87 | y     8.3e-01 | y_next 5.0e-03
++++ >        c_new   88 | y_new 8.6e-02 | y_old 8.5e-02 | evals  6345
+    : changes  2632 | dx1 1.3e+04 | dx2 1.9e+02
+    : l_old : african grey, african gray, psittacus erithacus
+    : l_new : macaw
+
+
+--> #   88 | c       88 | y     7.9e-01 | y_next 9.3e-03
++++ >        c_new   90 | y_new 2.0e-01 | y_old 2.0e-01 | evals  3217
+    : changes  1476 | dx1 4.3e+03 | dx2 8.3e+01
+    : l_old : macaw
+    : l_new : lorikeet
+
+
+--> #   89 | c       89 | y     8.5e-01 | y_next 4.6e-03
++++ >        c_new   81 | y_new 1.6e-01 | y_old 1.6e-01 | evals  2609
+    : changes  1213 | dx1 4.5e+03 | dx2 9.5e+01
+    : l_old : sulphur-crested cockatoo, kakatoe galerita, cacatu
+    : l_new : ptarmigan
+
+
+--> #   90 | c       90 | y     8.3e-01 | y_next 1.6e-03
+    > fail | evals 10001
+
+--> #   91 | c       91 | y     5.9e-01 | y_next 2.3e-02
++++ >        c_new  306 | y_new 1.0e-01 | y_old 9.7e-02 | evals   303
+    : changes   212 | dx1 6.3e+02 | dx2 3.2e+01
+    : l_old : coucal
+    : l_new : rhinoceros beetle
+
+
+--> #   92 | c       92 | y     9.1e-01 | y_next 3.4e-03
++++ >        c_new   58 | y_new 5.2e-02 | y_old 5.1e-02 | evals  7619
+    : changes  2323 | dx1 6.9e+03 | dx2 1.2e+02
+    : l_old : bee eater
+    : l_new : water snake
+
+
+--> #   93 | c       93 | y     8.5e-01 | y_next 2.9e-02
++++ >        c_new  128 | y_new 9.3e-02 | y_old 9.0e-02 | evals  2327
+    : changes  1298 | dx1 6.0e+03 | dx2 1.2e+02
+    : l_old : hornbill
+    : l_new : black stork, ciconia nigra
+
+
+--> #   94 | c       94 | y     9.0e-01 | y_next 2.2e-03
++++ >        c_new   16 | y_new 2.1e-01 | y_old 2.1e-01 | evals  1947
+    : changes   780 | dx1 2.1e+03 | dx2 6.7e+01
+    : l_old : hummingbird
+    : l_new : bulbul
+
+
+--> #   95 | c       95 | y     8.6e-01 | y_next 2.3e-02
++++ >        c_new   92 | y_new 3.4e-01 | y_old 3.4e-01 | evals  2907
+    : changes  1278 | dx1 5.3e+03 | dx2 1.1e+02
+    : l_old : jacamar
+    : l_new : bee eater
+
+
+--> #   96 | c       96 | y     5.2e-01 | y_next 1.9e-01
++++ >        c_new   93 | y_new 1.8e-01 | y_old 1.6e-01 | evals   927
+    : changes   503 | dx1 1.7e+03 | dx2 5.5e+01
+    : l_old : toucan
+    : l_new : hornbill
+
+
+--> #   97 | c       97 | y     8.6e-01 | y_next 9.9e-03
++++ >        c_new   56 | y_new 8.6e-02 | y_old 8.2e-02 | evals  2699
+    : changes  1557 | dx1 3.9e+03 | dx2 7.8e+01
+    : l_old : drake
+    : l_new : king snake, kingsnake
+
+
+--> #   98 | c       98 | y     2.5e-01 | y_next 2.1e-01
++++ >        c_new  139 | y_new 2.2e-01 | y_old 2.2e-01 | evals    57
+    : changes    90 | dx1 8.5e+01 | dx2 9.6e+00
+    : l_old : red-breasted merganser, mergus serrator
+    : l_new : ruddy turnstone, arenaria interpres
+
+
+--> #   99 | c       99 | y     7.3e-01 | y_next 5.6e-02
++++ >        c_new  138 | y_new 3.5e-01 | y_old 3.4e-01 | evals  1061
+    : changes   603 | dx1 1.9e+03 | dx2 5.6e+01
+    : l_old : goose
+    : l_new : bustard
+
+
+--> #  100 | c      100 | y     7.2e-01 | y_next 1.3e-02
++++ >        c_new   99 | y_new 1.7e-01 | y_old 1.4e-01 | evals   465
+    : changes   247 | dx1 1.4e+03 | dx2 6.6e+01
+    : l_old : black swan, cygnus atratus
+    : l_new : goose
+
+
+--> #  101 | c      101 | y     7.7e-01 | y_next 6.5e-02
++++ >        c_new  297 | y_new 2.2e-01 | y_old 2.2e-01 | evals  1223
+    : changes   793 | dx1 2.9e+03 | dx2 7.2e+01
+    : l_old : tusker
+    : l_new : sloth bear, melursus ursinus, ursus ursinus
+
+
+--> #  102 | c      102 | y     8.2e-01 | y_next 2.6e-03
+    > fail | evals 10001
+
+--> #  103 | c      103 | y     9.7e-01 | y_next 4.8e-03
++++ >        c_new  337 | y_new 2.9e-01 | y_old 2.8e-01 | evals  3003
+    : changes   977 | dx1 3.2e+03 | dx2 8.1e+01
+    : l_old : platypus, duckbill, duckbilled platypus, duck-bill
+    : l_new : beaver
+
+WRN : base model is failed for "104" (SKIP)
+
+--> #  105 | c      105 | y     8.7e-01 | y_next 1.4e-02
++++ >        c_new  383 | y_new 2.5e-01 | y_old 2.4e-01 | evals  2807
+    : changes  1435 | dx1 4.1e+03 | dx2 7.9e+01
+    : l_old : koala, koala bear, kangaroo bear, native bear, pha
+    : l_new : madagascar cat, ring-tailed lemur, lemur catta
+
+
+--> #  106 | c      106 | y     4.9e-01 | y_next 1.0e-01
++++ >        c_new  333 | y_new 2.7e-01 | y_old 2.5e-01 | evals   271
+    : changes   142 | dx1 4.3e+02 | dx2 2.7e+01
+    : l_old : wombat
+    : l_new : hamster
+
+WRN : base model is failed for "107" (SKIP)
+
+--> #  108 | c      108 | y     9.2e-01 | y_next 5.8e-03
++++ >        c_new  328 | y_new 3.1e-01 | y_old 3.0e-01 | evals  4995
+    : changes  2375 | dx1 3.3e+03 | dx2 4.8e+01
+    : l_old : sea anemone, anemone
+    : l_new : sea urchin
+
+
+--> #  109 | c      109 | y     8.3e-01 | y_next 2.3e-03
+    > fail | evals 10001
+
+--> #  110 | c      110 | y     8.0e-01 | y_next 2.1e-02
++++ >        c_new  115 | y_new 3.2e-01 | y_old 3.2e-01 | evals  2909
+    : changes  1220 | dx1 5.2e+03 | dx2 1.1e+02
+    : l_old : flatworm, platyhelminth
+    : l_new : sea slug, nudibranch
+
+
+--> #  111 | c      111 | y     7.8e-01 | y_next 1.3e-02
++++ >        c_new   59 | y_new 1.9e-01 | y_old 1.8e-01 | evals  5167
+    : changes  1866 | dx1 1.5e+03 | dx2 3.6e+01
+    : l_old : nematode, nematode worm, roundworm
+    : l_new : vine snake
+
+
+--> #  112 | c      112 | y     7.4e-01 | y_next 2.1e-02
++++ >        c_new    1 | y_new 1.4e-01 | y_old 1.3e-01 | evals   825
+    : changes   469 | dx1 2.0e+03 | dx2 6.6e+01
+    : l_old : conch
+    : l_new : goldfish, carassius auratus
+
+
+--> #  113 | c      113 | y     6.7e-01 | y_next 3.5e-02
++++ >        c_new  116 | y_new 2.3e-01 | y_old 2.2e-01 | evals  1041
+    : changes   654 | dx1 2.7e+03 | dx2 7.7e+01
+    : l_old : snail
+    : l_new : chiton, coat-of-mail shell, sea cradle, polyplacop
+
+
+--> #  114 | c      114 | y     7.5e-01 | y_next 8.2e-03
++++ >        c_new  391 | y_new 1.1e-01 | y_old 1.1e-01 | evals  2471
+    : changes  1127 | dx1 3.8e+03 | dx2 8.0e+01
+    : l_old : slug
+    : l_new : coho, cohoe, coho salmon, blue jack, silver salmon
+
+
+--> #  115 | c      115 | y     6.2e-01 | y_next 5.6e-02
++++ >        c_new  328 | y_new 1.6e-01 | y_old 1.0e-01 | evals   609
+    : changes   472 | dx1 1.7e+03 | dx2 5.8e+01
+    : l_old : sea slug, nudibranch
+    : l_new : sea urchin
+
+
+--> #  116 | c      116 | y     8.9e-01 | y_next 2.5e-03
++++ >        c_new   69 | y_new 1.4e-01 | y_old 1.4e-01 | evals  4433
+    : changes  2158 | dx1 6.2e+03 | dx2 9.6e+01
+    : l_old : chiton, coat-of-mail shell, sea cradle, polyplacop
+    : l_new : trilobite
+
+
+--> #  117 | c      117 | y     8.4e-01 | y_next 1.5e-02
++++ >        c_new  577 | y_new 2.6e-01 | y_old 2.5e-01 | evals  2839
+    : changes  1276 | dx1 4.4e+03 | dx2 8.8e+01
+    : l_old : chambered nautilus, pearly nautilus, nautilus
+    : l_new : gong, tam-tam
+
+WRN : base model is failed for "118" (SKIP)
+
+--> #  119 | c      119 | y     3.9e-01 | y_next 2.7e-01
++++ >        c_new  120 | y_new 3.7e-01 | y_old 3.0e-01 | evals    17
+    : changes    90 | dx1 3.8e+02 | dx2 2.8e+01
+    : l_old : rock crab, cancer irroratus
+    : l_new : fiddler crab
+
+
+--> #  120 | c      120 | y     6.6e-01 | y_next 7.8e-03
+    > fail | evals 10001
+
+--> #  121 | c      121 | y     9.0e-01 | y_next 3.3e-03
++++ >        c_new  327 | y_new 2.6e-01 | y_old 2.5e-01 | evals  2139
+    : changes  1022 | dx1 2.8e+03 | dx2 6.4e+01
+    : l_old : king crab, alaska crab, alaskan king crab, alaska 
+    : l_new : starfish, sea star
+
+WRN : base model is failed for "122" (SKIP)
+
+--> #  123 | c      123 | y     9.1e-01 | y_next 5.8e-03
++++ >        c_new  396 | y_new 1.8e-01 | y_old 1.8e-01 | evals  2131
+    : changes   989 | dx1 4.5e+03 | dx2 1.0e+02
+    : l_old : spiny lobster, langouste, rock lobster, crawfish, 
+    : l_new : lionfish
+
+
+--> #  124 | c      124 | y     3.6e-01 | y_next 1.4e-01
++++ >        c_new  122 | y_new 1.7e-01 | y_old 1.6e-01 | evals   621
+    : changes   353 | dx1 8.6e+02 | dx2 3.4e+01
+    : l_old : crayfish, crawfish, crawdad, crawdaddy
+    : l_new : american lobster, northern lobster, maine lobster,
+
+
+--> #  125 | c      125 | y     6.0e-01 | y_next 1.7e-01
++++ >        c_new  113 | y_new 3.6e-01 | y_old 3.6e-01 | evals   347
+    : changes   199 | dx1 9.4e+02 | dx2 4.5e+01
+    : l_old : hermit crab
+    : l_new : snail
+
+
+--> #  126 | c      126 | y     8.8e-01 | y_next 4.7e-03
++++ >        c_new   69 | y_new 1.4e-02 | y_old 1.4e-02 | evals  9603
+    : changes  3826 | dx1 1.1e+04 | dx2 1.3e+02
+    : l_old : isopod
+    : l_new : trilobite
+
+
+--> #  127 | c      127 | y     9.1e-01 | y_next 7.2e-03
++++ >        c_new   99 | y_new 7.6e-02 | y_old 7.5e-02 | evals  6853
+    : changes  3240 | dx1 8.1e+03 | dx2 1.2e+02
+    : l_old : white stork, ciconia ciconia
+    : l_new : goose
+
+
+--> #  128 | c      128 | y     9.3e-01 | y_next 8.3e-03
++++ >        c_new  143 | y_new 3.2e-01 | y_old 3.1e-01 | evals  1913
+    : changes   795 | dx1 1.9e+03 | dx2 4.9e+01
+    : l_old : black stork, ciconia nigra
+    : l_new : oystercatcher, oyster catcher
+
+
+--> #  129 | c      129 | y     8.6e-01 | y_next 8.4e-03
++++ >        c_new  134 | y_new 2.8e-01 | y_old 2.2e-01 | evals  3669
+    : changes  1908 | dx1 1.2e+03 | dx2 4.2e+01
+    : l_old : spoonbill
+    : l_new : crane
+
+
+--> #  130 | c      130 | y     8.3e-01 | y_next 7.8e-03
++++ >        c_new  100 | y_new 1.7e-01 | y_old 1.7e-01 | evals  2719
+    : changes  1397 | dx1 4.5e+03 | dx2 9.4e+01
+    : l_old : flamingo
+    : l_new : black swan, cygnus atratus
+
+
+--> #  131 | c      131 | y     8.2e-01 | y_next 1.1e-02
++++ >        c_new   95 | y_new 1.0e-01 | y_old 1.0e-01 | evals  4517
+    : changes  1330 | dx1 2.6e+03 | dx2 5.2e+01
+    : l_old : little blue heron, egretta caerulea
+    : l_new : jacamar
+
+
+--> #  132 | c      132 | y     6.0e-01 | y_next 2.9e-02
++++ >        c_new  146 | y_new 2.3e-01 | y_old 2.0e-01 | evals  2029
+    : changes   770 | dx1 1.6e+03 | dx2 4.3e+01
+    : l_old : american egret, great white heron, egretta albus
+    : l_new : albatross, mollymawk
+
+
+--> #  133 | c      133 | y     9.5e-01 | y_next 1.1e-02
++++ >        c_new  138 | y_new 4.5e-01 | y_old 4.4e-01 | evals  2309
+    : changes  1520 | dx1 4.8e+03 | dx2 8.9e+01
+    : l_old : bittern
+    : l_new : bustard
+
+WRN : base model is failed for "134" (SKIP)
+
+--> #  135 | c      135 | y     6.3e-01 | y_next 1.7e-02
++++ >        c_new  331 | y_new 1.4e-01 | y_old 1.3e-01 | evals  1921
+    : changes   695 | dx1 1.7e+03 | dx2 4.7e+01
+    : l_old : limpkin, aramus pictus
+    : l_new : hare
+
+
+--> #  136 | c      136 | y     8.3e-01 | y_next 1.8e-02
++++ >        c_new  100 | y_new 5.9e-02 | y_old 5.9e-02 | evals  5175
+    : changes  2305 | dx1 8.4e+03 | dx2 1.3e+02
+    : l_old : european gallinule, porphyrio porphyrio
+    : l_new : black swan, cygnus atratus
+
+
+--> #  137 | c      137 | y     8.7e-01 | y_next 2.6e-02
++++ >        c_new   50 | y_new 3.0e-01 | y_old 2.9e-01 | evals   813
+    : changes   485 | dx1 1.3e+03 | dx2 4.5e+01
+    : l_old : american coot, marsh hen, mud hen, water hen, fuli
+    : l_new : american alligator, alligator mississipiensis
+
+
+--> #  138 | c      138 | y     8.5e-01 | y_next 6.2e-03
++++ >        c_new    9 | y_new 2.3e-01 | y_old 2.2e-01 | evals  6127
+    : changes  2111 | dx1 6.8e+03 | dx2 1.1e+02
+    : l_old : bustard
+    : l_new : ostrich, struthio camelus
+
+
+--> #  139 | c      139 | y     7.3e-01 | y_next 1.4e-02
++++ >        c_new  141 | y_new 2.8e-01 | y_old 2.6e-01 | evals  3009
+    : changes  1262 | dx1 2.1e+03 | dx2 4.9e+01
+    : l_old : ruddy turnstone, arenaria interpres
+    : l_new : redshank, tringa totanus
+
+
+--> #  140 | c      140 | y     8.9e-01 | y_next 2.5e-03
++++ >        c_new  142 | y_new 2.6e-01 | y_old 2.3e-01 | evals  3809
+    : changes  1175 | dx1 2.5e+03 | dx2 5.5e+01
+    : l_old : red-backed sandpiper, dunlin, erolia alpina
+    : l_new : dowitcher
+
+
+--> #  141 | c      141 | y     8.6e-01 | y_next 8.8e-03
++++ >        c_new  143 | y_new 1.9e-01 | y_old 1.9e-01 | evals  3885
+    : changes  1341 | dx1 2.4e+03 | dx2 4.9e+01
+    : l_old : redshank, tringa totanus
+    : l_new : oystercatcher, oyster catcher
+
+
+--> #  142 | c      142 | y     6.7e-01 | y_next 1.0e-01
++++ >        c_new  141 | y_new 3.5e-01 | y_old 3.5e-01 | evals  1605
+    : changes   579 | dx1 1.8e+03 | dx2 5.4e+01
+    : l_old : dowitcher
+    : l_new : redshank, tringa totanus
+
+
+--> #  143 | c      143 | y     3.6e-01 | y_next 8.9e-02
++++ >        c_new  100 | y_new 9.8e-02 | y_old 8.4e-02 | evals   249
+    : changes   109 | dx1 2.6e+02 | dx2 2.0e+01
+    : l_old : oystercatcher, oyster catcher
+    : l_new : black swan, cygnus atratus
+
+
+--> #  144 | c      144 | y     9.4e-01 | y_next 3.3e-03
++++ >        c_new   43 | y_new 1.7e-01 | y_old 1.6e-01 | evals  2611
+    : changes  1303 | dx1 3.5e+03 | dx2 9.3e+01
+    : l_old : pelican
+    : l_new : frilled lizard, chlamydosaurus kingi
+
+
+--> #  145 | c      145 | y     7.9e-01 | y_next 9.9e-03
++++ >        c_new  393 | y_new 1.3e-01 | y_old 1.3e-01 | evals  9045
+    : changes  2672 | dx1 8.0e+03 | dx2 1.1e+02
+    : l_old : king penguin, aptenodytes patagonica
+    : l_new : anemone fish
+
+
+--> #  146 | c      146 | y     6.9e-01 | y_next 2.3e-02
++++ >        c_new   99 | y_new 1.6e-01 | y_old 1.6e-01 | evals  3223
+    : changes   957 | dx1 4.2e+03 | dx2 9.8e+01
+    : l_old : albatross, mollymawk
+    : l_new : goose
+
+
+--> #  147 | c      147 | y     7.8e-01 | y_next 2.2e-02
++++ >        c_new  913 | y_new 2.8e-01 | y_old 2.3e-01 | evals  1355
+    : changes   577 | dx1 2.0e+03 | dx2 7.0e+01
+    : l_old : grey whale, gray whale, devilfish, eschrichtius gi
+    : l_new : wreck
+
+
+--> #  148 | c      148 | y     7.0e-01 | y_next 5.6e-02
++++ >        c_new  145 | y_new 3.3e-01 | y_old 2.3e-01 | evals   803
+    : changes   497 | dx1 2.4e+03 | dx2 7.5e+01
+    : l_old : killer whale, killer, orca, grampus, sea wolf, orc
+    : l_new : king penguin, aptenodytes patagonica
+
+
+--> #  149 | c      149 | y     9.3e-01 | y_next 2.8e-03
++++ >        c_new  147 | y_new 1.1e-01 | y_old 1.1e-01 | evals  6275
+    : changes  1988 | dx1 8.0e+03 | dx2 1.3e+02
+    : l_old : dugong, dugong dugon
+    : l_new : grey whale, gray whale, devilfish, eschrichtius gi
+
+
+--> #  150 | c      150 | y     8.2e-01 | y_next 2.4e-03
+    > fail | evals 10001
+
+--> #  151 | c      151 | y     8.6e-01 | y_next 1.2e-02
++++ >        c_new  158 | y_new 1.4e-01 | y_old 1.4e-01 | evals  3123
+    : changes  1489 | dx1 6.6e+03 | dx2 1.2e+02
+    : l_old : chihuahua
+    : l_new : toy terrier
+
+
+--> #  152 | c      152 | y     4.4e-01 | y_next 1.2e-01
++++ >        c_new  154 | y_new 2.1e-01 | y_old 2.0e-01 | evals   605
+    : changes   424 | dx1 1.9e+03 | dx2 7.1e+01
+    : l_old : japanese spaniel
+    : l_new : pekinese, pekingese, peke
+
+
+--> #  153 | c      153 | y     6.4e-01 | y_next 4.9e-02
++++ >        c_new  154 | y_new 1.9e-01 | y_old 1.8e-01 | evals  1705
+    : changes   502 | dx1 1.4e+03 | dx2 4.9e+01
+    : l_old : maltese dog, maltese terrier, maltese
+    : l_new : pekinese, pekingese, peke
+
+
+--> #  154 | c      154 | y     8.7e-01 | y_next 3.3e-02
++++ >        c_new  155 | y_new 4.1e-01 | y_old 4.1e-01 | evals   813
+    : changes   551 | dx1 1.9e+03 | dx2 6.9e+01
+    : l_old : pekinese, pekingese, peke
+    : l_new : shih-tzu
+
+
+--> #  155 | c      155 | y     6.3e-01 | y_next 1.2e-01
++++ >        c_new  204 | y_new 3.4e-01 | y_old 3.4e-01 | evals  3533
+    : changes  1290 | dx1 5.1e+03 | dx2 1.0e+02
+    : l_old : shih-tzu
+    : l_new : lhasa, lhasa apso
+
+
+--> #  156 | c      156 | y     4.0e-01 | y_next 3.0e-01
++++ >        c_new  218 | y_new 3.7e-01 | y_old 3.3e-01 | evals     9
+    : changes    27 | dx1 1.1e+02 | dx2 1.6e+01
+    : l_old : blenheim spaniel
+    : l_new : welsh springer spaniel
+
+
+--> #  157 | c      157 | y     8.5e-01 | y_next 9.0e-03
++++ >        c_new  154 | y_new 1.6e-01 | y_old 1.6e-01 | evals  4951
+    : changes  1611 | dx1 4.1e+03 | dx2 7.5e+01
+    : l_old : papillon
+    : l_new : pekinese, pekingese, peke
+
+WRN : base model is failed for "158" (SKIP)
+WRN : base model is failed for "159" (SKIP)
+
+--> #  160 | c      160 | y     5.4e-01 | y_next 4.9e-02
++++ >        c_new  219 | y_new 1.6e-01 | y_old 1.5e-01 | evals  2387
+    : changes   859 | dx1 2.8e+03 | dx2 6.9e+01
+    : l_old : afghan hound, afghan
+    : l_new : cocker spaniel, english cocker spaniel, cocker
+
+
+--> #  161 | c      161 | y     8.3e-01 | y_next 3.8e-02
++++ >        c_new  162 | y_new 3.4e-01 | y_old 3.3e-01 | evals  1913
+    : changes   823 | dx1 2.8e+03 | dx2 7.5e+01
+    : l_old : basset, basset hound
+    : l_new : beagle
+
+WRN : base model is failed for "162" (SKIP)
+WRN : attr model is failed for "163" (SKIP)
+
+--> #  164 | c      164 | y     5.3e-01 | y_next 1.5e-01
++++ >        c_new  210 | y_new 2.8e-01 | y_old 2.8e-01 | evals  1041
+    : changes   447 | dx1 1.7e+03 | dx2 5.9e+01
+    : l_old : bluetick
+    : l_new : german short-haired pointer
+
+
+--> #  165 | c      165 | y     8.2e-01 | y_next 1.6e-02
++++ >        c_new  241 | y_new 2.5e-01 | y_old 2.3e-01 | evals  1807
+    : changes   717 | dx1 2.0e+03 | dx2 5.7e+01
+    : l_old : black-and-tan coonhound
+    : l_new : entlebucher
+
+
+--> #  166 | c      166 | y     7.3e-01 | y_next 1.0e-01
++++ >        c_new  162 | y_new 4.2e-01 | y_old 4.1e-01 | evals  1051
+    : changes   503 | dx1 1.5e+03 | dx2 5.1e+01
+    : l_old : walker hound, walker foxhound
+    : l_new : beagle
+
+
+--> #  167 | c      167 | y     6.2e-01 | y_next 1.8e-01
++++ >        c_new  166 | y_new 2.3e-01 | y_old 2.3e-01 | evals  1363
+    : changes   654 | dx1 2.6e+03 | dx2 7.2e+01
+    : l_old : english foxhound
+    : l_new : walker hound, walker foxhound
+
+
+--> #  168 | c      168 | y     3.4e-01 | y_next 1.2e-01
++++ >        c_new  159 | y_new 1.0e-01 | y_old 9.4e-02 | evals  1139
+    : changes   575 | dx1 1.6e+03 | dx2 4.8e+01
+    : l_old : redbone
+    : l_new : rhodesian ridgeback
+
+
+--> #  169 | c      169 | y     6.2e-01 | y_next 5.4e-02
++++ >        c_new  222 | y_new 1.9e-01 | y_old 1.9e-01 | evals  1363
+    : changes   733 | dx1 2.4e+03 | dx2 6.6e+01
+    : l_old : borzoi, russian wolfhound
+    : l_new : kuvasz
+
+
+--> #  170 | c      170 | y     5.1e-01 | y_next 4.0e-01
++++ >        c_new  177 | y_new 4.8e-01 | y_old 4.3e-01 | evals    39
+    : changes   100 | dx1 3.4e+02 | dx2 2.4e+01
+    : l_old : irish wolfhound
+    : l_new : scottish deerhound, deerhound
+
+WRN : base model is failed for "171" (SKIP)
+
+--> #  172 | c      172 | y     9.4e-01 | y_next 7.7e-03
++++ >        c_new  242 | y_new 1.4e-01 | y_old 1.4e-01 | evals  2347
+    : changes  1176 | dx1 1.9e+03 | dx2 4.6e+01
+    : l_old : whippet
+    : l_new : boxer
+
+
+--> #  173 | c      173 | y     6.8e-01 | y_next 2.5e-02
++++ >        c_new  353 | y_new 4.9e-02 | y_old 4.7e-02 | evals  5213
+    : changes  1619 | dx1 4.5e+03 | dx2 8.3e+01
+    : l_old : ibizan hound, ibizan podenco
+    : l_new : gazelle
+
+WRN : base model is failed for "174" (SKIP)
+WRN : base model is failed for "175" (SKIP)
+
+--> #  176 | c      176 | y     8.0e-01 | y_next 3.0e-02
++++ >        c_new  160 | y_new 2.2e-01 | y_old 1.9e-01 | evals  2115
+    : changes  1149 | dx1 4.1e+03 | dx2 8.6e+01
+    : l_old : saluki, gazelle hound
+    : l_new : afghan hound, afghan
+
+
+--> #  177 | c      177 | y     3.9e-01 | y_next 1.5e-01
++++ >        c_new  200 | y_new 1.2e-01 | y_old 1.0e-01 | evals   535
+    : changes   328 | dx1 1.5e+03 | dx2 5.6e+01
+    : l_old : scottish deerhound, deerhound
+    : l_new : tibetan terrier, chrysanthemum dog
+
+
+--> #  178 | c      178 | y     8.2e-01 | y_next 4.5e-03
++++ >        c_new  246 | y_new 1.5e-01 | y_old 1.4e-01 | evals  1433
+    : changes   865 | dx1 3.4e+03 | dx2 9.6e+01
+    : l_old : weimaraner
+    : l_new : great dane
+
+
+--> #  179 | c      179 | y     7.2e-01 | y_next 2.2e-01
++++ >        c_new  180 | y_new 4.8e-01 | y_old 4.4e-01 | evals  1703
+    : changes   628 | dx1 2.3e+03 | dx2 6.5e+01
+    : l_old : staffordshire bullterrier, staffordshire bull terr
+    : l_new : american staffordshire terrier, staffordshire terr
+
+WRN : attr model is failed for "180" (SKIP)
+
+--> #  181 | c      181 | y     8.5e-01 | y_next 5.7e-03
++++ >        c_new  202 | y_new 6.5e-02 | y_old 6.3e-02 | evals  7423
+    : changes  2593 | dx1 8.6e+03 | dx2 1.2e+02
+    : l_old : bedlington terrier
+    : l_new : soft-coated wheaten terrier
+
+
+--> #  182 | c      182 | y     8.8e-01 | y_next 2.6e-03
++++ >        c_new  191 | y_new 8.8e-02 | y_old 8.7e-02 | evals  8917
+    : changes  3067 | dx1 8.2e+03 | dx2 1.1e+02
+    : l_old : border terrier
+    : l_new : airedale, airedale terrier
+
+
+--> #  183 | c      183 | y     8.6e-01 | y_next 9.0e-03
++++ >        c_new  206 | y_new 1.9e-01 | y_old 1.8e-01 | evals  1225
+    : changes   770 | dx1 2.8e+03 | dx2 7.2e+01
+    : l_old : kerry blue terrier
+    : l_new : curly-coated retriever
+
+WRN : base model is failed for "184" (SKIP)
+
+--> #  185 | c      185 | y     7.5e-01 | y_next 8.3e-02
++++ >        c_new  184 | y_new 4.0e-01 | y_old 3.9e-01 | evals   613
+    : changes   404 | dx1 9.2e+02 | dx2 3.3e+01
+    : l_old : norfolk terrier
+    : l_new : irish terrier
+
+WRN : base model is failed for "186" (SKIP)
+
+--> #  187 | c      187 | y     6.0e-01 | y_next 1.3e-01
++++ >        c_new  201 | y_new 3.1e-01 | y_old 3.0e-01 | evals  1105
+    : changes   619 | dx1 2.3e+03 | dx2 6.9e+01
+    : l_old : yorkshire terrier
+    : l_new : silky terrier, sydney silky
+
+
+--> #  188 | c      188 | y     7.6e-01 | y_next 3.6e-02
++++ >        c_new  181 | y_new 1.4e-01 | y_old 1.4e-01 | evals  5631
+    : changes  2255 | dx1 9.0e+03 | dx2 1.4e+02
+    : l_old : wire-haired fox terrier
+    : l_new : bedlington terrier
+
+
+--> #  189 | c      189 | y     7.7e-01 | y_next 1.1e-01
++++ >        c_new  188 | y_new 3.6e-01 | y_old 3.2e-01 | evals  1771
+    : changes   777 | dx1 2.2e+03 | dx2 5.5e+01
+    : l_old : lakeland terrier
+    : l_new : wire-haired fox terrier
+
+
+--> #  190 | c      190 | y     9.1e-01 | y_next 1.5e-02
++++ >        c_new  194 | y_new 3.8e-01 | y_old 3.6e-01 | evals  1051
+    : changes   611 | dx1 2.3e+03 | dx2 6.8e+01
+    : l_old : sealyham terrier, sealyham
+    : l_new : dandie dinmont, dandie dinmont terrier
+
+WRN : base model is failed for "191" (SKIP)
+
+--> #  192 | c      192 | y     4.9e-01 | y_next 2.0e-01
++++ >        c_new  186 | y_new 3.6e-01 | y_old 3.3e-01 | evals   531
+    : changes   295 | dx1 1.2e+03 | dx2 5.4e+01
+    : l_old : cairn, cairn terrier
+    : l_new : norwich terrier
+
+WRN : base model is failed for "193" (SKIP)
+
+--> #  194 | c      194 | y     7.7e-01 | y_next 1.1e-02
++++ >        c_new  189 | y_new 9.9e-02 | y_old 9.8e-02 | evals  2677
+    : changes  1273 | dx1 2.4e+03 | dx2 5.2e+01
+    : l_old : dandie dinmont, dandie dinmont terrier
+    : l_new : lakeland terrier
+
+
+--> #  195 | c      195 | y     7.4e-01 | y_next 2.7e-02
++++ >        c_new  245 | y_new 2.2e-01 | y_old 2.2e-01 | evals  7247
+    : changes  1875 | dx1 8.3e+03 | dx2 1.4e+02
+    : l_old : boston bull, boston terrier
+    : l_new : french bulldog
+
+
+--> #  196 | c      196 | y     7.8e-01 | y_next 1.2e-01
++++ >        c_new  189 | y_new 4.2e-01 | y_old 4.2e-01 | evals   605
+    : changes   482 | dx1 1.1e+03 | dx2 3.6e+01
+    : l_old : miniature schnauzer
+    : l_new : lakeland terrier
+
+
+--> #  197 | c      197 | y     7.1e-01 | y_next 1.7e-01
++++ >        c_new  183 | y_new 2.3e-01 | y_old 1.9e-01 | evals  2505
+    : changes  1053 | dx1 3.8e+03 | dx2 8.5e+01
+    : l_old : giant schnauzer
+    : l_new : kerry blue terrier
+
+
+--> #  198 | c      198 | y     5.1e-01 | y_next 3.5e-01
++++ >        c_new  196 | y_new 4.4e-01 | y_old 4.1e-01 | evals   103
+    : changes   138 | dx1 4.2e+02 | dx2 2.6e+01
+    : l_old : standard schnauzer
+    : l_new : miniature schnauzer
+
+
+--> #  199 | c      199 | y     8.3e-01 | y_next 2.1e-02
++++ >        c_new  655 | y_new 6.1e-02 | y_old 4.5e-02 | evals   803
+    : changes   599 | dx1 2.1e+03 | dx2 6.1e+01
+    : l_old : scotch terrier, scottish terrier, scottie
+    : l_new : miniskirt, mini
+
+
+--> #  200 | c      200 | y     9.3e-01 | y_next 1.5e-02
++++ >        c_new  196 | y_new 3.5e-01 | y_old 3.0e-01 | evals  1317
+    : changes   887 | dx1 3.9e+03 | dx2 9.3e+01
+    : l_old : tibetan terrier, chrysanthemum dog
+    : l_new : miniature schnauzer
+
+
+--> #  201 | c      201 | y     8.7e-01 | y_next 2.7e-02
++++ >        c_new  193 | y_new 3.3e-01 | y_old 3.1e-01 | evals  3751
+    : changes  1198 | dx1 5.2e+03 | dx2 1.1e+02
+    : l_old : silky terrier, sydney silky
+    : l_new : australian terrier
+
+
+--> #  202 | c      202 | y     6.3e-01 | y_next 3.8e-02
++++ >        c_new  181 | y_new 2.0e-01 | y_old 1.9e-01 | evals  1025
+    : changes   547 | dx1 2.0e+03 | dx2 6.1e+01
+    : l_old : soft-coated wheaten terrier
+    : l_new : bedlington terrier
+
+
+--> #  203 | c      203 | y     4.5e-01 | y_next 1.6e-01
++++ >        c_new  229 | y_new 3.3e-01 | y_old 3.2e-01 | evals   329
+    : changes   111 | dx1 4.3e+02 | dx2 2.9e+01
+    : l_old : west highland white terrier
+    : l_new : old english sheepdog, bobtail
+
+WRN : base model is failed for "204" (SKIP)
+
+--> #  205 | c      205 | y     4.3e-01 | y_next 1.5e-01
++++ >        c_new  214 | y_new 1.5e-01 | y_old 1.4e-01 | evals   511
+    : changes   294 | dx1 1.3e+03 | dx2 5.4e+01
+    : l_old : flat-coated retriever
+    : l_new : gordon setter
+
+WRN : base model is failed for "206" (SKIP)
+
+--> #  207 | c      207 | y     5.7e-01 | y_next 3.5e-02
++++ >        c_new  209 | y_new 7.8e-02 | y_old 7.7e-02 | evals  1217
+    : changes   615 | dx1 1.8e+03 | dx2 5.4e+01
+    : l_old : golden retriever
+    : l_new : chesapeake bay retriever
+
+
+--> #  208 | c      208 | y     7.6e-01 | y_next 1.2e-01
++++ >        c_new  205 | y_new 4.3e-01 | y_old 4.3e-01 | evals   305
+    : changes   242 | dx1 1.3e+03 | dx2 5.1e+01
+    : l_old : labrador retriever
+    : l_new : flat-coated retriever
+
+
+--> #  209 | c      209 | y     4.8e-01 | y_next 3.1e-01
++++ >        c_new  208 | y_new 4.5e-01 | y_old 3.7e-01 | evals    15
+    : changes    60 | dx1 4.0e+02 | dx2 3.4e+01
+    : l_old : chesapeake bay retriever
+    : l_new : labrador retriever
+
+
+--> #  210 | c      210 | y     7.8e-01 | y_next 2.1e-02
++++ >        c_new  180 | y_new 1.9e-01 | y_old 1.8e-01 | evals  2141
+    : changes  1175 | dx1 4.8e+03 | dx2 1.0e+02
+    : l_old : german short-haired pointer
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+--> #  211 | c      211 | y     5.1e-01 | y_next 1.7e-01
++++ >        c_new  209 | y_new 3.5e-01 | y_old 3.2e-01 | evals   133
+    : changes    72 | dx1 3.4e+02 | dx2 2.8e+01
+    : l_old : vizsla, hungarian pointer
+    : l_new : chesapeake bay retriever
+
+WRN : attr model is failed for "212" (SKIP)
+
+--> #  213 | c      213 | y     8.0e-01 | y_next 2.5e-02
++++ >        c_new  205 | y_new 2.2e-01 | y_old 1.8e-01 | evals  1109
+    : changes   546 | dx1 2.4e+03 | dx2 7.3e+01
+    : l_old : irish setter, red setter
+    : l_new : flat-coated retriever
+
+
+--> #  214 | c      214 | y     9.3e-01 | y_next 1.3e-02
++++ >        c_new  205 | y_new 4.1e-01 | y_old 4.0e-01 | evals  1561
+    : changes   430 | dx1 2.0e+03 | dx2 7.0e+01
+    : l_old : gordon setter
+    : l_new : flat-coated retriever
+
+WRN : base model is failed for "215" (SKIP)
+
+--> #  216 | c      216 | y     8.1e-01 | y_next 6.4e-03
+    > fail | evals 10001
+
+--> #  217 | c      217 | y     9.0e-01 | y_next 5.3e-03
++++ >        c_new  170 | y_new 1.2e-01 | y_old 9.9e-02 | evals  1213
+    : changes   518 | dx1 1.6e+03 | dx2 5.2e+01
+    : l_old : english springer, english springer spaniel
+    : l_new : irish wolfhound
+
+
+--> #  218 | c      218 | y     6.9e-01 | y_next 5.9e-02
++++ >        c_new  217 | y_new 2.7e-01 | y_old 2.6e-01 | evals  1035
+    : changes   431 | dx1 1.6e+03 | dx2 5.7e+01
+    : l_old : welsh springer spaniel
+    : l_new : english springer, english springer spaniel
+
+
+--> #  219 | c      219 | y     9.4e-01 | y_next 6.6e-03
++++ >        c_new  257 | y_new 2.6e-01 | y_old 2.4e-01 | evals  1251
+    : changes   630 | dx1 1.8e+03 | dx2 5.3e+01
+    : l_old : cocker spaniel, english cocker spaniel, cocker
+    : l_new : great pyrenees
+
+
+--> #  220 | c      220 | y     8.4e-01 | y_next 1.7e-02
++++ >        c_new  226 | y_new 1.3e-01 | y_old 1.3e-01 | evals  2473
+    : changes  1265 | dx1 4.5e+03 | dx2 9.0e+01
+    : l_old : sussex spaniel
+    : l_new : briard
+
+
+--> #  221 | c      221 | y     8.6e-01 | y_next 1.4e-02
++++ >        c_new  267 | y_new 2.7e-01 | y_old 2.7e-01 | evals  3213
+    : changes  1249 | dx1 5.9e+03 | dx2 1.2e+02
+    : l_old : irish water spaniel
+    : l_new : standard poodle
+
+
+--> #  222 | c      222 | y     8.3e-01 | y_next 1.6e-02
++++ >        c_new  212 | y_new 2.3e-01 | y_old 2.1e-01 | evals  1869
+    : changes   836 | dx1 3.2e+03 | dx2 8.3e+01
+    : l_old : kuvasz
+    : l_new : english setter
+
+
+--> #  223 | c      223 | y     4.3e-01 | y_next 4.1e-02
++++ >        c_new  463 | y_new 1.6e-01 | y_old 1.5e-01 | evals   709
+    : changes   287 | dx1 1.2e+03 | dx2 5.2e+01
+    : l_old : schipperke
+    : l_new : bucket, pail
+
+
+--> #  224 | c      224 | y     7.3e-01 | y_next 1.5e-02
++++ >        c_new  261 | y_new 2.1e-01 | y_old 2.0e-01 | evals  1213
+    : changes   620 | dx1 2.7e+03 | dx2 7.5e+01
+    : l_old : groenendael
+    : l_new : keeshond
+
+
+--> #  225 | c      225 | y     6.8e-01 | y_next 5.2e-02
++++ >        c_new  174 | y_new 2.0e-01 | y_old 2.0e-01 | evals  3235
+    : changes  1552 | dx1 4.1e+03 | dx2 7.7e+01
+    : l_old : malinois
+    : l_new : norwegian elkhound, elkhound
+
+
+--> #  226 | c      226 | y     5.1e-01 | y_next 1.6e-01
++++ >        c_new  233 | y_new 2.8e-01 | y_old 2.8e-01 | evals   961
+    : changes   404 | dx1 1.4e+03 | dx2 5.2e+01
+    : l_old : briard
+    : l_new : bouvier des flandres, bouviers des flandres
+
+
+--> #  227 | c      227 | y     5.3e-01 | y_next 5.4e-02
++++ >        c_new  151 | y_new 2.1e-01 | y_old 1.9e-01 | evals   719
+    : changes   259 | dx1 1.3e+03 | dx2 5.7e+01
+    : l_old : kelpie
+    : l_new : chihuahua
+
+
+--> #  228 | c      228 | y     8.4e-01 | y_next 1.7e-03
+    > fail | evals 10001
+
+--> #  229 | c      229 | y     5.8e-01 | y_next 5.0e-02
++++ >        c_new  228 | y_new 1.9e-01 | y_old 1.8e-01 | evals  1557
+    : changes   579 | dx1 3.3e+03 | dx2 9.7e+01
+    : l_old : old english sheepdog, bobtail
+    : l_new : komondor
+
+WRN : attr model is failed for "230" (SKIP)
+WRN : base model is failed for "231" (SKIP)
+
+--> #  232 | c      232 | y     7.9e-01 | y_next 7.8e-02
++++ >        c_new  256 | y_new 1.9e-01 | y_old 1.9e-01 | evals  1921
+    : changes   681 | dx1 2.6e+03 | dx2 7.2e+01
+    : l_old : border collie
+    : l_new : newfoundland, newfoundland dog
+
+
+--> #  233 | c      233 | y     2.8e-01 | y_next 2.7e-01
++++ >        c_new  226 | y_new 3.1e-01 | y_old 2.2e-01 | evals    87
+    : changes    14 | dx1 1.1e+02 | dx2 1.8e+01
+    : l_old : bouvier des flandres, bouviers des flandres
+    : l_new : briard
+
+
+--> #  234 | c      234 | y     8.3e-01 | y_next 2.3e-02
++++ >        c_new  237 | y_new 1.7e-01 | y_old 1.7e-01 | evals  2059
+    : changes   831 | dx1 3.2e+03 | dx2 8.3e+01
+    : l_old : rottweiler
+    : l_new : miniature pinscher
+
+
+--> #  235 | c      235 | y     8.4e-01 | y_next 9.2e-03
++++ >        c_new  234 | y_new 1.8e-01 | y_old 1.7e-01 | evals  1803
+    : changes   844 | dx1 1.6e+03 | dx2 4.8e+01
+    : l_old : german shepherd, german shepherd dog, german polic
+    : l_new : rottweiler
+
+
+--> #  236 | c      236 | y     6.1e-01 | y_next 5.1e-02
++++ >        c_new  168 | y_new 1.9e-01 | y_old 1.8e-01 | evals   545
+    : changes   403 | dx1 1.7e+03 | dx2 6.3e+01
+    : l_old : doberman, doberman pinscher
+    : l_new : redbone
+
+
+--> #  237 | c      237 | y     7.9e-01 | y_next 5.3e-02
++++ >        c_new  151 | y_new 3.0e-01 | y_old 3.0e-01 | evals  1911
+    : changes  1186 | dx1 4.8e+03 | dx2 9.8e+01
+    : l_old : miniature pinscher
+    : l_new : chihuahua
+
+
+--> #  238 | c      238 | y     5.2e-01 | y_next 2.4e-01
++++ >        c_new  241 | y_new 3.3e-01 | y_old 3.3e-01 | evals   709
+    : changes   247 | dx1 6.5e+02 | dx2 3.6e+01
+    : l_old : greater swiss mountain dog
+    : l_new : entlebucher
+
+WRN : base model is failed for "239" (SKIP)
+WRN : base model is failed for "240" (SKIP)
+
+--> #  241 | c      241 | y     2.3e-01 | y_next 1.0e-01
++++ >        c_new  227 | y_new 1.1e-01 | y_old 1.0e-01 | evals   507
+    : changes   309 | dx1 8.1e+02 | dx2 3.4e+01
+    : l_old : entlebucher
+    : l_new : kelpie
+
+
+--> #  242 | c      242 | y     8.4e-01 | y_next 2.6e-02
++++ >        c_new  180 | y_new 1.4e-01 | y_old 1.4e-01 | evals  4503
+    : changes  1719 | dx1 6.0e+03 | dx2 1.0e+02
+    : l_old : boxer
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+--> #  243 | c      243 | y     4.2e-01 | y_next 3.9e-01
++++ >        c_new  254 | y_new 4.6e-01 | y_old 3.5e-01 | evals     7
+    : changes    30 | dx1 1.4e+02 | dx2 1.9e+01
+    : l_old : bull mastiff
+    : l_new : pug, pug-dog
+
+
+--> #  244 | c      244 | y     8.0e-01 | y_next 1.4e-02
++++ >        c_new  234 | y_new 3.3e-01 | y_old 2.9e-01 | evals  1075
+    : changes   603 | dx1 3.1e+03 | dx2 8.9e+01
+    : l_old : tibetan mastiff
+    : l_new : rottweiler
+
+
+--> #  245 | c      245 | y     7.5e-01 | y_next 5.7e-02
++++ >        c_new  766 | y_new 5.8e-02 | y_old 3.7e-02 | evals   709
+    : changes   502 | dx1 1.3e+03 | dx2 5.1e+01
+    : l_old : french bulldog
+    : l_new : rotisserie
+
+
+--> #  246 | c      246 | y     3.6e-01 | y_next 7.6e-02
++++ >        c_new  179 | y_new 1.4e-01 | y_old 1.2e-01 | evals   503
+    : changes   401 | dx1 1.5e+03 | dx2 5.2e+01
+    : l_old : great dane
+    : l_new : staffordshire bullterrier, staffordshire bull terr
+
+
+--> #  247 | c      247 | y     7.9e-01 | y_next 2.1e-02
++++ >        c_new  239 | y_new 2.3e-01 | y_old 2.2e-01 | evals  1007
+    : changes   549 | dx1 2.1e+03 | dx2 6.5e+01
+    : l_old : saint bernard, st bernard
+    : l_new : bernese mountain dog
+
+
+--> #  248 | c      248 | y     4.5e-01 | y_next 3.6e-01
++++ >        c_new  250 | y_new 3.8e-01 | y_old 3.8e-01 | evals  1437
+    : changes   403 | dx1 1.6e+03 | dx2 5.8e+01
+    : l_old : eskimo dog, husky
+    : l_new : siberian husky
+
+
+--> #  249 | c      249 | y     2.8e-01 | y_next 1.5e-01
++++ >        c_new  174 | y_new 2.4e-01 | y_old 1.8e-01 | evals   107
+    : changes   179 | dx1 2.8e+02 | dx2 1.7e+01
+    : l_old : malamute, malemute, alaskan malamute
+    : l_new : norwegian elkhound, elkhound
+
+WRN : base model is failed for "250" (SKIP)
+
+--> #  251 | c      251 | y     8.1e-01 | y_next 1.3e-03
+    > fail | evals 10001
+
+--> #  252 | c      252 | y     5.9e-01 | y_next 4.0e-02
++++ >        c_new  345 | y_new 6.6e-02 | y_old 6.2e-02 | evals  1415
+    : changes   788 | dx1 2.7e+03 | dx2 7.2e+01
+    : l_old : affenpinscher, monkey pinscher, monkey dog
+    : l_new : ox
+
+
+--> #  253 | c      253 | y     6.8e-01 | y_next 3.8e-02
++++ >        c_new  263 | y_new 8.0e-02 | y_old 8.0e-02 | evals  2187
+    : changes  1072 | dx1 3.8e+03 | dx2 8.1e+01
+    : l_old : basenji
+    : l_new : pembroke, pembroke welsh corgi
+
+
+--> #  254 | c      254 | y     6.4e-01 | y_next 2.5e-02
++++ >        c_new  903 | y_new 2.3e-01 | y_old 2.2e-01 | evals  1905
+    : changes   766 | dx1 2.9e+03 | dx2 7.6e+01
+    : l_old : pug, pug-dog
+    : l_new : wig
+
+
+--> #  255 | c      255 | y     9.1e-01 | y_next 3.3e-03
++++ >        c_new  170 | y_new 7.7e-02 | y_old 7.2e-02 | evals  3607
+    : changes  1648 | dx1 6.0e+03 | dx2 1.1e+02
+    : l_old : leonberg
+    : l_new : irish wolfhound
+
+
+--> #  256 | c      256 | y     6.0e-01 | y_next 1.5e-01
++++ >        c_new  244 | y_new 3.4e-01 | y_old 3.4e-01 | evals  1007
+    : changes   611 | dx1 2.5e+03 | dx2 7.6e+01
+    : l_old : newfoundland, newfoundland dog
+    : l_new : tibetan mastiff
+
+
+--> #  257 | c      257 | y     3.2e-01 | y_next 2.4e-01
++++ >        c_new  258 | y_new 3.2e-01 | y_old 3.2e-01 | evals   105
+    : changes    54 | dx1 2.5e+02 | dx2 2.5e+01
+    : l_old : great pyrenees
+    : l_new : samoyed, samoyede
+
+
+--> #  258 | c      258 | y     4.1e-01 | y_next 2.1e-01
++++ >        c_new  279 | y_new 2.8e-01 | y_old 2.7e-01 | evals    37
+    : changes    40 | dx1 1.3e+02 | dx2 1.4e+01
+    : l_old : samoyed, samoyede
+    : l_new : arctic fox, white fox, alopex lagopus
+
+
+--> #  259 | c      259 | y     8.7e-01 | y_next 1.8e-02
++++ >        c_new  187 | y_new 1.4e-01 | y_old 1.3e-01 | evals  2235
+    : changes  1275 | dx1 4.0e+03 | dx2 8.0e+01
+    : l_old : pomeranian
+    : l_new : yorkshire terrier
+
+
+--> #  260 | c      260 | y     4.9e-01 | y_next 1.7e-01
++++ >        c_new  258 | y_new 3.7e-01 | y_old 3.2e-01 | evals   217
+    : changes   220 | dx1 1.1e+03 | dx2 5.1e+01
+    : l_old : chow, chow chow
+    : l_new : samoyed, samoyede
+
+
+--> #  261 | c      261 | y     6.5e-01 | y_next 1.2e-02
++++ >        c_new  332 | y_new 9.1e-02 | y_old 8.8e-02 | evals  5009
+    : changes  2033 | dx1 6.3e+03 | dx2 1.0e+02
+    : l_old : keeshond
+    : l_new : angora, angora rabbit
+
+
+--> #  262 | c      262 | y     8.9e-01 | y_next 2.1e-02
++++ >        c_new  154 | y_new 2.2e-01 | y_old 2.0e-01 | evals  5321
+    : changes  2153 | dx1 6.7e+03 | dx2 1.1e+02
+    : l_old : brabancon griffon
+    : l_new : pekinese, pekingese, peke
+
+
+--> #  263 | c      263 | y     8.5e-01 | y_next 5.7e-02
++++ >        c_new  231 | y_new 1.6e-01 | y_old 1.5e-01 | evals  2027
+    : changes  1285 | dx1 3.9e+03 | dx2 7.8e+01
+    : l_old : pembroke, pembroke welsh corgi
+    : l_new : collie
+
+
+--> #  264 | c      264 | y     8.1e-01 | y_next 7.1e-02
++++ >        c_new  230 | y_new 2.0e-01 | y_old 1.9e-01 | evals   555
+    : changes   427 | dx1 2.1e+03 | dx2 7.4e+01
+    : l_old : cardigan, cardigan welsh corgi
+    : l_new : shetland sheepdog, shetland sheep dog, shetland
+
+WRN : base model is failed for "265" (SKIP)
+
+--> #  266 | c      266 | y     2.3e-01 | y_next 2.1e-01
++++ >        c_new  221 | y_new 2.3e-01 | y_old 2.2e-01 | evals    13
+    : changes    25 | dx1 5.7e+01 | dx2 8.1e+00
+    : l_old : miniature poodle
+    : l_new : irish water spaniel
+
+WRN : attr model is failed for "267" (SKIP)
+
+--> #  268 | c      268 | y     8.5e-01 | y_next 2.1e-02
++++ >        c_new  171 | y_new 2.4e-01 | y_old 2.4e-01 | evals  4839
+    : changes  1742 | dx1 3.4e+03 | dx2 5.8e+01
+    : l_old : mexican hairless
+    : l_new : italian greyhound
+
+
+--> #  269 | c      269 | y     6.7e-01 | y_next 7.7e-02
++++ >        c_new  271 | y_new 9.4e-02 | y_old 9.1e-02 | evals  1811
+    : changes   853 | dx1 2.5e+03 | dx2 6.2e+01
+    : l_old : timber wolf, grey wolf, gray wolf, canis lupus
+    : l_new : red wolf, maned wolf, canis rufus, canis niger
+
+
+--> #  270 | c      270 | y     8.2e-01 | y_next 6.1e-02
++++ >        c_new  257 | y_new 4.5e-01 | y_old 3.2e-01 | evals   403
+    : changes   241 | dx1 7.4e+02 | dx2 3.7e+01
+    : l_old : white wolf, arctic wolf, canis lupus tundrarum
+    : l_new : great pyrenees
+
+
+--> #  271 | c      271 | y     9.4e-01 | y_next 2.3e-03
++++ >        c_new  277 | y_new 2.3e-01 | y_old 2.2e-01 | evals  1013
+    : changes   608 | dx1 3.5e+03 | dx2 9.7e+01
+    : l_old : red wolf, maned wolf, canis rufus, canis niger
+    : l_new : red fox, vulpes vulpes
+
+WRN : base model is failed for "272" (SKIP)
+
+--> #  273 | c      273 | y     3.6e-01 | y_next 9.1e-02
++++ >        c_new  371 | y_new 1.8e-01 | y_old 1.5e-01 | evals   299
+    : changes   164 | dx1 5.1e+02 | dx2 2.9e+01
+    : l_old : dingo, warrigal, warragal, canis dingo
+    : l_new : patas, hussar monkey, erythrocebus patas
+
+
+--> #  274 | c      274 | y     7.6e-01 | y_next 5.0e-02
++++ >        c_new  286 | y_new 1.4e-01 | y_old 1.4e-01 | evals  1593
+    : changes   887 | dx1 2.1e+03 | dx2 5.5e+01
+    : l_old : dhole, cuon alpinus
+    : l_new : cougar, puma, catamount, mountain lion, painter, p
+
+
+--> #  275 | c      275 | y     7.3e-01 | y_next 8.5e-02
++++ >        c_new  276 | y_new 2.4e-01 | y_old 2.3e-01 | evals  1355
+    : changes   829 | dx1 2.2e+03 | dx2 5.6e+01
+    : l_old : african hunting dog, hyena dog, cape hunting dog, 
+    : l_new : hyena, hyaena
+
+
+--> #  276 | c      276 | y     6.8e-01 | y_next 2.9e-02
+    > fail | evals 10001
+
+--> #  277 | c      277 | y     5.0e-01 | y_next 7.7e-02
++++ >        c_new  104 | y_new 1.6e-01 | y_old 1.5e-01 | evals   343
+    : changes   268 | dx1 4.8e+02 | dx2 2.4e+01
+    : l_old : red fox, vulpes vulpes
+    : l_new : wallaby, brush kangaroo
+
+WRN : base model is failed for "278" (SKIP)
+
+--> #  279 | c      279 | y     9.7e-01 | y_next 8.2e-03
++++ >        c_new  388 | y_new 1.7e-01 | y_old 1.7e-01 | evals  4197
+    : changes  1424 | dx1 5.3e+03 | dx2 1.0e+02
+    : l_old : arctic fox, white fox, alopex lagopus
+    : l_new : giant panda, panda, panda bear, coon bear, ailurop
+
+
+--> #  280 | c      280 | y     8.6e-01 | y_next 1.7e-02
++++ >        c_new  298 | y_new 1.1e-01 | y_old 1.1e-01 | evals  2629
+    : changes  1363 | dx1 2.6e+03 | dx2 5.3e+01
+    : l_old : grey fox, gray fox, urocyon cinereoargenteus
+    : l_new : mongoose
+
+WRN : base model is failed for "281" (SKIP)
+WRN : base model is failed for "282" (SKIP)
+
+--> #  283 | c      283 | y     5.3e-01 | y_next 1.0e-01
++++ >        c_new  282 | y_new 2.2e-01 | y_old 2.2e-01 | evals  1713
+    : changes   711 | dx1 1.4e+03 | dx2 3.9e+01
+    : l_old : persian cat
+    : l_new : tiger cat
+
+
+--> #  284 | c      284 | y     7.6e-01 | y_next 3.9e-03
++++ >        c_new  330 | y_new 2.8e-02 | y_old 2.7e-02 | evals  6887
+    : changes  1991 | dx1 5.1e+03 | dx2 8.2e+01
+    : l_old : siamese cat, siamese
+    : l_new : wood rabbit, cottontail, cottontail rabbit
+
+
+--> #  285 | c      285 | y     6.3e-01 | y_next 8.0e-02
++++ >        c_new  289 | y_new 3.7e-01 | y_old 2.8e-01 | evals   731
+    : changes   332 | dx1 8.5e+02 | dx2 3.2e+01
+    : l_old : egyptian cat
+    : l_new : snow leopard, ounce, panthera uncia
+
+
+--> #  286 | c      286 | y     4.2e-01 | y_next 1.6e-01
++++ >        c_new  299 | y_new 3.1e-01 | y_old 2.3e-01 | evals   111
+    : changes    66 | dx1 1.9e+02 | dx2 1.6e+01
+    : l_old : cougar, puma, catamount, mountain lion, painter, p
+    : l_new : meerkat, mierkat
+
+
+--> #  287 | c      287 | y     6.6e-01 | y_next 2.7e-02
++++ >        c_new  282 | y_new 1.1e-01 | y_old 1.1e-01 | evals   849
+    : changes   585 | dx1 1.7e+03 | dx2 5.3e+01
+    : l_old : lynx, catamount
+    : l_new : tiger cat
+
+
+--> #  288 | c      288 | y     9.3e-01 | y_next 6.9e-03
++++ >        c_new  815 | y_new 1.6e-01 | y_old 1.2e-01 | evals  7305
+    : changes  2234 | dx1 5.8e+03 | dx2 1.0e+02
+    : l_old : leopard, panthera pardus
+    : l_new : spider web, spider`s web
+
+
+--> #  289 | c      289 | y     7.5e-01 | y_next 1.8e-02
++++ >        c_new  293 | y_new 2.6e-01 | y_old 2.6e-01 | evals  3709
+    : changes  1652 | dx1 4.7e+03 | dx2 8.4e+01
+    : l_old : snow leopard, ounce, panthera uncia
+    : l_new : cheetah, chetah, acinonyx jubatus
+
+WRN : base model is failed for "290" (SKIP)
+WRN : base model is failed for "291" (SKIP)
+
+--> #  292 | c      292 | y     6.5e-01 | y_next 1.3e-01
++++ >        c_new  242 | y_new 1.0e-01 | y_old 1.0e-01 | evals  6807
+    : changes  2866 | dx1 5.6e+03 | dx2 7.7e+01
+    : l_old : tiger, panthera tigris
+    : l_new : boxer
+
+
+--> #  293 | c      293 | y     6.4e-01 | y_next 5.1e-02
++++ >        c_new  286 | y_new 1.1e-01 | y_old 9.9e-02 | evals  2521
+    : changes  1098 | dx1 3.7e+03 | dx2 8.0e+01
+    : l_old : cheetah, chetah, acinonyx jubatus
+    : l_new : cougar, puma, catamount, mountain lion, painter, p
+
+
+--> #  294 | c      294 | y     8.8e-01 | y_next 7.8e-03
++++ >        c_new  235 | y_new 1.2e-01 | y_old 1.1e-01 | evals  1423
+    : changes   960 | dx1 4.5e+03 | dx2 1.0e+02
+    : l_old : brown bear, bruin, ursus arctos
+    : l_new : german shepherd, german shepherd dog, german polic
+
+
+--> #  295 | c      295 | y     7.6e-01 | y_next 7.5e-02
++++ >        c_new  369 | y_new 1.8e-01 | y_old 1.7e-01 | evals  2055
+    : changes   746 | dx1 3.3e+03 | dx2 8.5e+01
+    : l_old : american black bear, black bear, ursus americanus,
+    : l_new : siamang, hylobates syndactylus, symphalangus synda
+
+
+--> #  296 | c      296 | y     7.6e-01 | y_next 6.2e-03
++++ >        c_new   85 | y_new 9.5e-02 | y_old 8.8e-02 | evals  1609
+    : changes   890 | dx1 2.3e+03 | dx2 6.7e+01
+    : l_old : ice bear, polar bear, ursus maritimus, thalarctos 
+    : l_new : quail
+
+
+--> #  297 | c      297 | y     9.2e-01 | y_next 3.2e-03
++++ >        c_new  369 | y_new 1.1e-01 | y_old 1.1e-01 | evals  4597
+    : changes  1423 | dx1 3.8e+03 | dx2 7.3e+01
+    : l_old : sloth bear, melursus ursinus, ursus ursinus
+    : l_new : siamang, hylobates syndactylus, symphalangus synda
+
+
+--> #  298 | c      298 | y     7.7e-01 | y_next 4.3e-02
++++ >        c_new  336 | y_new 2.0e-01 | y_old 2.0e-01 | evals  2037
+    : changes  1112 | dx1 2.2e+03 | dx2 4.9e+01
+    : l_old : mongoose
+    : l_new : marmot
+
+
+--> #  299 | c      299 | y     7.4e-01 | y_next 6.7e-02
++++ >        c_new   24 | y_new 1.5e-01 | y_old 1.4e-01 | evals  3767
+    : changes  1526 | dx1 4.1e+03 | dx2 7.9e+01
+    : l_old : meerkat, mierkat
+    : l_new : great grey owl, great gray owl, strix nebulosa
+
+
+--> #  300 | c      300 | y     8.2e-01 | y_next 2.0e-02
++++ >        c_new  303 | y_new 2.0e-01 | y_old 1.9e-01 | evals  1609
+    : changes   887 | dx1 2.9e+03 | dx2 6.9e+01
+    : l_old : tiger beetle
+    : l_new : long-horned beetle, longicorn, longicorn beetle
+
+
+--> #  301 | c      301 | y     5.9e-01 | y_next 2.2e-01
++++ >        c_new  304 | y_new 3.6e-01 | y_old 3.6e-01 | evals  8015
+    : changes  3050 | dx1 9.4e+03 | dx2 1.3e+02
+    : l_old : ladybug, ladybeetle, lady beetle, ladybird, ladybi
+    : l_new : leaf beetle, chrysomelid
+
+
+--> #  302 | c      302 | y     8.1e-01 | y_next 1.3e-02
++++ >        c_new  306 | y_new 2.6e-01 | y_old 2.3e-01 | evals  3005
+    : changes  1118 | dx1 5.3e+03 | dx2 1.2e+02
+    : l_old : ground beetle, carabid beetle
+    : l_new : rhinoceros beetle
+
+
+--> #  303 | c      303 | y     7.1e-01 | y_next 5.5e-02
++++ >        c_new  300 | y_new 1.5e-01 | y_old 1.5e-01 | evals  2451
+    : changes  1079 | dx1 1.0e+03 | dx2 4.4e+01
+    : l_old : long-horned beetle, longicorn, longicorn beetle
+    : l_new : tiger beetle
+
+
+--> #  304 | c      304 | y     5.4e-01 | y_next 1.1e-01
++++ >        c_new  308 | y_new 2.0e-01 | y_old 1.8e-01 | evals   431
+    : changes   232 | dx1 4.3e+02 | dx2 2.1e+01
+    : l_old : leaf beetle, chrysomelid
+    : l_new : fly
+
+
+--> #  305 | c      305 | y     1.8e-01 | y_next 1.5e-01
++++ >        c_new  302 | y_new 1.7e-01 | y_old 1.6e-01 | evals     9
+    : changes     8 | dx1 3.1e+01 | dx2 7.7e+00
+    : l_old : dung beetle
+    : l_new : ground beetle, carabid beetle
+
+
+--> #  306 | c      306 | y     8.1e-01 | y_next 2.6e-02
++++ >        c_new  305 | y_new 2.6e-01 | y_old 2.4e-01 | evals  1703
+    : changes   978 | dx1 3.3e+03 | dx2 8.1e+01
+    : l_old : rhinoceros beetle
+    : l_new : dung beetle
+
+
+--> #  307 | c      307 | y     6.5e-01 | y_next 4.9e-02
++++ >        c_new  311 | y_new 1.3e-01 | y_old 1.0e-01 | evals   883
+    : changes   503 | dx1 2.5e+03 | dx2 8.2e+01
+    : l_old : weevil
+    : l_new : grasshopper, hopper
+
+
+--> #  308 | c      308 | y     5.5e-01 | y_next 5.7e-02
++++ >        c_new  125 | y_new 2.1e-01 | y_old 1.8e-01 | evals   839
+    : changes   360 | dx1 1.0e+03 | dx2 3.9e+01
+    : l_old : fly
+    : l_new : hermit crab
+
+
+--> #  309 | c      309 | y     8.2e-01 | y_next 1.0e-02
++++ >        c_new  319 | y_new 2.0e-01 | y_old 1.9e-01 | evals  5745
+    : changes  1702 | dx1 4.8e+03 | dx2 9.0e+01
+    : l_old : bee
+    : l_new : dragonfly, darning needle, devil`s darning needle,
+
+
+--> #  310 | c      310 | y     6.3e-01 | y_next 4.7e-02
++++ >        c_new  312 | y_new 1.8e-01 | y_old 1.7e-01 | evals   989
+    : changes   452 | dx1 1.1e+03 | dx2 3.9e+01
+    : l_old : ant, emmet, pismire
+    : l_new : cricket
+
+WRN : base model is failed for "311" (SKIP)
+
+--> #  312 | c      312 | y     9.0e-01 | y_next 2.0e-02
++++ >        c_new   70 | y_new 2.1e-01 | y_old 1.8e-01 | evals   905
+    : changes   438 | dx1 1.2e+03 | dx2 4.6e+01
+    : l_old : cricket
+    : l_new : harvestman, daddy longlegs, phalangium opilio
+
+
+--> #  313 | c      313 | y     7.1e-01 | y_next 2.9e-02
++++ >        c_new  303 | y_new 8.7e-02 | y_old 7.6e-02 | evals  1705
+    : changes   886 | dx1 2.4e+03 | dx2 6.1e+01
+    : l_old : walking stick, walkingstick, stick insect
+    : l_new : long-horned beetle, longicorn, longicorn beetle
+
+
+--> #  314 | c      314 | y     3.1e-01 | y_next 1.7e-01
++++ >        c_new  464 | y_new 2.3e-01 | y_old 2.2e-01 | evals   119
+    : changes    70 | dx1 1.1e+02 | dx2 9.7e+00
+    : l_old : cockroach, roach
+    : l_new : buckle
+
+WRN : attr model is failed for "315" (SKIP)
+WRN : attr model is failed for "316" (SKIP)
+
+--> #  317 | c      317 | y     6.7e-01 | y_next 5.2e-02
++++ >        c_new  316 | y_new 1.6e-01 | y_old 1.5e-01 | evals  1603
+    : changes   855 | dx1 1.9e+03 | dx2 4.8e+01
+    : l_old : leafhopper
+    : l_new : cicada, cicala
+
+
+--> #  318 | c      318 | y     9.0e-01 | y_next 3.3e-03
++++ >        c_new  312 | y_new 1.4e-01 | y_old 1.3e-01 | evals  4121
+    : changes  2061 | dx1 4.2e+03 | dx2 6.9e+01
+    : l_old : lacewing, lacewing fly
+    : l_new : cricket
+
+WRN : attr model is failed for "319" (SKIP)
+WRN : attr model is failed for "320" (SKIP)
+
+--> #  321 | c      321 | y     8.2e-01 | y_next 7.0e-03
++++ >        c_new  326 | y_new 2.2e-01 | y_old 2.2e-01 | evals  2935
+    : changes  1191 | dx1 5.2e+03 | dx2 1.1e+02
+    : l_old : admiral
+    : l_new : lycaenid, lycaenid butterfly
+
+
+--> #  322 | c      322 | y     7.8e-01 | y_next 1.4e-02
++++ >        c_new  321 | y_new 2.0e-01 | y_old 1.9e-01 | evals  4511
+    : changes  1878 | dx1 5.8e+03 | dx2 1.0e+02
+    : l_old : ringlet, ringlet butterfly
+    : l_new : admiral
+
+
+--> #  323 | c      323 | y     8.3e-01 | y_next 3.1e-03
++++ >        c_new  321 | y_new 2.3e-01 | y_old 2.3e-01 | evals  7229
+    : changes  3134 | dx1 9.9e+03 | dx2 1.4e+02
+    : l_old : monarch, monarch butterfly, milkweed butterfly, da
+    : l_new : admiral
+
+
+--> #  324 | c      324 | y     7.5e-01 | y_next 1.7e-02
++++ >        c_new  322 | y_new 2.3e-01 | y_old 2.1e-01 | evals  1667
+    : changes   684 | dx1 2.2e+03 | dx2 7.1e+01
+    : l_old : cabbage butterfly
+    : l_new : ringlet, ringlet butterfly
+
+
+--> #  325 | c      325 | y     6.9e-01 | y_next 6.8e-02
++++ >        c_new  322 | y_new 2.6e-01 | y_old 2.5e-01 | evals  1943
+    : changes  1092 | dx1 2.8e+03 | dx2 6.2e+01
+    : l_old : sulphur butterfly, sulfur butterfly
+    : l_new : ringlet, ringlet butterfly
+
+WRN : base model is failed for "326" (SKIP)
+
+--> #  327 | c      327 | y     7.4e-01 | y_next 6.8e-03
+    > fail | evals 10001
+
+--> #  328 | c      328 | y     6.7e-01 | y_next 5.0e-02
++++ >        c_new  109 | y_new 1.9e-01 | y_old 1.9e-01 | evals  1721
+    : changes  1032 | dx1 2.5e+03 | dx2 5.9e+01
+    : l_old : sea urchin
+    : l_new : brain coral
+
+
+--> #  329 | c      329 | y     8.4e-01 | y_next 1.6e-02
++++ >        c_new  539 | y_new 6.8e-03 | y_old 6.2e-03 | evals  5005
+    : changes  2319 | dx1 7.5e+03 | dx2 1.1e+02
+    : l_old : sea cucumber, holothurian
+    : l_new : doormat, welcome mat
+
+
+--> #  330 | c      330 | y     8.2e-01 | y_next 6.2e-02
++++ >        c_new  331 | y_new 3.8e-01 | y_old 3.7e-01 | evals  2103
+    : changes  1205 | dx1 3.6e+03 | dx2 7.6e+01
+    : l_old : wood rabbit, cottontail, cottontail rabbit
+    : l_new : hare
+
+
+--> #  331 | c      331 | y     7.4e-01 | y_next 7.3e-02
++++ >        c_new   18 | y_new 3.2e-01 | y_old 2.9e-01 | evals  1951
+    : changes   865 | dx1 1.7e+03 | dx2 4.3e+01
+    : l_old : hare
+    : l_new : magpie
+
+
+--> #  332 | c      332 | y     6.7e-01 | y_next 3.0e-02
++++ >        c_new  333 | y_new 2.5e-01 | y_old 2.5e-01 | evals   635
+    : changes   482 | dx1 1.5e+03 | dx2 5.0e+01
+    : l_old : angora, angora rabbit
+    : l_new : hamster
+
+
+--> #  333 | c      333 | y     6.1e-01 | y_next 1.8e-02
++++ >        c_new  338 | y_new 8.9e-02 | y_old 8.5e-02 | evals  1949
+    : changes   744 | dx1 3.5e+03 | dx2 8.9e+01
+    : l_old : hamster
+    : l_new : guinea pig, cavia cobaya
+
+
+--> #  334 | c      334 | y     3.7e-01 | y_next 1.6e-01
++++ >        c_new  337 | y_new 3.0e-01 | y_old 2.5e-01 | evals    29
+    : changes    70 | dx1 3.5e+02 | dx2 2.6e+01
+    : l_old : porcupine, hedgehog
+    : l_new : beaver
+
+
+--> #  335 | c      335 | y     8.9e-01 | y_next 9.3e-03
++++ >        c_new  364 | y_new 1.3e-01 | y_old 1.3e-01 | evals  1113
+    : changes   747 | dx1 1.7e+03 | dx2 4.4e+01
+    : l_old : fox squirrel, eastern fox squirrel, sciurus niger
+    : l_new : three-toed sloth, ai, bradypus tridactylus
+
+
+--> #  336 | c      336 | y     9.7e-01 | y_next 8.0e-04
++++ >        c_new  348 | y_new 4.9e-02 | y_old 4.9e-02 | evals  2405
+    : changes  1187 | dx1 3.5e+03 | dx2 7.2e+01
+    : l_old : marmot
+    : l_new : ram, tup
+
+
+--> #  337 | c      337 | y     6.6e-01 | y_next 6.8e-02
++++ >        c_new  294 | y_new 2.1e-01 | y_old 2.0e-01 | evals   909
+    : changes   655 | dx1 2.1e+03 | dx2 5.9e+01
+    : l_old : beaver
+    : l_new : brown bear, bruin, ursus arctos
+
+
+--> #  338 | c      338 | y     7.7e-01 | y_next 3.6e-02
++++ >        c_new  932 | y_new 1.6e-01 | y_old 1.5e-01 | evals  1321
+    : changes   361 | dx1 2.6e+03 | dx2 8.9e+01
+    : l_old : guinea pig, cavia cobaya
+    : l_new : pretzel
+
+
+--> #  339 | c      339 | y     8.8e-01 | y_next 7.1e-03
++++ >        c_new  347 | y_new 4.2e-01 | y_old 3.7e-01 | evals  2685
+    : changes  1022 | dx1 3.7e+03 | dx2 8.4e+01
+    : l_old : sorrel
+    : l_new : bison
+
+
+--> #  340 | c      340 | y     7.3e-01 | y_next 1.6e-03
+    > fail | evals 10001
+
+--> #  341 | c      341 | y     7.2e-01 | y_next 2.0e-02
++++ >        c_new  333 | y_new 9.7e-02 | y_old 9.7e-02 | evals  2509
+    : changes  1136 | dx1 3.0e+03 | dx2 6.5e+01
+    : l_old : hog, pig, grunter, squealer, sus scrofa
+    : l_new : hamster
+
+WRN : attr model is failed for "342" (SKIP)
+
+--> #  343 | c      343 | y     5.9e-01 | y_next 1.6e-01
++++ >        c_new  342 | y_new 3.5e-01 | y_old 3.4e-01 | evals  1309
+    : changes   704 | dx1 2.4e+03 | dx2 6.6e+01
+    : l_old : warthog
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  344 | c      344 | y     9.3e-01 | y_next 2.8e-02
++++ >        c_new  341 | y_new 3.0e-01 | y_old 3.0e-01 | evals  5671
+    : changes  1812 | dx1 4.9e+03 | dx2 8.4e+01
+    : l_old : hippopotamus, hippo, river horse, hippopotamus amp
+    : l_new : hog, pig, grunter, squealer, sus scrofa
+
+
+--> #  345 | c      345 | y     7.5e-01 | y_next 8.0e-02
++++ >        c_new  348 | y_new 3.2e-01 | y_old 3.1e-01 | evals  1053
+    : changes   490 | dx1 2.1e+03 | dx2 6.8e+01
+    : l_old : ox
+    : l_new : ram, tup
+
+
+--> #  346 | c      346 | y     8.9e-01 | y_next 7.8e-03
++++ >        c_new  344 | y_new 1.5e-01 | y_old 1.3e-01 | evals  2185
+    : changes   957 | dx1 3.2e+03 | dx2 7.4e+01
+    : l_old : water buffalo, water ox, asiatic buffalo, bubalus 
+    : l_new : hippopotamus, hippo, river horse, hippopotamus amp
+
+
+--> #  347 | c      347 | y     3.9e-01 | y_next 1.7e-01
++++ >        c_new  350 | y_new 3.1e-01 | y_old 1.4e-01 | evals   101
+    : changes    72 | dx1 1.8e+02 | dx2 1.4e+01
+    : l_old : bison
+    : l_new : ibex, capra ibex
+
+
+--> #  348 | c      348 | y     9.1e-01 | y_next 1.3e-02
++++ >        c_new  341 | y_new 8.7e-02 | y_old 8.4e-02 | evals  4911
+    : changes  2358 | dx1 7.6e+03 | dx2 1.1e+02
+    : l_old : ram, tup
+    : l_new : hog, pig, grunter, squealer, sus scrofa
+
+
+--> #  349 | c      349 | y     4.8e-01 | y_next 1.5e-01
++++ >        c_new  348 | y_new 2.0e-01 | y_old 1.9e-01 | evals   305
+    : changes   262 | dx1 8.7e+02 | dx2 3.8e+01
+    : l_old : bighorn, bighorn sheep, cimarron, rocky mountain b
+    : l_new : ram, tup
+
+
+--> #  350 | c      350 | y     7.5e-01 | y_next 4.8e-02
++++ >        c_new  349 | y_new 2.9e-01 | y_old 2.7e-01 | evals   903
+    : changes   480 | dx1 1.5e+03 | dx2 4.9e+01
+    : l_old : ibex, capra ibex
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+
+--> #  351 | c      351 | y     4.4e-01 | y_next 3.0e-01
++++ >        c_new  352 | y_new 3.5e-01 | y_old 3.3e-01 | evals   145
+    : changes    83 | dx1 2.3e+02 | dx2 2.0e+01
+    : l_old : hartebeest
+    : l_new : impala, aepyceros melampus
+
+
+--> #  352 | c      352 | y     8.5e-01 | y_next 4.2e-02
++++ >        c_new  351 | y_new 3.7e-01 | y_old 3.6e-01 | evals  2543
+    : changes  1131 | dx1 3.4e+03 | dx2 7.1e+01
+    : l_old : impala, aepyceros melampus
+    : l_new : hartebeest
+
+
+--> #  353 | c      353 | y     6.0e-01 | y_next 2.5e-01
++++ >        c_new  352 | y_new 4.1e-01 | y_old 4.1e-01 | evals   507
+    : changes   337 | dx1 1.4e+03 | dx2 5.4e+01
+    : l_old : gazelle
+    : l_new : impala, aepyceros melampus
+
+
+--> #  354 | c      354 | y     3.9e-01 | y_next 8.9e-02
++++ >        c_new    7 | y_new 1.7e-01 | y_old 1.6e-01 | evals   547
+    : changes   369 | dx1 1.4e+03 | dx2 5.4e+01
+    : l_old : arabian camel, dromedary, camelus dromedarius
+    : l_new : cock
+
+
+--> #  355 | c      355 | y     6.8e-01 | y_next 2.5e-02
++++ >        c_new  104 | y_new 2.8e-01 | y_old 2.6e-01 | evals  1033
+    : changes   595 | dx1 1.9e+03 | dx2 5.6e+01
+    : l_old : llama
+    : l_new : wallaby, brush kangaroo
+
+WRN : base model is failed for "356" (SKIP)
+
+--> #  357 | c      357 | y     4.0e-01 | y_next 5.9e-02
++++ >        c_new  337 | y_new 1.2e-01 | y_old 1.2e-01 | evals   919
+    : changes   568 | dx1 1.5e+03 | dx2 4.7e+01
+    : l_old : mink
+    : l_new : beaver
+
+WRN : base model is failed for "358" (SKIP)
+
+--> #  359 | c      359 | y     4.8e-01 | y_next 1.7e-01
+    > fail | evals 10001
+
+--> #  360 | c      360 | y     5.9e-01 | y_next 7.5e-02
++++ >        c_new  150 | y_new 1.3e-01 | y_old 1.3e-01 | evals   719
+    : changes   529 | dx1 9.5e+02 | dx2 3.1e+01
+    : l_old : otter
+    : l_new : sea lion
+
+
+--> #  361 | c      361 | y     4.2e-01 | y_next 5.8e-02
++++ >        c_new  357 | y_new 2.5e-01 | y_old 1.8e-01 | evals   265
+    : changes   105 | dx1 3.1e+02 | dx2 2.2e+01
+    : l_old : skunk, polecat, wood pussy
+    : l_new : mink
+
+
+--> #  362 | c      362 | y     8.7e-01 | y_next 4.2e-03
+    > fail | evals 10001
+
+--> #  363 | c      363 | y     5.3e-01 | y_next 3.9e-02
++++ >        c_new   46 | y_new 1.2e-01 | y_old 1.2e-01 | evals   727
+    : changes   389 | dx1 7.5e+02 | dx2 3.2e+01
+    : l_old : armadillo
+    : l_new : green lizard, lacerta viridis
+
+
+--> #  364 | c      364 | y     7.7e-01 | y_next 6.2e-03
+    > fail | evals 10001
+
+--> #  365 | c      365 | y     8.0e-01 | y_next 6.4e-03
++++ >        c_new  932 | y_new 8.4e-02 | y_old 8.4e-02 | evals  4179
+    : changes  1701 | dx1 6.3e+03 | dx2 1.1e+02
+    : l_old : orangutan, orang, orangutang, pongo pygmaeus
+    : l_new : pretzel
+
+WRN : base model is failed for "366" (SKIP)
+
+--> #  367 | c      367 | y     3.2e-01 | y_next 1.8e-01
++++ >        c_new  366 | y_new 2.9e-01 | y_old 1.7e-01 | evals    95
+    : changes    72 | dx1 4.2e+02 | dx2 3.1e+01
+    : l_old : chimpanzee, chimp, pan troglodytes
+    : l_new : gorilla, gorilla gorilla
+
+
+--> #  368 | c      368 | y     6.8e-01 | y_next 4.0e-02
++++ >        c_new  379 | y_new 2.4e-01 | y_old 2.3e-01 | evals   605
+    : changes   281 | dx1 9.9e+02 | dx2 4.3e+01
+    : l_old : gibbon, hylobates lar
+    : l_new : howler monkey, howler
+
+
+--> #  369 | c      369 | y     7.7e-01 | y_next 5.0e-02
++++ >        c_new  787 | y_new 4.6e-02 | y_old 4.4e-02 | evals  4379
+    : changes  1750 | dx1 7.2e+03 | dx2 1.2e+02
+    : l_old : siamang, hylobates syndactylus, symphalangus synda
+    : l_new : shield, buckler
+
+
+--> #  370 | c      370 | y     8.1e-01 | y_next 1.1e-02
+    > fail | evals 10001
+
+--> #  371 | c      371 | y     6.8e-01 | y_next 4.6e-02
++++ >        c_new  299 | y_new 6.5e-02 | y_old 6.5e-02 | evals  3703
+    : changes  1716 | dx1 3.7e+03 | dx2 6.2e+01
+    : l_old : patas, hussar monkey, erythrocebus patas
+    : l_new : meerkat, mierkat
+
+
+--> #  372 | c      372 | y     5.9e-01 | y_next 1.9e-01
++++ >        c_new  373 | y_new 3.7e-01 | y_old 3.7e-01 | evals   763
+    : changes   470 | dx1 8.9e+02 | dx2 3.0e+01
+    : l_old : baboon
+    : l_new : macaque
+
+
+--> #  373 | c      373 | y     7.8e-01 | y_next 2.8e-02
++++ >        c_new  334 | y_new 3.9e-02 | y_old 3.9e-02 | evals  8011
+    : changes  2225 | dx1 6.0e+03 | dx2 1.0e+02
+    : l_old : macaque
+    : l_new : porcupine, hedgehog
+
+
+--> #  374 | c      374 | y     3.9e-01 | y_next 1.2e-01
++++ >        c_new  383 | y_new 2.1e-01 | y_old 2.0e-01 | evals   167
+    : changes    60 | dx1 1.0e+02 | dx2 1.1e+01
+    : l_old : langur
+    : l_new : madagascar cat, ring-tailed lemur, lemur catta
+
+WRN : base model is failed for "375" (SKIP)
+
+--> #  376 | c      376 | y     7.4e-01 | y_next 1.3e-02
++++ >        c_new  993 | y_new 1.0e-01 | y_old 9.7e-02 | evals  5335
+    : changes  1949 | dx1 7.7e+03 | dx2 1.2e+02
+    : l_old : proboscis monkey, nasalis larvatus
+    : l_new : gyromitra
+
+
+--> #  377 | c      377 | y     7.3e-01 | y_next 1.3e-01
++++ >        c_new  372 | y_new 1.9e-01 | y_old 1.8e-01 | evals   565
+    : changes   364 | dx1 1.4e+03 | dx2 5.2e+01
+    : l_old : marmoset
+    : l_new : baboon
+
+
+--> #  378 | c      378 | y     6.8e-01 | y_next 1.1e-01
++++ >        c_new  380 | y_new 3.2e-01 | y_old 3.1e-01 | evals  2211
+    : changes   963 | dx1 3.0e+03 | dx2 7.6e+01
+    : l_old : capuchin, ringtail, cebus capucinus
+    : l_new : titi, titi monkey
+
+
+--> #  379 | c      379 | y     7.9e-01 | y_next 1.9e-02
++++ >        c_new  135 | y_new 7.0e-02 | y_old 7.0e-02 | evals  1817
+    : changes  1136 | dx1 4.1e+03 | dx2 8.8e+01
+    : l_old : howler monkey, howler
+    : l_new : limpkin, aramus pictus
+
+WRN : base model is failed for "380" (SKIP)
+
+--> #  381 | c      381 | y     9.4e-01 | y_next 8.3e-03
++++ >        c_new  370 | y_new 3.2e-01 | y_old 3.0e-01 | evals  1441
+    : changes   843 | dx1 2.4e+03 | dx2 6.0e+01
+    : l_old : spider monkey, ateles geoffroyi
+    : l_new : guenon, guenon monkey
+
+
+--> #  382 | c      382 | y     7.0e-01 | y_next 1.3e-01
+    > fail | evals 10001
+
+--> #  383 | c      383 | y     8.8e-01 | y_next 5.6e-03
++++ >        c_new  336 | y_new 2.1e-01 | y_old 1.9e-01 | evals  1011
+    : changes   507 | dx1 1.5e+03 | dx2 4.9e+01
+    : l_old : madagascar cat, ring-tailed lemur, lemur catta
+    : l_new : marmot
+
+WRN : attr model is failed for "384" (SKIP)
+
+--> #  385 | c      385 | y     7.3e-01 | y_next 6.3e-02
++++ >        c_new  386 | y_new 3.1e-01 | y_old 3.0e-01 | evals  1103
+    : changes   597 | dx1 2.8e+03 | dx2 7.8e+01
+    : l_old : indian elephant, elephas maximus
+    : l_new : african elephant, loxodonta africana
+
+
+--> #  386 | c      386 | y     8.1e-01 | y_next 5.3e-02
++++ >        c_new  346 | y_new 3.0e-01 | y_old 2.9e-01 | evals  2907
+    : changes  1026 | dx1 4.1e+03 | dx2 9.2e+01
+    : l_old : african elephant, loxodonta africana
+    : l_new : water buffalo, water ox, asiatic buffalo, bubalus 
+
+
+--> #  387 | c      387 | y     9.0e-01 | y_next 2.9e-03
++++ >        c_new  338 | y_new 1.8e-01 | y_old 1.6e-01 | evals  7903
+    : changes  2439 | dx1 9.3e+03 | dx2 1.4e+02
+    : l_old : lesser panda, red panda, panda, bear cat, cat bear
+    : l_new : guinea pig, cavia cobaya
+
+
+--> #  388 | c      388 | y     7.5e-01 | y_next 2.2e-03
+    > fail | evals 10001
+
+--> #  389 | c      389 | y     7.0e-01 | y_next 7.8e-02
++++ >        c_new    0 | y_new 3.8e-01 | y_old 3.4e-01 | evals   703
+    : changes   365 | dx1 2.3e+03 | dx2 8.2e+01
+    : l_old : barracouta, snoek
+    : l_new : tench, tinca tinca
+
+WRN : base model is failed for "390" (SKIP)
+
+--> #  391 | c      391 | y     7.3e-01 | y_next 4.7e-02
++++ >        c_new  394 | y_new 2.2e-01 | y_old 2.1e-01 | evals  4007
+    : changes  1227 | dx1 4.0e+03 | dx2 8.1e+01
+    : l_old : coho, cohoe, coho salmon, blue jack, silver salmon
+    : l_new : sturgeon
+
+
+--> #  392 | c      392 | y     7.5e-01 | y_next 5.5e-03
++++ >        c_new  390 | y_new 1.9e-01 | y_old 1.5e-01 | evals   503
+    : changes   390 | dx1 1.8e+03 | dx2 6.5e+01
+    : l_old : rock beauty, holocanthus tricolor
+    : l_new : eel
+
+
+--> #  393 | c      393 | y     4.8e-01 | y_next 1.3e-01
++++ >        c_new  108 | y_new 2.5e-01 | y_old 2.5e-01 | evals   981
+    : changes   560 | dx1 1.7e+03 | dx2 5.2e+01
+    : l_old : anemone fish
+    : l_new : sea anemone, anemone
+
+
+--> #  394 | c      394 | y     8.7e-01 | y_next 5.3e-03
++++ >        c_new  178 | y_new 1.1e-01 | y_old 9.4e-02 | evals   305
+    : changes   268 | dx1 1.2e+03 | dx2 5.0e+01
+    : l_old : sturgeon
+    : l_new : weimaraner
+
+WRN : base model is failed for "395" (SKIP)
+WRN : base model is failed for "396" (SKIP)
+
+--> #  397 | c      397 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10001
+
+--> #  398 | c      398 | y     8.2e-01 | y_next 1.2e-02
++++ >        c_new  772 | y_new 1.3e-01 | y_old 1.2e-01 | evals  2561
+    : changes  1163 | dx1 3.7e+03 | dx2 9.2e+01
+    : l_old : abacus
+    : l_new : safety pin
+
+
+--> #  399 | c      399 | y     8.4e-01 | y_next 8.3e-03
++++ >        c_new  499 | y_new 6.6e-02 | y_old 6.5e-02 | evals   915
+    : changes   441 | dx1 1.9e+03 | dx2 7.4e+01
+    : l_old : abaya
+    : l_new : cleaver, meat cleaver, chopper
+
+
+--> #  400 | c      400 | y     7.0e-01 | y_next 6.4e-02
++++ >        c_new  667 | y_new 3.1e-01 | y_old 3.0e-01 | evals   809
+    : changes   473 | dx1 3.1e+03 | dx2 1.0e+02
+    : l_old : academic gown, academic robe, judge`s robe
+    : l_new : mortarboard
+
+WRN : base model is failed for "401" (SKIP)
+
+--> #  402 | c      402 | y     7.5e-01 | y_next 1.4e-02
+    > fail | evals 10001
+
+--> #  403 | c      403 | y     7.8e-01 | y_next 2.1e-02
++++ >        c_new  833 | y_new 3.0e-01 | y_old 2.8e-01 | evals  1777
+    : changes   852 | dx1 2.6e+03 | dx2 6.3e+01
+    : l_old : aircraft carrier, carrier, flattop, attack aircraf
+    : l_new : submarine, pigboat, sub, u-boat
+
+
+--> #  404 | c      404 | y     8.6e-01 | y_next 6.8e-02
++++ >        c_new  908 | y_new 2.3e-01 | y_old 2.2e-01 | evals  1575
+    : changes   918 | dx1 3.3e+03 | dx2 7.8e+01
+    : l_old : airliner
+    : l_new : wing
+
+
+--> #  405 | c      405 | y     9.8e-01 | y_next 3.1e-04
++++ >        c_new  147 | y_new 6.8e-02 | y_old 6.2e-02 | evals  1811
+    : changes  1258 | dx1 5.3e+03 | dx2 1.1e+02
+    : l_old : airship, dirigible
+    : l_new : grey whale, gray whale, devilfish, eschrichtius gi
+
+
+--> #  406 | c      406 | y     3.7e-01 | y_next 1.0e-01
++++ >        c_new  687 | y_new 7.2e-02 | y_old 6.9e-02 | evals  1287
+    : changes   714 | dx1 2.1e+03 | dx2 6.6e+01
+    : l_old : altar
+    : l_new : organ, pipe organ
+
+
+--> #  407 | c      407 | y     8.0e-01 | y_next 1.0e-02
++++ >        c_new  675 | y_new 2.4e-01 | y_old 2.4e-01 | evals  2735
+    : changes  1157 | dx1 5.3e+03 | dx2 1.1e+02
+    : l_old : ambulance
+    : l_new : moving van
+
+
+--> #  408 | c      408 | y     4.3e-01 | y_next 6.7e-02
++++ >        c_new  463 | y_new 1.3e-01 | y_old 1.1e-01 | evals   603
+    : changes   371 | dx1 1.4e+03 | dx2 5.4e+01
+    : l_old : amphibian, amphibious vehicle
+    : l_new : bucket, pail
+
+WRN : base model is failed for "409" (SKIP)
+
+--> #  410 | c      410 | y     6.9e-01 | y_next 1.4e-02
++++ >        c_new  660 | y_new 4.8e-02 | y_old 4.6e-02 | evals  5793
+    : changes  1898 | dx1 5.5e+03 | dx2 9.5e+01
+    : l_old : apiary, bee house
+    : l_new : mobile home, manufactured home
+
+
+--> #  411 | c      411 | y     6.1e-01 | y_next 1.3e-01
++++ >        c_new  697 | y_new 2.9e-01 | y_old 2.6e-01 | evals   305
+    : changes   255 | dx1 8.4e+02 | dx2 4.1e+01
+    : l_old : apron
+    : l_new : pajama, pyjama, pj`s, jammies
+
+
+--> #  412 | c      412 | y     5.3e-01 | y_next 4.2e-02
++++ >        c_new  643 | y_new 1.7e-01 | y_old 1.5e-01 | evals  1807
+    : changes  1032 | dx1 4.5e+03 | dx2 1.0e+02
+    : l_old : ashcan, trash can, garbage can, wastebin, ash bin,
+    : l_new : mask
+
+WRN : attr model is failed for "413" (SKIP)
+
+--> #  414 | c      414 | y     7.9e-01 | y_next 6.6e-02
++++ >        c_new  732 | y_new 1.1e-01 | y_old 7.7e-02 | evals   109
+    : changes   134 | dx1 6.7e+02 | dx2 3.9e+01
+    : l_old : backpack, back pack, knapsack, packsack, rucksack,
+    : l_new : polaroid camera, polaroid land camera
+
+
+--> #  415 | c      415 | y     5.9e-01 | y_next 5.5e-02
++++ >        c_new  760 | y_new 1.4e-01 | y_old 1.1e-01 | evals   151
+    : changes   153 | dx1 8.8e+02 | dx2 4.9e+01
+    : l_old : bakery, bakeshop, bakehouse
+    : l_new : refrigerator, icebox
+
+
+--> #  416 | c      416 | y     6.4e-01 | y_next 1.5e-01
++++ >        c_new  702 | y_new 2.7e-01 | y_old 2.7e-01 | evals   609
+    : changes   478 | dx1 1.8e+03 | dx2 6.8e+01
+    : l_old : balance beam, beam
+    : l_new : parallel bars, bars
+
+
+--> #  417 | c      417 | y     7.2e-01 | y_next 9.8e-03
+    > fail | evals 10001
+
+--> #  418 | c      418 | y     3.5e-01 | y_next 1.1e-01
++++ >        c_new  563 | y_new 1.1e-01 | y_old 1.1e-01 | evals  1645
+    : changes   539 | dx1 9.8e+02 | dx2 5.2e+01
+    : l_old : ballpoint, ballpoint pen, ballpen, biro
+    : l_new : fountain pen
+
+
+--> #  419 | c      419 | y     9.4e-01 | y_next 1.3e-02
++++ >        c_new  692 | y_new 1.2e-01 | y_old 1.2e-01 | evals  7599
+    : changes  1513 | dx1 6.0e+03 | dx2 1.2e+02
+    : l_old : band aid
+    : l_new : packet
+
+
+--> #  420 | c      420 | y     8.8e-01 | y_next 1.1e-02
++++ >        c_new  541 | y_new 1.3e-01 | y_old 1.1e-01 | evals  1007
+    : changes   589 | dx1 1.7e+03 | dx2 5.0e+01
+    : l_old : banjo
+    : l_new : drum, membranophone, tympan
+
+
+--> #  421 | c      421 | y     5.1e-01 | y_next 6.0e-02
++++ >        c_new  427 | y_new 1.3e-01 | y_old 1.2e-01 | evals  1139
+    : changes   650 | dx1 2.4e+03 | dx2 7.0e+01
+    : l_old : bannister, banister, balustrade, balusters, handra
+    : l_new : barrel, cask
+
+
+--> #  422 | c      422 | y     4.5e-01 | y_next 2.3e-02
+    > fail | evals 10001
+
+--> #  423 | c      423 | y     7.6e-01 | y_next 3.9e-02
++++ >        c_new  618 | y_new 8.4e-02 | y_old 8.4e-02 | evals  1921
+    : changes  1020 | dx1 1.9e+03 | dx2 5.6e+01
+    : l_old : barber chair
+    : l_new : ladle
+
+WRN : base model is failed for "424" (SKIP)
+
+--> #  425 | c      425 | y     9.1e-01 | y_next 4.7e-03
++++ >        c_new  497 | y_new 1.2e-01 | y_old 1.2e-01 | evals  9947
+    : changes  3713 | dx1 1.3e+04 | dx2 1.6e+02
+    : l_old : barn
+    : l_new : church, church building
+
+
+--> #  426 | c      426 | y     1.9e-01 | y_next 1.1e-01
++++ >        c_new  769 | y_new 1.2e-01 | y_old 1.2e-01 | evals    95
+    : changes    56 | dx1 2.6e+02 | dx2 2.5e+01
+    : l_old : barometer
+    : l_new : rule, ruler
+
+WRN : base model is failed for "427" (SKIP)
+
+--> #  428 | c      428 | y     9.0e-01 | y_next 5.6e-03
++++ >        c_new  703 | y_new 7.5e-02 | y_old 6.9e-02 | evals  3807
+    : changes  1637 | dx1 4.4e+03 | dx2 8.3e+01
+    : l_old : barrow, garden cart, lawn cart, wheelbarrow
+    : l_new : park bench
+
+
+--> #  429 | c      429 | y     6.8e-01 | y_next 4.0e-03
++++ >        c_new  427 | y_new 7.9e-02 | y_old 7.8e-02 | evals  2427
+    : changes   900 | dx1 2.5e+03 | dx2 6.5e+01
+    : l_old : baseball
+    : l_new : barrel, cask
+
+
+--> #  430 | c      430 | y     5.3e-01 | y_next 1.7e-01
++++ >        c_new  890 | y_new 3.3e-01 | y_old 3.2e-01 | evals   383
+    : changes   254 | dx1 6.0e+02 | dx2 2.7e+01
+    : l_old : basketball
+    : l_new : volleyball
+
+
+--> #  431 | c      431 | y     8.9e-01 | y_next 5.3e-02
++++ >        c_new  770 | y_new 3.2e-01 | y_old 3.2e-01 | evals  1901
+    : changes  1134 | dx1 3.6e+03 | dx2 7.5e+01
+    : l_old : bassinet
+    : l_new : running shoe
+
+
+--> #  432 | c      432 | y     8.3e-01 | y_next 1.6e-02
+    > fail | evals 10001
+
+--> #  433 | c      433 | y     9.6e-01 | y_next 4.3e-03
++++ >        c_new  842 | y_new 1.6e-01 | y_old 1.6e-01 | evals  2507
+    : changes  1184 | dx1 4.3e+03 | dx2 8.9e+01
+    : l_old : bathing cap, swimming cap
+    : l_new : swimming trunks, bathing trunks
+
+
+--> #  434 | c      434 | y     7.3e-01 | y_next 5.2e-02
++++ >        c_new  806 | y_new 1.3e-01 | y_old 1.2e-01 | evals   305
+    : changes   285 | dx1 9.1e+02 | dx2 4.0e+01
+    : l_old : bath towel
+    : l_new : sock
+
+WRN : base model is failed for "435" (SKIP)
+
+--> #  436 | c      436 | y     9.1e-01 | y_next 3.2e-02
++++ >        c_new  656 | y_new 4.2e-01 | y_old 4.1e-01 | evals  1713
+    : changes   737 | dx1 4.4e+03 | dx2 1.2e+02
+    : l_old : beach wagon, station wagon, wagon, estate car, bea
+    : l_new : minivan
+
+
+--> #  437 | c      437 | y     6.9e-01 | y_next 6.3e-02
++++ >        c_new  900 | y_new 2.8e-01 | y_old 2.7e-01 | evals  1517
+    : changes   691 | dx1 2.9e+03 | dx2 7.9e+01
+    : l_old : beacon, lighthouse, beacon light, pharos
+    : l_new : water tower
+
+WRN : base model is failed for "438" (SKIP)
+
+--> #  439 | c      439 | y     7.9e-01 | y_next 9.2e-03
++++ >        c_new  399 | y_new 2.2e-01 | y_old 1.8e-01 | evals  2239
+    : changes  1044 | dx1 5.1e+03 | dx2 1.2e+02
+    : l_old : bearskin, busby, shako
+    : l_new : abaya
+
+
+--> #  440 | c      440 | y     4.3e-01 | y_next 1.5e-01
++++ >        c_new  907 | y_new 2.8e-01 | y_old 2.7e-01 | evals  1423
+    : changes   369 | dx1 1.4e+03 | dx2 5.2e+01
+    : l_old : beer bottle
+    : l_new : wine bottle
+
+
+--> #  441 | c      441 | y     3.0e-01 | y_next 7.9e-02
++++ >        c_new  899 | y_new 1.5e-01 | y_old 1.4e-01 | evals   737
+    : changes   255 | dx1 1.2e+03 | dx2 5.6e+01
+    : l_old : beer glass
+    : l_new : water jug
+
+WRN : base model is failed for "442" (SKIP)
+
+--> #  443 | c      443 | y     7.8e-01 | y_next 2.4e-03
++++ >        c_new  684 | y_new 1.1e-01 | y_old 9.9e-02 | evals  5043
+    : changes  1369 | dx1 6.6e+03 | dx2 1.3e+02
+    : l_old : bib
+    : l_new : ocarina, sweet potato
+
+
+--> #  444 | c      444 | y     9.0e-01 | y_next 7.3e-03
++++ >        c_new  428 | y_new 2.3e-01 | y_old 2.3e-01 | evals  1843
+    : changes  1093 | dx1 4.9e+03 | dx2 1.1e+02
+    : l_old : bicycle-built-for-two, tandem bicycle, tandem
+    : l_new : barrow, garden cart, lawn cart, wheelbarrow
+
+
+--> #  445 | c      445 | y     4.3e-01 | y_next 2.3e-01
++++ >        c_new  459 | y_new 3.5e-01 | y_old 3.2e-01 | evals   433
+    : changes   144 | dx1 5.3e+02 | dx2 3.2e+01
+    : l_old : bikini, two-piece
+    : l_new : brassiere, bra, bandeau
+
+WRN : base model is failed for "446" (SKIP)
+
+--> #  447 | c      447 | y     5.1e-01 | y_next 1.8e-02
++++ >        c_new  613 | y_new 8.5e-02 | y_old 8.2e-02 | evals   355
+    : changes   149 | dx1 8.3e+02 | dx2 4.7e+01
+    : l_old : binoculars, field glasses, opera glasses
+    : l_new : joystick
+
+
+--> #  448 | c      448 | y     9.1e-01 | y_next 2.7e-03
++++ >        c_new  637 | y_new 3.0e-01 | y_old 2.8e-01 | evals  6315
+    : changes  2439 | dx1 7.3e+03 | dx2 1.1e+02
+    : l_old : birdhouse
+    : l_new : mailbox, letter box
+
+
+--> #  449 | c      449 | y     6.0e-01 | y_next 1.2e-01
++++ >        c_new  706 | y_new 3.5e-01 | y_old 2.2e-01 | evals   167
+    : changes   161 | dx1 7.3e+02 | dx2 3.8e+01
+    : l_old : boathouse
+    : l_new : patio, terrace
+
+
+--> #  450 | c      450 | y     4.1e-01 | y_next 2.4e-02
++++ >        c_new  670 | y_new 1.1e-01 | y_old 9.7e-02 | evals  1317
+    : changes   729 | dx1 3.2e+03 | dx2 8.4e+01
+    : l_old : bobsled, bobsleigh, bob
+    : l_new : motor scooter, scooter
+
+
+--> #  451 | c      451 | y     6.3e-01 | y_next 1.6e-01
++++ >        c_new  464 | y_new 3.2e-01 | y_old 3.1e-01 | evals  1159
+    : changes   744 | dx1 2.5e+03 | dx2 6.5e+01
+    : l_old : bolo tie, bolo, bola tie, bola
+    : l_new : buckle
+
+
+--> #  452 | c      452 | y     9.3e-01 | y_next 3.5e-03
++++ >        c_new  643 | y_new 2.1e-01 | y_old 1.9e-01 | evals  1759
+    : changes   623 | dx1 4.1e+03 | dx2 1.1e+02
+    : l_old : bonnet, poke bonnet
+    : l_new : mask
+
+
+--> #  453 | c      453 | y     7.5e-01 | y_next 8.2e-02
++++ >        c_new  648 | y_new 1.4e-01 | y_old 1.3e-01 | evals  1505
+    : changes  1127 | dx1 4.6e+03 | dx2 9.7e+01
+    : l_old : bookcase
+    : l_new : medicine chest, medicine cabinet
+
+
+--> #  454 | c      454 | y     7.3e-01 | y_next 1.6e-01
++++ >        c_new  860 | y_new 4.5e-01 | y_old 4.4e-01 | evals   429
+    : changes   376 | dx1 1.7e+03 | dx2 6.2e+01
+    : l_old : bookshop, bookstore, bookstall
+    : l_new : tobacco shop, tobacconist shop, tobacconist
+
+
+--> #  455 | c      455 | y     3.0e-01 | y_next 2.5e-01
++++ >        c_new  855 | y_new 2.8e-01 | y_old 2.5e-01 | evals    93
+    : changes    24 | dx1 8.3e+01 | dx2 1.2e+01
+    : l_old : bottlecap
+    : l_new : thimble
+
+WRN : base model is failed for "456" (SKIP)
+WRN : base model is failed for "457" (SKIP)
+WRN : base model is failed for "458" (SKIP)
+
+--> #  459 | c      459 | y     2.7e-01 | y_next 1.5e-01
++++ >        c_new  638 | y_new 2.1e-01 | y_old 1.7e-01 | evals     3
+    : changes    90 | dx1 4.7e+02 | dx2 3.4e+01
+    : l_old : brassiere, bra, bandeau
+    : l_new : maillot
+
+
+--> #  460 | c      460 | y     7.9e-01 | y_next 1.7e-01
++++ >        c_new  437 | y_new 4.8e-01 | y_old 4.6e-01 | evals   447
+    : changes   299 | dx1 6.4e+02 | dx2 2.9e+01
+    : l_old : breakwater, groin, groyne, mole, bulwark, seawall,
+    : l_new : beacon, lighthouse, beacon light, pharos
+
+
+--> #  461 | c      461 | y     6.0e-01 | y_next 1.4e-01
++++ >        c_new  857 | y_new 4.0e-01 | y_old 2.6e-01 | evals   455
+    : changes   238 | dx1 1.6e+03 | dx2 6.7e+01
+    : l_old : breastplate, aegis, egis
+    : l_new : throne
+
+
+--> #  462 | c      462 | y     3.8e-01 | y_next 1.2e-01
++++ >        c_new  792 | y_new 1.5e-01 | y_old 1.4e-01 | evals   505
+    : changes   338 | dx1 1.3e+03 | dx2 4.8e+01
+    : l_old : broom
+    : l_new : shovel
+
+
+--> #  463 | c      463 | y     7.8e-01 | y_next 9.0e-02
++++ >        c_new  792 | y_new 3.8e-01 | y_old 3.3e-01 | evals   205
+    : changes   190 | dx1 6.3e+02 | dx2 3.4e+01
+    : l_old : bucket, pail
+    : l_new : shovel
+
+
+--> #  464 | c      464 | y     6.9e-01 | y_next 1.3e-01
++++ >        c_new  635 | y_new 1.2e-01 | y_old 1.2e-01 | evals  1839
+    : changes   710 | dx1 2.3e+03 | dx2 6.9e+01
+    : l_old : buckle
+    : l_new : magnetic compass
+
+
+--> #  465 | c      465 | y     8.6e-01 | y_next 6.3e-03
++++ >        c_new  906 | y_new 3.4e-01 | y_old 2.4e-01 | evals   727
+    : changes   453 | dx1 2.0e+03 | dx2 6.7e+01
+    : l_old : bulletproof vest
+    : l_new : windsor tie
+
+
+--> #  466 | c      466 | y     9.0e-01 | y_next 1.7e-03
++++ >        c_new  547 | y_new 1.4e-01 | y_old 1.3e-01 | evals  4805
+    : changes  2377 | dx1 1.2e+04 | dx2 1.7e+02
+    : l_old : bullet train, bullet
+    : l_new : electric locomotive
+
+
+--> #  467 | c      467 | y     4.8e-01 | y_next 1.1e-01
++++ >        c_new  499 | y_new 2.2e-01 | y_old 2.1e-01 | evals   211
+    : changes   148 | dx1 5.5e+02 | dx2 3.2e+01
+    : l_old : butcher shop, meat market
+    : l_new : cleaver, meat cleaver, chopper
+
+
+--> #  468 | c      468 | y     9.3e-01 | y_next 6.0e-03
++++ >        c_new  779 | y_new 3.5e-01 | y_old 3.0e-01 | evals  8433
+    : changes  3053 | dx1 1.2e+04 | dx2 1.6e+02
+    : l_old : cab, hack, taxi, taxicab
+    : l_new : school bus
+
+
+--> #  469 | c      469 | y     2.9e-01 | y_next 6.1e-02
++++ >        c_new  743 | y_new 8.8e-02 | y_old 8.7e-02 | evals   831
+    : changes   370 | dx1 9.4e+02 | dx2 3.8e+01
+    : l_old : caldron, cauldron
+    : l_new : prison, prison house
+
+
+--> #  470 | c      470 | y     9.5e-01 | y_next 7.7e-03
++++ >        c_new  862 | y_new 1.2e-01 | y_old 1.2e-01 | evals  1325
+    : changes   715 | dx1 1.8e+03 | dx2 5.9e+01
+    : l_old : candle, taper, wax light
+    : l_new : torch
+
+
+--> #  471 | c      471 | y     5.9e-01 | y_next 1.3e-02
++++ >        c_new  958 | y_new 6.2e-02 | y_old 6.1e-02 | evals  4415
+    : changes  1273 | dx1 4.4e+03 | dx2 9.1e+01
+    : l_old : cannon
+    : l_new : hay
+
+
+--> #  472 | c      472 | y     7.2e-01 | y_next 3.6e-02
+    > fail | evals 10001
+
+--> #  473 | c      473 | y     7.1e-01 | y_next 1.2e-01
++++ >        c_new  763 | y_new 1.4e-01 | y_old 1.4e-01 | evals  1651
+    : changes   377 | dx1 1.4e+03 | dx2 5.1e+01
+    : l_old : can opener, tin opener
+    : l_new : revolver, six-gun, six-shooter
+
+WRN : base model is failed for "474" (SKIP)
+
+--> #  475 | c      475 | y     4.4e-01 | y_next 1.2e-01
++++ >        c_new  851 | y_new 2.9e-01 | y_old 2.7e-01 | evals   445
+    : changes   115 | dx1 5.1e+02 | dx2 3.3e+01
+    : l_old : car mirror
+    : l_new : television, television system
+
+WRN : base model is failed for "476" (SKIP)
+WRN : attr model is failed for "477" (SKIP)
+
+--> #  478 | c      478 | y     7.8e-01 | y_next 9.3e-03
++++ >        c_new  458 | y_new 7.3e-02 | y_old 6.3e-02 | evals  8325
+    : changes  2265 | dx1 5.5e+03 | dx2 8.4e+01
+    : l_old : carton
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  479 | c      479 | y     7.9e-01 | y_next 5.1e-02
++++ >        c_new  535 | y_new 3.9e-01 | y_old 3.7e-01 | evals  4339
+    : changes  1658 | dx1 5.5e+03 | dx2 1.0e+02
+    : l_old : car wheel
+    : l_new : disk brake, disc brake
+
+
+--> #  480 | c      480 | y     7.4e-01 | y_next 4.1e-02
++++ >        c_new  412 | y_new 1.3e-01 | y_old 1.3e-01 | evals   907
+    : changes   543 | dx1 2.7e+03 | dx2 8.1e+01
+    : l_old : cash machine, cash dispenser, automated teller mac
+    : l_new : ashcan, trash can, garbage can, wastebin, ash bin,
+
+
+--> #  481 | c      481 | y     7.3e-01 | y_next 2.2e-02
++++ >        c_new  547 | y_new 1.5e-01 | y_old 1.4e-01 | evals  1439
+    : changes   861 | dx1 3.9e+03 | dx2 9.4e+01
+    : l_old : cassette
+    : l_new : electric locomotive
+
+WRN : base model is failed for "482" (SKIP)
+
+--> #  483 | c      483 | y     8.0e-01 | y_next 7.5e-03
+    > fail | evals 10001
+
+--> #  484 | c      484 | y     6.0e-01 | y_next 2.7e-01
++++ >        c_new  871 | y_new 3.8e-01 | y_old 3.7e-01 | evals   339
+    : changes   195 | dx1 8.2e+02 | dx2 4.4e+01
+    : l_old : catamaran
+    : l_new : trimaran
+
+
+--> #  485 | c      485 | y     6.8e-01 | y_next 2.8e-02
++++ >        c_new  528 | y_new 1.4e-01 | y_old 1.2e-01 | evals   203
+    : changes   161 | dx1 9.3e+02 | dx2 5.4e+01
+    : l_old : cd player
+    : l_new : dial telephone, dial phone
+
+WRN : attr model is failed for "486" (SKIP)
+WRN : attr model is failed for "487" (SKIP)
+
+--> #  488 | c      488 | y     2.6e-01 | y_next 8.1e-02
++++ >        c_new  740 | y_new 1.5e-01 | y_old 1.4e-01 | evals   423
+    : changes   252 | dx1 8.7e+02 | dx2 3.9e+01
+    : l_old : chain
+    : l_new : power drill
+
+
+--> #  489 | c      489 | y     8.2e-01 | y_next 9.1e-03
++++ >        c_new  545 | y_new 8.9e-02 | y_old 8.8e-02 | evals  7055
+    : changes  2082 | dx1 1.0e+04 | dx2 1.6e+02
+    : l_old : chainlink fence
+    : l_new : electric fan, blower
+
+
+--> #  490 | c      490 | y     6.5e-01 | y_next 1.5e-02
++++ >        c_new  474 | y_new 2.3e-01 | y_old 2.0e-01 | evals  3865
+    : changes  1531 | dx1 4.9e+03 | dx2 9.0e+01
+    : l_old : chain mail, ring mail, mail, chain armor, chain ar
+    : l_new : cardigan
+
+WRN : base model is failed for "491" (SKIP)
+
+--> #  492 | c      492 | y     7.1e-01 | y_next 5.6e-02
++++ >        c_new  620 | y_new 1.7e-01 | y_old 1.7e-01 | evals  1509
+    : changes   505 | dx1 1.9e+03 | dx2 6.0e+01
+    : l_old : chest
+    : l_new : laptop, laptop computer
+
+
+--> #  493 | c      493 | y     7.9e-01 | y_next 1.2e-02
++++ >        c_new  857 | y_new 2.0e-01 | y_old 1.8e-01 | evals  1827
+    : changes   835 | dx1 3.1e+03 | dx2 8.0e+01
+    : l_old : chiffonier, commode
+    : l_new : throne
+
+
+--> #  494 | c      494 | y     9.2e-01 | y_next 2.0e-02
++++ >        c_new  907 | y_new 3.2e-01 | y_old 3.2e-01 | evals   603
+    : changes   437 | dx1 1.5e+03 | dx2 5.5e+01
+    : l_old : chime, bell, gong
+    : l_new : wine bottle
+
+
+--> #  495 | c      495 | y     7.9e-01 | y_next 5.6e-03
++++ >        c_new  637 | y_new 5.9e-02 | y_old 5.9e-02 | evals  9571
+    : changes  3839 | dx1 1.4e+04 | dx2 1.6e+02
+    : l_old : china cabinet, china closet
+    : l_new : mailbox, letter box
+
+
+--> #  496 | c      496 | y     8.7e-01 | y_next 7.3e-03
++++ >        c_new  626 | y_new 1.6e-01 | y_old 1.5e-01 | evals  3623
+    : changes  1557 | dx1 4.6e+03 | dx2 8.6e+01
+    : l_old : christmas stocking
+    : l_new : lighter, light, igniter, ignitor
+
+
+--> #  497 | c      497 | y     6.2e-01 | y_next 7.9e-02
++++ >        c_new  425 | y_new 2.3e-01 | y_old 2.3e-01 | evals   307
+    : changes   207 | dx1 1.2e+03 | dx2 5.8e+01
+    : l_old : church, church building
+    : l_new : barn
+
+
+--> #  498 | c      498 | y     2.9e-01 | y_next 2.3e-01
++++ >        c_new  424 | y_new 2.9e-01 | y_old 2.8e-01 | evals   139
+    : changes   114 | dx1 3.7e+02 | dx2 2.5e+01
+    : l_old : cinema, movie theater, movie theatre, movie house,
+    : l_new : barbershop
+
+WRN : base model is failed for "499" (SKIP)
+
+--> #  500 | c      500 | y     6.8e-01 | y_next 4.7e-02
++++ >        c_new   69 | y_new 1.0e-01 | y_old 7.6e-02 | evals   825
+    : changes   565 | dx1 2.6e+03 | dx2 7.6e+01
+    : l_old : cliff dwelling
+    : l_new : trilobite
+
+WRN : base model is failed for "501" (SKIP)
+WRN : attr model is failed for "502" (SKIP)
+
+--> #  503 | c      503 | y     6.7e-01 | y_next 6.7e-02
++++ >        c_new  969 | y_new 1.3e-01 | y_old 1.2e-01 | evals   907
+    : changes   394 | dx1 1.0e+03 | dx2 3.8e+01
+    : l_old : cocktail shaker
+    : l_new : eggnog
+
+
+--> #  504 | c      504 | y     7.8e-01 | y_next 1.1e-01
++++ >        c_new  968 | y_new 3.8e-01 | y_old 3.8e-01 | evals  5553
+    : changes  2161 | dx1 9.3e+03 | dx2 1.5e+02
+    : l_old : coffee mug
+    : l_new : cup
+
+
+--> #  505 | c      505 | y     3.0e-01 | y_next 2.4e-01
++++ >        c_new  504 | y_new 2.6e-01 | y_old 2.6e-01 | evals    73
+    : changes    18 | dx1 1.0e+02 | dx2 1.5e+01
+    : l_old : coffeepot
+    : l_new : coffee mug
+
+
+--> #  506 | c      506 | y     5.7e-01 | y_next 5.3e-02
++++ >        c_new  936 | y_new 1.8e-01 | y_old 1.8e-01 | evals  1807
+    : changes   945 | dx1 3.0e+03 | dx2 7.1e+01
+    : l_old : coil, spiral, volute, whorl, helix
+    : l_new : head cabbage
+
+
+--> #  507 | c      507 | y     9.0e-01 | y_next 1.2e-02
++++ >        c_new  455 | y_new 2.1e-01 | y_old 2.1e-01 | evals  4603
+    : changes  1298 | dx1 4.2e+03 | dx2 8.4e+01
+    : l_old : combination lock
+    : l_new : bottlecap
+
+
+--> #  508 | c      508 | y     4.0e-01 | y_next 2.0e-01
++++ >        c_new  810 | y_new 2.2e-01 | y_old 2.2e-01 | evals  2825
+    : changes  1025 | dx1 3.0e+03 | dx2 6.8e+01
+    : l_old : computer keyboard, keypad
+    : l_new : space bar
+
+WRN : base model is failed for "509" (SKIP)
+
+--> #  510 | c      510 | y     7.0e-01 | y_next 9.2e-03
+    > fail | evals 10001
+
+--> #  511 | c      511 | y     8.2e-01 | y_next 5.0e-02
++++ >        c_new  717 | y_new 1.4e-01 | y_old 1.4e-01 | evals  2813
+    : changes  1186 | dx1 4.3e+03 | dx2 9.9e+01
+    : l_old : convertible
+    : l_new : pickup, pickup truck
+
+
+--> #  512 | c      512 | y     4.4e-01 | y_next 8.9e-02
++++ >        c_new  695 | y_new 9.6e-02 | y_old 9.2e-02 | evals   913
+    : changes   515 | dx1 1.4e+03 | dx2 5.0e+01
+    : l_old : corkscrew, bottle screw
+    : l_new : padlock
+
+
+--> #  513 | c      513 | y     3.3e-01 | y_next 2.5e-01
++++ >        c_new  566 | y_new 3.3e-01 | y_old 2.9e-01 | evals    39
+    : changes    72 | dx1 5.4e+02 | dx2 4.0e+01
+    : l_old : cornet, horn, trumpet, trump
+    : l_new : french horn, horn
+
+
+--> #  514 | c      514 | y     6.8e-01 | y_next 9.5e-03
+    > fail | evals 10001
+
+--> #  515 | c      515 | y     3.6e-01 | y_next 1.5e-01
++++ >        c_new  808 | y_new 2.0e-01 | y_old 2.0e-01 | evals   525
+    : changes   138 | dx1 5.3e+02 | dx2 3.2e+01
+    : l_old : cowboy hat, ten-gallon hat
+    : l_new : sombrero
+
+
+--> #  516 | c      516 | y     9.2e-01 | y_next 1.3e-02
++++ >        c_new  435 | y_new 1.3e-01 | y_old 1.3e-01 | evals   851
+    : changes   705 | dx1 3.0e+03 | dx2 8.3e+01
+    : l_old : cradle
+    : l_new : bathtub, bathing tub, bath, tub
+
+WRN : base model is failed for "517" (SKIP)
+
+--> #  518 | c      518 | y     9.2e-01 | y_next 1.3e-02
++++ >        c_new  670 | y_new 3.1e-01 | y_old 3.0e-01 | evals  4235
+    : changes  1265 | dx1 4.1e+03 | dx2 8.5e+01
+    : l_old : crash helmet
+    : l_new : motor scooter, scooter
+
+WRN : attr model is failed for "519" (SKIP)
+WRN : attr model is failed for "520" (SKIP)
+
+--> #  521 | c      521 | y     2.9e-01 | y_next 7.3e-02
++++ >        c_new  544 | y_new 8.5e-02 | y_old 8.3e-02 | evals  1113
+    : changes   730 | dx1 1.9e+03 | dx2 5.1e+01
+    : l_old : crock pot
+    : l_new : dutch oven
+
+
+--> #  522 | c      522 | y     7.7e-01 | y_next 1.9e-02
++++ >        c_new  971 | y_new 1.7e-01 | y_old 1.7e-01 | evals  2313
+    : changes   927 | dx1 4.5e+03 | dx2 1.1e+02
+    : l_old : croquet ball
+    : l_new : bubble
+
+
+--> #  523 | c      523 | y     7.0e-01 | y_next 2.2e-02
++++ >        c_new  652 | y_new 5.8e-02 | y_old 5.7e-02 | evals   769
+    : changes   629 | dx1 2.6e+03 | dx2 7.5e+01
+    : l_old : crutch
+    : l_new : military uniform
+
+
+--> #  524 | c      524 | y     5.8e-01 | y_next 2.5e-01
+    > fail | evals 10001
+
+--> #  525 | c      525 | y     9.8e-01 | y_next 1.7e-03
++++ >        c_new  716 | y_new 3.3e-01 | y_old 3.2e-01 | evals  2439
+    : changes  1162 | dx1 3.7e+03 | dx2 8.2e+01
+    : l_old : dam, dike, dyke
+    : l_new : picket fence, paling
+
+
+--> #  526 | c      526 | y     4.2e-01 | y_next 5.9e-02
++++ >        c_new  530 | y_new 1.1e-01 | y_old 9.3e-02 | evals   417
+    : changes   362 | dx1 2.5e+03 | dx2 9.0e+01
+    : l_old : desk
+    : l_new : digital clock
+
+
+--> #  527 | c      527 | y     2.8e-01 | y_next 2.5e-01
++++ >        c_new  664 | y_new 2.6e-01 | y_old 2.5e-01 | evals    49
+    : changes    48 | dx1 3.0e+02 | dx2 2.8e+01
+    : l_old : desktop computer
+    : l_new : monitor
+
+
+--> #  528 | c      528 | y     6.4e-01 | y_next 8.0e-02
++++ >        c_new  695 | y_new 1.4e-01 | y_old 1.4e-01 | evals   727
+    : changes   473 | dx1 1.6e+03 | dx2 5.3e+01
+    : l_old : dial telephone, dial phone
+    : l_new : padlock
+
+WRN : base model is failed for "529" (SKIP)
+
+--> #  530 | c      530 | y     6.8e-01 | y_next 7.0e-02
++++ >        c_new  607 | y_new 2.8e-01 | y_old 2.8e-01 | evals   759
+    : changes   254 | dx1 4.7e+02 | dx2 3.4e+01
+    : l_old : digital clock
+    : l_new : jack-o`-lantern
+
+WRN : base model is failed for "531" (SKIP)
+
+--> #  532 | c      532 | y     7.9e-01 | y_next 4.9e-02
++++ >        c_new  428 | y_new 6.6e-02 | y_old 6.0e-02 | evals  2427
+    : changes  1549 | dx1 5.3e+03 | dx2 9.7e+01
+    : l_old : dining table, board
+    : l_new : barrow, garden cart, lawn cart, wheelbarrow
+
+
+--> #  533 | c      533 | y     8.8e-01 | y_next 3.0e-03
++++ >        c_new  806 | y_new 2.6e-01 | y_old 2.5e-01 | evals  4231
+    : changes  2247 | dx1 6.7e+03 | dx2 1.0e+02
+    : l_old : dishrag, dishcloth
+    : l_new : sock
+
+WRN : attr model is failed for "534" (SKIP)
+
+--> #  535 | c      535 | y     8.5e-01 | y_next 2.2e-02
++++ >        c_new  759 | y_new 2.1e-01 | y_old 2.0e-01 | evals  3417
+    : changes   854 | dx1 2.9e+03 | dx2 7.8e+01
+    : l_old : disk brake, disc brake
+    : l_new : reflex camera
+
+
+--> #  536 | c      536 | y     4.3e-01 | y_next 6.5e-02
++++ >        c_new  814 | y_new 1.3e-01 | y_old 1.2e-01 | evals   979
+    : changes   434 | dx1 1.6e+03 | dx2 5.6e+01
+    : l_old : dock, dockage, docking facility
+    : l_new : speedboat
+
+
+--> #  537 | c      537 | y     7.0e-01 | y_next 3.2e-02
+    > fail | evals 10001
+
+--> #  538 | c      538 | y     7.0e-01 | y_next 1.3e-01
++++ >        c_new  668 | y_new 3.6e-01 | y_old 3.4e-01 | evals  4237
+    : changes  1198 | dx1 2.8e+03 | dx2 7.6e+01
+    : l_old : dome
+    : l_new : mosque
+
+
+--> #  539 | c      539 | y     7.6e-01 | y_next 4.5e-02
++++ >        c_new  893 | y_new 2.3e-01 | y_old 2.1e-01 | evals  2405
+    : changes  1099 | dx1 2.3e+03 | dx2 5.6e+01
+    : l_old : doormat, welcome mat
+    : l_new : wallet, billfold, notecase, pocketbook
+
+
+--> #  540 | c      540 | y     3.2e-01 | y_next 6.0e-02
++++ >        c_new  403 | y_new 1.1e-01 | y_old 1.0e-01 | evals   413
+    : changes   266 | dx1 4.7e+02 | dx2 2.1e+01
+    : l_old : drilling platform, offshore rig
+    : l_new : aircraft carrier, carrier, flattop, attack aircraf
+
+
+--> #  541 | c      541 | y     8.8e-01 | y_next 2.4e-02
++++ >        c_new  420 | y_new 3.3e-01 | y_old 3.2e-01 | evals  5919
+    : changes  1833 | dx1 6.7e+03 | dx2 1.1e+02
+    : l_old : drum, membranophone, tympan
+    : l_new : banjo
+
+
+--> #  542 | c      542 | y     9.3e-01 | y_next 4.2e-02
++++ >        c_new  679 | y_new 6.5e-02 | y_old 6.0e-02 | evals  6425
+    : changes  2214 | dx1 3.6e+03 | dx2 6.8e+01
+    : l_old : drumstick
+    : l_new : necklace
+
+
+--> #  543 | c      543 | y     9.1e-01 | y_next 2.1e-02
++++ >        c_new  638 | y_new 1.5e-01 | y_old 1.5e-01 | evals   403
+    : changes   248 | dx1 1.8e+03 | dx2 7.9e+01
+    : l_old : dumbbell
+    : l_new : maillot
+
+
+--> #  544 | c      544 | y     5.2e-01 | y_next 6.3e-02
++++ >        c_new  659 | y_new 1.1e-01 | y_old 1.0e-01 | evals   733
+    : changes   501 | dx1 2.7e+03 | dx2 8.4e+01
+    : l_old : dutch oven
+    : l_new : mixing bowl
+
+
+--> #  545 | c      545 | y     5.7e-01 | y_next 7.8e-02
++++ >        c_new  904 | y_new 2.5e-01 | y_old 1.5e-01 | evals   215
+    : changes   210 | dx1 1.1e+03 | dx2 5.3e+01
+    : l_old : electric fan, blower
+    : l_new : window screen
+
+
+--> #  546 | c      546 | y     6.1e-01 | y_next 5.3e-02
+    > fail | evals 10001
+
+--> #  547 | c      547 | y     6.5e-01 | y_next 1.2e-01
++++ >        c_new  820 | y_new 1.7e-01 | y_old 1.7e-01 | evals  6727
+    : changes  1822 | dx1 7.7e+03 | dx2 1.4e+02
+    : l_old : electric locomotive
+    : l_new : steam locomotive
+
+
+--> #  548 | c      548 | y     6.5e-01 | y_next 5.3e-02
++++ >        c_new  526 | y_new 1.2e-01 | y_old 1.1e-01 | evals  2579
+    : changes   759 | dx1 2.8e+03 | dx2 7.1e+01
+    : l_old : entertainment center
+    : l_new : desk
+
+
+--> #  549 | c      549 | y     5.1e-01 | y_next 1.3e-01
++++ >        c_new  611 | y_new 2.4e-01 | y_old 2.4e-01 | evals   623
+    : changes   185 | dx1 5.8e+02 | dx2 3.2e+01
+    : l_old : envelope
+    : l_new : jigsaw puzzle
+
+
+--> #  550 | c      550 | y     8.3e-01 | y_next 8.2e-03
++++ >        c_new  827 | y_new 7.6e-02 | y_old 7.4e-02 | evals  2303
+    : changes  1203 | dx1 6.0e+03 | dx2 1.3e+02
+    : l_old : espresso maker
+    : l_new : stove
+
+
+--> #  551 | c      551 | y     8.4e-01 | y_next 1.6e-02
++++ >        c_new  712 | y_new 1.1e-01 | y_old 1.1e-01 | evals  2049
+    : changes   953 | dx1 2.4e+03 | dx2 6.2e+01
+    : l_old : face powder
+    : l_new : petri dish
+
+
+--> #  552 | c      552 | y     8.0e-01 | y_next 5.7e-03
++++ >        c_new  903 | y_new 3.4e-01 | y_old 3.1e-01 | evals  6369
+    : changes  2136 | dx1 5.2e+03 | dx2 9.2e+01
+    : l_old : feather boa, boa
+    : l_new : wig
+
+
+--> #  553 | c      553 | y     7.4e-01 | y_next 4.9e-02
++++ >        c_new  492 | y_new 2.8e-01 | y_old 2.8e-01 | evals   325
+    : changes   227 | dx1 6.2e+02 | dx2 3.6e+01
+    : l_old : file, file cabinet, filing cabinet
+    : l_new : chest
+
+
+--> #  554 | c      554 | y     7.6e-01 | y_next 6.6e-03
++++ >        c_new  562 | y_new 1.2e-01 | y_old 1.1e-01 | evals  3063
+    : changes  1683 | dx1 6.6e+03 | dx2 1.1e+02
+    : l_old : fireboat
+    : l_new : fountain
+
+
+--> #  555 | c      555 | y     3.0e-01 | y_next 2.9e-01
++++ >        c_new  661 | y_new 3.1e-01 | y_old 2.9e-01 | evals    21
+    : changes    21 | dx1 6.3e+01 | dx2 9.0e+00
+    : l_old : fire engine, fire truck
+    : l_new : model t
+
+WRN : base model is failed for "556" (SKIP)
+
+--> #  557 | c      557 | y     9.3e-01 | y_next 4.1e-03
++++ >        c_new  727 | y_new 1.2e-01 | y_old 1.2e-01 | evals  5625
+    : changes  1862 | dx1 7.9e+03 | dx2 1.4e+02
+    : l_old : flagpole, flagstaff
+    : l_new : planetarium
+
+
+--> #  558 | c      558 | y     8.0e-01 | y_next 1.5e-02
++++ >        c_new  629 | y_new 1.9e-01 | y_old 1.7e-01 | evals  1355
+    : changes   597 | dx1 2.5e+03 | dx2 7.2e+01
+    : l_old : flute, transverse flute
+    : l_new : lipstick, lip rouge
+
+
+--> #  559 | c      559 | y     5.9e-01 | y_next 4.9e-02
++++ >        c_new  822 | y_new 6.7e-02 | y_old 6.7e-02 | evals  9453
+    : changes  1409 | dx1 2.6e+03 | dx2 6.1e+01
+    : l_old : folding chair
+    : l_new : steel drum
+
+
+--> #  560 | c      560 | y     5.6e-01 | y_next 6.0e-02
++++ >        c_new  768 | y_new 2.0e-01 | y_old 1.9e-01 | evals  1735
+    : changes   719 | dx1 2.8e+03 | dx2 7.8e+01
+    : l_old : football helmet
+    : l_new : rugby ball
+
+
+--> #  561 | c      561 | y     6.3e-01 | y_next 4.7e-02
++++ >        c_new  803 | y_new 2.4e-01 | y_old 2.3e-01 | evals  3453
+    : changes  1276 | dx1 3.6e+03 | dx2 7.8e+01
+    : l_old : forklift
+    : l_new : snowplow, snowplough
+
+WRN : base model is failed for "562" (SKIP)
+WRN : base model is failed for "563" (SKIP)
+
+--> #  564 | c      564 | y     3.3e-01 | y_next 3.3e-01
++++ >        c_new  669 | y_new 3.4e-01 | y_old 3.3e-01 | evals     3
+    : changes    12 | dx1 2.6e+01 | dx2 5.5e+00
+    : l_old : four-poster
+    : l_new : mosquito net
+
+
+--> #  565 | c      565 | y     8.0e-01 | y_next 3.3e-03
++++ >        c_new  562 | y_new 2.4e-01 | y_old 2.3e-01 | evals  7283
+    : changes  3164 | dx1 9.5e+03 | dx2 1.2e+02
+    : l_old : freight car
+    : l_new : fountain
+
+
+--> #  566 | c      566 | y     7.8e-01 | y_next 1.6e-02
++++ >        c_new  776 | y_new 2.0e-01 | y_old 1.9e-01 | evals  3623
+    : changes  1295 | dx1 6.2e+03 | dx2 1.3e+02
+    : l_old : french horn, horn
+    : l_new : sax, saxophone
+
+
+--> #  567 | c      567 | y     5.4e-01 | y_next 1.5e-01
++++ >        c_new  963 | y_new 3.3e-01 | y_old 3.3e-01 | evals  1323
+    : changes   398 | dx1 1.4e+03 | dx2 5.3e+01
+    : l_old : frying pan, frypan, skillet
+    : l_new : pizza, pizza pie
+
+WRN : base model is failed for "568" (SKIP)
+
+--> #  569 | c      569 | y     6.4e-01 | y_next 2.3e-02
++++ >        c_new  703 | y_new 1.9e-01 | y_old 1.5e-01 | evals   415
+    : changes   268 | dx1 1.4e+03 | dx2 5.8e+01
+    : l_old : garbage truck, dustcart
+    : l_new : park bench
+
+
+--> #  570 | c      570 | y     8.2e-01 | y_next 1.0e-01
++++ >        c_new  828 | y_new 4.0e-01 | y_old 3.7e-01 | evals   317
+    : changes   188 | dx1 4.0e+02 | dx2 2.1e+01
+    : l_old : gasmask, respirator, gas helmet
+    : l_new : strainer
+
+
+--> #  571 | c      571 | y     8.7e-01 | y_next 4.1e-02
++++ >        c_new  877 | y_new 2.9e-01 | y_old 2.5e-01 | evals   805
+    : changes   542 | dx1 1.7e+03 | dx2 5.6e+01
+    : l_old : gas pump, gasoline pump, petrol pump, island dispe
+    : l_new : turnstile
+
+
+--> #  572 | c      572 | y     8.5e-01 | y_next 2.1e-02
++++ >        c_new  113 | y_new 3.8e-01 | y_old 3.5e-01 | evals  2071
+    : changes   920 | dx1 3.3e+03 | dx2 8.3e+01
+    : l_old : goblet
+    : l_new : snail
+
+
+--> #  573 | c      573 | y     5.3e-01 | y_next 1.1e-01
++++ >        c_new  621 | y_new 3.3e-01 | y_old 2.9e-01 | evals   249
+    : changes   212 | dx1 7.7e+02 | dx2 3.8e+01
+    : l_old : go-kart
+    : l_new : lawn mower, mower
+
+
+--> #  574 | c      574 | y     8.4e-01 | y_next 2.4e-03
+    > fail | evals 10001
+
+--> #  575 | c      575 | y     7.5e-01 | y_next 6.8e-03
++++ >        c_new  621 | y_new 1.0e-01 | y_old 9.7e-02 | evals  3203
+    : changes  1398 | dx1 5.4e+03 | dx2 1.1e+02
+    : l_old : golfcart, golf cart
+    : l_new : lawn mower, mower
+
+
+--> #  576 | c      576 | y     8.9e-01 | y_next 3.2e-03
++++ >        c_new  467 | y_new 3.1e-01 | y_old 3.1e-01 | evals  2003
+    : changes  1035 | dx1 3.8e+03 | dx2 8.8e+01
+    : l_old : gondola
+    : l_new : butcher shop, meat market
+
+
+--> #  577 | c      577 | y     6.7e-01 | y_next 1.4e-01
++++ >        c_new  719 | y_new 1.8e-01 | y_old 1.8e-01 | evals  3375
+    : changes  1163 | dx1 1.7e+03 | dx2 4.1e+01
+    : l_old : gong, tam-tam
+    : l_new : piggy bank, penny bank
+
+
+--> #  578 | c      578 | y     5.7e-01 | y_next 1.4e-01
++++ >        c_new  552 | y_new 2.2e-01 | y_old 2.1e-01 | evals  1123
+    : changes   524 | dx1 2.1e+03 | dx2 6.7e+01
+    : l_old : gown
+    : l_new : feather boa, boa
+
+
+--> #  579 | c      579 | y     7.6e-01 | y_next 2.0e-02
++++ >        c_new   10 | y_new 1.1e-02 | y_old 1.0e-02 | evals  3303
+    : changes  1477 | dx1 6.7e+03 | dx2 1.3e+02
+    : l_old : grand piano, grand
+    : l_new : brambling, fringilla montifringilla
+
+
+--> #  580 | c      580 | y     5.3e-01 | y_next 7.6e-02
++++ >        c_new  821 | y_new 2.1e-01 | y_old 1.9e-01 | evals   821
+    : changes   508 | dx1 1.7e+03 | dx2 5.6e+01
+    : l_old : greenhouse, nursery, glasshouse
+    : l_new : steel arch bridge
+
+
+--> #  581 | c      581 | y     2.6e-01 | y_next 2.2e-01
++++ >        c_new  656 | y_new 2.4e-01 | y_old 2.4e-01 | evals    51
+    : changes    60 | dx1 2.2e+02 | dx2 2.1e+01
+    : l_old : grille, radiator grille
+    : l_new : minivan
+
+
+--> #  582 | c      582 | y     5.4e-01 | y_next 1.9e-01
++++ >        c_new  956 | y_new 3.6e-01 | y_old 3.4e-01 | evals   429
+    : changes   242 | dx1 9.3e+02 | dx2 4.1e+01
+    : l_old : grocery store, grocery, food market, market
+    : l_new : custard apple
+
+
+--> #  583 | c      583 | y     8.5e-01 | y_next 2.9e-02
++++ >        c_new  853 | y_new 3.6e-01 | y_old 3.3e-01 | evals  1261
+    : changes   466 | dx1 2.3e+03 | dx2 7.9e+01
+    : l_old : guillotine
+    : l_new : thatch, thatched roof
+
+
+--> #  584 | c      584 | y     3.9e-01 | y_next 9.5e-02
++++ >        c_new  457 | y_new 1.2e-01 | y_old 1.2e-01 | evals  3873
+    : changes   803 | dx1 3.3e+03 | dx2 8.2e+01
+    : l_old : hair slide
+    : l_new : bow tie, bow-tie, bowtie
+
+
+--> #  585 | c      585 | y     8.0e-01 | y_next 1.2e-02
++++ >        c_new  719 | y_new 1.0e-01 | y_old 1.0e-01 | evals   605
+    : changes   409 | dx1 1.6e+03 | dx2 6.1e+01
+    : l_old : hair spray
+    : l_new : piggy bank, penny bank
+
+
+--> #  586 | c      586 | y     4.8e-01 | y_next 4.8e-02
++++ >        c_new  757 | y_new 1.4e-01 | y_old 1.3e-01 | evals   781
+    : changes   400 | dx1 1.8e+03 | dx2 6.3e+01
+    : l_old : half track
+    : l_new : recreational vehicle, rv, r.v.
+
+WRN : base model is failed for "587" (SKIP)
+
+--> #  588 | c      588 | y     8.4e-01 | y_next 1.7e-02
++++ >        c_new  539 | y_new 7.0e-02 | y_old 6.8e-02 | evals  7707
+    : changes  2573 | dx1 1.2e+04 | dx2 1.7e+02
+    : l_old : hamper
+    : l_new : doormat, welcome mat
+
+
+--> #  589 | c      589 | y     9.2e-01 | y_next 6.7e-03
++++ >        c_new  597 | y_new 2.8e-01 | y_old 2.3e-01 | evals  1811
+    : changes   758 | dx1 4.3e+03 | dx2 1.2e+02
+    : l_old : hand blower, blow dryer, blow drier, hair dryer, h
+    : l_new : holster
+
+
+--> #  590 | c      590 | y     8.1e-01 | y_next 1.5e-02
++++ >        c_new  761 | y_new 1.4e-01 | y_old 1.3e-01 | evals  3123
+    : changes  1415 | dx1 4.4e+03 | dx2 8.4e+01
+    : l_old : hand-held computer, hand-held microcomputer
+    : l_new : remote control, remote
+
+WRN : attr model is failed for "591" (SKIP)
+
+--> #  592 | c      592 | y     8.1e-01 | y_next 1.8e-03
++++ >        c_new  458 | y_new 1.3e-01 | y_old 1.2e-01 | evals  9165
+    : changes  2277 | dx1 8.1e+03 | dx2 1.3e+02
+    : l_old : hard disc, hard disk, fixed disk
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  593 | c      593 | y     9.3e-01 | y_next 8.4e-03
++++ >        c_new  767 | y_new 1.7e-01 | y_old 1.6e-01 | evals  4645
+    : changes   998 | dx1 5.0e+03 | dx2 1.2e+02
+    : l_old : harmonica, mouth organ, harp, mouth harp
+    : l_new : rubber eraser, rubber, pencil eraser
+
+WRN : base model is failed for "594" (SKIP)
+
+--> #  595 | c      595 | y     8.1e-01 | y_next 1.6e-02
++++ >        c_new  621 | y_new 2.4e-01 | y_old 2.3e-01 | evals  1905
+    : changes   891 | dx1 3.0e+03 | dx2 7.6e+01
+    : l_old : harvester, reaper
+    : l_new : lawn mower, mower
+
+WRN : attr model is failed for "596" (SKIP)
+
+--> #  597 | c      597 | y     9.5e-01 | y_next 3.9e-03
++++ >        c_new  630 | y_new 1.6e-01 | y_old 1.5e-01 | evals  5867
+    : changes  1645 | dx1 7.0e+03 | dx2 1.3e+02
+    : l_old : holster
+    : l_new : loafer
+
+WRN : base model is failed for "598" (SKIP)
+WRN : base model is failed for "599" (SKIP)
+
+--> #  600 | c      600 | y     6.5e-01 | y_next 1.0e-01
++++ >        c_new  695 | y_new 3.3e-01 | y_old 2.9e-01 | evals  1411
+    : changes   570 | dx1 1.1e+03 | dx2 3.5e+01
+    : l_old : hook, claw
+    : l_new : padlock
+
+
+--> #  601 | c      601 | y     6.0e-01 | y_next 1.6e-01
++++ >        c_new  689 | y_new 2.0e-01 | y_old 1.9e-01 | evals  4031
+    : changes  1291 | dx1 4.5e+03 | dx2 9.0e+01
+    : l_old : hoopskirt, crinoline
+    : l_new : overskirt
+
+
+--> #  602 | c      602 | y     4.8e-01 | y_next 3.0e-01
++++ >        c_new  702 | y_new 4.0e-01 | y_old 4.0e-01 | evals   271
+    : changes   167 | dx1 8.8e+02 | dx2 4.8e+01
+    : l_old : horizontal bar, high bar
+    : l_new : parallel bars, bars
+
+
+--> #  603 | c      603 | y     8.2e-01 | y_next 1.0e-02
++++ >        c_new  690 | y_new 2.7e-01 | y_old 2.7e-01 | evals  1707
+    : changes   667 | dx1 2.5e+03 | dx2 7.1e+01
+    : l_old : horse cart, horse-cart
+    : l_new : oxcart
+
+
+--> #  604 | c      604 | y     8.5e-01 | y_next 8.7e-04
++++ >        c_new  916 | y_new 7.6e-03 | y_old 7.5e-03 | evals  9319
+    : changes  2175 | dx1 1.1e+04 | dx2 1.8e+02
+    : l_old : hourglass
+    : l_new : web site, website, internet site, site
+
+
+--> #  605 | c      605 | y     8.7e-01 | y_next 1.2e-03
++++ >        c_new  761 | y_new 2.6e-01 | y_old 2.5e-01 | evals  8403
+    : changes  1306 | dx1 4.3e+03 | dx2 9.5e+01
+    : l_old : ipod
+    : l_new : remote control, remote
+
+
+--> #  606 | c      606 | y     9.4e-01 | y_next 3.9e-03
++++ >        c_new  678 | y_new 4.1e-01 | y_old 2.2e-01 | evals  1789
+    : changes   627 | dx1 2.4e+03 | dx2 6.9e+01
+    : l_old : iron, smoothing iron
+    : l_new : neck brace
+
+
+--> #  607 | c      607 | y     7.7e-01 | y_next 4.2e-03
+    > fail | evals 10001
+
+--> #  608 | c      608 | y     5.8e-01 | y_next 1.9e-02
++++ >        c_new  813 | y_new 1.6e-01 | y_old 1.6e-01 | evals   907
+    : changes   299 | dx1 1.5e+03 | dx2 6.1e+01
+    : l_old : jean, blue jean, denim
+    : l_new : spatula
+
+
+--> #  609 | c      609 | y     2.2e-01 | y_next 1.7e-01
++++ >        c_new  656 | y_new 1.9e-01 | y_old 1.9e-01 | evals   131
+    : changes   117 | dx1 5.0e+02 | dx2 3.4e+01
+    : l_old : jeep, landrover
+    : l_new : minivan
+
+
+--> #  610 | c      610 | y     8.7e-01 | y_next 2.0e-02
++++ >        c_new  458 | y_new 6.0e-02 | y_old 5.8e-02 | evals  1403
+    : changes   905 | dx1 2.5e+03 | dx2 5.9e+01
+    : l_old : jersey, t-shirt, tee shirt
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  611 | c      611 | y     8.4e-01 | y_next 8.2e-04
+    > fail | evals 10001
+
+--> #  612 | c      612 | y     6.3e-01 | y_next 5.6e-02
++++ >        c_new  444 | y_new 1.8e-01 | y_old 1.6e-01 | evals   903
+    : changes   618 | dx1 2.2e+03 | dx2 6.4e+01
+    : l_old : jinrikisha, ricksha, rickshaw
+    : l_new : bicycle-built-for-two, tandem bicycle, tandem
+
+WRN : base model is failed for "613" (SKIP)
+WRN : base model is failed for "614" (SKIP)
+
+--> #  615 | c      615 | y     6.9e-01 | y_next 2.3e-01
++++ >        c_new  450 | y_new 4.8e-01 | y_old 4.3e-01 | evals   619
+    : changes    79 | dx1 4.8e+02 | dx2 3.8e+01
+    : l_old : knee pad
+    : l_new : bobsled, bobsleigh, bob
+
+
+--> #  616 | c      616 | y     7.9e-01 | y_next 1.0e-02
++++ >        c_new  506 | y_new 2.3e-01 | y_old 2.1e-01 | evals  1805
+    : changes   886 | dx1 3.4e+03 | dx2 8.3e+01
+    : l_old : knot
+    : l_new : coil, spiral, volute, whorl, helix
+
+
+--> #  617 | c      617 | y     2.0e-01 | y_next 3.4e-02
++++ >        c_new  739 | y_new 6.8e-02 | y_old 5.0e-02 | evals   503
+    : changes   267 | dx1 1.0e+03 | dx2 4.5e+01
+    : l_old : lab coat, laboratory coat
+    : l_new : potter`s wheel
+
+
+--> #  618 | c      618 | y     9.9e-01 | y_next 7.3e-04
++++ >        c_new  816 | y_new 2.2e-01 | y_old 2.0e-01 | evals  4325
+    : changes  1944 | dx1 6.5e+03 | dx2 1.1e+02
+    : l_old : ladle
+    : l_new : spindle
+
+WRN : base model is failed for "619" (SKIP)
+
+--> #  620 | c      620 | y     6.3e-01 | y_next 1.7e-01
++++ >        c_new  424 | y_new 2.5e-01 | y_old 2.5e-01 | evals   705
+    : changes   478 | dx1 1.6e+03 | dx2 5.3e+01
+    : l_old : laptop, laptop computer
+    : l_new : barbershop
+
+
+--> #  621 | c      621 | y     3.8e-01 | y_next 1.5e-01
++++ >        c_new  866 | y_new 2.3e-01 | y_old 2.1e-01 | evals   205
+    : changes   143 | dx1 7.5e+02 | dx2 4.6e+01
+    : l_old : lawn mower, mower
+    : l_new : tractor
+
+
+--> #  622 | c      622 | y     8.1e-01 | y_next 2.8e-03
+    > fail | evals 10001
+WRN : base model is failed for "623" (SKIP)
+
+--> #  624 | c      624 | y     7.4e-01 | y_next 3.2e-02
++++ >        c_new  454 | y_new 1.9e-01 | y_old 1.8e-01 | evals  2607
+    : changes  1537 | dx1 3.8e+03 | dx2 7.3e+01
+    : l_old : library
+    : l_new : bookshop, bookstore, bookstall
+
+
+--> #  625 | c      625 | y     8.5e-01 | y_next 1.2e-03
+    > fail | evals 10001
+WRN : attr model is failed for "626" (SKIP)
+
+--> #  627 | c      627 | y     9.4e-01 | y_next 8.6e-03
++++ >        c_new  609 | y_new 2.5e-01 | y_old 1.8e-01 | evals  1805
+    : changes  1025 | dx1 5.2e+03 | dx2 1.2e+02
+    : l_old : limousine, limo
+    : l_new : jeep, landrover
+
+
+--> #  628 | c      628 | y     8.0e-01 | y_next 1.7e-02
++++ >        c_new  554 | y_new 2.3e-01 | y_old 2.3e-01 | evals  6035
+    : changes  1925 | dx1 6.5e+03 | dx2 1.1e+02
+    : l_old : liner, ocean liner
+    : l_new : fireboat
+
+
+--> #  629 | c      629 | y     8.4e-01 | y_next 5.1e-03
++++ >        c_new  744 | y_new 1.2e-01 | y_old 1.1e-01 | evals  5905
+    : changes   488 | dx1 3.1e+03 | dx2 9.7e+01
+    : l_old : lipstick, lip rouge
+    : l_new : projectile, missile
+
+
+--> #  630 | c      630 | y     8.4e-01 | y_next 1.2e-02
++++ >        c_new  514 | y_new 1.5e-01 | y_old 1.5e-01 | evals  2703
+    : changes  1362 | dx1 4.3e+03 | dx2 8.4e+01
+    : l_old : loafer
+    : l_new : cowboy boot
+
+WRN : base model is failed for "631" (SKIP)
+
+--> #  632 | c      632 | y     7.7e-01 | y_next 3.0e-02
++++ >        c_new  754 | y_new 1.7e-01 | y_old 1.6e-01 | evals  3785
+    : changes  1239 | dx1 6.2e+03 | dx2 1.3e+02
+    : l_old : loudspeaker, speaker, speaker unit, loudspeaker sy
+    : l_new : radio, wireless
+
+
+--> #  633 | c      633 | y     8.5e-01 | y_next 2.4e-02
++++ >        c_new  971 | y_new 1.3e-01 | y_old 1.2e-01 | evals   753
+    : changes   510 | dx1 2.0e+03 | dx2 6.4e+01
+    : l_old : loupe, jeweler`s loupe
+    : l_new : bubble
+
+
+--> #  634 | c      634 | y     7.6e-01 | y_next 2.9e-02
++++ >        c_new  510 | y_new 1.0e-01 | y_old 9.9e-02 | evals  1159
+    : changes   557 | dx1 2.7e+03 | dx2 8.9e+01
+    : l_old : lumbermill, sawmill
+    : l_new : container ship, containership, container vessel
+
+
+--> #  635 | c      635 | y     3.8e-01 | y_next 2.0e-01
++++ >        c_new  826 | y_new 3.0e-01 | y_old 2.9e-01 | evals   135
+    : changes   142 | dx1 6.1e+02 | dx2 4.0e+01
+    : l_old : magnetic compass
+    : l_new : stopwatch, stop watch
+
+
+--> #  636 | c      636 | y     2.6e-01 | y_next 2.1e-01
++++ >        c_new  790 | y_new 2.3e-01 | y_old 2.3e-01 | evals    11
+    : changes    63 | dx1 2.3e+02 | dx2 2.3e+01
+    : l_old : mailbag, postbag
+    : l_new : shopping basket
+
+
+--> #  637 | c      637 | y     8.7e-01 | y_next 4.5e-03
+    > fail | evals 10001
+WRN : base model is failed for "638" (SKIP)
+WRN : attr model is failed for "639" (SKIP)
+
+--> #  640 | c      640 | y     7.4e-01 | y_next 2.4e-02
++++ >        c_new  458 | y_new 3.0e-01 | y_old 3.0e-01 | evals  3303
+    : changes  1443 | dx1 5.2e+03 | dx2 9.8e+01
+    : l_old : manhole cover
+    : l_new : brass, memorial tablet, plaque
+
+WRN : base model is failed for "641" (SKIP)
+
+--> #  642 | c      642 | y     6.9e-01 | y_next 1.3e-02
+    > fail | evals 10001
+
+--> #  643 | c      643 | y     4.9e-01 | y_next 1.5e-01
++++ >        c_new  903 | y_new 3.0e-01 | y_old 2.5e-01 | evals   207
+    : changes   182 | dx1 7.6e+02 | dx2 4.0e+01
+    : l_old : mask
+    : l_new : wig
+
+WRN : base model is failed for "644" (SKIP)
+
+--> #  645 | c      645 | y     8.6e-01 | y_next 4.0e-03
++++ >        c_new  832 | y_new 1.4e-01 | y_old 1.4e-01 | evals  7469
+    : changes  2491 | dx1 9.5e+03 | dx2 1.4e+02
+    : l_old : maypole
+    : l_new : stupa, tope
+
+WRN : base model is failed for "646" (SKIP)
+
+--> #  647 | c      647 | y     1.4e-01 | y_next 5.7e-02
++++ >        c_new  725 | y_new 7.5e-02 | y_old 7.2e-02 | evals   459
+    : changes   211 | dx1 5.1e+02 | dx2 2.7e+01
+    : l_old : measuring cup
+    : l_new : pitcher, ewer
+
+
+--> #  648 | c      648 | y     7.9e-01 | y_next 2.8e-02
++++ >        c_new  794 | y_new 1.5e-01 | y_old 1.4e-01 | evals   807
+    : changes   587 | dx1 2.9e+03 | dx2 8.8e+01
+    : l_old : medicine chest, medicine cabinet
+    : l_new : shower curtain
+
+
+--> #  649 | c      649 | y     4.6e-01 | y_next 1.5e-02
+    > fail | evals 10001
+
+--> #  650 | c      650 | y     4.9e-01 | y_next 3.9e-02
++++ >        c_new  504 | y_new 8.4e-02 | y_old 8.3e-02 | evals   569
+    : changes   373 | dx1 2.6e+03 | dx2 9.6e+01
+    : l_old : microphone, mike
+    : l_new : coffee mug
+
+
+--> #  651 | c      651 | y     9.4e-01 | y_next 8.4e-03
++++ >        c_new  485 | y_new 2.5e-01 | y_old 2.1e-01 | evals   503
+    : changes   248 | dx1 1.0e+03 | dx2 4.5e+01
+    : l_old : microwave, microwave oven
+    : l_new : cd player
+
+
+--> #  652 | c      652 | y     8.8e-01 | y_next 3.5e-03
++++ >        c_new  433 | y_new 7.9e-02 | y_old 7.3e-02 | evals  1505
+    : changes  1050 | dx1 4.2e+03 | dx2 9.2e+01
+    : l_old : military uniform
+    : l_new : bathing cap, swimming cap
+
+
+--> #  653 | c      653 | y     6.9e-01 | y_next 4.5e-02
++++ >        c_new  792 | y_new 1.5e-01 | y_old 1.4e-01 | evals  1243
+    : changes   482 | dx1 1.0e+03 | dx2 3.2e+01
+    : l_old : milk can
+    : l_new : shovel
+
+
+--> #  654 | c      654 | y     3.6e-01 | y_next 1.3e-01
++++ >        c_new  436 | y_new 2.2e-01 | y_old 2.2e-01 | evals   115
+    : changes   129 | dx1 6.1e+02 | dx2 3.6e+01
+    : l_old : minibus
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  655 | c      655 | y     4.4e-01 | y_next 1.2e-01
++++ >        c_new  851 | y_new 2.6e-01 | y_old 1.9e-01 | evals    49
+    : changes    81 | dx1 2.8e+02 | dx2 2.2e+01
+    : l_old : miniskirt, mini
+    : l_new : television, television system
+
+
+--> #  656 | c      656 | y     7.9e-01 | y_next 5.8e-02
++++ >        c_new  436 | y_new 2.3e-01 | y_old 2.0e-01 | evals   909
+    : changes   534 | dx1 2.9e+03 | dx2 8.8e+01
+    : l_old : minivan
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  657 | c      657 | y     3.4e-01 | y_next 2.7e-01
++++ >        c_new  833 | y_new 1.3e-01 | y_old 1.3e-01 | evals   733
+    : changes   338 | dx1 9.9e+02 | dx2 3.8e+01
+    : l_old : missile
+    : l_new : submarine, pigboat, sub, u-boat
+
+WRN : base model is failed for "658" (SKIP)
+WRN : base model is failed for "659" (SKIP)
+
+--> #  660 | c      660 | y     5.9e-01 | y_next 7.2e-03
++++ >        c_new  727 | y_new 1.7e-01 | y_old 1.6e-01 | evals   527
+    : changes   396 | dx1 9.8e+02 | dx2 3.5e+01
+    : l_old : mobile home, manufactured home
+    : l_new : planetarium
+
+
+--> #  661 | c      661 | y     6.5e-01 | y_next 7.4e-02
++++ >        c_new  581 | y_new 2.6e-01 | y_old 2.5e-01 | evals  1313
+    : changes   705 | dx1 2.1e+03 | dx2 6.3e+01
+    : l_old : model t
+    : l_new : grille, radiator grille
+
+WRN : base model is failed for "662" (SKIP)
+WRN : base model is failed for "663" (SKIP)
+WRN : base model is failed for "664" (SKIP)
+
+--> #  665 | c      665 | y     8.6e-01 | y_next 5.9e-02
++++ >        c_new  800 | y_new 1.5e-01 | y_old 1.4e-01 | evals   825
+    : changes   618 | dx1 1.5e+03 | dx2 5.7e+01
+    : l_old : moped
+    : l_new : slot, one-armed bandit
+
+
+--> #  666 | c      666 | y     7.9e-01 | y_next 3.3e-02
++++ >        c_new  587 | y_new 2.2e-01 | y_old 2.1e-01 | evals   605
+    : changes   475 | dx1 2.1e+03 | dx2 6.8e+01
+    : l_old : mortar
+    : l_new : hammer
+
+
+--> #  667 | c      667 | y     8.3e-01 | y_next 9.8e-02
++++ >        c_new  552 | y_new 2.2e-01 | y_old 1.9e-01 | evals  2485
+    : changes  1274 | dx1 5.2e+03 | dx2 1.0e+02
+    : l_old : mortarboard
+    : l_new : feather boa, boa
+
+
+--> #  668 | c      668 | y     8.5e-01 | y_next 1.1e-02
++++ >        c_new  663 | y_new 1.4e-01 | y_old 1.4e-01 | evals  5091
+    : changes  2267 | dx1 6.1e+03 | dx2 1.0e+02
+    : l_old : mosque
+    : l_new : monastery
+
+
+--> #  669 | c      669 | y     9.3e-01 | y_next 1.2e-03
++++ >        c_new  879 | y_new 1.3e-01 | y_old 1.2e-01 | evals  1197
+    : changes   596 | dx1 3.3e+03 | dx2 9.1e+01
+    : l_old : mosquito net
+    : l_new : umbrella
+
+
+--> #  670 | c      670 | y     5.9e-01 | y_next 2.2e-01
++++ >        c_new  665 | y_new 3.3e-01 | y_old 3.2e-01 | evals  1223
+    : changes   411 | dx1 1.5e+03 | dx2 5.6e+01
+    : l_old : motor scooter, scooter
+    : l_new : moped
+
+WRN : base model is failed for "671" (SKIP)
+
+--> #  672 | c      672 | y     1.8e-01 | y_next 1.4e-01
++++ >        c_new  349 | y_new 2.0e-01 | y_old 1.5e-01 | evals     3
+    : changes    90 | dx1 3.7e+02 | dx2 2.7e+01
+    : l_old : mountain tent
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+WRN : base model is failed for "673" (SKIP)
+
+--> #  674 | c      674 | y     6.6e-01 | y_next 1.1e-02
++++ >        c_new  893 | y_new 1.2e-01 | y_old 1.1e-01 | evals  3373
+    : changes  1048 | dx1 2.2e+03 | dx2 5.3e+01
+    : l_old : mousetrap
+    : l_new : wallet, billfold, notecase, pocketbook
+
+
+--> #  675 | c      675 | y     6.9e-01 | y_next 6.0e-02
++++ >        c_new  660 | y_new 2.3e-01 | y_old 2.3e-01 | evals  2057
+    : changes   661 | dx1 2.8e+03 | dx2 7.6e+01
+    : l_old : moving van
+    : l_new : mobile home, manufactured home
+
+
+--> #  676 | c      676 | y     9.8e-01 | y_next 2.4e-03
++++ >        c_new  566 | y_new 7.7e-02 | y_old 7.1e-02 | evals  3841
+    : changes  1110 | dx1 3.2e+03 | dx2 7.1e+01
+    : l_old : muzzle
+    : l_new : french horn, horn
+
+WRN : base model is failed for "677" (SKIP)
+WRN : base model is failed for "678" (SKIP)
+WRN : base model is failed for "679" (SKIP)
+
+--> #  680 | c      680 | y     4.6e-01 | y_next 4.5e-01
++++ >        c_new  731 | y_new 5.5e-01 | y_old 3.5e-01 | evals     7
+    : changes    27 | dx1 1.5e+02 | dx2 2.1e+01
+    : l_old : nipple
+    : l_new : plunger, plumber`s helper
+
+
+--> #  681 | c      681 | y     5.3e-01 | y_next 1.4e-01
++++ >        c_new  868 | y_new 1.1e-01 | y_old 1.0e-01 | evals   317
+    : changes   232 | dx1 5.0e+02 | dx2 2.5e+01
+    : l_old : notebook, notebook computer
+    : l_new : tray
+
+
+--> #  682 | c      682 | y     6.8e-01 | y_next 1.4e-02
++++ >        c_new  920 | y_new 1.1e-01 | y_old 1.0e-01 | evals  3907
+    : changes  1404 | dx1 2.1e+03 | dx2 5.1e+01
+    : l_old : obelisk
+    : l_new : traffic light, traffic signal, stoplight
+
+
+--> #  683 | c      683 | y     8.2e-01 | y_next 2.3e-02
++++ >        c_new  776 | y_new 6.9e-02 | y_old 6.9e-02 | evals  7749
+    : changes  2743 | dx1 9.2e+03 | dx2 1.3e+02
+    : l_old : oboe, hautboy, hautbois
+    : l_new : sax, saxophone
+
+
+--> #  684 | c      684 | y     7.9e-01 | y_next 1.0e-02
++++ >        c_new  327 | y_new 1.2e-01 | y_old 1.1e-01 | evals  2031
+    : changes   941 | dx1 1.9e+03 | dx2 4.5e+01
+    : l_old : ocarina, sweet potato
+    : l_new : starfish, sea star
+
+
+--> #  685 | c      685 | y     8.5e-01 | y_next 2.3e-03
+    > fail | evals 10001
+
+--> #  686 | c      686 | y     8.2e-01 | y_next 3.9e-02
++++ >        c_new  710 | y_new 1.4e-01 | y_old 1.4e-01 | evals  4599
+    : changes  1481 | dx1 3.6e+03 | dx2 7.4e+01
+    : l_old : oil filter
+    : l_new : pencil sharpener
+
+
+--> #  687 | c      687 | y     7.8e-01 | y_next 4.3e-03
+    > fail | evals 10001
+
+--> #  688 | c      688 | y     8.1e-01 | y_next 2.6e-03
++++ >        c_new  798 | y_new 2.2e-01 | y_old 2.1e-01 | evals  9111
+    : changes  2366 | dx1 5.7e+03 | dx2 8.8e+01
+    : l_old : oscilloscope, scope, cathode-ray oscilloscope, cro
+    : l_new : slide rule, slipstick
+
+WRN : base model is failed for "689" (SKIP)
+
+--> #  690 | c      690 | y     3.5e-01 | y_next 2.0e-01
++++ >        c_new  603 | y_new 2.3e-01 | y_old 2.3e-01 | evals   339
+    : changes   206 | dx1 1.0e+03 | dx2 4.9e+01
+    : l_old : oxcart
+    : l_new : horse cart, horse-cart
+
+
+--> #  691 | c      691 | y     5.5e-01 | y_next 2.6e-02
++++ >        c_new  419 | y_new 3.1e-02 | y_old 3.0e-02 | evals  1889
+    : changes   809 | dx1 3.0e+03 | dx2 7.7e+01
+    : l_old : oxygen mask
+    : l_new : band aid
+
+WRN : base model is failed for "692" (SKIP)
+
+--> #  693 | c      693 | y     7.6e-01 | y_next 1.6e-01
++++ >        c_new  178 | y_new 8.3e-02 | y_old 7.5e-02 | evals  2215
+    : changes  1273 | dx1 5.7e+03 | dx2 1.1e+02
+    : l_old : paddle, boat paddle
+    : l_new : weimaraner
+
+
+--> #  694 | c      694 | y     8.8e-01 | y_next 7.7e-04
++++ >        c_new  791 | y_new 1.1e-01 | y_old 1.0e-01 | evals  8103
+    : changes  3201 | dx1 1.2e+04 | dx2 1.6e+02
+    : l_old : paddlewheel, paddle wheel
+    : l_new : shopping cart
+
+
+--> #  695 | c      695 | y     5.4e-01 | y_next 2.6e-01
++++ >        c_new  488 | y_new 4.0e-01 | y_old 3.9e-01 | evals   513
+    : changes   220 | dx1 1.6e+03 | dx2 6.9e+01
+    : l_old : padlock
+    : l_new : chain
+
+WRN : base model is failed for "696" (SKIP)
+
+--> #  697 | c      697 | y     4.2e-01 | y_next 1.3e-01
++++ >        c_new  638 | y_new 2.4e-01 | y_old 2.3e-01 | evals    17
+    : changes    90 | dx1 3.4e+02 | dx2 2.6e+01
+    : l_old : pajama, pyjama, pj`s, jammies
+    : l_new : maillot
+
+
+--> #  698 | c      698 | y     8.6e-01 | y_next 1.5e-02
++++ >        c_new  832 | y_new 3.1e-01 | y_old 2.9e-01 | evals  1491
+    : changes   988 | dx1 4.3e+03 | dx2 1.0e+02
+    : l_old : palace
+    : l_new : stupa, tope
+
+
+--> #  699 | c      699 | y     6.3e-01 | y_next 2.2e-02
++++ >        c_new    0 | y_new 1.3e-01 | y_old 1.3e-01 | evals  1093
+    : changes   524 | dx1 2.7e+03 | dx2 8.4e+01
+    : l_old : panpipe, pandean pipe, syrinx
+    : l_new : tench, tinca tinca
+
+
+--> #  700 | c      700 | y     3.0e-01 | y_next 9.2e-02
++++ >        c_new  969 | y_new 1.9e-01 | y_old 1.1e-01 | evals     9
+    : changes    63 | dx1 3.3e+02 | dx2 2.8e+01
+    : l_old : paper towel
+    : l_new : eggnog
+
+
+--> #  701 | c      701 | y     5.0e-01 | y_next 2.3e-01
++++ >        c_new  417 | y_new 3.5e-01 | y_old 2.7e-01 | evals   129
+    : changes   180 | dx1 4.2e+02 | dx2 2.4e+01
+    : l_old : parachute, chute
+    : l_new : balloon
+
+WRN : base model is failed for "702" (SKIP)
+WRN : base model is failed for "703" (SKIP)
+
+--> #  704 | c      704 | y     7.2e-01 | y_next 1.1e-01
++++ >        c_new  707 | y_new 3.7e-01 | y_old 3.5e-01 | evals   415
+    : changes   237 | dx1 1.2e+03 | dx2 5.9e+01
+    : l_old : parking meter
+    : l_new : pay-phone, pay-station
+
+
+--> #  705 | c      705 | y     9.1e-01 | y_next 6.3e-03
++++ >        c_new  547 | y_new 3.7e-01 | y_old 3.6e-01 | evals  3235
+    : changes  1041 | dx1 5.9e+03 | dx2 1.4e+02
+    : l_old : passenger car, coach, carriage
+    : l_new : electric locomotive
+
+
+--> #  706 | c      706 | y     4.8e-01 | y_next 1.7e-01
++++ >        c_new  743 | y_new 3.9e-01 | y_old 3.5e-01 | evals   211
+    : changes   139 | dx1 4.5e+02 | dx2 2.7e+01
+    : l_old : patio, terrace
+    : l_new : prison, prison house
+
+
+--> #  707 | c      707 | y     5.0e-01 | y_next 8.4e-02
++++ >        c_new  571 | y_new 2.1e-01 | y_old 2.0e-01 | evals  1223
+    : changes   474 | dx1 1.8e+03 | dx2 5.8e+01
+    : l_old : pay-phone, pay-station
+    : l_new : gas pump, gasoline pump, petrol pump, island dispe
+
+
+--> #  708 | c      708 | y     7.4e-01 | y_next 1.4e-01
++++ >        c_new  900 | y_new 3.5e-01 | y_old 3.3e-01 | evals  1633
+    : changes   666 | dx1 2.2e+03 | dx2 6.3e+01
+    : l_old : pedestal, plinth, footstall
+    : l_new : water tower
+
+
+--> #  709 | c      709 | y     8.8e-01 | y_next 1.8e-02
++++ >        c_new  496 | y_new 2.8e-01 | y_old 2.7e-01 | evals  1635
+    : changes   590 | dx1 3.9e+03 | dx2 1.1e+02
+    : l_old : pencil box, pencil case
+    : l_new : christmas stocking
+
+WRN : attr model is failed for "710" (SKIP)
+
+--> #  711 | c      711 | y     5.7e-01 | y_next 1.4e-01
++++ >        c_new  631 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1227
+    : changes   656 | dx1 1.6e+03 | dx2 4.5e+01
+    : l_old : perfume, essence
+    : l_new : lotion
+
+WRN : attr model is failed for "712" (SKIP)
+WRN : base model is failed for "713" (SKIP)
+
+--> #  714 | c      714 | y     7.9e-01 | y_next 2.8e-02
++++ >        c_new  392 | y_new 2.5e-01 | y_old 2.5e-01 | evals   863
+    : changes   596 | dx1 1.7e+03 | dx2 5.7e+01
+    : l_old : pick, plectrum, plectron
+    : l_new : rock beauty, holocanthus tricolor
+
+
+--> #  715 | c      715 | y     7.7e-01 | y_next 1.2e-01
++++ >        c_new  652 | y_new 3.4e-01 | y_old 3.3e-01 | evals  3853
+    : changes   663 | dx1 9.5e+02 | dx2 2.7e+01
+    : l_old : pickelhaube
+    : l_new : military uniform
+
+
+--> #  716 | c      716 | y     5.7e-01 | y_next 5.6e-02
++++ >        c_new  566 | y_new 2.0e-01 | y_old 1.9e-01 | evals  1105
+    : changes   564 | dx1 2.6e+03 | dx2 7.8e+01
+    : l_old : picket fence, paling
+    : l_new : french horn, horn
+
+WRN : attr model is failed for "717" (SKIP)
+
+--> #  718 | c      718 | y     7.8e-01 | y_next 4.9e-02
++++ >        c_new  460 | y_new 2.3e-01 | y_old 2.3e-01 | evals  2229
+    : changes  1196 | dx1 3.5e+03 | dx2 7.5e+01
+    : l_old : pier
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  719 | c      719 | y     8.2e-01 | y_next 5.2e-03
++++ >        c_new  773 | y_new 9.9e-02 | y_old 9.3e-02 | evals  5757
+    : changes  1654 | dx1 6.8e+03 | dx2 1.2e+02
+    : l_old : piggy bank, penny bank
+    : l_new : saltshaker, salt shaker
+
+
+--> #  720 | c      720 | y     4.4e-01 | y_next 1.1e-01
++++ >        c_new  686 | y_new 2.3e-01 | y_old 2.2e-01 | evals   237
+    : changes   144 | dx1 5.2e+02 | dx2 3.1e+01
+    : l_old : pill bottle
+    : l_new : oil filter
+
+
+--> #  721 | c      721 | y     9.9e-01 | y_next 5.6e-04
++++ >        c_new  443 | y_new 3.0e-01 | y_old 2.9e-01 | evals  3039
+    : changes  1261 | dx1 5.5e+03 | dx2 1.1e+02
+    : l_old : pillow
+    : l_new : bib
+
+WRN : attr model is failed for "722" (SKIP)
+
+--> #  723 | c      723 | y     8.1e-01 | y_next 2.7e-03
+    > fail | evals 10001
+
+--> #  724 | c      724 | y     8.8e-01 | y_next 1.3e-02
++++ >        c_new  913 | y_new 2.0e-01 | y_old 1.8e-01 | evals  1645
+    : changes  1205 | dx1 3.3e+03 | dx2 7.4e+01
+    : l_old : pirate, pirate ship
+    : l_new : wreck
+
+WRN : base model is failed for "725" (SKIP)
+
+--> #  726 | c      726 | y     6.9e-01 | y_next 5.3e-02
++++ >        c_new  606 | y_new 9.4e-02 | y_old 8.8e-02 | evals  1227
+    : changes   743 | dx1 2.6e+03 | dx2 6.9e+01
+    : l_old : plane, carpenter`s plane, woodworking plane
+    : l_new : iron, smoothing iron
+
+
+--> #  727 | c      727 | y     1.9e-01 | y_next 6.2e-02
++++ >        c_new  476 | y_new 4.8e-02 | y_old 4.5e-02 | evals   747
+    : changes   313 | dx1 8.1e+02 | dx2 3.3e+01
+    : l_old : planetarium
+    : l_new : carousel, carrousel, merry-go-round, roundabout, w
+
+
+--> #  728 | c      728 | y     5.0e-01 | y_next 2.7e-01
++++ >        c_new  692 | y_new 4.3e-01 | y_old 3.4e-01 | evals    13
+    : changes    36 | dx1 8.2e+01 | dx2 1.1e+01
+    : l_old : plastic bag
+    : l_new : packet
+
+
+--> #  729 | c      729 | y     2.7e-01 | y_next 6.5e-02
++++ >        c_new  648 | y_new 1.4e-01 | y_old 1.4e-01 | evals   331
+    : changes   275 | dx1 7.0e+02 | dx2 3.3e+01
+    : l_old : plate rack
+    : l_new : medicine chest, medicine cabinet
+
+WRN : attr model is failed for "730" (SKIP)
+
+--> #  731 | c      731 | y     9.7e-01 | y_next 4.5e-03
++++ >        c_new  910 | y_new 1.7e-01 | y_old 1.6e-01 | evals   933
+    : changes   545 | dx1 2.2e+03 | dx2 6.6e+01
+    : l_old : plunger, plumber`s helper
+    : l_new : wooden spoon
+
+
+--> #  732 | c      732 | y     7.4e-01 | y_next 3.0e-02
++++ >        c_new  745 | y_new 2.2e-01 | y_old 1.8e-01 | evals   541
+    : changes   420 | dx1 2.1e+03 | dx2 7.0e+01
+    : l_old : polaroid camera, polaroid land camera
+    : l_new : projector
+
+
+--> #  733 | c      733 | y     9.1e-01 | y_next 9.2e-03
++++ >        c_new  724 | y_new 1.6e-01 | y_old 1.6e-01 | evals  6401
+    : changes  1390 | dx1 4.0e+03 | dx2 8.4e+01
+    : l_old : pole
+    : l_new : pirate, pirate ship
+
+WRN : base model is failed for "734" (SKIP)
+
+--> #  735 | c      735 | y     8.5e-01 | y_next 1.4e-02
++++ >        c_new  796 | y_new 1.4e-01 | y_old 1.4e-01 | evals  4953
+    : changes  2173 | dx1 4.6e+03 | dx2 8.4e+01
+    : l_old : poncho
+    : l_new : ski mask
+
+WRN : base model is failed for "736" (SKIP)
+
+--> #  737 | c      737 | y     4.6e-01 | y_next 1.1e-01
++++ >        c_new  440 | y_new 2.2e-01 | y_old 2.0e-01 | evals   559
+    : changes   255 | dx1 1.0e+03 | dx2 4.6e+01
+    : l_old : pop bottle, soda bottle
+    : l_new : beer bottle
+
+
+--> #  738 | c      738 | y     6.5e-01 | y_next 5.0e-02
++++ >        c_new  716 | y_new 2.7e-01 | y_old 2.6e-01 | evals  1019
+    : changes   630 | dx1 2.3e+03 | dx2 6.8e+01
+    : l_old : pot, flowerpot
+    : l_new : picket fence, paling
+
+WRN : base model is failed for "739" (SKIP)
+WRN : base model is failed for "740" (SKIP)
+
+--> #  741 | c      741 | y     8.8e-01 | y_next 9.6e-04
++++ >        c_new  611 | y_new 3.7e-01 | y_old 3.7e-01 | evals  3945
+    : changes  1697 | dx1 8.3e+03 | dx2 1.5e+02
+    : l_old : prayer rug, prayer mat
+    : l_new : jigsaw puzzle
+
+WRN : base model is failed for "742" (SKIP)
+
+--> #  743 | c      743 | y     2.5e-01 | y_next 5.8e-02
++++ >        c_new  169 | y_new 5.6e-02 | y_old 5.5e-02 | evals  1807
+    : changes   740 | dx1 2.3e+03 | dx2 6.5e+01
+    : l_old : prison, prison house
+    : l_new : borzoi, russian wolfhound
+
+WRN : base model is failed for "744" (SKIP)
+WRN : base model is failed for "745" (SKIP)
+
+--> #  746 | c      746 | y     8.8e-01 | y_next 4.5e-03
++++ >        c_new  795 | y_new 2.0e-01 | y_old 1.8e-01 | evals  3665
+    : changes  1455 | dx1 7.2e+03 | dx2 1.4e+02
+    : l_old : puck, hockey puck
+    : l_new : ski
+
+
+--> #  747 | c      747 | y     9.9e-01 | y_next 4.5e-04
++++ >        c_new  966 | y_new 3.2e-01 | y_old 3.1e-01 | evals  1857
+    : changes   921 | dx1 4.5e+03 | dx2 1.1e+02
+    : l_old : punching bag, punch bag, punching ball, punchball
+    : l_new : red wine
+
+
+--> #  748 | c      748 | y     6.5e-01 | y_next 2.1e-01
++++ >        c_new  849 | y_new 1.7e-01 | y_old 1.5e-01 | evals  1531
+    : changes   666 | dx1 1.3e+03 | dx2 3.9e+01
+    : l_old : purse
+    : l_new : teapot
+
+
+--> #  749 | c      749 | y     9.0e-01 | y_next 5.4e-03
++++ >        c_new  794 | y_new 2.4e-01 | y_old 2.3e-01 | evals   625
+    : changes   366 | dx1 1.3e+03 | dx2 4.6e+01
+    : l_old : quill, quill pen
+    : l_new : shower curtain
+
+WRN : base model is failed for "750" (SKIP)
+WRN : base model is failed for "751" (SKIP)
+
+--> #  752 | c      752 | y     6.8e-01 | y_next 6.6e-02
++++ >        c_new  640 | y_new 1.9e-01 | y_old 1.7e-01 | evals  2407
+    : changes  1031 | dx1 3.3e+03 | dx2 7.8e+01
+    : l_old : racket, racquet
+    : l_new : manhole cover
+
+WRN : base model is failed for "753" (SKIP)
+WRN : base model is failed for "754" (SKIP)
+
+--> #  755 | c      755 | y     8.2e-01 | y_next 3.7e-02
++++ >        c_new  807 | y_new 3.4e-01 | y_old 3.3e-01 | evals  2817
+    : changes  1618 | dx1 5.2e+03 | dx2 9.4e+01
+    : l_old : radio telescope, radio reflector
+    : l_new : solar dish, solar collector, solar furnace
+
+
+--> #  756 | c      756 | y     8.4e-01 | y_next 7.1e-02
++++ >        c_new  882 | y_new 3.6e-01 | y_old 3.3e-01 | evals  1109
+    : changes   329 | dx1 5.9e+02 | dx2 2.6e+01
+    : l_old : rain barrel
+    : l_new : vacuum, vacuum cleaner
+
+
+--> #  757 | c      757 | y     6.8e-01 | y_next 1.7e-01
++++ >        c_new  660 | y_new 4.0e-01 | y_old 3.9e-01 | evals   403
+    : changes   287 | dx1 1.4e+03 | dx2 5.9e+01
+    : l_old : recreational vehicle, rv, r.v.
+    : l_new : mobile home, manufactured home
+
+
+--> #  758 | c      758 | y     7.9e-01 | y_next 1.5e-02
++++ >        c_new  686 | y_new 1.0e-01 | y_old 9.3e-02 | evals  2951
+    : changes  1213 | dx1 4.3e+03 | dx2 9.0e+01
+    : l_old : reel
+    : l_new : oil filter
+
+
+--> #  759 | c      759 | y     8.9e-01 | y_next 4.3e-03
++++ >        c_new  920 | y_new 6.4e-02 | y_old 6.2e-02 | evals  7377
+    : changes  2347 | dx1 1.2e+04 | dx2 1.7e+02
+    : l_old : reflex camera
+    : l_new : traffic light, traffic signal, stoplight
+
+
+--> #  760 | c      760 | y     3.7e-01 | y_next 1.2e-01
++++ >        c_new  799 | y_new 2.0e-01 | y_old 1.5e-01 | evals    51
+    : changes    50 | dx1 1.7e+02 | dx2 1.8e+01
+    : l_old : refrigerator, icebox
+    : l_new : sliding door
+
+WRN : attr model is failed for "761" (SKIP)
+
+--> #  762 | c      762 | y     6.2e-01 | y_next 3.8e-02
++++ >        c_new  424 | y_new 9.2e-02 | y_old 8.4e-02 | evals  1375
+    : changes   765 | dx1 2.6e+03 | dx2 7.3e+01
+    : l_old : restaurant, eating house, eating place, eatery
+    : l_new : barbershop
+
+
+--> #  763 | c      763 | y     4.9e-01 | y_next 9.3e-02
++++ >        c_new  597 | y_new 2.8e-01 | y_old 2.8e-01 | evals   255
+    : changes   150 | dx1 9.1e+02 | dx2 5.1e+01
+    : l_old : revolver, six-gun, six-shooter
+    : l_new : holster
+
+WRN : attr model is failed for "764" (SKIP)
+
+--> #  765 | c      765 | y     7.7e-01 | y_next 2.0e-02
++++ >        c_new  559 | y_new 2.5e-01 | y_old 2.4e-01 | evals  1813
+    : changes   846 | dx1 2.4e+03 | dx2 6.0e+01
+    : l_old : rocking chair, rocker
+    : l_new : folding chair
+
+
+--> #  766 | c      766 | y     6.0e-01 | y_next 1.7e-01
++++ >        c_new  760 | y_new 2.0e-01 | y_old 2.0e-01 | evals   317
+    : changes   263 | dx1 1.2e+03 | dx2 5.1e+01
+    : l_old : rotisserie
+    : l_new : refrigerator, icebox
+
+WRN : base model is failed for "767" (SKIP)
+
+--> #  768 | c      768 | y     9.5e-01 | y_next 1.1e-02
++++ >        c_new  455 | y_new 4.1e-01 | y_old 4.0e-01 | evals  2003
+    : changes   926 | dx1 3.0e+03 | dx2 7.7e+01
+    : l_old : rugby ball
+    : l_new : bottlecap
+
+
+--> #  769 | c      769 | y     8.9e-01 | y_next 2.7e-03
++++ >        c_new  419 | y_new 1.1e-01 | y_old 1.0e-01 | evals  7709
+    : changes  2324 | dx1 3.3e+03 | dx2 5.6e+01
+    : l_old : rule, ruler
+    : l_new : band aid
+
+
+--> #  770 | c      770 | y     7.9e-01 | y_next 1.2e-02
++++ >        c_new  774 | y_new 5.9e-02 | y_old 5.9e-02 | evals  5957
+    : changes  2210 | dx1 6.7e+03 | dx2 1.0e+02
+    : l_old : running shoe
+    : l_new : sandal
+
+WRN : base model is failed for "771" (SKIP)
+
+--> #  772 | c      772 | y     8.9e-01 | y_next 3.1e-03
++++ >        c_new  843 | y_new 4.7e-02 | y_old 4.5e-02 | evals  3903
+    : changes  1902 | dx1 7.4e+03 | dx2 1.3e+02
+    : l_old : safety pin
+    : l_new : swing
+
+
+--> #  773 | c      773 | y     6.5e-01 | y_next 3.9e-02
++++ >        c_new  883 | y_new 2.0e-01 | y_old 1.9e-01 | evals   451
+    : changes   393 | dx1 1.3e+03 | dx2 4.6e+01
+    : l_old : saltshaker, salt shaker
+    : l_new : vase
+
+
+--> #  774 | c      774 | y     3.4e-01 | y_next 1.4e-01
++++ >        c_new  679 | y_new 2.6e-01 | y_old 2.1e-01 | evals     7
+    : changes    99 | dx1 2.0e+02 | dx2 1.5e+01
+    : l_old : sandal
+    : l_new : necklace
+
+WRN : attr model is failed for "775" (SKIP)
+
+--> #  776 | c      776 | y     7.1e-01 | y_next 4.1e-02
++++ >        c_new  843 | y_new 6.4e-02 | y_old 6.3e-02 | evals   909
+    : changes   563 | dx1 2.5e+03 | dx2 7.6e+01
+    : l_old : sax, saxophone
+    : l_new : swing
+
+
+--> #  777 | c      777 | y     8.9e-01 | y_next 6.4e-02
++++ >        c_new  623 | y_new 2.1e-01 | y_old 1.9e-01 | evals  1007
+    : changes   707 | dx1 2.6e+03 | dx2 7.3e+01
+    : l_old : scabbard
+    : l_new : letter opener, paper knife, paperknife
+
+
+--> #  778 | c      778 | y     9.8e-01 | y_next 3.6e-03
+    > fail | evals 10001
+
+--> #  779 | c      779 | y     8.2e-01 | y_next 1.9e-02
++++ >        c_new  874 | y_new 2.5e-01 | y_old 2.2e-01 | evals  2303
+    : changes  1154 | dx1 5.3e+03 | dx2 1.1e+02
+    : l_old : school bus
+    : l_new : trolleybus, trolley coach, trackless trolley
+
+
+--> #  780 | c      780 | y     1.4e-01 | y_next 1.2e-01
++++ >        c_new  536 | y_new 1.4e-01 | y_old 1.4e-01 | evals    15
+    : changes    49 | dx1 1.5e+02 | dx2 1.7e+01
+    : l_old : schooner
+    : l_new : dock, dockage, docking facility
+
+
+--> #  781 | c      781 | y     9.2e-01 | y_next 1.6e-03
++++ >        c_new  919 | y_new 1.1e-01 | y_old 9.1e-02 | evals  8683
+    : changes  2837 | dx1 1.1e+04 | dx2 1.7e+02
+    : l_old : scoreboard
+    : l_new : street sign
+
+WRN : base model is failed for "782" (SKIP)
+
+--> #  783 | c      783 | y     7.3e-01 | y_next 1.6e-02
+    > fail | evals 10001
+
+--> #  784 | c      784 | y     5.2e-01 | y_next 7.1e-02
++++ >        c_new  563 | y_new 1.8e-01 | y_old 1.7e-01 | evals   711
+    : changes   514 | dx1 1.2e+03 | dx2 3.9e+01
+    : l_old : screwdriver
+    : l_new : fountain pen
+
+WRN : base model is failed for "785" (SKIP)
+
+--> #  786 | c      786 | y     3.3e-01 | y_next 7.9e-02
++++ >        c_new  492 | y_new 1.5e-01 | y_old 1.4e-01 | evals   141
+    : changes    80 | dx1 2.7e+02 | dx2 2.1e+01
+    : l_old : sewing machine
+    : l_new : chest
+
+
+--> #  787 | c      787 | y     9.7e-01 | y_next 3.1e-03
++++ >        c_new  464 | y_new 2.6e-01 | y_old 2.6e-01 | evals  2003
+    : changes   960 | dx1 4.6e+03 | dx2 1.1e+02
+    : l_old : shield, buckler
+    : l_new : buckle
+
+WRN : base model is failed for "788" (SKIP)
+
+--> #  789 | c      789 | y     6.8e-01 | y_next 5.6e-02
++++ >        c_new  799 | y_new 2.6e-01 | y_old 2.3e-01 | evals  1027
+    : changes   623 | dx1 2.5e+03 | dx2 6.9e+01
+    : l_old : shoji
+    : l_new : sliding door
+
+
+--> #  790 | c      790 | y     8.4e-01 | y_next 2.8e-02
++++ >        c_new  478 | y_new 7.7e-02 | y_old 7.7e-02 | evals  9715
+    : changes  2262 | dx1 5.1e+03 | dx2 8.0e+01
+    : l_old : shopping basket
+    : l_new : carton
+
+
+--> #  791 | c      791 | y     9.0e-01 | y_next 1.2e-02
++++ >        c_new  612 | y_new 9.9e-02 | y_old 9.5e-02 | evals  5445
+    : changes  2322 | dx1 6.2e+03 | dx2 9.5e+01
+    : l_old : shopping cart
+    : l_new : jinrikisha, ricksha, rickshaw
+
+
+--> #  792 | c      792 | y     7.8e-01 | y_next 3.0e-02
++++ >        c_new  621 | y_new 4.0e-02 | y_old 4.0e-02 | evals  4413
+    : changes  1480 | dx1 4.5e+03 | dx2 8.5e+01
+    : l_old : shovel
+    : l_new : lawn mower, mower
+
+WRN : base model is failed for "793" (SKIP)
+
+--> #  794 | c      794 | y     2.9e-01 | y_next 2.3e-01
++++ >        c_new  435 | y_new 2.9e-01 | y_old 2.2e-01 | evals     7
+    : changes    80 | dx1 1.6e+02 | dx2 1.4e+01
+    : l_old : shower curtain
+    : l_new : bathtub, bathing tub, bath, tub
+
+
+--> #  795 | c      795 | y     8.9e-01 | y_next 8.5e-03
++++ >        c_new   75 | y_new 3.0e-01 | y_old 2.8e-01 | evals  8503
+    : changes  3071 | dx1 8.1e+03 | dx2 1.4e+02
+    : l_old : ski
+    : l_new : black widow, latrodectus mactans
+
+
+--> #  796 | c      796 | y     7.1e-01 | y_next 2.0e-02
++++ >        c_new  658 | y_new 1.4e-01 | y_old 1.4e-01 | evals  4931
+    : changes  1340 | dx1 5.7e+03 | dx2 1.2e+02
+    : l_old : ski mask
+    : l_new : mitten
+
+
+--> #  797 | c      797 | y     9.3e-01 | y_next 4.9e-03
++++ >        c_new  697 | y_new 3.5e-01 | y_old 3.4e-01 | evals  2849
+    : changes  1329 | dx1 4.9e+03 | dx2 9.9e+01
+    : l_old : sleeping bag
+    : l_new : pajama, pyjama, pj`s, jammies
+
+
+--> #  798 | c      798 | y     8.7e-01 | y_next 1.7e-02
+    > fail | evals 10001
+
+--> #  799 | c      799 | y     4.7e-01 | y_next 1.3e-01
++++ >        c_new  753 | y_new 2.2e-01 | y_old 2.2e-01 | evals   305
+    : changes   302 | dx1 9.9e+02 | dx2 4.1e+01
+    : l_old : sliding door
+    : l_new : radiator
+
+
+--> #  800 | c      800 | y     5.9e-01 | y_next 3.9e-02
++++ >        c_new  886 | y_new 1.9e-01 | y_old 1.9e-01 | evals   303
+    : changes   331 | dx1 1.2e+03 | dx2 4.5e+01
+    : l_old : slot, one-armed bandit
+    : l_new : vending machine
+
+
+--> #  801 | c      801 | y     5.2e-01 | y_next 4.0e-02
++++ >        c_new  983 | y_new 9.5e-02 | y_old 8.9e-02 | evals  3105
+    : changes   937 | dx1 5.5e+03 | dx2 1.3e+02
+    : l_old : snorkel
+    : l_new : scuba diver
+
+
+--> #  802 | c      802 | y     7.5e-01 | y_next 1.5e-02
++++ >        c_new  817 | y_new 5.4e-02 | y_old 5.2e-02 | evals  3011
+    : changes  1218 | dx1 7.2e+03 | dx2 1.5e+02
+    : l_old : snowmobile
+    : l_new : sports car, sport car
+
+
+--> #  803 | c      803 | y     8.6e-01 | y_next 1.4e-02
++++ >        c_new  625 | y_new 2.2e-01 | y_old 2.1e-01 | evals  2255
+    : changes  1056 | dx1 6.0e+03 | dx2 1.3e+02
+    : l_old : snowplow, snowplough
+    : l_new : lifeboat
+
+
+--> #  804 | c      804 | y     9.8e-01 | y_next 2.8e-03
++++ >        c_new  699 | y_new 1.2e-01 | y_old 1.0e-01 | evals   903
+    : changes   642 | dx1 1.5e+03 | dx2 4.4e+01
+    : l_old : soap dispenser
+    : l_new : panpipe, pandean pipe, syrinx
+
+
+--> #  805 | c      805 | y     3.3e-01 | y_next 4.3e-02
++++ >        c_new   36 | y_new 1.4e-01 | y_old 1.4e-01 | evals  1607
+    : changes   702 | dx1 2.2e+03 | dx2 6.2e+01
+    : l_old : soccer ball
+    : l_new : terrapin
+
+
+--> #  806 | c      806 | y     9.3e-01 | y_next 4.4e-03
++++ >        c_new  655 | y_new 1.0e-01 | y_old 9.8e-02 | evals  4509
+    : changes  2020 | dx1 5.7e+03 | dx2 9.2e+01
+    : l_old : sock
+    : l_new : miniskirt, mini
+
+WRN : attr model is failed for "807" (SKIP)
+WRN : base model is failed for "808" (SKIP)
+
+--> #  809 | c      809 | y     7.4e-01 | y_next 5.4e-02
++++ >        c_new  659 | y_new 2.5e-01 | y_old 2.4e-01 | evals  5731
+    : changes  1395 | dx1 4.5e+03 | dx2 8.8e+01
+    : l_old : soup bowl
+    : l_new : mixing bowl
+
+
+--> #  810 | c      810 | y     6.2e-01 | y_next 2.2e-01
++++ >        c_new  878 | y_new 4.0e-01 | y_old 3.9e-01 | evals   609
+    : changes   451 | dx1 1.7e+03 | dx2 5.7e+01
+    : l_old : space bar
+    : l_new : typewriter keyboard
+
+
+--> #  811 | c      811 | y     7.6e-01 | y_next 2.7e-02
++++ >        c_new  823 | y_new 1.9e-01 | y_old 1.5e-01 | evals  1103
+    : changes   512 | dx1 2.3e+03 | dx2 7.6e+01
+    : l_old : space heater
+    : l_new : stethoscope
+
+
+--> #  812 | c      812 | y     8.8e-01 | y_next 2.2e-02
++++ >        c_new  657 | y_new 2.1e-01 | y_old 2.1e-01 | evals  1521
+    : changes   846 | dx1 4.6e+03 | dx2 1.1e+02
+    : l_old : space shuttle
+    : l_new : missile
+
+WRN : base model is failed for "813" (SKIP)
+
+--> #  814 | c      814 | y     8.3e-01 | y_next 7.0e-03
++++ >        c_new  628 | y_new 2.5e-01 | y_old 2.5e-01 | evals  4553
+    : changes  1489 | dx1 3.2e+03 | dx2 6.2e+01
+    : l_old : speedboat
+    : l_new : liner, ocean liner
+
+WRN : base model is failed for "815" (SKIP)
+
+--> #  816 | c      816 | y     9.4e-01 | y_next 8.9e-03
++++ >        c_new  618 | y_new 4.0e-01 | y_old 4.0e-01 | evals  2205
+    : changes   762 | dx1 1.4e+03 | dx2 4.1e+01
+    : l_old : spindle
+    : l_new : ladle
+
+
+--> #  817 | c      817 | y     4.3e-01 | y_next 2.8e-01
++++ >        c_new  511 | y_new 3.3e-01 | y_old 3.3e-01 | evals   107
+    : changes   172 | dx1 6.5e+02 | dx2 3.4e+01
+    : l_old : sports car, sport car
+    : l_new : convertible
+
+
+--> #  818 | c      818 | y     8.8e-01 | y_next 1.7e-02
++++ >        c_new  531 | y_new 1.1e-01 | y_old 1.1e-01 | evals   703
+    : changes   510 | dx1 2.3e+03 | dx2 7.5e+01
+    : l_old : spotlight, spot
+    : l_new : digital watch
+
+WRN : base model is failed for "819" (SKIP)
+
+--> #  820 | c      820 | y     3.3e-01 | y_next 3.0e-01
++++ >        c_new  705 | y_new 3.3e-01 | y_old 3.2e-01 | evals     3
+    : changes    20 | dx1 1.4e+02 | dx2 1.9e+01
+    : l_old : steam locomotive
+    : l_new : passenger car, coach, carriage
+
+
+--> #  821 | c      821 | y     5.6e-01 | y_next 1.9e-01
++++ >        c_new  718 | y_new 3.3e-01 | y_old 3.3e-01 | evals  5513
+    : changes  1139 | dx1 3.9e+03 | dx2 8.8e+01
+    : l_old : steel arch bridge
+    : l_new : pier
+
+
+--> #  822 | c      822 | y     8.8e-01 | y_next 1.7e-02
++++ >        c_new  854 | y_new 1.9e-01 | y_old 1.9e-01 | evals  2329
+    : changes  1254 | dx1 4.1e+03 | dx2 9.5e+01
+    : l_old : steel drum
+    : l_new : theater curtain, theatre curtain
+
+
+--> #  823 | c      823 | y     6.4e-01 | y_next 3.1e-02
++++ >        c_new  809 | y_new 1.3e-01 | y_old 1.2e-01 | evals   219
+    : changes   212 | dx1 1.5e+03 | dx2 7.1e+01
+    : l_old : stethoscope
+    : l_new : soup bowl
+
+
+--> #  824 | c      824 | y     5.0e-01 | y_next 6.4e-02
++++ >        c_new  750 | y_new 1.1e-01 | y_old 1.1e-01 | evals  1975
+    : changes   749 | dx1 1.9e+03 | dx2 5.1e+01
+    : l_old : stole
+    : l_new : quilt, comforter, comfort, puff
+
+
+--> #  825 | c      825 | y     3.9e-01 | y_next 1.5e-01
++++ >        c_new  972 | y_new 1.6e-01 | y_old 1.5e-01 | evals   407
+    : changes   327 | dx1 1.1e+03 | dx2 4.4e+01
+    : l_old : stone wall
+    : l_new : cliff, drop, drop-off
+
+
+--> #  826 | c      826 | y     5.0e-01 | y_next 1.5e-01
++++ >        c_new  426 | y_new 3.0e-01 | y_old 2.8e-01 | evals   589
+    : changes   246 | dx1 6.6e+02 | dx2 3.0e+01
+    : l_old : stopwatch, stop watch
+    : l_new : barometer
+
+
+--> #  827 | c      827 | y     9.5e-01 | y_next 7.3e-03
++++ >        c_new  571 | y_new 1.2e-01 | y_old 1.1e-01 | evals  5517
+    : changes  2632 | dx1 1.0e+04 | dx2 1.4e+02
+    : l_old : stove
+    : l_new : gas pump, gasoline pump, petrol pump, island dispe
+
+
+--> #  828 | c      828 | y     9.2e-01 | y_next 8.6e-03
++++ >        c_new  640 | y_new 1.4e-01 | y_old 1.4e-01 | evals  3709
+    : changes   989 | dx1 3.5e+03 | dx2 7.4e+01
+    : l_old : strainer
+    : l_new : manhole cover
+
+
+--> #  829 | c      829 | y     7.9e-01 | y_next 5.8e-02
++++ >        c_new  874 | y_new 3.3e-01 | y_old 3.2e-01 | evals  1789
+    : changes   738 | dx1 3.5e+03 | dx2 9.0e+01
+    : l_old : streetcar, tram, tramcar, trolley, trolley car
+    : l_new : trolleybus, trolley coach, trackless trolley
+
+
+--> #  830 | c      830 | y     8.3e-01 | y_next 3.2e-02
++++ >        c_new  491 | y_new 3.1e-01 | y_old 3.1e-01 | evals   605
+    : changes   415 | dx1 1.2e+03 | dx2 4.5e+01
+    : l_old : stretcher
+    : l_new : chain saw, chainsaw
+
+
+--> #  831 | c      831 | y     5.8e-01 | y_next 5.4e-02
++++ >        c_new  516 | y_new 2.0e-01 | y_old 1.8e-01 | evals   303
+    : changes   276 | dx1 1.0e+03 | dx2 4.3e+01
+    : l_old : studio couch, day bed
+    : l_new : cradle
+
+
+--> #  832 | c      832 | y     5.5e-01 | y_next 9.1e-02
++++ >        c_new  538 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1709
+    : changes   960 | dx1 1.6e+03 | dx2 5.4e+01
+    : l_old : stupa, tope
+    : l_new : dome
+
+
+--> #  833 | c      833 | y     2.6e-01 | y_next 1.8e-01
++++ >        c_new  628 | y_new 3.0e-01 | y_old 1.7e-01 | evals   157
+    : changes    62 | dx1 1.6e+02 | dx2 1.7e+01
+    : l_old : submarine, pigboat, sub, u-boat
+    : l_new : liner, ocean liner
+
+
+--> #  834 | c      834 | y     5.5e-01 | y_next 2.7e-01
++++ >        c_new  457 | y_new 3.7e-01 | y_old 2.8e-01 | evals  3807
+    : changes   436 | dx1 1.2e+03 | dx2 5.5e+01
+    : l_old : suit, suit of clothes
+    : l_new : bow tie, bow-tie, bowtie
+
+
+--> #  835 | c      835 | y     3.6e-01 | y_next 1.7e-01
++++ >        c_new  769 | y_new 2.1e-01 | y_old 2.1e-01 | evals   307
+    : changes   166 | dx1 5.0e+02 | dx2 2.9e+01
+    : l_old : sundial
+    : l_new : rule, ruler
+
+WRN : base model is failed for "836" (SKIP)
+WRN : base model is failed for "837" (SKIP)
+WRN : base model is failed for "838" (SKIP)
+
+--> #  839 | c      839 | y     2.5e-01 | y_next 7.1e-02
++++ >        c_new  903 | y_new 9.4e-02 | y_old 6.8e-02 | evals   159
+    : changes   128 | dx1 8.0e+02 | dx2 4.7e+01
+    : l_old : suspension bridge
+    : l_new : wig
+
+WRN : base model is failed for "840" (SKIP)
+WRN : base model is failed for "841" (SKIP)
+
+--> #  842 | c      842 | y     6.9e-01 | y_next 4.1e-02
++++ >        c_new  484 | y_new 8.4e-02 | y_old 8.3e-02 | evals  2835
+    : changes  1021 | dx1 3.2e+03 | dx2 7.6e+01
+    : l_old : swimming trunks, bathing trunks
+    : l_new : catamaran
+
+
+--> #  843 | c      843 | y     8.2e-01 | y_next 7.1e-02
++++ >        c_new  488 | y_new 2.0e-01 | y_old 1.8e-01 | evals  1405
+    : changes   695 | dx1 2.3e+03 | dx2 6.7e+01
+    : l_old : swing
+    : l_new : chain
+
+WRN : attr model is failed for "844" (SKIP)
+
+--> #  845 | c      845 | y     9.3e-01 | y_next 5.5e-03
++++ >        c_new  784 | y_new 2.2e-01 | y_old 1.8e-01 | evals  2203
+    : changes   890 | dx1 3.8e+03 | dx2 9.4e+01
+    : l_old : syringe
+    : l_new : screwdriver
+
+
+--> #  846 | c      846 | y     6.5e-01 | y_next 1.3e-01
++++ >        c_new  619 | y_new 1.8e-01 | y_old 1.8e-01 | evals  1003
+    : changes   719 | dx1 2.6e+03 | dx2 6.9e+01
+    : l_old : table lamp
+    : l_new : lampshade, lamp shade
+
+
+--> #  847 | c      847 | y     8.7e-01 | y_next 1.6e-02
++++ >        c_new  408 | y_new 1.9e-01 | y_old 1.9e-01 | evals  6523
+    : changes  1892 | dx1 9.7e+03 | dx2 1.6e+02
+    : l_old : tank, army tank, armored combat vehicle, armoured 
+    : l_new : amphibian, amphibious vehicle
+
+WRN : attr model is failed for "848" (SKIP)
+
+--> #  849 | c      849 | y     7.6e-01 | y_next 5.8e-02
++++ >        c_new  725 | y_new 2.5e-01 | y_old 2.0e-01 | evals  3257
+    : changes   642 | dx1 3.6e+03 | dx2 1.0e+02
+    : l_old : teapot
+    : l_new : pitcher, ewer
+
+
+--> #  850 | c      850 | y     9.0e-01 | y_next 2.8e-03
++++ >        c_new  932 | y_new 1.7e-01 | y_old 1.6e-01 | evals  2063
+    : changes   994 | dx1 3.7e+03 | dx2 8.4e+01
+    : l_old : teddy, teddy bear
+    : l_new : pretzel
+
+WRN : base model is failed for "851" (SKIP)
+
+--> #  852 | c      852 | y     6.6e-01 | y_next 1.0e-01
++++ >        c_new  179 | y_new 3.8e-01 | y_old 3.5e-01 | evals   717
+    : changes   426 | dx1 1.5e+03 | dx2 5.6e+01
+    : l_old : tennis ball
+    : l_new : staffordshire bullterrier, staffordshire bull terr
+
+
+--> #  853 | c      853 | y     3.8e-01 | y_next 5.0e-02
++++ >        c_new  697 | y_new 8.5e-02 | y_old 8.3e-02 | evals   713
+    : changes   571 | dx1 2.3e+03 | dx2 7.5e+01
+    : l_old : thatch, thatched roof
+    : l_new : pajama, pyjama, pj`s, jammies
+
+
+--> #  854 | c      854 | y     8.1e-01 | y_next 1.7e-02
++++ >        c_new  401 | y_new 1.7e-01 | y_old 1.7e-01 | evals  5929
+    : changes  1943 | dx1 3.4e+03 | dx2 8.0e+01
+    : l_old : theater curtain, theatre curtain
+    : l_new : accordion, piano accordion, squeeze box
+
+WRN : base model is failed for "855" (SKIP)
+
+--> #  856 | c      856 | y     7.7e-01 | y_next 3.5e-02
++++ >        c_new  864 | y_new 2.6e-01 | y_old 2.5e-01 | evals  1467
+    : changes   665 | dx1 3.0e+03 | dx2 8.4e+01
+    : l_old : thresher, thrasher, threshing machine
+    : l_new : tow truck, tow car, wrecker
+
+WRN : attr model is failed for "857" (SKIP)
+
+--> #  858 | c      858 | y     8.7e-01 | y_next 1.1e-02
++++ >        c_new  489 | y_new 3.5e-01 | y_old 3.5e-01 | evals  4391
+    : changes  1935 | dx1 6.8e+03 | dx2 1.1e+02
+    : l_old : tile roof
+    : l_new : chainlink fence
+
+
+--> #  859 | c      859 | y     7.5e-01 | y_next 2.1e-02
++++ >        c_new  482 | y_new 2.3e-01 | y_old 2.0e-01 | evals  1075
+    : changes   490 | dx1 1.4e+03 | dx2 4.7e+01
+    : l_old : toaster
+    : l_new : cassette player
+
+WRN : attr model is failed for "860" (SKIP)
+
+--> #  861 | c      861 | y     8.1e-01 | y_next 2.6e-02
+    > fail | evals 10001
+
+--> #  862 | c      862 | y     3.9e-01 | y_next 5.7e-02
++++ >        c_new  830 | y_new 7.0e-02 | y_old 6.3e-02 | evals   377
+    : changes   231 | dx1 1.1e+03 | dx2 5.3e+01
+    : l_old : torch
+    : l_new : stretcher
+
+
+--> #  863 | c      863 | y     8.5e-01 | y_next 4.8e-02
++++ >        c_new  733 | y_new 4.5e-01 | y_old 4.4e-01 | evals  3617
+    : changes  1540 | dx1 6.7e+03 | dx2 1.2e+02
+    : l_old : totem pole
+    : l_new : pole
+
+
+--> #  864 | c      864 | y     4.4e-01 | y_next 6.0e-02
++++ >        c_new  436 | y_new 1.5e-01 | y_old 1.5e-01 | evals   523
+    : changes   301 | dx1 1.3e+03 | dx2 5.3e+01
+    : l_old : tow truck, tow car, wrecker
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  865 | c      865 | y     3.7e-01 | y_next 9.9e-02
++++ >        c_new  611 | y_new 1.5e-01 | y_old 1.5e-01 | evals   817
+    : changes   546 | dx1 2.1e+03 | dx2 6.5e+01
+    : l_old : toyshop
+    : l_new : jigsaw puzzle
+
+
+--> #  866 | c      866 | y     5.8e-01 | y_next 1.1e-01
++++ >        c_new  803 | y_new 2.2e-01 | y_old 2.1e-01 | evals  3629
+    : changes  1389 | dx1 7.3e+03 | dx2 1.4e+02
+    : l_old : tractor
+    : l_new : snowplow, snowplough
+
+
+--> #  867 | c      867 | y     6.6e-01 | y_next 2.4e-01
++++ >        c_new  675 | y_new 4.5e-01 | y_old 4.3e-01 | evals   697
+    : changes   195 | dx1 7.2e+02 | dx2 3.8e+01
+    : l_old : trailer truck, tractor trailer, trucking rig, rig,
+    : l_new : moving van
+
+
+--> #  868 | c      868 | y     9.9e-01 | y_next 1.4e-03
++++ >        c_new  790 | y_new 4.5e-01 | y_old 4.4e-01 | evals  5209
+    : changes  1398 | dx1 5.1e+03 | dx2 9.7e+01
+    : l_old : tray
+    : l_new : shopping basket
+
+
+--> #  869 | c      869 | y     6.0e-01 | y_next 1.1e-01
++++ >        c_new  834 | y_new 1.8e-01 | y_old 1.8e-01 | evals  2039
+    : changes   911 | dx1 2.9e+03 | dx2 7.4e+01
+    : l_old : trench coat
+    : l_new : suit, suit of clothes
+
+WRN : base model is failed for "870" (SKIP)
+WRN : base model is failed for "871" (SKIP)
+WRN : base model is failed for "872" (SKIP)
+
+--> #  873 | c      873 | y     5.7e-01 | y_next 1.0e-01
++++ >        c_new  869 | y_new 2.8e-01 | y_old 2.6e-01 | evals   535
+    : changes   224 | dx1 1.6e+03 | dx2 6.8e+01
+    : l_old : triumphal arch
+    : l_new : trench coat
+
+
+--> #  874 | c      874 | y     3.3e-01 | y_next 1.7e-01
++++ >        c_new  705 | y_new 2.3e-01 | y_old 2.2e-01 | evals   203
+    : changes   163 | dx1 8.8e+02 | dx2 4.8e+01
+    : l_old : trolleybus, trolley coach, trackless trolley
+    : l_new : passenger car, coach, carriage
+
+
+--> #  875 | c      875 | y     8.4e-01 | y_next 6.3e-02
++++ >        c_new  513 | y_new 3.2e-01 | y_old 3.2e-01 | evals  1115
+    : changes   650 | dx1 2.4e+03 | dx2 6.6e+01
+    : l_old : trombone
+    : l_new : cornet, horn, trumpet, trump
+
+
+--> #  876 | c      876 | y     5.2e-01 | y_next 3.3e-01
++++ >        c_new  445 | y_new 1.2e-01 | y_old 1.2e-01 | evals  1401
+    : changes   579 | dx1 2.6e+03 | dx2 7.6e+01
+    : l_old : tub, vat
+    : l_new : bikini, two-piece
+
+
+--> #  877 | c      877 | y     1.5e-01 | y_next 1.1e-01
++++ >        c_new  769 | y_new 1.1e-01 | y_old 7.5e-02 | evals   183
+    : changes    90 | dx1 2.4e+02 | dx2 2.4e+01
+    : l_old : turnstile
+    : l_new : rule, ruler
+
+
+--> #  878 | c      878 | y     5.0e-01 | y_next 2.9e-01
++++ >        c_new  810 | y_new 3.8e-01 | y_old 3.8e-01 | evals  1621
+    : changes   657 | dx1 4.0e+03 | dx2 1.1e+02
+    : l_old : typewriter keyboard
+    : l_new : space bar
+
+
+--> #  879 | c      879 | y     8.7e-01 | y_next 1.4e-02
++++ >        c_new  824 | y_new 1.5e-01 | y_old 1.5e-01 | evals  1931
+    : changes   989 | dx1 2.6e+03 | dx2 6.5e+01
+    : l_old : umbrella
+    : l_new : stole
+
+
+--> #  880 | c      880 | y     5.5e-01 | y_next 4.6e-02
++++ >        c_new  570 | y_new 1.4e-01 | y_old 1.4e-01 | evals   257
+    : changes   251 | dx1 1.1e+03 | dx2 4.9e+01
+    : l_old : unicycle, monocycle
+    : l_new : gasmask, respirator, gas helmet
+
+
+--> #  881 | c      881 | y     6.3e-01 | y_next 6.2e-02
++++ >        c_new  939 | y_new 1.1e-01 | y_old 1.1e-01 | evals  1135
+    : changes   748 | dx1 3.1e+03 | dx2 8.6e+01
+    : l_old : upright, upright piano
+    : l_new : zucchini, courgette
+
+
+--> #  882 | c      882 | y     9.3e-01 | y_next 1.9e-02
++++ >        c_new  740 | y_new 4.1e-01 | y_old 3.4e-01 | evals   327
+    : changes   254 | dx1 7.7e+02 | dx2 3.5e+01
+    : l_old : vacuum, vacuum cleaner
+    : l_new : power drill
+
+WRN : attr model is failed for "883" (SKIP)
+
+--> #  884 | c      884 | y     6.2e-01 | y_next 1.1e-01
++++ >        c_new  716 | y_new 1.0e-01 | y_old 8.9e-02 | evals  2999
+    : changes  1808 | dx1 6.2e+03 | dx2 1.1e+02
+    : l_old : vault
+    : l_new : picket fence, paling
+
+WRN : base model is failed for "885" (SKIP)
+
+--> #  886 | c      886 | y     8.6e-01 | y_next 3.8e-03
++++ >        c_new  916 | y_new 6.0e-02 | y_old 5.4e-02 | evals  3705
+    : changes  1900 | dx1 7.7e+03 | dx2 1.3e+02
+    : l_old : vending machine
+    : l_new : web site, website, internet site, site
+
+WRN : base model is failed for "887" (SKIP)
+
+--> #  888 | c      888 | y     8.9e-01 | y_next 2.3e-03
++++ >        c_new  663 | y_new 2.0e-01 | y_old 1.9e-01 | evals  9213
+    : changes  2020 | dx1 6.4e+03 | dx2 1.2e+02
+    : l_old : viaduct
+    : l_new : monastery
+
+
+--> #  889 | c      889 | y     6.3e-01 | y_next 7.3e-02
++++ >        c_new  726 | y_new 1.2e-01 | y_old 1.1e-01 | evals   211
+    : changes   204 | dx1 1.1e+03 | dx2 4.9e+01
+    : l_old : violin, fiddle
+    : l_new : plane, carpenter`s plane, woodworking plane
+
+
+--> #  890 | c      890 | y     8.1e-01 | y_next 1.5e-02
++++ >        c_new  430 | y_new 2.6e-01 | y_old 2.4e-01 | evals  2779
+    : changes  1094 | dx1 3.3e+03 | dx2 7.7e+01
+    : l_old : volleyball
+    : l_new : basketball
+
+
+--> #  891 | c      891 | y     6.0e-01 | y_next 8.3e-02
++++ >        c_new  909 | y_new 2.0e-01 | y_old 2.0e-01 | evals   509
+    : changes   383 | dx1 1.9e+03 | dx2 6.8e+01
+    : l_old : waffle iron
+    : l_new : wok
+
+
+--> #  892 | c      892 | y     7.6e-01 | y_next 4.2e-02
++++ >        c_new  904 | y_new 1.5e-01 | y_old 7.6e-02 | evals  1167
+    : changes   415 | dx1 1.3e+03 | dx2 4.7e+01
+    : l_old : wall clock
+    : l_new : window screen
+
+WRN : base model is failed for "893" (SKIP)
+
+--> #  894 | c      894 | y     8.6e-01 | y_next 2.7e-02
++++ >        c_new  648 | y_new 3.9e-01 | y_old 3.4e-01 | evals   351
+    : changes   325 | dx1 8.1e+02 | dx2 3.1e+01
+    : l_old : wardrobe, closet, press
+    : l_new : medicine chest, medicine cabinet
+
+
+--> #  895 | c      895 | y     6.3e-01 | y_next 1.0e-01
++++ >        c_new   21 | y_new 9.8e-02 | y_old 7.8e-02 | evals   801
+    : changes   561 | dx1 9.4e+02 | dx2 2.9e+01
+    : l_old : warplane, military plane
+    : l_new : kite
+
+WRN : attr model is failed for "896" (SKIP)
+
+--> #  897 | c      897 | y     7.7e-01 | y_next 6.9e-02
++++ >        c_new  760 | y_new 3.9e-01 | y_old 3.6e-01 | evals   621
+    : changes   445 | dx1 1.7e+03 | dx2 5.7e+01
+    : l_old : washer, automatic washer, washing machine
+    : l_new : refrigerator, icebox
+
+WRN : base model is failed for "898" (SKIP)
+WRN : base model is failed for "899" (SKIP)
+
+--> #  900 | c      900 | y     7.2e-01 | y_next 7.1e-03
++++ >        c_new  562 | y_new 2.1e-02 | y_old 2.1e-02 | evals  9905
+    : changes  3488 | dx1 8.1e+03 | dx2 1.1e+02
+    : l_old : water tower
+    : l_new : fountain
+
+
+--> #  901 | c      901 | y     8.7e-01 | y_next 3.0e-02
++++ >        c_new  883 | y_new 1.6e-01 | y_old 1.6e-01 | evals  1709
+    : changes  1022 | dx1 4.4e+03 | dx2 9.6e+01
+    : l_old : whiskey jug
+    : l_new : vase
+
+WRN : attr model is failed for "902" (SKIP)
+
+--> #  903 | c      903 | y     5.8e-01 | y_next 4.2e-02
++++ >        c_new  578 | y_new 1.5e-01 | y_old 1.4e-01 | evals  2553
+    : changes   719 | dx1 3.5e+03 | dx2 8.7e+01
+    : l_old : wig
+    : l_new : gown
+
+WRN : attr model is failed for "904" (SKIP)
+
+--> #  905 | c      905 | y     9.0e-01 | y_next 1.2e-02
++++ >        c_new  753 | y_new 2.7e-01 | y_old 2.6e-01 | evals   969
+    : changes   446 | dx1 1.9e+03 | dx2 6.5e+01
+    : l_old : window shade
+    : l_new : radiator
+
+
+--> #  906 | c      906 | y     6.9e-01 | y_next 4.1e-02
++++ >        c_new  697 | y_new 1.5e-01 | y_old 1.5e-01 | evals  1167
+    : changes   607 | dx1 1.9e+03 | dx2 6.0e+01
+    : l_old : windsor tie
+    : l_new : pajama, pyjama, pj`s, jammies
+
+
+--> #  907 | c      907 | y     4.4e-01 | y_next 8.4e-02
++++ >        c_new  546 | y_new 1.4e-01 | y_old 1.4e-01 | evals   507
+    : changes   244 | dx1 8.4e+02 | dx2 4.0e+01
+    : l_old : wine bottle
+    : l_new : electric guitar
+
+
+--> #  908 | c      908 | y     9.4e-01 | y_next 9.8e-04
++++ >        c_new  977 | y_new 1.4e-01 | y_old 1.3e-01 | evals  5103
+    : changes  2080 | dx1 6.2e+03 | dx2 9.6e+01
+    : l_old : wing
+    : l_new : sandbar, sand bar
+
+WRN : base model is failed for "909" (SKIP)
+WRN : base model is failed for "910" (SKIP)
+WRN : base model is failed for "911" (SKIP)
+WRN : attr model is failed for "912" (SKIP)
+
+--> #  913 | c      913 | y     3.7e-01 | y_next 2.1e-01
++++ >        c_new  460 | y_new 2.6e-01 | y_old 2.5e-01 | evals   125
+    : changes    42 | dx1 1.7e+02 | dx2 1.8e+01
+    : l_old : wreck
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  914 | c      914 | y     5.9e-01 | y_next 2.1e-01
++++ >        c_new  780 | y_new 3.8e-01 | y_old 3.7e-01 | evals   403
+    : changes   240 | dx1 3.3e+02 | dx2 1.6e+01
+    : l_old : yawl
+    : l_new : schooner
+
+WRN : base model is failed for "915" (SKIP)
+
+--> #  916 | c      916 | y     8.3e-01 | y_next 1.8e-03
++++ >        c_new  798 | y_new 3.3e-01 | y_old 3.1e-01 | evals   905
+    : changes   594 | dx1 3.4e+03 | dx2 9.9e+01
+    : l_old : web site, website, internet site, site
+    : l_new : slide rule, slipstick
+
+WRN : attr model is failed for "917" (SKIP)
+
+--> #  918 | c      918 | y     6.1e-01 | y_next 3.5e-02
++++ >        c_new  696 | y_new 2.0e-01 | y_old 9.6e-02 | evals   137
+    : changes   132 | dx1 4.9e+02 | dx2 3.1e+01
+    : l_old : crossword puzzle, crossword
+    : l_new : paintbrush
+
+
+--> #  919 | c      919 | y     7.1e-01 | y_next 1.6e-02
++++ >        c_new  716 | y_new 6.2e-02 | y_old 5.9e-02 | evals  2313
+    : changes  1151 | dx1 3.9e+03 | dx2 8.7e+01
+    : l_old : street sign
+    : l_new : picket fence, paling
+
+
+--> #  920 | c      920 | y     6.2e-01 | y_next 5.1e-03
+    > fail | evals 10001
+
+--> #  921 | c      921 | y     6.7e-01 | y_next 3.2e-02
++++ >        c_new  458 | y_new 1.3e-01 | y_old 1.3e-01 | evals  1335
+    : changes   879 | dx1 2.1e+03 | dx2 6.0e+01
+    : l_old : book jacket, dust cover, dust jacket, dust wrapper
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  922 | c      922 | y     7.7e-01 | y_next 2.0e-02
++++ >        c_new  868 | y_new 2.7e-01 | y_old 2.7e-01 | evals  2205
+    : changes  1096 | dx1 3.0e+03 | dx2 6.6e+01
+    : l_old : menu
+    : l_new : tray
+
+
+--> #  923 | c      923 | y     4.3e-01 | y_next 8.7e-02
++++ >        c_new  965 | y_new 1.6e-01 | y_old 1.5e-01 | evals  2641
+    : changes   656 | dx1 2.8e+03 | dx2 8.6e+01
+    : l_old : plate
+    : l_new : burrito
+
+
+--> #  924 | c      924 | y     6.4e-01 | y_next 5.1e-02
++++ >        c_new  910 | y_new 1.6e-01 | y_old 1.6e-01 | evals   403
+    : changes   300 | dx1 1.1e+03 | dx2 5.1e+01
+    : l_old : guacamole
+    : l_new : wooden spoon
+
+
+--> #  925 | c      925 | y     6.3e-01 | y_next 4.8e-02
++++ >        c_new  967 | y_new 3.0e-01 | y_old 2.8e-01 | evals  1129
+    : changes   440 | dx1 1.9e+03 | dx2 6.4e+01
+    : l_old : consomme
+    : l_new : espresso
+
+
+--> #  926 | c      926 | y     6.4e-01 | y_next 6.8e-02
++++ >        c_new  809 | y_new 2.8e-01 | y_old 2.2e-01 | evals   757
+    : changes   471 | dx1 1.7e+03 | dx2 5.5e+01
+    : l_old : hot pot, hotpot
+    : l_new : soup bowl
+
+
+--> #  927 | c      927 | y     6.5e-01 | y_next 2.3e-01
++++ >        c_new  928 | y_new 4.3e-01 | y_old 4.2e-01 | evals   523
+    : changes   153 | dx1 4.2e+02 | dx2 2.4e+01
+    : l_old : trifle
+    : l_new : ice cream, icecream
+
+
+--> #  928 | c      928 | y     7.9e-01 | y_next 6.2e-02
++++ >        c_new  949 | y_new 2.9e-01 | y_old 2.7e-01 | evals   507
+    : changes   438 | dx1 1.7e+03 | dx2 6.3e+01
+    : l_old : ice cream, icecream
+    : l_new : strawberry
+
+
+--> #  929 | c      929 | y     4.4e-01 | y_next 1.6e-01
++++ >        c_new  928 | y_new 3.1e-01 | y_old 2.9e-01 | evals   131
+    : changes   100 | dx1 2.4e+02 | dx2 2.1e+01
+    : l_old : ice lolly, lolly, lollipop, popsicle
+    : l_new : ice cream, icecream
+
+
+--> #  930 | c      930 | y     7.6e-01 | y_next 4.1e-02
++++ >        c_new  932 | y_new 3.0e-01 | y_old 2.5e-01 | evals  1039
+    : changes   785 | dx1 1.9e+03 | dx2 5.0e+01
+    : l_old : french loaf
+    : l_new : pretzel
+
+
+--> #  931 | c      931 | y     6.0e-01 | y_next 7.0e-02
++++ >        c_new  964 | y_new 1.0e-01 | y_old 1.0e-01 | evals   507
+    : changes   372 | dx1 1.1e+03 | dx2 4.3e+01
+    : l_old : bagel, beigel
+    : l_new : potpie
+
+
+--> #  932 | c      932 | y     7.0e-01 | y_next 2.4e-02
++++ >        c_new  488 | y_new 1.1e-01 | y_old 9.2e-02 | evals  2541
+    : changes  1105 | dx1 3.3e+03 | dx2 7.0e+01
+    : l_old : pretzel
+    : l_new : chain
+
+
+--> #  933 | c      933 | y     8.8e-01 | y_next 5.2e-03
+    > fail | evals 10001
+
+--> #  934 | c      934 | y     2.9e-01 | y_next 1.3e-01
++++ >        c_new  909 | y_new 1.6e-01 | y_old 1.5e-01 | evals   103
+    : changes   162 | dx1 4.4e+02 | dx2 2.6e+01
+    : l_old : hotdog, hot dog, red hot
+    : l_new : wok
+
+
+--> #  935 | c      935 | y     8.1e-01 | y_next 6.8e-02
++++ >        c_new  923 | y_new 2.2e-01 | y_old 2.2e-01 | evals  1005
+    : changes   669 | dx1 3.0e+03 | dx2 9.0e+01
+    : l_old : mashed potato
+    : l_new : plate
+
+
+--> #  936 | c      936 | y     8.2e-01 | y_next 2.1e-02
++++ >        c_new  433 | y_new 1.4e-01 | y_old 1.3e-01 | evals  1205
+    : changes   722 | dx1 3.4e+03 | dx2 9.0e+01
+    : l_old : head cabbage
+    : l_new : bathing cap, swimming cap
+
+
+--> #  937 | c      937 | y     7.7e-01 | y_next 1.9e-02
+    > fail | evals 10001
+
+--> #  938 | c      938 | y     9.2e-01 | y_next 3.8e-03
++++ >        c_new  415 | y_new 1.3e-01 | y_old 1.2e-01 | evals  1735
+    : changes  1149 | dx1 4.5e+03 | dx2 9.5e+01
+    : l_old : cauliflower
+    : l_new : bakery, bakeshop, bakehouse
+
+
+--> #  939 | c      939 | y     8.4e-01 | y_next 1.2e-02
++++ >        c_new  941 | y_new 2.7e-01 | y_old 2.7e-01 | evals  5033
+    : changes  2125 | dx1 8.8e+03 | dx2 1.5e+02
+    : l_old : zucchini, courgette
+    : l_new : acorn squash
+
+
+--> #  940 | c      940 | y     9.1e-01 | y_next 6.6e-03
++++ >        c_new  952 | y_new 1.9e-01 | y_old 1.6e-01 | evals  1705
+    : changes   475 | dx1 1.6e+03 | dx2 6.6e+01
+    : l_old : spaghetti squash
+    : l_new : fig
+
+
+--> #  941 | c      941 | y     6.3e-01 | y_next 5.4e-02
++++ >        c_new  952 | y_new 2.1e-01 | y_old 1.8e-01 | evals  1943
+    : changes   858 | dx1 4.0e+03 | dx2 1.1e+02
+    : l_old : acorn squash
+    : l_new : fig
+
+
+--> #  942 | c      942 | y     8.8e-01 | y_next 1.2e-02
++++ >        c_new  932 | y_new 1.5e-01 | y_old 1.3e-01 | evals  1803
+    : changes  1310 | dx1 3.8e+03 | dx2 8.3e+01
+    : l_old : butternut squash
+    : l_new : pretzel
+
+WRN : attr model is failed for "943" (SKIP)
+
+--> #  944 | c      944 | y     7.7e-01 | y_next 8.0e-02
++++ >        c_new  945 | y_new 4.2e-01 | y_old 4.0e-01 | evals   397
+    : changes   245 | dx1 8.8e+02 | dx2 4.1e+01
+    : l_old : artichoke, globe artichoke
+    : l_new : bell pepper
+
+
+--> #  945 | c      945 | y     7.7e-01 | y_next 3.2e-03
++++ >        c_new  950 | y_new 1.9e-01 | y_old 1.9e-01 | evals  6313
+    : changes  1396 | dx1 5.7e+03 | dx2 1.1e+02
+    : l_old : bell pepper
+    : l_new : orange
+
+
+--> #  946 | c      946 | y     6.9e-01 | y_next 1.2e-01
++++ >        c_new  944 | y_new 3.6e-01 | y_old 3.4e-01 | evals  3663
+    : changes  1714 | dx1 6.4e+03 | dx2 1.1e+02
+    : l_old : cardoon
+    : l_new : artichoke, globe artichoke
+
+
+--> #  947 | c      947 | y     7.9e-01 | y_next 5.7e-02
++++ >        c_new  328 | y_new 4.4e-01 | y_old 3.8e-01 | evals   963
+    : changes   291 | dx1 8.5e+02 | dx2 3.9e+01
+    : l_old : mushroom
+    : l_new : sea urchin
+
+
+--> #  948 | c      948 | y     8.3e-01 | y_next 1.3e-02
++++ >        c_new  952 | y_new 2.6e-01 | y_old 2.6e-01 | evals   597
+    : changes   244 | dx1 8.9e+02 | dx2 4.6e+01
+    : l_old : granny smith
+    : l_new : fig
+
+
+--> #  949 | c      949 | y     8.4e-01 | y_next 1.5e-02
++++ >        c_new  574 | y_new 3.3e-01 | y_old 3.2e-01 | evals  3261
+    : changes   899 | dx1 4.3e+03 | dx2 1.2e+02
+    : l_old : strawberry
+    : l_new : golf ball
+
+
+--> #  950 | c      950 | y     8.4e-01 | y_next 2.0e-02
++++ >        c_new  809 | y_new 3.9e-01 | y_old 3.9e-01 | evals  1761
+    : changes   567 | dx1 2.2e+03 | dx2 6.4e+01
+    : l_old : orange
+    : l_new : soup bowl
+
+
+--> #  951 | c      951 | y     4.8e-01 | y_next 2.8e-01
++++ >        c_new  950 | y_new 4.1e-01 | y_old 3.4e-01 | evals   227
+    : changes   116 | dx1 3.1e+02 | dx2 2.2e+01
+    : l_old : lemon
+    : l_new : orange
+
+
+--> #  952 | c      952 | y     7.4e-01 | y_next 5.3e-03
++++ >        c_new  888 | y_new 2.6e-01 | y_old 2.5e-01 | evals  7489
+    : changes  1459 | dx1 6.0e+03 | dx2 1.2e+02
+    : l_old : fig
+    : l_new : viaduct
+
+
+--> #  953 | c      953 | y     6.5e-01 | y_next 2.1e-02
++++ >        c_new  987 | y_new 2.5e-01 | y_old 2.4e-01 | evals  2045
+    : changes   855 | dx1 2.7e+03 | dx2 7.5e+01
+    : l_old : pineapple, ananas
+    : l_new : corn
+
+
+--> #  954 | c      954 | y     6.8e-01 | y_next 6.1e-02
++++ >        c_new  939 | y_new 1.9e-01 | y_old 1.8e-01 | evals   603
+    : changes   447 | dx1 2.1e+03 | dx2 7.0e+01
+    : l_old : banana
+    : l_new : zucchini, courgette
+
+
+--> #  955 | c      955 | y     6.1e-01 | y_next 6.1e-02
++++ >        c_new  415 | y_new 2.1e-01 | y_old 2.1e-01 | evals  2333
+    : changes   689 | dx1 2.1e+03 | dx2 5.9e+01
+    : l_old : jackfruit, jak, jack
+    : l_new : bakery, bakeshop, bakehouse
+
+
+--> #  956 | c      956 | y     7.0e-01 | y_next 5.8e-02
++++ >        c_new  938 | y_new 2.9e-01 | y_old 2.6e-01 | evals  1217
+    : changes   629 | dx1 2.2e+03 | dx2 6.2e+01
+    : l_old : custard apple
+    : l_new : cauliflower
+
+
+--> #  957 | c      957 | y     9.2e-01 | y_next 2.7e-03
++++ >        c_new  949 | y_new 4.0e-01 | y_old 3.8e-01 | evals  3517
+    : changes  1235 | dx1 6.2e+03 | dx2 1.2e+02
+    : l_old : pomegranate
+    : l_new : strawberry
+
+
+--> #  958 | c      958 | y     8.6e-01 | y_next 4.0e-03
++++ >        c_new  649 | y_new 2.1e-01 | y_old 2.0e-01 | evals  6601
+    : changes  2582 | dx1 7.3e+03 | dx2 1.1e+02
+    : l_old : hay
+    : l_new : megalith, megalithic structure
+
+WRN : attr model is failed for "959" (SKIP)
+WRN : attr model is failed for "960" (SKIP)
+
+--> #  961 | c      961 | y     4.6e-01 | y_next 1.5e-01
++++ >        c_new  618 | y_new 1.6e-01 | y_old 1.4e-01 | evals   315
+    : changes   223 | dx1 1.0e+03 | dx2 5.0e+01
+    : l_old : dough
+    : l_new : ladle
+
+WRN : base model is failed for "962" (SKIP)
+
+--> #  963 | c      963 | y     7.0e-01 | y_next 7.7e-03
++++ >        c_new  927 | y_new 1.8e-01 | y_old 1.7e-01 | evals  6111
+    : changes  1774 | dx1 5.7e+03 | dx2 1.0e+02
+    : l_old : pizza, pizza pie
+    : l_new : trifle
+
+
+--> #  964 | c      964 | y     9.1e-01 | y_next 6.1e-03
++++ >        c_new  931 | y_new 1.7e-01 | y_old 1.6e-01 | evals  2319
+    : changes  1180 | dx1 3.8e+03 | dx2 7.9e+01
+    : l_old : potpie
+    : l_new : bagel, beigel
+
+WRN : attr model is failed for "965" (SKIP)
+
+--> #  966 | c      966 | y     4.3e-01 | y_next 3.1e-01
++++ >        c_new  907 | y_new 4.7e-01 | y_old 3.9e-01 | evals    15
+    : changes    49 | dx1 1.7e+02 | dx2 1.7e+01
+    : l_old : red wine
+    : l_new : wine bottle
+
+
+--> #  967 | c      967 | y     5.6e-01 | y_next 1.5e-01
++++ >        c_new  441 | y_new 3.0e-01 | y_old 2.5e-01 | evals   197
+    : changes   190 | dx1 6.8e+02 | dx2 3.5e+01
+    : l_old : espresso
+    : l_new : beer glass
+
+
+--> #  968 | c      968 | y     4.9e-01 | y_next 1.4e-01
++++ >        c_new  849 | y_new 1.4e-01 | y_old 1.3e-01 | evals  1525
+    : changes   510 | dx1 3.0e+03 | dx2 9.3e+01
+    : l_old : cup
+    : l_new : teapot
+
+
+--> #  969 | c      969 | y     7.5e-01 | y_next 1.4e-02
++++ >        c_new  604 | y_new 5.0e-02 | y_old 4.9e-02 | evals  3419
+    : changes  1564 | dx1 4.7e+03 | dx2 9.2e+01
+    : l_old : eggnog
+    : l_new : hourglass
+
+WRN : base model is failed for "970" (SKIP)
+
+--> #  971 | c      971 | y     7.8e-01 | y_next 6.4e-02
++++ >        c_new  495 | y_new 3.7e-01 | y_old 3.7e-01 | evals   613
+    : changes   419 | dx1 1.7e+03 | dx2 6.5e+01
+    : l_old : bubble
+    : l_new : china cabinet, china closet
+
+
+--> #  972 | c      972 | y     5.0e-01 | y_next 1.1e-01
++++ >        c_new  649 | y_new 2.9e-01 | y_old 2.8e-01 | evals   259
+    : changes   250 | dx1 9.1e+02 | dx2 4.3e+01
+    : l_old : cliff, drop, drop-off
+    : l_new : megalith, megalithic structure
+
+
+--> #  973 | c      973 | y     8.2e-01 | y_next 3.1e-02
++++ >        c_new  329 | y_new 9.8e-02 | y_old 8.9e-02 | evals  3471
+    : changes  1740 | dx1 4.4e+03 | dx2 8.5e+01
+    : l_old : coral reef
+    : l_new : sea cucumber, holothurian
+
+
+--> #  974 | c      974 | y     7.0e-01 | y_next 1.4e-02
++++ >        c_new  913 | y_new 8.0e-02 | y_old 6.4e-02 | evals   505
+    : changes   231 | dx1 1.1e+03 | dx2 4.8e+01
+    : l_old : geyser
+    : l_new : wreck
+
+
+--> #  975 | c      975 | y     3.8e-01 | y_next 2.3e-01
++++ >        c_new  977 | y_new 2.8e-01 | y_old 2.8e-01 | evals   459
+    : changes   259 | dx1 1.4e+03 | dx2 6.1e+01
+    : l_old : lakeside, lakeshore
+    : l_new : sandbar, sand bar
+
+WRN : attr model is failed for "976" (SKIP)
+
+--> #  977 | c      977 | y     6.7e-01 | y_next 7.9e-02
++++ >        c_new  842 | y_new 2.9e-01 | y_old 2.9e-01 | evals   721
+    : changes   522 | dx1 1.7e+03 | dx2 5.5e+01
+    : l_old : sandbar, sand bar
+    : l_new : swimming trunks, bathing trunks
+
+WRN : base model is failed for "978" (SKIP)
+
+--> #  979 | c      979 | y     3.5e-01 | y_next 1.7e-01
++++ >        c_new  980 | y_new 2.4e-01 | y_old 2.3e-01 | evals   217
+    : changes   126 | dx1 1.9e+02 | dx2 1.2e+01
+    : l_old : valley, vale
+    : l_new : volcano
+
+
+--> #  980 | c      980 | y     9.0e-01 | y_next 9.9e-03
++++ >        c_new  310 | y_new 1.8e-02 | y_old 1.7e-02 | evals  1069
+    : changes   641 | dx1 2.5e+03 | dx2 7.8e+01
+    : l_old : volcano
+    : l_new : ant, emmet, pismire
+
+
+--> #  981 | c      981 | y     7.6e-01 | y_next 2.2e-02
+    > fail | evals 10001
+
+--> #  982 | c      982 | y     9.3e-01 | y_next 1.2e-02
++++ >        c_new  684 | y_new 2.6e-01 | y_old 2.6e-01 | evals  3937
+    : changes  1668 | dx1 6.7e+03 | dx2 1.2e+02
+    : l_old : groom, bridegroom
+    : l_new : ocarina, sweet potato
+
+
+--> #  983 | c      983 | y     4.6e-01 | y_next 9.2e-02
++++ >        c_new  329 | y_new 2.4e-01 | y_old 2.3e-01 | evals   807
+    : changes   412 | dx1 1.9e+03 | dx2 7.0e+01
+    : l_old : scuba diver
+    : l_new : sea cucumber, holothurian
+
+
+--> #  984 | c      984 | y     8.1e-01 | y_next 1.3e-03
++++ >        c_new  958 | y_new 1.3e-01 | y_old 1.3e-01 | evals  5213
+    : changes  1713 | dx1 6.2e+03 | dx2 1.1e+02
+    : l_old : rapeseed
+    : l_new : hay
+
+
+--> #  985 | c      985 | y     8.4e-01 | y_next 5.3e-03
+    > fail | evals 10001
+
+--> #  986 | c      986 | y     8.5e-01 | y_next 1.0e-03
+    > fail | evals 10001
+WRN : base model is failed for "987" (SKIP)
+WRN : base model is failed for "988" (SKIP)
+
+--> #  989 | c      989 | y     8.6e-01 | y_next 4.0e-03
++++ >        c_new  957 | y_new 1.1e-01 | y_old 1.1e-01 | evals  5699
+    : changes  2691 | dx1 6.6e+03 | dx2 9.7e+01
+    : l_old : hip, rose hip, rosehip
+    : l_new : pomegranate
+
+
+--> #  990 | c      990 | y     8.8e-01 | y_next 9.7e-03
++++ >        c_new  931 | y_new 1.6e-01 | y_old 1.6e-01 | evals  1765
+    : changes   863 | dx1 3.4e+03 | dx2 8.6e+01
+    : l_old : buckeye, horse chestnut, conker
+    : l_new : bagel, beigel
+
+
+--> #  991 | c      991 | y     4.7e-01 | y_next 8.6e-02
++++ >        c_new  992 | y_new 2.6e-01 | y_old 2.4e-01 | evals   335
+    : changes   339 | dx1 1.1e+03 | dx2 4.4e+01
+    : l_old : coral fungus
+    : l_new : agaric
+
+
+--> #  992 | c      992 | y     7.7e-01 | y_next 8.2e-02
+    > fail | evals 10001
+
+--> #  993 | c      993 | y     8.1e-01 | y_next 9.6e-03
+    > fail | evals 10001
+
+--> #  994 | c      994 | y     7.6e-01 | y_next 5.0e-03
+    > fail | evals 10001
+
+--> #  995 | c      995 | y     8.5e-01 | y_next 2.3e-03
+    > fail | evals 10001
+
+--> #  996 | c      996 | y     8.4e-01 | y_next 4.2e-03
++++ >        c_new   67 | y_new 6.1e-02 | y_old 5.7e-02 | evals  6813
+    : changes  3281 | dx1 9.5e+03 | dx2 1.2e+02
+    : l_old : hen-of-the-woods, hen of the woods, polyporus fron
+    : l_new : diamondback, diamondback rattlesnake, crotalus ada
+
+WRN : attr model is failed for "997" (SKIP)
+WRN : base model is failed for "998" (SKIP)
+
+--> #  999 | c      999 | y     7.7e-01 | y_next 9.3e-02
++++ >        c_new  896 | y_new 2.0e-01 | y_old 1.8e-01 | evals  1147
+    : changes   653 | dx1 1.9e+03 | dx2 5.9e+01
+    : l_old : toilet tissue, toilet paper, bathroom tissue
+    : l_new : washbasin, handbasin, washbowl, lavabo, wash-hand 
+
+
+Completed. Successful: 92.16% (total images 791)
+DONE ( 16427.68 sec.) 
+
+
+===================== --------------------------------------
+[2023-11-24 16-51-29] Work is finished (16444.41 sec. total)
+
+

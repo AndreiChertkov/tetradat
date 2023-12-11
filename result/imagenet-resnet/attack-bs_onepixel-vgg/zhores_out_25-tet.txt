@@ -1,0 +1,2851 @@
+[2023-11-24 12-17-25] Computations (cuda)
+===================== -------------------
+Data                : "imagenet"
+Model               : "resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_onepixel"
+Skip fails for attr : True
+=========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.03 sec.) 
+
+
+.... Loading "resnet" model
+DONE (    13.69 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.99 sec.) 
+
+
+.... Start attack on images with baseline "onepixel"
+
+--> #    0 | c        0 | y     8.1e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #    1 | c        1 | y     7.8e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #    2 | c        2 | y     8.4e-01 | y_next 7.5e-03
+    > fail | evals 10019
+
+--> #    3 | c        3 | y     7.5e-01 | y_next 2.0e-03
+    > fail | evals 10019
+WRN : attr model is failed for "4" (SKIP)
+
+--> #    5 | c        5 | y     8.3e-01 | y_next 4.6e-03
+    > fail | evals 10019
+
+--> #    6 | c        6 | y     5.7e-01 | y_next 2.5e-01
+    > fail | evals 10019
+
+--> #    7 | c        7 | y     6.8e-01 | y_next 5.2e-02
+    > fail | evals 10019
+
+--> #    8 | c        8 | y     7.2e-01 | y_next 9.4e-02
+    > fail | evals 10019
+
+--> #    9 | c        9 | y     8.8e-01 | y_next 4.2e-04
+    > fail | evals 10019
+
+--> #   10 | c       10 | y     8.6e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #   11 | c       11 | y     8.6e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #   12 | c       12 | y     8.1e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #   13 | c       13 | y     8.4e-01 | y_next 8.9e-03
+    > fail | evals 10019
+
+--> #   14 | c       14 | y     8.5e-01 | y_next 5.8e-04
+    > fail | evals 10019
+
+--> #   15 | c       15 | y     8.0e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #   16 | c       16 | y     8.6e-01 | y_next 8.2e-04
+    > fail | evals 10019
+
+--> #   17 | c       17 | y     8.3e-01 | y_next 6.6e-04
+    > fail | evals 10019
+
+--> #   18 | c       18 | y     8.0e-01 | y_next 6.8e-04
+    > fail | evals 10019
+
+--> #   19 | c       19 | y     8.0e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #   20 | c       20 | y     8.2e-01 | y_next 5.4e-04
+    > fail | evals 10019
+WRN : base model is failed for "21" (SKIP)
+
+--> #   22 | c       22 | y     8.6e-01 | y_next 2.7e-03
+    > fail | evals 10019
+WRN : attr model is failed for "23" (SKIP)
+
+--> #   24 | c       24 | y     8.7e-01 | y_next 3.3e-04
+    > fail | evals 10019
+
+--> #   25 | c       25 | y     8.0e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #   26 | c       26 | y     5.3e-01 | y_next 2.8e-01
++++ >        c_new   27 | y_new 4.6e-01 | y_old 3.6e-01 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : common newt, triturus vulgaris
+    : l_new : eft
+
+
+--> #   27 | c       27 | y     7.9e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #   28 | c       28 | y     7.8e-01 | y_next 3.6e-03
+    > fail | evals 10019
+WRN : base model is failed for "29" (SKIP)
+
+--> #   30 | c       30 | y     8.1e-01 | y_next 7.0e-03
+    > fail | evals 10019
+
+--> #   31 | c       31 | y     6.8e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #   32 | c       32 | y     7.2e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #   33 | c       33 | y     7.9e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #   34 | c       34 | y     8.3e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #   35 | c       35 | y     7.4e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #   36 | c       36 | y     7.7e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #   37 | c       37 | y     6.8e-01 | y_next 1.0e-01
+    > fail | evals 10019
+
+--> #   38 | c       38 | y     7.8e-01 | y_next 6.7e-03
+    > fail | evals 10019
+
+--> #   39 | c       39 | y     8.1e-01 | y_next 3.2e-03
+    > fail | evals 10019
+WRN : attr model is failed for "40" (SKIP)
+
+--> #   41 | c       41 | y     8.1e-01 | y_next 2.6e-02
++++ >        c_new   45 | y_new 4.6e-01 | y_old 2.7e-01 | evals  1001
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : whiptail, whiptail lizard
+    : l_new : gila monster, heloderma suspectum
+
+
+--> #   42 | c       42 | y     9.0e-01 | y_next 8.3e-04
+    > fail | evals 10019
+
+--> #   43 | c       43 | y     8.2e-01 | y_next 2.5e-02
+    > fail | evals 10019
+WRN : attr model is failed for "44" (SKIP)
+
+--> #   45 | c       45 | y     8.7e-01 | y_next 2.5e-03
+    > fail | evals 10019
+WRN : base model is failed for "46" (SKIP)
+
+--> #   47 | c       47 | y     7.8e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #   48 | c       48 | y     8.6e-01 | y_next 4.8e-03
+    > fail | evals 10019
+
+--> #   49 | c       49 | y     7.8e-01 | y_next 5.2e-03
+    > fail | evals 10019
+WRN : attr model is failed for "50" (SKIP)
+
+--> #   51 | c       51 | y     8.4e-01 | y_next 3.9e-04
+    > fail | evals 10019
+
+--> #   52 | c       52 | y     7.8e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #   53 | c       53 | y     8.1e-01 | y_next 1.0e-02
+    > fail | evals 10019
+WRN : attr model is failed for "54" (SKIP)
+WRN : base model is failed for "55" (SKIP)
+WRN : attr model is failed for "56" (SKIP)
+
+--> #   57 | c       57 | y     6.6e-01 | y_next 4.4e-02
+    > fail | evals 10019
+WRN : base model is failed for "58" (SKIP)
+
+--> #   59 | c       59 | y     8.5e-01 | y_next 1.8e-02
+    > fail | evals 10019
+WRN : base model is failed for "60" (SKIP)
+
+--> #   61 | c       61 | y     8.1e-01 | y_next 6.4e-03
+    > fail | evals 10019
+
+--> #   62 | c       62 | y     8.5e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #   63 | c       63 | y     8.9e-01 | y_next 6.1e-04
+    > fail | evals 10019
+WRN : attr model is failed for "64" (SKIP)
+WRN : attr model is failed for "65" (SKIP)
+WRN : attr model is failed for "66" (SKIP)
+
+--> #   67 | c       67 | y     7.7e-01 | y_next 7.4e-03
+    > fail | evals 10019
+
+--> #   68 | c       68 | y     5.6e-01 | y_next 2.4e-01
+    > fail | evals 10019
+
+--> #   69 | c       69 | y     8.5e-01 | y_next 4.3e-04
+    > fail | evals 10019
+
+--> #   70 | c       70 | y     8.0e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #   71 | c       71 | y     8.0e-01 | y_next 5.9e-04
+    > fail | evals 10019
+
+--> #   72 | c       72 | y     4.8e-01 | y_next 2.5e-01
+    > fail | evals 10019
+WRN : base model is failed for "73" (SKIP)
+
+--> #   74 | c       74 | y     4.6e-01 | y_next 2.6e-01
+    > fail | evals 10019
+
+--> #   75 | c       75 | y     7.7e-01 | y_next 3.7e-03
+    > fail | evals 10019
+
+--> #   76 | c       76 | y     8.6e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #   77 | c       77 | y     8.0e-01 | y_next 8.4e-03
+    > fail | evals 10019
+
+--> #   78 | c       78 | y     8.1e-01 | y_next 6.5e-04
+    > fail | evals 10019
+
+--> #   79 | c       79 | y     8.1e-01 | y_next 4.3e-04
+    > fail | evals 10019
+
+--> #   80 | c       80 | y     7.9e-01 | y_next 8.4e-04
+    > fail | evals 10019
+
+--> #   81 | c       81 | y     7.7e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #   82 | c       82 | y     6.7e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #   83 | c       83 | y     5.7e-01 | y_next 2.6e-01
++++ >        c_new   81 | y_new 5.3e-01 | y_old 2.9e-01 | evals  1001
+    : changes   100 | dx1 3.6e+02 | dx2 2.5e+01
+    : l_old : prairie chicken, prairie grouse, prairie fowl
+    : l_new : ptarmigan
+
+
+--> #   84 | c       84 | y     8.3e-01 | y_next 3.2e-04
+    > fail | evals 10019
+
+--> #   85 | c       85 | y     8.0e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #   86 | c       86 | y     5.9e-01 | y_next 2.4e-01
+    > fail | evals 10019
+
+--> #   87 | c       87 | y     8.0e-01 | y_next 7.1e-04
+    > fail | evals 10019
+
+--> #   88 | c       88 | y     7.9e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #   89 | c       89 | y     7.9e-01 | y_next 6.2e-04
+    > fail | evals 10019
+
+--> #   90 | c       90 | y     7.8e-01 | y_next 8.5e-04
+    > fail | evals 10019
+
+--> #   91 | c       91 | y     8.1e-01 | y_next 7.8e-04
+    > fail | evals 10019
+
+--> #   92 | c       92 | y     8.0e-01 | y_next 3.9e-04
+    > fail | evals 10019
+
+--> #   93 | c       93 | y     8.1e-01 | y_next 7.0e-04
+    > fail | evals 10019
+
+--> #   94 | c       94 | y     8.2e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #   95 | c       95 | y     8.1e-01 | y_next 2.1e-03
+    > fail | evals 10019
+
+--> #   96 | c       96 | y     7.6e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #   97 | c       97 | y     8.3e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #   98 | c       98 | y     8.1e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #   99 | c       99 | y     8.3e-01 | y_next 7.7e-03
+    > fail | evals 10019
+
+--> #  100 | c      100 | y     8.0e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  101 | c      101 | y     8.3e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  102 | c      102 | y     8.9e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  103 | c      103 | y     8.2e-01 | y_next 8.8e-04
+    > fail | evals 10019
+
+--> #  104 | c      104 | y     8.7e-01 | y_next 2.7e-03
++++ >        c_new  337 | y_new 3.5e-01 | y_old 3.5e-01 | evals  2504
+    : changes   100 | dx1 3.9e+02 | dx2 2.7e+01
+    : l_old : wallaby, brush kangaroo
+    : l_new : beaver
+
+
+--> #  105 | c      105 | y     8.7e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  106 | c      106 | y     8.7e-01 | y_next 1.1e-03
+    > fail | evals 10019
+WRN : attr model is failed for "107" (SKIP)
+
+--> #  108 | c      108 | y     8.1e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  109 | c      109 | y     8.3e-01 | y_next 5.0e-03
+    > fail | evals 10019
+
+--> #  110 | c      110 | y     8.4e-01 | y_next 9.3e-04
+    > fail | evals 10019
+
+--> #  111 | c      111 | y     7.7e-01 | y_next 4.7e-04
+    > fail | evals 10019
+
+--> #  112 | c      112 | y     9.0e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  113 | c      113 | y     7.6e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  114 | c      114 | y     7.8e-01 | y_next 5.2e-02
+    > fail | evals 10019
+
+--> #  115 | c      115 | y     7.2e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  116 | c      116 | y     9.1e-01 | y_next 3.1e-04
+    > fail | evals 10019
+
+--> #  117 | c      117 | y     8.3e-01 | y_next 5.1e-04
+    > fail | evals 10019
+WRN : base model is failed for "118" (SKIP)
+
+--> #  119 | c      119 | y     7.6e-01 | y_next 3.7e-02
+    > fail | evals 10019
+
+--> #  120 | c      120 | y     7.3e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  121 | c      121 | y     7.9e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  122 | c      122 | y     7.8e-01 | y_next 3.7e-02
+    > fail | evals 10019
+
+--> #  123 | c      123 | y     8.2e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  124 | c      124 | y     7.2e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  125 | c      125 | y     7.2e-01 | y_next 4.9e-03
+    > fail | evals 10019
+
+--> #  126 | c      126 | y     7.7e-01 | y_next 5.5e-04
+    > fail | evals 10019
+
+--> #  127 | c      127 | y     7.6e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #  128 | c      128 | y     7.6e-01 | y_next 7.6e-03
+    > fail | evals 10019
+
+--> #  129 | c      129 | y     8.5e-01 | y_next 7.8e-04
+    > fail | evals 10019
+
+--> #  130 | c      130 | y     8.5e-01 | y_next 4.7e-04
+    > fail | evals 10019
+
+--> #  131 | c      131 | y     8.0e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  132 | c      132 | y     8.9e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  133 | c      133 | y     8.4e-01 | y_next 4.5e-04
+    > fail | evals 10019
+WRN : base model is failed for "134" (SKIP)
+
+--> #  135 | c      135 | y     7.9e-01 | y_next 4.3e-04
+    > fail | evals 10019
+
+--> #  136 | c      136 | y     7.4e-01 | y_next 7.7e-04
+    > fail | evals 10019
+
+--> #  137 | c      137 | y     8.9e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #  138 | c      138 | y     8.4e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  139 | c      139 | y     8.1e-01 | y_next 7.4e-04
+    > fail | evals 10019
+
+--> #  140 | c      140 | y     8.3e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  141 | c      141 | y     8.2e-01 | y_next 9.4e-04
+    > fail | evals 10019
+
+--> #  142 | c      142 | y     8.2e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  143 | c      143 | y     8.2e-01 | y_next 4.1e-03
+    > fail | evals 10019
+
+--> #  144 | c      144 | y     8.5e-01 | y_next 3.6e-04
+    > fail | evals 10019
+
+--> #  145 | c      145 | y     7.9e-01 | y_next 4.4e-04
+    > fail | evals 10019
+
+--> #  146 | c      146 | y     8.3e-01 | y_next 2.9e-04
+    > fail | evals 10019
+
+--> #  147 | c      147 | y     7.3e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  148 | c      148 | y     7.5e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  149 | c      149 | y     8.2e-01 | y_next 4.3e-04
+    > fail | evals 10019
+
+--> #  150 | c      150 | y     8.3e-01 | y_next 6.9e-04
+    > fail | evals 10019
+
+--> #  151 | c      151 | y     9.4e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #  152 | c      152 | y     7.9e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  153 | c      153 | y     8.0e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  154 | c      154 | y     8.0e-01 | y_next 3.6e-03
+    > fail | evals 10019
+
+--> #  155 | c      155 | y     7.6e-01 | y_next 2.7e-02
+    > fail | evals 10019
+
+--> #  156 | c      156 | y     8.3e-01 | y_next 5.0e-03
+    > fail | evals 10019
+
+--> #  157 | c      157 | y     8.2e-01 | y_next 1.5e-03
+    > fail | evals 10019
+WRN : attr model is failed for "158" (SKIP)
+WRN : attr model is failed for "159" (SKIP)
+
+--> #  160 | c      160 | y     7.7e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  161 | c      161 | y     8.3e-01 | y_next 1.8e-02
+    > fail | evals 10019
+WRN : attr model is failed for "162" (SKIP)
+WRN : attr model is failed for "163" (SKIP)
+
+--> #  164 | c      164 | y     8.4e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  165 | c      165 | y     8.6e-01 | y_next 6.5e-03
+    > fail | evals 10019
+
+--> #  166 | c      166 | y     9.4e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  167 | c      167 | y     5.7e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  168 | c      168 | y     7.1e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  169 | c      169 | y     8.2e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #  170 | c      170 | y     6.9e-01 | y_next 7.8e-03
+    > fail | evals 10019
+WRN : attr model is failed for "171" (SKIP)
+
+--> #  172 | c      172 | y     8.1e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  173 | c      173 | y     8.4e-01 | y_next 4.8e-03
+    > fail | evals 10019
+WRN : attr model is failed for "174" (SKIP)
+WRN : base model is failed for "175" (SKIP)
+
+--> #  176 | c      176 | y     8.4e-01 | y_next 2.9e-03
+    > fail | evals 10019
+
+--> #  177 | c      177 | y     8.3e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  178 | c      178 | y     8.0e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  179 | c      179 | y     6.1e-01 | y_next 1.1e-01
+    > fail | evals 10019
+WRN : attr model is failed for "180" (SKIP)
+
+--> #  181 | c      181 | y     7.7e-01 | y_next 1.0e-03
+    > fail | evals 10019
+
+--> #  182 | c      182 | y     7.5e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  183 | c      183 | y     8.2e-01 | y_next 1.0e-03
+    > fail | evals 10019
+
+--> #  184 | c      184 | y     6.2e-01 | y_next 2.2e-01
++++ >        c_new  185 | y_new 6.7e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : irish terrier
+    : l_new : norfolk terrier
+
+
+--> #  185 | c      185 | y     8.6e-01 | y_next 8.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "186" (SKIP)
+
+--> #  187 | c      187 | y     5.8e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  188 | c      188 | y     8.3e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  189 | c      189 | y     7.0e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  190 | c      190 | y     7.1e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  191 | c      191 | y     8.2e-01 | y_next 7.2e-03
+    > fail | evals 10019
+
+--> #  192 | c      192 | y     7.7e-01 | y_next 5.9e-02
+    > fail | evals 10019
+WRN : attr model is failed for "193" (SKIP)
+
+--> #  194 | c      194 | y     7.9e-01 | y_next 7.6e-04
+    > fail | evals 10019
+
+--> #  195 | c      195 | y     7.8e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  196 | c      196 | y     6.8e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  197 | c      197 | y     6.0e-01 | y_next 2.2e-01
+    > fail | evals 10019
+
+--> #  198 | c      198 | y     7.8e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  199 | c      199 | y     8.4e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  200 | c      200 | y     8.3e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  201 | c      201 | y     9.0e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  202 | c      202 | y     5.8e-01 | y_next 9.5e-02
+    > fail | evals 10019
+
+--> #  203 | c      203 | y     8.2e-01 | y_next 1.0e-02
+    > fail | evals 10019
+WRN : base model is failed for "204" (SKIP)
+
+--> #  205 | c      205 | y     7.8e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  206 | c      206 | y     6.8e-01 | y_next 3.5e-02
+    > fail | evals 10019
+
+--> #  207 | c      207 | y     8.7e-01 | y_next 7.7e-03
+    > fail | evals 10019
+
+--> #  208 | c      208 | y     8.8e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  209 | c      209 | y     7.1e-01 | y_next 6.7e-02
+    > fail | evals 10019
+
+--> #  210 | c      210 | y     8.2e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  211 | c      211 | y     7.7e-01 | y_next 3.7e-03
+    > fail | evals 10019
+WRN : attr model is failed for "212" (SKIP)
+
+--> #  213 | c      213 | y     8.0e-01 | y_next 1.3e-02
+    > fail | evals 10019
+
+--> #  214 | c      214 | y     8.5e-01 | y_next 1.9e-03
+    > fail | evals 10019
+WRN : base model is failed for "215" (SKIP)
+
+--> #  216 | c      216 | y     8.3e-01 | y_next 3.8e-03
+    > fail | evals 10019
+
+--> #  217 | c      217 | y     7.5e-01 | y_next 4.7e-02
+    > fail | evals 10019
+
+--> #  218 | c      218 | y     9.1e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #  219 | c      219 | y     8.4e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  220 | c      220 | y     8.9e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  221 | c      221 | y     8.3e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  222 | c      222 | y     8.4e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  223 | c      223 | y     8.6e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  224 | c      224 | y     7.0e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  225 | c      225 | y     7.1e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  226 | c      226 | y     8.4e-01 | y_next 1.3e-02
+    > fail | evals 10019
+WRN : base model is failed for "227" (SKIP)
+
+--> #  228 | c      228 | y     8.6e-01 | y_next 4.6e-04
+    > fail | evals 10019
+
+--> #  229 | c      229 | y     8.1e-01 | y_next 3.6e-03
+    > fail | evals 10019
+WRN : attr model is failed for "230" (SKIP)
+
+--> #  231 | c      231 | y     4.4e-01 | y_next 3.5e-01
++++ >        c_new  230 | y_new 2.7e-01 | y_old 2.7e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.6e+01
+    : l_old : collie
+    : l_new : shetland sheepdog, shetland sheep dog, shetland
+
+
+--> #  232 | c      232 | y     6.9e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  233 | c      233 | y     8.0e-01 | y_next 2.6e-02
++++ >        c_new  197 | y_new 3.7e-01 | y_old 3.4e-01 | evals  2003
+    : changes   100 | dx1 4.8e+02 | dx2 3.3e+01
+    : l_old : bouvier des flandres, bouviers des flandres
+    : l_new : giant schnauzer
+
+
+--> #  234 | c      234 | y     7.7e-01 | y_next 4.1e-03
+    > fail | evals 10019
+
+--> #  235 | c      235 | y     8.5e-01 | y_next 4.8e-03
+    > fail | evals 10019
+
+--> #  236 | c      236 | y     8.8e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  237 | c      237 | y     8.3e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  238 | c      238 | y     6.0e-01 | y_next 1.1e-01
+    > fail | evals 10019
+WRN : attr model is failed for "239" (SKIP)
+WRN : base model is failed for "240" (SKIP)
+
+--> #  241 | c      241 | y     7.8e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  242 | c      242 | y     8.5e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  243 | c      243 | y     8.6e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  244 | c      244 | y     7.2e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  245 | c      245 | y     9.0e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  246 | c      246 | y     8.8e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  247 | c      247 | y     8.3e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  248 | c      248 | y     4.3e-01 | y_next 2.9e-01
++++ >        c_new  250 | y_new 3.6e-01 | y_old 3.4e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : eskimo dog, husky
+    : l_new : siberian husky
+
+
+--> #  249 | c      249 | y     7.5e-01 | y_next 7.7e-02
+    > fail | evals 10019
+WRN : base model is failed for "250" (SKIP)
+
+--> #  251 | c      251 | y     8.3e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  252 | c      252 | y     7.8e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  253 | c      253 | y     8.6e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  254 | c      254 | y     7.1e-01 | y_next 6.5e-03
+    > fail | evals 10019
+
+--> #  255 | c      255 | y     8.5e-01 | y_next 9.7e-04
+    > fail | evals 10019
+
+--> #  256 | c      256 | y     8.5e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  257 | c      257 | y     8.7e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  258 | c      258 | y     8.2e-01 | y_next 5.0e-03
+    > fail | evals 10019
+
+--> #  259 | c      259 | y     7.8e-01 | y_next 4.3e-03
+    > fail | evals 10019
+
+--> #  260 | c      260 | y     7.9e-01 | y_next 4.5e-03
+    > fail | evals 10019
+
+--> #  261 | c      261 | y     8.2e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  262 | c      262 | y     8.6e-01 | y_next 4.6e-03
+    > fail | evals 10019
+
+--> #  263 | c      263 | y     8.2e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  264 | c      264 | y     8.8e-01 | y_next 7.1e-02
+    > fail | evals 10019
+
+--> #  265 | c      265 | y     5.8e-01 | y_next 2.3e-01
+    > fail | evals 10019
+
+--> #  266 | c      266 | y     7.6e-01 | y_next 5.8e-02
++++ >        c_new  256 | y_new 2.2e-01 | y_old 1.5e-01 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : miniature poodle
+    : l_new : newfoundland, newfoundland dog
+
+WRN : attr model is failed for "267" (SKIP)
+
+--> #  268 | c      268 | y     7.9e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #  269 | c      269 | y     6.7e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  270 | c      270 | y     8.4e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  271 | c      271 | y     8.3e-01 | y_next 8.7e-04
+    > fail | evals 10019
+WRN : base model is failed for "272" (SKIP)
+
+--> #  273 | c      273 | y     8.9e-01 | y_next 7.2e-03
+    > fail | evals 10019
+
+--> #  274 | c      274 | y     7.0e-01 | y_next 3.6e-03
+    > fail | evals 10019
+
+--> #  275 | c      275 | y     8.6e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  276 | c      276 | y     8.1e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  277 | c      277 | y     8.1e-01 | y_next 1.4e-02
+    > fail | evals 10019
+WRN : base model is failed for "278" (SKIP)
+
+--> #  279 | c      279 | y     8.3e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #  280 | c      280 | y     8.3e-01 | y_next 8.1e-03
+    > fail | evals 10019
+WRN : attr model is failed for "281" (SKIP)
+WRN : base model is failed for "282" (SKIP)
+
+--> #  283 | c      283 | y     8.7e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  284 | c      284 | y     8.7e-01 | y_next 8.9e-04
+    > fail | evals 10019
+
+--> #  285 | c      285 | y     7.7e-01 | y_next 6.0e-03
+    > fail | evals 10019
+
+--> #  286 | c      286 | y     8.4e-01 | y_next 5.7e-03
+    > fail | evals 10019
+
+--> #  287 | c      287 | y     8.3e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  288 | c      288 | y     7.9e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  289 | c      289 | y     7.4e-01 | y_next 6.0e-02
+    > fail | evals 10019
+WRN : base model is failed for "290" (SKIP)
+
+--> #  291 | c      291 | y     6.3e-01 | y_next 2.8e-01
++++ >        c_new  276 | y_new 6.9e-01 | y_old 1.3e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : lion, king of beasts, panthera leo
+    : l_new : hyena, hyaena
+
+
+--> #  292 | c      292 | y     6.6e-01 | y_next 4.3e-02
+    > fail | evals 10019
+
+--> #  293 | c      293 | y     8.4e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  294 | c      294 | y     8.2e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  295 | c      295 | y     8.4e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  296 | c      296 | y     8.2e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  297 | c      297 | y     8.1e-01 | y_next 5.0e-04
+    > fail | evals 10019
+
+--> #  298 | c      298 | y     7.9e-01 | y_next 3.0e-03
+    > fail | evals 10019
+
+--> #  299 | c      299 | y     8.0e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  300 | c      300 | y     7.8e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  301 | c      301 | y     7.4e-01 | y_next 9.4e-02
+    > fail | evals 10019
+
+--> #  302 | c      302 | y     7.8e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  303 | c      303 | y     9.5e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  304 | c      304 | y     8.3e-01 | y_next 6.7e-03
+    > fail | evals 10019
+
+--> #  305 | c      305 | y     7.9e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  306 | c      306 | y     7.9e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  307 | c      307 | y     7.6e-01 | y_next 6.6e-03
+    > fail | evals 10019
+
+--> #  308 | c      308 | y     7.8e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  309 | c      309 | y     7.7e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  310 | c      310 | y     8.4e-01 | y_next 7.0e-04
+    > fail | evals 10019
+WRN : base model is failed for "311" (SKIP)
+
+--> #  312 | c      312 | y     8.6e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  313 | c      313 | y     8.9e-01 | y_next 3.8e-04
+    > fail | evals 10019
+
+--> #  314 | c      314 | y     7.9e-01 | y_next 3.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "315" (SKIP)
+WRN : attr model is failed for "316" (SKIP)
+
+--> #  317 | c      317 | y     8.0e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  318 | c      318 | y     8.2e-01 | y_next 5.2e-04
+    > fail | evals 10019
+WRN : attr model is failed for "319" (SKIP)
+WRN : attr model is failed for "320" (SKIP)
+
+--> #  321 | c      321 | y     8.1e-01 | y_next 4.9e-04
+    > fail | evals 10019
+
+--> #  322 | c      322 | y     8.4e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  323 | c      323 | y     8.1e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  324 | c      324 | y     8.1e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  325 | c      325 | y     8.0e-01 | y_next 9.8e-03
+    > fail | evals 10019
+
+--> #  326 | c      326 | y     7.6e-01 | y_next 4.4e-03
+    > fail | evals 10019
+
+--> #  327 | c      327 | y     7.4e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  328 | c      328 | y     8.3e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  329 | c      329 | y     7.2e-01 | y_next 5.9e-04
+    > fail | evals 10019
+
+--> #  330 | c      330 | y     7.7e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  331 | c      331 | y     6.4e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  332 | c      332 | y     8.6e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  333 | c      333 | y     8.2e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  334 | c      334 | y     8.3e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  335 | c      335 | y     6.2e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  336 | c      336 | y     8.1e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  337 | c      337 | y     8.2e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  338 | c      338 | y     8.8e-01 | y_next 9.2e-04
+    > fail | evals 10019
+
+--> #  339 | c      339 | y     8.3e-01 | y_next 8.9e-04
+    > fail | evals 10019
+
+--> #  340 | c      340 | y     8.1e-01 | y_next 7.5e-04
+    > fail | evals 10019
+
+--> #  341 | c      341 | y     7.8e-01 | y_next 7.1e-04
+    > fail | evals 10019
+WRN : attr model is failed for "342" (SKIP)
+
+--> #  343 | c      343 | y     8.0e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  344 | c      344 | y     8.5e-01 | y_next 3.7e-04
+    > fail | evals 10019
+
+--> #  345 | c      345 | y     8.9e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  346 | c      346 | y     8.4e-01 | y_next 6.5e-03
+    > fail | evals 10019
+
+--> #  347 | c      347 | y     8.0e-01 | y_next 7.1e-03
+    > fail | evals 10019
+
+--> #  348 | c      348 | y     7.9e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  349 | c      349 | y     7.9e-01 | y_next 7.7e-02
+    > fail | evals 10019
+
+--> #  350 | c      350 | y     7.9e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  351 | c      351 | y     7.0e-01 | y_next 7.1e-02
++++ >        c_new  352 | y_new 3.0e-01 | y_old 2.3e-01 | evals  1502
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : hartebeest
+    : l_new : impala, aepyceros melampus
+
+
+--> #  352 | c      352 | y     7.5e-01 | y_next 3.2e-02
+    > fail | evals 10019
+
+--> #  353 | c      353 | y     6.7e-01 | y_next 1.8e-01
++++ >        c_new  352 | y_new 4.1e-01 | y_old 3.9e-01 | evals  4007
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : gazelle
+    : l_new : impala, aepyceros melampus
+
+
+--> #  354 | c      354 | y     8.7e-01 | y_next 8.3e-03
+    > fail | evals 10019
+
+--> #  355 | c      355 | y     8.0e-01 | y_next 7.4e-04
+    > fail | evals 10019
+WRN : attr model is failed for "356" (SKIP)
+
+--> #  357 | c      357 | y     7.1e-01 | y_next 3.5e-02
+    > fail | evals 10019
+WRN : attr model is failed for "358" (SKIP)
+
+--> #  359 | c      359 | y     5.9e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  360 | c      360 | y     8.5e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  361 | c      361 | y     8.0e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  362 | c      362 | y     7.9e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  363 | c      363 | y     8.8e-01 | y_next 7.0e-04
++++ >        c_new   58 | y_new 3.7e-01 | y_old 1.6e-01 | evals  1502
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : armadillo
+    : l_new : water snake
+
+
+--> #  364 | c      364 | y     7.9e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  365 | c      365 | y     7.2e-01 | y_next 2.9e-03
+    > fail | evals 10019
+
+--> #  366 | c      366 | y     9.2e-01 | y_next 4.3e-03
++++ >        c_new  372 | y_new 5.8e-01 | y_old 7.2e-02 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : gorilla, gorilla gorilla
+    : l_new : baboon
+
+
+--> #  367 | c      367 | y     7.6e-01 | y_next 4.5e-02
++++ >        c_new  366 | y_new 6.0e-01 | y_old 1.7e-01 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.6e+01
+    : l_old : chimpanzee, chimp, pan troglodytes
+    : l_new : gorilla, gorilla gorilla
+
+
+--> #  368 | c      368 | y     8.2e-01 | y_next 9.2e-03
+    > fail | evals 10019
+
+--> #  369 | c      369 | y     7.0e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  370 | c      370 | y     7.3e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  371 | c      371 | y     7.7e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  372 | c      372 | y     7.9e-01 | y_next 2.5e-03
+    > fail | evals 10019
+
+--> #  373 | c      373 | y     7.9e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  374 | c      374 | y     8.4e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  375 | c      375 | y     8.6e-01 | y_next 2.9e-03
+    > fail | evals 10019
+
+--> #  376 | c      376 | y     8.1e-01 | y_next 7.0e-04
+    > fail | evals 10019
+
+--> #  377 | c      377 | y     8.3e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  378 | c      378 | y     6.6e-01 | y_next 6.4e-02
+    > fail | evals 10019
+
+--> #  379 | c      379 | y     6.5e-01 | y_next 4.0e-02
+    > fail | evals 10019
+WRN : attr model is failed for "380" (SKIP)
+
+--> #  381 | c      381 | y     6.4e-01 | y_next 6.5e-03
+    > fail | evals 10019
+
+--> #  382 | c      382 | y     7.2e-01 | y_next 9.0e-02
+    > fail | evals 10019
+
+--> #  383 | c      383 | y     8.1e-01 | y_next 6.7e-03
+    > fail | evals 10019
+WRN : base model is failed for "384" (SKIP)
+
+--> #  385 | c      385 | y     8.4e-01 | y_next 9.6e-03
+    > fail | evals 10019
+
+--> #  386 | c      386 | y     7.5e-01 | y_next 4.9e-03
+    > fail | evals 10019
+
+--> #  387 | c      387 | y     8.4e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  388 | c      388 | y     8.8e-01 | y_next 4.2e-04
+    > fail | evals 10019
+
+--> #  389 | c      389 | y     8.1e-01 | y_next 1.3e-02
+    > fail | evals 10019
+WRN : attr model is failed for "390" (SKIP)
+
+--> #  391 | c      391 | y     8.1e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  392 | c      392 | y     8.7e-01 | y_next 8.7e-04
+    > fail | evals 10019
+
+--> #  393 | c      393 | y     8.3e-01 | y_next 3.5e-02
+    > fail | evals 10019
+
+--> #  394 | c      394 | y     8.5e-01 | y_next 6.9e-04
+    > fail | evals 10019
+WRN : attr model is failed for "395" (SKIP)
+WRN : base model is failed for "396" (SKIP)
+
+--> #  397 | c      397 | y     7.7e-01 | y_next 9.5e-04
+    > fail | evals 10019
+
+--> #  398 | c      398 | y     8.4e-01 | y_next 4.9e-03
+    > fail | evals 10019
+
+--> #  399 | c      399 | y     8.5e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  400 | c      400 | y     8.4e-01 | y_next 2.0e-02
+    > fail | evals 10019
+WRN : attr model is failed for "401" (SKIP)
+
+--> #  402 | c      402 | y     7.8e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  403 | c      403 | y     8.0e-01 | y_next 7.0e-04
+    > fail | evals 10019
+
+--> #  404 | c      404 | y     7.9e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  405 | c      405 | y     8.7e-01 | y_next 4.5e-04
+    > fail | evals 10019
+
+--> #  406 | c      406 | y     8.0e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  407 | c      407 | y     8.2e-01 | y_next 4.1e-03
+    > fail | evals 10019
+
+--> #  408 | c      408 | y     8.9e-01 | y_next 9.5e-03
+    > fail | evals 10019
+
+--> #  409 | c      409 | y     7.0e-01 | y_next 4.6e-02
+    > fail | evals 10019
+
+--> #  410 | c      410 | y     7.9e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  411 | c      411 | y     7.6e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  412 | c      412 | y     8.5e-01 | y_next 7.7e-03
+    > fail | evals 10019
+WRN : attr model is failed for "413" (SKIP)
+
+--> #  414 | c      414 | y     8.5e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  415 | c      415 | y     6.9e-01 | y_next 6.6e-03
+    > fail | evals 10019
+
+--> #  416 | c      416 | y     7.1e-01 | y_next 3.8e-02
+    > fail | evals 10019
+
+--> #  417 | c      417 | y     8.5e-01 | y_next 4.7e-04
+    > fail | evals 10019
+
+--> #  418 | c      418 | y     8.5e-01 | y_next 4.3e-02
++++ >        c_new  744 | y_new 1.4e-01 | y_old 6.3e-02 | evals  1001
+    : changes   100 | dx1 5.8e+02 | dx2 3.9e+01
+    : l_old : ballpoint, ballpoint pen, ballpen, biro
+    : l_new : projectile, missile
+
+
+--> #  419 | c      419 | y     7.8e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  420 | c      420 | y     8.2e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  421 | c      421 | y     8.1e-01 | y_next 9.0e-03
+    > fail | evals 10019
+
+--> #  422 | c      422 | y     8.3e-01 | y_next 6.7e-04
+    > fail | evals 10019
+
+--> #  423 | c      423 | y     8.6e-01 | y_next 3.0e-02
+    > fail | evals 10019
+WRN : base model is failed for "424" (SKIP)
+
+--> #  425 | c      425 | y     8.0e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  426 | c      426 | y     7.9e-01 | y_next 1.8e-02
+    > fail | evals 10019
+WRN : base model is failed for "427" (SKIP)
+
+--> #  428 | c      428 | y     7.8e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  429 | c      429 | y     8.1e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  430 | c      430 | y     9.3e-01 | y_next 7.6e-04
+    > fail | evals 10019
+
+--> #  431 | c      431 | y     8.3e-01 | y_next 9.3e-03
+    > fail | evals 10019
+
+--> #  432 | c      432 | y     8.2e-01 | y_next 4.6e-03
+    > fail | evals 10019
+
+--> #  433 | c      433 | y     7.1e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  434 | c      434 | y     8.6e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  435 | c      435 | y     6.0e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  436 | c      436 | y     7.4e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  437 | c      437 | y     8.6e-01 | y_next 2.4e-03
+    > fail | evals 10019
+
+--> #  438 | c      438 | y     7.1e-01 | y_next 4.4e-02
+    > fail | evals 10019
+
+--> #  439 | c      439 | y     8.5e-01 | y_next 4.6e-04
+    > fail | evals 10019
+
+--> #  440 | c      440 | y     7.4e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  441 | c      441 | y     7.2e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  442 | c      442 | y     8.9e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  443 | c      443 | y     8.5e-01 | y_next 3.9e-04
+    > fail | evals 10019
+
+--> #  444 | c      444 | y     8.3e-01 | y_next 4.3e-03
+    > fail | evals 10019
+
+--> #  445 | c      445 | y     6.5e-01 | y_next 5.8e-02
+    > fail | evals 10019
+WRN : base model is failed for "446" (SKIP)
+
+--> #  447 | c      447 | y     7.3e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  448 | c      448 | y     7.7e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #  449 | c      449 | y     8.8e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  450 | c      450 | y     8.0e-01 | y_next 6.1e-04
+    > fail | evals 10019
+
+--> #  451 | c      451 | y     7.6e-01 | y_next 8.6e-02
+    > fail | evals 10019
+
+--> #  452 | c      452 | y     7.4e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  453 | c      453 | y     7.0e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  454 | c      454 | y     8.1e-01 | y_next 5.1e-02
+    > fail | evals 10019
+
+--> #  455 | c      455 | y     7.3e-01 | y_next 4.3e-03
++++ >        c_new  440 | y_new 4.0e-01 | y_old 2.7e-01 | evals  3005
+    : changes   100 | dx1 4.2e+02 | dx2 3.0e+01
+    : l_old : bottlecap
+    : l_new : beer bottle
+
+WRN : attr model is failed for "456" (SKIP)
+WRN : attr model is failed for "457" (SKIP)
+WRN : attr model is failed for "458" (SKIP)
+
+--> #  459 | c      459 | y     6.9e-01 | y_next 7.7e-02
++++ >        c_new  638 | y_new 2.4e-01 | y_old 6.1e-02 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : brassiere, bra, bandeau
+    : l_new : maillot
+
+
+--> #  460 | c      460 | y     8.0e-01 | y_next 8.4e-02
+    > fail | evals 10019
+
+--> #  461 | c      461 | y     8.0e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  462 | c      462 | y     8.5e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  463 | c      463 | y     9.4e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  464 | c      464 | y     8.5e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  465 | c      465 | y     7.4e-01 | y_next 7.0e-03
+    > fail | evals 10019
+
+--> #  466 | c      466 | y     8.2e-01 | y_next 5.4e-04
+    > fail | evals 10019
+
+--> #  467 | c      467 | y     4.8e-01 | y_next 2.8e-01
++++ >        c_new  499 | y_new 6.5e-01 | y_old 1.4e-01 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.3e+01
+    : l_old : butcher shop, meat market
+    : l_new : cleaver, meat cleaver, chopper
+
+
+--> #  468 | c      468 | y     5.4e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  469 | c      469 | y     9.3e-01 | y_next 3.8e-03
+    > fail | evals 10019
+
+--> #  470 | c      470 | y     9.1e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  471 | c      471 | y     8.9e-01 | y_next 6.2e-04
+    > fail | evals 10019
+
+--> #  472 | c      472 | y     8.2e-01 | y_next 8.5e-04
+    > fail | evals 10019
+
+--> #  473 | c      473 | y     9.1e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  474 | c      474 | y     6.5e-01 | y_next 8.3e-03
+    > fail | evals 10019
+
+--> #  475 | c      475 | y     8.7e-01 | y_next 4.4e-04
+    > fail | evals 10019
+WRN : base model is failed for "476" (SKIP)
+WRN : attr model is failed for "477" (SKIP)
+
+--> #  478 | c      478 | y     9.1e-01 | y_next 6.6e-04
+    > fail | evals 10019
+
+--> #  479 | c      479 | y     7.5e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  480 | c      480 | y     8.1e-01 | y_next 7.5e-04
+    > fail | evals 10019
+
+--> #  481 | c      481 | y     7.3e-01 | y_next 3.8e-02
+    > fail | evals 10019
+WRN : attr model is failed for "482" (SKIP)
+
+--> #  483 | c      483 | y     7.3e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  484 | c      484 | y     6.9e-01 | y_next 9.5e-03
+    > fail | evals 10019
+
+--> #  485 | c      485 | y     9.2e-01 | y_next 2.6e-03
+    > fail | evals 10019
+WRN : base model is failed for "486" (SKIP)
+WRN : attr model is failed for "487" (SKIP)
+
+--> #  488 | c      488 | y     5.9e-01 | y_next 9.7e-02
+    > fail | evals 10019
+
+--> #  489 | c      489 | y     7.7e-01 | y_next 6.0e-03
+    > fail | evals 10019
+
+--> #  490 | c      490 | y     8.7e-01 | y_next 6.1e-04
+    > fail | evals 10019
+WRN : attr model is failed for "491" (SKIP)
+
+--> #  492 | c      492 | y     9.0e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  493 | c      493 | y     8.4e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  494 | c      494 | y     7.7e-01 | y_next 9.1e-02
+    > fail | evals 10019
+
+--> #  495 | c      495 | y     8.1e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  496 | c      496 | y     8.1e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  497 | c      497 | y     7.8e-01 | y_next 6.5e-03
+    > fail | evals 10019
+
+--> #  498 | c      498 | y     7.4e-01 | y_next 7.1e-04
+    > fail | evals 10019
+WRN : base model is failed for "499" (SKIP)
+
+--> #  500 | c      500 | y     8.4e-01 | y_next 4.2e-03
+    > fail | evals 10019
+WRN : base model is failed for "501" (SKIP)
+WRN : attr model is failed for "502" (SKIP)
+
+--> #  503 | c      503 | y     9.0e-01 | y_next 4.6e-04
+    > fail | evals 10019
+
+--> #  504 | c      504 | y     6.2e-01 | y_next 6.3e-02
+    > fail | evals 10019
+
+--> #  505 | c      505 | y     4.7e-01 | y_next 1.8e-01
++++ >        c_new  849 | y_new 3.1e-01 | y_old 1.4e-01 | evals  1001
+    : changes   100 | dx1 4.6e+02 | dx2 3.2e+01
+    : l_old : coffeepot
+    : l_new : teapot
+
+
+--> #  506 | c      506 | y     8.8e-01 | y_next 8.1e-04
+    > fail | evals 10019
+
+--> #  507 | c      507 | y     7.7e-01 | y_next 5.2e-03
+    > fail | evals 10019
+
+--> #  508 | c      508 | y     5.8e-01 | y_next 2.1e-01
+    > fail | evals 10019
+WRN : attr model is failed for "509" (SKIP)
+
+--> #  510 | c      510 | y     7.8e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  511 | c      511 | y     8.0e-01 | y_next 5.6e-03
+    > fail | evals 10019
+
+--> #  512 | c      512 | y     7.6e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  513 | c      513 | y     8.3e-01 | y_next 2.5e-03
+    > fail | evals 10019
+
+--> #  514 | c      514 | y     8.1e-01 | y_next 8.3e-04
+    > fail | evals 10019
+
+--> #  515 | c      515 | y     9.4e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  516 | c      516 | y     9.6e-01 | y_next 3.5e-03
+    > fail | evals 10019
+WRN : base model is failed for "517" (SKIP)
+
+--> #  518 | c      518 | y     7.5e-01 | y_next 2.9e-02
+    > fail | evals 10019
+WRN : attr model is failed for "519" (SKIP)
+WRN : attr model is failed for "520" (SKIP)
+
+--> #  521 | c      521 | y     7.8e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  522 | c      522 | y     9.0e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  523 | c      523 | y     9.1e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  524 | c      524 | y     6.7e-01 | y_next 7.9e-02
+    > fail | evals 10019
+
+--> #  525 | c      525 | y     8.4e-01 | y_next 4.6e-04
+    > fail | evals 10019
+
+--> #  526 | c      526 | y     4.7e-01 | y_next 1.3e-01
++++ >        c_new  620 | y_new 2.4e-01 | y_old 2.4e-01 | evals  1001
+    : changes   100 | dx1 4.9e+02 | dx2 3.4e+01
+    : l_old : desk
+    : l_new : laptop, laptop computer
+
+
+--> #  527 | c      527 | y     3.4e-01 | y_next 3.3e-01
++++ >        c_new  664 | y_new 4.2e-01 | y_old 2.7e-01 | evals  1001
+    : changes   100 | dx1 4.8e+02 | dx2 3.4e+01
+    : l_old : desktop computer
+    : l_new : monitor
+
+
+--> #  528 | c      528 | y     8.3e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  529 | c      529 | y     9.2e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  530 | c      530 | y     8.1e-01 | y_next 9.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "531" (SKIP)
+
+--> #  532 | c      532 | y     7.8e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  533 | c      533 | y     7.8e-01 | y_next 3.2e-03
+    > fail | evals 10019
+WRN : base model is failed for "534" (SKIP)
+
+--> #  535 | c      535 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  536 | c      536 | y     8.4e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  537 | c      537 | y     7.9e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  538 | c      538 | y     6.0e-01 | y_next 1.3e-01
+    > fail | evals 10019
+
+--> #  539 | c      539 | y     7.7e-01 | y_next 9.0e-04
+    > fail | evals 10019
+
+--> #  540 | c      540 | y     6.4e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  541 | c      541 | y     7.1e-01 | y_next 3.3e-02
+    > fail | evals 10019
+
+--> #  542 | c      542 | y     7.9e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  543 | c      543 | y     9.2e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  544 | c      544 | y     8.3e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  545 | c      545 | y     7.1e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  546 | c      546 | y     7.7e-01 | y_next 2.0e-02
+    > fail | evals 10019
+
+--> #  547 | c      547 | y     8.1e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  548 | c      548 | y     7.2e-01 | y_next 3.1e-02
+    > fail | evals 10019
+
+--> #  549 | c      549 | y     6.1e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  550 | c      550 | y     7.5e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  551 | c      551 | y     6.4e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  552 | c      552 | y     8.1e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  553 | c      553 | y     8.2e-01 | y_next 5.9e-03
+    > fail | evals 10019
+
+--> #  554 | c      554 | y     8.0e-01 | y_next 2.1e-03
+    > fail | evals 10019
+
+--> #  555 | c      555 | y     5.9e-01 | y_next 7.3e-02
+    > fail | evals 10019
+
+--> #  556 | c      556 | y     8.5e-01 | y_next 5.7e-03
+    > fail | evals 10019
+
+--> #  557 | c      557 | y     8.1e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  558 | c      558 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  559 | c      559 | y     8.1e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #  560 | c      560 | y     7.1e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  561 | c      561 | y     8.3e-01 | y_next 4.9e-04
+    > fail | evals 10019
+WRN : attr model is failed for "562" (SKIP)
+WRN : attr model is failed for "563" (SKIP)
+
+--> #  564 | c      564 | y     6.8e-01 | y_next 8.7e-02
+    > fail | evals 10019
+
+--> #  565 | c      565 | y     8.4e-01 | y_next 3.9e-04
+    > fail | evals 10019
+
+--> #  566 | c      566 | y     7.6e-01 | y_next 6.7e-03
+    > fail | evals 10019
+
+--> #  567 | c      567 | y     9.2e-01 | y_next 1.1e-02
+    > fail | evals 10019
+WRN : attr model is failed for "568" (SKIP)
+
+--> #  569 | c      569 | y     8.2e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  570 | c      570 | y     8.5e-01 | y_next 7.7e-04
+    > fail | evals 10019
+
+--> #  571 | c      571 | y     9.8e-01 | y_next 9.1e-04
+    > fail | evals 10019
+
+--> #  572 | c      572 | y     8.0e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  573 | c      573 | y     8.5e-01 | y_next 4.7e-03
+    > fail | evals 10019
+
+--> #  574 | c      574 | y     7.7e-01 | y_next 3.0e-03
+    > fail | evals 10019
+
+--> #  575 | c      575 | y     8.6e-01 | y_next 2.6e-04
+    > fail | evals 10019
+
+--> #  576 | c      576 | y     9.1e-01 | y_next 2.9e-04
+    > fail | evals 10019
+
+--> #  577 | c      577 | y     5.9e-01 | y_next 2.6e-01
+    > fail | evals 10019
+
+--> #  578 | c      578 | y     7.0e-01 | y_next 6.1e-02
+    > fail | evals 10019
+
+--> #  579 | c      579 | y     7.5e-01 | y_next 1.8e-03
+    > fail | evals 10019
+
+--> #  580 | c      580 | y     8.7e-01 | y_next 1.7e-03
+    > fail | evals 10019
+
+--> #  581 | c      581 | y     7.9e-01 | y_next 4.4e-02
+    > fail | evals 10019
+
+--> #  582 | c      582 | y     7.6e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  583 | c      583 | y     8.8e-01 | y_next 8.3e-04
+    > fail | evals 10019
+
+--> #  584 | c      584 | y     7.7e-01 | y_next 3.8e-02
+    > fail | evals 10019
+
+--> #  585 | c      585 | y     9.0e-01 | y_next 6.2e-03
+    > fail | evals 10019
+
+--> #  586 | c      586 | y     9.2e-01 | y_next 1.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "587" (SKIP)
+
+--> #  588 | c      588 | y     8.8e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #  589 | c      589 | y     7.9e-01 | y_next 4.6e-04
+    > fail | evals 10019
+
+--> #  590 | c      590 | y     6.8e-01 | y_next 1.9e-02
+    > fail | evals 10019
+WRN : attr model is failed for "591" (SKIP)
+
+--> #  592 | c      592 | y     8.8e-01 | y_next 6.2e-04
+    > fail | evals 10019
+
+--> #  593 | c      593 | y     9.1e-01 | y_next 1.9e-04
+    > fail | evals 10019
+
+--> #  594 | c      594 | y     9.6e-01 | y_next 8.6e-04
+    > fail | evals 10019
+
+--> #  595 | c      595 | y     8.6e-01 | y_next 4.7e-02
+    > fail | evals 10019
+WRN : attr model is failed for "596" (SKIP)
+
+--> #  597 | c      597 | y     8.0e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  598 | c      598 | y     8.4e-01 | y_next 7.4e-02
+    > fail | evals 10019
+
+--> #  599 | c      599 | y     6.3e-01 | y_next 8.7e-02
+    > fail | evals 10019
+
+--> #  600 | c      600 | y     7.7e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  601 | c      601 | y     6.9e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  602 | c      602 | y     6.5e-01 | y_next 7.8e-03
+    > fail | evals 10019
+
+--> #  603 | c      603 | y     7.5e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  604 | c      604 | y     8.7e-01 | y_next 2.8e-04
+    > fail | evals 10019
+
+--> #  605 | c      605 | y     7.0e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  606 | c      606 | y     8.3e-01 | y_next 5.0e-04
+    > fail | evals 10019
+
+--> #  607 | c      607 | y     8.0e-01 | y_next 5.2e-04
+    > fail | evals 10019
+
+--> #  608 | c      608 | y     9.9e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  609 | c      609 | y     8.4e-01 | y_next 1.3e-03
+    > fail | evals 10019
+
+--> #  610 | c      610 | y     7.6e-01 | y_next 4.4e-03
+    > fail | evals 10019
+
+--> #  611 | c      611 | y     8.4e-01 | y_next 3.5e-04
+    > fail | evals 10019
+
+--> #  612 | c      612 | y     8.6e-01 | y_next 8.7e-03
+    > fail | evals 10019
+WRN : attr model is failed for "613" (SKIP)
+WRN : attr model is failed for "614" (SKIP)
+
+--> #  615 | c      615 | y     7.6e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  616 | c      616 | y     7.8e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  617 | c      617 | y     7.4e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  618 | c      618 | y     8.2e-01 | y_next 4.4e-03
+    > fail | evals 10019
+WRN : attr model is failed for "619" (SKIP)
+
+--> #  620 | c      620 | y     8.4e-01 | y_next 1.4e-01
+    > fail | evals 10019
+WRN : base model is failed for "621" (SKIP)
+
+--> #  622 | c      622 | y     8.3e-01 | y_next 7.9e-04
+    > fail | evals 10019
+
+--> #  623 | c      623 | y     8.5e-01 | y_next 7.7e-03
+    > fail | evals 10019
+
+--> #  624 | c      624 | y     8.2e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  625 | c      625 | y     9.0e-01 | y_next 3.8e-04
+    > fail | evals 10019
+WRN : attr model is failed for "626" (SKIP)
+
+--> #  627 | c      627 | y     8.6e-01 | y_next 5.0e-04
+    > fail | evals 10019
+
+--> #  628 | c      628 | y     8.0e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  629 | c      629 | y     8.2e-01 | y_next 9.6e-04
+    > fail | evals 10019
+
+--> #  630 | c      630 | y     8.0e-01 | y_next 7.0e-04
+    > fail | evals 10019
+WRN : attr model is failed for "631" (SKIP)
+
+--> #  632 | c      632 | y     7.3e-01 | y_next 2.4e-02
+    > fail | evals 10019
+
+--> #  633 | c      633 | y     9.0e-01 | y_next 3.0e-03
+    > fail | evals 10019
+
+--> #  634 | c      634 | y     9.2e-01 | y_next 8.9e-04
+    > fail | evals 10019
+
+--> #  635 | c      635 | y     8.4e-01 | y_next 1.0e-03
+    > fail | evals 10019
+
+--> #  636 | c      636 | y     7.8e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  637 | c      637 | y     8.2e-01 | y_next 9.6e-04
+    > fail | evals 10019
+WRN : base model is failed for "638" (SKIP)
+WRN : base model is failed for "639" (SKIP)
+
+--> #  640 | c      640 | y     8.5e-01 | y_next 5.9e-04
+    > fail | evals 10019
+WRN : attr model is failed for "641" (SKIP)
+
+--> #  642 | c      642 | y     8.2e-01 | y_next 7.0e-04
+    > fail | evals 10019
+
+--> #  643 | c      643 | y     8.1e-01 | y_next 4.0e-02
+    > fail | evals 10019
+
+--> #  644 | c      644 | y     8.2e-01 | y_next 2.1e-02
++++ >        c_new  971 | y_new 4.6e-01 | y_old 3.2e-01 | evals  1001
+    : changes   100 | dx1 4.5e+02 | dx2 3.1e+01
+    : l_old : matchstick
+    : l_new : bubble
+
+
+--> #  645 | c      645 | y     8.1e-01 | y_next 2.4e-03
+    > fail | evals 10019
+WRN : base model is failed for "646" (SKIP)
+
+--> #  647 | c      647 | y     8.7e-01 | y_next 2.5e-02
+    > fail | evals 10019
+
+--> #  648 | c      648 | y     8.3e-01 | y_next 3.3e-02
+    > fail | evals 10019
+
+--> #  649 | c      649 | y     8.0e-01 | y_next 6.1e-04
+    > fail | evals 10019
+
+--> #  650 | c      650 | y     9.9e-01 | y_next 6.4e-04
+    > fail | evals 10019
+
+--> #  651 | c      651 | y     7.9e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #  652 | c      652 | y     6.6e-01 | y_next 9.1e-03
+    > fail | evals 10019
+
+--> #  653 | c      653 | y     7.9e-01 | y_next 3.7e-03
+    > fail | evals 10019
+
+--> #  654 | c      654 | y     8.6e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  655 | c      655 | y     6.4e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  656 | c      656 | y     8.3e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  657 | c      657 | y     5.4e-01 | y_next 3.1e-01
+    > fail | evals 10019
+WRN : attr model is failed for "658" (SKIP)
+WRN : attr model is failed for "659" (SKIP)
+
+--> #  660 | c      660 | y     7.9e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  661 | c      661 | y     8.2e-01 | y_next 3.2e-03
+    > fail | evals 10019
+WRN : attr model is failed for "662" (SKIP)
+WRN : attr model is failed for "663" (SKIP)
+WRN : base model is failed for "664" (SKIP)
+
+--> #  665 | c      665 | y     8.0e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  666 | c      666 | y     8.4e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  667 | c      667 | y     8.9e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+--> #  668 | c      668 | y     8.0e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  669 | c      669 | y     7.4e-01 | y_next 2.1e-03
+    > fail | evals 10019
+
+--> #  670 | c      670 | y     7.4e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  671 | c      671 | y     6.9e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  672 | c      672 | y     4.1e-01 | y_next 1.1e-01
++++ >        c_new  348 | y_new 3.9e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : mountain tent
+    : l_new : ram, tup
+
+WRN : base model is failed for "673" (SKIP)
+
+--> #  674 | c      674 | y     8.0e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  675 | c      675 | y     7.6e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  676 | c      676 | y     9.0e-01 | y_next 6.4e-04
+    > fail | evals 10019
+WRN : attr model is failed for "677" (SKIP)
+WRN : attr model is failed for "678" (SKIP)
+WRN : attr model is failed for "679" (SKIP)
+
+--> #  680 | c      680 | y     8.5e-01 | y_next 2.1e-03
+    > fail | evals 10019
+
+--> #  681 | c      681 | y     8.3e-01 | y_next 6.9e-02
+    > fail | evals 10019
+
+--> #  682 | c      682 | y     6.9e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  683 | c      683 | y     5.7e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  684 | c      684 | y     7.5e-01 | y_next 7.6e-04
+    > fail | evals 10019
+
+--> #  685 | c      685 | y     8.5e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #  686 | c      686 | y     6.8e-01 | y_next 6.0e-03
+    > fail | evals 10019
+
+--> #  687 | c      687 | y     8.1e-01 | y_next 4.3e-03
+    > fail | evals 10019
+
+--> #  688 | c      688 | y     8.1e-01 | y_next 3.0e-03
+    > fail | evals 10019
+WRN : attr model is failed for "689" (SKIP)
+
+--> #  690 | c      690 | y     7.1e-01 | y_next 1.4e-01
+    > fail | evals 10019
+
+--> #  691 | c      691 | y     9.0e-01 | y_next 9.5e-04
+    > fail | evals 10019
+WRN : attr model is failed for "692" (SKIP)
+
+--> #  693 | c      693 | y     7.4e-01 | y_next 1.2e-01
+    > fail | evals 10019
+
+--> #  694 | c      694 | y     8.6e-01 | y_next 3.2e-04
+    > fail | evals 10019
+
+--> #  695 | c      695 | y     8.3e-01 | y_next 2.4e-02
+    > fail | evals 10019
+WRN : attr model is failed for "696" (SKIP)
+
+--> #  697 | c      697 | y     8.5e-01 | y_next 5.0e-03
+    > fail | evals 10019
+
+--> #  698 | c      698 | y     8.9e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  699 | c      699 | y     8.2e-01 | y_next 7.3e-04
+    > fail | evals 10019
+
+--> #  700 | c      700 | y     8.7e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  701 | c      701 | y     8.8e-01 | y_next 1.4e-03
+    > fail | evals 10019
+WRN : attr model is failed for "702" (SKIP)
+WRN : attr model is failed for "703" (SKIP)
+
+--> #  704 | c      704 | y     8.0e-01 | y_next 2.8e-02
+    > fail | evals 10019
+
+--> #  705 | c      705 | y     8.3e-01 | y_next 7.6e-04
+    > fail | evals 10019
+
+--> #  706 | c      706 | y     8.8e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  707 | c      707 | y     7.8e-01 | y_next 6.7e-03
+    > fail | evals 10019
+
+--> #  708 | c      708 | y     8.5e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  709 | c      709 | y     8.0e-01 | y_next 4.9e-03
+    > fail | evals 10019
+WRN : attr model is failed for "710" (SKIP)
+
+--> #  711 | c      711 | y     8.3e-01 | y_next 2.9e-02
+    > fail | evals 10019
+WRN : attr model is failed for "712" (SKIP)
+WRN : attr model is failed for "713" (SKIP)
+
+--> #  714 | c      714 | y     8.7e-01 | y_next 3.6e-03
+    > fail | evals 10019
+
+--> #  715 | c      715 | y     7.6e-01 | y_next 2.0e-03
+    > fail | evals 10019
+
+--> #  716 | c      716 | y     9.1e-01 | y_next 1.2e-02
+    > fail | evals 10019
+WRN : attr model is failed for "717" (SKIP)
+
+--> #  718 | c      718 | y     8.7e-01 | y_next 2.3e-02
+    > fail | evals 10019
+
+--> #  719 | c      719 | y     8.1e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #  720 | c      720 | y     8.4e-01 | y_next 1.8e-02
++++ >        c_new  686 | y_new 5.2e-01 | y_old 7.7e-03 | evals  1001
+    : changes   100 | dx1 3.8e+02 | dx2 2.7e+01
+    : l_old : pill bottle
+    : l_new : oil filter
+
+
+--> #  721 | c      721 | y     7.6e-01 | y_next 6.3e-04
+    > fail | evals 10019
+WRN : attr model is failed for "722" (SKIP)
+
+--> #  723 | c      723 | y     8.2e-01 | y_next 8.2e-04
+    > fail | evals 10019
+
+--> #  724 | c      724 | y     8.1e-01 | y_next 2.7e-03
+    > fail | evals 10019
+WRN : attr model is failed for "725" (SKIP)
+
+--> #  726 | c      726 | y     6.9e-01 | y_next 8.5e-04
+    > fail | evals 10019
+
+--> #  727 | c      727 | y     9.8e-01 | y_next 8.0e-04
+    > fail | evals 10019
+
+--> #  728 | c      728 | y     8.6e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  729 | c      729 | y     7.7e-01 | y_next 2.2e-03
+    > fail | evals 10019
+WRN : attr model is failed for "730" (SKIP)
+
+--> #  731 | c      731 | y     9.2e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #  732 | c      732 | y     8.3e-01 | y_next 2.5e-03
+    > fail | evals 10019
+
+--> #  733 | c      733 | y     9.5e-01 | y_next 7.8e-04
+    > fail | evals 10019
+
+--> #  734 | c      734 | y     8.2e-01 | y_next 2.9e-02
+    > fail | evals 10019
+
+--> #  735 | c      735 | y     7.6e-01 | y_next 4.1e-03
+    > fail | evals 10019
+WRN : base model is failed for "736" (SKIP)
+
+--> #  737 | c      737 | y     8.6e-01 | y_next 9.5e-03
+    > fail | evals 10019
+
+--> #  738 | c      738 | y     8.3e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  739 | c      739 | y     8.9e-01 | y_next 5.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "740" (SKIP)
+
+--> #  741 | c      741 | y     8.3e-01 | y_next 4.2e-04
+    > fail | evals 10019
+
+--> #  742 | c      742 | y     7.5e-01 | y_next 7.5e-03
+    > fail | evals 10019
+
+--> #  743 | c      743 | y     9.6e-01 | y_next 4.7e-03
+    > fail | evals 10019
+WRN : base model is failed for "744" (SKIP)
+
+--> #  745 | c      745 | y     7.1e-01 | y_next 4.1e-03
+    > fail | evals 10019
+
+--> #  746 | c      746 | y     7.8e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  747 | c      747 | y     8.5e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  748 | c      748 | y     6.6e-01 | y_next 8.7e-02
+    > fail | evals 10019
+
+--> #  749 | c      749 | y     8.1e-01 | y_next 1.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "750" (SKIP)
+WRN : base model is failed for "751" (SKIP)
+
+--> #  752 | c      752 | y     8.0e-01 | y_next 6.8e-03
+    > fail | evals 10019
+
+--> #  753 | c      753 | y     7.5e-01 | y_next 1.5e-02
+    > fail | evals 10019
+WRN : attr model is failed for "754" (SKIP)
+
+--> #  755 | c      755 | y     8.3e-01 | y_next 4.1e-03
+    > fail | evals 10019
+
+--> #  756 | c      756 | y     8.0e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  757 | c      757 | y     8.2e-01 | y_next 7.3e-03
+    > fail | evals 10019
+
+--> #  758 | c      758 | y     8.2e-01 | y_next 2.3e-03
+    > fail | evals 10019
+
+--> #  759 | c      759 | y     9.0e-01 | y_next 6.9e-04
+    > fail | evals 10019
+
+--> #  760 | c      760 | y     8.3e-01 | y_next 3.0e-02
+    > fail | evals 10019
+WRN : attr model is failed for "761" (SKIP)
+
+--> #  762 | c      762 | y     8.0e-01 | y_next 9.8e-02
+    > fail | evals 10019
+
+--> #  763 | c      763 | y     7.3e-01 | y_next 5.4e-02
+    > fail | evals 10019
+WRN : attr model is failed for "764" (SKIP)
+
+--> #  765 | c      765 | y     8.4e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  766 | c      766 | y     7.7e-01 | y_next 1.2e-02
+    > fail | evals 10019
+WRN : attr model is failed for "767" (SKIP)
+
+--> #  768 | c      768 | y     8.1e-01 | y_next 5.0e-04
+    > fail | evals 10019
+
+--> #  769 | c      769 | y     7.9e-01 | y_next 9.6e-04
+    > fail | evals 10019
+
+--> #  770 | c      770 | y     8.2e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  771 | c      771 | y     9.6e-01 | y_next 7.8e-03
+    > fail | evals 10019
+
+--> #  772 | c      772 | y     8.1e-01 | y_next 5.5e-04
+    > fail | evals 10019
+
+--> #  773 | c      773 | y     8.3e-01 | y_next 3.8e-03
+    > fail | evals 10019
+
+--> #  774 | c      774 | y     8.5e-01 | y_next 3.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "775" (SKIP)
+
+--> #  776 | c      776 | y     7.8e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  777 | c      777 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10019
+
+--> #  778 | c      778 | y     6.3e-01 | y_next 3.0e-03
+    > fail | evals 10019
+
+--> #  779 | c      779 | y     7.9e-01 | y_next 6.2e-04
+    > fail | evals 10019
+
+--> #  780 | c      780 | y     4.7e-01 | y_next 2.6e-01
+    > fail | evals 10019
+
+--> #  781 | c      781 | y     8.1e-01 | y_next 1.6e-02
+    > fail | evals 10019
+WRN : attr model is failed for "782" (SKIP)
+
+--> #  783 | c      783 | y     8.1e-01 | y_next 2.7e-03
+    > fail | evals 10019
+
+--> #  784 | c      784 | y     7.6e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  785 | c      785 | y     8.6e-01 | y_next 7.5e-03
++++ >        c_new   29 | y_new 4.6e-02 | y_old 1.5e-02 | evals  1001
+    : changes   100 | dx1 5.6e+02 | dx2 3.9e+01
+    : l_old : seat belt, seatbelt
+    : l_new : axolotl, mud puppy, ambystoma mexicanum
+
+
+--> #  786 | c      786 | y     8.6e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  787 | c      787 | y     8.0e-01 | y_next 1.6e-03
+    > fail | evals 10019
+WRN : attr model is failed for "788" (SKIP)
+
+--> #  789 | c      789 | y     7.3e-01 | y_next 7.1e-03
+    > fail | evals 10019
+
+--> #  790 | c      790 | y     7.7e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  791 | c      791 | y     8.0e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  792 | c      792 | y     8.6e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  793 | c      793 | y     8.5e-01 | y_next 3.9e-03
+    > fail | evals 10019
+
+--> #  794 | c      794 | y     8.6e-01 | y_next 1.7e-02
+    > fail | evals 10019
+
+--> #  795 | c      795 | y     9.1e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  796 | c      796 | y     8.1e-01 | y_next 6.9e-03
+    > fail | evals 10019
+
+--> #  797 | c      797 | y     8.6e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  798 | c      798 | y     8.2e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  799 | c      799 | y     9.0e-01 | y_next 8.0e-03
+    > fail | evals 10019
+
+--> #  800 | c      800 | y     7.2e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  801 | c      801 | y     8.8e-01 | y_next 3.6e-03
+    > fail | evals 10019
+
+--> #  802 | c      802 | y     8.1e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  803 | c      803 | y     7.7e-01 | y_next 2.9e-03
+    > fail | evals 10019
+
+--> #  804 | c      804 | y     8.4e-01 | y_next 8.4e-03
+    > fail | evals 10019
+
+--> #  805 | c      805 | y     8.3e-01 | y_next 3.6e-02
+    > fail | evals 10019
+
+--> #  806 | c      806 | y     7.8e-01 | y_next 4.0e-03
+    > fail | evals 10019
+WRN : attr model is failed for "807" (SKIP)
+WRN : base model is failed for "808" (SKIP)
+
+--> #  809 | c      809 | y     8.2e-01 | y_next 9.9e-03
+    > fail | evals 10019
+
+--> #  810 | c      810 | y     4.7e-01 | y_next 3.5e-01
++++ >        c_new  878 | y_new 4.9e-01 | y_old 3.1e-01 | evals  1001
+    : changes   100 | dx1 4.0e+02 | dx2 2.8e+01
+    : l_old : space bar
+    : l_new : typewriter keyboard
+
+
+--> #  811 | c      811 | y     9.3e-01 | y_next 3.3e-03
+    > fail | evals 10019
+
+--> #  812 | c      812 | y     8.6e-01 | y_next 6.0e-04
+    > fail | evals 10019
+WRN : base model is failed for "813" (SKIP)
+
+--> #  814 | c      814 | y     8.6e-01 | y_next 5.0e-04
+    > fail | evals 10019
+WRN : attr model is failed for "815" (SKIP)
+
+--> #  816 | c      816 | y     8.5e-01 | y_next 3.9e-04
+    > fail | evals 10019
+
+--> #  817 | c      817 | y     6.9e-01 | y_next 4.8e-02
+    > fail | evals 10019
+
+--> #  818 | c      818 | y     8.5e-01 | y_next 4.4e-03
+    > fail | evals 10019
+WRN : base model is failed for "819" (SKIP)
+
+--> #  820 | c      820 | y     6.4e-01 | y_next 1.6e-01
+    > fail | evals 10019
+
+--> #  821 | c      821 | y     7.2e-01 | y_next 9.0e-02
+    > fail | evals 10019
+
+--> #  822 | c      822 | y     8.4e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  823 | c      823 | y     8.1e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  824 | c      824 | y     7.3e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  825 | c      825 | y     7.5e-01 | y_next 4.4e-03
+    > fail | evals 10019
+
+--> #  826 | c      826 | y     7.3e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  827 | c      827 | y     8.5e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  828 | c      828 | y     8.3e-01 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #  829 | c      829 | y     8.4e-01 | y_next 9.5e-03
+    > fail | evals 10019
+
+--> #  830 | c      830 | y     8.9e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #  831 | c      831 | y     8.8e-01 | y_next 2.6e-03
+    > fail | evals 10019
+
+--> #  832 | c      832 | y     8.1e-01 | y_next 8.7e-04
+    > fail | evals 10019
+
+--> #  833 | c      833 | y     8.8e-01 | y_next 3.5e-03
+    > fail | evals 10019
+
+--> #  834 | c      834 | y     3.5e-01 | y_next 2.3e-01
++++ >        c_new  906 | y_new 2.3e-01 | y_old 2.1e-01 | evals  1001
+    : changes   100 | dx1 5.0e+02 | dx2 3.5e+01
+    : l_old : suit, suit of clothes
+    : l_new : windsor tie
+
+
+--> #  835 | c      835 | y     7.8e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  836 | c      836 | y     4.9e-01 | y_next 3.0e-01
++++ >        c_new  837 | y_new 4.5e-01 | y_old 2.8e-01 | evals  1001
+    : changes   100 | dx1 5.9e+02 | dx2 4.0e+01
+    : l_old : sunglass
+    : l_new : sunglasses, dark glasses, shades
+
+WRN : base model is failed for "837" (SKIP)
+WRN : attr model is failed for "838" (SKIP)
+
+--> #  839 | c      839 | y     9.5e-01 | y_next 2.1e-03
+    > fail | evals 10019
+WRN : attr model is failed for "840" (SKIP)
+
+--> #  841 | c      841 | y     9.5e-01 | y_next 3.7e-03
+    > fail | evals 10019
+
+--> #  842 | c      842 | y     7.6e-01 | y_next 3.9e-02
+    > fail | evals 10019
+
+--> #  843 | c      843 | y     7.7e-01 | y_next 2.9e-03
+    > fail | evals 10019
+WRN : attr model is failed for "844" (SKIP)
+
+--> #  845 | c      845 | y     9.3e-01 | y_next 2.8e-04
+    > fail | evals 10019
+
+--> #  846 | c      846 | y     8.5e-01 | y_next 1.0e-02
+    > fail | evals 10019
+
+--> #  847 | c      847 | y     7.7e-01 | y_next 2.0e-02
+    > fail | evals 10019
+WRN : attr model is failed for "848" (SKIP)
+
+--> #  849 | c      849 | y     6.7e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  850 | c      850 | y     8.2e-01 | y_next 1.1e-03
+    > fail | evals 10019
+WRN : base model is failed for "851" (SKIP)
+
+--> #  852 | c      852 | y     9.2e-01 | y_next 6.3e-03
+    > fail | evals 10019
+
+--> #  853 | c      853 | y     7.5e-01 | y_next 4.3e-02
+    > fail | evals 10019
+
+--> #  854 | c      854 | y     8.3e-01 | y_next 1.3e-02
+    > fail | evals 10019
+WRN : attr model is failed for "855" (SKIP)
+
+--> #  856 | c      856 | y     8.5e-01 | y_next 2.3e-03
+    > fail | evals 10019
+WRN : attr model is failed for "857" (SKIP)
+
+--> #  858 | c      858 | y     8.6e-01 | y_next 1.5e-03
+    > fail | evals 10019
+
+--> #  859 | c      859 | y     7.5e-01 | y_next 4.9e-03
+    > fail | evals 10019
+WRN : base model is failed for "860" (SKIP)
+
+--> #  861 | c      861 | y     7.6e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  862 | c      862 | y     7.4e-01 | y_next 3.7e-02
+    > fail | evals 10019
+
+--> #  863 | c      863 | y     8.2e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  864 | c      864 | y     9.3e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  865 | c      865 | y     5.1e-01 | y_next 2.9e-01
+    > fail | evals 10019
+
+--> #  866 | c      866 | y     6.0e-01 | y_next 4.5e-02
+    > fail | evals 10019
+
+--> #  867 | c      867 | y     6.2e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  868 | c      868 | y     8.6e-01 | y_next 9.6e-04
+    > fail | evals 10019
+
+--> #  869 | c      869 | y     8.7e-01 | y_next 9.8e-04
+    > fail | evals 10019
+
+--> #  870 | c      870 | y     8.0e-01 | y_next 1.8e-02
+    > fail | evals 10019
+WRN : attr model is failed for "871" (SKIP)
+
+--> #  872 | c      872 | y     6.8e-01 | y_next 7.0e-02
+    > fail | evals 10019
+
+--> #  873 | c      873 | y     8.2e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  874 | c      874 | y     7.8e-01 | y_next 7.5e-03
+    > fail | evals 10019
+
+--> #  875 | c      875 | y     7.8e-01 | y_next 9.8e-03
+    > fail | evals 10019
+
+--> #  876 | c      876 | y     4.6e-01 | y_next 1.8e-01
+    > fail | evals 10019
+
+--> #  877 | c      877 | y     8.5e-01 | y_next 3.4e-03
+    > fail | evals 10019
+
+--> #  878 | c      878 | y     7.8e-01 | y_next 9.1e-02
+    > fail | evals 10019
+
+--> #  879 | c      879 | y     8.6e-01 | y_next 8.9e-04
+    > fail | evals 10019
+
+--> #  880 | c      880 | y     4.7e-01 | y_next 5.7e-02
+    > fail | evals 10019
+
+--> #  881 | c      881 | y     7.9e-01 | y_next 3.1e-03
+    > fail | evals 10019
+
+--> #  882 | c      882 | y     9.0e-01 | y_next 5.9e-04
+    > fail | evals 10019
+WRN : attr model is failed for "883" (SKIP)
+
+--> #  884 | c      884 | y     6.8e-01 | y_next 6.6e-02
+    > fail | evals 10019
+WRN : attr model is failed for "885" (SKIP)
+
+--> #  886 | c      886 | y     8.3e-01 | y_next 6.1e-04
+    > fail | evals 10019
+WRN : attr model is failed for "887" (SKIP)
+
+--> #  888 | c      888 | y     7.8e-01 | y_next 8.9e-04
+    > fail | evals 10019
+
+--> #  889 | c      889 | y     7.0e-01 | y_next 2.1e-02
+    > fail | evals 10019
+
+--> #  890 | c      890 | y     7.9e-01 | y_next 9.1e-04
+    > fail | evals 10019
+
+--> #  891 | c      891 | y     1.0e+00 | y_next 6.0e-04
+    > fail | evals 10019
+
+--> #  892 | c      892 | y     8.9e-01 | y_next 8.8e-03
+    > fail | evals 10019
+
+--> #  893 | c      893 | y     6.0e-01 | y_next 1.7e-01
++++ >        c_new  419 | y_new 5.5e-01 | y_old 1.0e-01 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.3e+01
+    : l_old : wallet, billfold, notecase, pocketbook
+    : l_new : band aid
+
+
+--> #  894 | c      894 | y     7.1e-01 | y_next 1.8e-02
++++ >        c_new  648 | y_new 2.7e-01 | y_old 2.3e-01 | evals  2003
+    : changes   100 | dx1 3.2e+02 | dx2 2.2e+01
+    : l_old : wardrobe, closet, press
+    : l_new : medicine chest, medicine cabinet
+
+
+--> #  895 | c      895 | y     8.2e-01 | y_next 1.3e-02
++++ >        c_new  134 | y_new 5.3e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 3.4e+02 | dx2 2.3e+01
+    : l_old : warplane, military plane
+    : l_new : crane
+
+WRN : attr model is failed for "896" (SKIP)
+
+--> #  897 | c      897 | y     9.4e-01 | y_next 6.3e-03
+    > fail | evals 10019
+
+--> #  898 | c      898 | y     7.3e-01 | y_next 3.1e-02
++++ >        c_new  653 | y_new 6.6e-01 | y_old 6.1e-02 | evals  1001
+    : changes   100 | dx1 3.5e+02 | dx2 2.5e+01
+    : l_old : water bottle
+    : l_new : milk can
+
+WRN : attr model is failed for "899" (SKIP)
+
+--> #  900 | c      900 | y     8.5e-01 | y_next 6.9e-04
+    > fail | evals 10019
+
+--> #  901 | c      901 | y     7.6e-01 | y_next 1.8e-03
+    > fail | evals 10019
+WRN : attr model is failed for "902" (SKIP)
+
+--> #  903 | c      903 | y     5.8e-01 | y_next 3.5e-02
+    > fail | evals 10019
+WRN : attr model is failed for "904" (SKIP)
+
+--> #  905 | c      905 | y     8.0e-01 | y_next 6.7e-03
+    > fail | evals 10019
+
+--> #  906 | c      906 | y     8.1e-01 | y_next 5.2e-03
+    > fail | evals 10019
+
+--> #  907 | c      907 | y     7.5e-01 | y_next 5.0e-02
+    > fail | evals 10019
+
+--> #  908 | c      908 | y     9.2e-01 | y_next 2.9e-04
+    > fail | evals 10019
+WRN : base model is failed for "909" (SKIP)
+WRN : attr model is failed for "910" (SKIP)
+WRN : attr model is failed for "911" (SKIP)
+WRN : attr model is failed for "912" (SKIP)
+
+--> #  913 | c      913 | y     8.5e-01 | y_next 1.5e-02
+    > fail | evals 10019
+
+--> #  914 | c      914 | y     7.7e-01 | y_next 5.2e-03
+    > fail | evals 10019
+WRN : attr model is failed for "915" (SKIP)
+
+--> #  916 | c      916 | y     8.4e-01 | y_next 1.6e-03
+    > fail | evals 10019
+WRN : base model is failed for "917" (SKIP)
+
+--> #  918 | c      918 | y     8.3e-01 | y_next 5.2e-03
+    > fail | evals 10019
+
+--> #  919 | c      919 | y     8.1e-01 | y_next 5.5e-03
+    > fail | evals 10019
+
+--> #  920 | c      920 | y     8.2e-01 | y_next 1.1e-03
+    > fail | evals 10019
+
+--> #  921 | c      921 | y     7.9e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  922 | c      922 | y     8.9e-01 | y_next 4.1e-03
+    > fail | evals 10019
+
+--> #  923 | c      923 | y     7.4e-01 | y_next 8.6e-02
+    > fail | evals 10019
+
+--> #  924 | c      924 | y     8.8e-01 | y_next 2.2e-03
+    > fail | evals 10019
+
+--> #  925 | c      925 | y     9.3e-01 | y_next 4.2e-03
+    > fail | evals 10019
+
+--> #  926 | c      926 | y     8.7e-01 | y_next 1.8e-02
+    > fail | evals 10019
+
+--> #  927 | c      927 | y     8.1e-01 | y_next 1.1e-02
+    > fail | evals 10019
+
+--> #  928 | c      928 | y     7.3e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  929 | c      929 | y     9.1e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  930 | c      930 | y     8.8e-01 | y_next 6.6e-04
+    > fail | evals 10019
+
+--> #  931 | c      931 | y     8.1e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  932 | c      932 | y     7.4e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  933 | c      933 | y     8.6e-01 | y_next 1.2e-03
+    > fail | evals 10019
+
+--> #  934 | c      934 | y     7.2e-01 | y_next 4.1e-02
+    > fail | evals 10019
+
+--> #  935 | c      935 | y     8.8e-01 | y_next 2.6e-02
+    > fail | evals 10019
+
+--> #  936 | c      936 | y     8.2e-01 | y_next 1.6e-03
+    > fail | evals 10019
+
+--> #  937 | c      937 | y     8.2e-01 | y_next 4.8e-03
+    > fail | evals 10019
+
+--> #  938 | c      938 | y     9.0e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  939 | c      939 | y     7.8e-01 | y_next 5.1e-03
+    > fail | evals 10019
+
+--> #  940 | c      940 | y     7.8e-01 | y_next 6.8e-03
+    > fail | evals 10019
+
+--> #  941 | c      941 | y     7.9e-01 | y_next 8.2e-03
+    > fail | evals 10019
+
+--> #  942 | c      942 | y     6.6e-01 | y_next 3.7e-03
+    > fail | evals 10019
+WRN : attr model is failed for "943" (SKIP)
+
+--> #  944 | c      944 | y     8.2e-01 | y_next 7.4e-03
+    > fail | evals 10019
+
+--> #  945 | c      945 | y     7.8e-01 | y_next 1.4e-03
+    > fail | evals 10019
+
+--> #  946 | c      946 | y     6.2e-01 | y_next 1.5e-01
+    > fail | evals 10019
+
+--> #  947 | c      947 | y     8.5e-01 | y_next 2.8e-03
+    > fail | evals 10019
+
+--> #  948 | c      948 | y     7.0e-01 | y_next 5.3e-03
+    > fail | evals 10019
+
+--> #  949 | c      949 | y     8.0e-01 | y_next 6.4e-04
+    > fail | evals 10019
+
+--> #  950 | c      950 | y     7.6e-01 | y_next 1.2e-02
+    > fail | evals 10019
+
+--> #  951 | c      951 | y     6.4e-01 | y_next 1.6e-01
++++ >        c_new  950 | y_new 4.5e-01 | y_old 3.9e-01 | evals  1502
+    : changes   100 | dx1 4.5e+02 | dx2 3.2e+01
+    : l_old : lemon
+    : l_new : orange
+
+
+--> #  952 | c      952 | y     8.6e-01 | y_next 3.5e-04
+    > fail | evals 10019
+
+--> #  953 | c      953 | y     7.4e-01 | y_next 1.9e-03
+    > fail | evals 10019
+
+--> #  954 | c      954 | y     9.5e-01 | y_next 7.4e-04
+    > fail | evals 10019
+
+--> #  955 | c      955 | y     9.5e-01 | y_next 4.3e-03
+    > fail | evals 10019
+
+--> #  956 | c      956 | y     7.9e-01 | y_next 3.0e-02
+    > fail | evals 10019
+
+--> #  957 | c      957 | y     8.1e-01 | y_next 6.3e-04
+    > fail | evals 10019
+
+--> #  958 | c      958 | y     8.4e-01 | y_next 5.9e-04
+    > fail | evals 10019
+WRN : attr model is failed for "959" (SKIP)
+WRN : attr model is failed for "960" (SKIP)
+
+--> #  961 | c      961 | y     6.7e-01 | y_next 1.0e-01
+    > fail | evals 10019
+WRN : attr model is failed for "962" (SKIP)
+
+--> #  963 | c      963 | y     8.3e-01 | y_next 6.3e-04
+    > fail | evals 10019
+
+--> #  964 | c      964 | y     7.6e-01 | y_next 5.7e-03
+    > fail | evals 10019
+WRN : attr model is failed for "965" (SKIP)
+
+--> #  966 | c      966 | y     3.5e-01 | y_next 2.8e-01
++++ >        c_new  907 | y_new 3.5e-01 | y_old 1.5e-01 | evals  1001
+    : changes   100 | dx1 4.2e+02 | dx2 2.9e+01
+    : l_old : red wine
+    : l_new : wine bottle
+
+
+--> #  967 | c      967 | y     8.9e-01 | y_next 6.4e-03
+    > fail | evals 10019
+
+--> #  968 | c      968 | y     6.7e-01 | y_next 5.4e-02
+    > fail | evals 10019
+
+--> #  969 | c      969 | y     7.7e-01 | y_next 4.6e-03
+    > fail | evals 10019
+WRN : base model is failed for "970" (SKIP)
+
+--> #  971 | c      971 | y     7.6e-01 | y_next 9.6e-04
+    > fail | evals 10019
+
+--> #  972 | c      972 | y     7.6e-01 | y_next 1.9e-02
+    > fail | evals 10019
+
+--> #  973 | c      973 | y     8.6e-01 | y_next 2.2e-02
+    > fail | evals 10019
+
+--> #  974 | c      974 | y     8.2e-01 | y_next 2.5e-03
++++ >        c_new  657 | y_new 2.0e-01 | y_old 1.6e-01 | evals  1001
+    : changes   100 | dx1 4.1e+02 | dx2 2.9e+01
+    : l_old : geyser
+    : l_new : missile
+
+
+--> #  975 | c      975 | y     5.9e-01 | y_next 1.8e-01
++++ >        c_new  977 | y_new 2.7e-01 | y_old 2.4e-01 | evals  1001
+    : changes   100 | dx1 4.3e+02 | dx2 3.0e+01
+    : l_old : lakeside, lakeshore
+    : l_new : sandbar, sand bar
+
+WRN : attr model is failed for "976" (SKIP)
+
+--> #  977 | c      977 | y     8.9e-01 | y_next 2.4e-02
+    > fail | evals 10019
+WRN : attr model is failed for "978" (SKIP)
+
+--> #  979 | c      979 | y     6.3e-01 | y_next 1.2e-01
++++ >        c_new  980 | y_new 5.5e-01 | y_old 2.4e-01 | evals  1001
+    : changes    99 | dx1 3.5e+02 | dx2 2.4e+01
+    : l_old : valley, vale
+    : l_new : volcano
+
+
+--> #  980 | c      980 | y     7.1e-01 | y_next 9.5e-03
+    > fail | evals 10019
+
+--> #  981 | c      981 | y     8.2e-01 | y_next 4.7e-02
+    > fail | evals 10019
+
+--> #  982 | c      982 | y     8.5e-01 | y_next 9.9e-03
+    > fail | evals 10019
+
+--> #  983 | c      983 | y     6.3e-01 | y_next 1.6e-01
++++ >        c_new  329 | y_new 4.8e-01 | y_old 2.9e-01 | evals  1001
+    : changes   100 | dx1 4.7e+02 | dx2 3.4e+01
+    : l_old : scuba diver
+    : l_new : sea cucumber, holothurian
+
+
+--> #  984 | c      984 | y     8.4e-01 | y_next 6.6e-04
+    > fail | evals 10019
+
+--> #  985 | c      985 | y     8.1e-01 | y_next 6.3e-04
+    > fail | evals 10019
+
+--> #  986 | c      986 | y     8.1e-01 | y_next 4.0e-04
+    > fail | evals 10019
+WRN : attr model is failed for "987" (SKIP)
+WRN : attr model is failed for "988" (SKIP)
+
+--> #  989 | c      989 | y     8.5e-01 | y_next 4.7e-04
+    > fail | evals 10019
+
+--> #  990 | c      990 | y     7.9e-01 | y_next 6.6e-04
+    > fail | evals 10019
+
+--> #  991 | c      991 | y     7.2e-01 | y_next 1.4e-02
+    > fail | evals 10019
+
+--> #  992 | c      992 | y     7.5e-01 | y_next 5.4e-02
+    > fail | evals 10019
+
+--> #  993 | c      993 | y     7.7e-01 | y_next 3.2e-03
+    > fail | evals 10019
+
+--> #  994 | c      994 | y     8.8e-01 | y_next 3.2e-04
+    > fail | evals 10019
+
+--> #  995 | c      995 | y     8.1e-01 | y_next 4.0e-04
+    > fail | evals 10019
+
+--> #  996 | c      996 | y     7.5e-01 | y_next 1.4e-03
+    > fail | evals 10019
+WRN : attr model is failed for "997" (SKIP)
+WRN : base model is failed for "998" (SKIP)
+
+--> #  999 | c      999 | y     7.6e-01 | y_next 1.6e-02
+    > fail | evals 10019
+
+Completed. Successful:  4.69% (total images 831)
+DONE ( 60337.15 sec.) 
+
+
+===================== --------------------------------------
+[2023-11-25 05-03-19] Work is finished (60353.87 sec. total)
+
+
