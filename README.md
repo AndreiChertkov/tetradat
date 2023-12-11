@@ -52,7 +52,7 @@ The calls with the following `ARGS` may be performed:
 
 - To run attacks with the proposed TETRADAT method:
     - `python manager.py --task attack --kind attr --data imagenet --model googlenet --model_attr vgg`
-        > You may use any of the models from above here.
+        > You may use any of the models from above here. We select the helper model for attribution by `model_attr` argument.
 
 - To run attacks with the baselines:
     - `python manager.py --task attack --kind bs_onepixel --data imagenet --model googlenet --model_attr vgg`
