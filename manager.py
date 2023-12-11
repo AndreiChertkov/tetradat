@@ -370,7 +370,9 @@ class Manager:
         self.data.plot_attr(x_attr_used,
             fpath=self.get_path(f'img/{c}/attr_used.png'))
         
-        dx = self.data.tr_norm_inv(att.x_new) - self.data.tr_norm_inv(x)
+        x_old = x.detach().to('cpu')
+        x_new = att.x_new.detach().to('cpu')
+        dx = self.data.tr_norm_inv(x_new) - self.data.tr_norm_inv(x_old)
         dx = dx * 10 # Note this!
         self.data.plot_base(dx, '', size=6,
             fpath=self.get_path(f'img/{c}/changes_x10.png'))
