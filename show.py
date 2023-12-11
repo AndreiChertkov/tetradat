@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-ROOT = 'result_base'
+ROOT = 'result'
 DATASET = 'imagenet'
 MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet']
 MODEL_ATTR = 'vgg'
