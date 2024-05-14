@@ -76,7 +76,8 @@ The calls with the following `ARGS` may be performed:
 
 ### TMP
 
-Run `test_llava.py` and `test_sim.py`.
+- Run `clear && python sim_demo.py`
+- Run `clear && python llava_demo.py`
 
 
 ## Authors

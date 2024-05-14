@@ -11,8 +11,7 @@ class SimWrapper:
         if not is_many:
             refs = [refs]
 
-        sentences = [base, refs]
-        embeddings = self.model.encode(sentences, convert_to_tensor=True)
-        scores = util.cos_sim(embeddings, embeddings)[0][1:]
+        embeds = self.model.encode([base] + refs, convert_to_tensor=True)
+        scores = util.cos_sim(embeds, embeds)[0][1:].detach().cpu().numpy()
 
         return scores if is_many else scores[0]
