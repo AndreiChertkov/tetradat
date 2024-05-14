@@ -424,8 +424,13 @@ class Manager:
         self.log.res(tpc()-tm)
 
     def task_attack_llava_base(self):
+        tm = self.log.prc(f'Loading "LLava" model')
         llava = LlavaWrapper()
+        self.log.res(tpc()-tm)
+
+        tm = self.log.prc(f'Loading text similarity calculator')
         sim = SimWrapper()
+        self.log.res(tpc()-tm)
 
         img = 'https://llava-vl.github.io/static/images/view.jpg'
         txt = 'What are the things I should be cautious about when I visit here?'
@@ -436,9 +441,9 @@ class Manager:
         score = sim.run(res, res_attack)
         t = tpc() - t
         
-        print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}\n')
-        print(f'Result base   : ', res)
-        print(f'Result attack : ', res_attack)
+        print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}')
+        print(f'\n         Result base   : ', res)
+        print(f'\n         Result attack : ', res_attack)
 
     def _attack(self, i, name=None, target=False, with_attr=False, show=False):
         x, c, l = self.data.get(i, tst=True)
