@@ -21,3 +21,5 @@ _.md
 result/_data/
 result/*/*/img
 LLaVA/
+tmp_image.png
+tmp_image_attack.png

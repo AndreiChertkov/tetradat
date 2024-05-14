@@ -436,7 +436,7 @@ class Manager:
 
         tm = self.log.prc(f'Run demo attack')
 
-        i = 127
+        i = 24
 
         x, c, l = self.data.get(i, tst=True)
         print(i, c, l)
@@ -444,17 +444,21 @@ class Manager:
         y, c_pred, l_pred = self.model.run_pred(x)
         print(y, c_pred, l_pred)        
 
-        img = os.path.join(self.root, '_data', 'imagenet',
-            'imagenet-sample-images', f'{i}.jpg')
+        img = 'tmp_image.png'
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=img)
+
         txt = 'What is shown in this picture?'
         res = llava.run(img, txt)
 
         t = tpc()
 
         x_attack = x.clone()
-        x_attack[:] = 0.
+        x_attack[0, 42:55, 45] *= 0.2
+        x_attack[0, 55:99, 32] *= 0.2
+        x_attack[0, 99:120, 21] *= 0.2
 
-        img_attack = 'tmp_image.png'
+        img_attack = 'tmp_image_attack.png'
         self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
             fpath=img_attack)
 
@@ -465,6 +469,32 @@ class Manager:
         print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}')
         print(f'\n>>>>>>>>> Result base   : ', res)
         print(f'\n>>>>>>>>> Result attack : ', res_attack)
+
+        self.log.res(tpc()-tm)
+
+    def task_attack_llava_demo(self):
+        tm = self.log.prc(f'Run demo')
+
+        i = 24
+
+        x, c, l = self.data.get(i, tst=True)
+        print(i, c, l)
+
+        y, c_pred, l_pred = self.model.run_pred(x)
+        print(y, c_pred, l_pred)        
+
+        img = 'tmp_image.png'
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=img)
+
+        x_attack = x.clone()
+        x_attack[0, 42:55, 45] *= 0.2
+        x_attack[0, 55:99, 32] *= 0.2
+        x_attack[0, 99:120, 21] *= 0.2
+        
+        img_attack = 'tmp_image_attack.png'
+        self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
+            fpath=img_attack)
 
         self.log.res(tpc()-tm)
 
