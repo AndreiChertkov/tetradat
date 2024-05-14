@@ -242,6 +242,8 @@ class Manager:
         self.log.title(f'Computations ({self.device})', info)
 
     def set_path(self, root='result', postfix=''):
+        self.root = root
+
         fbase = f'{self.data_name}'
         if self.model_name:
             fbase += f'-{self.model_name}'
@@ -432,8 +434,19 @@ class Manager:
         sim = SimWrapper()
         self.log.res(tpc()-tm)
 
-        img = 'https://llava-vl.github.io/static/images/view.jpg'
-        txt = 'What are the things I should be cautious about when I visit here?'
+        tm = self.log.prc(f'Run demo attack')
+
+        i = 127
+
+        x, c, l = self.data.get(i, tst=True)
+        print(i, c, l)
+
+        y, c_pred, l_pred = self.model.run_pred(x)
+        print(y, c_pred, l_pred)        
+
+        img = os.path.join(self.root, '_data', 'imagenet',
+            'imagenet-sample-images', f'{i}.jpg')
+        txt = 'What is shown in this picture?'
         res = llava.run(img, txt)
 
         t = tpc()
@@ -442,8 +455,10 @@ class Manager:
         t = tpc() - t
         
         print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}')
-        print(f'\n         Result base   : ', res)
-        print(f'\n         Result attack : ', res_attack)
+        print(f'\n>>>>>>>>> Result base   : ', res)
+        print(f'\n>>>>>>>>> Result attack : ', res_attack)
+
+        self.log.res(tpc()-tm)
 
     def _attack(self, i, name=None, target=False, with_attr=False, show=False):
         x, c, l = self.data.get(i, tst=True)
