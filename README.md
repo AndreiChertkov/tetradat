@@ -8,11 +8,11 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
 
 ## Installation
 
-1. Install [anaconda](https://www.anaconda.com) package manager with [python](https://www.python.org) (version 3.8);
+1. Install [anaconda](https://www.anaconda.com) package manager with [python](https://www.python.org) (version 3.10);
 
 2. Create a virtual environment:
     ```bash
-    conda create --name tetradat python=3.8 -y
+    conda create --name tetradat python=3.10 -y
     ```
 
 3. Activate the environment:
@@ -20,14 +20,23 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
     conda activate tetradat
     ```
 
-4. Install dependencies:
-    - To run the code on CPU device:
-        ```bash
-        pip install numpy matplotlib requests urllib3 protes==0.3.6 torch==1.12.1 torchvision==0.13.1 torchattacks==3.4.0
-        ```
-    - To run the code on GPU device, please see `zhores.py` script.
+4. Download this repo (optional):
+    ```bash
+    git clone https://github.com/AndreiChertkov/tetradat.git && cd tetradat
+    ```
 
-5. Delete virtual environment at the end of the work (optional):
+5. Install [LLaVA](https://github.com/haotian-liu/LLaVA) framework:
+    ```bash
+    git clone https://github.com/haotian-liu/LLaVA.git && cd LLaVA && pip install -e . && pip install aiohttp fsspec[http]==2024.2.0 pyarrow tensorboardx && pip install transformers==4.37.2 && cd ./../
+    ```
+    > In the case of problems, remove in llava/model/__init__.py `try` block before installing. You can also optionally delete the folder: `rm -rf ./LLaVA`
+
+5. Install dependencies:
+    ```bash
+    pip install numpy matplotlib requests urllib3 protes==0.3.7 torchattacks==3.4.0 sentence-transformers
+    ```
+
+6. Delete virtual environment at the end of the work (optional):
     ```bash
     conda activate && conda remove --name tetradat --all -y
     ```
@@ -64,6 +73,10 @@ The calls with the following `ARGS` may be performed:
 - To present the computation results:
     - `python show.py`
         > Data for tables will be in the console output and images will be in `result/_show` folder.
+
+### TMP
+
+Run `test_llava.py` and `test_sim.py`.
 
 
 ## Authors
