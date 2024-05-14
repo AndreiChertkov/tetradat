@@ -41,74 +41,72 @@ class LlavaWrapper:
             self.args.model_path, self.args.model_base, self.model_name)
         self.tokenizer, self.model, self.image_processor, context_len = out
 
-    def run(self, prompt, image_file)
+    def run(self, prompt, image_file):
         self.args.query = prompt
         self.args.image_file = image_file
 
-
-
-    qs = self.args.query
-    image_token_se = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN + DEFAULT_IM_END_TOKEN
-    if IMAGE_PLACEHOLDER in qs:
-        if self.model.config.mm_use_im_start_end:
-            qs = re.sub(IMAGE_PLACEHOLDER, image_token_se, qs)
+        qs = self.args.query
+        image_token_se = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN + DEFAULT_IM_END_TOKEN
+        if IMAGE_PLACEHOLDER in qs:
+            if self.model.config.mm_use_im_start_end:
+                qs = re.sub(IMAGE_PLACEHOLDER, image_token_se, qs)
+            else:
+                qs = re.sub(IMAGE_PLACEHOLDER, DEFAULT_IMAGE_TOKEN, qs)
         else:
-            qs = re.sub(IMAGE_PLACEHOLDER, DEFAULT_IMAGE_TOKEN, qs)
-    else:
-        if self.model.config.mm_use_im_start_end:
-            qs = image_token_se + '\n' + qs
+            if self.model.config.mm_use_im_start_end:
+                qs = image_token_se + '\n' + qs
+            else:
+                qs = DEFAULT_IMAGE_TOKEN + '\n' + qs
+
+        if 'llama-2' in self.model_name.lower():
+            self.args.conv_mode = 'llava_llama_2'
+        elif 'mistral' in self.model_name.lower():
+            self.args.conv_mode = 'mistral_instruct'
+        elif 'v1.6-34b' in self.model_name.lower():
+            self.args.conv_mode = 'chatml_direct'
+        elif 'v1' in self.model_name.lower():
+            self.args.conv_mode = 'llava_v1'
+        elif 'mpt' in self.model_name.lower():
+            self.args.conv_mode = 'mpt'
         else:
-            qs = DEFAULT_IMAGE_TOKEN + '\n' + qs
+            self.args.conv_mode = 'llava_v0'
 
-    if 'llama-2' in self.model_name.lower():
-        self.args.conv_mode = 'llava_llama_2'
-    elif 'mistral' in self.model_name.lower():
-        self.args.conv_mode = 'mistral_instruct'
-    elif 'v1.6-34b' in self.model_name.lower():
-        self.args.conv_mode = 'chatml_direct'
-    elif 'v1' in self.model_name.lower():
-        self.args.conv_mode = 'llava_v1'
-    elif 'mpt' in self.model_name.lower():
-        self.args.conv_mode = 'mpt'
-    else:
-        self.args.conv_mode = 'llava_v0'
+        conv = conv_templates[self.args.conv_mode].copy()
+        conv.append_message(conv.roles[0], qs)
+        conv.append_message(conv.roles[1], None)
+        prompt = conv.get_prompt()
 
-    conv = conv_templates[self.args.conv_mode].copy()
-    conv.append_message(conv.roles[0], qs)
-    conv.append_message(conv.roles[1], None)
-    prompt = conv.get_prompt()
+        image_files = image_parser(self.args)
+        images = load_images(image_files)
+        image_sizes = [x.size for x in images]
+        images_tensor = process_images(
+            images,
+            self.image_processor,
+            self.model.config
+        ).to(self.model.device, dtype=torch.float16)
 
-    image_files = image_parser(self.args)
-    images = load_images(image_files)
-    image_sizes = [x.size for x in images]
-    images_tensor = process_images(
-        images,
-        self.image_processor,
-        self.model.config
-    ).to(self.model.device, dtype=torch.float16)
-
-    input_ids = (
-        tokenizer_image_token(prompt, self.tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt')
-        .unsqueeze(0)
-        .cuda()
-    )
-
-    with torch.inference_mode():
-        output_ids = self.model.generate(
-            input_ids,
-            images=images_tensor,
-            image_sizes=image_sizes,
-            do_sample=True if self.args.temperature > 0 else False,
-            temperature=self.args.temperature,
-            top_p=self.args.top_p,
-            num_beams=self.args.num_beams,
-            max_new_tokens=self.args.max_new_tokens,
-            use_cache=True,
+        input_ids = (
+            tokenizer_image_token(prompt, self.tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt')
+            .unsqueeze(0)
+            .cuda()
         )
 
-    outputs = self.tokenizer.batch_decode(
-        output_ids, skip_special_tokens=True)[0].strip()
-    return outputs
+        with torch.inference_mode():
+            output_ids = self.model.generate(
+                input_ids,
+                images=images_tensor,
+                image_sizes=image_sizes,
+                do_sample=True if self.args.temperature > 0 else False,
+                temperature=self.args.temperature,
+                top_p=self.args.top_p,
+                num_beams=self.args.num_beams,
+                max_new_tokens=self.args.max_new_tokens,
+                use_cache=True,
+            )
+
+        outputs = self.tokenizer.batch_decode(
+            output_ids, skip_special_tokens=True)[0].strip()
+        return outputs
 
 
 def image_parser(args):
