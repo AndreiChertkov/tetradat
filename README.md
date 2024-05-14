@@ -29,7 +29,7 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
     ```bash
     git clone https://github.com/haotian-liu/LLaVA.git && cd LLaVA && pip install -e . && pip install aiohttp fsspec[http]==2024.2.0 pyarrow tensorboardx && pip install transformers==4.37.2 && cd ./../
     ```
-    > In the case of problems, remove in llava/model/__init__.py `try` block before installing. You can also optionally delete the folder: `rm -rf ./LLaVA`
+    > In the case of problems, remove in llava/model/__init__.py `try` block before installing.
 
 5. Install dependencies:
     ```bash

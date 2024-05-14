@@ -24,7 +24,7 @@ class LlavaWrapper:
             'model_path': model_path,
             'model_base': None,
             'model_name': get_model_name_from_path(model_path),
-            'query': prompt,
+            'query': None,
             'conv_mode': None,
             'image_file': '',
             'sep': ',',
