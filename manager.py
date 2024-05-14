@@ -450,7 +450,15 @@ class Manager:
         res = llava.run(img, txt)
 
         t = tpc()
-        res_attack = llava.run(img, txt)
+
+        x_attack = x.clone()
+        x_attack[:] = 0.
+
+        img_attack = 'tmp_image.png'
+        self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
+            fpath=img_attack)
+
+        res_attack = llava.run(img_attack, txt)
         score = sim.run(res, res_attack)
         t = tpc() - t
         
