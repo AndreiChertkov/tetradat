@@ -12,7 +12,9 @@ def demo():
     img = ''
     txt = ''
 
-    while True:
+    for i in range(100000):
+        print('\n\n' + '-'*50 + '\n' + f'--- DEMO # {i+1:-4d}')
+        
         img = input('Image  > ') or img
         txt = input('Prompt > ') or txt
 
