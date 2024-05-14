@@ -13,8 +13,10 @@ from attack import AttackAttrMulti
 from attack import AttackBs
 from data import DATA_NAMES
 from data import Data
+from llava_wrapper import LlavaWrapper
 from model import MODEL_NAMES
 from model import Model
+from sim_wrapper import SimWrapper
 
 
 RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
@@ -421,6 +423,23 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
+    def task_attack_llava_base(self):
+        llava = LlavaWrapper()
+        sim = SimWrapper()
+
+        img = 'https://llava-vl.github.io/static/images/view.jpg'
+        txt = 'What are the things I should be cautious about when I visit here?'
+        res = llava.run(img, txt)
+
+        t = tpc()
+        res_attack = llava.run(img, txt)
+        score = sim.run(res, res_attack)
+        t = tpc() - t
+        
+        print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}\n')
+        print(f'Result base   : ', res)
+        print(f'Result attack : ', res_attack)
+
     def _attack(self, i, name=None, target=False, with_attr=False, show=False):
         x, c, l = self.data.get(i, tst=True)
 
@@ -568,7 +587,7 @@ def args_build():
         type=str,
         help='Name of the task',
         default='attack',
-        choices=['attack', 'attack_target', 'check']
+        choices=['attack', 'attack_target', 'check', 'attack_llava']
     )
     parser.add_argument('--kind',
         type=str,
