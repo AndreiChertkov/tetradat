@@ -41,7 +41,7 @@ class LlavaWrapper:
             self.args.model_path, self.args.model_base, self.model_name)
         self.tokenizer, self.model, self.image_processor, context_len = out
 
-    def run(self, prompt, image_file):
+    def run(self, image_file, prompt):
         self.args.query = prompt
         self.args.image_file = image_file
 

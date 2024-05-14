@@ -13,8 +13,6 @@ class SimWrapper:
 
         sentences = [base, refs]
         embeddings = self.model.encode(sentences, convert_to_tensor=True)
-        scores = util.cos_sim(embeddings, embeddings)
-
-        scores = cosine_scores[0][1:]
+        scores = util.cos_sim(embeddings, embeddings)[0][1:]
 
         return scores if is_many else scores[0]
