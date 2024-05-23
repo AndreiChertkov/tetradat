@@ -402,16 +402,24 @@ class AttackLLava(AttackAttr):
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
 
         txt = 'What is shown in this picture?'
-        out = self.llava.run(img, txt)
+        self.out = self.llava.run(img, txt)
 
         if self.out_base is None:
-            self.out_base = out
+            self.out_base = self.out
 
-        score = self.sim.run(self.out_base, out)
+        score = self.sim.run(self.out_base, self.out)
+        self.score = score
 
         print(score, out)
         
         return score
+
+    def result(self):
+        res = super().result()
+        res['out_base'] = self.out_base
+        res['out'] = self.out
+        res['score'] = self.score
+        return res
 
     def run(self, n, sc, k, k_top, k_gd, lr, r, llava, sim, data):
         t = tpc()
@@ -435,6 +443,8 @@ class AttackLLava(AttackAttr):
             lr, r, is_max=False, with_info_p=True, log=True)
 
         self.x_new = self.change(i_opt)
+        self.predict(self.x_new)
+
         self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
         self.changes = torch.sum(self.changes > 1.E-6).item()
         self.dx1 = torch.norm(self.x_new - self.x, p=1).item()

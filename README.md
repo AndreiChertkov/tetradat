@@ -86,7 +86,7 @@ The calls with the following `ARGS` may be performed:
 
 - Run `clear && python sim_demo.py`
 - Run `clear && python llava_demo.py`
-- Run `clear && python manager.py --task attack_llava --kind base --data imagenet --model mobilenet --model_attr mobilenet --opt_m 100 --opt_k 10 --opt_k_top 2 --opt_sc 0.1`
+- Run `clear && python manager.py --task attack_llava --kind base --data imagenet --model mobilenet --model_attr mobilenet --opt_m 100 --opt_k 10 --opt_k_top 2 --opt_sc 0.25`
 - Run `clear && python manager.py --task attack_llava --kind demo --data imagenet --model mobilenet --model_attr mobilenet`
 
 
