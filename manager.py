@@ -437,7 +437,7 @@ class Manager:
         sim = SimWrapper()
         self.log.res(tpc()-tm)
 
-        for i in [270, 320, 550, 770, 990]:
+        for i in range(1000):
             tm = self.log.prc(f'Run demo attack')
             self._attack_llava(i, llava, sim)
             self.log.res(tpc()-tm)
@@ -486,9 +486,9 @@ class Manager:
             llava, sim, self.data)
 
         text = ''
-        text += 'OUT old : ' + result['out_base']
-        text += 'OUT new : ' + result['out']
-        text += f'SCORE   : {result["score"]:-8.2e}'
+        text += f'\nOUT old : ' + result['out_base']
+        text += f'\nOUT new : ' + result['out']
+        text += f'\nSCORE   : {result["score"]:-8.2e}'
         self.log(text)
 
         self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
