@@ -11,6 +11,7 @@ import torch
 from attack import AttackAttr
 from attack import AttackAttrMulti
 from attack import AttackBs
+from attack import AttackLLava
 from data import DATA_NAMES
 from data import Data
 from llava_wrapper import LlavaWrapper
