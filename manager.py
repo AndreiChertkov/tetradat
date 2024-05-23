@@ -437,41 +437,43 @@ class Manager:
         sim = SimWrapper()
         self.log.res(tpc()-tm)
 
-        tm = self.log.prc(f'Run demo attack')
+        for _ in range(10):
 
-        i = 24
+            tm = self.log.prc(f'Run demo attack')
 
-        x, c, l = self.data.get(i, tst=True)
-        print(i, c, l)
+            i = 24
 
-        y, c_pred, l_pred = self.model.run_pred(x)
-        print(y, c_pred, l_pred)        
+            x, c, l = self.data.get(i, tst=True)
+            print(i, c, l)
 
-        img = 'tmp_image.png'
-        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
-            fpath=img)
+            y, c_pred, l_pred = self.model.run_pred(x)
+            print(y, c_pred, l_pred)        
 
-        txt = 'What is shown in this picture?'
-        res = llava.run(img, txt)
+            img = 'tmp_image.png'
+            self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+                fpath=img)
 
-        t = tpc()
+            txt = 'What is shown in this picture?'
+            res = llava.run(img, txt)
 
-        x_attack = x.clone()
-        x_attack += torch.randn(x.size()) * 0.8
+            t = tpc()
 
-        img_attack = 'tmp_image_attack.png'
-        self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
-            fpath=img_attack)
+            x_attack = x.clone()
+            x_attack += torch.randn(x.size()) * 0.8
 
-        res_attack = llava.run(img_attack, txt)
-        score = sim.run(res, res_attack)
-        t = tpc() - t
-        
-        print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}')
-        print(f'\n>>>>>>>>> Result base   : ', res)
-        print(f'\n>>>>>>>>> Result attack : ', res_attack)
+            img_attack = 'tmp_image_attack.png'
+            self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
+                fpath=img_attack)
 
-        self.log.res(tpc()-tm)
+            res_attack = llava.run(img_attack, txt)
+            score = sim.run(res, res_attack)
+            t = tpc() - t
+            
+            print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}')
+            print(f'\n>>>>>>>>> Result base   : ', res)
+            print(f'\n>>>>>>>>> Result attack : ', res_attack)
+
+            self.log.res(tpc()-tm)
 
     def task_attack_llava_demo(self):
         tm = self.log.prc(f'Run demo')
