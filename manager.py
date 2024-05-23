@@ -428,7 +428,6 @@ class Manager:
         self.log.res(tpc()-tm)
 
     def task_attack_llava_base(self):
-        # self.llava_score_thr
         tm = self.log.prc(f'Loading "LLava" model')
         llava = LlavaWrapper()
         self.log.res(tpc()-tm)
@@ -437,43 +436,9 @@ class Manager:
         sim = SimWrapper()
         self.log.res(tpc()-tm)
 
-        for _ in range(10):
-
-            tm = self.log.prc(f'Run demo attack')
-
-            i = 24
-
-            x, c, l = self.data.get(i, tst=True)
-            print(i, c, l)
-
-            y, c_pred, l_pred = self.model.run_pred(x)
-            print(y, c_pred, l_pred)        
-
-            img = 'tmp_image.png'
-            self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
-                fpath=img)
-
-            txt = 'What is shown in this picture?'
-            res = llava.run(img, txt)
-
-            t = tpc()
-
-            x_attack = x.clone()
-            x_attack += torch.randn(x.size()) * 0.8
-
-            img_attack = 'tmp_image_attack.png'
-            self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
-                fpath=img_attack)
-
-            res_attack = llava.run(img_attack, txt)
-            score = sim.run(res, res_attack)
-            t = tpc() - t
-            
-            print(f'\n\nDONE | Time: {t:-8.2f} sec | Score: {score:-8.2e}')
-            print(f'\n>>>>>>>>> Result base   : ', res)
-            print(f'\n>>>>>>>>> Result attack : ', res_attack)
-
-            self.log.res(tpc()-tm)
+        tm = self.log.prc(f'Run demo attack')
+        _attack_llava(self, 24, llava, sim)
+        self.log.res(tpc()-tm)
 
     def task_attack_llava_demo(self):
         tm = self.log.prc(f'Run demo')
@@ -498,6 +463,34 @@ class Manager:
             fpath=img_attack)
 
         self.log.res(tpc()-tm)
+
+    def _attack_llava(self, i, llava, sim):
+        x, c, l = self.data.get(i, tst=True)
+
+        y_all = self.model.run(x).detach().to('cpu').numpy()
+        y = y_all[c]
+
+        if np.argmax(y_all) != c:
+            # Invalid prediction for target image; skip
+            print(f'WRN : base model is failed for "{c}" (SKIP)')
+            return
+
+        att = AttackLLava(self.model.net, x, c, self.opt_m, 'tetradat',
+            self.data.norm_m, self.data.norm_v)
+        att.prep(self.model.net, self.opt_d, self.attr_steps, self.attr_iters)
+
+        result = att.run(self.opt_n, self.opt_sc, self.opt_k,
+            self.opt_k_top, self.opt_k_gd, self.opt_lr, self.opt_r,
+            llava, sim, self.data)
+
+        print(result)
+
+        self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
+            fpath=self.get_path(f'img/{c}/changed.png'))
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=self.get_path(f'img/{c}/base.png'))
+        self.data.plot_attr(att.x_attr,
+            fpath=self.get_path(f'img/{c}/attr.png'))
 
     def _attack(self, i, name=None, target=False, with_attr=False, show=False):
         x, c, l = self.data.get(i, tst=True)

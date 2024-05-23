@@ -387,6 +387,60 @@ class AttackBs(Attack):
             self.atk.set_mode_targeted_by_label(quiet=True)
 
 
+class AttackLLava(AttackAttr):
+    def loss(self, I):
+        result = []
+        for i in I:
+            self.m += 1
+            x_changed = self.change(i)
+            result.append(self.predict(x_changed))
+
+        return np.array(result)
+
+    def predict(self, x):
+        img = 'tmp_image.png'
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
+
+        txt = 'What is shown in this picture?'
+        out = llava.run(img, txt)
+
+        if self.out_base is None:
+            self.out_base = out
+
+        score = sim.run(self.out_base, out)
+        return score
+
+    def run(self, n, sc, k, k_top, k_gd, lr, r, llava, sim, data):
+        t = tpc()
+
+        self.n = n
+        self.sc = sc
+        self.opt_k = k
+        self.opt_k_top = k_top
+
+        self.x = self.x.to(self.device)
+        self.x_base = self.trans_base(self.x)
+        self.x_base_hsv = color_rgb_to_hsv(self.x_base)
+
+        self.llava = llava
+        self.sim = sim
+        self.data = data
+
+        self.out_base = None
+
+        i_opt, _ = protes(self.loss, self.d, self.n, self.m_max, k, k_top, k_gd,
+            lr, r, is_max=False, with_info_p=True, log=True)
+
+        self.x_new = self.change(i_opt)
+        self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
+        self.changes = torch.sum(self.changes > 1.E-6).item()
+        self.dx1 = torch.norm(self.x_new - self.x, p=1).item()
+        self.dx2 = torch.norm(self.x_new - self.x, p=2).item()
+
+        self.t += tpc() - t
+        return self.result()
+
+
 class _OnePixel(torchattacks.OnePixel):
     def get_logits(self, inputs, labels=None, *args, **kwargs):
         if not hasattr(self, 'model_evals'):
