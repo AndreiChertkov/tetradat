@@ -27,22 +27,30 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
 
 5. Install [LLaVA](https://github.com/haotian-liu/LLaVA) framework:
     ```bash
-    git clone https://github.com/haotian-liu/LLaVA.git && cd LLaVA && pip install -e . && pip install aiohttp fsspec[http]==2024.2.0 pyarrow tensorboardx && pip install transformers==4.37.2 && cd ./../
+    git clone https://github.com/haotian-liu/LLaVA.git && cd LLaVA && pip install -e . && cd ./../
     ```
     > In the case of problems, remove in llava/model/__init__.py `try` block before installing.
 
-5. Install dependencies:
+6. Install other dependencies for LLaVA:
+    ```bash
+    pip install aiohttp pyarrow tensorboardx && pip install transformers==4.37.2
+    ```
+    > You may also need `pip install fsspec[http]==2024.2.0 `
+
+7. Install other dependencies:
     ```bash
     pip install numpy matplotlib requests urllib3 protes==0.3.7 torchattacks==3.4.0 sentence-transformers
     ```
 
-6. Delete virtual environment at the end of the work (optional):
+8. Delete virtual environment at the end of the work (optional):
     ```bash
     conda activate && conda remove --name tetradat --all -y
     ```
 
 
 ## Usage
+
+### Attacks on computer vision models
 
 Run `python manager.py ARGS`, then see the outputs in the terminal and results in the `result` folder. Before starting the new calculation, you can completely delete or rename the `result` folder; a new `result` folder will be created automatically in this case.
 
@@ -74,7 +82,7 @@ The calls with the following `ARGS` may be performed:
     - `python show.py`
         > Data for tables will be in the console output and images will be in `result/_show` folder.
 
-### TMP
+### Attacks on multimodal LLava model
 
 - Run `clear && python sim_demo.py`
 - Run `clear && python llava_demo.py`

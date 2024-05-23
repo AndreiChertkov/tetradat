@@ -1,0 +1,30 @@
+[2024-05-23 15-54-11] Computations (cpu)
+===================== ------------------
+Data                : "imagenet"
+Model               : "mobilenet"
+Model attr.         : "mobilenet"
+Task                : "attack_llava"
+Kind of task        : "demo"
+========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (     0.10 sec.) 
+
+
+.... Loading "mobilenet" model
+DONE (     0.10 sec.) 
+
+
+.... Run demo
+DONE (     0.48 sec.) 
+
+
+===================== ----------------------------------
+[2024-05-23 15-54-12] Work is finished (0.68 sec. total)
+
+

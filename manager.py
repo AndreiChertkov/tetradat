@@ -68,7 +68,7 @@ class Manager:
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
-                 skip_attr_fails, device=None):
+                 skip_attr_fails, llava_score_thr=0.25, device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -96,6 +96,8 @@ class Manager:
 
         self.show_result_all = show_result_all
         self.skip_attr_fails = skip_attr_fails
+
+        self.llava_score_thr = llava_score_thr
 
         self.set_rand()
         self.set_device(device)
@@ -426,6 +428,7 @@ class Manager:
         self.log.res(tpc()-tm)
 
     def task_attack_llava_base(self):
+        # self.llava_score_thr
         tm = self.log.prc(f'Loading "LLava" model')
         llava = LlavaWrapper()
         self.log.res(tpc()-tm)
@@ -454,9 +457,7 @@ class Manager:
         t = tpc()
 
         x_attack = x.clone()
-        x_attack[0, 42:55, 45] *= 0.2
-        x_attack[0, 55:99, 32] *= 0.2
-        x_attack[0, 99:120, 21] *= 0.2
+        x_attack += torch.randn(x.size()) * 0.8
 
         img_attack = 'tmp_image_attack.png'
         self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
@@ -488,9 +489,7 @@ class Manager:
             fpath=img)
 
         x_attack = x.clone()
-        x_attack[0, 42:55, 45] *= 0.2
-        x_attack[0, 55:99, 32] *= 0.2
-        x_attack[0, 99:120, 21] *= 0.2
+        x_attack += torch.randn(x.size()) * 0.8
         
         img_attack = 'tmp_image_attack.png'
         self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
@@ -748,6 +747,11 @@ def args_build():
         const=True,
         default=True
     )
+    parser.add_argument('--llava_score_thr',
+        type=int,
+        help='The value of output text similarity at which the attack is considered successful',
+        default=0.25,
+    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
@@ -755,7 +759,7 @@ def args_build():
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
-        args.skip_attr_fails)
+        args.skip_attr_fails, args.llava_score_thr)
 
 
 if __name__ == '__main__':
