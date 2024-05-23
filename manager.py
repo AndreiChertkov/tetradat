@@ -486,9 +486,9 @@ class Manager:
             llava, sim, self.data)
 
         text = ''
-        text += 'OUT old : ', result['out_base']
-        text += 'OUT new : ', result['out']
-        text += 'SCORE   : ', result['score']
+        text += 'OUT old : ' + result['out_base']
+        text += 'OUT new : ' + result['out']
+        text += f'SCORE   : {result["score"]:-8.2e}'
         self.log(text)
 
         self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,

@@ -409,7 +409,7 @@ class AttackLLava(AttackAttr):
 
         self.score = self.sim.run(self.out_base, self.out)
 
-        print(self.score, self.out)
+        print(f'{self.score:-8.2e} : {self.out}')
         
         return self.score
 
