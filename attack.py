@@ -408,6 +408,9 @@ class AttackLLava(AttackAttr):
             self.out_base = out
 
         score = sim.run(self.out_base, out)
+
+        print(score, out)
+        
         return score
 
     def run(self, n, sc, k, k_top, k_gd, lr, r, llava, sim, data):
