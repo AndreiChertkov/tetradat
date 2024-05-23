@@ -407,12 +407,11 @@ class AttackLLava(AttackAttr):
         if self.out_base is None:
             self.out_base = self.out
 
-        score = self.sim.run(self.out_base, self.out)
-        self.score = score
+        self.score = self.sim.run(self.out_base, self.out)
 
-        print(score, out)
+        print(self.score, self.out)
         
-        return score
+        return self.score
 
     def result(self):
         res = super().result()
