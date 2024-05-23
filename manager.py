@@ -437,9 +437,10 @@ class Manager:
         sim = SimWrapper()
         self.log.res(tpc()-tm)
 
-        tm = self.log.prc(f'Run demo attack')
-        self._attack_llava(24, llava, sim)
-        self.log.res(tpc()-tm)
+        for i in [270, 320, 550, 770, 990]:
+            tm = self.log.prc(f'Run demo attack')
+            self._attack_llava(i, llava, sim)
+            self.log.res(tpc()-tm)
 
     def task_attack_llava_demo(self):
         tm = self.log.prc(f'Run demo')
@@ -484,7 +485,11 @@ class Manager:
             self.opt_k_top, self.opt_k_gd, self.opt_lr, self.opt_r,
             llava, sim, self.data)
 
-        print(result)
+        text = ''
+        text += 'OUT old : ', result['out_base']
+        text += 'OUT new : ', result['out']
+        text += 'SCORE   : ', result['score']
+        self.log(text)
 
         self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
             fpath=self.get_path(f'img/{c}/changed.png'))
