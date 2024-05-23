@@ -437,7 +437,7 @@ class Manager:
         self.log.res(tpc()-tm)
 
         tm = self.log.prc(f'Run demo attack')
-        _attack_llava(self, 24, llava, sim)
+        self._attack_llava(self, 24, llava, sim)
         self.log.res(tpc()-tm)
 
     def task_attack_llava_demo(self):

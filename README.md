@@ -35,7 +35,7 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
     ```bash
     pip install aiohttp pyarrow tensorboardx && pip install transformers==4.37.2
     ```
-    > You may also need `pip install fsspec[http]==2024.2.0 `
+    > You may also need `pip install fsspec[http]==2024.2.0`
 
 7. Install other dependencies:
     ```bash
