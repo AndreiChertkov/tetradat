@@ -402,12 +402,12 @@ class AttackLLava(AttackAttr):
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
 
         txt = 'What is shown in this picture?'
-        out = llava.run(img, txt)
+        out = self.llava.run(img, txt)
 
         if self.out_base is None:
             self.out_base = out
 
-        score = sim.run(self.out_base, out)
+        score = self.sim.run(self.out_base, out)
 
         print(score, out)
         
