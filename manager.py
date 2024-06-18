@@ -448,7 +448,7 @@ class Manager:
         for i in range(len(self.data.data_tst)):
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
-            tm = self.log.prc(f'Run demo attack for image # {i:-4d}')
+            tm = self.log.prc(f'Run attack on LLaVa for image # {i:-4d}')
             res = self._attack_llava(i, llava, sim)
             if res is not None:
                 result[i] = res
@@ -477,6 +477,8 @@ class Manager:
             llava, sim, self.data, self.llava_prompt)
 
         text = ''
+        text += f'\nImage   # {i:-5d}'
+        text += f'\nLabel   : {l}'
         text += f'\nOUT old : ' + result['out_base']
         text += f'\nOUT new : ' + result['out']
         text += f'\nSCORE   : {result["score"]:-8.2e}'
