@@ -1,10 +1,5 @@
 from PIL import Image
 from io import BytesIO
-import re
-import requests
-import torch
-
-
 from llava.constants import IMAGE_TOKEN_INDEX
 from llava.constants import DEFAULT_IMAGE_TOKEN
 from llava.constants import DEFAULT_IM_END_TOKEN
@@ -16,14 +11,20 @@ from llava.utils import disable_torch_init
 from llava.mm_utils import get_model_name_from_path
 from llava.mm_utils import process_images
 from llava.mm_utils import tokenizer_image_token
+import re
+import requests
+from time import perf_counter as tpc
+import torch
 
 
 class LlavaWrapper:
     def __init__(self, model_path='liuhaotian/llava-v1.5-7b'):
+        self.model_name = get_model_name_from_path(model_path)
+
         self.args = type('Args', (), {
             'model_path': model_path,
             'model_base': None,
-            'model_name': get_model_name_from_path(model_path),
+            'model_name': self.model_name,
             'query': None,
             'conv_mode': None,
             'image_file': '',
@@ -36,14 +37,12 @@ class LlavaWrapper:
 
         disable_torch_init()
 
-        self.model_name = get_model_name_from_path(self.args.model_path)
-        out = load_pretrained_model(
-            self.args.model_path, self.args.model_base, self.model_name)
+        out = load_pretrained_model(model_path, None, self.model_name)
         self.tokenizer, self.model, self.image_processor, context_len = out
 
     def run(self, image_file, prompt):
-        self.args.query = prompt
         self.args.image_file = image_file
+        self.args.query = prompt
 
         qs = self.args.query
         image_token_se = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN + DEFAULT_IM_END_TOKEN
@@ -88,8 +87,7 @@ class LlavaWrapper:
         input_ids = (
             tokenizer_image_token(prompt, self.tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt')
             .unsqueeze(0)
-            .cuda()
-        )
+            .cuda())
 
         with torch.inference_mode():
             output_ids = self.model.generate(
@@ -129,3 +127,55 @@ def load_images(image_files):
         image = load_image(image_file)
         out.append(image)
     return out
+
+
+def _demo():
+    t = tpc()
+    llava = LlavaWrapper()
+    print(f'\n\nPREPARED | Time: {tpc()-t:-8.2f} sec')
+
+    img = ''
+    txt = ''
+
+    for i in range(100000):
+        print('\n\n' + '-'*50 + '\n' + f'--- DEMO # {i+1:-4d}')
+        
+        img = input('Image  > ') or img
+        txt = input('Prompt > ') or txt
+
+        if txt == 'END':
+            break
+
+        if not img:
+            print('OOPS! Please provide the path to image')
+        if not txt:
+            print('OOPS! Please provide the prompt')
+
+        t = tpc()
+        result = llava.run(img, txt)
+        print(f'\n\nDONE    | Time: {tpc()-t:-8.2f} sec | Result :\n', result)
+
+
+def _test():
+    t = tpc()
+    llava = LlavaWrapper()
+    print(f'\n\nPREPARED | Time: {tpc()-t:-8.2f} sec')
+
+    t = tpc()
+    img = 'https://llava-vl.github.io/static/images/view.jpg'
+    txt = 'What are the things I should be cautious about when I visit here?'
+    result = llava.run(img, txt)
+    print(f'\n\nDONE #1 | Time: {tpc()-t:-8.2f} sec | Result :\n', result)
+
+    t = tpc()
+    img = 'https://i.natgeofe.com/n/cad5d203-d715-4392-881c-3f33312652fe/00000169-ca0e-dfb8-a969-ea4e727d0002_3x2.jpg?wp=1&w=1436&h=958'
+    txt = 'What do you see on this picture?'
+    result = llava.run(img, txt)
+    print(f'\n\nDONE #2 | Time: {tpc()-t:-8.2f} sec | Result :\n', result)
+
+
+if __name__ == '__main__':
+    print('\n\n --- TEST --- \n\n')
+    _test()
+    print('\n\n --- DEMO --- \n\n')
+    _demo()

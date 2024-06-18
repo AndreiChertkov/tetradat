@@ -645,7 +645,7 @@ def args_build():
         type=str,
         help='Name of the task',
         default='attack',
-        choices=['attack', 'attack_target', 'check', 'attack_llava']
+        choices=['attack', 'attack_llava', 'attack_target', 'check']
     )
     parser.add_argument('--kind',
         type=str,

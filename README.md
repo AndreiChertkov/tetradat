@@ -8,7 +8,7 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
 
 ## Installation
 
-1. Install [anaconda](https://www.anaconda.com) package manager with [python](https://www.python.org) (version 3.10);
+1. Install [anaconda](https://www.anaconda.com) package manager with [python](https://www.python.org);
 
 2. Create a virtual environment:
     ```bash
@@ -84,8 +84,8 @@ The calls with the following `ARGS` may be performed:
 
 ### Attacks on multimodal LLava model
 
-- Run `clear && python sim_demo.py`
-- Run `clear && python llava_demo.py`
+- Run `clear && python sim_wrapper.py` for demo of text ximilarity calculation
+- Run `clear && python llava_wrapper.py` for demo of LLaVa usage
 - Run `clear && python manager.py --task attack_llava --kind base --data imagenet --model mobilenet --model_attr mobilenet --opt_d 2500 --opt_m 1000 --opt_k 25 --opt_k_top 3 --opt_sc 0.3`
 - Run `clear && python manager.py --task attack_llava --kind demo --data imagenet --model mobilenet --model_attr mobilenet`
 
