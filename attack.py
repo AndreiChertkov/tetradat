@@ -91,68 +91,6 @@ class Attack:
             'err': self.err}
 
 
-class AttackAttrMulti:
-    def __init__(self, *args):
-        self.args = args
-        self.m_max = int(args[3])
-        self.m = 0
-        self.t = 0.
-
-    def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
-        att = AttackAttr(*self.args)
-        att.prep(net, d, attr_steps, attr_iters, thr)
-        self.x_attr = att.x_attr
-        self.pixels = att.pixels
-        self.d = att.d
-        self.t = att.t
-
-    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, sc_delt=0.2):
-        t = tpc()
-
-        self.P = None
-        self.sc = sc + sc_delt
-        result_best = None
-
-        while self.sc > 0.01:
-            if self.m + k >= self.m_max:
-                break
-
-            if self.sc - sc_delt < 0.01:
-                sc_delt /= 2
-
-            self.sc -= sc_delt
-
-            print(f'\n AttackMulti start (sc = {self.sc:-7.1e})\n')
-
-            att = AttackAttr(*self.args)
-            att.d = self.d
-            att.m_max = self.m_max - self.m
-            att.x_attr = self.x_attr
-            att.pixels = self.pixels
-
-            result = att.run(n, self.sc, k, k_top, k_gd, lr, r, label, P=self.P)
-            self.P = att.P
-            self.m += result['m']
-
-            if result_best is None or result['success']:
-                result_best = copy(result)
-                result_best['sc'] = self.sc
-                self.x_new = copy(att.x_new)
-                self.success = att.success
-
-            text = f'\n\n AttackMulti end (m_total = {self.m:-7.1e})'
-            text += ' | ! success' if result['success'] else ' | - fail'
-            text += '\n\n\n'
-            print(text)
-
-        self.t += tpc() - t
-
-        result_best['m'] = self.m
-        result_best['t'] = self.t
-
-        return result_best
-
-
 class AttackAttr(Attack):
     def attrib(self, net, x, c, steps=10, iters=10):
         x = self.trans_base(x)
@@ -241,7 +179,6 @@ class AttackAttr(Attack):
             if self.success:
                 return
             result.append(self.y - self.y2)
-
         return np.array(result)
 
     def loss_label(self, I):
@@ -343,6 +280,68 @@ class AttackAttr(Attack):
         return self.result()
 
 
+class AttackAttrMulti:
+    def __init__(self, *args):
+        self.args = args
+        self.m_max = int(args[3])
+        self.m = 0
+        self.t = 0.
+
+    def prep(self, net=None, d=None, attr_steps=10, attr_iters=10, thr=1.E-5):
+        att = AttackAttr(*self.args)
+        att.prep(net, d, attr_steps, attr_iters, thr)
+        self.x_attr = att.x_attr
+        self.pixels = att.pixels
+        self.d = att.d
+        self.t = att.t
+
+    def run(self, n, sc, k, k_top, k_gd, lr, r, label=None, sc_delt=0.2):
+        t = tpc()
+
+        self.P = None
+        self.sc = sc + sc_delt
+        result_best = None
+
+        while self.sc > 0.01:
+            if self.m + k >= self.m_max:
+                break
+
+            if self.sc - sc_delt < 0.01:
+                sc_delt /= 2
+
+            self.sc -= sc_delt
+
+            print(f'\n AttackMulti start (sc = {self.sc:-7.1e})\n')
+
+            att = AttackAttr(*self.args)
+            att.d = self.d
+            att.m_max = self.m_max - self.m
+            att.x_attr = self.x_attr
+            att.pixels = self.pixels
+
+            result = att.run(n, self.sc, k, k_top, k_gd, lr, r, label, P=self.P)
+            self.P = att.P
+            self.m += result['m']
+
+            if result_best is None or result['success']:
+                result_best = copy(result)
+                result_best['sc'] = self.sc
+                self.x_new = copy(att.x_new)
+                self.success = att.success
+
+            text = f'\n\n AttackMulti end (m_total = {self.m:-7.1e})'
+            text += ' | ! success' if result['success'] else ' | - fail'
+            text += '\n\n\n'
+            print(text)
+
+        self.t += tpc() - t
+
+        result_best['m'] = self.m
+        result_best['t'] = self.t
+
+        return result_best
+
+
 class AttackBs(Attack):
     def run(self, onepixel=100, pixle=100, square=4/255, seed=42):
         t = tpc()
@@ -400,9 +399,7 @@ class AttackLLava(AttackAttr):
     def predict(self, x):
         img = 'tmp_image.png'
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
-
-        txt = 'What is shown in this picture?'
-        self.out = self.llava.run(img, txt)
+        self.out = self.llava.run(img, self.prompt)
 
         if self.out_base is None:
             self.out_base = self.out
@@ -420,7 +417,7 @@ class AttackLLava(AttackAttr):
         res['score'] = self.score
         return res
 
-    def run(self, n, sc, k, k_top, k_gd, lr, r, llava, sim, data):
+    def run(self, n, sc, k, k_top, k_gd, lr, r, llava, sim, data, prompt):
         t = tpc()
 
         self.n = n
@@ -435,6 +432,7 @@ class AttackLLava(AttackAttr):
         self.llava = llava
         self.sim = sim
         self.data = data
+        self.prompt = prompt
 
         self.out_base = None
 

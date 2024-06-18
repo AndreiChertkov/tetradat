@@ -74,7 +74,8 @@ class Manager:
                  opt_k, opt_k_top, opt_k_gd, opt_lr, opt_r, opt_sc, attr_steps,
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
-                 skip_attr_fails, llava_score_thr=0.25, device=None):
+                 skip_attr_fails, llava_score_thr=0.25, llava_prompt='?',
+                 device=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -104,6 +105,7 @@ class Manager:
         self.skip_attr_fails = skip_attr_fails
 
         self.llava_score_thr = llava_score_thr
+        self.llava_prompt = llava_prompt
 
         self.set_rand()
         self.set_device(device)
@@ -211,7 +213,7 @@ class Manager:
         if self.kind:
             info += f'Kind of task        : "{self.kind}"\n'
 
-        is_att = self.task in ['attack', 'attack_target']
+        is_att = self.task in ['attack', 'attack_target', 'attack_llava']
         is_att = is_att and self.kind in ['base', 'attr']
         is_att_target = is_att and self.task in ['attack_target']
 
@@ -237,9 +239,9 @@ class Manager:
             info += f'Attribution steps   : {self.attr_steps}\n'
         if self.attr_iters and is_att and self.kind in ['attr']:
             info += f'Attribution iters   : {self.attr_iters}\n'
-        if self.attack_num_max and self.task in ['attack', 'attack_target']:
+        if self.attack_num_max and self.task in ['attack', 'attack_target', 'attack_llava']:
             info += f'Max num of attacks  : {self.attack_num_max}\n'
-        if self.skip_attr_fails and self.task in ['attack', 'attack_target']:
+        if self.skip_attr_fails and self.task in ['attack', 'attack_target', 'attack_llava']:
             info += f'Skip fails for attr : {self.skip_attr_fails}\n'
         if self.attack_num_target is not None and self.task == 'attack_target':
             info += f'Target class (delt) : {self.attack_num_target}\n'
@@ -433,7 +435,7 @@ class Manager:
 
         self.log.res(tpc()-tm)
 
-    def task_attack_llava_base(self):
+    def task_attack_llava_attr(self):
         tm = self.log.prc(f'Loading "LLava" model')
         llava = LlavaWrapper()
         self.log.res(tpc()-tm)
@@ -442,34 +444,18 @@ class Manager:
         sim = SimWrapper()
         self.log.res(tpc()-tm)
 
-        for i in range(1000):
-            tm = self.log.prc(f'Run demo attack')
-            self._attack_llava(i, llava, sim)
+        result = {}
+        for i in range(len(self.data.data_tst)):
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+            tm = self.log.prc(f'Run demo attack for image # {i:-4d}')
+            res = self._attack_llava(i, llava, sim)
+            if res is not None:
+                result[i] = res
             self.log.res(tpc()-tm)
 
-    def task_attack_llava_demo(self):
-        tm = self.log.prc(f'Run demo')
-
-        i = 24
-
-        x, c, l = self.data.get(i, tst=True)
-        print(i, c, l)
-
-        y, c_pred, l_pred = self.model.run_pred(x)
-        print(y, c_pred, l_pred)        
-
-        img = 'tmp_image.png'
-        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
-            fpath=img)
-
-        x_attack = x.clone()
-        x_attack += torch.randn(x.size()) * 0.8
-        
-        img_attack = 'tmp_image_attack.png'
-        self.data.plot_base(self.data.tr_norm_inv(x_attack), '', size=6,
-            fpath=img_attack)
-
-        self.log.res(tpc()-tm)
+        fpath = self.get_path('result.npz')
+        np.savez_compressed(self.get_path('result.npz'), result=result)
 
     def _attack_llava(self, i, llava, sim):
         x, c, l = self.data.get(i, tst=True)
@@ -488,7 +474,7 @@ class Manager:
 
         result = att.run(self.opt_n, self.opt_sc, self.opt_k,
             self.opt_k_top, self.opt_k_gd, self.opt_lr, self.opt_r,
-            llava, sim, self.data)
+            llava, sim, self.data, self.llava_prompt)
 
         text = ''
         text += f'\nOUT old : ' + result['out_base']
@@ -502,6 +488,8 @@ class Manager:
             fpath=self.get_path(f'img/{c}/base.png'))
         self.data.plot_attr(att.x_attr,
             fpath=self.get_path(f'img/{c}/attr.png'))
+
+        return result
 
     def _attack(self, i, name=None, target=False, with_attr=False, show=False):
         x, c, l = self.data.get(i, tst=True)
@@ -541,8 +529,10 @@ class Manager:
             self.data.norm_m, self.data.norm_v, target)
 
         if name:
+            # Attack with baseline:
             result = att.run()
         else:
+            # Attack with our method:
             print('')
 
             net = self.model_attr.net if with_attr else None
@@ -755,8 +745,13 @@ def args_build():
     )
     parser.add_argument('--llava_score_thr',
         type=int,
-        help='The value of output text similarity at which the attack is considered successful',
+        help='The value of output text similarity at which the attack is considered successful [it is not used now!!!]',
         default=0.25,
+    )
+    parser.add_argument('--llava_prompt',
+        type=str,
+        help='The prompt for LLaVa model',
+        default='Please describe what is shown in this image',
     )
 
     args = parser.parse_args()
@@ -765,7 +760,7 @@ def args_build():
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
-        args.skip_attr_fails, args.llava_score_thr)
+        args.skip_attr_fails, args.llava_score_thr, args.llava_prompt)
 
 
 if __name__ == '__main__':
