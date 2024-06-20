@@ -445,9 +445,15 @@ class Manager:
         self.log.res(tpc()-tm)
 
         result = {}
-        for i in range(len(self.data.data_tst)):
+        for idx in range(len(self.data.data_tst)):
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
+            if self.attack_num_max:
+                # We select random images:
+                i = torch.randint(len(self.data.data_tst), size=(1,)).item()
+            else:
+                # We select images sequentially:
+                i = idx
             tm = self.log.prc(f'Run attack on LLaVa for image # {i:-4d}')
             res = self._attack_llava(i, llava, sim)
             if res is not None:
@@ -753,7 +759,7 @@ def args_build():
     parser.add_argument('--llava_prompt',
         type=str,
         help='The prompt for LLaVa model',
-        default='Please describe what is shown in this image',
+        default='Please briefly describe the main object shown in this imagePlease briefly describe the main object depicted in this image, including its name and main properties',
     )
 
     args = parser.parse_args()
