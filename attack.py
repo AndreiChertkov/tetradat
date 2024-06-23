@@ -387,6 +387,15 @@ class AttackBs(Attack):
 
 
 class AttackLLava(AttackAttr):
+    def loss(self, I):
+        result = []
+        for i in I:
+            self.m += 1
+            x_changed = self.change(i)
+            result.append(self.predict(x_changed))
+
+        return np.array(result)
+
     def predict(self, x):
         img = 'tmp_image.png'
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)

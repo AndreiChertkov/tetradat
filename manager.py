@@ -761,7 +761,7 @@ def args_build():
     parser.add_argument('--llava_prompt',
         type=str,
         help='The prompt for LLaVa model',
-        default='Please name the main object depicted in this image and give three main features of this object.',
+        default='Please briefly answer what the main object is in this image and what it looks like.',
     )
 
     args = parser.parse_args()
