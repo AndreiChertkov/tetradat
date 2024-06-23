@@ -478,9 +478,11 @@ class Manager:
             self.data.norm_m, self.data.norm_v)
         att.prep(self.model.net, self.opt_d, self.attr_steps, self.attr_iters)
 
+        self.log()
         result = att.run(self.opt_n, self.opt_sc, self.opt_k,
             self.opt_k_top, self.opt_k_gd, self.opt_lr, self.opt_r,
-            llava, sim, self.data, self.llava_prompt)
+            llava, sim, self.data, self.llava_prompt, self.log)
+        self.log()
 
         text = ''
         text += f'\nImage   # {i:-5d}'

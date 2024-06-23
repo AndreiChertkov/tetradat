@@ -86,7 +86,7 @@ The calls with the following `ARGS` may be performed:
 
 - Run `clear && python sim_wrapper.py` for demo of text ximilarity calculation
 - Run `clear && python llava_wrapper.py` for demo of LLaVa usage
-- Run `clear && python manager.py --task attack_llava --kind attr --data imagenet --model resnet --model_attr resnet --opt_d 1000 --opt_sc 0.2`
+- Run `clear && python manager.py --task attack_llava --kind attr --data imagenet --model resnet --model_attr resnet --opt_d 1000 --opt_sc 0.4 --opt_k 25 --opt_k_top 5 --opt_k_gd 1000 --opt_lr 1.E-3`
 
 
 ## Authors

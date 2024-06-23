@@ -435,7 +435,7 @@ class AttackLLava(AttackAttr):
         res['score'] = self.score
         return res
 
-    def run(self, n, sc, k, k_top, k_gd, lr, r, llava, sim, data, prompt):
+    def run(self, n, sc, k, k_top, k_gd, lr, r, llava, sim, data, prompt, log):
         t = tpc()
 
         self.n = n
@@ -455,7 +455,7 @@ class AttackLLava(AttackAttr):
         self.out_base = None
 
         i_opt, _ = protes(self.loss, self.d, self.n, self.m_max, k, k_top, k_gd,
-            lr, r, is_max=False, with_info_p=True, log=True)
+            lr, r, is_max=False, with_info_p=True, log=log)
 
         self.x_new = self.change(i_opt)
         self.predict(self.x_new)
