@@ -387,33 +387,6 @@ class AttackBs(Attack):
 
 
 class AttackLLava(AttackAttr):
-    def change(self, i):
-        h, s, v = torch.clone(self.x_base_hsv)
-
-        dn = (self.n-1) / 2
-        delta = (np.array(i) - (self.n-1)/2) * self.sc / dn
-        delta = torch.tensor(delta).to(self.device)
-
-        ind = delta < 0
-        pix = self.pixels[ind]
-        h[pix[:, 0], pix[:, 1]] += delta[ind] * h[pix[:, 0], pix[:, 1]]
-
-        ind = delta > 0
-        pix = self.pixels[ind]
-        h[pix[:, 0], pix[:, 1]] += delta[ind] * (1. - h[pix[:, 0], pix[:, 1]])
-
-        x_base = color_hsv_to_rgb(torch.stack((h, s, v)))
-        return self.trans(x_base)
-
-    def loss(self, I):
-        result = []
-        for i in I:
-            self.m += 1
-            x_changed = self.change(i)
-            result.append(self.predict(x_changed))
-
-        return np.array(result)
-
     def predict(self, x):
         img = 'tmp_image.png'
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
