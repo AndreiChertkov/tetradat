@@ -1,6 +1,6 @@
 # Note that we use only one (0-th) GPU:
-import os
-os.environ['CUDA_VISIBLE_DEVICES'] = str(0)
+# import os
+# os.environ['CUDA_VISIBLE_DEVICES'] = str(0)
 
 
 from PIL import Image

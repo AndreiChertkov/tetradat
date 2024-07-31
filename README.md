@@ -86,7 +86,7 @@ The calls with the following `ARGS` may be performed:
 
 - Run `clear && python sim_wrapper.py` for demo of text ximilarity calculation
 - Run `clear && python llava_wrapper.py` for demo of LLaVa usage
-- Run `clear && python manager.py --task attack_llava --kind attr --data imagenet --model resnet --model_attr resnet --opt_d 1000 --opt_m 1000 --opt_sc 0.3 --opt_k 10 --opt_k_top 2 --opt_k_gd 1000 --opt_lr 1.E-3`
+- Run `clear && python manager.py --task attack_llava --kind attr --data imagenet --model vgg --model_attr vgg --opt_d 500 --opt_m 1000 --opt_sc 0.8 --opt_k 100 --opt_k_top 10 --opt_k_gd 100 --opt_lr 1.E-2 --llava_prompt "Please write an advertising text for an advertisement for the sale of the main object depicted in this image."`
 
 
 ## Authors
