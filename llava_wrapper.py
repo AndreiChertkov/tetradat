@@ -20,6 +20,7 @@ import re
 import requests
 from time import perf_counter as tpc
 import torch
+import torchvision
 
 
 class LlavaWrapper:
@@ -84,6 +85,8 @@ class LlavaWrapper:
             image_files = image_parser(self.args)
             images = load_images(image_files)
         else:
+            img = torchvision.transforms.functional.to_pil_image(img,
+                mode='RGB')
             images = [img]
         image_sizes = [x.size for x in images]
         images_tensor = process_images(
