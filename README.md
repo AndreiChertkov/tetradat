@@ -73,7 +73,7 @@ The calls with the following `ARGS` may be performed:
 
 - To run attacks with the baselines:
     - `python manager.py --task attack --kind bs_onepixel --data imagenet --model googlenet --model_attr vgg`
-        > You may use any of the models from above here; and `bs_onepixel` or `bs_pixle`. We set `model_attr` argument above to skip the images for which the `vgg` model fails.
+        > You may use any of the models from above here; and `bs_square` or `bs_pixle`. We set `model_attr` argument above to skip the images for which the `vgg` model fails.
 
 - To run the demo attack with the proposed TETRADAT method:
     - `python manager.py --task check --kind demo --data imagenet`
