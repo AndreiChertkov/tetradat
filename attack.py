@@ -390,7 +390,7 @@ class AttackBs(Attack):
 
 
 class AttackLLava(AttackAttr):
-    def loss(self, I):
+    def loss_old(self, I):
         result = []
         for i in I:
             self.m += 1
@@ -399,7 +399,7 @@ class AttackLLava(AttackAttr):
 
         return np.array(result)
 
-    def predict(self, x):
+    def predict_old(self, x):
         #img = 'tmp_image.png'
         #self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
 
@@ -413,6 +413,22 @@ class AttackLLava(AttackAttr):
         self.score = self.sim.run(self.out_base, self.out)
 
         print(f'{self.score:-8.2e} : {self.out}')
+        
+        return self.score
+
+    def loss(self, I):
+        return self.predict([self.change(i) for i in I])
+
+    def predict(self, x):
+        img_real = [self.data.tr_norm_inv(img) for img in x]
+        self.out = self.llava.run_many(img_real, self.prompt)
+
+        if self.out_base is None:
+            self.out_base = self.out[0]
+
+        self.score = self.sim.run(self.out_base, self.out)
+
+        print(f'{self.score[0]:-8.2e} : {self.out[0]}')
         
         return self.score
 
@@ -446,7 +462,7 @@ class AttackLLava(AttackAttr):
             lr, r, is_max=False, with_info_p=True, log=log)
 
         self.x_new = self.change(i_opt)
-        self.predict(self.x_new)
+        self.predict_old(self.x_new)
 
         self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
         self.changes = torch.sum(self.changes > 1.E-6).item()
