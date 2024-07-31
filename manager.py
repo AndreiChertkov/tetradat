@@ -75,7 +75,7 @@ class Manager:
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
                  skip_attr_fails, llava_score_thr=0.25, llava_prompt='?',
-                 device=None):
+                 gpu=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -108,7 +108,7 @@ class Manager:
         self.llava_prompt = llava_prompt
 
         self.set_rand()
-        self.set_device(device)
+        self.set_device(gpu)
         self.set_path(root, postfix)
         self.set_log()
 
@@ -191,14 +191,14 @@ class Manager:
         eval(f'self.task_{self.task}_{self.kind}()')
         self.end()
 
-    def set_device(self, device=None):
-        if device is None:
-            if torch.cuda.is_available():
-                self.device = torch.device('cuda')
+    def set_device(self, gpu=None):
+        if torch.cuda.is_available():
+            if gpu is not None:
+                self.device = torch.device(f'cuda:{gpu}')
             else:
-                self.device = torch.device('cpu')
+                self.device = torch.device('cuda')
         else:
-            self.device = device
+            self.device = torch.device('cpu')
 
     def set_log(self):
         info = ''
@@ -763,6 +763,10 @@ def args_build():
         help='The prompt for LLaVa model',
         default='Please briefly answer what the main object is in this image and what it looks like.',
     )
+    parser.add_argument('--gpu',
+        type=int,
+        help='Optional number of the GPU for computation',
+        default=None)
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
@@ -770,7 +774,8 @@ def args_build():
         args.opt_k_gd, args.opt_lr, args.opt_r, args.opt_sc, args.attr_steps,
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
-        args.skip_attr_fails, args.llava_score_thr, args.llava_prompt)
+        args.skip_attr_fails, args.llava_score_thr, args.llava_prompt,
+        args.gpu)
 
 
 if __name__ == '__main__':
