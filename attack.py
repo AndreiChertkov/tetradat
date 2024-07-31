@@ -403,9 +403,8 @@ class AttackLLava(AttackAttr):
         #img = 'tmp_image.png'
         #self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
 
-        img = None
-        img_real = self.data.tr_norm_inv(x)
-        self.out = self.llava.run(img, self.prompt, img=img_real)
+        img = self.data.tr_norm_inv(x)
+        self.out = self.llava.run(None, self.prompt, img=img)
 
         if self.out_base is None:
             self.out_base = self.out
@@ -441,6 +440,8 @@ class AttackLLava(AttackAttr):
         self.prompt = prompt
 
         self.out_base = None
+
+        self.predict(self.x)
 
         i_opt, _ = protes(self.loss, self.d, self.n, self.m_max, k, k_top, k_gd,
             lr, r, is_max=False, with_info_p=True, log=log)
