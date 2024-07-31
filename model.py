@@ -2,6 +2,7 @@ from contextlib import nullcontext
 import numpy as np
 import os
 import sys
+import timm
 import torch
 from torchvision import models
 import warnings
@@ -11,8 +12,8 @@ import warnings
 warnings.filterwarnings('ignore', category=UserWarning)
 
 
-MODEL_NAMES_IMAGENET = ['alexnet', 'googlenet', 'inception', 'mobilenet',
-    'resnet', 'vgg', 'vit']
+MODEL_NAMES_IMAGENET = ['adv_inception', 'adv_inception_resnet',
+    'alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet', 'vgg', 'vit']
 MODEL_NAMES = MODEL_NAMES_IMAGENET
 
 
@@ -114,7 +115,15 @@ class Model:
             msg = f'Model "{self.name}" is ready only for "imagenet"'
             raise NotImplementedError(msg)
 
-        if self.name == 'alexnet':
+        if self.name == 'adv_inception':
+            # See https://huggingface.co/docs/timm/en/models/adversarial-inception-v3
+            self.net = timm.create_model('adv_inception_v3',
+                pretrained=True)
+        elif self.name == 'adv_inception_resnet':
+            # See https://huggingface.co/docs/timm/en/models/ensemble-adversarial
+            self.net = timm.create_model('ens_adv_inception_resnet_v2',
+                pretrained=True)
+        elif self.name == 'alexnet':
             # See https://pytorch.org/vision/stable/models/generated/torchvision.models.alexnet.html#torchvision.models.alexnet
             self.net = models.alexnet(weights='IMAGENET1K_V1')
         elif self.name == 'googlenet':

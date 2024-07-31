@@ -45,7 +45,7 @@ class LlavaWrapper:
         out = load_pretrained_model(model_path, None, self.model_name)
         self.tokenizer, self.model, self.image_processor, context_len = out
 
-    def run(self, image_file, prompt):
+    def run(self, image_file, prompt, img=None):
         self.args.image_file = image_file
         self.args.query = prompt
 
@@ -80,8 +80,11 @@ class LlavaWrapper:
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
 
-        image_files = image_parser(self.args)
-        images = load_images(image_files)
+        if img is None:
+            image_files = image_parser(self.args)
+            images = load_images(image_files)
+        else:
+            images = [img]
         image_sizes = [x.size for x in images]
         images_tensor = process_images(
             images,

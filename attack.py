@@ -400,9 +400,12 @@ class AttackLLava(AttackAttr):
         return np.array(result)
 
     def predict(self, x):
-        img = 'tmp_image.png'
-        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
-        self.out = self.llava.run(img, self.prompt)
+        #img = 'tmp_image.png'
+        #self.data.plot_base(self.data.tr_norm_inv(x), '', size=6, fpath=img)
+
+        img = None
+        img_real = self.data.tr_norm_inv(x)
+        self.out = self.llava.run(img, self.prompt, img=img_real)
 
         if self.out_base is None:
             self.out_base = self.out
