@@ -1,4 +1,7 @@
 import jax
+import logging
+logger = logging.getLogger('jax._src.xla_bridge')
+logger.setLevel(logging.ERROR)
 jax.config.update('jax_enable_x64', True)
 jax.config.update('jax_platform_name', 'cpu')
 jax.default_device(jax.devices('cpu')[0])
