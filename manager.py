@@ -70,7 +70,7 @@ class Manager:
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
                  skip_attr_fails, llava_score_thr=0.25, llava_prompt='?',
-                 gpu=None):
+                 gpu=None, img_portion=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -101,6 +101,8 @@ class Manager:
 
         self.llava_score_thr = llava_score_thr
         self.llava_prompt = llava_prompt
+
+        self.img_portion = img_portion
 
         self.set_rand()
         self.set_device(gpu)
@@ -598,6 +600,11 @@ class Manager:
         for i in range(len(self.data.data_tst)):
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
                 break
+            if self.img_portion:
+                if (self.img_portion-1) * 100 >= i+1:
+                    continue
+                if self.img_portion * 100 < i+1:
+                    continue
             show = self.show_result_all or i in RESULT_SHOW
             res = self._attack(i, name, target, with_attr, show)
             if res is not None:
@@ -739,7 +746,7 @@ def args_build():
         help='Do we show all results or only some of them',
         nargs="?",
         const=True,
-        default=True
+        default=False
     )
     parser.add_argument('--skip_attr_fails',
         type=lambda x: bool(strtobool(x)),
@@ -762,6 +769,10 @@ def args_build():
         type=int,
         help='Optional number of the GPU for computation',
         default=None)
+    parser.add_argument('--img_portion',
+        type=int,
+        help='Specil param to select the portion of attacked data (1-10)',
+        default=None)
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
@@ -770,7 +781,7 @@ def args_build():
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
         args.skip_attr_fails, args.llava_score_thr, args.llava_prompt,
-        args.gpu)
+        args.gpu, args.img_portion)
 
 
 if __name__ == '__main__':
