@@ -18,7 +18,7 @@ class StyleWrapper:
             self.pipe.scheduler.config)
 
     def run(self, image, prompt):
-        result = pipe(prompt, image=image,
+        result = self.pipe(prompt, image=image,
             num_inference_steps=10, image_guidance_scale=1)
         img = result.images[0]
         img = torchvision.transforms.functional.pil_to_tensor(img)
