@@ -481,6 +481,7 @@ class Manager:
             fpath=self.get_path(f'img/{c}/base.png'))
 
         x = self.data.tr_norm_inv(x)
+        print(torch.min(x), torch.max(x))
         x = style.run(x, self.style_prompt)
 
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,

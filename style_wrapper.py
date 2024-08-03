@@ -21,5 +21,5 @@ class StyleWrapper:
         result = self.pipe(prompt, image=image,
             num_inference_steps=10, image_guidance_scale=1)
         img = result.images[0]
-        img = torchvision.transforms.functional.pil_to_tensor(img)
+        img = torchvision.transforms.ToTensor()(img)
         return img
