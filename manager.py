@@ -330,6 +330,7 @@ class Manager:
                     continue
                 if self.img_portion * 100 < idx+1:
                     continue
+                i = idx
             else:
                 # We select images sequentially:
                 i = idx
