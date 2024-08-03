@@ -18,6 +18,7 @@ from llava_wrapper import LlavaWrapper
 from model import MODEL_NAMES
 from model import Model
 from sim_wrapper import SimWrapper
+from style_wrapper import StyleWrapper
 
 
 RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
@@ -70,7 +71,7 @@ class Manager:
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
                  skip_attr_fails, llava_score_thr=0.25, llava_prompt='?',
-                 gpu=None, img_portion=None):
+                 gpu=None, img_portion=None, style_prompt='?'):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -101,6 +102,7 @@ class Manager:
 
         self.llava_score_thr = llava_score_thr
         self.llava_prompt = llava_prompt
+        self.style_prompt = style_prompt
 
         self.img_portion = img_portion
 
@@ -441,6 +443,10 @@ class Manager:
         sim = SimWrapper()
         self.log.res(tpc()-tm)
 
+        tm = self.log.prc(f'Loading text styling network')
+        style = StyleWrapper(device=self.device)
+        self.log.res(tpc()-tm)
+
         result = {}
         for idx in range(len(self.data.data_tst)):
             if self.attack_num_max and len(result.keys())>=self.attack_num_max:
@@ -452,7 +458,7 @@ class Manager:
                 # We select images sequentially:
                 i = idx
             tm = self.log.prc(f'Run attack on LLaVa for image # {i:-4d}')
-            res = self._attack_llava(i, llava, sim)
+            res = self._attack_llava(i, llava, sim, style)
             if res is not None:
                 result[i] = res
             self.log.res(tpc()-tm)
@@ -460,7 +466,7 @@ class Manager:
         fpath = self.get_path('result.npz')
         np.savez_compressed(self.get_path('result.npz'), result=result)
 
-    def _attack_llava(self, i, llava, sim):
+    def _attack_llava(self, i, llava, sim, style):
         x, c, l = self.data.get(i, tst=True)
 
         y_all = self.model.run(x).detach().to('cpu').numpy()
@@ -470,6 +476,15 @@ class Manager:
             # Invalid prediction for target image; skip
             print(f'WRN : base model is failed for "{c}" (SKIP)')
             return
+
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=self.get_path(f'img/{c}/base.png'))
+
+        x = self.data.tr_norm_inv(x)
+        x = style.run(image, self.style_prompt)
+
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=self.get_path(f'img/{c}/base_style.png'))
 
         att = AttackLLava(self.model.net, x, c, self.opt_m, 'tetradat',
             self.data.norm_m, self.data.norm_v)
@@ -491,8 +506,6 @@ class Manager:
 
         self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
             fpath=self.get_path(f'img/{c}/changed.png'))
-        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
-            fpath=self.get_path(f'img/{c}/base.png'))
         self.data.plot_attr(att.x_attr,
             fpath=self.get_path(f'img/{c}/attr.png'))
 
@@ -768,11 +781,18 @@ def args_build():
     parser.add_argument('--gpu',
         type=int,
         help='Optional number of the GPU for computation',
-        default=None)
+        default=None
+    )
     parser.add_argument('--img_portion',
         type=int,
         help='Specil param to select the portion of attacked data (1-10)',
-        default=None)
+        default=None
+    )
+    parser.add_argument('--style_prompt',
+        type=str,
+        help='The prompt for style network',
+        default='change the background color to blue',
+    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
@@ -781,7 +801,7 @@ def args_build():
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
         args.skip_attr_fails, args.llava_score_thr, args.llava_prompt,
-        args.gpu, args.img_portion)
+        args.gpu, args.img_portion, args.style_prompt)
 
 
 if __name__ == '__main__':

@@ -39,7 +39,7 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
 
 7. Install other dependencies:
     ```bash
-    pip install numpy matplotlib requests urllib3 protes==0.3.7 torchattacks==3.4.0 sentence-transformers
+    pip install numpy matplotlib requests urllib3 protes==0.3.7 torchattacks==3.4.0 sentence-transformers diffusers
     ```
 
 8. Delete virtual environment at the end of the work (optional):
