@@ -305,6 +305,43 @@ class Manager:
     def task_attack_target_bs_square(self):
         self._attacks('square', target=True)
 
+    def task_attack_llava_attr(self):
+        tm = self.log.prc(f'Loading "LLava" model')
+        llava = LlavaWrapper()
+        self.log.res(tpc()-tm)
+
+        tm = self.log.prc(f'Loading text similarity calculator')
+        sim = SimWrapper()
+        self.log.res(tpc()-tm)
+
+        tm = self.log.prc(f'Loading text styling network')
+        style = StyleWrapper(device=self.device)
+        self.log.res(tpc()-tm)
+
+        result = {}
+        for idx in range(len(self.data.data_tst)):
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+            elif self.attack_num_max:
+                # We select random images:
+                i = torch.randint(len(self.data.data_tst), size=(1,)).item()
+            elif self.img_portion:
+                if (self.img_portion-1) * 100 >= i+1:
+                    continue
+                if self.img_portion * 100 < i+1:
+                    continue
+            else:
+                # We select images sequentially:
+                i = idx
+            tm = self.log.prc(f'Run attack on LLaVa for image # {i:-4d}')
+            res = self._attack_llava(i, llava, sim, style)
+            if res is not None:
+                result[i] = res
+            self.log.res(tpc()-tm)
+
+        fpath = self.get_path('result.npz')
+        np.savez_compressed(self.get_path('result.npz'), result=result)
+
     def task_check_data(self):
         name = self.data.name
         tm = self.log.prc(f'Check data for "{name}" dataset')
@@ -433,38 +470,6 @@ class Manager:
             fpath=self.get_path(f'img/{self.model.name}.png'))
 
         self.log.res(tpc()-tm)
-
-    def task_attack_llava_attr(self):
-        tm = self.log.prc(f'Loading "LLava" model')
-        llava = LlavaWrapper()
-        self.log.res(tpc()-tm)
-
-        tm = self.log.prc(f'Loading text similarity calculator')
-        sim = SimWrapper()
-        self.log.res(tpc()-tm)
-
-        tm = self.log.prc(f'Loading text styling network')
-        style = StyleWrapper(device=self.device)
-        self.log.res(tpc()-tm)
-
-        result = {}
-        for idx in range(len(self.data.data_tst)):
-            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
-                break
-            if self.attack_num_max:
-                # We select random images:
-                i = torch.randint(len(self.data.data_tst), size=(1,)).item()
-            else:
-                # We select images sequentially:
-                i = idx
-            tm = self.log.prc(f'Run attack on LLaVa for image # {i:-4d}')
-            res = self._attack_llava(i, llava, sim, style)
-            if res is not None:
-                result[i] = res
-            self.log.res(tpc()-tm)
-
-        fpath = self.get_path('result.npz')
-        np.savez_compressed(self.get_path('result.npz'), result=result)
 
     def _attack_llava(self, i, llava, sim, style):
         x, c, l = self.data.get(i, tst=True)
