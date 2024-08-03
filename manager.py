@@ -326,9 +326,9 @@ class Manager:
                 # We select random images:
                 i = torch.randint(len(self.data.data_tst), size=(1,)).item()
             elif self.img_portion:
-                if (self.img_portion-1) * 100 >= i+1:
+                if (self.img_portion-1) * 100 >= idx+1:
                     continue
-                if self.img_portion * 100 < i+1:
+                if self.img_portion * 100 < idx+1:
                     continue
             else:
                 # We select images sequentially:
