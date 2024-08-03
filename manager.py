@@ -480,13 +480,9 @@ class Manager:
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base.png'))
 
-        print(torch.min(x), torch.mean(x), torch.max(x))
         x = self.data.tr_norm_inv(x)
-        print(torch.min(x), torch.mean(x), torch.max(x))
         x = style.run(x, self.style_prompt)
-        print(torch.min(x), torch.mean(x), torch.max(x))
         x = self.data.tr_norm(x)
-        print(torch.min(x), torch.mean(x), torch.max(x))
 
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base_style.png'))
@@ -781,7 +777,7 @@ def args_build():
     parser.add_argument('--llava_prompt',
         type=str,
         help='The prompt for LLaVa model',
-        default='Please briefly answer what the main object is in this image and what it looks like.',
+        default='Briefly answer what the main object is in this image and what it looks like',
     )
     parser.add_argument('--gpu',
         type=int,
@@ -790,13 +786,13 @@ def args_build():
     )
     parser.add_argument('--img_portion',
         type=int,
-        help='Specil param to select the portion of attacked data (1-10)',
+        help='Special param to select the portion of attacked data (1-10)',
         default=None
     )
     parser.add_argument('--style_prompt',
         type=str,
         help='The prompt for style network',
-        default='change the background color to blue',
+        default='lighten the background of the image slightly',
     )
 
     args = parser.parse_args()
