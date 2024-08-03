@@ -480,9 +480,9 @@ class Manager:
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base.png'))
 
-        x = self.data.tr_norm_inv(x)
+        # x = self.data.tr_norm_inv(x)
         x = style.run(x, self.style_prompt)
-        x = self.data.tr_norm(x)
+        # x = self.data.tr_norm(x)
 
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base_style.png'))
