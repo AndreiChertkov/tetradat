@@ -795,7 +795,7 @@ def args_build():
     parser.add_argument('--llava_prompt',
         type=str,
         help='The prompt for LLaVa model',
-        default='Briefly answer what the main object is in this image and what it looks like',
+        default='briefly describe the purpose of the main object shown in the picture',
     )
     parser.add_argument('--gpu',
         type=int,
@@ -810,7 +810,7 @@ def args_build():
     parser.add_argument('--style_prompt',
         type=str,
         help='The prompt for style network',
-        default='reduce the size of the main object in the image',
+        default='make the background of the image lighter and the main object darker',
     )
     parser.add_argument('--seed',
         type=int,
