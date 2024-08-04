@@ -810,7 +810,7 @@ def args_build():
     parser.add_argument('--style_prompt',
         type=str,
         help='The prompt for style network',
-        default='change the background of the image',
+        default='change the color of the main object',
     )
     parser.add_argument('--seed',
         type=int,
