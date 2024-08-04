@@ -490,9 +490,13 @@ class Manager:
         y_all_new = self.model.run(x).detach().to('cpu').numpy()
         y_new  = y_all_new[c]
 
-        if np.argmax(y_all_new ) != c:
+        if np.argmax(y_all_new) != c:
             # Invalid prediction for target image; skip
             print(f'WRN : base model is failed for styled "{c}" (SKIP)')
+            print(l)
+            print(self.data.labels[np.argmax(y_all_new)])
+            print()
+
             return
 
         self.data.plot_base(self.data.tr_norm_inv(x_base), '', size=6,
