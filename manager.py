@@ -71,7 +71,7 @@ class Manager:
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
                  skip_attr_fails, llava_score_thr=0.25, llava_prompt='?',
-                 gpu=None, img_portion=None, style_prompt='?'):
+                 gpu=None, img_portion=None, style_prompt='?', seed=42):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -106,7 +106,7 @@ class Manager:
 
         self.img_portion = img_portion
 
-        self.set_rand()
+        self.set_rand(seed)
         self.set_device(gpu)
         self.set_path(root, postfix)
         self.set_log()
@@ -761,31 +761,31 @@ def args_build():
     parser.add_argument('--attack_label_top',
         type=int,
         help='Number of labels for label-based attack',
-        default=None
+        default=None,
     )
     parser.add_argument('--root',
         type=str,
         help='Path to the folder with results',
-        default='result'
+        default='result',
     )
     parser.add_argument('--postfix',
         type=str,
         help='Postfix for the folder with results',
-        default=''
+        default='',
     )
     parser.add_argument('--show_result_all',
         type=lambda x: bool(strtobool(x)),
         help='Do we show all results or only some of them',
         nargs="?",
         const=True,
-        default=False
+        default=False,
     )
     parser.add_argument('--skip_attr_fails',
         type=lambda x: bool(strtobool(x)),
         help='Do we skip images, for which attr model fails to predict',
         nargs="?",
         const=True,
-        default=True
+        default=True,
     )
     parser.add_argument('--llava_score_thr',
         type=int,
@@ -800,17 +800,22 @@ def args_build():
     parser.add_argument('--gpu',
         type=int,
         help='Optional number of the GPU for computation',
-        default=None
+        default=None,
     )
     parser.add_argument('--img_portion',
         type=int,
         help='Special param to select the portion of attacked data (1-10)',
-        default=None
+        default=None,
     )
     parser.add_argument('--style_prompt',
         type=str,
         help='The prompt for style network',
         default='lighten the background of the image slightly',
+    )
+    parser.add_argument('--seed',
+        type=int,
+        help='The random seed value',
+        default=42,
     )
 
     args = parser.parse_args()
@@ -820,7 +825,7 @@ def args_build():
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
         args.skip_attr_fails, args.llava_score_thr, args.llava_prompt,
-        args.gpu, args.img_portion, args.style_prompt)
+        args.gpu, args.img_portion, args.style_prompt, args.seed)
 
 
 if __name__ == '__main__':
