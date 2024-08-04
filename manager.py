@@ -505,8 +505,6 @@ class Manager:
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base_style.png'))
 
-        return
-
         att = AttackLLava(self.model.net, x, c, self.opt_m, 'tetradat',
             self.data.norm_m, self.data.norm_v)
         att.prep(self.model.net, self.opt_d, self.attr_steps, self.attr_iters)
