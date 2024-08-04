@@ -35,10 +35,10 @@ class LlavaWrapper:
             'conv_mode': None,
             'image_file': '',
             'sep': ',',
-            'temperature': 0.01, # 0,
+            'temperature': 0.3,
             'top_p': None,
             'num_beams': 1,
-            'max_new_tokens': 64 # 512
+            'max_new_tokens': 50
         })()
 
         disable_torch_init()
