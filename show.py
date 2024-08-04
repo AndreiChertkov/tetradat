@@ -5,7 +5,8 @@ import os
 
 ROOT = 'result'
 DATASET = 'imagenet'
-MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet']
+MODELS = ['adv_inception']
+# ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet']
 MODEL_ATTR = 'vgg'
 BASELINES = ['onepixel', 'pixle', 'square']
 PLOT_NAMES = ['Onepixel', 'Pixle', 'Square', 'TETRADAT']
@@ -41,10 +42,21 @@ def get_image_path(num, model, bs=None):
 
 
 def load_data(model, bs=None):
-    fpath = f'{ROOT}/{DATASET}-{model}/attack-'
-    fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
-    fpath += f'/result.npz'
-    return np.load(fpath, allow_pickle=True).get('result').item()
+    try:
+        fpath = f'{ROOT}/{DATASET}-{model}/attack-'
+        fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
+        fpath += f'/result.npz'
+        return np.load(fpath, allow_pickle=True).get('result').item()
+    except Exception as e:
+        # Load by portions (only for TETRADAT method)
+        result = {}
+        for i in range(1, 11):
+            fpath = f'{ROOT}/{DATASET}-{model}/attack-'
+            fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
+            fpath += f'/result{i}.npz'
+            res = np.load(fpath, allow_pickle=True).get('result').item()
+            result.update(res)
+        return result
 
 
 def plot(num_total=5, dpi=150, bs_ref='onepixel'):
@@ -156,4 +168,4 @@ def show_method(model, bs=None, title=False):
 if __name__ == '__main__':
     np.random.seed(SEED)
     show()
-    plot()
+    # plot()

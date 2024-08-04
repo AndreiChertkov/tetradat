@@ -473,9 +473,9 @@ class Manager:
         self.log.res(tpc()-tm)
 
     def _attack_llava(self, i, llava, sim, style):
-        x, c, l = self.data.get(i, tst=True)
+        x_base, c, l = self.data.get(i, tst=True)
 
-        y_all = self.model.run(x).detach().to('cpu').numpy()
+        y_all = self.model.run(x_base).detach().to('cpu').numpy()
         y = y_all[c]
 
         if np.argmax(y_all) != c:
@@ -483,15 +483,25 @@ class Manager:
             print(f'WRN : base model is failed for "{c}" (SKIP)')
             return
 
-        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
-            fpath=self.get_path(f'img/{c}/base.png'))
-
-        x = self.data.tr_norm_inv(x)
+        x = self.data.tr_norm_inv(x_base)
         x = style.run(x, self.style_prompt)
         x = self.data.tr_norm(x)
 
+        y_all_new = self.model.run(x).detach().to('cpu').numpy()
+        y_new  = y_all_new[c]
+
+        if np.argmax(y_all_new ) != c:
+            # Invalid prediction for target image; skip
+            print(f'WRN : base model is failed for styled "{c}" (SKIP)')
+            return
+
+        self.data.plot_base(self.data.tr_norm_inv(x_base), '', size=6,
+            fpath=self.get_path(f'img/{c}/base.png'))
+
         self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
             fpath=self.get_path(f'img/{c}/base_style.png'))
+
+        return
 
         att = AttackLLava(self.model.net, x, c, self.opt_m, 'tetradat',
             self.data.norm_m, self.data.norm_v)
