@@ -26,6 +26,9 @@ RESULT_SHOW = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
     100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 254, 300, 500, 583, 999]
 
 
+LLAVA_NUMS = [9, 43, 263, 318, 475, 510, 507, 517, 570, 629, 651, 727, 732, 975]
+
+
 class Log:
     def __init__(self, fpath=None):
         self.fpath = fpath
@@ -71,7 +74,8 @@ class Manager:
                  attr_iters, attack_num_target, attack_num_max,
                  attack_label_top, root, postfix, show_result_all,
                  skip_attr_fails, llava_score_thr=0.25, llava_prompt='?',
-                 gpu=None, img_portion=None, style_prompt='?', seed=42):
+                 gpu=None, img_portion=None, style_prompt='?', seed=42,
+                 llava_num_img=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -105,6 +109,7 @@ class Manager:
         self.style_prompt = style_prompt
 
         self.img_portion = img_portion
+        self.llava_num_img = llava_num_img
 
         self.set_rand(seed)
         self.set_device(gpu)
@@ -331,6 +336,8 @@ class Manager:
                 if self.img_portion * 100 < idx+1:
                     continue
                 i = idx
+            elif self.llava_num_img is not None:
+                i = LLAVA_NUMS[self.llava_num_img]
             else:
                 # We select images sequentially:
                 i = idx
@@ -817,6 +824,11 @@ def args_build():
         help='The random seed value',
         default=42,
     )
+    parser.add_argument('--llava_num_img',
+        type=int,
+        help='The optional number of image for LLaVa (numeration from 1)',
+        default=None,
+    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
@@ -825,7 +837,8 @@ def args_build():
         args.attr_iters, args.attack_num_target, args.attack_num_max,
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
         args.skip_attr_fails, args.llava_score_thr, args.llava_prompt,
-        args.gpu, args.img_portion, args.style_prompt, args.seed)
+        args.gpu, args.img_portion, args.style_prompt, args.seed,
+        args.llava_num_img)
 
 
 if __name__ == '__main__':
