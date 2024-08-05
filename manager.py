@@ -640,8 +640,6 @@ class Manager:
 
         self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
             fpath=self.get_path(f'img/{c}/changed.png'))
-        self.data.plot_attr(att.x_attr,
-            fpath=self.get_path(f'img/{c}/attr.png'))
 
         return result
 
