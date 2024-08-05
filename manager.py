@@ -337,7 +337,7 @@ class Manager:
                     continue
                 i = idx
             elif self.llava_num_img is not None:
-                i = LLAVA_NUMS[self.llava_num_img]
+                i = LLAVA_NUMS[self.llava_num_img-1]
             else:
                 # We select images sequentially:
                 i = idx
