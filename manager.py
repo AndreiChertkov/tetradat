@@ -346,6 +346,9 @@ class Manager:
             if res is not None:
                 result[i] = res
             self.log.res(tpc()-tm)
+            
+            if self.llava_num_img is not None:
+                break
 
         fpath = self.get_path('result.npz')
         np.savez_compressed(self.get_path('result.npz'), result=result)
