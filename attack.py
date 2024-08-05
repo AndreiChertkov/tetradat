@@ -458,6 +458,89 @@ class AttackLLava(AttackAttr):
         return self.result()
 
 
+class AttackLLavaBsSquare(Attack):
+    def predict(self, x):
+        img = self.data.tr_norm_inv(x)
+        self.out = self.llava.run(None, self.prompt, img=img)
+
+        if self.out_base is None:
+            self.out_base = self.out
+
+        self.score = self.sim.run(self.out_base, self.out)
+
+        print(f'{self.score:-8.2e} : {self.out}')
+        
+        return self.score
+
+    def result(self):
+        res = super().result()
+        res['out_base'] = self.out_base
+        res['out'] = self.out
+        res['score'] = self.score
+        return res
+
+    def run(self, llava, sim, data, prompt, log, square=4/255, seed=42):
+        t = tpc()
+
+        self.x = self.x.to(self.device)
+        self.llava = llava
+        self.sim = sim
+        self.data = data
+        self.prompt = prompt
+
+        self.out_base = None
+
+        self.predict(self.x)
+
+        self._build(square, seed)
+
+        x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
+        c_ = torch.tensor([self.c]).to('cpu')
+        self.x_new = self.atk(x_, c_)[0].detach().to('cpu')
+
+        self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
+        self.changes = torch.sum(self.changes > 1.E-6).item()
+        self.dx1 = torch.norm(self.x_new - self.x, p=1).item()
+        self.dx2 = torch.norm(self.x_new - self.x, p=2).item()
+        self.m = self.atk.model_evals
+
+        self.t += tpc() - t
+        return self.result()
+
+    def _build(self, square=4/255, seed=42):
+        class NetExt:
+            def __init__(self, net, device):
+                self.net = net
+                self.device = device
+                self.eval()
+
+            def __call(self, logits):
+                print(logits.shape)
+                return
+
+            def named_modules(self):
+                return []
+            
+            def parameters(self):
+                return self.net.parameters()
+
+            def eval(self):
+                self.training = False
+
+            def train(self):
+                self.training = True
+
+        self.atk = _Square(NetExt(self.net, self.device),
+            eps=square,
+            n_queries=self.m_max,
+            seed=seed)
+
+        self.atk.set_normalization_used(mean=self.norm_m, std=self.norm_v)
+
+        if self.target:
+            self.atk.set_mode_targeted_by_label(quiet=True)
+
+
 class _OnePixel(torchattacks.OnePixel):
     def get_logits(self, inputs, labels=None, *args, **kwargs):
         if not hasattr(self, 'model_evals'):

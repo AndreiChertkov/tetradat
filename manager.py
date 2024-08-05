@@ -12,6 +12,7 @@ from attack import AttackAttr
 from attack import AttackAttrMulti
 from attack import AttackBs
 from attack import AttackLLava
+from attack import AttackLLavaBsSquare
 from data import DATA_NAMES
 from data import Data
 from llava_wrapper import LlavaWrapper
@@ -357,6 +358,50 @@ class Manager:
         fpath = self.get_path('result.npz')
         np.savez_compressed(self.get_path('result.npz'), result=result)
 
+    def task_attack_llava_bs_square(self):
+        # TODO: join it with task_attack_llava_attr function
+        tm = self.log.prc(f'Loading "LLava" model')
+        llava = LlavaWrapper()
+        self.log.res(tpc()-tm)
+
+        tm = self.log.prc(f'Loading text similarity calculator')
+        sim = SimWrapper()
+        self.log.res(tpc()-tm)
+
+        tm = self.log.prc(f'Loading text styling network')
+        style = StyleWrapper(device=self.device)
+        self.log.res(tpc()-tm)
+
+        result = {}
+        for idx in range(len(self.data.data_tst)):
+            if self.attack_num_max and len(result.keys())>=self.attack_num_max:
+                break
+            elif self.attack_num_max:
+                # We select random images:
+                i = torch.randint(len(self.data.data_tst), size=(1,)).item()
+            elif self.img_portion:
+                if (self.img_portion-1) * 100 >= idx+1:
+                    continue
+                if self.img_portion * 100 < idx+1:
+                    continue
+                i = idx
+            elif self.llava_num_img is not None:
+                i = LLAVA_NUMS[self.llava_num_img-1]
+            else:
+                # We select images sequentially:
+                i = idx
+            tm = self.log.prc(f'Run attack on LLaVa for image # {i:-4d}')
+            res = self._attack_llava_bs_square(i, llava, sim, style)
+            if res is not None:
+                result[i] = res
+            self.log.res(tpc()-tm)
+            
+            if self.llava_num_img is not None:
+                break
+
+        fpath = self.get_path('result.npz')
+        np.savez_compressed(self.get_path('result.npz'), result=result)
+
     def task_check_data(self):
         name = self.data.name
         tm = self.log.prc(f'Check data for "{name}" dataset')
@@ -527,6 +572,62 @@ class Manager:
         result = att.run(self.opt_n, self.opt_sc, self.opt_k,
             self.opt_k_top, self.opt_k_gd, self.opt_lr, self.opt_r,
             llava, sim, self.data, self.llava_prompt, self.log)
+        self.log('')
+
+        text = ''
+        text += f'\nImage   # {i:-5d}'
+        text += f'\nLabel   : {l}'
+        text += f'\nOUT old : ' + result['out_base']
+        text += f'\nOUT new : ' + result['out']
+        text += f'\nSCORE   : {result["score"]:-8.2e}'
+        self.log(text)
+
+        self.data.plot_base(self.data.tr_norm_inv(att.x_new), '', size=6,
+            fpath=self.get_path(f'img/{c}/changed.png'))
+        self.data.plot_attr(att.x_attr,
+            fpath=self.get_path(f'img/{c}/attr.png'))
+
+        return result
+
+    def _attack_llava_bs_square(self, i, llava, sim, style):
+        # TODO: join it with _attack_llava function
+        x_base, c, l = self.data.get(i, tst=True)
+
+        y_all = self.model.run(x_base).detach().to('cpu').numpy()
+        y = y_all[c]
+
+        if np.argmax(y_all) != c:
+            # Invalid prediction for target image; skip
+            print(f'WRN : base model is failed for "{c}" (SKIP)')
+            return
+
+        x = self.data.tr_norm_inv(x_base)
+        x = style.run(x, self.style_prompt)
+        x = self.data.tr_norm(x)
+
+        y_all_new = self.model.run(x).detach().to('cpu').numpy()
+        y_new  = y_all_new[c]
+
+        if np.argmax(y_all_new) != c:
+            # Invalid prediction for target image; skip
+            print(f'WRN : base model is failed for styled "{c}" (SKIP)')
+            print(l)
+            print(self.data.labels[np.argmax(y_all_new)])
+            print()
+
+            return
+
+        self.data.plot_base(self.data.tr_norm_inv(x_base), '', size=6,
+            fpath=self.get_path(f'img/{c}/base.png'))
+
+        self.data.plot_base(self.data.tr_norm_inv(x), '', size=6,
+            fpath=self.get_path(f'img/{c}/base_style.png'))
+
+        att = AttackLLavaBsSquare(self.model.net, x, c, self.opt_m, 'tetradat',
+            self.data.norm_m, self.data.norm_v)
+
+        self.log('')
+        result = att.run(llava, sim, self.data, self.llava_prompt, self.log)
         self.log('')
 
         text = ''
