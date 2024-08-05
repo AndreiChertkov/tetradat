@@ -35,7 +35,7 @@ class LlavaWrapper:
             'conv_mode': None,
             'image_file': '',
             'sep': ',',
-            'temperature': 0.3,
+            'temperature': 0.,
             'top_p': None,
             'num_beams': 1,
             'max_new_tokens': 50
