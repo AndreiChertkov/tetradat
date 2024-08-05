@@ -468,7 +468,11 @@ class AttackLLavaBsSquare(Attack):
 
         self.score = self.sim.run(self.out_base, self.out)
 
-        print(f'{self.score:-8.2e} : {self.out}')
+        if self.score_new is None or self.score < self.score_new:
+            self.x_new = x.clone()
+            self.score_new = self.score
+        
+        print(f'{self.score:-8.2e} [best: {self.score_new:-8.2e}]: {self.out}')
         
         return self.score
 
@@ -494,9 +498,13 @@ class AttackLLavaBsSquare(Attack):
 
         self._build(square, seed)
 
+        self.x_new = None
+        self.score_new = None
+
         x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
         c_ = torch.tensor([self.c]).to('cpu')
-        self.x_new = self.atk(x_, c_)[0].detach().to(self.device)
+        self.atk(x_, c_)[0].detach().to(self.device)
+        self.score = self.score_new
 
         self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
         self.changes = torch.sum(self.changes > 1.E-6).item()
