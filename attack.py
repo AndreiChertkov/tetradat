@@ -494,12 +494,12 @@ class AttackLLavaBsSquare(Attack):
 
         self.out_base = None
 
+        self.x_new = None
+        self.score_new = None
+        
         self.predict(self.x)
 
         self._build(square, seed)
-
-        self.x_new = None
-        self.score_new = None
 
         x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
         c_ = torch.tensor([self.c]).to('cpu')
