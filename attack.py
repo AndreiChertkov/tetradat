@@ -525,7 +525,7 @@ class AttackLLavaBsSquare(Attack):
                     score_full = [score_other for _ in range(self.classes)]
                     score_full[self.c] = score
                     scores.append(score_full)
-                return torch.tensor(scores)
+                return torch.tensor(scores, device=self.device)
 
             def named_modules(self):
                 return []
