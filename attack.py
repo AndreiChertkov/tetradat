@@ -509,14 +509,21 @@ class AttackLLavaBsSquare(Attack):
 
     def _build(self, square=4/255, seed=42):
         class NetExt:
-            def __init__(self, net, device):
+            def __init__(self, net, c, predict, device):
                 self.net = net
+                self.c = c
+                self.predict = predict
                 self.device = device
                 self.eval()
 
             def __call__(self, logits):
-                print(logits.shape)
-                return
+                scores = []
+                for x in logits:
+                    score = self.predict(x)
+                    score_full = [0 for _ in range(1000)]
+                    score_full[self.c] = score
+                    scores.ppend(score_full)
+                return torch.tensor(scores)
 
             def named_modules(self):
                 return []
@@ -530,7 +537,7 @@ class AttackLLavaBsSquare(Attack):
             def train(self):
                 self.training = True
 
-        self.atk = _Square(NetExt(self.net, self.device),
+        self.atk = _Square(NetExt(self.net, self.c, self.predict, self.device),
             eps=square,
             n_queries=self.m_max,
             seed=seed)
