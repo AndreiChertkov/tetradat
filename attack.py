@@ -496,7 +496,7 @@ class AttackLLavaBsSquare(Attack):
 
         x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
         c_ = torch.tensor([self.c]).to('cpu')
-        self.x_new = self.atk(x_, c_)[0].detach().to('cpu')
+        self.x_new = self.atk(x_, c_)[0].detach().to(self.device)
 
         self.changes = torch.sum((self.x_new - self.x)**2, axis=0)
         self.changes = torch.sum(self.changes > 1.E-6).item()
