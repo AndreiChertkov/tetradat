@@ -76,7 +76,7 @@ class Manager:
                  attack_label_top, root, postfix, show_result_all,
                  skip_attr_fails, llava_score_thr=0.25, llava_prompt='?',
                  gpu=None, img_portion=None, style_prompt='?', seed=42,
-                 llava_num_img=None):
+                 llava_num_img=None, img_start=None, img_end=None):
         self.data_name = data
         self.model_name = model
         self.model_attr_name = model_attr
@@ -111,6 +111,9 @@ class Manager:
 
         self.img_portion = img_portion
         self.llava_num_img = llava_num_img
+
+        self.img_start = img_start
+        self.img_end = img_end
 
         self.set_rand(seed)
         self.set_device(gpu)
@@ -648,6 +651,12 @@ class Manager:
                     continue
                 if self.img_portion * 100 < i+1:
                     continue
+
+            if self.img_start is not None and i < self.img_start:
+                    continue
+            if self.img_end  is not None and i > self.img_end:
+                    continue
+            
             show = self.show_result_all or i in RESULT_SHOW
             res = self._attack(i, name, target, with_attr, show)
             if res is not None:
@@ -833,6 +842,16 @@ def args_build():
         help='The optional number of image for LLaVa (numeration from 1)',
         default=None,
     )
+    parser.add_argument('--img_start',
+        type=int,
+        help='Dev',
+        default=None,
+    )
+    parser.add_argument('--img_end',
+        type=int,
+        help='Dev',
+        default=None,
+    )
 
     args = parser.parse_args()
     return (args.data, args.model, args.model_attr, args.task, args.kind,
@@ -842,7 +861,7 @@ def args_build():
         args.attack_label_top, args.root, args.postfix, args.show_result_all,
         args.skip_attr_fails, args.llava_score_thr, args.llava_prompt,
         args.gpu, args.img_portion, args.style_prompt, args.seed,
-        args.llava_num_img)
+        args.llava_num_img, args.img_start, args.img_end)
 
 
 if __name__ == '__main__':
