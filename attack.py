@@ -514,7 +514,7 @@ class AttackLLavaBsSquare(Attack):
                 self.device = device
                 self.eval()
 
-            def __call(self, logits):
+            def __call__(self, logits):
                 print(logits.shape)
                 return
 
