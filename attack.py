@@ -385,8 +385,9 @@ class AttackBs(Attack):
                 raise NotImplementedError
 
             class Model:
-                def __init__(self, net):
+                def __init__(self, net, device):
                     self.net = net
+                    self.device = device
                     self.probs = torch.nn.Softmax(dim=1)
 
                 def predict(self, x):
@@ -394,7 +395,7 @@ class AttackBs(Attack):
                     x = data.tr_norm(x)
                     return self.probs(self.net(x))
 
-            self.net_ext = Model(self.net)
+            self.net_ext = Model(self.net, self.device)
 
             self.atk = AttackMOAA({
                 "x": None,
