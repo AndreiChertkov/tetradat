@@ -20,6 +20,7 @@ ARGS           = {
     'model_attr': 'vgg',
     'model': None,
     'img_portion': None,
+    'postfix': None,
     'gpu': None}
 
 
@@ -114,17 +115,15 @@ class Tmuxmanager:
 
 
 def run():
-    name = 'simple_digital'
-    name_short = 'digital'
-    
     tm = Tmuxmanager(NAME_PREFIX)
 
     for i, model in enumerate(MODELS):
         for img_portion in range(1, 11):
             ARGS['model'] = model
-            ARGS['gpu'] = i
             ARGS['img_portion'] = img_portion
-
+            RGS['postfix'] = img_portion
+            ARGS['gpu'] = i
+            
             tm.run_python(name=f'{model}_{img_portion}',
                 folder=FOLDER, script='manager.py',
                 args=ARGS, conda_env=CONDA_ENV)
