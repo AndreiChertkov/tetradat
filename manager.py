@@ -291,8 +291,8 @@ class Manager:
     def task_attack_base(self):
         self._attacks()
 
-    def task_attack_bs_moaa(self):
-        self._attacks('moaa')
+    def task_attack_bs_mooa(self):
+        self._attacks('mooa')
 
     def task_attack_bs_onepixel(self):
         self._attacks('onepixel')
@@ -309,8 +309,8 @@ class Manager:
     def task_attack_target_base(self):
         self._attacks(target=True)
 
-    def task_attack_target_bs_moaa(self):
-        self._attacks('moaa', target=True)
+    def task_attack_target_bs_mooa(self):
+        self._attacks('mooa', target=True)
 
     def task_attack_target_bs_onepixel(self):
         self._attacks('onepixel', target=True)
@@ -816,7 +816,7 @@ def args_build():
         help='Kind of the task',
         default='attr',
         choices=['data', 'demo', 'model', 'base', 'attr',
-            'bs_moaa', 'bs_onepixel', 'bs_pixle', 'bs_square']
+            'bs_mooa', 'bs_onepixel', 'bs_pixle', 'bs_square']
     )
     parser.add_argument('--opt_d',
         type=int,

@@ -16,8 +16,8 @@ import torchattacks
 import torchvision
 
 
-from attack_moaa import AttackMOAA
-from attack_moaa import UnTargeted
+from attack_mooa import AttackMOOA
+from attack_mooa import UnTargeted
 
 
 class Attack:
@@ -354,7 +354,7 @@ class AttackBs(Attack):
         t = tpc()
         self._build(data, onepixel, pixle, square, seed)
 
-        if self.name == 'moaa':
+        if self.name == 'mooa':
             x_ = data.tr_norm_inv(self.x)
             x_ = x_.detach().to('cpu').numpy().transpose(1, 2, 0)
             self.atk.params['x'] = x_
@@ -374,13 +374,13 @@ class AttackBs(Attack):
         self.check(x_new)
         
         if success_expected != self.success:
-            print(f'Warning for moaa-success. Expected: {success_expected}')
+            print(f'Warning for mooa-success. Expected: {success_expected}')
 
         self.t += tpc() - t
         return self.result()
 
     def _build(self, data, onepixel, pixle, square, seed):
-        if self.name == 'moaa':
+        if self.name == 'mooa':
             if self.target:
                 raise NotImplementedError
 
@@ -397,7 +397,7 @@ class AttackBs(Attack):
 
             self.net_ext = Model(self.net, self.device)
 
-            self.atk = AttackMOAA({
+            self.atk = AttackMOOA({
                 "x": None,
                 "eps": 24, # number of changed pixels
                 "iterations": self.m_max // 2, # query budget / population size
@@ -431,7 +431,7 @@ class AttackBs(Attack):
         else:
             raise NotImplementedError(f'Baseline "{self.name}" not supported')
 
-        if self.name != 'moaa':
+        if self.name != 'mooa':
             self.atk.set_normalization_used(mean=self.norm_m, std=self.norm_v)
 
             if self.target:

@@ -1,7 +1,12 @@
-"""Adversarial attack MOAA.
+"""Adversarial attack MOOA.
 
 We use the code from
 https://github.com/phoenixwilliams/Black-Box-Sparse-Adversarial-Attack-via-Multi-Objective-Optimisation
+
+CVPR-2023 paper:
+Black-Box Sparse Adversarial Attack via Multi-Objective Optimisation
+
+https://openaccess.thecvf.com/content/CVPR2023/papers/Williams_Black-Box_Sparse_Adversarial_Attack_via_Multi-Objective_Optimisation_CVPR_2023_paper.pdf
 
 """
 from copy import deepcopy
@@ -12,7 +17,7 @@ import torch
 import time
 
 
-class AttackMOAA:
+class AttackMOOA:
     def __init__(self, params):
         self.params = params
         self.fitness = []
@@ -275,6 +280,7 @@ class UnTargeted:
             preds = self.model.predict(img_).flatten()
             y = int(torch.argmax(preds))
             preds = preds.tolist()
+
         else:
             preds = self.model.predict(np.expand_dims(img_, axis=0)).flatten()
             y = int(np.argmax(preds))
