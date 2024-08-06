@@ -121,7 +121,7 @@ def run():
         for img_portion in range(1, 11):
             ARGS['model'] = model
             ARGS['img_portion'] = img_portion
-            RGS['postfix'] = img_portion
+            ARGS['postfix'] = img_portion
             ARGS['gpu'] = i
             
             tm.run_python(name=f'{model}_{img_portion}',
