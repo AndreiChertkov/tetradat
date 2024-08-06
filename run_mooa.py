@@ -121,7 +121,7 @@ def run():
 
     for i, model in enumerate(MODELS):
         for img_portion in range(1, 11):
-            ARGS['name'] = model
+            ARGS['model'] = model
             ARGS['gpu'] = i
             ARGS['img_portion'] = img_portion
 
