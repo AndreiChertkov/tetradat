@@ -357,7 +357,6 @@ class AttackBs(Attack):
         if self.name == 'moaa':
             x_ = data.tr_norm_inv(self.x)
             x_ = x_.detach().to('cpu').numpy().transpose(1, 2, 0)
-            print(np.min(x_), np.max(x_))
             self.atk.params['x'] = x_
             loss = UnTargeted(self.net_ext, self.c, to_pytorch=True)
             result = self.atk.attack(loss)
@@ -391,6 +390,7 @@ class AttackBs(Attack):
                     self.probs = torch.nn.Softmax(dim=1)
 
                 def predict(self, x):
+                    x = x.to(self.device)
                     x = data.tr_norm(x)
                     return self.probs(self.net(x))
 
