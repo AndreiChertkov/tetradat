@@ -393,20 +393,22 @@ class AttackBs(Attack):
                 def predict(self, x):
                     x = x.to(self.device)
                     x = data.tr_norm(x)
-                    return self.probs(self.net(x))
+                    with torch.no_grad():
+                        y = self.probs(self.net(x))
+                    return y
 
-            self.net_ext = Model(self.net, self.device)
+            self.net_ext = Model(self.net, self.c, self.device)
 
             self.atk = AttackMOOA({
                 "x": None,
-                "eps": 24, # number of changed pixels
+                "eps": 150, # 24, # number of changed pixels
                 "iterations": self.m_max // 2, # query budget / population size
                 "pc": 0.1, # crossover parameter
                 "pm": 0.4, # mutation parameter
                 "pop_size": 2, # population size
                 "zero_probability": 0.3,
-                "include_dist": True,
-                "max_dist": 1e-5, # l2 distance to end the attack
+                "include_dist": False, # True,
+                "max_dist": 0.1, # 1e-5, # l2 distance to end the attack
                 "p_size": 2.0,
                 "tournament_size": 2})
 
