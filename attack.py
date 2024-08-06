@@ -397,7 +397,7 @@ class AttackBs(Attack):
                         y = self.probs(self.net(x))
                     return y
 
-            self.net_ext = Model(self.net, self.c, self.device)
+            self.net_ext = Model(self.net, self.device)
 
             self.atk = AttackMOOA({
                 "x": None,
