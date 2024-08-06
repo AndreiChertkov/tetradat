@@ -16,6 +16,10 @@ import torchattacks
 import torchvision
 
 
+from attack_moaa import AttackMOAA
+from attack_moaa import UnTargeted
+
+
 class Attack:
     def __init__(self, net, x, c, m_max, name, norm_m, norm_v, target=False):
         self.net = net
@@ -346,23 +350,66 @@ class AttackAttrMulti:
 
 
 class AttackBs(Attack):
-    def run(self, onepixel=100, pixle=100, square=4/255, seed=42):
+    def run(self, data, onepixel=100, pixle=100, square=4/255, seed=42):
         t = tpc()
-        self._build(onepixel, pixle, square, seed)
+        self._build(data, onepixel, pixle, square, seed)
 
-        x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
-        c_ = torch.tensor([self.c]).to('cpu')
-
-        x_new = self.atk(x_, c_)[0].detach().to('cpu')
+        if self.name == 'moaa':
+            x_ = data.tr_norm_inv(self.x)
+            x_ = x_.detach().to('cpu').numpy().transpose(1, 2, 0)
+            print(np.min(x_), np.max(x_))
+            self.atk.params['x'] = x_
+            loss = UnTargeted(self.net_ext, self.c, to_pytorch=True)
+            result = self.atk.attack(loss)
+            x_new = result['front0_imgs'][0]
+            x_new = torch.tensor(x_new.transpose(2, 0, 1))
+            x_new = data.tr_norm(x_new)
+            success_expected = result['success']
+            self.m = result['queries']
+        else:
+            x_ = torch.unsqueeze(self.x, dim=0).to('cpu')
+            c_ = torch.tensor([self.c]).to('cpu')
+            x_new = self.atk(x_, c_)[0].detach().to('cpu')
+            self.m = self.atk.model_evals
 
         self.check(x_new)
-        self.m = self.atk.model_evals
+        
+        if success_expected != self.success:
+            print(f'Warning for moaa-success. Expected: {success_expected}')
 
         self.t += tpc() - t
         return self.result()
 
-    def _build(self, onepixel, pixle, square, seed):
-        if self.name == 'onepixel':
+    def _build(self, data, onepixel, pixle, square, seed):
+        if self.name == 'moaa':
+            if self.target:
+                raise NotImplementedError
+
+            class Model:
+                def __init__(self, net):
+                    self.net = net
+                    self.probs = torch.nn.Softmax(dim=1)
+
+                def predict(self, x):
+                    x = data.tr_norm(x)
+                    return self.probs(self.net(x))
+
+            self.net_ext = Model(self.net)
+
+            self.atk = AttackMOAA({
+                "x": None,
+                "eps": 24, # number of changed pixels
+                "iterations": self.m_max // 2, # query budget / population size
+                "pc": 0.1, # crossover parameter
+                "pm": 0.4, # mutation parameter
+                "pop_size": 2, # population size
+                "zero_probability": 0.3,
+                "include_dist": True,
+                "max_dist": 1e-5, # l2 distance to end the attack
+                "p_size": 2.0,
+                "tournament_size": 2})
+
+        elif self.name == 'onepixel':
             self.atk = _OnePixel(self.net,
                 pixels=onepixel,
                 steps=19) # TODO: check (now it for 1E+4 evals)
@@ -383,10 +430,11 @@ class AttackBs(Attack):
         else:
             raise NotImplementedError(f'Baseline "{self.name}" not supported')
 
-        self.atk.set_normalization_used(mean=self.norm_m, std=self.norm_v)
+        if self.name != 'moaa':
+            self.atk.set_normalization_used(mean=self.norm_m, std=self.norm_v)
 
-        if self.target:
-            self.atk.set_mode_targeted_by_label(quiet=True)
+            if self.target:
+                self.atk.set_mode_targeted_by_label(quiet=True)
 
 
 class AttackLLava(AttackAttr):

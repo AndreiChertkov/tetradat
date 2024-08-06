@@ -5,7 +5,7 @@ import os
 
 ROOT = 'result'
 DATASET = 'imagenet'
-MODELS = ['adv_inception']
+MODELS = ['adv_inception', 'adv_inception_resnet']
 # ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet']
 MODEL_ATTR = 'vgg'
 BASELINES = ['onepixel', 'pixle', 'square']
@@ -50,12 +50,24 @@ def load_data(model, bs=None):
     except Exception as e:
         # Load by portions (only for TETRADAT method)
         result = {}
+        if model == 'adv_inception_resnet':
+            nums = range(1, 11)
+        else:
+            nums = range(20, 30)
         for i in range(1, 11):
-            fpath = f'{ROOT}/{DATASET}-{model}/attack-'
-            fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
-            fpath += f'/result{i}.npz'
-            res = np.load(fpath, allow_pickle=True).get('result').item()
-            result.update(res)
+            try:
+                fpath = f'{ROOT}/{DATASET}-{model}/attack-'
+                fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
+                fpath += f'/result{i}.npz'
+                res = np.load(fpath, allow_pickle=True).get('result').item()
+                result.update(res)
+            except Exception as e:
+                for j in range(0, 10):
+                    fpath = f'{ROOT}/{DATASET}-{model}/attack-'
+                    fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
+                    fpath += f'/result{i}{j}.npz'
+                    res = np.load(fpath, allow_pickle=True).get('result').item()
+                    result.update(res)
         return result
 
 
