@@ -1,0 +1,100 @@
+[2024-08-05 09-56-59] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     4.73 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.19 sec.) 
+
+
+.... Start attack on images
+
+--> #  150 | c      150 | y     1.0e+00 | y_next 2.4e-06
++++ >        c_new  360 | y_new 4.9e-01 | y_old 4.6e-01 | evals 10063
+    : changes  3324 | dx1 1.2e+03 | dx2 1.7e+01
+    : l_old : sea lion
+    : l_new : otter
+
+
+--> #  151 | c      151 | y     1.0e+00 | y_next 2.1e-07
++++ >        c_new  263 | y_new 6.2e-01 | y_old 3.8e-01 | evals 10051
+    : changes  3331 | dx1 3.5e+03 | dx2 5.6e+01
+    : l_old : chihuahua
+    : l_new : pembroke, pembroke welsh corgi
+
+
+--> #  152 | c      152 | y     1.0e+00 | y_next 4.4e-07
++++ >        c_new  154 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10084
+    : changes  3315 | dx1 3.2e+03 | dx2 5.9e+01
+    : l_old : japanese spaniel
+    : l_new : pekinese, pekingese, peke
+
+
+--> #  153 | c      153 | y     1.0e+00 | y_next 2.9e-07
++++ >        c_new  204 | y_new 6.6e-01 | y_old 3.4e-01 | evals 10004
+    : changes  3305 | dx1 4.6e+03 | dx2 7.2e+01
+    : l_old : maltese dog, maltese terrier, maltese
+    : l_new : lhasa, lhasa apso
+
+
+--> #  154 | c      154 | y     1.0e+00 | y_next 4.2e-07
++++ >        c_new  256 | y_new 5.3e-01 | y_old 4.6e-01 | evals 10044
+    : changes  3220 | dx1 3.8e+02 | dx2 5.5e+00
+    : l_old : pekinese, pekingese, peke
+    : l_new : newfoundland, newfoundland dog
+
+
+--> #  155 | c      155 | y     9.9e-01 | y_next 1.1e-02
++++ >        c_new  204 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10080
+    : changes  3351 | dx1 5.0e+02 | dx2 7.7e+00
+    : l_old : shih-tzu
+    : l_new : lhasa, lhasa apso
+
+
+--> #  156 | c      156 | y     1.0e+00 | y_next 2.6e-05
++++ >        c_new  219 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10067
+    : changes  3221 | dx1 7.4e+02 | dx2 1.1e+01
+    : l_old : blenheim spaniel
+    : l_new : cocker spaniel, english cocker spaniel, cocker
+
+
+--> #  157 | c      157 | y     1.0e+00 | y_next 4.2e-08
++++ >        c_new  151 | y_new 6.2e-01 | y_old 3.7e-01 | evals 10079
+    : changes  3376 | dx1 5.6e+03 | dx2 8.3e+01
+    : l_old : papillon
+    : l_new : chihuahua
+
+
+Completed. Successful: 100.00% (total images 8)
+DONE ( 12273.02 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-21-38] Work is finished (12278.95 sec. total)
+
+

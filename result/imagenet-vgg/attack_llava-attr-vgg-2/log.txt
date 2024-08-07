@@ -1,0 +1,61 @@
+[2024-08-05 11-37-44] Computations (cuda:6)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.48 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.27 sec.) 
+
+
+.... Loading "LLava" model
+DONE (     8.31 sec.) 
+
+.... Loading text similarity calculator
+DONE (     2.13 sec.) 
+
+.... Loading text styling network
+DONE (     2.20 sec.) 
+
+.... Run attack on LLaVa for image #    9
+
+protes > m 1.0e+02 | t 2.721e+02 | y  6.1225e-01
+protes > m 1.0e+03 | t 3.310e+03 | y  6.1225e-01 <<< DONE
+
+
+Image   #     9
+Label   : ostrich, struthio camelus
+OUT old : The main object in the picture is a large bird, likely a crane, standing on a road at night. The purpose of the bird is to serve as a natural light source, illuminating the area around it with its reflection on the road
+OUT new : The main object in the picture is a tall, thin, and long-legged bird, likely a stork or an ostrich, walking down a road. The purpose of this bird is to serve as a natural symbol of longevity
+SCORE   : 6.12e-01
+DONE (  3329.10 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-33-28] Work is finished (3344.53 sec. total)
+
+

@@ -1,0 +1,61 @@
+[2024-08-05 11-38-04] Computations (cuda:6)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.36 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.48 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    30.16 sec.) 
+
+.... Loading text similarity calculator
+DONE (     2.14 sec.) 
+
+.... Loading text styling network
+DONE (     2.65 sec.) 
+
+.... Run attack on LLaVa for image #  632
+
+protes > m 1.0e+02 | t 3.164e+02 | y  3.8626e-01
+protes > m 1.0e+03 | t 3.451e+03 | y  3.8626e-01 <<< DONE
+
+
+Image   #   632
+Label   : loudspeaker, speaker, speaker unit, loudspeaker system, speaker system
+OUT old : The main object in the picture is a large, round speaker, which is designed to produce sound. It is likely used for various purposes, such as playing music, providing audio for movies or video games, or even for home theater systems.
+OUT new : The main object in the picture is a large, round, black, and brown box. It appears to be a container or a storage unit, possibly used for storing or organizing items. The box's design and color scheme suggest that it could
+SCORE   : 3.86e-01
+DONE (  3481.89 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-36-44] Work is finished (3520.72 sec. total)
+
+

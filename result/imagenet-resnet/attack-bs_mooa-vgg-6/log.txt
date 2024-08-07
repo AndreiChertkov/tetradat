@@ -1,0 +1,374 @@
+[2024-08-06 14-46-35] Computations (cuda:6)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_mooa"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "resnet" model
+DONE (     6.22 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.91 sec.) 
+
+
+.... Start attack on images with baseline "mooa"
+
+--> #  500 | c      500 | y     8.4e-01 | y_next 4.2e-03
++++ >        c_new  980 | y_new 1.9e-01 | y_old 1.8e-01 | evals    38
+    : changes   147 | dx1 7.4e+02 | dx2 4.5e+01
+    : l_old : cliff dwelling
+    : l_new : volcano
+
+
+--> #  503 | c      503 | y     9.0e-01 | y_next 4.6e-04
+    > fail | evals 10000
+
+--> #  504 | c      504 | y     6.2e-01 | y_next 6.4e-02
+    > fail | evals 10000
+
+--> #  505 | c      505 | y     4.7e-01 | y_next 1.8e-01
++++ >        c_new  849 | y_new 2.1e-01 | y_old 1.7e-01 | evals    12
+    : changes   146 | dx1 6.9e+02 | dx2 4.4e+01
+    : l_old : coffeepot
+    : l_new : teapot
+
+
+--> #  506 | c      506 | y     8.8e-01 | y_next 8.1e-04
+    > fail | evals 10000
+
+--> #  507 | c      507 | y     7.7e-01 | y_next 5.2e-03
+    > fail | evals 10000
+
+--> #  508 | c      508 | y     5.8e-01 | y_next 2.1e-01
++++ >        c_new  878 | y_new 4.0e-01 | y_old 3.6e-01 | evals   278
+    : changes   147 | dx1 6.5e+02 | dx2 4.1e+01
+    : l_old : computer keyboard, keypad
+    : l_new : typewriter keyboard
+
+
+--> #  510 | c      510 | y     7.8e-01 | y_next 4.2e-03
+    > fail | evals 10000
+
+--> #  511 | c      511 | y     8.0e-01 | y_next 5.6e-03
+    > fail | evals 10000
+
+--> #  512 | c      512 | y     7.6e-01 | y_next 5.3e-03
+    > fail | evals 10000
+
+--> #  513 | c      513 | y     8.3e-01 | y_next 2.5e-03
+    > fail | evals 10000
+
+--> #  514 | c      514 | y     8.1e-01 | y_next 8.3e-04
+    > fail | evals 10000
+
+--> #  515 | c      515 | y     9.4e-01 | y_next 2.8e-03
+    > fail | evals 10000
+
+--> #  516 | c      516 | y     9.6e-01 | y_next 3.5e-03
+    > fail | evals 10000
+
+--> #  517 | c      517 | y     8.3e-01 | y_next 2.0e-02
+    > fail | evals 10000
+
+--> #  518 | c      518 | y     7.5e-01 | y_next 2.9e-02
+    > fail | evals 10000
+
+--> #  521 | c      521 | y     7.8e-01 | y_next 2.2e-03
+    > fail | evals 10000
+
+--> #  522 | c      522 | y     9.0e-01 | y_next 1.1e-03
+    > fail | evals 10000
+
+--> #  523 | c      523 | y     9.1e-01 | y_next 1.7e-03
+    > fail | evals 10000
+
+--> #  524 | c      524 | y     6.7e-01 | y_next 7.8e-02
++++ >        c_new  787 | y_new 3.3e-01 | y_old 3.1e-01 | evals  2960
+    : changes   147 | dx1 7.1e+02 | dx2 4.7e+01
+    : l_old : cuirass
+    : l_new : shield, buckler
+
+
+--> #  525 | c      525 | y     8.4e-01 | y_next 4.6e-04
+    > fail | evals 10000
+
+--> #  526 | c      526 | y     4.7e-01 | y_next 1.3e-01
++++ >        c_new  620 | y_new 3.3e-01 | y_old 2.8e-01 | evals    46
+    : changes   145 | dx1 6.8e+02 | dx2 4.7e+01
+    : l_old : desk
+    : l_new : laptop, laptop computer
+
+
+--> #  527 | c      527 | y     3.4e-01 | y_next 3.3e-01
++++ >        c_new  664 | y_new 3.4e-01 | y_old 3.3e-01 | evals    14
+    : changes   144 | dx1 7.0e+02 | dx2 4.9e+01
+    : l_old : desktop computer
+    : l_new : monitor
+
+
+--> #  528 | c      528 | y     8.3e-01 | y_next 1.8e-02
+    > fail | evals 10000
+
+--> #  529 | c      529 | y     9.2e-01 | y_next 2.6e-03
+    > fail | evals 10000
+
+--> #  530 | c      530 | y     8.1e-01 | y_next 9.3e-03
+    > fail | evals 10000
+
+--> #  532 | c      532 | y     7.8e-01 | y_next 1.2e-02
++++ >        c_new  651 | y_new 3.8e-01 | y_old 3.3e-01 | evals   798
+    : changes   144 | dx1 6.6e+02 | dx2 4.3e+01
+    : l_old : dining table, board
+    : l_new : microwave, microwave oven
+
+
+--> #  533 | c      533 | y     7.8e-01 | y_next 3.1e-03
+    > fail | evals 10000
+
+--> #  535 | c      535 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10000
+
+--> #  536 | c      536 | y     8.4e-01 | y_next 1.4e-02
++++ >        c_new  554 | y_new 2.7e-01 | y_old 2.5e-01 | evals  5560
+    : changes   150 | dx1 7.1e+02 | dx2 4.4e+01
+    : l_old : dock, dockage, docking facility
+    : l_new : fireboat
+
+
+--> #  537 | c      537 | y     7.9e-01 | y_next 2.0e-02
+    > fail | evals 10000
+
+--> #  538 | c      538 | y     6.0e-01 | y_next 1.3e-01
++++ >        c_new  668 | y_new 4.0e-01 | y_old 3.6e-01 | evals  1146
+    : changes   147 | dx1 6.6e+02 | dx2 4.3e+01
+    : l_old : dome
+    : l_new : mosque
+
+
+--> #  539 | c      539 | y     7.7e-01 | y_next 9.0e-04
+    > fail | evals 10000
+
+--> #  540 | c      540 | y     6.4e-01 | y_next 3.9e-02
++++ >        c_new  536 | y_new 1.2e-01 | y_old 9.3e-02 | evals    26
+    : changes   149 | dx1 7.4e+02 | dx2 4.3e+01
+    : l_old : drilling platform, offshore rig
+    : l_new : dock, dockage, docking facility
+
+
+--> #  541 | c      541 | y     7.1e-01 | y_next 3.3e-02
+    > fail | evals 10000
+
+--> #  542 | c      542 | y     7.9e-01 | y_next 1.4e-02
+    > fail | evals 10000
+
+--> #  543 | c      543 | y     9.2e-01 | y_next 1.5e-02
+    > fail | evals 10000
+
+--> #  544 | c      544 | y     8.3e-01 | y_next 1.1e-02
++++ >        c_new  521 | y_new 3.5e-01 | y_old 3.5e-01 | evals  2912
+    : changes   140 | dx1 7.9e+02 | dx2 5.0e+01
+    : l_old : dutch oven
+    : l_new : crock pot
+
+
+--> #  545 | c      545 | y     7.1e-01 | y_next 4.3e-03
+    > fail | evals 10000
+
+--> #  546 | c      546 | y     7.7e-01 | y_next 2.0e-02
+    > fail | evals 10000
+
+--> #  547 | c      547 | y     8.1e-01 | y_next 2.4e-02
+    > fail | evals 10000
+
+--> #  548 | c      548 | y     7.2e-01 | y_next 3.0e-02
+    > fail | evals 10000
+
+--> #  549 | c      549 | y     6.1e-01 | y_next 3.5e-03
++++ >        c_new  611 | y_new 2.5e-01 | y_old 2.5e-01 | evals   816
+    : changes   146 | dx1 6.9e+02 | dx2 4.5e+01
+    : l_old : envelope
+    : l_new : jigsaw puzzle
+
+
+--> #  550 | c      550 | y     7.5e-01 | y_next 3.3e-03
+    > fail | evals 10000
+
+--> #  551 | c      551 | y     6.4e-01 | y_next 4.0e-02
+    > fail | evals 10000
+
+--> #  552 | c      552 | y     8.1e-01 | y_next 4.0e-03
+    > fail | evals 10000
+
+--> #  553 | c      553 | y     8.2e-01 | y_next 5.9e-03
+    > fail | evals 10000
+
+--> #  554 | c      554 | y     8.0e-01 | y_next 2.1e-03
+    > fail | evals 10000
+
+--> #  555 | c      555 | y     5.9e-01 | y_next 7.3e-02
++++ >        c_new  661 | y_new 2.6e-01 | y_old 2.5e-01 | evals  6544
+    : changes   145 | dx1 7.3e+02 | dx2 4.7e+01
+    : l_old : fire engine, fire truck
+    : l_new : model t
+
+
+--> #  556 | c      556 | y     8.5e-01 | y_next 5.8e-03
++++ >        c_new  736 | y_new 3.8e-01 | y_old 1.6e-01 | evals   666
+    : changes   142 | dx1 7.2e+02 | dx2 4.8e+01
+    : l_old : fire screen, fireguard
+    : l_new : pool table, billiard table, snooker table
+
+
+--> #  557 | c      557 | y     8.1e-01 | y_next 1.7e-02
+    > fail | evals 10000
+
+--> #  558 | c      558 | y     8.7e-01 | y_next 4.0e-03
+    > fail | evals 10000
+
+--> #  559 | c      559 | y     8.1e-01 | y_next 6.0e-04
+    > fail | evals 10000
+
+--> #  560 | c      560 | y     7.1e-01 | y_next 2.2e-03
+    > fail | evals 10000
+
+--> #  561 | c      561 | y     8.3e-01 | y_next 4.9e-04
+    > fail | evals 10000
+
+--> #  564 | c      564 | y     6.8e-01 | y_next 8.7e-02
++++ >        c_new  669 | y_new 4.3e-01 | y_old 3.2e-01 | evals   132
+    : changes   145 | dx1 7.0e+02 | dx2 4.4e+01
+    : l_old : four-poster
+    : l_new : mosquito net
+
+
+--> #  565 | c      565 | y     8.4e-01 | y_next 3.9e-04
+    > fail | evals 10000
+
+--> #  566 | c      566 | y     7.6e-01 | y_next 6.8e-03
+    > fail | evals 10000
+
+--> #  567 | c      567 | y     9.2e-01 | y_next 1.1e-02
+    > fail | evals 10000
+
+--> #  569 | c      569 | y     8.2e-01 | y_next 1.2e-02
++++ >        c_new  822 | y_new 2.1e-01 | y_old 2.0e-01 | evals  3292
+    : changes   144 | dx1 6.8e+02 | dx2 4.5e+01
+    : l_old : garbage truck, dustcart
+    : l_new : steel drum
+
+
+--> #  570 | c      570 | y     8.5e-01 | y_next 7.7e-04
++++ >        c_new  868 | y_new 4.8e-01 | y_old 3.3e-01 | evals  5450
+    : changes   148 | dx1 7.4e+02 | dx2 4.5e+01
+    : l_old : gasmask, respirator, gas helmet
+    : l_new : tray
+
+
+--> #  571 | c      571 | y     9.8e-01 | y_next 9.2e-04
++++ >        c_new  491 | y_new 2.9e-01 | y_old 2.9e-01 | evals  9976
+    : changes   145 | dx1 6.4e+02 | dx2 4.1e+01
+    : l_old : gas pump, gasoline pump, petrol pump, island dispe
+    : l_new : chain saw, chainsaw
+
+
+--> #  572 | c      572 | y     8.0e-01 | y_next 2.6e-03
+    > fail | evals 10000
+
+--> #  573 | c      573 | y     8.5e-01 | y_next 4.7e-03
+    > fail | evals 10000
+
+--> #  574 | c      574 | y     7.7e-01 | y_next 3.0e-03
+    > fail | evals 10000
+
+--> #  575 | c      575 | y     8.6e-01 | y_next 2.6e-04
+    > fail | evals 10000
+
+--> #  576 | c      576 | y     9.1e-01 | y_next 2.9e-04
+    > fail | evals 10000
+
+--> #  577 | c      577 | y     5.9e-01 | y_next 2.6e-01
+    > fail | evals 10000
+
+--> #  578 | c      578 | y     7.0e-01 | y_next 6.1e-02
++++ >        c_new  982 | y_new 2.9e-01 | y_old 2.9e-01 | evals  1022
+    : changes   144 | dx1 6.6e+02 | dx2 4.4e+01
+    : l_old : gown
+    : l_new : groom, bridegroom
+
+
+--> #  579 | c      579 | y     7.5e-01 | y_next 1.8e-03
+    > fail | evals 10000
+
+--> #  580 | c      580 | y     8.7e-01 | y_next 1.7e-03
+    > fail | evals 10000
+
+--> #  581 | c      581 | y     7.9e-01 | y_next 4.4e-02
++++ >        c_new  436 | y_new 3.8e-01 | y_old 3.7e-01 | evals   386
+    : changes   146 | dx1 6.8e+02 | dx2 4.3e+01
+    : l_old : grille, radiator grille
+    : l_new : beach wagon, station wagon, wagon, estate car, bea
+
+
+--> #  582 | c      582 | y     7.6e-01 | y_next 1.7e-02
+    > fail | evals 10000
+
+--> #  583 | c      583 | y     8.8e-01 | y_next 8.3e-04
+    > fail | evals 10000
+
+--> #  584 | c      584 | y     7.7e-01 | y_next 3.8e-02
+    > fail | evals 10000
+
+--> #  585 | c      585 | y     9.0e-01 | y_next 6.2e-03
+    > fail | evals 10000
+
+--> #  586 | c      586 | y     9.2e-01 | y_next 1.3e-03
+    > fail | evals 10000
+
+--> #  588 | c      588 | y     8.8e-01 | y_next 2.0e-03
+    > fail | evals 10000
+
+--> #  589 | c      589 | y     7.9e-01 | y_next 4.6e-04
+    > fail | evals 10000
+
+--> #  590 | c      590 | y     6.8e-01 | y_next 1.9e-02
+    > fail | evals 10000
+
+--> #  592 | c      592 | y     8.8e-01 | y_next 6.2e-04
+    > fail | evals 10000
+
+--> #  593 | c      593 | y     9.1e-01 | y_next 1.9e-04
+    > fail | evals 10000
+
+--> #  594 | c      594 | y     9.6e-01 | y_next 8.6e-04
+    > fail | evals 10000
+
+--> #  595 | c      595 | y     8.7e-01 | y_next 4.7e-02
+    > fail | evals 10000
+
+--> #  597 | c      597 | y     8.0e-01 | y_next 1.4e-02
+    > fail | evals 10000
+
+--> #  598 | c      598 | y     8.4e-01 | y_next 7.4e-02
+    > fail | evals 10000
+
+--> #  599 | c      599 | y     6.3e-01 | y_next 8.8e-02
+    > fail | evals 10000
+
+Completed. Successful: 22.99% (total images 87)
+DONE ( 26478.88 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-06 22-08-03] Work is finished (26488.03 sec. total)
+
+

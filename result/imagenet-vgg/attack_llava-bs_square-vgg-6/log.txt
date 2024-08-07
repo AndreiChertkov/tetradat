@@ -1,0 +1,48 @@
+[2024-08-05 15-58-49] Computations (cuda:7)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.22 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.25 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    17.56 sec.) 
+
+.... Loading text similarity calculator
+DONE (     1.69 sec.) 
+
+.... Loading text styling network
+DONE (     1.77 sec.) 
+
+.... Run attack on LLaVa for image #  510
+
+
+
+Image   #   510
+Label   : container ship, containership, container vessel
+OUT old : The main object in the picture is a large boat, which is likely used for transportation or recreational purposes. It is docked in a harbor near a city, suggesting that it may be used for commercial or leisure activities within the
+OUT new : The main object in the picture is a bridge that spans across a body of water, likely a river or a lake. The purpose of the bridge is to provide a safe and convenient passage for vehicles, pedestrians, and cyclists to
+SCORE   : 6.40e-01
+DONE (  1778.33 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 16-28-52] Work is finished (1802.85 sec. total)
+
+

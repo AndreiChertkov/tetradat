@@ -1,0 +1,61 @@
+[2024-08-05 11-37-54] Computations (cuda:7)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.02 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.26 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    12.70 sec.) 
+
+.... Loading text similarity calculator
+DONE (     2.05 sec.) 
+
+.... Loading text styling network
+DONE (     2.85 sec.) 
+
+.... Run attack on LLaVa for image #  435
+
+protes > m 1.0e+02 | t 3.006e+02 | y  3.0116e-01
+protes > m 1.0e+03 | t 3.410e+03 | y  3.0116e-01 <<< DONE
+
+
+Image   #   435
+Label   : bathtub, bathing tub, bath, tub
+OUT old : The main object in the picture is a bathroom sink, which is designed for washing hands, face, and other personal hygiene tasks. It is typically found in bathrooms and is an essential part of maintaining cleanliness and personal
+OUT new : The main object in the picture is a white teddy bear with blue eyes, which is likely designed for children to play with or use as a comforting toy. The bear's eyes are lit up, which adds a playful and eng
+SCORE   : 3.01e-01
+DONE (  3444.79 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-35-40] Work is finished (3465.72 sec. total)
+
+

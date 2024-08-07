@@ -1,0 +1,106 @@
+[2024-08-05 09-56-50] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     3.57 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.22 sec.) 
+
+
+.... Start attack on images
+
+--> #  140 | c      140 | y     1.0e+00 | y_next 9.0e-08
++++ >        c_new  389 | y_new 4.7e-01 | y_old 2.4e-01 | evals 10046
+    : changes  3337 | dx1 2.6e+03 | dx2 3.6e+01
+    : l_old : red-backed sandpiper, dunlin, erolia alpina
+    : l_new : barracouta, snoek
+
+
+--> #  141 | c      141 | y     1.0e+00 | y_next 7.3e-09
++++ >        c_new  142 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10043
+    : changes  3353 | dx1 1.9e+03 | dx2 2.6e+01
+    : l_old : redshank, tringa totanus
+    : l_new : dowitcher
+
+
+--> #  142 | c      142 | y     1.0e+00 | y_next 3.4e-03
++++ >        c_new  140 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10047
+    : changes  3387 | dx1 3.2e+02 | dx2 4.4e+00
+    : l_old : dowitcher
+    : l_new : red-backed sandpiper, dunlin, erolia alpina
+
+
+--> #  143 | c      143 | y     1.0e+00 | y_next 3.3e-09
++++ >        c_new  146 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10076
+    : changes  3398 | dx1 2.0e+03 | dx2 2.8e+01
+    : l_old : oystercatcher, oyster catcher
+    : l_new : albatross, mollymawk
+
+
+--> #  144 | c      144 | y     1.0e+00 | y_next 4.5e-08
++++ >        c_new  390 | y_new 6.3e-01 | y_old 2.7e-01 | evals 10078
+    : changes  3373 | dx1 4.4e+03 | dx2 6.3e+01
+    : l_old : pelican
+    : l_new : eel
+
+
+--> #  145 | c      145 | y     1.0e+00 | y_next 3.6e-09
+    > fail | evals 10000
+
+--> #  146 | c      146 | y     1.0e+00 | y_next 5.1e-09
+    > fail | evals 10000
+
+--> #  147 | c      147 | y     1.0e+00 | y_next 1.9e-07
++++ >        c_new  970 | y_new 5.4e-01 | y_old 3.8e-01 | evals 10016
+    : changes  3329 | dx1 2.3e+03 | dx2 3.4e+01
+    : l_old : grey whale, gray whale, devilfish, eschrichtius gi
+    : l_new : alp
+
+
+--> #  148 | c      148 | y     1.0e+00 | y_next 1.3e-04
++++ >        c_new   18 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10031
+    : changes  3292 | dx1 1.3e+03 | dx2 2.0e+01
+    : l_old : killer whale, killer, orca, grampus, sea wolf, orc
+    : l_new : magpie
+
+
+--> #  149 | c      149 | y     1.0e+00 | y_next 1.5e-07
++++ >        c_new    2 | y_new 8.0e-01 | y_old 9.1e-02 | evals 10075
+    : changes  3331 | dx1 7.9e+03 | dx2 1.2e+02
+    : l_old : dugong, dugong dugon
+    : l_new : great white shark, white shark, man-eater, man-eat
+
+
+Completed. Successful: 80.00% (total images 10)
+DONE ( 13350.08 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-39-25] Work is finished (13354.88 sec. total)
+
+

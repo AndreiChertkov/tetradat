@@ -1,0 +1,100 @@
+[2024-08-05 09-54-42] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     2.36 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.19 sec.) 
+
+
+.... Start attack on images
+
+--> #  110 | c      110 | y     1.0e+00 | y_next 2.4e-07
++++ >        c_new  973 | y_new 5.5e-01 | y_old 4.4e-01 | evals 10004
+    : changes  3362 | dx1 2.2e+03 | dx2 3.4e+01
+    : l_old : flatworm, platyhelminth
+    : l_new : coral reef
+
+
+--> #  111 | c      111 | y     1.0e+00 | y_next 1.4e-05
++++ >        c_new  451 | y_new 6.0e-01 | y_old 3.6e-01 | evals 10054
+    : changes  3223 | dx1 1.2e+03 | dx2 1.6e+01
+    : l_old : nematode, nematode worm, roundworm
+    : l_new : bolo tie, bolo, bola tie, bola
+
+
+--> #  112 | c      112 | y     1.0e+00 | y_next 8.1e-07
++++ >        c_new    1 | y_new 5.8e-01 | y_old 4.2e-01 | evals 10066
+    : changes  3229 | dx1 4.4e+02 | dx2 6.9e+00
+    : l_old : conch
+    : l_new : goldfish, carassius auratus
+
+
+--> #  113 | c      113 | y     1.0e+00 | y_next 1.7e-05
++++ >        c_new  112 | y_new 5.4e-01 | y_old 4.6e-01 | evals 10028
+    : changes  3346 | dx1 6.6e+03 | dx2 9.9e+01
+    : l_old : snail
+    : l_new : conch
+
+
+--> #  114 | c      114 | y     1.0e+00 | y_next 8.4e-07
++++ >        c_new  390 | y_new 5.1e-01 | y_old 4.7e-01 | evals 10028
+    : changes  3335 | dx1 6.6e+02 | dx2 9.2e+00
+    : l_old : slug
+    : l_new : eel
+
+
+--> #  116 | c      116 | y     1.0e+00 | y_next 1.1e-08
++++ >        c_new   69 | y_new 7.2e-01 | y_old 2.8e-01 | evals 10064
+    : changes  3402 | dx1 4.6e+03 | dx2 6.7e+01
+    : l_old : chiton, coat-of-mail shell, sea cradle, polyplacop
+    : l_new : trilobite
+
+
+--> #  117 | c      117 | y     1.0e+00 | y_next 3.8e-07
++++ >        c_new  506 | y_new 5.5e-01 | y_old 4.5e-01 | evals 10056
+    : changes  3103 | dx1 7.2e+03 | dx2 1.1e+02
+    : l_old : chambered nautilus, pearly nautilus, nautilus
+    : l_new : coil, spiral, volute, whorl, helix
+
+
+--> #  119 | c      119 | y     1.0e+00 | y_next 1.2e-05
++++ >        c_new  120 | y_new 5.7e-01 | y_old 4.3e-01 | evals 10059
+    : changes  3326 | dx1 1.4e+03 | dx2 2.0e+01
+    : l_old : rock crab, cancer irroratus
+    : l_new : fiddler crab
+
+
+Completed. Successful: 100.00% (total images 8)
+DONE ( 12280.39 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-19-26] Work is finished (12283.96 sec. total)
+
+

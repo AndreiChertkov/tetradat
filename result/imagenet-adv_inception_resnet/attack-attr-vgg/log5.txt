@@ -1,0 +1,606 @@
+[2024-08-02 16-17-42] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     3.47 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.69 sec.) 
+
+
+.... Start attack on images
+
+--> #  400 | c      400 | y     1.0e+00 | y_next 1.5e-04
++++ >        c_new  667 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10097
+    : changes  2161 | dx1 2.4e+03 | dx2 4.1e+01
+    : l_old : academic gown, academic robe, judge`s robe
+    : l_new : mortarboard
+
+
+--> #  402 | c      402 | y     1.0e+00 | y_next 2.4e-06
++++ >        c_new  714 | y_new 5.5e-01 | y_old 4.5e-01 | evals 10044
+    : changes  1739 | dx1 6.7e+03 | dx2 1.0e+02
+    : l_old : acoustic guitar
+    : l_new : pick, plectrum, plectron
+
+
+--> #  403 | c      403 | y     1.0e+00 | y_next 1.8e-07
++++ >        c_new  562 | y_new 8.4e-01 | y_old 1.5e-01 | evals 10081
+    : changes  3354 | dx1 4.4e+03 | dx2 5.9e+01
+    : l_old : aircraft carrier, carrier, flattop, attack aircraf
+    : l_new : fountain
+
+
+--> #  404 | c      404 | y     1.0e+00 | y_next 2.0e-04
++++ >        c_new  403 | y_new 6.3e-01 | y_old 3.7e-01 | evals 10028
+    : changes  3356 | dx1 6.5e+03 | dx2 1.0e+02
+    : l_old : airliner
+    : l_new : aircraft carrier, carrier, flattop, attack aircraf
+
+
+--> #  405 | c      405 | y     1.0e+00 | y_next 4.5e-08
++++ >        c_new  606 | y_new 3.1e-01 | y_old 3.0e-01 | evals 10031
+    : changes  1659 | dx1 1.7e+03 | dx2 2.9e+01
+    : l_old : airship, dirigible
+    : l_new : iron, smoothing iron
+
+
+--> #  406 | c      406 | y     9.8e-01 | y_next 1.5e-02
++++ >        c_new  687 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10048
+    : changes  3297 | dx1 1.9e+02 | dx2 2.6e+00
+    : l_old : altar
+    : l_new : organ, pipe organ
+
+
+--> #  407 | c      407 | y     1.0e+00 | y_next 7.4e-08
++++ >        c_new  654 | y_new 5.5e-01 | y_old 4.5e-01 | evals 10015
+    : changes  3252 | dx1 3.4e+03 | dx2 6.1e+01
+    : l_old : ambulance
+    : l_new : minibus
+
+
+--> #  408 | c      408 | y     1.0e+00 | y_next 5.6e-06
++++ >        c_new  814 | y_new 5.6e-01 | y_old 4.4e-01 | evals 10090
+    : changes  3147 | dx1 1.6e+03 | dx2 2.3e+01
+    : l_old : amphibian, amphibious vehicle
+    : l_new : speedboat
+
+
+--> #  409 | c      409 | y     1.0e+00 | y_next 5.0e-04
++++ >        c_new  892 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10020
+    : changes  3339 | dx1 5.1e+03 | dx2 7.8e+01
+    : l_old : analog clock
+    : l_new : wall clock
+
+
+--> #  410 | c      410 | y     1.0e+00 | y_next 3.8e-06
++++ >        c_new  412 | y_new 6.0e-01 | y_old 3.9e-01 | evals 10005
+    : changes  3211 | dx1 2.2e+03 | dx2 3.2e+01
+    : l_old : apiary, bee house
+    : l_new : ashcan, trash can, garbage can, wastebin, ash bin,
+
+
+--> #  411 | c      411 | y     1.0e+00 | y_next 2.6e-04
++++ >        c_new  778 | y_new 4.9e-01 | y_old 3.9e-01 | evals 10090
+    : changes  3233 | dx1 6.1e+02 | dx2 1.1e+01
+    : l_old : apron
+    : l_new : scale, weighing machine
+
+
+--> #  412 | c      412 | y     1.0e+00 | y_next 4.1e-06
++++ >        c_new  796 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10016
+    : changes  2928 | dx1 1.8e+03 | dx2 3.1e+01
+    : l_old : ashcan, trash can, garbage can, wastebin, ash bin,
+    : l_new : ski mask
+
+
+--> #  414 | c      414 | y     1.0e+00 | y_next 3.1e-03
++++ >        c_new  636 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10061
+    : changes  3265 | dx1 1.5e+03 | dx2 2.2e+01
+    : l_old : backpack, back pack, knapsack, packsack, rucksack,
+    : l_new : mailbag, postbag
+
+
+--> #  415 | c      415 | y     9.9e-01 | y_next 4.3e-03
++++ >        c_new  850 | y_new 5.1e-01 | y_old 4.5e-01 | evals 10087
+    : changes  3328 | dx1 2.2e+02 | dx2 2.9e+00
+    : l_old : bakery, bakeshop, bakehouse
+    : l_new : teddy, teddy bear
+
+
+--> #  416 | c      416 | y     1.0e+00 | y_next 1.3e-03
++++ >        c_new  702 | y_new 5.1e-01 | y_old 4.8e-01 | evals 10021
+    : changes  3267 | dx1 1.1e+03 | dx2 1.7e+01
+    : l_old : balance beam, beam
+    : l_new : parallel bars, bars
+
+
+--> #  417 | c      417 | y     1.0e+00 | y_next 1.6e-08
++++ >        c_new  641 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10023
+    : changes  3319 | dx1 6.0e+03 | dx2 9.4e+01
+    : l_old : balloon
+    : l_new : maraca
+
+
+--> #  418 | c      418 | y     1.0e+00 | y_next 6.3e-05
++++ >        c_new  563 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10069
+    : changes  3344 | dx1 1.1e+03 | dx2 2.2e+01
+    : l_old : ballpoint, ballpoint pen, ballpen, biro
+    : l_new : fountain pen
+
+
+--> #  419 | c      419 | y     1.0e+00 | y_next 1.6e-08
++++ >        c_new  591 | y_new 4.7e-01 | y_old 4.0e-01 | evals 10047
+    : changes  3358 | dx1 5.0e+03 | dx2 7.6e+01
+    : l_old : band aid
+    : l_new : handkerchief, hankie, hanky, hankey
+
+
+--> #  420 | c      420 | y     1.0e+00 | y_next 2.8e-07
++++ >        c_new  541 | y_new 6.3e-01 | y_old 3.6e-01 | evals 10008
+    : changes  3326 | dx1 2.0e+03 | dx2 2.8e+01
+    : l_old : banjo
+    : l_new : drum, membranophone, tympan
+
+
+--> #  421 | c      421 | y     1.0e+00 | y_next 7.8e-04
++++ >        c_new  619 | y_new 5.5e-01 | y_old 4.4e-01 | evals 10024
+    : changes  3393 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : bannister, banister, balustrade, balusters, handra
+    : l_new : lampshade, lamp shade
+
+
+--> #  422 | c      422 | y     1.0e+00 | y_next 3.7e-08
++++ >        c_new  862 | y_new 6.8e-01 | y_old 2.9e-01 | evals 10054
+    : changes  3246 | dx1 3.8e+03 | dx2 6.2e+01
+    : l_old : barbell
+    : l_new : torch
+
+
+--> #  423 | c      423 | y     1.0e+00 | y_next 1.7e-04
++++ >        c_new  629 | y_new 4.5e-01 | y_old 2.7e-01 | evals 10091
+    : changes  3311 | dx1 4.6e+03 | dx2 7.1e+01
+    : l_old : barber chair
+    : l_new : lipstick, lip rouge
+
+
+--> #  425 | c      425 | y     1.0e+00 | y_next 1.0e-07
++++ >        c_new  580 | y_new 6.3e-01 | y_old 3.7e-01 | evals 10059
+    : changes  3302 | dx1 7.6e+03 | dx2 1.1e+02
+    : l_old : barn
+    : l_new : greenhouse, nursery, glasshouse
+
+
+--> #  426 | c      426 | y     1.0e+00 | y_next 8.9e-04
++++ >        c_new  546 | y_new 4.7e-01 | y_old 4.6e-01 | evals 10012
+    : changes  2569 | dx1 1.4e+02 | dx2 2.4e+00
+    : l_old : barometer
+    : l_new : electric guitar
+
+
+--> #  428 | c      428 | y     1.0e+00 | y_next 1.2e-07
++++ >        c_new  435 | y_new 9.1e-01 | y_old 3.0e-02 | evals 10032
+    : changes  3403 | dx1 4.5e+03 | dx2 6.6e+01
+    : l_old : barrow, garden cart, lawn cart, wheelbarrow
+    : l_new : bathtub, bathing tub, bath, tub
+
+
+--> #  429 | c      429 | y     1.0e+00 | y_next 2.0e-07
++++ >        c_new  971 | y_new 7.3e-01 | y_old 2.3e-01 | evals 10098
+    : changes  3366 | dx1 4.7e+03 | dx2 6.4e+01
+    : l_old : baseball
+    : l_new : bubble
+
+
+--> #  430 | c      430 | y     1.0e+00 | y_next 9.0e-08
++++ >        c_new  890 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10019
+    : changes  3328 | dx1 2.1e+03 | dx2 3.0e+01
+    : l_old : basketball
+    : l_new : volleyball
+
+
+--> #  431 | c      431 | y     1.0e+00 | y_next 1.2e-05
++++ >        c_new  516 | y_new 6.2e-01 | y_old 3.8e-01 | evals 10048
+    : changes  3301 | dx1 5.0e+03 | dx2 7.3e+01
+    : l_old : bassinet
+    : l_new : cradle
+
+
+--> #  432 | c      432 | y     1.0e+00 | y_next 7.8e-06
++++ >        c_new  776 | y_new 7.6e-01 | y_old 2.4e-01 | evals 10013
+    : changes  3323 | dx1 4.8e+03 | dx2 6.8e+01
+    : l_old : bassoon
+    : l_new : sax, saxophone
+
+
+--> #  433 | c      433 | y     1.0e+00 | y_next 4.1e-08
++++ >        c_new  793 | y_new 8.5e-01 | y_old 1.5e-01 | evals 10075
+    : changes  3309 | dx1 2.0e+03 | dx2 2.7e+01
+    : l_old : bathing cap, swimming cap
+    : l_new : shower cap
+
+
+--> #  434 | c      434 | y     1.0e+00 | y_next 7.7e-06
++++ >        c_new  806 | y_new 6.0e-01 | y_old 3.9e-01 | evals 10012
+    : changes  3287 | dx1 8.9e+02 | dx2 1.2e+01
+    : l_old : bath towel
+    : l_new : sock
+
+
+--> #  435 | c      435 | y     8.2e-01 | y_next 1.8e-01
++++ >        c_new  876 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10063
+    : changes  3351 | dx1 2.4e+03 | dx2 4.1e+01
+    : l_old : bathtub, bathing tub, bath, tub
+    : l_new : tub, vat
+
+
+--> #  436 | c      436 | y     1.0e+00 | y_next 1.3e-06
++++ >        c_new  656 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10009
+    : changes  3247 | dx1 2.1e+03 | dx2 3.3e+01
+    : l_old : beach wagon, station wagon, wagon, estate car, bea
+    : l_new : minivan
+
+
+--> #  437 | c      437 | y     1.0e+00 | y_next 3.1e-07
++++ >        c_new  668 | y_new 3.9e-01 | y_old 3.6e-01 | evals 10088
+    : changes  3365 | dx1 4.6e+03 | dx2 6.8e+01
+    : l_old : beacon, lighthouse, beacon light, pharos
+    : l_new : mosque
+
+
+--> #  438 | c      438 | y     9.8e-01 | y_next 1.8e-02
++++ >        c_new  737 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10083
+    : changes  1767 | dx1 5.0e+02 | dx2 7.5e+00
+    : l_old : beaker
+    : l_new : pop bottle, soda bottle
+
+
+--> #  439 | c      439 | y     1.0e+00 | y_next 3.2e-08
++++ >        c_new  735 | y_new 7.1e-01 | y_old 2.7e-01 | evals 10065
+    : changes  3368 | dx1 5.1e+03 | dx2 7.7e+01
+    : l_old : bearskin, busby, shako
+    : l_new : poncho
+
+
+--> #  440 | c      440 | y     1.0e+00 | y_next 6.1e-06
++++ >        c_new  737 | y_new 5.8e-01 | y_old 4.2e-01 | evals 10099
+    : changes  3351 | dx1 2.6e+03 | dx2 3.8e+01
+    : l_old : beer bottle
+    : l_new : pop bottle, soda bottle
+
+
+--> #  441 | c      441 | y     9.4e-01 | y_next 6.3e-02
++++ >        c_new  572 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10005
+    : changes  1493 | dx1 3.1e+02 | dx2 5.0e+00
+    : l_old : beer glass
+    : l_new : goblet
+
+
+--> #  442 | c      442 | y     1.0e+00 | y_next 6.9e-07
++++ >        c_new  497 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10022
+    : changes  2085 | dx1 1.1e+03 | dx2 2.3e+01
+    : l_old : bell cote, bell cot
+    : l_new : church, church building
+
+
+--> #  443 | c      443 | y     1.0e+00 | y_next 1.1e-07
++++ >        c_new  643 | y_new 9.4e-01 | y_old 5.9e-02 | evals 10051
+    : changes  3384 | dx1 9.0e+03 | dx2 1.3e+02
+    : l_old : bib
+    : l_new : mask
+
+
+--> #  444 | c      444 | y     1.0e+00 | y_next 3.6e-05
++++ >        c_new  665 | y_new 5.2e-01 | y_old 4.6e-01 | evals 10085
+    : changes  3323 | dx1 2.1e+03 | dx2 3.2e+01
+    : l_old : bicycle-built-for-two, tandem bicycle, tandem
+    : l_new : moped
+
+
+--> #  447 | c      447 | y     1.0e+00 | y_next 3.7e-08
++++ >        c_new  613 | y_new 6.5e-01 | y_old 3.5e-01 | evals 10012
+    : changes  1909 | dx1 1.8e+03 | dx2 4.0e+01
+    : l_old : binoculars, field glasses, opera glasses
+    : l_new : joystick
+
+
+--> #  448 | c      448 | y     1.0e+00 | y_next 1.2e-07
++++ >        c_new  637 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10077
+    : changes  3279 | dx1 2.5e+03 | dx2 3.7e+01
+    : l_old : birdhouse
+    : l_new : mailbox, letter box
+
+
+--> #  449 | c      449 | y     1.0e+00 | y_next 7.2e-04
++++ >        c_new  975 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10074
+    : changes  3351 | dx1 8.8e+02 | dx2 1.3e+01
+    : l_old : boathouse
+    : l_new : lakeside, lakeshore
+
+
+--> #  450 | c      450 | y     1.0e+00 | y_next 8.0e-09
++++ >        c_new  496 | y_new 9.9e-01 | y_old 1.3e-02 | evals 10093
+    : changes  3283 | dx1 4.5e+03 | dx2 7.1e+01
+    : l_old : bobsled, bobsleigh, bob
+    : l_new : christmas stocking
+
+
+--> #  452 | c      452 | y     1.0e+00 | y_next 7.6e-07
++++ >        c_new  434 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10055
+    : changes  3045 | dx1 3.2e+03 | dx2 5.7e+01
+    : l_old : bonnet, poke bonnet
+    : l_new : bath towel
+
+
+--> #  454 | c      454 | y     9.9e-01 | y_next 1.3e-02
++++ >        c_new  860 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10088
+    : changes  3338 | dx1 1.2e+03 | dx2 1.8e+01
+    : l_old : bookshop, bookstore, bookstall
+    : l_new : tobacco shop, tobacconist shop, tobacconist
+
+
+--> #  455 | c      455 | y     1.0e+00 | y_next 2.4e-03
++++ >        c_new  855 | y_new 7.6e-01 | y_old 2.0e-01 | evals 10009
+    : changes  3324 | dx1 1.1e+03 | dx2 1.6e+01
+    : l_old : bottlecap
+    : l_new : thimble
+
+
+--> #  459 | c      459 | y     9.3e-01 | y_next 4.5e-02
++++ >        c_new  638 | y_new 4.5e-01 | y_old 4.1e-01 | evals 10021
+    : changes  2534 | dx1 5.0e+02 | dx2 8.6e+00
+    : l_old : brassiere, bra, bandeau
+    : l_new : maillot
+
+
+--> #  460 | c      460 | y     1.0e+00 | y_next 9.5e-07
++++ >        c_new  437 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10092
+    : changes  3384 | dx1 3.8e+03 | dx2 5.4e+01
+    : l_old : breakwater, groin, groyne, mole, bulwark, seawall,
+    : l_new : beacon, lighthouse, beacon light, pharos
+
+
+--> #  461 | c      461 | y     9.9e-01 | y_next 1.1e-02
++++ >        c_new  583 | y_new 4.3e-01 | y_old 3.9e-01 | evals 10061
+    : changes  3228 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : breastplate, aegis, egis
+    : l_new : guillotine
+
+
+--> #  462 | c      462 | y     1.0e+00 | y_next 2.8e-05
++++ >        c_new  816 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10042
+    : changes  3357 | dx1 5.9e+02 | dx2 8.3e+00
+    : l_old : broom
+    : l_new : spindle
+
+
+--> #  463 | c      463 | y     1.0e+00 | y_next 1.6e-06
++++ >        c_new  720 | y_new 5.6e-01 | y_old 4.4e-01 | evals 10083
+    : changes  3380 | dx1 1.1e+03 | dx2 1.6e+01
+    : l_old : bucket, pail
+    : l_new : pill bottle
+
+
+--> #  464 | c      464 | y     1.0e+00 | y_next 8.1e-13
+    > fail | evals 10000
+
+--> #  465 | c      465 | y     1.0e+00 | y_next 1.3e-06
++++ >        c_new  514 | y_new 6.7e-01 | y_old 3.2e-01 | evals 10070
+    : changes  3372 | dx1 2.3e+03 | dx2 3.4e+01
+    : l_old : bulletproof vest
+    : l_new : cowboy boot
+
+
+--> #  466 | c      466 | y     1.0e+00 | y_next 1.5e-08
+    > fail | evals 10000
+
+--> #  467 | c      467 | y     1.0e+00 | y_next 2.6e-03
++++ >        c_new  499 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10008
+    : changes  3331 | dx1 1.1e+03 | dx2 1.6e+01
+    : l_old : butcher shop, meat market
+    : l_new : cleaver, meat cleaver, chopper
+
+
+--> #  468 | c      468 | y     1.0e+00 | y_next 4.4e-09
++++ >        c_new  627 | y_new 6.0e-01 | y_old 4.0e-01 | evals 10055
+    : changes  3289 | dx1 4.7e+03 | dx2 7.3e+01
+    : l_old : cab, hack, taxi, taxicab
+    : l_new : limousine, limo
+
+
+--> #  469 | c      469 | y     9.7e-01 | y_next 1.6e-02
++++ >        c_new  725 | y_new 3.2e-01 | y_old 3.0e-01 | evals 10028
+    : changes  3321 | dx1 5.3e+02 | dx2 7.1e+00
+    : l_old : caldron, cauldron
+    : l_new : pitcher, ewer
+
+
+--> #  470 | c      470 | y     1.0e+00 | y_next 9.1e-07
++++ >        c_new  626 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10004
+    : changes  3333 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : candle, taper, wax light
+    : l_new : lighter, light, igniter, ignitor
+
+
+--> #  471 | c      471 | y     1.0e+00 | y_next 2.3e-06
++++ >        c_new  744 | y_new 5.1e-01 | y_old 4.1e-01 | evals 10055
+    : changes  3355 | dx1 2.2e+03 | dx2 3.3e+01
+    : l_old : cannon
+    : l_new : projectile, missile
+
+
+--> #  472 | c      472 | y     1.0e+00 | y_next 1.3e-05
++++ >        c_new  693 | y_new 6.5e-01 | y_old 3.5e-01 | evals 10051
+    : changes  3335 | dx1 5.1e+03 | dx2 7.4e+01
+    : l_old : canoe
+    : l_new : paddle, boat paddle
+
+
+--> #  473 | c      473 | y     1.0e+00 | y_next 2.5e-06
++++ >        c_new  872 | y_new 6.2e-01 | y_old 3.8e-01 | evals 10030
+    : changes  3385 | dx1 7.1e+02 | dx2 1.0e+01
+    : l_old : can opener, tin opener
+    : l_new : tripod
+
+
+--> #  474 | c      474 | y     1.0e+00 | y_next 6.7e-06
++++ >        c_new  658 | y_new 5.3e-01 | y_old 4.6e-01 | evals 10022
+    : changes  3415 | dx1 3.9e+03 | dx2 5.2e+01
+    : l_old : cardigan
+    : l_new : mitten
+
+
+--> #  475 | c      475 | y     1.0e+00 | y_next 3.3e-07
++++ >        c_new  672 | y_new 5.6e-01 | y_old 4.4e-01 | evals 10063
+    : changes  3105 | dx1 7.5e+03 | dx2 1.2e+02
+    : l_old : car mirror
+    : l_new : mountain tent
+
+
+--> #  478 | c      478 | y     1.0e+00 | y_next 4.8e-05
++++ >        c_new  519 | y_new 5.5e-01 | y_old 4.3e-01 | evals 10092
+    : changes  3338 | dx1 2.2e+03 | dx2 3.0e+01
+    : l_old : carton
+    : l_new : crate
+
+
+--> #  479 | c      479 | y     1.0e+00 | y_next 1.2e-05
++++ >        c_new  751 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10086
+    : changes  3281 | dx1 5.3e+03 | dx2 8.0e+01
+    : l_old : car wheel
+    : l_new : racer, race car, racing car
+
+
+--> #  480 | c      480 | y     1.0e+00 | y_next 4.5e-09
++++ >        c_new  412 | y_new 7.0e-01 | y_old 3.0e-01 | evals 10022
+    : changes  3128 | dx1 4.7e+03 | dx2 7.4e+01
+    : l_old : cash machine, cash dispenser, automated teller mac
+    : l_new : ashcan, trash can, garbage can, wastebin, ash bin,
+
+
+--> #  481 | c      481 | y     9.8e-01 | y_next 1.1e-02
++++ >        c_new  482 | y_new 3.4e-01 | y_old 3.2e-01 | evals 10028
+    : changes  3363 | dx1 6.3e+03 | dx2 9.6e+01
+    : l_old : cassette
+    : l_new : cassette player
+
+
+--> #  483 | c      483 | y     1.0e+00 | y_next 3.1e-04
++++ >        c_new  427 | y_new 4.8e-01 | y_old 2.8e-01 | evals 10003
+    : changes  3302 | dx1 1.3e+03 | dx2 2.0e+01
+    : l_old : castle
+    : l_new : barrel, cask
+
+
+--> #  484 | c      484 | y     1.0e+00 | y_next 6.1e-06
++++ >        c_new  871 | y_new 5.9e-01 | y_old 4.1e-01 | evals 10028
+    : changes  3337 | dx1 4.6e+03 | dx2 6.5e+01
+    : l_old : catamaran
+    : l_new : trimaran
+
+
+--> #  485 | c      485 | y     1.0e+00 | y_next 7.4e-07
++++ >        c_new  882 | y_new 6.0e-01 | y_old 4.0e-01 | evals 10052
+    : changes  3374 | dx1 3.6e+03 | dx2 6.9e+01
+    : l_old : cd player
+    : l_new : vacuum, vacuum cleaner
+
+
+--> #  488 | c      488 | y     1.0e+00 | y_next 3.0e-04
++++ >        c_new  679 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10011
+    : changes  3145 | dx1 8.9e+02 | dx2 1.3e+01
+    : l_old : chain
+    : l_new : necklace
+
+
+--> #  489 | c      489 | y     1.0e+00 | y_next 9.2e-08
++++ >        c_new   85 | y_new 9.2e-01 | y_old 7.6e-02 | evals 10006
+    : changes  2770 | dx1 5.3e+03 | dx2 9.3e+01
+    : l_old : chainlink fence
+    : l_new : quail
+
+
+--> #  490 | c      490 | y     1.0e+00 | y_next 8.4e-07
+    > fail | evals 10000
+
+--> #  492 | c      492 | y     1.0e+00 | y_next 6.4e-05
++++ >        c_new  662 | y_new 5.3e-01 | y_old 4.6e-01 | evals 10054
+    : changes  1957 | dx1 7.2e+02 | dx2 1.6e+01
+    : l_old : chest
+    : l_new : modem
+
+
+--> #  493 | c      493 | y     1.0e+00 | y_next 4.5e-03
++++ >        c_new  492 | y_new 4.9e-01 | y_old 4.7e-01 | evals 10026
+    : changes  3348 | dx1 5.3e+02 | dx2 6.8e+00
+    : l_old : chiffonier, commode
+    : l_new : chest
+
+
+--> #  494 | c      494 | y     9.3e-01 | y_next 7.5e-02
++++ >        c_new  442 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10015
+    : changes  3107 | dx1 1.1e+03 | dx2 1.7e+01
+    : l_old : chime, bell, gong
+    : l_new : bell cote, bell cot
+
+
+--> #  495 | c      495 | y     1.0e+00 | y_next 3.0e-07
++++ >        c_new  406 | y_new 5.3e-01 | y_old 4.6e-01 | evals 10020
+    : changes  3395 | dx1 5.1e+03 | dx2 7.2e+01
+    : l_old : china cabinet, china closet
+    : l_new : altar
+
+
+--> #  496 | c      496 | y     1.0e+00 | y_next 2.7e-06
++++ >        c_new  626 | y_new 5.9e-01 | y_old 4.1e-01 | evals 10067
+    : changes  3325 | dx1 5.8e+02 | dx2 8.1e+00
+    : l_old : christmas stocking
+    : l_new : lighter, light, igniter, ignitor
+
+
+--> #  497 | c      497 | y     1.0e+00 | y_next 3.4e-07
++++ >        c_new  425 | y_new 9.8e-01 | y_old 2.4e-02 | evals 10041
+    : changes  3242 | dx1 1.5e+03 | dx2 2.2e+01
+    : l_old : church, church building
+    : l_new : barn
+
+
+--> #  498 | c      498 | y     1.0e+00 | y_next 6.5e-06
++++ >        c_new  424 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10068
+    : changes  3323 | dx1 2.2e+03 | dx2 3.4e+01
+    : l_old : cinema, movie theater, movie theatre, movie house,
+    : l_new : barbershop
+
+
+Completed. Successful: 96.34% (total images 82)
+DONE ( 60435.34 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-03 09-05-02] Work is finished (60440.53 sec. total)
+
+

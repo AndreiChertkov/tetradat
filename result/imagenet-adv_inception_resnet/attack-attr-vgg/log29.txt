@@ -1,0 +1,82 @@
+[2024-08-05 09-57-33] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     5.18 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.26 sec.) 
+
+
+.... Start attack on images
+
+--> #  181 | c      181 | y     1.0e+00 | y_next 1.1e-07
+    > fail | evals 10000
+
+--> #  182 | c      182 | y     1.0e+00 | y_next 7.1e-08
++++ >        c_new  184 | y_new 5.5e-01 | y_old 3.9e-01 | evals 10053
+    : changes  3324 | dx1 3.0e+03 | dx2 4.2e+01
+    : l_old : border terrier
+    : l_new : irish terrier
+
+
+--> #  183 | c      183 | y     1.0e+00 | y_next 8.8e-08
++++ >        c_new  189 | y_new 6.3e-01 | y_old 3.7e-01 | evals  9974
+    : changes  3385 | dx1 2.9e+03 | dx2 4.0e+01
+    : l_old : kerry blue terrier
+    : l_new : lakeland terrier
+
+
+--> #  185 | c      185 | y     1.0e+00 | y_next 1.3e-06
++++ >        c_new  186 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10081
+    : changes  3382 | dx1 2.0e+03 | dx2 2.5e+01
+    : l_old : norfolk terrier
+    : l_new : norwich terrier
+
+
+--> #  188 | c      188 | y     1.0e+00 | y_next 6.8e-05
++++ >        c_new  181 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10018
+    : changes  3042 | dx1 5.6e+03 | dx2 9.7e+01
+    : l_old : wire-haired fox terrier
+    : l_new : bedlington terrier
+
+
+--> #  189 | c      189 | y     1.0e+00 | y_next 2.9e-04
++++ >        c_new  188 | y_new 5.2e-01 | y_old 4.7e-01 | evals 10037
+    : changes  3324 | dx1 9.2e+02 | dx2 1.2e+01
+    : l_old : lakeland terrier
+    : l_new : wire-haired fox terrier
+
+
+Completed. Successful: 83.33% (total images 6)
+DONE ( 10468.40 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 12-52-08] Work is finished (10474.85 sec. total)
+
+

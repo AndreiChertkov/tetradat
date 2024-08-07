@@ -1,0 +1,64 @@
+[2024-08-05 11-37-50] Computations (cuda:7)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.66 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.30 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    11.21 sec.) 
+
+.... Loading text similarity calculator
+DONE (     2.29 sec.) 
+
+.... Loading text styling network
+DONE (     3.56 sec.) 
+
+.... Run attack on LLaVa for image #  263
+
+protes > m 1.0e+02 | t 2.944e+02 | y  5.5136e-01
+protes > m 2.0e+02 | t 6.400e+02 | y  5.4333e-01
+protes > m 3.0e+02 | t 9.878e+02 | y  5.4219e-01
+protes > m 9.0e+02 | t 3.060e+03 | y  5.1978e-01
+protes > m 1.0e+03 | t 3.394e+03 | y  5.1978e-01 <<< DONE
+
+
+Image   #   263
+Label   : pembroke, pembroke welsh corgi
+OUT old : The main object in the picture is a dog, specifically a corgi, standing on a road. The purpose of the dog is to provide companionship, protection, and assistance to its owner. Dogs are known for their loyalty and ability
+OUT new : The main object in the picture is a red blanket, which is likely used to keep the two dogs warm and comfortable, especially in cold or wet conditions. The blanket can also serve as a protective layer against the elements, such as rain
+SCORE   : 5.20e-01
+DONE (  3426.44 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-35-17] Work is finished (3446.50 sec. total)
+
+

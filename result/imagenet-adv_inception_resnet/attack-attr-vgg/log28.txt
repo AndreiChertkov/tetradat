@@ -1,0 +1,93 @@
+[2024-08-05 09-57-16] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     5.46 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.33 sec.) 
+
+
+.... Start attack on images
+
+--> #  170 | c      170 | y     7.5e-01 | y_next 2.5e-01
++++ >        c_new  177 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10046
+    : changes  3124 | dx1 9.6e+01 | dx2 1.6e+00
+    : l_old : irish wolfhound
+    : l_new : scottish deerhound, deerhound
+
+
+--> #  172 | c      172 | y     1.0e+00 | y_next 2.3e-08
++++ >        c_new  169 | y_new 6.1e-01 | y_old 3.9e-01 | evals 10043
+    : changes  3331 | dx1 1.1e+03 | dx2 1.6e+01
+    : l_old : whippet
+    : l_new : borzoi, russian wolfhound
+
+
+--> #  173 | c      173 | y     1.0e+00 | y_next 6.1e-07
++++ >        c_new  176 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10013
+    : changes  3304 | dx1 3.1e+03 | dx2 4.3e+01
+    : l_old : ibizan hound, ibizan podenco
+    : l_new : saluki, gazelle hound
+
+
+--> #  176 | c      176 | y     1.0e+00 | y_next 2.6e-07
++++ >        c_new  160 | y_new 5.5e-01 | y_old 4.5e-01 | evals 10057
+    : changes  3367 | dx1 4.9e+03 | dx2 6.9e+01
+    : l_old : saluki, gazelle hound
+    : l_new : afghan hound, afghan
+
+
+--> #  177 | c      177 | y     1.0e+00 | y_next 2.5e-05
++++ >        c_new  170 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10095
+    : changes  3284 | dx1 1.9e+03 | dx2 2.9e+01
+    : l_old : scottish deerhound, deerhound
+    : l_new : irish wolfhound
+
+
+--> #  178 | c      178 | y     1.0e+00 | y_next 4.0e-08
++++ >        c_new  246 | y_new 5.7e-01 | y_old 4.3e-01 | evals 10047
+    : changes  3415 | dx1 3.6e+03 | dx2 5.7e+01
+    : l_old : weimaraner
+    : l_new : great dane
+
+
+--> #  179 | c      179 | y     5.4e-01 | y_next 4.6e-01
++++ >        c_new  180 | y_new 5.0e-01 | y_old 5.0e-01 | evals   381
+    : changes  3007 | dx1 7.9e+01 | dx2 1.1e+00
+    : l_old : staffordshire bullterrier, staffordshire bull terr
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+Completed. Successful: 100.00% (total images 7)
+DONE ( 10543.02 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 12-53-06] Work is finished (10549.82 sec. total)
+
+

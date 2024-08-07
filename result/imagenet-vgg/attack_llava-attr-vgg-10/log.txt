@@ -1,0 +1,63 @@
+[2024-08-05 11-38-22] Computations (cuda:3)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     5.30 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.75 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    24.83 sec.) 
+
+.... Loading text similarity calculator
+DONE (     4.50 sec.) 
+
+.... Loading text styling network
+DONE (    12.73 sec.) 
+
+.... Run attack on LLaVa for image #  975
+
+protes > m 1.0e+02 | t 3.048e+02 | y  8.4333e-01
+protes > m 3.0e+02 | t 9.904e+02 | y  8.1982e-01
+protes > m 7.0e+02 | t 2.351e+03 | y  7.9413e-01
+protes > m 1.0e+03 | t 3.356e+03 | y  7.9413e-01 <<< DONE
+
+
+Image   #   975
+Label   : lakeside, lakeshore
+OUT old : The main object in the picture is a tree, which serves as a natural source of shade and a place for people to rest or seek shelter. Trees also play a crucial role in the environment by providing oxygen, absorbing carbon dio
+OUT new : The main object in the picture is a tree, which serves as a natural element in the scene. It provides shade and a sense of tranquility, as well as a backdrop for the foggy field. The tree's presence adds
+SCORE   : 7.94e-01
+DONE (  3376.15 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-35-29] Work is finished (3426.32 sec. total)
+
+

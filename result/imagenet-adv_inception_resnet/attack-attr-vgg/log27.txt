@@ -1,0 +1,100 @@
+[2024-08-05 09-57-10] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     5.40 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.23 sec.) 
+
+
+.... Start attack on images
+
+--> #  160 | c      160 | y     1.0e+00 | y_next 4.8e-08
++++ >        c_new  219 | y_new 5.5e-01 | y_old 4.5e-01 | evals 10064
+    : changes  3389 | dx1 4.1e+03 | dx2 5.8e+01
+    : l_old : afghan hound, afghan
+    : l_new : cocker spaniel, english cocker spaniel, cocker
+
+
+--> #  161 | c      161 | y     9.9e-01 | y_next 5.8e-03
++++ >        c_new  162 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10038
+    : changes  3267 | dx1 2.5e+02 | dx2 3.6e+00
+    : l_old : basset, basset hound
+    : l_new : beagle
+
+
+--> #  164 | c      164 | y     1.0e+00 | y_next 1.1e-04
++++ >        c_new  210 | y_new 5.7e-01 | y_old 4.3e-01 | evals 10013
+    : changes  3393 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : bluetick
+    : l_new : german short-haired pointer
+
+
+--> #  165 | c      165 | y     1.0e+00 | y_next 2.0e-05
++++ >        c_new  163 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10090
+    : changes  2607 | dx1 8.5e+02 | dx2 1.2e+01
+    : l_old : black-and-tan coonhound
+    : l_new : bloodhound, sleuthhound
+
+
+--> #  166 | c      166 | y     9.8e-01 | y_next 1.6e-02
++++ >        c_new  162 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10012
+    : changes  3369 | dx1 1.6e+03 | dx2 2.3e+01
+    : l_old : walker hound, walker foxhound
+    : l_new : beagle
+
+
+--> #  167 | c      167 | y     9.9e-01 | y_next 6.4e-03
++++ >        c_new  166 | y_new 5.1e-01 | y_old 4.8e-01 | evals 10024
+    : changes  3341 | dx1 2.1e+03 | dx2 3.2e+01
+    : l_old : english foxhound
+    : l_new : walker hound, walker foxhound
+
+
+--> #  168 | c      168 | y     1.0e+00 | y_next 4.6e-06
++++ >        c_new  159 | y_new 5.6e-01 | y_old 4.4e-01 | evals 10078
+    : changes  3296 | dx1 1.1e+03 | dx2 1.3e+01
+    : l_old : redbone
+    : l_new : rhodesian ridgeback
+
+
+--> #  169 | c      169 | y     1.0e+00 | y_next 8.3e-05
++++ >        c_new  177 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10072
+    : changes  3275 | dx1 3.5e+03 | dx2 4.8e+01
+    : l_old : borzoi, russian wolfhound
+    : l_new : scottish deerhound, deerhound
+
+
+Completed. Successful: 100.00% (total images 8)
+DONE ( 12184.86 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-20-22] Work is finished (12191.50 sec. total)
+
+

@@ -1,0 +1,62 @@
+[2024-08-05 11-37-52] Computations (cuda:7)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.49 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.23 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    10.04 sec.) 
+
+.... Loading text similarity calculator
+DONE (     2.45 sec.) 
+
+.... Loading text styling network
+DONE (     2.95 sec.) 
+
+.... Run attack on LLaVa for image #  318
+
+protes > m 1.0e+02 | t 2.940e+02 | y  5.0845e-01
+protes > m 2.0e+02 | t 6.410e+02 | y  4.4228e-01
+protes > m 1.0e+03 | t 3.403e+03 | y  4.4228e-01 <<< DONE
+
+
+Image   #   318
+Label   : lacewing, lacewing fly
+OUT old : The main object in the picture is a leaf with a hole in it, which is likely a part of a plant or a leaf insect. The purpose of this leaf is to provide shelter, protection, and camouflage for the insect or plant
+OUT new : The main object in the picture is a crab, which is a type of crustacean. Crabs are known for their ability to move quickly and efficiently, and they are often used in various culinary dishes. In this image
+SCORE   : 4.42e-01
+DONE (  3431.44 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-35-21] Work is finished (3449.64 sec. total)
+
+

@@ -1,0 +1,100 @@
+[2024-08-05 09-54-18] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     1.35 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.20 sec.) 
+
+
+.... Start attack on images
+
+--> #  100 | c      100 | y     1.0e+00 | y_next 8.4e-07
++++ >        c_new   99 | y_new 5.1e-01 | y_old 4.0e-01 | evals 10058
+    : changes  3163 | dx1 5.2e+03 | dx2 8.2e+01
+    : l_old : black swan, cygnus atratus
+    : l_new : goose
+
+
+--> #  101 | c      101 | y     1.0e+00 | y_next 1.0e-03
++++ >        c_new  386 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10021
+    : changes  3360 | dx1 1.4e+03 | dx2 2.0e+01
+    : l_old : tusker
+    : l_new : african elephant, loxodonta africana
+
+
+--> #  102 | c      102 | y     1.0e+00 | y_next 1.7e-06
++++ >        c_new  334 | y_new 6.1e-01 | y_old 3.9e-01 | evals 10072
+    : changes  3377 | dx1 7.5e+03 | dx2 1.1e+02
+    : l_old : echidna, spiny anteater, anteater
+    : l_new : porcupine, hedgehog
+
+
+--> #  103 | c      103 | y     1.0e+00 | y_next 1.4e-08
++++ >        c_new   76 | y_new 7.2e-01 | y_old 2.8e-01 | evals 10026
+    : changes  3404 | dx1 5.3e+03 | dx2 7.9e+01
+    : l_old : platypus, duckbill, duckbilled platypus, duck-bill
+    : l_new : tarantula
+
+
+--> #  105 | c      105 | y     1.0e+00 | y_next 2.4e-06
++++ >        c_new  106 | y_new 6.1e-01 | y_old 3.9e-01 | evals 10027
+    : changes  3370 | dx1 4.1e+03 | dx2 5.7e+01
+    : l_old : koala, koala bear, kangaroo bear, native bear, pha
+    : l_new : wombat
+
+
+--> #  106 | c      106 | y     1.0e+00 | y_next 1.0e-07
++++ >        c_new  363 | y_new 5.6e-01 | y_old 4.4e-01 | evals 10062
+    : changes  3315 | dx1 1.2e+03 | dx2 1.8e+01
+    : l_old : wombat
+    : l_new : armadillo
+
+
+--> #  108 | c      108 | y     1.0e+00 | y_next 5.5e-04
++++ >        c_new  328 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10050
+    : changes  3387 | dx1 5.7e+02 | dx2 7.3e+00
+    : l_old : sea anemone, anemone
+    : l_new : sea urchin
+
+
+--> #  109 | c      109 | y     1.0e+00 | y_next 7.0e-07
++++ >        c_new   65 | y_new 5.4e-01 | y_old 4.6e-01 | evals 10027
+    : changes  3378 | dx1 2.1e+03 | dx2 3.2e+01
+    : l_old : brain coral
+    : l_new : sea snake
+
+
+Completed. Successful: 100.00% (total images 8)
+DONE ( 12167.69 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-17-08] Work is finished (12170.25 sec. total)
+
+

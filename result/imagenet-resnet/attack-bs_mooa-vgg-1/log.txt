@@ -1,0 +1,366 @@
+[2024-08-06 14-46-07] Computations (cuda:6)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_mooa"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "resnet" model
+DONE (     1.28 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.20 sec.) 
+
+
+.... Start attack on images with baseline "mooa"
+
+--> #    0 | c        0 | y     8.1e-01 | y_next 2.0e-03
+    > fail | evals 10000
+
+--> #    1 | c        1 | y     7.8e-01 | y_next 1.3e-03
+    > fail | evals 10000
+
+--> #    2 | c        2 | y     8.4e-01 | y_next 7.5e-03
+    > fail | evals 10000
+
+--> #    3 | c        3 | y     7.5e-01 | y_next 2.0e-03
+    > fail | evals 10000
+
+--> #    5 | c        5 | y     8.3e-01 | y_next 4.6e-03
+    > fail | evals 10000
+
+--> #    6 | c        6 | y     5.7e-01 | y_next 2.5e-01
++++ >        c_new    5 | y_new 4.1e-01 | y_old 3.9e-01 | evals   694
+    : changes   144 | dx1 6.8e+02 | dx2 4.1e+01
+    : l_old : stingray
+    : l_new : electric ray, crampfish, numbfish, torpedo
+
+
+--> #    7 | c        7 | y     6.8e-01 | y_next 5.2e-02
++++ >        c_new   97 | y_new 3.5e-01 | y_old 3.5e-01 | evals   544
+    : changes   145 | dx1 6.8e+02 | dx2 4.3e+01
+    : l_old : cock
+    : l_new : drake
+
+
+--> #    8 | c        8 | y     7.2e-01 | y_next 9.4e-02
++++ >        c_new    7 | y_new 4.4e-01 | y_old 3.9e-01 | evals   592
+    : changes   145 | dx1 7.4e+02 | dx2 4.6e+01
+    : l_old : hen
+    : l_new : cock
+
+
+--> #    9 | c        9 | y     8.8e-01 | y_next 4.2e-04
+    > fail | evals 10000
+
+--> #   10 | c       10 | y     8.6e-01 | y_next 3.1e-03
++++ >        c_new   12 | y_new 4.2e-01 | y_old 3.2e-01 | evals   132
+    : changes   146 | dx1 7.0e+02 | dx2 4.2e+01
+    : l_old : brambling, fringilla montifringilla
+    : l_new : house finch, linnet, carpodacus mexicanus
+
+
+--> #   11 | c       11 | y     8.6e-01 | y_next 6.0e-04
+    > fail | evals 10000
+
+--> #   12 | c       12 | y     8.1e-01 | y_next 2.3e-03
+    > fail | evals 10000
+
+--> #   13 | c       13 | y     8.4e-01 | y_next 8.8e-03
++++ >        c_new   15 | y_new 5.2e-01 | y_old 2.8e-01 | evals   418
+    : changes   144 | dx1 7.3e+02 | dx2 4.4e+01
+    : l_old : junco, snowbird
+    : l_new : robin, american robin, turdus migratorius
+
+
+--> #   14 | c       14 | y     8.5e-01 | y_next 5.8e-04
+    > fail | evals 10000
+
+--> #   15 | c       15 | y     8.0e-01 | y_next 1.2e-03
+    > fail | evals 10000
+
+--> #   16 | c       16 | y     8.6e-01 | y_next 8.2e-04
+    > fail | evals 10000
+
+--> #   17 | c       17 | y     8.3e-01 | y_next 6.6e-04
+    > fail | evals 10000
+
+--> #   18 | c       18 | y     8.0e-01 | y_next 6.8e-04
+    > fail | evals 10000
+
+--> #   19 | c       19 | y     8.0e-01 | y_next 1.1e-03
+    > fail | evals 10000
+
+--> #   20 | c       20 | y     8.2e-01 | y_next 5.4e-04
+    > fail | evals 10000
+
+--> #   22 | c       22 | y     8.6e-01 | y_next 2.7e-03
+    > fail | evals 10000
+
+--> #   24 | c       24 | y     8.7e-01 | y_next 3.3e-04
+    > fail | evals 10000
+
+--> #   25 | c       25 | y     8.0e-01 | y_next 1.1e-02
+    > fail | evals 10000
+
+--> #   26 | c       26 | y     5.3e-01 | y_next 2.8e-01
++++ >        c_new   27 | y_new 4.4e-01 | y_old 3.9e-01 | evals    10
+    : changes   147 | dx1 6.5e+02 | dx2 4.4e+01
+    : l_old : common newt, triturus vulgaris
+    : l_new : eft
+
+
+--> #   27 | c       27 | y     7.9e-01 | y_next 1.9e-02
+    > fail | evals 10000
+
+--> #   28 | c       28 | y     7.8e-01 | y_next 3.6e-03
+    > fail | evals 10000
+
+--> #   30 | c       30 | y     8.1e-01 | y_next 7.0e-03
+    > fail | evals 10000
+
+--> #   31 | c       31 | y     6.8e-01 | y_next 1.2e-01
++++ >        c_new   32 | y_new 4.5e-01 | y_old 3.4e-01 | evals  2432
+    : changes   142 | dx1 6.7e+02 | dx2 4.9e+01
+    : l_old : tree frog, tree-frog
+    : l_new : tailed frog, bell toad, ribbed toad, tailed toad, 
+
+
+--> #   32 | c       32 | y     7.2e-01 | y_next 1.3e-02
+    > fail | evals 10000
+
+--> #   33 | c       33 | y     7.9e-01 | y_next 2.4e-02
++++ >        c_new  121 | y_new 3.9e-01 | y_old 1.7e-01 | evals   372
+    : changes   149 | dx1 7.1e+02 | dx2 4.4e+01
+    : l_old : loggerhead, loggerhead turtle, caretta caretta
+    : l_new : king crab, alaska crab, alaskan king crab, alaska 
+
+
+--> #   34 | c       34 | y     8.3e-01 | y_next 1.2e-03
+    > fail | evals 10000
+
+--> #   35 | c       35 | y     7.4e-01 | y_next 1.8e-02
+    > fail | evals 10000
+
+--> #   36 | c       36 | y     7.7e-01 | y_next 1.2e-02
++++ >        c_new   35 | y_new 3.1e-01 | y_old 2.8e-01 | evals   112
+    : changes   144 | dx1 6.7e+02 | dx2 4.1e+01
+    : l_old : terrapin
+    : l_new : mud turtle
+
+
+--> #   37 | c       37 | y     6.8e-01 | y_next 1.0e-01
++++ >        c_new   36 | y_new 3.5e-01 | y_old 3.1e-01 | evals   506
+    : changes   147 | dx1 7.3e+02 | dx2 4.4e+01
+    : l_old : box turtle, box tortoise
+    : l_new : terrapin
+
+
+--> #   38 | c       38 | y     7.8e-01 | y_next 6.7e-03
+    > fail | evals 10000
+
+--> #   39 | c       39 | y     8.1e-01 | y_next 3.2e-03
+    > fail | evals 10000
+
+--> #   41 | c       41 | y     8.1e-01 | y_next 2.6e-02
++++ >        c_new   45 | y_new 6.0e-01 | y_old 1.6e-01 | evals    12
+    : changes   144 | dx1 6.7e+02 | dx2 4.1e+01
+    : l_old : whiptail, whiptail lizard
+    : l_new : gila monster, heloderma suspectum
+
+
+--> #   42 | c       42 | y     9.0e-01 | y_next 8.3e-04
+    > fail | evals 10000
+
+--> #   43 | c       43 | y     8.2e-01 | y_next 2.5e-02
++++ >        c_new   47 | y_new 3.6e-01 | y_old 3.6e-01 | evals  1428
+    : changes   146 | dx1 6.8e+02 | dx2 4.4e+01
+    : l_old : frilled lizard, chlamydosaurus kingi
+    : l_new : african chameleon, chamaeleo chamaeleon
+
+
+--> #   45 | c       45 | y     8.7e-01 | y_next 2.5e-03
+    > fail | evals 10000
+
+--> #   47 | c       47 | y     7.8e-01 | y_next 1.1e-03
+    > fail | evals 10000
+
+--> #   48 | c       48 | y     8.6e-01 | y_next 4.7e-03
++++ >        c_new   50 | y_new 4.4e-01 | y_old 4.3e-01 | evals  7166
+    : changes   147 | dx1 7.1e+02 | dx2 4.6e+01
+    : l_old : komodo dragon, komodo lizard, dragon lizard, giant
+    : l_new : american alligator, alligator mississipiensis
+
+
+--> #   49 | c       49 | y     7.8e-01 | y_next 5.2e-03
+    > fail | evals 10000
+
+--> #   51 | c       51 | y     8.4e-01 | y_next 3.9e-04
+    > fail | evals 10000
+
+--> #   52 | c       52 | y     7.8e-01 | y_next 2.1e-02
+    > fail | evals 10000
+
+--> #   53 | c       53 | y     8.1e-01 | y_next 1.0e-02
+    > fail | evals 10000
+
+--> #   57 | c       57 | y     6.6e-01 | y_next 4.3e-02
+    > fail | evals 10000
+
+--> #   59 | c       59 | y     8.5e-01 | y_next 1.8e-02
+    > fail | evals 10000
+
+--> #   61 | c       61 | y     8.1e-01 | y_next 6.4e-03
+    > fail | evals 10000
+
+--> #   62 | c       62 | y     8.5e-01 | y_next 2.8e-02
++++ >        c_new   61 | y_new 4.2e-01 | y_old 4.1e-01 | evals  1746
+    : changes   143 | dx1 6.9e+02 | dx2 4.6e+01
+    : l_old : rock python, rock snake, python sebae
+    : l_new : boa constrictor, constrictor constrictor
+
+
+--> #   63 | c       63 | y     8.9e-01 | y_next 6.1e-04
+    > fail | evals 10000
+
+--> #   67 | c       67 | y     7.7e-01 | y_next 7.4e-03
+    > fail | evals 10000
+
+--> #   68 | c       68 | y     5.6e-01 | y_next 2.4e-01
++++ >        c_new   66 | y_new 3.9e-01 | y_old 3.8e-01 | evals  1424
+    : changes   147 | dx1 7.4e+02 | dx2 4.6e+01
+    : l_old : sidewinder, horned rattlesnake, crotalus cerastes
+    : l_new : horned viper, cerastes, sand viper, horned asp, ce
+
+
+--> #   69 | c       69 | y     8.5e-01 | y_next 4.3e-04
+    > fail | evals 10000
+
+--> #   70 | c       70 | y     8.0e-01 | y_next 1.1e-03
+    > fail | evals 10000
+
+--> #   71 | c       71 | y     8.0e-01 | y_next 5.9e-04
+    > fail | evals 10000
+
+--> #   72 | c       72 | y     4.8e-01 | y_next 2.5e-01
+    > fail | evals 10000
+
+--> #   74 | c       74 | y     4.6e-01 | y_next 2.6e-01
++++ >        c_new   72 | y_new 3.8e-01 | y_old 3.5e-01 | evals    42
+    : changes   145 | dx1 6.6e+02 | dx2 4.2e+01
+    : l_old : garden spider, aranea diademata
+    : l_new : black and gold garden spider, argiope aurantia
+
+
+--> #   75 | c       75 | y     7.7e-01 | y_next 3.7e-03
+    > fail | evals 10000
+
+--> #   76 | c       76 | y     8.6e-01 | y_next 1.4e-03
+    > fail | evals 10000
+
+--> #   77 | c       77 | y     8.0e-01 | y_next 8.4e-03
++++ >        c_new   75 | y_new 4.1e-01 | y_old 3.4e-01 | evals   230
+    : changes   147 | dx1 7.6e+02 | dx2 4.8e+01
+    : l_old : wolf spider, hunting spider
+    : l_new : black widow, latrodectus mactans
+
+
+--> #   78 | c       78 | y     8.1e-01 | y_next 6.5e-04
+    > fail | evals 10000
+
+--> #   79 | c       79 | y     8.1e-01 | y_next 4.3e-04
+    > fail | evals 10000
+
+--> #   80 | c       80 | y     7.9e-01 | y_next 8.4e-04
+    > fail | evals 10000
+
+--> #   81 | c       81 | y     7.7e-01 | y_next 2.4e-03
+    > fail | evals 10000
+
+--> #   82 | c       82 | y     6.7e-01 | y_next 4.0e-02
+    > fail | evals 10000
+
+--> #   83 | c       83 | y     5.7e-01 | y_next 2.6e-01
++++ >        c_new   81 | y_new 4.5e-01 | y_old 3.7e-01 | evals    14
+    : changes   146 | dx1 7.2e+02 | dx2 4.2e+01
+    : l_old : prairie chicken, prairie grouse, prairie fowl
+    : l_new : ptarmigan
+
+
+--> #   84 | c       84 | y     8.3e-01 | y_next 3.3e-04
+    > fail | evals 10000
+
+--> #   85 | c       85 | y     8.0e-01 | y_next 1.0e-02
++++ >        c_new   86 | y_new 3.7e-01 | y_old 2.4e-01 | evals   350
+    : changes   149 | dx1 7.1e+02 | dx2 4.3e+01
+    : l_old : quail
+    : l_new : partridge
+
+
+--> #   86 | c       86 | y     5.9e-01 | y_next 2.4e-01
+    > fail | evals 10000
+
+--> #   87 | c       87 | y     8.0e-01 | y_next 7.1e-04
+    > fail | evals 10000
+
+--> #   88 | c       88 | y     7.9e-01 | y_next 6.0e-04
+    > fail | evals 10000
+
+--> #   89 | c       89 | y     7.9e-01 | y_next 6.3e-04
+    > fail | evals 10000
+
+--> #   90 | c       90 | y     7.8e-01 | y_next 8.4e-04
+    > fail | evals 10000
+
+--> #   91 | c       91 | y     8.1e-01 | y_next 7.8e-04
++++ >        c_new   96 | y_new 3.8e-01 | y_old 1.9e-01 | evals  3088
+    : changes   144 | dx1 6.9e+02 | dx2 4.4e+01
+    : l_old : coucal
+    : l_new : toucan
+
+
+--> #   92 | c       92 | y     8.0e-01 | y_next 3.9e-04
+    > fail | evals 10000
+
+--> #   93 | c       93 | y     8.1e-01 | y_next 7.0e-04
+    > fail | evals 10000
+
+--> #   94 | c       94 | y     8.2e-01 | y_next 1.2e-03
+    > fail | evals 10000
+
+--> #   95 | c       95 | y     8.1e-01 | y_next 2.1e-03
+    > fail | evals 10000
+
+--> #   96 | c       96 | y     7.6e-01 | y_next 1.7e-03
+    > fail | evals 10000
+
+--> #   97 | c       97 | y     8.3e-01 | y_next 2.2e-03
+    > fail | evals 10000
+
+--> #   98 | c       98 | y     8.1e-01 | y_next 1.8e-03
+    > fail | evals 10000
+
+--> #   99 | c       99 | y     8.3e-01 | y_next 7.7e-03
++++ >        c_new   97 | y_new 4.0e-01 | y_old 3.9e-01 | evals   576
+    : changes   148 | dx1 6.8e+02 | dx2 4.2e+01
+    : l_old : goose
+    : l_new : drake
+
+
+Completed. Successful: 25.30% (total images 83)
+DONE ( 25048.81 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-06 21-43-39] Work is finished (25051.31 sec. total)
+
+

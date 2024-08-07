@@ -1,0 +1,114 @@
+[2024-08-05 09-56-39] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     3.71 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.19 sec.) 
+
+
+.... Start attack on images
+
+--> #  130 | c      130 | y     1.0e+00 | y_next 2.1e-07
++++ >        c_new   98 | y_new 5.1e-01 | y_old 4.6e-01 | evals 10024
+    : changes  3316 | dx1 5.7e+02 | dx2 8.6e+00
+    : l_old : flamingo
+    : l_new : red-breasted merganser, mergus serrator
+
+
+--> #  131 | c      131 | y     1.0e+00 | y_next 1.5e-07
++++ >        c_new   58 | y_new 7.2e-01 | y_old 2.1e-01 | evals 10017
+    : changes  3323 | dx1 2.8e+03 | dx2 3.8e+01
+    : l_old : little blue heron, egretta caerulea
+    : l_new : water snake
+
+
+--> #  132 | c      132 | y     1.0e+00 | y_next 4.5e-03
++++ >        c_new  134 | y_new 5.6e-01 | y_old 4.4e-01 | evals 10076
+    : changes  3230 | dx1 5.5e+03 | dx2 7.6e+01
+    : l_old : american egret, great white heron, egretta albus
+    : l_new : crane
+
+
+--> #  133 | c      133 | y     1.0e+00 | y_next 4.1e-08
++++ >        c_new  275 | y_new 6.3e-01 | y_old 3.1e-01 | evals 10069
+    : changes  3371 | dx1 6.0e+03 | dx2 8.4e+01
+    : l_old : bittern
+    : l_new : african hunting dog, hyena dog, cape hunting dog, 
+
+
+--> #  134 | c      134 | y     9.8e-01 | y_next 1.6e-02
++++ >        c_new  132 | y_new 4.6e-01 | y_old 4.2e-01 | evals 10088
+    : changes  3403 | dx1 1.1e+03 | dx2 1.7e+01
+    : l_old : crane
+    : l_new : american egret, great white heron, egretta albus
+
+
+--> #  135 | c      135 | y     1.0e+00 | y_next 2.5e-08
++++ >        c_new  133 | y_new 6.3e-01 | y_old 3.7e-01 | evals 10034
+    : changes  3428 | dx1 4.8e+03 | dx2 6.5e+01
+    : l_old : limpkin, aramus pictus
+    : l_new : bittern
+
+
+--> #  136 | c      136 | y     1.0e+00 | y_next 1.8e-07
++++ >        c_new  137 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10034
+    : changes  3351 | dx1 5.7e+03 | dx2 8.3e+01
+    : l_old : european gallinule, porphyrio porphyrio
+    : l_new : american coot, marsh hen, mud hen, water hen, fuli
+
+
+--> #  137 | c      137 | y     1.0e+00 | y_next 4.5e-08
++++ >        c_new  133 | y_new 6.2e-01 | y_old 3.8e-01 | evals 10039
+    : changes  3314 | dx1 1.1e+03 | dx2 1.6e+01
+    : l_old : american coot, marsh hen, mud hen, water hen, fuli
+    : l_new : bittern
+
+
+--> #  138 | c      138 | y     1.0e+00 | y_next 1.2e-09
++++ >        c_new  135 | y_new 9.7e-01 | y_old 2.6e-02 | evals 10079
+    : changes  3355 | dx1 8.8e+03 | dx2 1.2e+02
+    : l_old : bustard
+    : l_new : limpkin, aramus pictus
+
+
+--> #  139 | c      139 | y     1.0e+00 | y_next 1.5e-08
++++ >        c_new  141 | y_new 6.7e-01 | y_old 3.3e-01 | evals 10058
+    : changes  3323 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : ruddy turnstone, arenaria interpres
+    : l_new : redshank, tringa totanus
+
+
+Completed. Successful: 100.00% (total images 10)
+DONE ( 13273.21 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-37-57] Work is finished (13278.13 sec. total)
+
+

@@ -1,0 +1,49 @@
+[2024-08-06 12-24-42] Computations (cpu)
+===================== ------------------
+Data                : "imagenet"
+Model               : "googlenet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_mooa"
+Skip fails for attr : True
+========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "googlenet" model
+DONE (     0.14 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.04 sec.) 
+
+
+.... Start attack on images with baseline "mooa"
+
+--> #    0 | c        0 | y     6.9e-01 | y_next 2.1e-01
++++ >        c_new    1 | y_new 4.7e-01 | y_old 4.5e-01 | evals   100
+    : changes    24 | dx1 1.3e+02 | dx2 1.8e+01
+    : l_old : tench, tinca tinca
+    : l_new : goldfish, carassius auratus
+
+
+--> #    1 | c        1 | y     9.8e-01 | y_next 6.7e-03
+    > fail | evals   100
+
+--> #    2 | c        2 | y     7.4e-01 | y_next 5.8e-02
+    > fail | evals   100
+
+--> #    3 | c        3 | y     9.3e-01 | y_next 4.1e-02
+    > fail | evals   100
+
+--> #    5 | c        5 | y     9.2e-01 | y_next 3.3e-02
+    > fail | evals   100
+
+--> #    8 | c        8 | y     5.4e-01 | y_next 2.6e-01
+    > fail | evals   100
+
+--> #    9 | c        9 | y     9.9e-01 | y_next 8.9e-04
+    > fail | evals   100

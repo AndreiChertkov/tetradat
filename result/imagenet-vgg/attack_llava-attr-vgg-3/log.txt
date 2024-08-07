@@ -1,0 +1,64 @@
+[2024-08-05 11-37-46] Computations (cuda:6)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.92 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.29 sec.) 
+
+
+.... Loading "LLava" model
+DONE (     8.32 sec.) 
+
+.... Loading text similarity calculator
+DONE (     1.93 sec.) 
+
+.... Loading text styling network
+DONE (     2.11 sec.) 
+
+.... Run attack on LLaVa for image #   43
+
+protes > m 1.0e+02 | t 2.865e+02 | y  4.6924e-01
+protes > m 2.0e+02 | t 6.324e+02 | y  4.4142e-01
+protes > m 6.0e+02 | t 2.016e+03 | y  4.3627e-01
+protes > m 8.0e+02 | t 2.706e+03 | y  4.2194e-01
+protes > m 1.0e+03 | t 3.389e+03 | y  4.2194e-01 <<< DONE
+
+
+Image   #    43
+Label   : frilled lizard, chlamydosaurus kingi
+OUT old : The main object in the picture is a lizard, which is climbing up a tree. Lizards are known for their climbing abilities and are often found in trees, where they can find food, shelter, and escape from predators
+OUT new : The main object in the picture is a sculpture of a person's leg, which is designed to hold a small sculpture of a person. This artistic piece serves as a creative and unique way to display the smaller sculpture, adding
+SCORE   : 4.22e-01
+DONE (  3408.88 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-34-50] Work is finished (3424.50 sec. total)
+
+

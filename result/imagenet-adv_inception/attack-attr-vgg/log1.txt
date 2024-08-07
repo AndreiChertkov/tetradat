@@ -1,0 +1,544 @@
+[2024-08-03 19-16-59] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "adv_inception" model
+DONE (     0.96 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.11 sec.) 
+
+
+.... Start attack on images
+
+--> #    0 | c        0 | y     1.0e+00 | y_next 2.6e-05
++++ >        c_new  389 | y_new 6.1e-01 | y_old 3.9e-01 | evals 10075
+    : changes  3355 | dx1 3.2e+03 | dx2 5.0e+01
+    : l_old : tench, tinca tinca
+    : l_new : barracouta, snoek
+
+
+--> #    1 | c        1 | y     1.0e+00 | y_next 1.9e-07
++++ >        c_new    0 | y_new 6.0e-01 | y_old 3.8e-01 | evals 10066
+    : changes  3367 | dx1 6.7e+03 | dx2 9.6e+01
+    : l_old : goldfish, carassius auratus
+    : l_new : tench, tinca tinca
+
+
+--> #    2 | c        2 | y     9.2e-01 | y_next 2.9e-02
++++ >        c_new  394 | y_new 4.4e-01 | y_old 4.2e-01 | evals 10037
+    : changes  3252 | dx1 2.1e+02 | dx2 3.8e+00
+    : l_old : great white shark, white shark, man-eater, man-eat
+    : l_new : sturgeon
+
+
+--> #    3 | c        3 | y     1.0e+00 | y_next 2.3e-07
++++ >        c_new    2 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10067
+    : changes  3397 | dx1 1.4e+03 | dx2 1.8e+01
+    : l_old : tiger shark, galeocerdo cuvieri
+    : l_new : great white shark, white shark, man-eater, man-eat
+
+
+--> #    6 | c        6 | y     9.8e-01 | y_next 2.1e-02
++++ >        c_new    5 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10064
+    : changes  3310 | dx1 1.8e+03 | dx2 2.5e+01
+    : l_old : stingray
+    : l_new : electric ray, crampfish, numbfish, torpedo
+
+
+--> #    7 | c        7 | y     1.0e+00 | y_next 4.3e-03
++++ >        c_new   86 | y_new 4.6e-01 | y_old 4.1e-01 | evals 10018
+    : changes  3344 | dx1 2.2e+03 | dx2 3.3e+01
+    : l_old : cock
+    : l_new : partridge
+
+
+--> #    8 | c        8 | y     1.0e+00 | y_next 5.7e-04
++++ >        c_new    7 | y_new 5.5e-01 | y_old 4.5e-01 | evals 10078
+    : changes  3337 | dx1 1.4e+03 | dx2 2.0e+01
+    : l_old : hen
+    : l_new : cock
+
+
+--> #    9 | c        9 | y     1.0e+00 | y_next 1.2e-04
++++ >        c_new  879 | y_new 3.8e-01 | y_old 3.5e-01 | evals 10012
+    : changes  3076 | dx1 1.6e+02 | dx2 2.3e+00
+    : l_old : ostrich, struthio camelus
+    : l_new : umbrella
+
+
+--> #   10 | c       10 | y     9.9e-01 | y_next 5.2e-03
++++ >        c_new   13 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10020
+    : changes  3394 | dx1 2.9e+02 | dx2 4.0e+00
+    : l_old : brambling, fringilla montifringilla
+    : l_new : junco, snowbird
+
+
+--> #   11 | c       11 | y     1.0e+00 | y_next 4.4e-08
++++ >        c_new   94 | y_new 7.1e-01 | y_old 2.8e-01 | evals 10094
+    : changes  3258 | dx1 2.7e+03 | dx2 3.9e+01
+    : l_old : goldfinch, carduelis carduelis
+    : l_new : hummingbird
+
+
+--> #   12 | c       12 | y     1.0e+00 | y_next 3.0e-08
++++ >        c_new  377 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10004
+    : changes  3413 | dx1 4.3e+03 | dx2 5.4e+01
+    : l_old : house finch, linnet, carpodacus mexicanus
+    : l_new : marmoset
+
+
+--> #   14 | c       14 | y     1.0e+00 | y_next 9.1e-07
++++ >        c_new  319 | y_new 4.9e-01 | y_old 2.5e-01 | evals 10084
+    : changes  3335 | dx1 2.2e+03 | dx2 3.0e+01
+    : l_old : indigo bunting, indigo finch, indigo bird, passeri
+    : l_new : dragonfly, darning needle, devil`s darning needle,
+
+
+--> #   15 | c       15 | y     1.0e+00 | y_next 1.3e-07
++++ >        c_new   74 | y_new 4.0e-01 | y_old 3.8e-01 | evals 10059
+    : changes  3308 | dx1 3.6e+03 | dx2 5.1e+01
+    : l_old : robin, american robin, turdus migratorius
+    : l_new : garden spider, aranea diademata
+
+
+--> #   16 | c       16 | y     1.0e+00 | y_next 2.7e-08
++++ >        c_new   91 | y_new 5.9e-01 | y_old 4.1e-01 | evals 10027
+    : changes  3339 | dx1 3.8e+03 | dx2 5.2e+01
+    : l_old : bulbul
+    : l_new : coucal
+
+
+--> #   17 | c       17 | y     1.0e+00 | y_next 2.2e-07
++++ >        c_new   16 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10009
+    : changes  3363 | dx1 2.3e+03 | dx2 3.3e+01
+    : l_old : jay
+    : l_new : bulbul
+
+
+--> #   18 | c       18 | y     1.0e+00 | y_next 7.4e-08
++++ >        c_new  128 | y_new 5.5e-01 | y_old 4.2e-01 | evals 10091
+    : changes  3366 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : magpie
+    : l_new : black stork, ciconia nigra
+
+
+--> #   19 | c       19 | y     1.0e+00 | y_next 1.5e-08
++++ >        c_new  370 | y_new 6.0e-01 | y_old 3.9e-01 | evals 10022
+    : changes  3422 | dx1 4.7e+03 | dx2 6.8e+01
+    : l_old : chickadee
+    : l_new : guenon, guenon monkey
+
+
+--> #   20 | c       20 | y     1.0e+00 | y_next 6.2e-07
++++ >        c_new  137 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10054
+    : changes  3391 | dx1 2.3e+03 | dx2 3.3e+01
+    : l_old : water ouzel, dipper
+    : l_new : american coot, marsh hen, mud hen, water hen, fuli
+
+
+--> #   22 | c       22 | y     1.0e+00 | y_next 1.8e-04
++++ >        c_new   21 | y_new 8.3e-01 | y_old 1.7e-01 | evals 10077
+    : changes  3344 | dx1 5.5e+03 | dx2 8.2e+01
+    : l_old : bald eagle, american eagle, haliaeetus leucocephal
+    : l_new : kite
+
+
+--> #   24 | c       24 | y     1.0e+00 | y_next 2.4e-08
++++ >        c_new  256 | y_new 5.5e-01 | y_old 4.1e-01 | evals 10008
+    : changes  3345 | dx1 4.7e+03 | dx2 6.8e+01
+    : l_old : great grey owl, great gray owl, strix nebulosa
+    : l_new : newfoundland, newfoundland dog
+
+
+--> #   25 | c       25 | y     1.0e+00 | y_next 2.3e-04
++++ >        c_new   28 | y_new 4.6e-01 | y_old 4.5e-01 | evals 10077
+    : changes  3316 | dx1 2.6e+03 | dx2 3.8e+01
+    : l_old : european fire salamander, salamandra salamandra
+    : l_new : spotted salamander, ambystoma maculatum
+
+
+--> #   26 | c       26 | y     5.7e-01 | y_next 4.2e-01
++++ >        c_new   27 | y_new 5.0e-01 | y_old 4.9e-01 | evals   329
+    : changes  3250 | dx1 6.2e+01 | dx2 8.5e-01
+    : l_old : common newt, triturus vulgaris
+    : l_new : eft
+
+
+--> #   27 | c       27 | y     1.0e+00 | y_next 8.3e-04
++++ >        c_new   26 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10042
+    : changes  3321 | dx1 4.1e+03 | dx2 6.3e+01
+    : l_old : eft
+    : l_new : common newt, triturus vulgaris
+
+
+--> #   28 | c       28 | y     1.0e+00 | y_next 1.4e-06
++++ >        c_new   26 | y_new 5.1e-01 | y_old 4.8e-01 | evals 10002
+    : changes  3318 | dx1 5.0e+03 | dx2 7.0e+01
+    : l_old : spotted salamander, ambystoma maculatum
+    : l_new : common newt, triturus vulgaris
+
+
+--> #   30 | c       30 | y     1.0e+00 | y_next 1.3e-04
++++ >        c_new  397 | y_new 4.8e-01 | y_old 3.6e-01 | evals 10089
+    : changes  3333 | dx1 2.5e+03 | dx2 3.5e+01
+    : l_old : bullfrog, rana catesbeiana
+    : l_new : puffer, pufferfish, blowfish, globefish
+
+
+--> #   32 | c       32 | y     1.0e+00 | y_next 2.0e-03
++++ >        c_new   30 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10083
+    : changes  3370 | dx1 4.6e+03 | dx2 6.1e+01
+    : l_old : tailed frog, bell toad, ribbed toad, tailed toad, 
+    : l_new : bullfrog, rana catesbeiana
+
+
+--> #   33 | c       33 | y     8.9e-01 | y_next 6.4e-02
++++ >        c_new    2 | y_new 4.9e-01 | y_old 4.4e-01 | evals 10048
+    : changes  3333 | dx1 1.5e+02 | dx2 2.1e+00
+    : l_old : loggerhead, loggerhead turtle, caretta caretta
+    : l_new : great white shark, white shark, man-eater, man-eat
+
+
+--> #   36 | c       36 | y     9.4e-01 | y_next 6.0e-02
++++ >        c_new   35 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10010
+    : changes  3314 | dx1 6.1e+02 | dx2 8.3e+00
+    : l_old : terrapin
+    : l_new : mud turtle
+
+
+--> #   37 | c       37 | y     9.3e-01 | y_next 6.2e-02
++++ >        c_new   35 | y_new 5.3e-01 | y_old 4.6e-01 | evals 10067
+    : changes  3394 | dx1 2.6e+02 | dx2 3.5e+00
+    : l_old : box turtle, box tortoise
+    : l_new : mud turtle
+
+
+--> #   38 | c       38 | y     1.0e+00 | y_next 4.5e-06
++++ >        c_new   28 | y_new 3.1e-01 | y_old 3.0e-01 | evals 10030
+    : changes  3382 | dx1 1.9e+03 | dx2 2.7e+01
+    : l_old : banded gecko
+    : l_new : spotted salamander, ambystoma maculatum
+
+
+--> #   39 | c       39 | y     1.0e+00 | y_next 1.2e-05
++++ >        c_new   48 | y_new 5.3e-01 | y_old 4.4e-01 | evals 10006
+    : changes  3386 | dx1 2.4e+03 | dx2 3.5e+01
+    : l_old : common iguana, iguana, iguana iguana
+    : l_new : komodo dragon, komodo lizard, dragon lizard, giant
+
+
+--> #   41 | c       41 | y     2.8e-01 | y_next 2.4e-01
++++ >        c_new  123 | y_new 2.8e-01 | y_old 2.6e-01 | evals    10
+    : changes  2973 | dx1 7.9e+01 | dx2 1.1e+00
+    : l_old : whiptail, whiptail lizard
+    : l_new : spiny lobster, langouste, rock lobster, crawfish, 
+
+
+--> #   42 | c       42 | y     1.0e+00 | y_next 4.3e-04
++++ >        c_new   40 | y_new 4.9e-01 | y_old 4.1e-01 | evals 10021
+    : changes  3412 | dx1 6.1e+02 | dx2 8.2e+00
+    : l_old : agama
+    : l_new : american chameleon, anole, anolis carolinensis
+
+
+--> #   43 | c       43 | y     6.0e-01 | y_next 3.9e-01
++++ >        c_new   47 | y_new 5.0e-01 | y_old 5.0e-01 | evals   334
+    : changes  3154 | dx1 7.9e+01 | dx2 1.1e+00
+    : l_old : frilled lizard, chlamydosaurus kingi
+    : l_new : african chameleon, chamaeleo chamaeleon
+
+
+--> #   45 | c       45 | y     1.0e+00 | y_next 1.3e-07
++++ >        c_new  329 | y_new 6.6e-01 | y_old 3.4e-01 | evals 10075
+    : changes  3367 | dx1 5.6e+03 | dx2 7.4e+01
+    : l_old : gila monster, heloderma suspectum
+    : l_new : sea cucumber, holothurian
+
+
+--> #   47 | c       47 | y     1.0e+00 | y_next 8.1e-05
++++ >        c_new   39 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10007
+    : changes  3314 | dx1 2.5e+03 | dx2 3.5e+01
+    : l_old : african chameleon, chamaeleo chamaeleon
+    : l_new : common iguana, iguana, iguana iguana
+
+
+--> #   48 | c       48 | y     1.0e+00 | y_next 2.5e-03
++++ >        c_new   50 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10071
+    : changes  2904 | dx1 1.9e+02 | dx2 2.7e+00
+    : l_old : komodo dragon, komodo lizard, dragon lizard, giant
+    : l_new : american alligator, alligator mississipiensis
+
+
+--> #   49 | c       49 | y     9.9e-01 | y_next 8.9e-03
++++ >        c_new   39 | y_new 4.6e-01 | y_old 4.5e-01 | evals 10062
+    : changes  3292 | dx1 7.3e+02 | dx2 1.1e+01
+    : l_old : african crocodile, nile crocodile, crocodylus nilo
+    : l_new : common iguana, iguana, iguana iguana
+
+
+--> #   51 | c       51 | y     9.9e-01 | y_next 8.9e-03
++++ >        c_new   71 | y_new 5.0e-01 | y_old 4.8e-01 | evals 10064
+    : changes  2954 | dx1 1.8e+02 | dx2 2.7e+00
+    : l_old : triceratops
+    : l_new : scorpion
+
+
+--> #   53 | c       53 | y     9.8e-01 | y_next 1.5e-02
++++ >        c_new  110 | y_new 4.7e-01 | y_old 4.7e-01 | evals  8418
+    : changes  3159 | dx1 9.2e+01 | dx2 1.3e+00
+    : l_old : ringneck snake, ring-necked snake, ring snake
+    : l_new : flatworm, platyhelminth
+
+
+--> #   59 | c       59 | y     1.0e+00 | y_next 2.9e-03
++++ >        c_new  319 | y_new 4.5e-01 | y_old 4.2e-01 | evals 10009
+    : changes  3273 | dx1 1.6e+03 | dx2 2.3e+01
+    : l_old : vine snake
+    : l_new : dragonfly, darning needle, devil`s darning needle,
+
+
+--> #   61 | c       61 | y     1.0e+00 | y_next 3.1e-05
++++ >        c_new   42 | y_new 4.8e-01 | y_old 4.4e-01 | evals 10087
+    : changes  3325 | dx1 5.2e+02 | dx2 7.2e+00
+    : l_old : boa constrictor, constrictor constrictor
+    : l_new : agama
+
+
+--> #   62 | c       62 | y     9.7e-01 | y_next 3.2e-02
++++ >        c_new   61 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10050
+    : changes  3249 | dx1 2.7e+02 | dx2 4.1e+00
+    : l_old : rock python, rock snake, python sebae
+    : l_new : boa constrictor, constrictor constrictor
+
+
+--> #   63 | c       63 | y     1.0e+00 | y_next 6.5e-07
++++ >        c_new  490 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10033
+    : changes  3277 | dx1 3.2e+03 | dx2 4.3e+01
+    : l_old : indian cobra, naja naja
+    : l_new : chain mail, ring mail, mail, chain armor, chain ar
+
+
+--> #   67 | c       67 | y     1.0e+00 | y_next 1.7e-04
++++ >        c_new   60 | y_new 5.2e-01 | y_old 4.7e-01 | evals 10099
+    : changes  3378 | dx1 2.3e+03 | dx2 3.3e+01
+    : l_old : diamondback, diamondback rattlesnake, crotalus ada
+    : l_new : night snake, hypsiglena torquata
+
+
+--> #   68 | c       68 | y     7.2e-01 | y_next 2.0e-01
++++ >        c_new   66 | y_new 4.9e-01 | y_old 4.9e-01 | evals 10014
+    : changes  3340 | dx1 5.9e+02 | dx2 8.8e+00
+    : l_old : sidewinder, horned rattlesnake, crotalus cerastes
+    : l_new : horned viper, cerastes, sand viper, horned asp, ce
+
+
+--> #   69 | c       69 | y     9.3e-01 | y_next 7.1e-02
++++ >        c_new  999 | y_new 5.2e-01 | y_old 4.7e-01 | evals 10077
+    : changes  3188 | dx1 2.9e+02 | dx2 4.4e+00
+    : l_old : trilobite
+    : l_new : toilet tissue, toilet paper, bathroom tissue
+
+
+--> #   70 | c       70 | y     1.0e+00 | y_next 2.6e-06
++++ >        c_new  815 | y_new 4.6e-01 | y_old 4.4e-01 | evals 10000
+    : changes  3259 | dx1 1.2e+03 | dx2 1.8e+01
+    : l_old : harvestman, daddy longlegs, phalangium opilio
+    : l_new : spider web, spider`s web
+
+
+--> #   72 | c       72 | y     8.7e-01 | y_next 8.8e-02
++++ >        c_new   73 | y_new 4.2e-01 | y_old 4.0e-01 | evals 10016
+    : changes  3362 | dx1 5.5e+02 | dx2 8.2e+00
+    : l_old : black and gold garden spider, argiope aurantia
+    : l_new : barn spider, araneus cavaticus
+
+
+--> #   74 | c       74 | y     6.1e-01 | y_next 3.3e-01
++++ >        c_new   73 | y_new 4.7e-01 | y_old 4.7e-01 | evals  5655
+    : changes  3076 | dx1 7.5e+01 | dx2 1.1e+00
+    : l_old : garden spider, aranea diademata
+    : l_new : barn spider, araneus cavaticus
+
+
+--> #   75 | c       75 | y     1.0e+00 | y_next 1.2e-04
++++ >        c_new   77 | y_new 5.8e-01 | y_old 3.9e-01 | evals 10000
+    : changes  3360 | dx1 8.7e+02 | dx2 1.2e+01
+    : l_old : black widow, latrodectus mactans
+    : l_new : wolf spider, hunting spider
+
+
+--> #   76 | c       76 | y     1.0e+00 | y_next 6.3e-07
++++ >        c_new   73 | y_new 5.1e-01 | y_old 4.7e-01 | evals 10024
+    : changes  3334 | dx1 4.7e+03 | dx2 6.5e+01
+    : l_old : tarantula
+    : l_new : barn spider, araneus cavaticus
+
+
+--> #   77 | c       77 | y     9.9e-01 | y_next 4.5e-03
++++ >        c_new   76 | y_new 5.4e-01 | y_old 4.6e-01 | evals 10055
+    : changes  2920 | dx1 4.0e+02 | dx2 5.7e+00
+    : l_old : wolf spider, hunting spider
+    : l_new : tarantula
+
+
+--> #   78 | c       78 | y     9.7e-01 | y_next 1.6e-02
++++ >        c_new   77 | y_new 4.6e-01 | y_old 4.5e-01 | evals 10041
+    : changes  3204 | dx1 3.2e+02 | dx2 4.5e+00
+    : l_old : tick
+    : l_new : wolf spider, hunting spider
+
+
+--> #   79 | c       79 | y     1.0e+00 | y_next 1.0e-10
+    > fail | evals 10000
+
+--> #   80 | c       80 | y     1.0e+00 | y_next 2.9e-04
++++ >        c_new   11 | y_new 5.2e-01 | y_old 3.9e-01 | evals 10095
+    : changes  3081 | dx1 3.7e+02 | dx2 5.3e+00
+    : l_old : black grouse
+    : l_new : goldfinch, carduelis carduelis
+
+
+--> #   81 | c       81 | y     1.0e+00 | y_next 6.6e-08
++++ >        c_new  146 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10098
+    : changes  3368 | dx1 4.2e+03 | dx2 6.0e+01
+    : l_old : ptarmigan
+    : l_new : albatross, mollymawk
+
+
+--> #   82 | c       82 | y     9.2e-01 | y_next 5.6e-02
++++ >        c_new  138 | y_new 4.9e-01 | y_old 4.8e-01 | evals 10054
+    : changes  3324 | dx1 1.5e+02 | dx2 2.1e+00
+    : l_old : ruffed grouse, partridge, bonasa umbellus
+    : l_new : bustard
+
+
+--> #   83 | c       83 | y     9.6e-01 | y_next 2.7e-02
++++ >        c_new   81 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10035
+    : changes  3356 | dx1 6.0e+02 | dx2 8.1e+00
+    : l_old : prairie chicken, prairie grouse, prairie fowl
+    : l_new : ptarmigan
+
+
+--> #   84 | c       84 | y     1.0e+00 | y_next 7.9e-05
++++ >        c_new   88 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10066
+    : changes  3373 | dx1 6.4e+02 | dx2 9.5e+00
+    : l_old : peacock
+    : l_new : macaw
+
+
+--> #   86 | c       86 | y     7.8e-01 | y_next 2.2e-01
++++ >        c_new   82 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10070
+    : changes  3326 | dx1 9.0e+03 | dx2 1.3e+02
+    : l_old : partridge
+    : l_new : ruffed grouse, partridge, bonasa umbellus
+
+
+--> #   87 | c       87 | y     1.0e+00 | y_next 1.5e-08
++++ >        c_new   88 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10090
+    : changes  2945 | dx1 4.5e+03 | dx2 9.2e+01
+    : l_old : african grey, african gray, psittacus erithacus
+    : l_new : macaw
+
+
+--> #   88 | c       88 | y     1.0e+00 | y_next 3.0e-07
++++ >        c_new   90 | y_new 5.4e-01 | y_old 4.6e-01 | evals 10060
+    : changes  3357 | dx1 2.6e+03 | dx2 3.6e+01
+    : l_old : macaw
+    : l_new : lorikeet
+
+
+--> #   89 | c       89 | y     1.0e+00 | y_next 1.4e-07
++++ >        c_new   87 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10063
+    : changes  3406 | dx1 3.5e+03 | dx2 5.4e+01
+    : l_old : sulphur-crested cockatoo, kakatoe galerita, cacatu
+    : l_new : african grey, african gray, psittacus erithacus
+
+
+--> #   90 | c       90 | y     1.0e+00 | y_next 2.7e-08
++++ >        c_new  114 | y_new 4.8e-01 | y_old 3.5e-01 | evals 10084
+    : changes  3379 | dx1 5.0e+03 | dx2 7.0e+01
+    : l_old : lorikeet
+    : l_new : slug
+
+
+--> #   92 | c       92 | y     1.0e+00 | y_next 7.7e-08
++++ >        c_new   95 | y_new 4.9e-01 | y_old 4.7e-01 | evals 10014
+    : changes  3389 | dx1 5.5e+03 | dx2 7.4e+01
+    : l_old : bee eater
+    : l_new : jacamar
+
+
+--> #   93 | c       93 | y     1.0e+00 | y_next 7.3e-05
++++ >        c_new   23 | y_new 6.0e-01 | y_old 4.0e-01 | evals 10067
+    : changes  3344 | dx1 2.2e+03 | dx2 3.4e+01
+    : l_old : hornbill
+    : l_new : vulture
+
+
+--> #   94 | c       94 | y     1.0e+00 | y_next 3.5e-08
++++ >        c_new   87 | y_new 5.4e-01 | y_old 4.6e-01 | evals 10041
+    : changes  3308 | dx1 1.3e+03 | dx2 1.8e+01
+    : l_old : hummingbird
+    : l_new : african grey, african gray, psittacus erithacus
+
+
+--> #   95 | c       95 | y     1.0e+00 | y_next 4.9e-03
++++ >        c_new   92 | y_new 6.9e-01 | y_old 3.1e-01 | evals 10026
+    : changes  3394 | dx1 2.4e+03 | dx2 3.4e+01
+    : l_old : jacamar
+    : l_new : bee eater
+
+
+--> #   96 | c       96 | y     1.0e+00 | y_next 3.4e-05
++++ >        c_new   93 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10021
+    : changes  3384 | dx1 1.3e+03 | dx2 2.0e+01
+    : l_old : toucan
+    : l_new : hornbill
+
+
+--> #   97 | c       97 | y     1.0e+00 | y_next 1.9e-03
++++ >        c_new   98 | y_new 5.2e-01 | y_old 4.8e-01 | evals 10097
+    : changes  3360 | dx1 5.7e+02 | dx2 8.3e+00
+    : l_old : drake
+    : l_new : red-breasted merganser, mergus serrator
+
+
+--> #   99 | c       99 | y     1.0e+00 | y_next 6.2e-04
++++ >        c_new   97 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10017
+    : changes  3294 | dx1 1.1e+03 | dx2 1.5e+01
+    : l_old : goose
+    : l_new : drake
+
+
+Completed. Successful: 98.61% (total images 72)
+DONE ( 44818.27 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-04 07-44-01] Work is finished (44821.37 sec. total)
+
+

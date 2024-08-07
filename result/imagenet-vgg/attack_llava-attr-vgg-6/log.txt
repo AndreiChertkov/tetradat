@@ -1,0 +1,62 @@
+[2024-08-05 11-37-56] Computations (cuda:5)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.76 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.28 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    14.22 sec.) 
+
+.... Loading text similarity calculator
+DONE (     2.14 sec.) 
+
+.... Loading text styling network
+DONE (    13.70 sec.) 
+
+.... Run attack on LLaVa for image #  510
+
+protes > m 1.0e+02 | t 3.079e+02 | y  6.1968e-01
+protes > m 2.0e+02 | t 6.589e+02 | y  6.1339e-01
+protes > m 1.0e+03 | t 3.432e+03 | y  6.1339e-01 <<< DONE
+
+
+Image   #   510
+Label   : container ship, containership, container vessel
+OUT old : The main object in the picture is a large boat, which is likely used for transportation or recreational purposes. It is docked in a harbor near a city, suggesting that it may be used for commercial or leisure activities within the
+OUT new : The main object shown in the picture is a bridge, which serves as a connection between two land masses, allowing people and vehicles to cross over the water. It is an essential infrastructure element that facilitates transportation and communication between different areas.
+SCORE   : 6.13e-01
+DONE (  3453.79 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-36-03] Work is finished (3486.93 sec. total)
+
+

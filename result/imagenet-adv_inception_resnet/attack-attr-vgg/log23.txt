@@ -1,0 +1,96 @@
+[2024-08-05 09-56-05] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     3.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.16 sec.) 
+
+
+.... Start attack on images
+
+--> #  120 | c      120 | y     1.0e+00 | y_next 5.7e-09
++++ >        c_new  361 | y_new 5.8e-01 | y_old 3.8e-01 | evals 10094
+    : changes  3354 | dx1 4.2e+03 | dx2 6.4e+01
+    : l_old : fiddler crab
+    : l_new : skunk, polecat, wood pussy
+
+
+--> #  121 | c      121 | y     1.0e+00 | y_next 5.0e-08
++++ >        c_new  973 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10000
+    : changes  3397 | dx1 5.3e+03 | dx2 7.3e+01
+    : l_old : king crab, alaska crab, alaskan king crab, alaska 
+    : l_new : coral reef
+
+
+--> #  122 | c      122 | y     9.4e-01 | y_next 5.8e-02
++++ >        c_new  124 | y_new 4.8e-01 | y_old 4.8e-01 | evals 10039
+    : changes  3382 | dx1 2.7e+02 | dx2 3.6e+00
+    : l_old : american lobster, northern lobster, maine lobster,
+    : l_new : crayfish, crawfish, crawdad, crawdaddy
+
+
+--> #  123 | c      123 | y     1.0e+00 | y_next 6.6e-06
++++ >        c_new  340 | y_new 5.4e-01 | y_old 4.6e-01 | evals 10001
+    : changes  3450 | dx1 1.2e+03 | dx2 1.6e+01
+    : l_old : spiny lobster, langouste, rock lobster, crawfish, 
+    : l_new : zebra
+
+
+--> #  124 | c      124 | y     1.0e+00 | y_next 4.2e-04
++++ >        c_new  307 | y_new 5.1e-01 | y_old 4.9e-01 | evals 10092
+    : changes  3383 | dx1 7.2e+02 | dx2 1.0e+01
+    : l_old : crayfish, crawfish, crawdad, crawdaddy
+    : l_new : weevil
+
+
+--> #  126 | c      126 | y     1.0e+00 | y_next 8.9e-07
++++ >        c_new  116 | y_new 9.9e-01 | y_old 1.3e-02 | evals 10068
+    : changes  3337 | dx1 6.6e+03 | dx2 9.6e+01
+    : l_old : isopod
+    : l_new : chiton, coat-of-mail shell, sea cradle, polyplacop
+
+
+--> #  127 | c      127 | y     1.0e+00 | y_next 8.8e-06
+    > fail | evals 10000
+
+--> #  129 | c      129 | y     1.0e+00 | y_next 3.0e-08
++++ >        c_new  644 | y_new 9.8e-01 | y_old 2.1e-02 | evals 10069
+    : changes  3410 | dx1 4.9e+03 | dx2 6.4e+01
+    : l_old : spoonbill
+    : l_new : matchstick
+
+
+Completed. Successful: 87.50% (total images 8)
+DONE ( 12286.39 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-20-56] Work is finished (12290.56 sec. total)
+
+

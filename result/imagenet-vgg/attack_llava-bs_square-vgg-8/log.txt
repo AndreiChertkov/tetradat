@@ -1,0 +1,48 @@
+[2024-08-05 15-58-56] Computations (cuda:7)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.22 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.31 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    17.99 sec.) 
+
+.... Loading text similarity calculator
+DONE (     1.87 sec.) 
+
+.... Loading text styling network
+DONE (     3.10 sec.) 
+
+.... Run attack on LLaVa for image #  632
+
+
+
+Image   #   632
+Label   : loudspeaker, speaker, speaker unit, loudspeaker system, speaker system
+OUT old : The main object in the picture is a large, round speaker, which is designed to produce sound. It is likely used for various purposes, such as playing music, providing audio for movies or video games, or even for home theater systems.
+OUT new : The main object in the picture is a large, square, dark-colored box with a round hole in the center. The purpose of this box is to hold and protect the contents inside, which could be anything from a valuable item to a frag
+SCORE   : 4.69e-01
+DONE (  1780.28 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 16-29-02] Work is finished (1806.80 sec. total)
+
+

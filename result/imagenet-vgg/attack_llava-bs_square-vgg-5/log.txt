@@ -1,0 +1,48 @@
+[2024-08-05 15-58-48] Computations (cuda:5)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.19 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.33 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    17.44 sec.) 
+
+.... Loading text similarity calculator
+DONE (     1.74 sec.) 
+
+.... Loading text styling network
+DONE (     2.46 sec.) 
+
+.... Run attack on LLaVa for image #  435
+
+
+
+Image   #   435
+Label   : bathtub, bathing tub, bath, tub
+OUT old : The main object in the picture is a bathroom sink, which is designed for washing hands, face, and other personal hygiene tasks. It is typically found in bathrooms and is an essential part of maintaining cleanliness and personal
+OUT new : The main object in the picture is a white bathtub, which is designed for bathing and relaxation. It is filled with water and features a blue light, which creates a soothing and calming atmosphere. The blue light is likely used
+SCORE   : 4.92e-01
+DONE (  1787.04 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 16-29-00] Work is finished (1812.22 sec. total)
+
+

@@ -1,0 +1,61 @@
+[2024-08-06 17-07-47] Computations (cpu)
+===================== ------------------
+Data                : "imagenet"
+Model               : "inception"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_mooa"
+Skip fails for attr : True
+========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "inception" model
+DONE (     0.27 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.07 sec.) 
+
+
+.... Start attack on images with baseline "mooa"
+
+--> #  200 | c      200 | y     9.8e-01 | y_next 1.3e-02
++++ >        c_new  198 | y_new 5.3e-01 | y_old 1.8e-01 | evals     8
+    : changes   195 | dx1 9.3e+02 | dx2 5.2e+01
+    : l_old : tibetan terrier, chrysanthemum dog
+    : l_new : standard schnauzer
+
+
+--> #  201 | c      201 | y     1.0e+00 | y_next 1.9e-04
++++ >        c_new  187 | y_new 6.6e-01 | y_old 3.3e-01 | evals   566
+    : changes   197 | dx1 1.0e+03 | dx2 5.7e+01
+    : l_old : silky terrier, sydney silky
+    : l_new : yorkshire terrier
+
+
+--> #  202 | c      202 | y     9.1e-01 | y_next 3.5e-02
++++ >        c_new  188 | y_new 4.5e-01 | y_old 4.3e-01 | evals    16
+    : changes   193 | dx1 9.3e+02 | dx2 5.1e+01
+    : l_old : soft-coated wheaten terrier
+    : l_new : wire-haired fox terrier
+
+
+--> #  203 | c      203 | y     1.0e+00 | y_next 4.1e-05
++++ >        c_new  192 | y_new 6.7e-01 | y_old 3.3e-01 | evals  7708
+    : changes   193 | dx1 9.4e+02 | dx2 5.4e+01
+    : l_old : west highland white terrier
+    : l_new : cairn, cairn terrier
+
+
+--> #  207 | c      207 | y     9.6e-01 | y_next 3.7e-02
++++ >        c_new  676 | y_new 5.6e-01 | y_old 4.4e-01 | evals    10
+    : changes   190 | dx1 8.9e+02 | dx2 5.0e+01
+    : l_old : golden retriever
+    : l_new : muzzle
+
+
+--> #  208 | c      208 | y     1.0e+00 | y_next 2.9e-05

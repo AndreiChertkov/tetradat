@@ -1,0 +1,48 @@
+[2024-08-05 15-58-57] Computations (cuda:7)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.17 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.27 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    17.61 sec.) 
+
+.... Loading text similarity calculator
+DONE (     1.70 sec.) 
+
+.... Loading text styling network
+DONE (     2.67 sec.) 
+
+.... Run attack on LLaVa for image #  651
+
+
+
+Image   #   651
+Label   : microwave, microwave oven
+OUT old : The main object shown in the picture is a microwave oven, which is designed for heating and cooking food quickly and efficiently. It is placed on a countertop or table, ready for use. Microwaves are commonly used in
+OUT new : The main object shown in the picture is a television set, which is designed for entertainment purposes. It is a black box with a screen and a speaker system, allowing users to watch and listen to various forms of media, such as movies,
+SCORE   : 4.55e-01
+DONE (  1778.42 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 16-29-00] Work is finished (1803.88 sec. total)
+
+

@@ -1,0 +1,62 @@
+[2024-08-05 11-37-59] Computations (cuda:5)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "attr"
+Opt. scale          : 0.1
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 1000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.77 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.33 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    25.16 sec.) 
+
+.... Loading text similarity calculator
+DONE (     3.62 sec.) 
+
+.... Loading text styling network
+DONE (     8.16 sec.) 
+
+.... Run attack on LLaVa for image #  517
+
+protes > m 1.0e+02 | t 3.124e+02 | y  7.4697e-01
+protes > m 5.0e+02 | t 1.720e+03 | y  7.2070e-01
+protes > m 1.0e+03 | t 3.439e+03 | y  7.2070e-01 <<< DONE
+
+
+Image   #   517
+Label   : crane
+OUT old : The main object in the picture is a large, open-sided structure with a metal frame and a glass roof. It appears to be a tower or a building with a unique design, possibly used for observation, storage, or other purposes. The
+OUT new : The main object in the picture is a large antenna or satellite dish, which is likely used for communication purposes, such as receiving or transmitting signals from satellites or other communication devices. The antenna is mounted on a tall structure,
+SCORE   : 7.21e-01
+DONE (  3462.62 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 12-36-22] Work is finished (3502.70 sec. total)
+
+

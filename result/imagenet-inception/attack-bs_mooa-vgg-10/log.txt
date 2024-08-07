@@ -1,0 +1,432 @@
+[2024-08-06 14-45-12] Computations (cuda:4)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "inception"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_mooa"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "inception" model
+DONE (     3.56 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.37 sec.) 
+
+
+.... Start attack on images with baseline "mooa"
+
+--> #  900 | c      900 | y     1.0e+00 | y_next 9.3e-08
+    > fail | evals 10000
+
+--> #  901 | c      901 | y     1.0e+00 | y_next 2.1e-05
++++ >        c_new  969 | y_new 4.9e-01 | y_old 4.8e-01 | evals  6778
+    : changes   144 | dx1 7.0e+02 | dx2 4.4e+01
+    : l_old : whiskey jug
+    : l_new : eggnog
+
+
+--> #  903 | c      903 | y     1.0e+00 | y_next 1.6e-03
++++ >        c_new  655 | y_new 6.9e-01 | y_old 3.0e-01 | evals    26
+    : changes   136 | dx1 7.1e+02 | dx2 4.6e+01
+    : l_old : wig
+    : l_new : miniskirt, mini
+
+
+--> #  905 | c      905 | y     9.8e-01 | y_next 1.2e-02
++++ >        c_new  766 | y_new 6.5e-01 | y_old 3.5e-01 | evals     2
+    : changes   145 | dx1 6.9e+02 | dx2 4.5e+01
+    : l_old : window shade
+    : l_new : rotisserie
+
+
+--> #  906 | c      906 | y     1.0e+00 | y_next 3.0e-03
++++ >        c_new  457 | y_new 6.7e-01 | y_old 6.1e-02 | evals     4
+    : changes   149 | dx1 6.7e+02 | dx2 4.1e+01
+    : l_old : windsor tie
+    : l_new : bow tie, bow-tie, bowtie
+
+
+--> #  907 | c      907 | y     1.0e+00 | y_next 3.5e-04
+    > fail | evals 10000
+
+--> #  908 | c      908 | y     9.9e-01 | y_next 8.1e-04
++++ >        c_new  448 | y_new 6.0e-01 | y_old 9.0e-02 | evals    40
+    : changes   147 | dx1 6.6e+02 | dx2 4.0e+01
+    : l_old : wing
+    : l_new : birdhouse
+
+
+--> #  913 | c      913 | y     9.4e-01 | y_next 5.8e-02
++++ >        c_new  460 | y_new 6.4e-01 | y_old 3.6e-01 | evals    76
+    : changes   146 | dx1 6.8e+02 | dx2 4.3e+01
+    : l_old : wreck
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  914 | c      914 | y     1.0e+00 | y_next 1.6e-04
+    > fail | evals 10000
+
+--> #  916 | c      916 | y     1.0e+00 | y_next 1.8e-05
+    > fail | evals 10000
+
+--> #  919 | c      919 | y     1.0e+00 | y_next 7.8e-04
++++ >        c_new  781 | y_new 5.1e-01 | y_old 4.9e-01 | evals  9842
+    : changes   147 | dx1 7.0e+02 | dx2 4.5e+01
+    : l_old : street sign
+    : l_new : scoreboard
+
+
+--> #  920 | c      920 | y     1.0e+00 | y_next 1.3e-07
+    > fail | evals 10000
+
+--> #  921 | c      921 | y     9.7e-01 | y_next 1.3e-02
+    > fail | evals 10000
+
+--> #  922 | c      922 | y     8.0e-01 | y_next 8.7e-02
++++ >        c_new  446 | y_new 3.7e-01 | y_old 2.7e-01 | evals    72
+    : changes   147 | dx1 7.1e+02 | dx2 4.2e+01
+    : l_old : menu
+    : l_new : binder, ring-binder
+
+
+--> #  923 | c      923 | y     1.0e+00 | y_next 3.1e-03
++++ >        c_new  934 | y_new 7.3e-01 | y_old 2.6e-01 | evals    48
+    : changes   143 | dx1 6.9e+02 | dx2 4.8e+01
+    : l_old : plate
+    : l_new : hotdog, hot dog, red hot
+
+
+--> #  924 | c      924 | y     9.9e-01 | y_next 4.8e-03
++++ >        c_new  942 | y_new 3.8e-01 | y_old 2.2e-01 | evals     4
+    : changes   144 | dx1 7.0e+02 | dx2 4.9e+01
+    : l_old : guacamole
+    : l_new : butternut squash
+
+
+--> #  925 | c      925 | y     1.0e+00 | y_next 2.4e-03
++++ >        c_new  809 | y_new 7.1e-01 | y_old 2.9e-01 | evals    10
+    : changes   147 | dx1 7.1e+02 | dx2 4.3e+01
+    : l_old : consomme
+    : l_new : soup bowl
+
+
+--> #  926 | c      926 | y     8.8e-01 | y_next 6.5e-02
++++ >        c_new  809 | y_new 7.3e-01 | y_old 1.6e-01 | evals     6
+    : changes   147 | dx1 7.3e+02 | dx2 4.4e+01
+    : l_old : hot pot, hotpot
+    : l_new : soup bowl
+
+
+--> #  927 | c      927 | y     9.5e-01 | y_next 4.8e-02
++++ >        c_new  928 | y_new 8.0e-01 | y_old 2.0e-01 | evals     2
+    : changes   146 | dx1 6.4e+02 | dx2 4.2e+01
+    : l_old : trifle
+    : l_new : ice cream, icecream
+
+
+--> #  929 | c      929 | y     8.3e-01 | y_next 1.6e-01
++++ >        c_new  928 | y_new 1.0e+00 | y_old 1.4e-04 | evals     2
+    : changes   142 | dx1 7.0e+02 | dx2 4.6e+01
+    : l_old : ice lolly, lolly, lollipop, popsicle
+    : l_new : ice cream, icecream
+
+
+--> #  930 | c      930 | y     1.0e+00 | y_next 2.7e-03
++++ >        c_new  942 | y_new 5.7e-01 | y_old 3.2e-01 | evals    36
+    : changes   145 | dx1 7.0e+02 | dx2 4.2e+01
+    : l_old : french loaf
+    : l_new : butternut squash
+
+
+--> #  931 | c      931 | y     5.2e-01 | y_next 1.7e-01
++++ >        c_new  928 | y_new 1.9e-01 | y_old 6.9e-03 | evals     2
+    : changes   144 | dx1 6.8e+02 | dx2 4.2e+01
+    : l_old : bagel, beigel
+    : l_new : ice cream, icecream
+
+
+--> #  932 | c      932 | y     8.8e-01 | y_next 1.1e-01
++++ >        c_new  488 | y_new 6.2e-01 | y_old 3.6e-01 | evals    22
+    : changes   149 | dx1 7.0e+02 | dx2 4.3e+01
+    : l_old : pretzel
+    : l_new : chain
+
+
+--> #  933 | c      933 | y     1.0e+00 | y_next 1.4e-04
+    > fail | evals 10000
+
+--> #  935 | c      935 | y     1.0e+00 | y_next 6.2e-05
++++ >        c_new  928 | y_new 5.0e-01 | y_old 4.9e-01 | evals   306
+    : changes   144 | dx1 6.9e+02 | dx2 4.9e+01
+    : l_old : mashed potato
+    : l_new : ice cream, icecream
+
+
+--> #  936 | c      936 | y     1.0e+00 | y_next 1.2e-05
++++ >        c_new  793 | y_new 9.1e-01 | y_old 8.2e-02 | evals    30
+    : changes   148 | dx1 7.4e+02 | dx2 4.6e+01
+    : l_old : head cabbage
+    : l_new : shower cap
+
+
+--> #  937 | c      937 | y     1.0e+00 | y_next 1.3e-08
+    > fail | evals 10000
+
+--> #  938 | c      938 | y     1.0e+00 | y_next 5.7e-04
+    > fail | evals 10000
+
+--> #  939 | c      939 | y     1.0e+00 | y_next 1.9e-04
+    > fail | evals 10000
+
+--> #  940 | c      940 | y     1.0e+00 | y_next 3.5e-07
++++ >        c_new  954 | y_new 6.2e-01 | y_old 3.8e-01 | evals    34
+    : changes   146 | dx1 6.8e+02 | dx2 5.2e+01
+    : l_old : spaghetti squash
+    : l_new : banana
+
+
+--> #  941 | c      941 | y     9.8e-01 | y_next 1.6e-02
++++ >        c_new  952 | y_new 5.2e-01 | y_old 4.5e-01 | evals    10
+    : changes   147 | dx1 6.8e+02 | dx2 4.8e+01
+    : l_old : acorn squash
+    : l_new : fig
+
+
+--> #  942 | c      942 | y     9.2e-01 | y_next 6.8e-02
++++ >        c_new  997 | y_new 5.8e-01 | y_old 3.5e-01 | evals    12
+    : changes   149 | dx1 7.1e+02 | dx2 4.8e+01
+    : l_old : butternut squash
+    : l_new : bolete
+
+
+--> #  944 | c      944 | y     1.0e+00 | y_next 2.9e-04
++++ >        c_new  945 | y_new 8.5e-01 | y_old 1.5e-01 | evals    16
+    : changes   142 | dx1 6.3e+02 | dx2 4.3e+01
+    : l_old : artichoke, globe artichoke
+    : l_new : bell pepper
+
+
+--> #  945 | c      945 | y     1.0e+00 | y_next 5.3e-04
++++ >        c_new  115 | y_new 4.8e-01 | y_old 1.1e-01 | evals     8
+    : changes   148 | dx1 7.4e+02 | dx2 4.7e+01
+    : l_old : bell pepper
+    : l_new : sea slug, nudibranch
+
+
+--> #  946 | c      946 | y     1.0e+00 | y_next 4.9e-03
+    > fail | evals 10000
+
+--> #  947 | c      947 | y     1.0e+00 | y_next 3.4e-04
++++ >        c_new  328 | y_new 4.5e-01 | y_old 9.3e-02 | evals     8
+    : changes   145 | dx1 6.9e+02 | dx2 4.8e+01
+    : l_old : mushroom
+    : l_new : sea urchin
+
+
+--> #  948 | c      948 | y     9.3e-01 | y_next 6.3e-02
++++ >        c_new  952 | y_new 5.8e-01 | y_old 1.9e-01 | evals     6
+    : changes   142 | dx1 7.1e+02 | dx2 4.8e+01
+    : l_old : granny smith
+    : l_new : fig
+
+
+--> #  949 | c      949 | y     1.0e+00 | y_next 7.7e-06
+    > fail | evals 10000
+
+--> #  951 | c      951 | y     1.0e+00 | y_next 3.5e-04
++++ >        c_new  950 | y_new 6.3e-01 | y_old 3.7e-01 | evals    18
+    : changes   145 | dx1 6.4e+02 | dx2 4.5e+01
+    : l_old : lemon
+    : l_new : orange
+
+
+--> #  952 | c      952 | y     1.0e+00 | y_next 2.3e-06
+    > fail | evals 10000
+
+--> #  953 | c      953 | y     1.0e+00 | y_next 2.0e-05
+    > fail | evals 10000
+
+--> #  954 | c      954 | y     9.7e-01 | y_next 9.5e-03
++++ >        c_new   88 | y_new 3.3e-01 | y_old 1.1e-01 | evals    16
+    : changes   147 | dx1 7.0e+02 | dx2 4.5e+01
+    : l_old : banana
+    : l_new : macaw
+
+
+--> #  956 | c      956 | y     1.0e+00 | y_next 5.0e-06
+    > fail | evals 10000
+
+--> #  957 | c      957 | y     1.0e+00 | y_next 2.6e-07
++++ >        c_new  125 | y_new 5.1e-01 | y_old 4.9e-01 | evals  2240
+    : changes   147 | dx1 7.4e+02 | dx2 4.6e+01
+    : l_old : pomegranate
+    : l_new : hermit crab
+
+
+--> #  958 | c      958 | y     1.0e+00 | y_next 3.3e-06
++++ >        c_new  347 | y_new 3.7e-01 | y_old 3.1e-01 | evals  1392
+    : changes   146 | dx1 7.1e+02 | dx2 4.3e+01
+    : l_old : hay
+    : l_new : bison
+
+
+--> #  961 | c      961 | y     6.9e-01 | y_next 1.8e-01
++++ >        c_new  659 | y_new 5.0e-01 | y_old 4.6e-02 | evals     2
+    : changes   146 | dx1 6.6e+02 | dx2 4.4e+01
+    : l_old : dough
+    : l_new : mixing bowl
+
+
+--> #  963 | c      963 | y     1.0e+00 | y_next 9.4e-04
+    > fail | evals 10000
+
+--> #  964 | c      964 | y     1.0e+00 | y_next 2.7e-03
++++ >        c_new  930 | y_new 5.2e-01 | y_old 4.1e-01 | evals   210
+    : changes   146 | dx1 7.2e+02 | dx2 4.4e+01
+    : l_old : potpie
+    : l_new : french loaf
+
+
+--> #  966 | c      966 | y     3.6e-01 | y_next 3.1e-01
++++ >        c_new  652 | y_new 3.1e-01 | y_old 1.4e-01 | evals     2
+    : changes   147 | dx1 6.9e+02 | dx2 4.3e+01
+    : l_old : red wine
+    : l_new : military uniform
+
+
+--> #  967 | c      967 | y     1.0e+00 | y_next 8.0e-04
++++ >        c_new  647 | y_new 6.4e-01 | y_old 1.2e-01 | evals     2
+    : changes   148 | dx1 7.4e+02 | dx2 4.6e+01
+    : l_old : espresso
+    : l_new : measuring cup
+
+
+--> #  968 | c      968 | y     9.1e-01 | y_next 6.7e-02
++++ >        c_new  504 | y_new 5.3e-01 | y_old 4.5e-01 | evals  2524
+    : changes   147 | dx1 7.4e+02 | dx2 5.0e+01
+    : l_old : cup
+    : l_new : coffee mug
+
+
+--> #  969 | c      969 | y     1.0e+00 | y_next 6.4e-06
+    > fail | evals 10000
+
+--> #  971 | c      971 | y     7.8e-01 | y_next 8.4e-02
++++ >        c_new  907 | y_new 3.9e-01 | y_old 1.4e-01 | evals    10
+    : changes   146 | dx1 6.5e+02 | dx2 4.4e+01
+    : l_old : bubble
+    : l_new : wine bottle
+
+
+--> #  972 | c      972 | y     8.0e-01 | y_next 1.9e-01
++++ >        c_new  825 | y_new 5.2e-01 | y_old 2.7e-01 | evals    80
+    : changes   145 | dx1 7.1e+02 | dx2 4.4e+01
+    : l_old : cliff, drop, drop-off
+    : l_new : stone wall
+
+
+--> #  973 | c      973 | y     9.8e-01 | y_next 1.9e-02
++++ >        c_new    1 | y_new 5.6e-01 | y_old 4.3e-01 | evals   190
+    : changes   140 | dx1 6.9e+02 | dx2 4.7e+01
+    : l_old : coral reef
+    : l_new : goldfish, carassius auratus
+
+
+--> #  974 | c      974 | y     9.9e-01 | y_next 9.3e-04
++++ >        c_new  617 | y_new 3.1e-01 | y_old 1.8e-01 | evals     2
+    : changes   146 | dx1 6.9e+02 | dx2 4.3e+01
+    : l_old : geyser
+    : l_new : lab coat, laboratory coat
+
+
+--> #  975 | c      975 | y     1.0e+00 | y_next 1.1e-04
+    > fail | evals 10000
+
+--> #  977 | c      977 | y     5.2e-01 | y_next 4.6e-01
++++ >        c_new  842 | y_new 8.7e-01 | y_old 1.2e-01 | evals     2
+    : changes   146 | dx1 6.6e+02 | dx2 4.4e+01
+    : l_old : sandbar, sand bar
+    : l_new : swimming trunks, bathing trunks
+
+
+--> #  980 | c      980 | y     7.5e-01 | y_next 1.7e-01
++++ >        c_new  972 | y_new 3.4e-01 | y_old 1.3e-01 | evals     2
+    : changes   146 | dx1 6.9e+02 | dx2 4.5e+01
+    : l_old : volcano
+    : l_new : cliff, drop, drop-off
+
+
+--> #  981 | c      981 | y     9.9e-01 | y_next 3.7e-03
++++ >        c_new  781 | y_new 4.7e-01 | y_old 4.5e-01 | evals   188
+    : changes   145 | dx1 6.7e+02 | dx2 4.1e+01
+    : l_old : ballplayer, baseball player
+    : l_new : scoreboard
+
+
+--> #  982 | c      982 | y     1.0e+00 | y_next 1.8e-06
+    > fail | evals 10000
+
+--> #  984 | c      984 | y     1.0e+00 | y_next 1.5e-05
++++ >        c_new  425 | y_new 5.4e-01 | y_old 3.5e-01 | evals  7302
+    : changes   145 | dx1 7.5e+02 | dx2 4.6e+01
+    : l_old : rapeseed
+    : l_new : barn
+
+
+--> #  985 | c      985 | y     1.0e+00 | y_next 6.6e-06
+    > fail | evals 10000
+
+--> #  986 | c      986 | y     1.0e+00 | y_next 4.3e-05
+    > fail | evals 10000
+
+--> #  989 | c      989 | y     1.0e+00 | y_next 1.1e-04
+    > fail | evals 10000
+
+--> #  990 | c      990 | y     9.9e-01 | y_next 4.3e-03
++++ >        c_new  997 | y_new 6.0e-01 | y_old 2.4e-01 | evals    26
+    : changes   147 | dx1 6.8e+02 | dx2 4.3e+01
+    : l_old : buckeye, horse chestnut, conker
+    : l_new : bolete
+
+
+--> #  991 | c      991 | y     1.0e+00 | y_next 1.1e-04
+    > fail | evals 10000
+
+--> #  992 | c      992 | y     9.7e-01 | y_next 3.0e-02
+    > fail | evals 10000
+
+--> #  993 | c      993 | y     1.0e+00 | y_next 2.9e-06
+    > fail | evals 10000
+
+--> #  994 | c      994 | y     1.0e+00 | y_next 1.0e-07
+    > fail | evals 10000
+
+--> #  995 | c      995 | y     1.0e+00 | y_next 8.4e-07
+    > fail | evals 10000
+
+--> #  996 | c      996 | y     1.0e+00 | y_next 8.0e-06
+    > fail | evals 10000
+
+--> #  999 | c      999 | y     1.0e+00 | y_next 1.5e-03
++++ >        c_new  700 | y_new 6.8e-01 | y_old 3.2e-01 | evals     4
+    : changes   146 | dx1 7.1e+02 | dx2 4.5e+01
+    : l_old : toilet tissue, toilet paper, bathroom tissue
+    : l_new : paper towel
+
+
+Completed. Successful: 61.64% (total images 73)
+DONE ( 10272.87 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-06 17-36-29] Work is finished (10277.83 sec. total)
+
+

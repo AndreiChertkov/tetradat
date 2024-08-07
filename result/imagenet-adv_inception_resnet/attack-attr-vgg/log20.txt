@@ -1,0 +1,107 @@
+[2024-08-05 09-58-21] Computations (cuda:0)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 5000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     6.96 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.23 sec.) 
+
+
+.... Start attack on images
+
+--> #  190 | c      190 | y     1.0e+00 | y_next 3.6e-05
++++ >        c_new  188 | y_new 5.4e-01 | y_old 4.5e-01 | evals 10015
+    : changes  3334 | dx1 3.8e+03 | dx2 5.8e+01
+    : l_old : sealyham terrier, sealyham
+    : l_new : wire-haired fox terrier
+
+
+--> #  191 | c      191 | y     1.0e+00 | y_next 3.0e-05
++++ >        c_new  189 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10064
+    : changes  1725 | dx1 4.1e+02 | dx2 6.2e+00
+    : l_old : airedale, airedale terrier
+    : l_new : lakeland terrier
+
+
+--> #  192 | c      192 | y     1.0e+00 | y_next 2.6e-04
++++ >        c_new  186 | y_new 6.1e-01 | y_old 3.9e-01 | evals 10075
+    : changes  3303 | dx1 1.3e+03 | dx2 1.9e+01
+    : l_old : cairn, cairn terrier
+    : l_new : norwich terrier
+
+
+--> #  194 | c      194 | y     9.9e-01 | y_next 4.2e-03
++++ >        c_new  266 | y_new 3.6e-01 | y_old 3.4e-01 | evals 10032
+    : changes  3370 | dx1 2.6e+02 | dx2 3.4e+00
+    : l_old : dandie dinmont, dandie dinmont terrier
+    : l_new : miniature poodle
+
+
+--> #  195 | c      195 | y     1.0e+00 | y_next 3.2e-06
++++ >        c_new  245 | y_new 5.8e-01 | y_old 4.2e-01 | evals 10040
+    : changes  3332 | dx1 3.9e+03 | dx2 6.2e+01
+    : l_old : boston bull, boston terrier
+    : l_new : french bulldog
+
+
+--> #  196 | c      196 | y     1.0e+00 | y_next 1.4e-05
++++ >        c_new  198 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10005
+    : changes  3369 | dx1 1.1e+03 | dx2 1.5e+01
+    : l_old : miniature schnauzer
+    : l_new : standard schnauzer
+
+
+--> #  197 | c      197 | y     1.0e+00 | y_next 3.6e-03
++++ >        c_new  183 | y_new 5.4e-01 | y_old 4.3e-01 | evals 10004
+    : changes  3408 | dx1 1.4e+03 | dx2 1.9e+01
+    : l_old : giant schnauzer
+    : l_new : kerry blue terrier
+
+
+--> #  198 | c      198 | y     1.0e+00 | y_next 3.4e-05
++++ >        c_new  196 | y_new 6.4e-01 | y_old 3.6e-01 | evals 10091
+    : changes  3379 | dx1 1.1e+03 | dx2 1.5e+01
+    : l_old : standard schnauzer
+    : l_new : miniature schnauzer
+
+
+--> #  199 | c      199 | y     1.0e+00 | y_next 1.8e-06
++++ >        c_new  332 | y_new 5.3e-01 | y_old 4.7e-01 | evals 10026
+    : changes  2831 | dx1 2.1e+02 | dx2 2.9e+00
+    : l_old : scotch terrier, scottish terrier, scottie
+    : l_new : angora, angora rabbit
+
+
+Completed. Successful: 100.00% (total images 9)
+DONE ( 12661.72 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-05 13-29-31] Work is finished (12669.91 sec. total)
+
+

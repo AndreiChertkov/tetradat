@@ -1,0 +1,48 @@
+[2024-08-05 15-58-52] Computations (cuda:4)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     2.09 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.28 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    17.25 sec.) 
+
+.... Loading text similarity calculator
+DONE (     1.76 sec.) 
+
+.... Loading text styling network
+DONE (     2.85 sec.) 
+
+.... Run attack on LLaVa for image #  517
+
+
+
+Image   #   517
+Label   : crane
+OUT old : The main object in the picture is a large, open-sided structure with a metal frame and a glass roof. It appears to be a tower or a building with a unique design, possibly used for observation, storage, or other purposes. The
+OUT new : The main object in the picture is a large metal structure with a window, which appears to be a control tower or a lookout point. The purpose of this structure is to provide a vantage point for monitoring and observing the surrounding area, such
+SCORE   : 8.15e-01
+DONE (  1791.00 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 16-29-08] Work is finished (1816.26 sec. total)
+
+

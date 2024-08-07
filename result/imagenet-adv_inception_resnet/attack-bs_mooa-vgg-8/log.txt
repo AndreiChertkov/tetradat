@@ -1,0 +1,503 @@
+[2024-08-06 14-42-29] Computations (cuda:1)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "adv_inception_resnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_mooa"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "adv_inception_resnet" model
+DONE (     8.88 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.39 sec.) 
+
+
+.... Start attack on images with baseline "mooa"
+
+--> #  700 | c      700 | y     1.0e+00 | y_next 1.8e-04
++++ >        c_new  441 | y_new 1.0e+00 | y_old 5.9e-05 | evals     2
+    : changes   150 | dx1 7.3e+02 | dx2 4.5e+01
+    : l_old : paper towel
+    : l_new : beer glass
+
+
+--> #  701 | c      701 | y     9.9e-01 | y_next 1.2e-02
++++ >        c_new  417 | y_new 6.4e-01 | y_old 3.6e-01 | evals     4
+    : changes   144 | dx1 7.1e+02 | dx2 4.3e+01
+    : l_old : parachute, chute
+    : l_new : balloon
+
+
+--> #  704 | c      704 | y     1.0e+00 | y_next 4.7e-05
++++ >        c_new  707 | y_new 6.5e-01 | y_old 3.5e-01 | evals    16
+    : changes   144 | dx1 6.6e+02 | dx2 4.6e+01
+    : l_old : parking meter
+    : l_new : pay-phone, pay-station
+
+
+--> #  705 | c      705 | y     1.0e+00 | y_next 1.0e-07
++++ >        c_new  829 | y_new 7.2e-01 | y_old 2.8e-01 | evals   248
+    : changes   144 | dx1 6.8e+02 | dx2 4.9e+01
+    : l_old : passenger car, coach, carriage
+    : l_new : streetcar, tram, tramcar, trolley, trolley car
+
+
+--> #  706 | c      706 | y     1.0e+00 | y_next 4.7e-04
++++ >        c_new  648 | y_new 4.2e-01 | y_old 1.4e-01 | evals   156
+    : changes   145 | dx1 7.0e+02 | dx2 4.4e+01
+    : l_old : patio, terrace
+    : l_new : medicine chest, medicine cabinet
+
+
+--> #  707 | c      707 | y     1.0e+00 | y_next 1.3e-06
+    > fail | evals 10000
+
+--> #  708 | c      708 | y     1.0e+00 | y_next 6.5e-07
++++ >        c_new  900 | y_new 9.9e-01 | y_old 1.3e-02 | evals   104
+    : changes   146 | dx1 7.0e+02 | dx2 4.6e+01
+    : l_old : pedestal, plinth, footstall
+    : l_new : water tower
+
+
+--> #  709 | c      709 | y     1.0e+00 | y_next 3.5e-08
++++ >        c_new  934 | y_new 5.3e-01 | y_old 4.7e-01 | evals   894
+    : changes   124 | dx1 6.7e+02 | dx2 5.0e+01
+    : l_old : pencil box, pencil case
+    : l_new : hotdog, hot dog, red hot
+
+
+--> #  711 | c      711 | y     8.9e-01 | y_next 1.1e-01
++++ >        c_new  631 | y_new 8.1e-01 | y_old 1.9e-01 | evals     6
+    : changes   147 | dx1 6.9e+02 | dx2 4.1e+01
+    : l_old : perfume, essence
+    : l_new : lotion
+
+
+--> #  714 | c      714 | y     1.0e+00 | y_next 5.4e-05
++++ >        c_new  767 | y_new 6.5e-01 | y_old 3.2e-01 | evals    24
+    : changes   149 | dx1 6.8e+02 | dx2 4.4e+01
+    : l_old : pick, plectrum, plectron
+    : l_new : rubber eraser, rubber, pencil eraser
+
+
+--> #  715 | c      715 | y     1.0e+00 | y_next 4.3e-09
++++ >        c_new  899 | y_new 9.9e-01 | y_old 3.2e-03 | evals     6
+    : changes   147 | dx1 7.2e+02 | dx2 4.2e+01
+    : l_old : pickelhaube
+    : l_new : water jug
+
+
+--> #  716 | c      716 | y     1.0e+00 | y_next 1.1e-03
++++ >        c_new  792 | y_new 7.0e-01 | y_old 2.9e-01 | evals    62
+    : changes   146 | dx1 7.6e+02 | dx2 4.9e+01
+    : l_old : picket fence, paling
+    : l_new : shovel
+
+
+--> #  718 | c      718 | y     1.0e+00 | y_next 3.3e-04
++++ >        c_new  839 | y_new 5.6e-01 | y_old 4.4e-01 | evals  1150
+    : changes   148 | dx1 6.6e+02 | dx2 4.1e+01
+    : l_old : pier
+    : l_new : suspension bridge
+
+
+--> #  719 | c      719 | y     1.0e+00 | y_next 1.9e-08
+    > fail | evals 10000
+
+--> #  720 | c      720 | y     1.0e+00 | y_next 1.2e-05
++++ >        c_new  463 | y_new 5.7e-01 | y_old 3.0e-01 | evals     2
+    : changes   147 | dx1 6.8e+02 | dx2 4.2e+01
+    : l_old : pill bottle
+    : l_new : bucket, pail
+
+
+--> #  721 | c      721 | y     1.0e+00 | y_next 1.2e-07
++++ >        c_new  787 | y_new 5.7e-01 | y_old 4.3e-01 | evals   446
+    : changes   145 | dx1 6.9e+02 | dx2 4.4e+01
+    : l_old : pillow
+    : l_new : shield, buckler
+
+
+--> #  723 | c      723 | y     1.0e+00 | y_next 3.5e-08
+    > fail | evals 10000
+
+--> #  724 | c      724 | y     1.0e+00 | y_next 9.0e-07
++++ >        c_new  913 | y_new 5.9e-01 | y_old 4.1e-01 | evals  2936
+    : changes   147 | dx1 7.0e+02 | dx2 4.3e+01
+    : l_old : pirate, pirate ship
+    : l_new : wreck
+
+
+--> #  726 | c      726 | y     1.0e+00 | y_next 3.3e-06
++++ >        c_new  740 | y_new 8.2e-01 | y_old 5.7e-02 | evals     2
+    : changes   142 | dx1 6.3e+02 | dx2 4.1e+01
+    : l_old : plane, carpenter`s plane, woodworking plane
+    : l_new : power drill
+
+
+--> #  727 | c      727 | y     1.0e+00 | y_next 4.0e-05
++++ >        c_new  755 | y_new 5.9e-01 | y_old 4.1e-01 | evals    94
+    : changes   147 | dx1 7.3e+02 | dx2 4.5e+01
+    : l_old : planetarium
+    : l_new : radio telescope, radio reflector
+
+
+--> #  728 | c      728 | y     1.0e+00 | y_next 1.7e-05
++++ >        c_new  692 | y_new 7.8e-01 | y_old 2.2e-01 | evals    22
+    : changes   147 | dx1 7.1e+02 | dx2 4.5e+01
+    : l_old : plastic bag
+    : l_new : packet
+
+
+--> #  731 | c      731 | y     1.0e+00 | y_next 5.8e-10
++++ >        c_new  618 | y_new 7.6e-01 | y_old 8.7e-02 | evals  2458
+    : changes   145 | dx1 7.3e+02 | dx2 4.5e+01
+    : l_old : plunger, plumber`s helper
+    : l_new : ladle
+
+
+--> #  732 | c      732 | y     1.0e+00 | y_next 6.5e-07
+    > fail | evals 10000
+
+--> #  733 | c      733 | y     1.0e+00 | y_next 8.9e-06
++++ >        c_new  874 | y_new 4.8e-01 | y_old 4.7e-01 | evals  7128
+    : changes   143 | dx1 6.8e+02 | dx2 4.4e+01
+    : l_old : pole
+    : l_new : trolleybus, trolley coach, trackless trolley
+
+
+--> #  734 | c      734 | y     9.8e-01 | y_next 2.0e-02
++++ >        c_new  656 | y_new 7.3e-01 | y_old 2.6e-01 | evals     2
+    : changes   146 | dx1 7.1e+02 | dx2 4.7e+01
+    : l_old : police van, police wagon, paddy wagon, patrol wago
+    : l_new : minivan
+
+
+--> #  735 | c      735 | y     1.0e+00 | y_next 1.9e-05
++++ >        c_new  824 | y_new 6.0e-01 | y_old 4.0e-01 | evals   128
+    : changes   147 | dx1 6.6e+02 | dx2 4.4e+01
+    : l_old : poncho
+    : l_new : stole
+
+
+--> #  737 | c      737 | y     1.0e+00 | y_next 1.7e-03
++++ >        c_new  898 | y_new 5.4e-01 | y_old 4.6e-01 | evals   308
+    : changes   147 | dx1 6.8e+02 | dx2 4.5e+01
+    : l_old : pop bottle, soda bottle
+    : l_new : water bottle
+
+
+--> #  738 | c      738 | y     9.9e-01 | y_next 3.0e-03
++++ >        c_new  716 | y_new 4.2e-01 | y_old 3.8e-01 | evals    52
+    : changes   148 | dx1 6.7e+02 | dx2 4.3e+01
+    : l_old : pot, flowerpot
+    : l_new : picket fence, paling
+
+
+--> #  739 | c      739 | y     1.0e+00 | y_next 1.6e-06
++++ >        c_new  971 | y_new 1.0e+00 | y_old 3.1e-11 | evals     2
+    : changes   148 | dx1 7.3e+02 | dx2 4.8e+01
+    : l_old : potter`s wheel
+    : l_new : bubble
+
+
+--> #  741 | c      741 | y     1.0e+00 | y_next 4.9e-07
+    > fail | evals 10000
+
+--> #  743 | c      743 | y     8.4e-01 | y_next 1.1e-01
++++ >        c_new  617 | y_new 6.1e-01 | y_old 1.1e-01 | evals    10
+    : changes   146 | dx1 6.8e+02 | dx2 4.6e+01
+    : l_old : prison, prison house
+    : l_new : lab coat, laboratory coat
+
+
+--> #  744 | c      744 | y     7.0e-01 | y_next 3.0e-01
++++ >        c_new  657 | y_new 5.1e-01 | y_old 4.9e-01 | evals    38
+    : changes   145 | dx1 7.3e+02 | dx2 4.7e+01
+    : l_old : projectile, missile
+    : l_new : missile
+
+
+--> #  745 | c      745 | y     1.0e+00 | y_next 6.7e-07
++++ >        c_new  786 | y_new 5.3e-01 | y_old 4.0e-01 | evals    76
+    : changes   146 | dx1 6.9e+02 | dx2 4.9e+01
+    : l_old : projector
+    : l_new : sewing machine
+
+
+--> #  746 | c      746 | y     1.0e+00 | y_next 3.2e-08
+    > fail | evals 10000
+
+--> #  747 | c      747 | y     1.0e+00 | y_next 3.0e-09
++++ >        c_new  966 | y_new 6.7e-01 | y_old 8.8e-03 | evals    22
+    : changes   148 | dx1 6.8e+02 | dx2 4.7e+01
+    : l_old : punching bag, punch bag, punching ball, punchball
+    : l_new : red wine
+
+
+--> #  748 | c      748 | y     1.0e+00 | y_next 7.8e-04
++++ >        c_new  515 | y_new 9.9e-01 | y_old 2.1e-03 | evals     6
+    : changes   142 | dx1 7.2e+02 | dx2 4.3e+01
+    : l_old : purse
+    : l_new : cowboy hat, ten-gallon hat
+
+
+--> #  749 | c      749 | y     1.0e+00 | y_next 2.9e-09
++++ >        c_new  794 | y_new 8.5e-01 | y_old 1.3e-01 | evals     4
+    : changes   148 | dx1 6.8e+02 | dx2 4.3e+01
+    : l_old : quill, quill pen
+    : l_new : shower curtain
+
+
+--> #  751 | c      751 | y     9.7e-01 | y_next 2.1e-02
++++ >        c_new  656 | y_new 3.7e-01 | y_old 3.4e-01 | evals   512
+    : changes   145 | dx1 7.3e+02 | dx2 4.8e+01
+    : l_old : racer, race car, racing car
+    : l_new : minivan
+
+
+--> #  752 | c      752 | y     1.0e+00 | y_next 9.9e-04
+    > fail | evals 10000
+
+--> #  755 | c      755 | y     1.0e+00 | y_next 2.3e-03
++++ >        c_new  701 | y_new 9.9e-01 | y_old 1.8e-03 | evals     2
+    : changes   146 | dx1 6.9e+02 | dx2 4.4e+01
+    : l_old : radio telescope, radio reflector
+    : l_new : parachute, chute
+
+
+--> #  756 | c      756 | y     1.0e+00 | y_next 3.0e-05
+    > fail | evals 10000
+
+--> #  757 | c      757 | y     1.0e+00 | y_next 3.8e-05
++++ >        c_new  660 | y_new 7.1e-01 | y_old 2.9e-01 | evals   490
+    : changes   148 | dx1 7.9e+02 | dx2 4.9e+01
+    : l_old : recreational vehicle, rv, r.v.
+    : l_new : mobile home, manufactured home
+
+
+--> #  758 | c      758 | y     1.0e+00 | y_next 2.0e-06
+    > fail | evals 10000
+
+--> #  759 | c      759 | y     1.0e+00 | y_next 4.3e-07
+    > fail | evals 10000
+
+--> #  760 | c      760 | y     1.0e+00 | y_next 1.5e-03
++++ >        c_new  799 | y_new 9.8e-01 | y_old 4.0e-03 | evals     2
+    : changes   149 | dx1 6.7e+02 | dx2 4.6e+01
+    : l_old : refrigerator, icebox
+    : l_new : sliding door
+
+
+--> #  762 | c      762 | y     4.3e-01 | y_next 2.8e-01
++++ >        c_new  573 | y_new 7.9e-01 | y_old 1.4e-01 | evals     2
+    : changes   145 | dx1 6.6e+02 | dx2 4.4e+01
+    : l_old : restaurant, eating house, eating place, eatery
+    : l_new : go-kart
+
+
+--> #  763 | c      763 | y     1.0e+00 | y_next 1.6e-03
++++ >        c_new  597 | y_new 5.2e-01 | y_old 4.7e-01 | evals    64
+    : changes   150 | dx1 6.6e+02 | dx2 4.6e+01
+    : l_old : revolver, six-gun, six-shooter
+    : l_new : holster
+
+
+--> #  765 | c      765 | y     1.0e+00 | y_next 8.6e-08
+    > fail | evals 10000
+
+--> #  766 | c      766 | y     1.0e+00 | y_next 4.7e-05
++++ >        c_new  485 | y_new 3.5e-01 | y_old 2.2e-01 | evals    10
+    : changes   146 | dx1 7.2e+02 | dx2 4.5e+01
+    : l_old : rotisserie
+    : l_new : cd player
+
+
+--> #  768 | c      768 | y     1.0e+00 | y_next 1.4e-06
+    > fail | evals 10000
+
+--> #  769 | c      769 | y     1.0e+00 | y_next 2.2e-07
++++ >        c_new  111 | y_new 7.0e-01 | y_old 1.0e-01 | evals    44
+    : changes   147 | dx1 6.8e+02 | dx2 4.2e+01
+    : l_old : rule, ruler
+    : l_new : nematode, nematode worm, roundworm
+
+
+--> #  770 | c      770 | y     1.0e+00 | y_next 2.3e-07
+    > fail | evals 10000
+
+--> #  771 | c      771 | y     6.2e-01 | y_next 9.3e-02
++++ >        c_new  760 | y_new 6.4e-01 | y_old 1.1e-01 | evals     4
+    : changes   146 | dx1 7.0e+02 | dx2 4.8e+01
+    : l_old : safe
+    : l_new : refrigerator, icebox
+
+
+--> #  772 | c      772 | y     1.0e+00 | y_next 2.4e-15
+    > fail | evals 10000
+
+--> #  773 | c      773 | y     1.0e+00 | y_next 5.6e-06
++++ >        c_new  899 | y_new 9.7e-01 | y_old 7.3e-03 | evals     2
+    : changes   144 | dx1 6.9e+02 | dx2 4.1e+01
+    : l_old : saltshaker, salt shaker
+    : l_new : water jug
+
+
+--> #  774 | c      774 | y     1.0e+00 | y_next 1.3e-03
++++ >        c_new  679 | y_new 5.5e-01 | y_old 3.9e-01 | evals     4
+    : changes   147 | dx1 6.8e+02 | dx2 4.3e+01
+    : l_old : sandal
+    : l_new : necklace
+
+
+--> #  776 | c      776 | y     1.0e+00 | y_next 1.0e-06
++++ >        c_new  432 | y_new 9.4e-01 | y_old 4.8e-02 | evals    38
+    : changes   147 | dx1 7.0e+02 | dx2 4.9e+01
+    : l_old : sax, saxophone
+    : l_new : bassoon
+
+
+--> #  777 | c      777 | y     1.0e+00 | y_next 5.2e-05
++++ >        c_new  758 | y_new 1.0e+00 | y_old 2.1e-03 | evals     2
+    : changes   146 | dx1 7.5e+02 | dx2 4.8e+01
+    : l_old : scabbard
+    : l_new : reel
+
+
+--> #  778 | c      778 | y     1.0e+00 | y_next 1.1e-07
+    > fail | evals 10000
+
+--> #  779 | c      779 | y     1.0e+00 | y_next 1.8e-08
++++ >        c_new  705 | y_new 6.6e-01 | y_old 3.4e-01 | evals   210
+    : changes   149 | dx1 7.7e+02 | dx2 5.0e+01
+    : l_old : school bus
+    : l_new : passenger car, coach, carriage
+
+
+--> #  780 | c      780 | y     6.6e-01 | y_next 3.1e-01
++++ >        c_new  628 | y_new 9.5e-01 | y_old 1.7e-02 | evals     2
+    : changes   147 | dx1 7.4e+02 | dx2 4.7e+01
+    : l_old : schooner
+    : l_new : liner, ocean liner
+
+
+--> #  781 | c      781 | y     1.0e+00 | y_next 1.1e-06
++++ >        c_new  919 | y_new 5.1e-01 | y_old 3.8e-01 | evals     4
+    : changes   144 | dx1 6.8e+02 | dx2 4.7e+01
+    : l_old : scoreboard
+    : l_new : street sign
+
+
+--> #  783 | c      783 | y     1.0e+00 | y_next 8.7e-05
++++ >        c_new  845 | y_new 9.9e-01 | y_old 1.3e-02 | evals  4866
+    : changes   148 | dx1 7.5e+02 | dx2 5.1e+01
+    : l_old : screw
+    : l_new : syringe
+
+
+--> #  784 | c      784 | y     1.0e+00 | y_next 6.2e-06
++++ >        c_new  740 | y_new 5.3e-01 | y_old 4.7e-01 | evals  2998
+    : changes   143 | dx1 7.1e+02 | dx2 4.2e+01
+    : l_old : screwdriver
+    : l_new : power drill
+
+
+--> #  785 | c      785 | y     1.0e+00 | y_next 9.8e-06
++++ >        c_new  758 | y_new 6.7e-01 | y_old 4.1e-05 | evals     2
+    : changes   143 | dx1 7.1e+02 | dx2 5.0e+01
+    : l_old : seat belt, seatbelt
+    : l_new : reel
+
+
+--> #  786 | c      786 | y     1.0e+00 | y_next 2.2e-09
++++ >        c_new  512 | y_new 8.5e-01 | y_old 1.5e-01 | evals  9098
+    : changes   143 | dx1 7.2e+02 | dx2 4.9e+01
+    : l_old : sewing machine
+    : l_new : corkscrew, bottle screw
+
+
+--> #  787 | c      787 | y     1.0e+00 | y_next 1.2e-07
++++ >        c_new  470 | y_new 8.4e-01 | y_old 1.6e-01 | evals   600
+    : changes   145 | dx1 7.1e+02 | dx2 4.7e+01
+    : l_old : shield, buckler
+    : l_new : candle, taper, wax light
+
+
+--> #  789 | c      789 | y     1.0e+00 | y_next 2.5e-05
++++ >        c_new  553 | y_new 9.2e-01 | y_old 7.6e-04 | evals    18
+    : changes   146 | dx1 7.1e+02 | dx2 4.5e+01
+    : l_old : shoji
+    : l_new : file, file cabinet, filing cabinet
+
+
+--> #  790 | c      790 | y     1.0e+00 | y_next 3.3e-04
++++ >        c_new  520 | y_new 5.1e-01 | y_old 4.9e-01 | evals    84
+    : changes   149 | dx1 7.4e+02 | dx2 4.3e+01
+    : l_old : shopping basket
+    : l_new : crib, cot
+
+
+--> #  791 | c      791 | y     1.0e+00 | y_next 3.5e-05
+    > fail | evals 10000
+
+--> #  792 | c      792 | y     9.7e-01 | y_next 2.7e-02
++++ >        c_new  882 | y_new 6.8e-01 | y_old 1.9e-01 | evals     6
+    : changes   148 | dx1 7.4e+02 | dx2 4.4e+01
+    : l_old : shovel
+    : l_new : vacuum, vacuum cleaner
+
+
+--> #  793 | c      793 | y     1.0e+00 | y_next 5.4e-04
++++ >        c_new  728 | y_new 5.3e-01 | y_old 4.7e-01 | evals     8
+    : changes   148 | dx1 6.8e+02 | dx2 4.1e+01
+    : l_old : shower cap
+    : l_new : plastic bag
+
+
+--> #  794 | c      794 | y     1.0e+00 | y_next 2.7e-05
++++ >        c_new  728 | y_new 5.8e-01 | y_old 4.2e-01 | evals   718
+    : changes   146 | dx1 7.1e+02 | dx2 4.2e+01
+    : l_old : shower curtain
+    : l_new : plastic bag
+
+
+--> #  795 | c      795 | y     1.0e+00 | y_next 2.5e-06
+    > fail | evals 10000
+
+--> #  796 | c      796 | y     1.0e+00 | y_next 1.3e-04
+    > fail | evals 10000
+
+--> #  797 | c      797 | y     8.9e-01 | y_next 1.1e-01
++++ >        c_new  627 | y_new 9.9e-01 | y_old 6.8e-03 | evals     2
+    : changes   142 | dx1 6.5e+02 | dx2 4.3e+01
+    : l_old : sleeping bag
+    : l_new : limousine, limo
+
+
+--> #  798 | c      798 | y     1.0e+00 | y_next 8.1e-07
+    > fail | evals 10000
+
+--> #  799 | c      799 | y     8.4e-01 | y_next 1.6e-01
++++ >        c_new  706 | y_new 5.5e-01 | y_old 4.2e-01 | evals     6
+    : changes   144 | dx1 6.6e+02 | dx2 4.3e+01
+    : l_old : sliding door
+    : l_new : patio, terrace
+
+
+Completed. Successful: 75.64% (total images 78)
+DONE ( 15073.58 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-06 18-53-53] Work is finished (15083.87 sec. total)
+
+

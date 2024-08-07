@@ -1,0 +1,48 @@
+[2024-08-05 15-58-44] Computations (cuda:5)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.82 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.25 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    14.86 sec.) 
+
+.... Loading text similarity calculator
+DONE (     2.04 sec.) 
+
+.... Loading text styling network
+DONE (     5.82 sec.) 
+
+.... Run attack on LLaVa for image #  263
+
+
+
+Image   #   263
+Label   : pembroke, pembroke welsh corgi
+OUT old : The main object in the picture is a dog, specifically a corgi, standing on a road. The purpose of the dog is to provide companionship, protection, and assistance to its owner. Dogs are known for their loyalty and ability
+OUT new : The main object in the picture is a corgi dog, which is a small breed of herding dog. The purpose of the corgi dog is to assist in herding livestock, such as sheep and cattle, by using
+SCORE   : 8.44e-01
+DONE (  1791.65 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 16-29-01] Work is finished (1817.54 sec. total)
+
+

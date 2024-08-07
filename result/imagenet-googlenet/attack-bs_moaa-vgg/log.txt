@@ -1,0 +1,26 @@
+[2024-08-06 12-22-54] Computations (cpu)
+===================== ------------------
+Data                : "imagenet"
+Model               : "googlenet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_moaa"
+Skip fails for attr : True
+========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.01 sec.) 
+
+
+.... Loading "googlenet" model
+DONE (     0.15 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.11 sec.) 
+
+
+.... Start attack on images with baseline "moaa"
+
+--> #    0 | c        0 | y     6.9e-01 | y_next 2.1e-01

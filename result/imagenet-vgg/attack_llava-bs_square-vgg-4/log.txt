@@ -1,0 +1,48 @@
+[2024-08-05 15-58-45] Computations (cuda:5)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "vgg"
+Model attr.         : "vgg"
+Task                : "attack_llava"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.56 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.31 sec.) 
+
+
+.... Loading "LLava" model
+DONE (    16.31 sec.) 
+
+.... Loading text similarity calculator
+DONE (     3.20 sec.) 
+
+.... Loading text styling network
+DONE (     2.60 sec.) 
+
+.... Run attack on LLaVa for image #  318
+
+
+
+Image   #   318
+Label   : lacewing, lacewing fly
+OUT old : The main object in the picture is a leaf with a hole in it, which is likely a part of a plant or a leaf insect. The purpose of this leaf is to provide shelter, protection, and camouflage for the insect or plant
+OUT new : The main object in the picture is a bird, specifically a hummingbird, with its wings spread out. Hummingbirds are known for their ability to hover in mid-air and fly forwards, backwards, and even upside down.
+SCORE   : 4.49e-01
+DONE (  1791.46 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-05 16-29-02] Work is finished (1816.49 sec. total)
+
+
