@@ -10,7 +10,7 @@ MODEL_ATTR = 'vgg'
 BASELINES = ['square']
 PLOT_NAMES = ['Square', 'TETRADAT']
 CLASSES = 1000
-LLAVA_NUMS = [9, 43, 263, 318, 435, 510, 517, 632, 651, 975]
+LLAVA_NUMS = [263, 9, 43, 318, 435, 510, 517, 632, 651, 975]
 
 
 def check_image(num, bs=None):

@@ -5,11 +5,13 @@ import os
 
 ROOT = 'result'
 DATASET = 'imagenet'
-MODELS = ['adv_inception', 'adv_inception_resnet']
-# ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet']
+MODELS = ['alexnet', 'googlenet', 'inception', 'mobilenet', 'resnet',
+    'adv_inception', 'adv_inception_resnet']
+MODEL_NAMES = ['Alexnet', 'Googlenet', 'Inception', 'Mobilenet', 'Resnet',
+    'AdvInception', 'AdvInceptionResnet']
 MODEL_ATTR = 'vgg'
-BASELINES = ['onepixel', 'pixle', 'square']
-PLOT_NAMES = ['Onepixel', 'Pixle', 'Square', 'TETRADAT']
+BASELINES = ['onepixel', 'pixle', 'square', 'mooa']
+PLOT_NAMES = ['Onepixel', 'Pixle', 'Square', 'MOOA', 'TETRADAT']
 CLASSES = 1000
 SEED = 42
 
@@ -50,7 +52,7 @@ def load_data(model, bs=None):
     except Exception as e:
         # Load by portions (only for TETRADAT method)
         result = {}
-        if model == 'adv_inception_resnet':
+        if model == 'adv_inception_resnet' and bs != 'mooa':
             nums = range(1, 11)
         else:
             nums = range(20, 30)
@@ -58,16 +60,23 @@ def load_data(model, bs=None):
             try:
                 fpath = f'{ROOT}/{DATASET}-{model}/attack-'
                 fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
-                fpath += f'/result{i}.npz'
+                if bs == 'mooa':
+                    fpath += f'-{i}'
+                    fpath += f'/result.npz'
+                else:
+                    fpath += f'/result{i}.npz'
                 res = np.load(fpath, allow_pickle=True).get('result').item()
                 result.update(res)
             except Exception as e:
                 for j in range(0, 10):
-                    fpath = f'{ROOT}/{DATASET}-{model}/attack-'
-                    fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
-                    fpath += f'/result{i}{j}.npz'
-                    res = np.load(fpath, allow_pickle=True).get('result').item()
-                    result.update(res)
+                    try:
+                        fpath = f'{ROOT}/{DATASET}-{model}/attack-'
+                        fpath += f'attr-{MODEL_ATTR}' if bs is None else f'bs_{bs}-{MODEL_ATTR}'
+                        fpath += f'/result{i}{j}.npz'
+                        res = np.load(fpath, allow_pickle=True).get('result').item()
+                        result.update(res)
+                    except Exception as e:
+                        continue
         return result
 
 
@@ -144,40 +153,105 @@ def plot(num_total=5, dpi=150, bs_ref='onepixel'):
         #break
 
 
-def show():
+def show(markdown=False):
     print(f'\n\nResults >>>')
     
+    res = {}
     for model in MODELS:
+        res[model] = []
         for num, bs in enumerate(BASELINES):
-            show_method(model, bs,  title=(num==0))
-        show_method(model)
+            val = show_method(model, bs,  title=(num==0))
+            res[model].append(val)
+        val = show_method(model)
+        res[model].append(val)
+
+    if not markdown:
+        return
+
+    text = '\n\n\n'
+    text += '**Table 1:** '
+    text += 'Attack success rates\n'
+    text += '| '
+    for name in [''] + PLOT_NAMES:
+        text += name + ' | '
+    text += '\n'
+    text += '| '
+    for name in [''] + PLOT_NAMES:
+        text += '-'*2 + ' | '
+    text += '\n'
+    for model, model_name in zip(MODELS, MODEL_NAMES):
+        text += '| ' + model_name + ' | '
+        for val in res[model]:
+            text += f'{val[0]:-.2f}% | '
+        text += '\n'
+    text += '\n'
+    text += '**Table 2:** '
+    text += 'Averaged L1 norm of the perturbations\n'
+    text += '| '
+    for name in [''] + PLOT_NAMES:
+        text += name + ' | '
+    text += '\n'
+    text += '| '
+    for name in [''] + PLOT_NAMES:
+        text += '-'*2 + ' | '
+    text += '\n'
+    for model, model_name in zip(MODELS, MODEL_NAMES):
+        text += '| ' + model_name + ' | '
+        for val in res[model]:
+            text += f'{val[2]:-.1f} | '
+        text += '\n'
+    text += '\n'
+    text += '**Table 3:** '
+    text += 'Averaged L2 norm of the perturbations\n'
+    text += '| '
+    for name in [''] + PLOT_NAMES:
+        text += name + ' | '
+    text += '\n'
+    text += '| '
+    for name in [''] + PLOT_NAMES:
+        text += '-'*2 + ' | '
+    text += '\n'
+    for model, model_name in zip(MODELS, MODEL_NAMES):
+        text += '| ' + model_name + ' | '
+        for val in res[model]:
+            text += f'{val[3]:-.1f} | '
+        text += '\n'
+    print(text)
 
     
-def show_method(model, bs=None, title=False):
+def show_method(model, bs=None, title=False, show=True):
     result = load_data(model, bs)
+    if len(list(result.keys())) == 0:
+        name = 'tetradat' if bs is None else f'{bs}'
+        text = name + ' '*max(0, 10-len(name)) + ' >>> NOT READY'
+        print(text)
+        return -1, -1, -1, -1, 0
 
     succ = np.sum([r['success'] for r in result.values() if r])
     full = len(result.keys())
 
+    asr = succ/full*100
     dx0 = np.mean([r['changes'] for r in result.values() if r['success']])
     dx1 = np.mean([r['dx1'] for r in result.values() if r['success']])
     dx2 = np.mean([r['dx2'] for r in result.values() if r['success']])
     
-    name = 'tetradat' if bs is None else f'{bs}'
+    if show:
+        name = 'tetradat' if bs is None else f'{bs}'
+        text = ''
+        if title:
+            text += f'\n\n{model} (attr: {MODEL_ATTR}) | (total {full})\n'
+        text += name + ' '*max(0, 10-len(name)) + ' >>> '
+        text += f'asr: {asr:-6.2f}% | '
+        text += f'total: {full} | '
+        text += f'changes: {dx0:-6.0f} | '
+        text += f'dx1: {dx1:-8.1f} | '
+        text += f'dx2: {dx2:-8.1f}'
+        print(text)
 
-    text = ''
-    if title:
-        text += f'\n\n{model} (attr: {MODEL_ATTR}) | (total images {full})\n'
-    text += name + ' '*max(0, 10-len(name)) + ' >>> '
-    text += f'asr: {succ/full*100:-6.2f}% | '
-    text += f'total: {full} | '
-    text += f'changes: {dx0:-6.0f} | '
-    text += f'dx1: {dx1:-8.1f} | '
-    text += f'dx2: {dx2:-8.1f}'
-    print(text)
+    return asr, dx0, dx1, dx2, full
 
 
 if __name__ == '__main__':
     np.random.seed(SEED)
-    show()
+    show(markdown=True)
     # plot()
