@@ -355,6 +355,8 @@ class AttackBs(Attack):
         t = tpc()
         self._build(data, onepixel, pixle, square, seed)
 
+        success_expected = None
+
         if self.name == 'mooa':
             x_ = data.tr_norm_inv(self.x)
             x_ = x_.detach().to('cpu').numpy().transpose(1, 2, 0)
@@ -374,7 +376,7 @@ class AttackBs(Attack):
 
         self.check(x_new)
         
-        if success_expected != self.success:
+        if success_expected is not None and success_expected != self.success:
             print(f'Warning for mooa-success. Expected: {success_expected}')
 
         self.t += tpc() - t
