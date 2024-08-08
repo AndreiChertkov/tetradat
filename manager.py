@@ -694,7 +694,8 @@ class Manager:
             print('')
 
             net = self.model_attr.net if with_attr else None
-            att.prep(net, self.opt_d, self.attr_steps, self.attr_iters)
+            d = self.opt_d if with_attr else None
+            att.prep(net, d, self.attr_steps, self.attr_iters)
 
             result = att.run(self.opt_n, self.opt_sc, self.opt_k,
                 self.opt_k_top, self.opt_k_gd, self.opt_lr,
