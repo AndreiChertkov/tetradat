@@ -231,6 +231,7 @@ class AttackAttr(Attack):
             for i in range(n):
                 for j in range(n):
                     I.append([i, j])
+            self.x_attr = None
             self.pixels = torch.tensor(I).to(self.device)
             return
 
