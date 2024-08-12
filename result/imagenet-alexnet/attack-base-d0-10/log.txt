@@ -1,0 +1,561 @@
+[2024-08-08 09-02-53] Computations (cuda:3)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Task                : "attack"
+Kind of task        : "base"
+Opt. scale          : 1.0
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (     0.96 sec.) 
+
+
+.... Start attack on images
+
+--> #  900 | c      900 | y     1.0e+00 | y_next 4.3e-07
++++ >        c_new  668 | y_new 5.4e-01 | y_old 3.9e-01 | evals 10024
+    : changes 33515 | dx1 3.5e+04 | dx2 1.4e+02
+    : l_old : water tower
+    : l_new : mosque
+
+
+--> #  901 | c      901 | y     3.9e-01 | y_next 3.9e-01
++++ >        c_new  653 | y_new 3.9e-01 | y_old 3.9e-01 | evals    10
+    : changes 31408 | dx1 6.3e+02 | dx2 2.9e+00
+    : l_old : whiskey jug
+    : l_new : milk can
+
+
+--> #  902 | c      902 | y     7.6e-01 | y_next 4.7e-02
++++ >        c_new  641 | y_new 2.2e-01 | y_old 2.1e-01 | evals 10055
+    : changes 23277 | dx1 5.1e+03 | dx2 4.6e+01
+    : l_old : whistle
+    : l_new : maraca
+
+
+--> #  903 | c      903 | y     5.6e-01 | y_next 1.4e-01
++++ >        c_new  655 | y_new 2.5e-01 | y_old 2.5e-01 | evals 10005
+    : changes 23406 | dx1 6.0e+03 | dx2 2.9e+01
+    : l_old : wig
+    : l_new : miniskirt, mini
+
+
+--> #  905 | c      905 | y     9.2e-01 | y_next 2.0e-02
++++ >        c_new  458 | y_new 2.8e-01 | y_old 2.0e-01 | evals 10082
+    : changes 33513 | dx1 4.1e+04 | dx2 1.8e+02
+    : l_old : window shade
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  906 | c      906 | y     8.1e-01 | y_next 6.3e-02
++++ >        c_new  474 | y_new 3.6e-01 | y_old 3.3e-01 | evals 10030
+    : changes 33002 | dx1 8.8e+03 | dx2 3.7e+01
+    : l_old : windsor tie
+    : l_new : cardigan
+
+
+--> #  908 | c      908 | y     9.8e-01 | y_next 5.1e-03
++++ >        c_new  980 | y_new 2.9e-01 | y_old 2.7e-01 | evals 10046
+    : changes 33503 | dx1 8.5e+03 | dx2 3.5e+01
+    : l_old : wing
+    : l_new : volcano
+
+
+--> #  912 | c      912 | y     1.6e-01 | y_next 8.8e-02
++++ >        c_new  520 | y_new 1.3e-01 | y_old 1.3e-01 | evals 10006
+    : changes 33017 | dx1 2.2e+03 | dx2 9.2e+00
+    : l_old : worm fence, snake fence, snake-rail fence, virgini
+    : l_new : crib, cot
+
+
+--> #  914 | c      914 | y     3.9e-01 | y_next 3.8e-01
++++ >        c_new  780 | y_new 3.8e-01 | y_old 3.8e-01 | evals    31
+    : changes 31731 | dx1 6.2e+02 | dx2 2.5e+00
+    : l_old : yawl
+    : l_new : schooner
+
+
+--> #  915 | c      915 | y     9.5e-02 | y_next 6.0e-02
++++ >        c_new  533 | y_new 7.1e-02 | y_old 7.0e-02 | evals  4082
+    : changes 28121 | dx1 7.6e+02 | dx2 3.4e+00
+    : l_old : yurt
+    : l_new : dishrag, dishcloth
+
+
+--> #  916 | c      916 | y     1.0e+00 | y_next 2.1e-04
++++ >        c_new  611 | y_new 4.4e-01 | y_old 4.4e-01 | evals 10015
+    : changes 24728 | dx1 4.1e+04 | dx2 2.5e+02
+    : l_old : web site, website, internet site, site
+    : l_new : jigsaw puzzle
+
+
+--> #  919 | c      919 | y     4.0e-01 | y_next 7.2e-02
++++ >        c_new  580 | y_new 1.3e-01 | y_old 1.3e-01 | evals 10014
+    : changes 33360 | dx1 6.1e+03 | dx2 2.7e+01
+    : l_old : street sign
+    : l_new : greenhouse, nursery, glasshouse
+
+
+--> #  920 | c      920 | y     1.0e+00 | y_next 8.3e-07
++++ >        c_new  448 | y_new 4.8e-01 | y_old 4.0e-01 | evals 10041
+    : changes 33406 | dx1 1.7e+04 | dx2 8.2e+01
+    : l_old : traffic light, traffic signal, stoplight
+    : l_new : birdhouse
+
+
+--> #  921 | c      921 | y     9.6e-01 | y_next 1.6e-02
++++ >        c_new  539 | y_new 3.3e-01 | y_old 3.1e-01 | evals 10023
+    : changes 33504 | dx1 1.2e+04 | dx2 5.3e+01
+    : l_old : book jacket, dust cover, dust jacket, dust wrapper
+    : l_new : doormat, welcome mat
+
+
+--> #  922 | c      922 | y     8.2e-01 | y_next 5.1e-02
++++ >        c_new  917 | y_new 3.7e-01 | y_old 3.4e-01 | evals 10079
+    : changes 33404 | dx1 1.1e+04 | dx2 4.4e+01
+    : l_old : menu
+    : l_new : comic book
+
+
+--> #  923 | c      923 | y     9.4e-01 | y_next 2.7e-02
++++ >        c_new  935 | y_new 4.2e-01 | y_old 4.2e-01 | evals 10036
+    : changes 33024 | dx1 1.7e+04 | dx2 8.1e+01
+    : l_old : plate
+    : l_new : mashed potato
+
+
+--> #  924 | c      924 | y     8.6e-01 | y_next 5.8e-02
++++ >        c_new  923 | y_new 2.4e-01 | y_old 2.3e-01 | evals 10042
+    : changes 33135 | dx1 1.2e+04 | dx2 5.5e+01
+    : l_old : guacamole
+    : l_new : plate
+
+
+--> #  925 | c      925 | y     9.0e-01 | y_next 3.1e-02
++++ >        c_new  809 | y_new 2.0e-01 | y_old 2.0e-01 | evals 10008
+    : changes 33458 | dx1 8.6e+03 | dx2 3.9e+01
+    : l_old : consomme
+    : l_new : soup bowl
+
+
+--> #  926 | c      926 | y     2.8e-01 | y_next 1.6e-01
++++ >        c_new  933 | y_new 2.1e-01 | y_old 2.1e-01 | evals 10058
+    : changes 33158 | dx1 1.6e+03 | dx2 7.0e+00
+    : l_old : hot pot, hotpot
+    : l_new : cheeseburger
+
+
+--> #  928 | c      928 | y     7.2e-01 | y_next 1.1e-01
++++ >        c_new  929 | y_new 4.2e-01 | y_old 4.1e-01 | evals 10047
+    : changes 33265 | dx1 3.1e+03 | dx2 1.5e+01
+    : l_old : ice cream, icecream
+    : l_new : ice lolly, lolly, lollipop, popsicle
+
+
+--> #  930 | c      930 | y     5.3e-01 | y_next 1.9e-01
++++ >        c_new  910 | y_new 3.5e-01 | y_old 3.5e-01 | evals 10077
+    : changes 33710 | dx1 2.4e+03 | dx2 9.7e+00
+    : l_old : french loaf
+    : l_new : wooden spoon
+
+
+--> #  932 | c      932 | y     9.4e-01 | y_next 5.7e-02
++++ >        c_new  488 | y_new 4.9e-01 | y_old 4.8e-01 | evals 10001
+    : changes 33545 | dx1 9.8e+03 | dx2 4.1e+01
+    : l_old : pretzel
+    : l_new : chain
+
+
+--> #  933 | c      933 | y     1.0e+00 | y_next 2.6e-03
++++ >        c_new  931 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10072
+    : changes 33329 | dx1 1.6e+04 | dx2 7.1e+01
+    : l_old : cheeseburger
+    : l_new : bagel, beigel
+
+
+--> #  934 | c      934 | y     6.0e-01 | y_next 2.4e-01
++++ >        c_new  933 | y_new 4.1e-01 | y_old 4.1e-01 | evals 10098
+    : changes 33350 | dx1 2.4e+03 | dx2 9.6e+00
+    : l_old : hotdog, hot dog, red hot
+    : l_new : cheeseburger
+
+
+--> #  935 | c      935 | y     8.8e-01 | y_next 1.1e-01
++++ >        c_new  962 | y_new 5.0e-01 | y_old 4.8e-01 | evals 10065
+    : changes 32951 | dx1 8.1e+03 | dx2 4.0e+01
+    : l_old : mashed potato
+    : l_new : meat loaf, meatloaf
+
+
+--> #  936 | c      936 | y     9.6e-01 | y_next 5.6e-03
++++ >        c_new  955 | y_new 4.6e-01 | y_old 4.4e-01 | evals 10056
+    : changes 33408 | dx1 1.2e+04 | dx2 5.0e+01
+    : l_old : head cabbage
+    : l_new : jackfruit, jak, jack
+
+
+--> #  937 | c      937 | y     1.0e+00 | y_next 1.5e-03
++++ >        c_new  679 | y_new 4.7e-01 | y_old 3.4e-01 | evals 10031
+    : changes 27679 | dx1 1.0e+04 | dx2 6.1e+01
+    : l_old : broccoli
+    : l_new : necklace
+
+
+--> #  938 | c      938 | y     8.9e-01 | y_next 2.7e-02
++++ >        c_new  953 | y_new 4.2e-01 | y_old 4.1e-01 | evals 10045
+    : changes 33349 | dx1 2.1e+04 | dx2 9.2e+01
+    : l_old : cauliflower
+    : l_new : pineapple, ananas
+
+
+--> #  939 | c      939 | y     1.0e+00 | y_next 3.3e-03
++++ >        c_new  806 | y_new 3.8e-01 | y_old 3.8e-01 | evals 10002
+    : changes 30895 | dx1 6.3e+04 | dx2 2.9e+02
+    : l_old : zucchini, courgette
+    : l_new : sock
+
+
+--> #  940 | c      940 | y     1.0e+00 | y_next 1.3e-03
++++ >        c_new  952 | y_new 4.7e-01 | y_old 4.6e-01 | evals 10052
+    : changes 23978 | dx1 5.3e+03 | dx2 4.3e+01
+    : l_old : spaghetti squash
+    : l_new : fig
+
+
+--> #  941 | c      941 | y     7.1e-01 | y_next 7.9e-02
++++ >        c_new  806 | y_new 2.0e-01 | y_old 2.0e-01 | evals 10021
+    : changes 32987 | dx1 1.8e+04 | dx2 9.7e+01
+    : l_old : acorn squash
+    : l_new : sock
+
+
+--> #  942 | c      942 | y     6.2e-01 | y_next 1.5e-01
++++ >        c_new  950 | y_new 3.0e-01 | y_old 2.9e-01 | evals 10001
+    : changes 33419 | dx1 5.1e+03 | dx2 2.4e+01
+    : l_old : butternut squash
+    : l_new : orange
+
+
+--> #  943 | c      943 | y     4.8e-01 | y_next 5.7e-02
++++ >        c_new  815 | y_new 1.9e-01 | y_old 1.9e-01 | evals 10022
+    : changes 33389 | dx1 5.7e+03 | dx2 2.5e+01
+    : l_old : cucumber, cuke
+    : l_new : spider web, spider`s web
+
+
+--> #  945 | c      945 | y     9.8e-01 | y_next 1.4e-02
++++ >        c_new  950 | y_new 6.8e-01 | y_old 2.6e-01 | evals 10006
+    : changes 33395 | dx1 8.9e+03 | dx2 4.1e+01
+    : l_old : bell pepper
+    : l_new : orange
+
+
+--> #  946 | c      946 | y     6.5e-01 | y_next 3.5e-01
++++ >        c_new  944 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10078
+    : changes 33110 | dx1 4.7e+03 | dx2 2.2e+01
+    : l_old : cardoon
+    : l_new : artichoke, globe artichoke
+
+
+--> #  947 | c      947 | y     8.2e-01 | y_next 2.7e-02
++++ >        c_new   76 | y_new 2.3e-01 | y_old 2.3e-01 | evals 10030
+    : changes 33429 | dx1 3.5e+03 | dx2 1.6e+01
+    : l_old : mushroom
+    : l_new : tarantula
+
+
+--> #  948 | c      948 | y     8.3e-01 | y_next 8.0e-02
++++ >        c_new  852 | y_new 4.5e-01 | y_old 4.1e-01 | evals 10084
+    : changes 33388 | dx1 5.4e+03 | dx2 2.6e+01
+    : l_old : granny smith
+    : l_new : tennis ball
+
+
+--> #  949 | c      949 | y     1.0e+00 | y_next 9.2e-06
++++ >        c_new  533 | y_new 4.2e-01 | y_old 4.2e-01 | evals 10075
+    : changes 27807 | dx1 2.4e+04 | dx2 1.6e+02
+    : l_old : strawberry
+    : l_new : dishrag, dishcloth
+
+
+--> #  950 | c      950 | y     3.5e-01 | y_next 2.4e-01
++++ >        c_new  967 | y_new 3.0e-01 | y_old 3.0e-01 | evals  3793
+    : changes 28415 | dx1 5.9e+02 | dx2 2.8e+00
+    : l_old : orange
+    : l_new : espresso
+
+
+--> #  951 | c      951 | y     8.0e-01 | y_next 1.8e-01
++++ >        c_new  950 | y_new 4.8e-01 | y_old 4.8e-01 | evals 10079
+    : changes 33510 | dx1 9.6e+03 | dx2 4.7e+01
+    : l_old : lemon
+    : l_new : orange
+
+
+--> #  952 | c      952 | y     1.0e+00 | y_next 1.5e-03
++++ >        c_new  828 | y_new 3.7e-01 | y_old 3.1e-01 | evals 10053
+    : changes 33364 | dx1 2.3e+04 | dx2 1.1e+02
+    : l_old : fig
+    : l_new : strainer
+
+
+--> #  953 | c      953 | y     9.8e-01 | y_next 3.6e-03
++++ >        c_new  972 | y_new 2.5e-01 | y_old 2.4e-01 | evals 10020
+    : changes 33484 | dx1 9.1e+03 | dx2 4.4e+01
+    : l_old : pineapple, ananas
+    : l_new : cliff, drop, drop-off
+
+
+--> #  955 | c      955 | y     7.2e-01 | y_next 4.8e-02
++++ >        c_new  932 | y_new 1.2e-01 | y_old 1.2e-01 | evals 10020
+    : changes 33309 | dx1 2.1e+04 | dx2 9.0e+01
+    : l_old : jackfruit, jak, jack
+    : l_new : pretzel
+
+
+--> #  956 | c      956 | y     9.8e-01 | y_next 1.2e-02
++++ >        c_new  938 | y_new 4.9e-01 | y_old 4.9e-01 | evals 10016
+    : changes 33465 | dx1 1.1e+04 | dx2 4.8e+01
+    : l_old : custard apple
+    : l_new : cauliflower
+
+
+--> #  957 | c      957 | y     1.0e+00 | y_next 2.2e-04
++++ >        c_new  328 | y_new 3.8e-01 | y_old 3.2e-01 | evals 10024
+    : changes 33108 | dx1 3.2e+04 | dx2 1.4e+02
+    : l_old : pomegranate
+    : l_new : sea urchin
+
+
+--> #  958 | c      958 | y     9.6e-01 | y_next 1.4e-02
++++ >        c_new  386 | y_new 3.5e-01 | y_old 3.4e-01 | evals 10013
+    : changes 33617 | dx1 6.0e+03 | dx2 2.6e+01
+    : l_old : hay
+    : l_new : african elephant, loxodonta africana
+
+
+--> #  961 | c      961 | y     1.5e-01 | y_next 8.7e-02
++++ >        c_new  910 | y_new 1.1e-01 | y_old 1.1e-01 | evals 10026
+    : changes 31723 | dx1 1.9e+03 | dx2 8.5e+00
+    : l_old : dough
+    : l_new : wooden spoon
+
+
+--> #  962 | c      962 | y     2.5e-01 | y_next 1.8e-01
++++ >        c_new  935 | y_new 2.1e-01 | y_old 2.1e-01 | evals 10009
+    : changes 33641 | dx1 2.5e+03 | dx2 1.1e+01
+    : l_old : meat loaf, meatloaf
+    : l_new : mashed potato
+
+
+--> #  963 | c      963 | y     1.0e+00 | y_next 1.6e-05
++++ >        c_new  741 | y_new 4.9e-01 | y_old 4.0e-01 | evals 10055
+    : changes 33423 | dx1 5.8e+04 | dx2 2.7e+02
+    : l_old : pizza, pizza pie
+    : l_new : prayer rug, prayer mat
+
+
+--> #  964 | c      964 | y     9.9e-01 | y_next 8.0e-03
++++ >        c_new  930 | y_new 4.8e-01 | y_old 4.7e-01 | evals 10064
+    : changes 33240 | dx1 1.8e+04 | dx2 7.6e+01
+    : l_old : potpie
+    : l_new : french loaf
+
+
+--> #  965 | c      965 | y     6.7e-01 | y_next 1.0e-01
++++ >        c_new  963 | y_new 3.6e-01 | y_old 3.5e-01 | evals 10092
+    : changes 33430 | dx1 4.4e+03 | dx2 2.0e+01
+    : l_old : burrito
+    : l_new : pizza, pizza pie
+
+
+--> #  967 | c      967 | y     5.3e-01 | y_next 1.7e-01
++++ >        c_new  855 | y_new 1.9e-01 | y_old 1.8e-01 | evals 10095
+    : changes 33390 | dx1 5.3e+03 | dx2 2.5e+01
+    : l_old : espresso
+    : l_new : thimble
+
+
+--> #  968 | c      968 | y     6.7e-01 | y_next 1.1e-01
++++ >        c_new  721 | y_new 2.8e-01 | y_old 2.6e-01 | evals 10011
+    : changes 33228 | dx1 7.0e+03 | dx2 3.7e+01
+    : l_old : cup
+    : l_new : pillow
+
+
+--> #  969 | c      969 | y     1.0e+00 | y_next 1.2e-03
++++ >        c_new  604 | y_new 2.4e-01 | y_old 2.4e-01 | evals 10045
+    : changes 33036 | dx1 9.7e+03 | dx2 4.1e+01
+    : l_old : eggnog
+    : l_new : hourglass
+
+
+--> #  973 | c      973 | y     8.0e-01 | y_next 1.3e-01
++++ >        c_new  983 | y_new 3.9e-01 | y_old 3.8e-01 | evals 10056
+    : changes 33530 | dx1 1.3e+04 | dx2 5.6e+01
+    : l_old : coral reef
+    : l_new : scuba diver
+
+
+--> #  974 | c      974 | y     8.7e-01 | y_next 4.9e-02
++++ >        c_new  562 | y_new 3.6e-01 | y_old 3.6e-01 | evals 10016
+    : changes 33366 | dx1 4.1e+03 | dx2 1.9e+01
+    : l_old : geyser
+    : l_new : fountain
+
+
+--> #  975 | c      975 | y     4.4e-01 | y_next 3.2e-01
++++ >        c_new  977 | y_new 3.7e-01 | y_old 3.7e-01 | evals  5790
+    : changes 30938 | dx1 6.7e+02 | dx2 3.2e+00
+    : l_old : lakeside, lakeshore
+    : l_new : sandbar, sand bar
+
+
+--> #  976 | c      976 | y     7.8e-01 | y_next 1.6e-01
++++ >        c_new  972 | y_new 4.0e-01 | y_old 3.8e-01 | evals 10089
+    : changes 33455 | dx1 1.2e+04 | dx2 5.0e+01
+    : l_old : promontory, headland, head, foreland
+    : l_new : cliff, drop, drop-off
+
+
+--> #  977 | c      977 | y     8.9e-01 | y_next 4.0e-02
++++ >        c_new  445 | y_new 3.6e-01 | y_old 3.1e-01 | evals 10054
+    : changes 33336 | dx1 2.5e+04 | dx2 1.1e+02
+    : l_old : sandbar, sand bar
+    : l_new : bikini, two-piece
+
+
+--> #  978 | c      978 | y     4.1e-01 | y_next 1.7e-01
++++ >        c_new  460 | y_new 2.6e-01 | y_old 2.6e-01 | evals 10001
+    : changes 33558 | dx1 2.2e+03 | dx2 9.6e+00
+    : l_old : seashore, coast, seacoast, sea-coast
+    : l_new : breakwater, groin, groyne, mole, bulwark, seawall,
+
+
+--> #  980 | c      980 | y     8.2e-01 | y_next 8.9e-02
++++ >        c_new  853 | y_new 4.2e-01 | y_old 4.2e-01 | evals 10066
+    : changes 28319 | dx1 2.8e+03 | dx2 1.3e+01
+    : l_old : volcano
+    : l_new : thatch, thatched roof
+
+
+--> #  981 | c      981 | y     6.7e-01 | y_next 3.2e-01
++++ >        c_new  781 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10070
+    : changes 33716 | dx1 2.6e+03 | dx2 1.1e+01
+    : l_old : ballplayer, baseball player
+    : l_new : scoreboard
+
+
+--> #  982 | c      982 | y     9.7e-01 | y_next 1.4e-02
++++ >        c_new  552 | y_new 3.1e-01 | y_old 2.8e-01 | evals 10020
+    : changes 33540 | dx1 2.0e+04 | dx2 9.6e+01
+    : l_old : groom, bridegroom
+    : l_new : feather boa, boa
+
+
+--> #  983 | c      983 | y     7.8e-01 | y_next 6.0e-02
++++ >        c_new  913 | y_new 3.7e-01 | y_old 3.6e-01 | evals 10021
+    : changes 33380 | dx1 9.9e+03 | dx2 4.7e+01
+    : l_old : scuba diver
+    : l_new : wreck
+
+
+--> #  984 | c      984 | y     1.0e+00 | y_next 3.3e-04
++++ >        c_new  646 | y_new 1.9e-01 | y_old 1.8e-01 | evals 10063
+    : changes 33363 | dx1 5.3e+04 | dx2 2.5e+02
+    : l_old : rapeseed
+    : l_new : maze, labyrinth
+
+
+--> #  985 | c      985 | y     1.0e+00 | y_next 2.1e-04
++++ >        c_new  955 | y_new 5.7e-01 | y_old 4.3e-01 | evals 10003
+    : changes 33107 | dx1 5.1e+04 | dx2 2.4e+02
+    : l_old : daisy
+    : l_new : jackfruit, jak, jack
+
+
+--> #  986 | c      986 | y     1.0e+00 | y_next 2.5e-05
++++ >        c_new  943 | y_new 3.0e-01 | y_old 2.7e-01 | evals 10008
+    : changes 33587 | dx1 2.4e+04 | dx2 1.1e+02
+    : l_old : yellow lady`s slipper, yellow lady-slipper, cyprip
+    : l_new : cucumber, cuke
+
+
+--> #  989 | c      989 | y     1.0e+00 | y_next 5.6e-04
++++ >        c_new  957 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10079
+    : changes 33384 | dx1 1.1e+04 | dx2 5.0e+01
+    : l_old : hip, rose hip, rosehip
+    : l_new : pomegranate
+
+
+--> #  990 | c      990 | y     6.9e-01 | y_next 9.4e-02
++++ >        c_new  666 | y_new 3.5e-01 | y_old 3.2e-01 | evals 10059
+    : changes 33501 | dx1 4.2e+03 | dx2 1.9e+01
+    : l_old : buckeye, horse chestnut, conker
+    : l_new : mortar
+
+
+--> #  992 | c      992 | y     8.5e-01 | y_next 1.5e-01
++++ >        c_new  947 | y_new 5.0e-01 | y_old 5.0e-01 | evals 10059
+    : changes 33662 | dx1 2.2e+04 | dx2 9.9e+01
+    : l_old : agaric
+    : l_new : mushroom
+
+
+--> #  993 | c      993 | y     9.9e-01 | y_next 2.6e-03
++++ >        c_new  937 | y_new 4.8e-01 | y_old 4.7e-01 | evals 10091
+    : changes 33579 | dx1 1.1e+04 | dx2 4.9e+01
+    : l_old : gyromitra
+    : l_new : broccoli
+
+
+--> #  994 | c      994 | y     1.0e+00 | y_next 2.8e-04
++++ >        c_new  105 | y_new 4.9e-01 | y_old 4.5e-01 | evals 10058
+    : changes 33721 | dx1 1.1e+04 | dx2 5.0e+01
+    : l_old : stinkhorn, carrion fungus
+    : l_new : koala, koala bear, kangaroo bear, native bear, pha
+
+
+--> #  995 | c      995 | y     1.0e+00 | y_next 1.0e-03
++++ >        c_new  994 | y_new 5.0e-01 | y_old 4.8e-01 | evals 10096
+    : changes 33652 | dx1 2.2e+04 | dx2 9.5e+01
+    : l_old : earthstar
+    : l_new : stinkhorn, carrion fungus
+
+
+--> #  996 | c      996 | y     1.0e+00 | y_next 2.7e-04
++++ >        c_new   67 | y_new 2.8e-01 | y_old 2.5e-01 | evals 10041
+    : changes 33594 | dx1 3.3e+04 | dx2 1.3e+02
+    : l_old : hen-of-the-woods, hen of the woods, polyporus fron
+    : l_new : diamondback, diamondback rattlesnake, crotalus ada
+
+
+--> #  997 | c      997 | y     7.5e-01 | y_next 9.8e-02
++++ >        c_new  990 | y_new 4.0e-01 | y_old 4.0e-01 | evals 10097
+    : changes 33615 | dx1 6.0e+03 | dx2 2.6e+01
+    : l_old : bolete
+    : l_new : buckeye, horse chestnut, conker
+
+
+Completed. Successful: 100.00% (total images 75)
+DONE (298549.78 sec.) 
+
+
+===================== ---------------------------------------
+[2024-08-11 19-58-43] Work is finished (298550.75 sec. total)
+
+

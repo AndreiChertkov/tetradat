@@ -1,0 +1,347 @@
+[2024-08-08 08-54-44] Computations (cuda:2)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 200
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (     0.89 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.25 sec.) 
+
+
+.... Start attack on images
+
+--> #  600 | c      600 | y     6.5e-01 | y_next 1.3e-01
++++ >        c_new  488 | y_new 4.2e-01 | y_old 4.0e-01 | evals 10060
+    : changes    87 | dx1 3.4e+02 | dx2 2.3e+01
+    : l_old : hook, claw
+    : l_new : chain
+
+
+--> #  601 | c      601 | y     9.4e-01 | y_next 3.9e-02
+    > fail | evals 10000
+
+--> #  602 | c      602 | y     4.9e-01 | y_next 1.1e-01
++++ >        c_new  583 | y_new 2.6e-01 | y_old 2.5e-01 | evals 10047
+    : changes   127 | dx1 1.7e+02 | dx2 1.4e+01
+    : l_old : horizontal bar, high bar
+    : l_new : guillotine
+
+
+--> #  603 | c      603 | y     9.8e-01 | y_next 1.7e-02
+    > fail | evals 10000
+
+--> #  604 | c      604 | y     9.9e-01 | y_next 7.3e-03
+    > fail | evals 10000
+
+--> #  605 | c      605 | y     1.0e+00 | y_next 3.1e-05
+    > fail | evals 10000
+
+--> #  606 | c      606 | y     9.0e-01 | y_next 1.6e-02
++++ >        c_new  666 | y_new 3.7e-01 | y_old 3.7e-01 | evals 10068
+    : changes   134 | dx1 2.8e+02 | dx2 1.9e+01
+    : l_old : iron, smoothing iron
+    : l_new : mortar
+
+
+--> #  607 | c      607 | y     1.0e+00 | y_next 3.2e-07
+    > fail | evals 10000
+
+--> #  608 | c      608 | y     1.9e-01 | y_next 6.0e-02
++++ >        c_new  714 | y_new 8.4e-02 | y_old 8.3e-02 | evals 10051
+    : changes   146 | dx1 2.6e+02 | dx2 1.9e+01
+    : l_old : jean, blue jean, denim
+    : l_new : pick, plectrum, plectron
+
+
+--> #  609 | c      609 | y     2.4e-01 | y_next 1.3e-01
++++ >        c_new  654 | y_new 1.8e-01 | y_old 1.8e-01 | evals 10077
+    : changes   146 | dx1 1.6e+02 | dx2 1.0e+01
+    : l_old : jeep, landrover
+    : l_new : minibus
+
+
+--> #  610 | c      610 | y     8.8e-01 | y_next 1.4e-02
++++ >        c_new  458 | y_new 1.5e-01 | y_old 1.3e-01 | evals 10055
+    : changes   152 | dx1 3.8e+02 | dx2 2.3e+01
+    : l_old : jersey, t-shirt, tee shirt
+    : l_new : brass, memorial tablet, plaque
+
+
+--> #  611 | c      611 | y     1.0e+00 | y_next 6.9e-04
+    > fail | evals 10000
+
+--> #  615 | c      615 | y     6.3e-01 | y_next 1.9e-01
++++ >        c_new  439 | y_new 4.0e-01 | y_old 3.8e-01 | evals 10054
+    : changes   131 | dx1 4.4e+02 | dx2 3.1e+01
+    : l_old : knee pad
+    : l_new : bearskin, busby, shako
+
+
+--> #  616 | c      616 | y     4.8e-01 | y_next 8.0e-02
++++ >        c_new  434 | y_new 1.7e-01 | y_old 1.6e-01 | evals 10092
+    : changes   130 | dx1 3.2e+02 | dx2 2.5e+01
+    : l_old : knot
+    : l_new : bath towel
+
+
+--> #  617 | c      617 | y     7.8e-02 | y_next 4.1e-02
++++ >        c_new  559 | y_new 4.8e-02 | y_old 4.4e-02 | evals 10007
+    : changes   139 | dx1 1.9e+02 | dx2 1.4e+01
+    : l_old : lab coat, laboratory coat
+    : l_new : folding chair
+
+
+--> #  618 | c      618 | y     7.9e-01 | y_next 7.4e-02
+    > fail | evals 10000
+
+--> #  621 | c      621 | y     8.0e-01 | y_next 7.4e-02
+    > fail | evals 10000
+
+--> #  622 | c      622 | y     1.0e+00 | y_next 9.7e-04
+    > fail | evals 10000
+
+--> #  623 | c      623 | y     5.5e-01 | y_next 1.6e-01
+    > fail | evals 10000
+
+--> #  624 | c      624 | y     9.1e-01 | y_next 6.4e-02
+    > fail | evals 10000
+
+--> #  625 | c      625 | y     1.0e+00 | y_next 6.4e-05
+    > fail | evals 10000
+
+--> #  627 | c      627 | y     9.8e-01 | y_next 8.1e-03
+    > fail | evals 10000
+
+--> #  628 | c      628 | y     9.9e-01 | y_next 9.2e-03
+    > fail | evals 10000
+
+--> #  629 | c      629 | y     3.0e-01 | y_next 1.2e-01
++++ >        c_new  907 | y_new 1.9e-01 | y_old 1.8e-01 | evals 10037
+    : changes   133 | dx1 1.2e+02 | dx2 8.3e+00
+    : l_old : lipstick, lip rouge
+    : l_new : wine bottle
+
+
+--> #  630 | c      630 | y     9.6e-01 | y_next 2.2e-02
+    > fail | evals 10000
+
+--> #  632 | c      632 | y     7.6e-01 | y_next 1.3e-01
+    > fail | evals 10000
+
+--> #  635 | c      635 | y     9.9e-01 | y_next 8.9e-03
+    > fail | evals 10000
+
+--> #  636 | c      636 | y     7.3e-01 | y_next 1.7e-01
+    > fail | evals 10000
+
+--> #  637 | c      637 | y     1.0e+00 | y_next 1.2e-04
+    > fail | evals 10000
+
+--> #  640 | c      640 | y     8.1e-01 | y_next 1.7e-01
+    > fail | evals 10000
+
+--> #  642 | c      642 | y     1.0e+00 | y_next 5.6e-06
+    > fail | evals 10000
+
+--> #  647 | c      647 | y     4.3e-01 | y_next 1.3e-01
++++ >        c_new  503 | y_new 2.2e-01 | y_old 2.1e-01 | evals 10078
+    : changes   136 | dx1 2.7e+02 | dx2 1.8e+01
+    : l_old : measuring cup
+    : l_new : cocktail shaker
+
+
+--> #  648 | c      648 | y     9.0e-01 | y_next 4.9e-02
+    > fail | evals 10000
+
+--> #  649 | c      649 | y     1.0e+00 | y_next 2.0e-04
+    > fail | evals 10000
+
+--> #  651 | c      651 | y     3.5e-01 | y_next 1.6e-01
++++ >        c_new  485 | y_new 2.4e-01 | y_old 2.3e-01 | evals 10047
+    : changes   104 | dx1 1.6e+02 | dx2 1.1e+01
+    : l_old : microwave, microwave oven
+    : l_new : cd player
+
+
+--> #  652 | c      652 | y     6.8e-01 | y_next 4.6e-02
+    > fail | evals 10000
+
+--> #  653 | c      653 | y     7.3e-02 | y_next 5.1e-02
++++ >        c_new  428 | y_new 5.9e-02 | y_old 5.9e-02 | evals 10059
+    : changes    88 | dx1 4.7e+01 | dx2 2.9e+00
+    : l_old : milk can
+    : l_new : barrow, garden cart, lawn cart, wheelbarrow
+
+
+--> #  655 | c      655 | y     1.6e-01 | y_next 9.9e-02
++++ >        c_new  882 | y_new 1.2e-01 | y_old 1.2e-01 | evals 10055
+    : changes   146 | dx1 8.6e+01 | dx2 5.4e+00
+    : l_old : miniskirt, mini
+    : l_new : vacuum, vacuum cleaner
+
+
+--> #  656 | c      656 | y     4.2e-01 | y_next 2.4e-01
++++ >        c_new  627 | y_new 3.2e-01 | y_old 3.1e-01 | evals 10014
+    : changes   124 | dx1 2.2e+02 | dx2 1.7e+01
+    : l_old : minivan
+    : l_new : limousine, limo
+
+
+--> #  660 | c      660 | y     9.8e-01 | y_next 4.2e-03
+    > fail | evals 10000
+
+--> #  661 | c      661 | y     1.0e+00 | y_next 3.5e-04
+    > fail | evals 10000
+
+--> #  665 | c      665 | y     4.9e-01 | y_next 1.1e-01
++++ >        c_new  762 | y_new 2.3e-01 | y_old 2.3e-01 | evals 10041
+    : changes   139 | dx1 2.4e+02 | dx2 1.7e+01
+    : l_old : moped
+    : l_new : restaurant, eating house, eating place, eatery
+
+
+--> #  666 | c      666 | y     1.3e-01 | y_next 9.3e-02
++++ >        c_new  587 | y_new 9.4e-02 | y_old 9.3e-02 | evals 10029
+    : changes   127 | dx1 1.1e+02 | dx2 1.0e+01
+    : l_old : mortar
+    : l_new : hammer
+
+
+--> #  667 | c      667 | y     9.1e-01 | y_next 7.0e-02
+    > fail | evals 10000
+
+--> #  668 | c      668 | y     9.8e-01 | y_next 9.2e-03
+    > fail | evals 10000
+
+--> #  669 | c      669 | y     1.0e+00 | y_next 1.9e-04
+    > fail | evals 10000
+
+--> #  670 | c      670 | y     6.5e-01 | y_next 2.3e-01
++++ >        c_new  665 | y_new 4.1e-01 | y_old 4.1e-01 | evals 10061
+    : changes   149 | dx1 3.2e+02 | dx2 2.0e+01
+    : l_old : motor scooter, scooter
+    : l_new : moped
+
+
+--> #  672 | c      672 | y     9.6e-01 | y_next 9.7e-03
++++ >        c_new  272 | y_new 2.4e-01 | y_old 2.3e-01 | evals 10008
+    : changes   137 | dx1 5.0e+02 | dx2 3.4e+01
+    : l_old : mountain tent
+    : l_new : coyote, prairie wolf, brush wolf, canis latrans
+
+
+--> #  674 | c      674 | y     9.9e-01 | y_next 2.7e-03
++++ >        c_new  626 | y_new 4.4e-01 | y_old 4.4e-01 | evals 10002
+    : changes   156 | dx1 6.4e+02 | dx2 4.2e+01
+    : l_old : mousetrap
+    : l_new : lighter, light, igniter, ignitor
+
+
+--> #  675 | c      675 | y     9.2e-01 | y_next 5.1e-02
++++ >        c_new  660 | y_new 4.0e-01 | y_old 3.8e-01 | evals 10038
+    : changes   123 | dx1 4.7e+02 | dx2 3.6e+01
+    : l_old : moving van
+    : l_new : mobile home, manufactured home
+
+
+--> #  676 | c      676 | y     1.0e+00 | y_next 2.7e-04
+    > fail | evals 10000
+
+--> #  682 | c      682 | y     6.6e-01 | y_next 9.1e-02
++++ >        c_new  863 | y_new 2.6e-01 | y_old 2.6e-01 | evals 10089
+    : changes   145 | dx1 2.5e+02 | dx2 1.5e+01
+    : l_old : obelisk
+    : l_new : totem pole
+
+
+--> #  683 | c      683 | y     9.0e-01 | y_next 3.9e-02
+    > fail | evals 10000
+
+--> #  684 | c      684 | y     2.2e-01 | y_next 1.5e-01
++++ >        c_new  868 | y_new 1.8e-01 | y_old 1.8e-01 | evals 10044
+    : changes   131 | dx1 7.1e+01 | dx2 4.5e+00
+    : l_old : ocarina, sweet potato
+    : l_new : tray
+
+
+--> #  685 | c      685 | y     1.0e+00 | y_next 2.8e-05
+    > fail | evals 10000
+
+--> #  686 | c      686 | y     7.5e-01 | y_next 7.8e-02
++++ >        c_new  455 | y_new 2.6e-01 | y_old 2.6e-01 | evals 10090
+    : changes   150 | dx1 6.3e+02 | dx2 3.9e+01
+    : l_old : oil filter
+    : l_new : bottlecap
+
+
+--> #  687 | c      687 | y     9.8e-01 | y_next 1.9e-02
+    > fail | evals 10000
+
+--> #  688 | c      688 | y     9.7e-01 | y_next 8.1e-03
+    > fail | evals 10000
+
+--> #  690 | c      690 | y     6.3e-01 | y_next 2.0e-01
++++ >        c_new  603 | y_new 3.5e-01 | y_old 3.2e-01 | evals 10027
+    : changes   139 | dx1 2.8e+02 | dx2 1.8e+01
+    : l_old : oxcart
+    : l_new : horse cart, horse-cart
+
+
+--> #  693 | c      693 | y     2.3e-01 | y_next 4.6e-02
++++ >        c_new  132 | y_new 8.5e-02 | y_old 8.3e-02 | evals 10034
+    : changes   107 | dx1 6.5e+02 | dx2 4.1e+01
+    : l_old : paddle, boat paddle
+    : l_new : american egret, great white heron, egretta albus
+
+
+--> #  694 | c      694 | y     1.0e+00 | y_next 1.9e-05
+    > fail | evals 10000
+
+--> #  695 | c      695 | y     8.7e-01 | y_next 4.5e-02
+    > fail | evals 10000
+
+--> #  697 | c      697 | y     8.5e-01 | y_next 1.9e-02
+    > fail | evals 10000
+
+--> #  698 | c      698 | y     7.5e-01 | y_next 7.6e-02
+    > fail | evals 10000
+
+--> #  699 | c      699 | y     7.3e-01 | y_next 3.9e-02
++++ >        c_new  206 | y_new 1.6e-01 | y_old 1.5e-01 | evals 10034
+    : changes   145 | dx1 2.2e+02 | dx2 1.8e+01
+    : l_old : panpipe, pandean pipe, syrinx
+    : l_new : curly-coated retriever
+
+
+Completed. Successful: 41.54% (total images 65)
+DONE ( 32129.95 sec.) 
+
+
+===================== --------------------------------------
+[2024-08-08 17-50-16] Work is finished (32132.11 sec. total)
+
+

@@ -1,0 +1,590 @@
+[2024-08-08 08-50-24] Computations (cuda:1)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "attr"
+Opt. scale          : 1.0
+Opt. dimension      : 25000
+Opt. mode size      : 3
+Opt. budget         : 10000
+Opt. batch size     : 100
+Opt. k-top          : 10
+Opt. gd iters       : 100
+Opt. learn. rate    : 0.01
+Opt. TT-rank        : 5
+Attribution steps   : 15
+Attribution iters   : 15
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (     0.74 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     1.17 sec.) 
+
+
+.... Start attack on images
+
+--> #  101 | c      101 | y     5.8e-01 | y_next 2.4e-01
++++ >        c_new  221 | y_new 2.8e-01 | y_old 2.7e-01 | evals 10065
+    : changes 16421 | dx1 1.5e+03 | dx2 9.6e+00
+    : l_old : tusker
+    : l_new : irish water spaniel
+
+
+--> #  102 | c      102 | y     1.0e+00 | y_next 3.7e-05
++++ >        c_new  328 | y_new 4.3e-01 | y_old 4.2e-01 | evals 10031
+    : changes 16449 | dx1 2.3e+04 | dx2 1.5e+02
+    : l_old : echidna, spiny anteater, anteater
+    : l_new : sea urchin
+
+
+--> #  103 | c      103 | y     7.5e-01 | y_next 3.8e-02
++++ >        c_new  349 | y_new 3.2e-01 | y_old 3.0e-01 | evals 10099
+    : changes 16603 | dx1 1.7e+03 | dx2 1.1e+01
+    : l_old : platypus, duckbill, duckbilled platypus, duck-bill
+    : l_new : bighorn, bighorn sheep, cimarron, rocky mountain b
+
+
+--> #  104 | c      104 | y     2.8e-01 | y_next 1.9e-01
++++ >        c_new  277 | y_new 2.3e-01 | y_old 2.3e-01 | evals  1784
+    : changes 14126 | dx1 4.3e+02 | dx2 2.7e+00
+    : l_old : wallaby, brush kangaroo
+    : l_new : red fox, vulpes vulpes
+
+
+--> #  105 | c      105 | y     9.6e-01 | y_next 1.3e-02
++++ >        c_new  106 | y_new 3.8e-01 | y_old 3.7e-01 | evals 10036
+    : changes 16770 | dx1 5.1e+03 | dx2 3.1e+01
+    : l_old : koala, koala bear, kangaroo bear, native bear, pha
+    : l_new : wombat
+
+
+--> #  106 | c      106 | y     9.1e-01 | y_next 5.3e-02
++++ >        c_new  333 | y_new 2.8e-01 | y_old 2.8e-01 | evals 10049
+    : changes 16499 | dx1 5.6e+03 | dx2 3.5e+01
+    : l_old : wombat
+    : l_new : hamster
+
+
+--> #  109 | c      109 | y     9.6e-01 | y_next 6.8e-03
++++ >        c_new   37 | y_new 3.1e-01 | y_old 3.0e-01 | evals 10073
+    : changes 16744 | dx1 5.2e+03 | dx2 3.4e+01
+    : l_old : brain coral
+    : l_new : box turtle, box tortoise
+
+
+--> #  111 | c      111 | y     1.0e+00 | y_next 2.2e-04
++++ >        c_new   65 | y_new 4.8e-01 | y_old 4.7e-01 | evals 10077
+    : changes 16608 | dx1 1.2e+04 | dx2 7.4e+01
+    : l_old : nematode, nematode worm, roundworm
+    : l_new : sea snake
+
+
+--> #  113 | c      113 | y     4.2e-01 | y_next 2.2e-01
++++ >        c_new  328 | y_new 3.1e-01 | y_old 3.1e-01 | evals 10097
+    : changes 15301 | dx1 7.2e+02 | dx2 4.8e+00
+    : l_old : snail
+    : l_new : sea urchin
+
+
+--> #  114 | c      114 | y     4.2e-01 | y_next 8.4e-02
++++ >        c_new  395 | y_new 2.0e-01 | y_old 2.0e-01 | evals 10027
+    : changes 16097 | dx1 1.3e+03 | dx2 8.1e+00
+    : l_old : slug
+    : l_new : gar, garfish, garpike, billfish, lepisosteus osseu
+
+
+--> #  115 | c      115 | y     3.5e-01 | y_next 1.2e-01
++++ >        c_new  377 | y_new 2.0e-01 | y_old 2.0e-01 | evals 10075
+    : changes 16601 | dx1 7.9e+02 | dx2 4.9e+00
+    : l_old : sea slug, nudibranch
+    : l_new : marmoset
+
+
+--> #  116 | c      116 | y     9.9e-01 | y_next 2.3e-03
++++ >        c_new  133 | y_new 2.7e-01 | y_old 2.5e-01 | evals 10047
+    : changes 16765 | dx1 5.5e+03 | dx2 3.5e+01
+    : l_old : chiton, coat-of-mail shell, sea cradle, polyplacop
+    : l_new : bittern
+
+
+--> #  117 | c      117 | y     1.0e+00 | y_next 1.2e-04
++++ >        c_new  149 | y_new 2.7e-01 | y_old 2.3e-01 | evals 10057
+    : changes 16010 | dx1 6.3e+03 | dx2 4.0e+01
+    : l_old : chambered nautilus, pearly nautilus, nautilus
+    : l_new : dugong, dugong dugon
+
+
+--> #  119 | c      119 | y     4.3e-01 | y_next 2.7e-01
++++ >        c_new  120 | y_new 3.5e-01 | y_old 3.5e-01 | evals  6443
+    : changes 14182 | dx1 3.1e+02 | dx2 2.1e+00
+    : l_old : rock crab, cancer irroratus
+    : l_new : fiddler crab
+
+
+--> #  120 | c      120 | y     9.4e-01 | y_next 5.3e-02
++++ >        c_new  307 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10086
+    : changes 16647 | dx1 2.5e+03 | dx2 1.6e+01
+    : l_old : fiddler crab
+    : l_new : weevil
+
+
+--> #  121 | c      121 | y     9.6e-01 | y_next 4.6e-03
++++ >        c_new  329 | y_new 2.1e-01 | y_old 2.1e-01 | evals 10074
+    : changes 16639 | dx1 6.4e+03 | dx2 4.0e+01
+    : l_old : king crab, alaska crab, alaskan king crab, alaska 
+    : l_new : sea cucumber, holothurian
+
+
+--> #  123 | c      123 | y     8.9e-01 | y_next 9.6e-02
++++ >        c_new  396 | y_new 4.9e-01 | y_old 4.9e-01 | evals 10011
+    : changes 16606 | dx1 2.7e+03 | dx2 1.7e+01
+    : l_old : spiny lobster, langouste, rock lobster, crawfish, 
+    : l_new : lionfish
+
+
+--> #  124 | c      124 | y     3.4e-01 | y_next 6.7e-02
++++ >        c_new   47 | y_new 1.5e-01 | y_old 1.5e-01 | evals 10029
+    : changes 16860 | dx1 1.7e+03 | dx2 1.0e+01
+    : l_old : crayfish, crawfish, crawdad, crawdaddy
+    : l_new : african chameleon, chamaeleo chamaeleon
+
+
+--> #  126 | c      126 | y     1.0e+00 | y_next 1.2e-04
++++ >        c_new  116 | y_new 5.1e-01 | y_old 4.8e-01 | evals 10016
+    : changes 16871 | dx1 1.1e+04 | dx2 7.1e+01
+    : l_old : isopod
+    : l_new : chiton, coat-of-mail shell, sea cradle, polyplacop
+
+
+--> #  127 | c      127 | y     9.9e-01 | y_next 5.9e-03
++++ >        c_new   99 | y_new 2.6e-01 | y_old 2.6e-01 | evals 10027
+    : changes 16499 | dx1 2.1e+04 | dx2 1.4e+02
+    : l_old : white stork, ciconia ciconia
+    : l_new : goose
+
+
+--> #  128 | c      128 | y     1.0e+00 | y_next 1.6e-03
++++ >        c_new    9 | y_new 3.9e-01 | y_old 2.5e-01 | evals 10081
+    : changes 16795 | dx1 1.3e+04 | dx2 7.9e+01
+    : l_old : black stork, ciconia nigra
+    : l_new : ostrich, struthio camelus
+
+
+--> #  129 | c      129 | y     9.7e-01 | y_next 1.4e-02
++++ >        c_new  132 | y_new 4.8e-01 | y_old 4.5e-01 | evals 10091
+    : changes 16614 | dx1 9.2e+03 | dx2 4.9e+01
+    : l_old : spoonbill
+    : l_new : american egret, great white heron, egretta albus
+
+
+--> #  130 | c      130 | y     9.6e-01 | y_next 5.9e-03
++++ >        c_new  562 | y_new 2.7e-01 | y_old 2.2e-01 | evals 10081
+    : changes 16752 | dx1 6.2e+03 | dx2 4.0e+01
+    : l_old : flamingo
+    : l_new : fountain
+
+
+--> #  131 | c      131 | y     1.0e+00 | y_next 5.4e-04
++++ >        c_new  307 | y_new 3.0e-01 | y_old 2.9e-01 | evals 10067
+    : changes 16681 | dx1 5.9e+03 | dx2 3.6e+01
+    : l_old : little blue heron, egretta caerulea
+    : l_new : weevil
+
+
+--> #  132 | c      132 | y     8.2e-01 | y_next 6.5e-02
++++ >        c_new  484 | y_new 1.6e-01 | y_old 1.3e-01 | evals 10080
+    : changes 16473 | dx1 1.8e+04 | dx2 9.8e+01
+    : l_old : american egret, great white heron, egretta albus
+    : l_new : catamaran
+
+
+--> #  133 | c      133 | y     7.9e-01 | y_next 1.7e-01
++++ >        c_new   62 | y_new 4.7e-01 | y_old 4.5e-01 | evals 10065
+    : changes 16886 | dx1 1.4e+03 | dx2 8.3e+00
+    : l_old : bittern
+    : l_new : rock python, rock snake, python sebae
+
+
+--> #  134 | c      134 | y     5.9e-01 | y_next 2.9e-01
++++ >        c_new  132 | y_new 4.4e-01 | y_old 4.4e-01 | evals 10000
+    : changes 16743 | dx1 1.6e+03 | dx2 1.0e+01
+    : l_old : crane
+    : l_new : american egret, great white heron, egretta albus
+
+
+--> #  135 | c      135 | y     8.8e-01 | y_next 2.3e-02
++++ >        c_new   81 | y_new 3.3e-01 | y_old 3.2e-01 | evals 10000
+    : changes 16771 | dx1 2.7e+03 | dx2 1.6e+01
+    : l_old : limpkin, aramus pictus
+    : l_new : ptarmigan
+
+
+--> #  136 | c      136 | y     1.0e+00 | y_next 1.4e-04
++++ >        c_new  124 | y_new 2.7e-01 | y_old 2.5e-01 | evals 10086
+    : changes 16721 | dx1 6.3e+03 | dx2 4.1e+01
+    : l_old : european gallinule, porphyrio porphyrio
+    : l_new : crayfish, crawfish, crawdad, crawdaddy
+
+
+--> #  137 | c      137 | y     2.7e-01 | y_next 2.1e-01
++++ >        c_new  131 | y_new 2.3e-01 | y_old 2.3e-01 | evals 10055
+    : changes 16680 | dx1 7.2e+02 | dx2 4.4e+00
+    : l_old : american coot, marsh hen, mud hen, water hen, fuli
+    : l_new : little blue heron, egretta caerulea
+
+
+--> #  138 | c      138 | y     1.0e+00 | y_next 8.9e-05
++++ >        c_new    9 | y_new 4.7e-01 | y_old 4.6e-01 | evals 10081
+    : changes 16593 | dx1 9.0e+03 | dx2 5.6e+01
+    : l_old : bustard
+    : l_new : ostrich, struthio camelus
+
+
+--> #  139 | c      139 | y     9.8e-01 | y_next 1.6e-02
++++ >        c_new   58 | y_new 5.0e-01 | y_old 4.8e-01 | evals 10079
+    : changes 16284 | dx1 1.5e+03 | dx2 9.5e+00
+    : l_old : ruddy turnstone, arenaria interpres
+    : l_new : water snake
+
+
+--> #  140 | c      140 | y     7.7e-01 | y_next 1.2e-01
++++ >        c_new   49 | y_new 3.4e-01 | y_old 3.1e-01 | evals 10055
+    : changes 15690 | dx1 3.0e+03 | dx2 1.9e+01
+    : l_old : red-backed sandpiper, dunlin, erolia alpina
+    : l_new : african crocodile, nile crocodile, crocodylus nilo
+
+
+--> #  141 | c      141 | y     1.0e+00 | y_next 2.5e-03
++++ >        c_new  143 | y_new 3.1e-01 | y_old 3.1e-01 | evals 10007
+    : changes 16569 | dx1 9.6e+03 | dx2 5.8e+01
+    : l_old : redshank, tringa totanus
+    : l_new : oystercatcher, oyster catcher
+
+
+--> #  142 | c      142 | y     4.2e-01 | y_next 2.7e-01
++++ >        c_new  135 | y_new 3.4e-01 | y_old 3.4e-01 | evals  8058
+    : changes 14942 | dx1 3.9e+02 | dx2 2.5e+00
+    : l_old : dowitcher
+    : l_new : limpkin, aramus pictus
+
+
+--> #  144 | c      144 | y     9.6e-01 | y_next 2.8e-02
++++ >        c_new  853 | y_new 5.0e-01 | y_old 4.8e-01 | evals 10016
+    : changes 16780 | dx1 2.7e+03 | dx2 1.7e+01
+    : l_old : pelican
+    : l_new : thatch, thatched roof
+
+
+--> #  145 | c      145 | y     1.0e+00 | y_next 3.9e-07
++++ >        c_new  649 | y_new 4.7e-01 | y_old 4.0e-01 | evals 10020
+    : changes 17045 | dx1 1.0e+04 | dx2 6.4e+01
+    : l_old : king penguin, aptenodytes patagonica
+    : l_new : megalith, megalithic structure
+
+
+--> #  146 | c      146 | y     9.9e-01 | y_next 3.7e-03
++++ >        c_new  296 | y_new 3.8e-01 | y_old 3.4e-01 | evals 10067
+    : changes 16396 | dx1 9.4e+03 | dx2 6.9e+01
+    : l_old : albatross, mollymawk
+    : l_new : ice bear, polar bear, ursus maritimus, thalarctos 
+
+
+--> #  147 | c      147 | y     9.7e-01 | y_next 1.1e-02
++++ >        c_new  833 | y_new 1.9e-01 | y_old 1.9e-01 | evals 10039
+    : changes 16629 | dx1 5.9e+03 | dx2 3.8e+01
+    : l_old : grey whale, gray whale, devilfish, eschrichtius gi
+    : l_new : submarine, pigboat, sub, u-boat
+
+
+--> #  148 | c      148 | y     7.5e-01 | y_next 1.5e-01
++++ >        c_new  145 | y_new 3.9e-01 | y_old 3.9e-01 | evals 10048
+    : changes 16124 | dx1 1.3e+03 | dx2 8.7e+00
+    : l_old : killer whale, killer, orca, grampus, sea wolf, orc
+    : l_new : king penguin, aptenodytes patagonica
+
+
+--> #  149 | c      149 | y     9.9e-01 | y_next 6.8e-03
++++ >        c_new  178 | y_new 4.1e-01 | y_old 3.9e-01 | evals 10013
+    : changes 16637 | dx1 6.7e+03 | dx2 4.5e+01
+    : l_old : dugong, dugong dugon
+    : l_new : weimaraner
+
+
+--> #  150 | c      150 | y     1.0e+00 | y_next 5.7e-06
++++ >        c_new  336 | y_new 3.4e-01 | y_old 2.7e-01 | evals 10046
+    : changes 16404 | dx1 1.1e+04 | dx2 6.6e+01
+    : l_old : sea lion
+    : l_new : marmot
+
+
+--> #  151 | c      151 | y     9.2e-01 | y_next 4.0e-02
++++ >        c_new  264 | y_new 4.3e-01 | y_old 4.3e-01 | evals 10015
+    : changes 16644 | dx1 4.6e+03 | dx2 3.1e+01
+    : l_old : chihuahua
+    : l_new : cardigan, cardigan welsh corgi
+
+
+--> #  152 | c      152 | y     9.7e-01 | y_next 2.5e-02
++++ >        c_new  154 | y_new 4.3e-01 | y_old 4.3e-01 | evals 10029
+    : changes 16191 | dx1 5.4e+03 | dx2 4.0e+01
+    : l_old : japanese spaniel
+    : l_new : pekinese, pekingese, peke
+
+
+--> #  153 | c      153 | y     9.2e-01 | y_next 6.5e-02
++++ >        c_new  204 | y_new 4.8e-01 | y_old 4.4e-01 | evals 10071
+    : changes 16693 | dx1 3.5e+03 | dx2 2.2e+01
+    : l_old : maltese dog, maltese terrier, maltese
+    : l_new : lhasa, lhasa apso
+
+
+--> #  154 | c      154 | y     9.6e-01 | y_next 1.1e-02
++++ >        c_new  219 | y_new 2.6e-01 | y_old 2.3e-01 | evals 10055
+    : changes 16187 | dx1 3.8e+03 | dx2 2.5e+01
+    : l_old : pekinese, pekingese, peke
+    : l_new : cocker spaniel, english cocker spaniel, cocker
+
+
+--> #  155 | c      155 | y     6.8e-01 | y_next 3.1e-01
++++ >        c_new  204 | y_new 5.0e-01 | y_old 4.9e-01 | evals 10076
+    : changes 16532 | dx1 2.5e+03 | dx2 1.6e+01
+    : l_old : shih-tzu
+    : l_new : lhasa, lhasa apso
+
+
+--> #  156 | c      156 | y     8.4e-01 | y_next 7.3e-02
++++ >        c_new  219 | y_new 4.4e-01 | y_old 4.3e-01 | evals 10072
+    : changes 16484 | dx1 4.5e+03 | dx2 2.9e+01
+    : l_old : blenheim spaniel
+    : l_new : cocker spaniel, english cocker spaniel, cocker
+
+
+--> #  157 | c      157 | y     1.0e+00 | y_next 2.4e-04
++++ >        c_new  230 | y_new 4.7e-01 | y_old 4.0e-01 | evals 10076
+    : changes 16987 | dx1 1.1e+04 | dx2 6.7e+01
+    : l_old : papillon
+    : l_new : shetland sheepdog, shetland sheep dog, shetland
+
+
+--> #  160 | c      160 | y     7.1e-01 | y_next 1.0e-01
++++ >        c_new  244 | y_new 3.4e-01 | y_old 3.3e-01 | evals 10034
+    : changes 16612 | dx1 2.3e+03 | dx2 1.5e+01
+    : l_old : afghan hound, afghan
+    : l_new : tibetan mastiff
+
+
+--> #  161 | c      161 | y     9.6e-01 | y_next 1.7e-02
++++ >        c_new  434 | y_new 2.6e-01 | y_old 2.5e-01 | evals 10027
+    : changes 16731 | dx1 2.1e+04 | dx2 1.2e+02
+    : l_old : basset, basset hound
+    : l_new : bath towel
+
+
+--> #  164 | c      164 | y     7.5e-01 | y_next 2.3e-01
++++ >        c_new  210 | y_new 5.0e-01 | y_old 4.8e-01 | evals 10048
+    : changes 16039 | dx1 1.4e+03 | dx2 9.7e+00
+    : l_old : bluetick
+    : l_new : german short-haired pointer
+
+
+--> #  165 | c      165 | y     8.3e-01 | y_next 8.9e-02
++++ >        c_new  236 | y_new 4.1e-01 | y_old 3.8e-01 | evals 10031
+    : changes 14163 | dx1 3.7e+03 | dx2 2.4e+01
+    : l_old : black-and-tan coonhound
+    : l_new : doberman, doberman pinscher
+
+
+--> #  166 | c      166 | y     7.9e-01 | y_next 6.3e-02
++++ >        c_new  188 | y_new 4.6e-01 | y_old 4.3e-01 | evals 10082
+    : changes 16607 | dx1 7.7e+03 | dx2 5.0e+01
+    : l_old : walker hound, walker foxhound
+    : l_new : wire-haired fox terrier
+
+
+--> #  167 | c      167 | y     5.4e-01 | y_next 3.3e-01
++++ >        c_new  166 | y_new 4.4e-01 | y_old 4.4e-01 | evals 10087
+    : changes 16641 | dx1 2.7e+03 | dx2 1.7e+01
+    : l_old : english foxhound
+    : l_new : walker hound, walker foxhound
+
+
+--> #  169 | c      169 | y     8.0e-01 | y_next 1.6e-01
++++ >        c_new  222 | y_new 4.8e-01 | y_old 4.8e-01 | evals 10090
+    : changes 16694 | dx1 2.4e+03 | dx2 1.4e+01
+    : l_old : borzoi, russian wolfhound
+    : l_new : kuvasz
+
+
+--> #  170 | c      170 | y     9.4e-01 | y_next 5.9e-02
++++ >        c_new  177 | y_new 4.8e-01 | y_old 4.7e-01 | evals 10077
+    : changes 16515 | dx1 8.9e+03 | dx2 6.1e+01
+    : l_old : irish wolfhound
+    : l_new : scottish deerhound, deerhound
+
+
+--> #  172 | c      172 | y     9.4e-01 | y_next 1.4e-02
++++ >        c_new  170 | y_new 3.8e-01 | y_old 3.7e-01 | evals 10075
+    : changes 14903 | dx1 2.1e+03 | dx2 1.4e+01
+    : l_old : whippet
+    : l_new : irish wolfhound
+
+
+--> #  173 | c      173 | y     9.5e-01 | y_next 1.1e-02
++++ >        c_new  181 | y_new 4.3e-01 | y_old 4.2e-01 | evals 10099
+    : changes 16564 | dx1 4.7e+03 | dx2 2.9e+01
+    : l_old : ibizan hound, ibizan podenco
+    : l_new : bedlington terrier
+
+
+--> #  176 | c      176 | y     9.8e-01 | y_next 6.1e-03
++++ >        c_new  162 | y_new 4.3e-01 | y_old 3.9e-01 | evals 10040
+    : changes 16838 | dx1 5.7e+03 | dx2 3.5e+01
+    : l_old : saluki, gazelle hound
+    : l_new : beagle
+
+
+--> #  177 | c      177 | y     7.4e-01 | y_next 1.1e-01
++++ >        c_new  200 | y_new 3.6e-01 | y_old 3.5e-01 | evals 10026
+    : changes 15899 | dx1 2.4e+03 | dx2 1.7e+01
+    : l_old : scottish deerhound, deerhound
+    : l_new : tibetan terrier, chrysanthemum dog
+
+
+--> #  178 | c      178 | y     9.9e-01 | y_next 3.2e-03
++++ >        c_new  171 | y_new 3.3e-01 | y_old 3.2e-01 | evals 10083
+    : changes 16629 | dx1 1.1e+04 | dx2 7.5e+01
+    : l_old : weimaraner
+    : l_new : italian greyhound
+
+
+--> #  179 | c      179 | y     9.4e-01 | y_next 5.7e-02
++++ >        c_new  180 | y_new 5.0e-01 | y_old 4.6e-01 | evals 10044
+    : changes 16584 | dx1 5.6e+03 | dx2 3.6e+01
+    : l_old : staffordshire bullterrier, staffordshire bull terr
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+--> #  181 | c      181 | y     9.5e-01 | y_next 1.8e-02
++++ >        c_new  267 | y_new 4.1e-01 | y_old 4.0e-01 | evals 10059
+    : changes 16733 | dx1 1.1e+04 | dx2 7.0e+01
+    : l_old : bedlington terrier
+    : l_new : standard poodle
+
+
+--> #  182 | c      182 | y     1.0e+00 | y_next 3.2e-04
++++ >        c_new  342 | y_new 3.4e-01 | y_old 3.1e-01 | evals 10089
+    : changes 16798 | dx1 6.4e+03 | dx2 4.0e+01
+    : l_old : border terrier
+    : l_new : wild boar, boar, sus scrofa
+
+
+--> #  183 | c      183 | y     9.4e-01 | y_next 2.4e-02
++++ >        c_new  775 | y_new 2.6e-01 | y_old 2.0e-01 | evals 10028
+    : changes 16638 | dx1 1.2e+04 | dx2 7.5e+01
+    : l_old : kerry blue terrier
+    : l_new : sarong
+
+
+--> #  184 | c      184 | y     2.0e-01 | y_next 1.5e-01
++++ >        c_new  208 | y_new 1.7e-01 | y_old 1.7e-01 | evals   900
+    : changes 12139 | dx1 3.3e+02 | dx2 2.2e+00
+    : l_old : irish terrier
+    : l_new : labrador retriever
+
+
+--> #  185 | c      185 | y     8.8e-01 | y_next 5.0e-02
++++ >        c_new  184 | y_new 4.3e-01 | y_old 4.2e-01 | evals 10010
+    : changes 16739 | dx1 4.7e+03 | dx2 2.6e+01
+    : l_old : norfolk terrier
+    : l_new : irish terrier
+
+
+--> #  187 | c      187 | y     3.8e-01 | y_next 3.6e-01
++++ >        c_new  201 | y_new 3.8e-01 | y_old 3.7e-01 | evals   334
+    : changes 15239 | dx1 3.8e+02 | dx2 2.4e+00
+    : l_old : yorkshire terrier
+    : l_new : silky terrier, sydney silky
+
+
+--> #  188 | c      188 | y     9.9e-01 | y_next 6.1e-03
++++ >        c_new  181 | y_new 5.2e-01 | y_old 4.6e-01 | evals 10029
+    : changes 16073 | dx1 8.6e+03 | dx2 5.7e+01
+    : l_old : wire-haired fox terrier
+    : l_new : bedlington terrier
+
+
+--> #  189 | c      189 | y     9.0e-01 | y_next 3.9e-02
++++ >        c_new  993 | y_new 2.0e-01 | y_old 1.9e-01 | evals 10038
+    : changes 16708 | dx1 2.4e+03 | dx2 1.4e+01
+    : l_old : lakeland terrier
+    : l_new : gyromitra
+
+
+--> #  190 | c      190 | y     9.5e-01 | y_next 2.1e-02
++++ >        c_new  188 | y_new 4.1e-01 | y_old 3.9e-01 | evals 10033
+    : changes 16730 | dx1 5.7e+03 | dx2 3.6e+01
+    : l_old : sealyham terrier, sealyham
+    : l_new : wire-haired fox terrier
+
+
+--> #  191 | c      191 | y     2.9e-01 | y_next 8.2e-02
++++ >        c_new  354 | y_new 1.4e-01 | y_old 1.3e-01 | evals 10067
+    : changes  8353 | dx1 1.5e+03 | dx2 1.1e+01
+    : l_old : airedale, airedale terrier
+    : l_new : arabian camel, dromedary, camelus dromedarius
+
+
+--> #  192 | c      192 | y     6.3e-01 | y_next 6.3e-02
++++ >        c_new  235 | y_new 2.6e-01 | y_old 2.5e-01 | evals 10032
+    : changes 15220 | dx1 1.3e+03 | dx2 8.8e+00
+    : l_old : cairn, cairn terrier
+    : l_new : german shepherd, german shepherd dog, german polic
+
+
+--> #  194 | c      194 | y     6.1e-01 | y_next 1.6e-01
++++ >        c_new  265 | y_new 3.6e-01 | y_old 3.6e-01 | evals 10066
+    : changes 16797 | dx1 1.3e+03 | dx2 7.0e+00
+    : l_old : dandie dinmont, dandie dinmont terrier
+    : l_new : toy poodle
+
+
+--> #  195 | c      195 | y     9.7e-01 | y_next 2.3e-02
++++ >        c_new  180 | y_new 2.4e-01 | y_old 2.0e-01 | evals 10052
+    : changes 16569 | dx1 1.9e+04 | dx2 1.3e+02
+    : l_old : boston bull, boston terrier
+    : l_new : american staffordshire terrier, staffordshire terr
+
+
+--> #  197 | c      197 | y     7.4e-01 | y_next 2.4e-01
++++ >        c_new  198 | y_new 4.9e-01 | y_old 4.8e-01 | evals 10070
+    : changes 16691 | dx1 1.3e+03 | dx2 8.6e+00
+    : l_old : giant schnauzer
+    : l_new : standard schnauzer
+
+
+--> #  198 | c      198 | y     7.4e-01 | y_next 2.0e-01
++++ >        c_new  196 | y_new 4.8e-01 | y_old 4.7e-01 | evals 10042
+    : changes 16719 | dx1 2.6e+03 | dx2 1.5e+01
+    : l_old : standard schnauzer
+    : l_new : miniature schnauzer
+
+
+Completed. Successful: 100.00% (total images 78)
+DONE (168525.08 sec.) 
+
+
+===================== ---------------------------------------
+[2024-08-10 07-39-11] Work is finished (168527.02 sec. total)
+
+

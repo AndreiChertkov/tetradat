@@ -1,0 +1,355 @@
+[2024-08-08 19-08-24] Computations (cuda:4)
+===================== ---------------------
+Data                : "imagenet"
+Model               : "alexnet"
+Model attr.         : "vgg"
+Task                : "attack"
+Kind of task        : "bs_square"
+Skip fails for attr : True
+===========================================
+
+
+.... Loading "imagenet" dataset
+DONE (     0.00 sec.) 
+
+
+.... Loading "alexnet" model
+DONE (     2.20 sec.) 
+
+
+.... Loading "vgg" model
+DONE (     3.32 sec.) 
+
+
+.... Start attack on images with baseline "square"
+
+--> #  900 | c      900 | y     1.0e+00 | y_next 4.3e-07
+    > fail | evals   503
+
+--> #  901 | c      901 | y     3.9e-01 | y_next 3.9e-01
++++ >        c_new  653 | y_new 2.5e-01 | y_old 2.0e-01 | evals     3
+    : changes 49916 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : whiskey jug
+    : l_new : milk can
+
+
+--> #  903 | c      903 | y     5.6e-01 | y_next 1.4e-01
++++ >        c_new  655 | y_new 2.8e-01 | y_old 2.7e-01 | evals   112
+    : changes 47464 | dx1 8.8e+03 | dx2 2.5e+01
+    : l_old : wig
+    : l_new : miniskirt, mini
+
+
+--> #  905 | c      905 | y     9.2e-01 | y_next 2.0e-02
+    > fail | evals   503
+
+--> #  906 | c      906 | y     8.1e-01 | y_next 6.3e-02
++++ >        c_new  834 | y_new 2.9e-01 | y_old 2.8e-01 | evals   372
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : windsor tie
+    : l_new : suit, suit of clothes
+
+
+--> #  908 | c      908 | y     9.8e-01 | y_next 5.1e-03
++++ >        c_new  525 | y_new 2.0e-01 | y_old 1.9e-01 | evals   358
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : wing
+    : l_new : dam, dike, dyke
+
+
+--> #  914 | c      914 | y     3.9e-01 | y_next 3.8e-01
++++ >        c_new  780 | y_new 6.6e-01 | y_old 1.7e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : yawl
+    : l_new : schooner
+
+
+--> #  916 | c      916 | y     1.0e+00 | y_next 2.1e-04
+    > fail | evals   503
+
+--> #  919 | c      919 | y     4.0e-01 | y_next 7.2e-02
++++ >        c_new  580 | y_new 1.1e-01 | y_old 1.1e-01 | evals   126
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : street sign
+    : l_new : greenhouse, nursery, glasshouse
+
+
+--> #  920 | c      920 | y     1.0e+00 | y_next 8.3e-07
+    > fail | evals   503
+
+--> #  921 | c      921 | y     9.6e-01 | y_next 1.6e-02
+    > fail | evals   503
+
+--> #  922 | c      922 | y     8.2e-01 | y_next 5.1e-02
++++ >        c_new  917 | y_new 3.3e-01 | y_old 3.2e-01 | evals   387
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : menu
+    : l_new : comic book
+
+
+--> #  923 | c      923 | y     9.4e-01 | y_next 2.7e-02
+    > fail | evals   503
+
+--> #  924 | c      924 | y     8.6e-01 | y_next 5.8e-02
+    > fail | evals   503
+
+--> #  925 | c      925 | y     9.0e-01 | y_next 3.1e-02
++++ >        c_new  967 | y_new 4.5e-01 | y_old 4.5e-01 | evals   488
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : consomme
+    : l_new : espresso
+
+
+--> #  926 | c      926 | y     2.8e-01 | y_next 1.6e-01
++++ >        c_new  809 | y_new 2.4e-01 | y_old 1.3e-01 | evals     4
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hot pot, hotpot
+    : l_new : soup bowl
+
+
+--> #  928 | c      928 | y     7.2e-01 | y_next 1.1e-01
++++ >        c_new  929 | y_new 4.1e-01 | y_old 3.9e-01 | evals    97
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ice cream, icecream
+    : l_new : ice lolly, lolly, lollipop, popsicle
+
+
+--> #  930 | c      930 | y     5.3e-01 | y_next 1.9e-01
++++ >        c_new  159 | y_new 2.2e-01 | y_old 1.9e-01 | evals    35
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : french loaf
+    : l_new : rhodesian ridgeback
+
+
+--> #  932 | c      932 | y     9.4e-01 | y_next 5.7e-02
++++ >        c_new  488 | y_new 5.0e-01 | y_old 4.9e-01 | evals   214
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : pretzel
+    : l_new : chain
+
+
+--> #  933 | c      933 | y     1.0e+00 | y_next 2.6e-03
+    > fail | evals   503
+
+--> #  934 | c      934 | y     6.0e-01 | y_next 2.4e-01
++++ >        c_new  933 | y_new 4.1e-01 | y_old 4.1e-01 | evals    59
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hotdog, hot dog, red hot
+    : l_new : cheeseburger
+
+
+--> #  935 | c      935 | y     8.8e-01 | y_next 1.1e-01
++++ >        c_new  962 | y_new 4.9e-01 | y_old 4.8e-01 | evals   477
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : mashed potato
+    : l_new : meat loaf, meatloaf
+
+
+--> #  936 | c      936 | y     9.6e-01 | y_next 5.6e-03
+    > fail | evals   503
+
+--> #  937 | c      937 | y     1.0e+00 | y_next 1.5e-03
+    > fail | evals   503
+
+--> #  938 | c      938 | y     8.9e-01 | y_next 2.7e-02
+    > fail | evals   503
+
+--> #  939 | c      939 | y     1.0e+00 | y_next 3.3e-03
+    > fail | evals   503
+
+--> #  940 | c      940 | y     1.0e+00 | y_next 1.3e-03
+    > fail | evals   503
+
+--> #  941 | c      941 | y     7.1e-01 | y_next 7.9e-02
++++ >        c_new  117 | y_new 3.7e-01 | y_old 3.6e-01 | evals    67
+    : changes 50176 | dx1 1.0e+04 | dx2 2.6e+01
+    : l_old : acorn squash
+    : l_new : chambered nautilus, pearly nautilus, nautilus
+
+
+--> #  942 | c      942 | y     6.2e-01 | y_next 1.5e-01
++++ >        c_new  941 | y_new 3.3e-01 | y_old 3.3e-01 | evals   395
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : butternut squash
+    : l_new : acorn squash
+
+
+--> #  945 | c      945 | y     9.8e-01 | y_next 1.4e-02
+    > fail | evals   503
+
+--> #  946 | c      946 | y     6.5e-01 | y_next 3.5e-01
++++ >        c_new  944 | y_new 5.0e-01 | y_old 4.9e-01 | evals    99
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cardoon
+    : l_new : artichoke, globe artichoke
+
+
+--> #  947 | c      947 | y     8.2e-01 | y_next 2.7e-02
++++ >        c_new  328 | y_new 1.6e-01 | y_old 1.5e-01 | evals    61
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : mushroom
+    : l_new : sea urchin
+
+
+--> #  948 | c      948 | y     8.3e-01 | y_next 8.0e-02
++++ >        c_new  852 | y_new 4.5e-01 | y_old 4.5e-01 | evals   243
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : granny smith
+    : l_new : tennis ball
+
+
+--> #  949 | c      949 | y     1.0e+00 | y_next 9.2e-06
+    > fail | evals   503
+
+--> #  950 | c      950 | y     3.5e-01 | y_next 2.4e-01
++++ >        c_new  967 | y_new 3.8e-01 | y_old 3.0e-01 | evals     5
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : orange
+    : l_new : espresso
+
+
+--> #  951 | c      951 | y     8.0e-01 | y_next 1.8e-01
++++ >        c_new  950 | y_new 4.9e-01 | y_old 4.8e-01 | evals   407
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lemon
+    : l_new : orange
+
+
+--> #  952 | c      952 | y     1.0e+00 | y_next 1.5e-03
+    > fail | evals   503
+
+--> #  953 | c      953 | y     9.8e-01 | y_next 3.6e-03
+    > fail | evals   503
+
+--> #  955 | c      955 | y     7.2e-01 | y_next 4.8e-02
+    > fail | evals   503
+
+--> #  956 | c      956 | y     9.8e-01 | y_next 1.2e-02
+    > fail | evals   503
+
+--> #  957 | c      957 | y     1.0e+00 | y_next 2.2e-04
+    > fail | evals   503
+
+--> #  958 | c      958 | y     9.6e-01 | y_next 1.4e-02
++++ >        c_new  386 | y_new 2.8e-01 | y_old 2.7e-01 | evals   179
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : hay
+    : l_new : african elephant, loxodonta africana
+
+
+--> #  961 | c      961 | y     1.5e-01 | y_next 8.7e-02
++++ >        c_new  532 | y_new 1.1e-01 | y_old 1.0e-01 | evals    21
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : dough
+    : l_new : dining table, board
+
+
+--> #  963 | c      963 | y     1.0e+00 | y_next 1.6e-05
+    > fail | evals   503
+
+--> #  964 | c      964 | y     9.9e-01 | y_next 8.0e-03
+    > fail | evals   503
+
+--> #  967 | c      967 | y     5.3e-01 | y_next 1.7e-01
++++ >        c_new  504 | y_new 3.3e-01 | y_old 3.1e-01 | evals    74
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : espresso
+    : l_new : coffee mug
+
+
+--> #  968 | c      968 | y     6.7e-01 | y_next 1.1e-01
++++ >        c_new  659 | y_new 4.2e-01 | y_old 3.6e-01 | evals   117
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : cup
+    : l_new : mixing bowl
+
+
+--> #  969 | c      969 | y     1.0e+00 | y_next 1.2e-03
+    > fail | evals   503
+
+--> #  973 | c      973 | y     8.0e-01 | y_next 1.3e-01
++++ >        c_new  983 | y_new 4.1e-01 | y_old 4.1e-01 | evals   486
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : coral reef
+    : l_new : scuba diver
+
+
+--> #  974 | c      974 | y     8.7e-01 | y_next 4.9e-02
++++ >        c_new  562 | y_new 4.6e-01 | y_old 3.5e-01 | evals     3
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : geyser
+    : l_new : fountain
+
+
+--> #  975 | c      975 | y     4.4e-01 | y_next 3.2e-01
++++ >        c_new  977 | y_new 4.0e-01 | y_old 3.8e-01 | evals    52
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : lakeside, lakeshore
+    : l_new : sandbar, sand bar
+
+
+--> #  977 | c      977 | y     8.9e-01 | y_next 4.0e-02
+    > fail | evals   503
+
+--> #  980 | c      980 | y     8.2e-01 | y_next 8.9e-02
++++ >        c_new  853 | y_new 4.4e-01 | y_old 2.9e-01 | evals     3
+    : changes 50176 | dx1 9.9e+03 | dx2 2.6e+01
+    : l_old : volcano
+    : l_new : thatch, thatched roof
+
+
+--> #  981 | c      981 | y     6.7e-01 | y_next 3.2e-01
++++ >        c_new  781 | y_new 5.1e-01 | y_old 4.9e-01 | evals    57
+    : changes 50176 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : ballplayer, baseball player
+    : l_new : scoreboard
+
+
+--> #  982 | c      982 | y     9.7e-01 | y_next 1.4e-02
+    > fail | evals   503
+
+--> #  983 | c      983 | y     7.8e-01 | y_next 6.0e-02
+    > fail | evals   503
+
+--> #  984 | c      984 | y     1.0e+00 | y_next 3.3e-04
+    > fail | evals   503
+
+--> #  985 | c      985 | y     1.0e+00 | y_next 2.1e-04
+    > fail | evals   503
+
+--> #  986 | c      986 | y     1.0e+00 | y_next 2.5e-05
+    > fail | evals   503
+
+--> #  989 | c      989 | y     1.0e+00 | y_next 5.6e-04
+    > fail | evals   503
+
+--> #  990 | c      990 | y     6.9e-01 | y_next 9.4e-02
++++ >        c_new  666 | y_new 3.4e-01 | y_old 3.2e-01 | evals   134
+    : changes 50174 | dx1 1.0e+04 | dx2 2.7e+01
+    : l_old : buckeye, horse chestnut, conker
+    : l_new : mortar
+
+
+--> #  992 | c      992 | y     8.5e-01 | y_next 1.5e-01
+    > fail | evals   503
+
+--> #  993 | c      993 | y     9.9e-01 | y_next 2.6e-03
+    > fail | evals   503
+
+--> #  994 | c      994 | y     1.0e+00 | y_next 2.8e-04
+    > fail | evals   503
+
+--> #  995 | c      995 | y     1.0e+00 | y_next 1.0e-03
+    > fail | evals   503
+
+--> #  996 | c      996 | y     1.0e+00 | y_next 2.7e-04
+    > fail | evals   503
+
+Completed. Successful: 46.97% (total images 66)
+DONE (  4838.50 sec.) 
+
+
+===================== -------------------------------------
+[2024-08-08 20-29-08] Work is finished (4844.05 sec. total)
+
+
