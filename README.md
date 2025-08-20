@@ -25,13 +25,13 @@ Package `tetradat` (**TE**nsor **TR**ain **AD**versarial **AT**tacks) for genera
     git clone https://github.com/AndreiChertkov/tetradat.git && cd tetradat
     ```
 
-5. Install [LLaVA](https://github.com/haotian-liu/LLaVA) framework:
+5. Install [LLaVA](https://github.com/haotian-liu/LLaVA) framework (optional):
     ```bash
     git clone https://github.com/haotian-liu/LLaVA.git && cd LLaVA && pip install -e . && cd ./../
     ```
-    > In the case of problems, remove in llava/model/__init__.py `try` block before installing.
+    > In the case of problems, remove in `llava/model/__init__.py` the block `try` before installing.
 
-6. Install other dependencies for LLaVA:
+6. Install other dependencies for LLaVA (optional):
     ```bash
     pip install aiohttp pyarrow tensorboardx && pip install transformers==4.37.2
     ```
@@ -84,7 +84,9 @@ The calls with the following `ARGS` may be performed:
 
 ### Attacks on multimodal LLava model
 
-- Run `clear && python sim_wrapper.py` for demo of text ximilarity calculation
+> This is a rough implementation of an attack on a multimodal model, the code may be unstable.
+
+- Run `clear && python sim_wrapper.py` for demo of text similarity calculation
 - Run `clear && python llava_wrapper.py` for demo of LLaVa usage
 - Run `clear && python manager.py --task attack_llava --kind attr --data imagenet --model vgg --model_attr vgg --opt_d 2500 --opt_m 1000 --opt_sc 0.5 --opt_k 50 --opt_k_top 5 --opt_k_gd 10 --opt_lr 1.E-2`
 
